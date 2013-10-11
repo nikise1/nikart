@@ -1,0 +1,25 @@
+{
+  "name": "nikart_html5",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.8"
+  },
+  "devDependencies": {
+    "backbone": "~1.0.0",
+    "console-polyfill": "~0.1.0",
+    "jplayer": "~2.4.1",
+    "jquery": "~2.0.3",
+    "normalize-scss": "~2.1.2",
+    "requirejs-text": "~2.0.10",
+    "sass-bootstrap": "~3.0.0",
+    "tweenmax": "~1.10.3",
+    "underscore": "~1.5.2"
+  }
+}

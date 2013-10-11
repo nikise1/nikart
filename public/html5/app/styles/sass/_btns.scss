@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+a.btn-centred {
+    margin: 0 auto;
+}
+
+a.btn-full-screen, a.btn-restore-screen {
+    display: block;
+    width: $btnWidth;
+    height: $btnHeight;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+a.btn-full-screen {
+    background: url("../../img/btns.png") 0 -2*$btnHeight no-repeat;
+}
+
+a.btn-full-screen:hover {
+    background: url("../../img/btns.png") -$btnWidth -2*$btnHeight no-repeat;
+}
+
+a.btn-restore-screen {
+    //background: url("../../img/btns.png") 0 -3*$btnHeight no-repeat;
+}
+
+a.btn-restore-screen:hover {
+    //background: url("../../img/btns.png") -$btnWidth -3*$btnHeight no-repeat;
+}
+
+a.btn-video-play, a.btn-video-pause {
+    display: block;
+    width: $videoWidthSm;
+    height: $videoHeightSm;
+    background: url("../../img/trans.png") 0 0 repeat;
+    text-indent: -9999px;
+}
+
+a.btn-video-play {
+    background: url("../../img/video-play.png") $videoWidthSm/2-$btnVideoWidth/2 $videoHeightSm/2-$btnVideoHeight/2 no-repeat;
+}
+
+a.btn-video-pause:hover {
+    background: url("../../img/video-pause.png") $videoWidthSm/2-$btnVideoWidth/2 $videoHeightSm/2-$btnVideoHeight/2 no-repeat;
+}
+
+.jp-video-full, .jp-video-full .video-controls-holder, .jp-video-full a.btn-restore-screen {
+    width: 100%;
+    height: 100%;
+}
+
+.jp-video-full a.btn-video-pause, .jp-video-full a.btn-video-play {
+    display: none !important;
+}

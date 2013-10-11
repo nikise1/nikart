@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="dist/styles/css/main.css">
+{% endblock %}
+
+{% block content %}
+
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<section id="app">
+    <section class="content-container"></section>
+    <section class="thumb-container">
+        <ul class="thumb-list"></ul>
+    </section>
+    <section class="breadcrumbs">
+    </section>
+    <nav class="nav-container">
+        <a href="javascript:;" class="nav-btn-container">
+            Menu
+        </a>
+        <div class="nav-items-container">
+        </div>
+    </nav>
+</section>
+
+<script>
+    var nikart = nikart || {};
+    nikart.langCode = '{{ langCode }}';
+    nikart.staticFilesStr = '{{ staticFilesStr }}';
+</script>
+
+<script data-main="dist/scripts/main" src="dist/bower_components/requirejs/require.js"></script>
+
+{% endblock %}

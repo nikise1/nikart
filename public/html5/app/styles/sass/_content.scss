@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+.content-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-height: $articleMinHeight;
+}
+
+.content-container a {
+    font-size: 1.1em;
+}
+
+.article-content, .article-content-vid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: visible;
+}
+
+.article-content {
+    width: $articleWidth;
+    margin-left: -$articleWidth / 2;
+}
+
+.article-content-vid {
+    width: $videoWidthSm;
+    margin-left: -$videoWidthSm / 2;
+    margin-top: -$videoHeightSm / 2 - $btnHeight / 2;
+}
+
+.article-img-container {
+    width: $articleWidth;
+}
+
+.article-img {
+    border: 1px solid $colourLight;
+    border-radius: 4px;
+}
+
+.article-detail {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.article-link {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.slideshow-container li {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    list-style: none outside none;
+}
+
+.title-vid, .title-article  {
+    text-align: center;
+}

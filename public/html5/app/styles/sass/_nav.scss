@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Nav
+   ========================================================================== */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: $colourDark;
+    //border: 1px solid red;
+}
+
+.nav-btn-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.1em;
+    color: $colourLightest;
+    background-color: $colourMid;
+    padding: 12px 20px 12px 10px;
+    border-radius: 0 0 30px 0;
+}
+
+.nav-btn-container:hover {
+    text-decoration: none;
+    color: $colourDark;
+    background-color: $colourLight;
+}
+
+.nav-items-container {
+    position: relative;
+    top: 30px;
+    left: 70px;
+    width: $navWidth;
+}
+
+.nav-item-container {
+    overflow: hidden;
+    //border: 1px solid green;
+}
+
+.nav-item {
+    width: $navWidth;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+    //border: 1px solid red;
+}
+
+.breadcrumbs {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 20px;
+    padding: 5px 10px 5px 70px;
+    background: $colourMid;
+    color: $colourLightest;
+    opacity: 0.5;
+}

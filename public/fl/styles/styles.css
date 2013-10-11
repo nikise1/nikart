@@ -1,0 +1,47 @@
+html, body, div {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #95CF89;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    position: relative;
+    font-family: helvetica, arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+html, body, #container {
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    position: absolute;
+    width: 750px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin-left: -375px;
+    margin-top: -250px;
+}
+
+#swf_container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 15% 20px;
+}

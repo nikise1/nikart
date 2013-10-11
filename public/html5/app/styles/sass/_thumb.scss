@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Thumb
+   ========================================================================== */
+.thumb-container {
+    overflow-x: hidden;
+    float: right;
+    width: 300px;
+    //border: 1px solid black;
+}
+
+.thumb-list {
+    position: relative;
+    right: 0;
+    padding: 0 0 0 0;
+    margin: 20px 0 0 0;
+    //border: 1px solid green;
+}
+
+.thumb-item-container {
+    display: block;
+    position: relative;
+    height: $thumbHeight;
+    margin: 10px 20px 10px 0;
+    list-style: none;
+    //border: 1px solid red;
+}
+
+.thumb-label {
+    display: inline-block;
+    position: absolute;
+    height: $thumbHeight / 2 + 10px;
+    margin: 0;
+    padding: ($thumbHeight / 2 - 18px) 10px 0 0;
+    width: 150px;
+    //border: 1px solid purple;
+}
+
+.thumb-img {
+    display: inline-block;
+    position: absolute;
+    left: 160px;
+    top: 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.thumb-img:hover {
+    opacity: 0.7;
+}

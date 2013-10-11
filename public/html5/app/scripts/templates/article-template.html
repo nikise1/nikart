@@ -1,0 +1,11 @@
+<article class="article-content">
+    <h1 class="title-article"><%- title %></h1>
+
+    <div class="article-img-container">
+        <img class="article-img" src="<%- imgsrc %>" border="0" width="320"/>
+    </div>
+
+    <p class="article-detail"><%- desc %></p>
+
+    <p class="article-link"><a href="<%- url %>"<% if (!isSelf) { %> target="_blank"<% } %>><%- launch %></a></p>
+</article>
