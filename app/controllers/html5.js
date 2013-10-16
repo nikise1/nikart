@@ -7,9 +7,11 @@ var html5Controller = function (app) {
     app.get('/html5', function (req, res) {
         var langCode = appModel.getLangCode(req, res);
         var staticFilesStr = appModel.getStaticFilesStr(app);
+        var menuStr = (langCode === 'en') ? 'Menu' : 'Menú';
         res.render('html5', {
             langCode: langCode,
-            staticFilesStr: staticFilesStr
+            staticFilesStr: staticFilesStr,
+            menuStr: menuStr
         });
     });
 
