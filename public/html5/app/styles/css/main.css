@@ -352,9 +352,19 @@ table {
    Utils
    ========================================================================== */
 .browsehappy {
-  margin: 0;
-  background: #cccccc;
-  padding: 2em; }
+  position: fixed;
+  top: 0;
+  width: 76%;
+  background: #333333;
+  color: #cccccc;
+  margin: 0 10%;
+  padding: 10px 2%;
+  z-index: 10000;
+  border-radius: 0 0 30px 30px;
+  text-align: center; }
+
+.browsehappy a {
+  color: #999999; }
 
 /* ==========================================================================
    Generic Tags

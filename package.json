@@ -2,6 +2,7 @@
   "name": "nikart",
   "version": "0.0.1",
   "scripts": {
+    "start": "node server.js",
     "test": "forever /usr/local/bin/node-inspector --web-port=9999",
     "restart": "supervisor --debug server.js"
   },

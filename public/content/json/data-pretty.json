@@ -825,27 +825,6 @@
             }
         },
         {
-            "id": "config",
-            "type": "web",
-            "title": {
-                "en": "Espa\u00f1ol",
-                "es": "English"
-            },
-            "desc": {
-                "en": "Versi\u00f3n en Espa\u00f1ol. este sitio va a utilizar una cookie para guardar tu preferencia.",
-                "es": "English version. This site will use a cookie to save your preferences."
-            },
-            "imgs": 1,
-            "url": {
-                "en": "_self\/es",
-                "es": "_self\/en"
-            },
-            "launch": {
-                "en": "Cambiar idioma",
-                "es": "Change Language"
-            }
-        },
-        {
             "id": "contact",
             "type": "web",
             "title": {
@@ -860,6 +839,74 @@
             "url": "http:\/\/www.linkedin.com\/in\/nikart",
             "launch": "linkedin.com\/in\/nikart",
             "pop": "'1000','700','yes','yes','yes'"
+        },
+        {
+            "id": "config",
+            "type": "men",
+            "menu": [
+                {
+                    "id": "language",
+                    "type": "web",
+                    "title": {
+                        "en": "Espa\u00f1ol",
+                        "es": "English"
+                    },
+                    "desc": {
+                        "en": "Versi\u00f3n en Espa\u00f1ol. Este sitio va a utilizar una cookie para guardar tu preferencia.",
+                        "es": "English version. This site will use a cookie to save your preference."
+                    },
+                    "imgs": 1,
+                    "url": {
+                        "en": "_self\/es",
+                        "es": "_self\/en"
+                    },
+                    "launch": {
+                        "en": "Cambia idioma a Espa\u00f1ol",
+                        "es": "Change Language to English"
+                    },
+                    "pop": "'1200','850','yes','yes','yes'"
+                },
+                {
+                    "id": "html5",
+                    "type": "web",
+                    "title": {
+                        "en": "HTML5 View",
+                        "es": "Vista en HTML5"
+                    },
+                    "desc": {
+                        "en": "The HTML5 mobile first view of this site.",
+                        "es": "Vista de este sitio en HTML5 que prioriza dispositivos m\u00f3viles."
+                    },
+                    "imgs": 1,
+                    "url": "_self\/..\/html5",
+                    "launch": {
+                        "en": "Change to the HTML5 view",
+                        "es": "Cambia a la versi\u00f3n en HTML5"
+                    }
+                },
+                {
+                    "id": "fl",
+                    "type": "web",
+                    "title": {
+                        "en": "Flash View",
+                        "es": "Vista en Flash"
+                    },
+                    "desc": {
+                        "en": "The Flash view of this site.",
+                        "es": "Vista de este sitio en Flash."
+                    },
+                    "imgs": 1,
+                    "url": "_self\/..\/fl",
+                    "launch": {
+                        "en": "Change to the Flash view",
+                        "es": "Cambia a la versi\u00f3n en Flash"
+                    }
+                }
+            ],
+            "title": {
+                "en": "{{otherversions}} & Espa\u00f1ol",
+                "es": "{{otherversions}} y English"
+            }
         }
     ],
     "other": {

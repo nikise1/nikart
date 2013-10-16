@@ -31,8 +31,18 @@ define([
         render: function (curItem) {
 
             this.jsonMenu = curItem.menu;
-            this.numNavItems = this.jsonMenu.length;
-            for (var i = 0; i < this.numNavItems; i += 1) {
+
+
+            //*** Don't show link to own view html5 ***
+            for (var i = this.jsonMenu.length - 1; i >= 0; i -= 1) {
+                if (this.jsonMenu[i].id && this.jsonMenu[i].id === 'html5') {
+                    this.jsonMenu.splice(i, 1);
+                }
+            }
+//            console.log('this.jsonMenu: ' + JSON.stringify(this.jsonMenu));
+
+
+            for (i = 0; i < this.jsonMenu.length; i += 1) {
                 this.jsonMenu[i].title = common.getLangStr(this.jsonMenu[i], 'title');
             }
             this.clearAllItems();

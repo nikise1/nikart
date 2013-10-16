@@ -29,6 +29,12 @@ define([], function () {
             var exists = (obj && obj[key]) ? true : false;
             if (exists) {
                 curStr = (obj[key][this.lang]) ? obj[key][this.lang] : obj[key];
+
+                //*** Other Versions ***
+                var otherVersionStr = '{{otherversions}}';
+                if (curStr.length > 0 && curStr.indexOf(otherVersionStr) !== -1) {
+                    curStr = 'Config' + curStr.substr(otherVersionStr.length);
+                }
             }
             return curStr;
         },

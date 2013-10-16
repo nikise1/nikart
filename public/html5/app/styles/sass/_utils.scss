@@ -2,7 +2,18 @@
    Utils
    ========================================================================== */
 .browsehappy {
-    margin: 0;
-    background: $colourLight;
-    padding: 2em;
+    position: fixed;
+    top: 0;
+    width: 76%;
+    background: $colourDark;
+    color: $colourLight;
+    margin: 0 10%;
+    padding: 10px 2%;
+    z-index: 10000;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+}
+
+.browsehappy a {
+    color: $colourMid;
 }
