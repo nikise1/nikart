@@ -8,7 +8,7 @@
 
 module.exports = function (grunt) {
     // load all grunt tasks
-    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    require('load-grunt-tasks')(grunt);
 
     // configurable paths
     var pathConfig = {
@@ -21,30 +21,33 @@ module.exports = function (grunt) {
         watch: {
             scripts: {
                 files: ['<%= appPaths.app %>/styles/sass/*.scss'],
-                tasks: ['sass:dev'],
-                options: {}
+                tasks: ['compass:dev'],
+                options: {
+                    spawn: false
+                }
             }
         },
-        sass: {
+        compass: {
+            options: {
+                sassDir: '<%= appPaths.app %>/styles/sass',
+                imagesDir: '<%= appPaths.app %>/img',
+                importPath: '<%= appPaths.app %>/bower_components',
+                generatedImagesDir: '<%= appPaths.dist %>/img',
+                relativeAssets: true
+            },
             dist: {
-                files: {
-                    '<%= appPaths.dist %>/styles/css/main.css': '<%= appPaths.app %>/styles/sass/main.scss'
-                },
                 options: {
-                    debugInfo: false,
-                    style: 'compressed'
+                    cssDir: '<%= appPaths.dist %>/styles/css',
+                    environment: 'production'
                 }
             },
             dev: {
-                files: {
-                    '<%= appPaths.app %>/styles/css/main.css': '<%= appPaths.app %>/styles/sass/main.scss'
-                },
                 options: {
-                    debugInfo: true,
-                    style: 'expanded'
+                    cssDir: '<%= appPaths.app %>/styles/css'
                 }
             }
         },
+
         clean: {
             dist: {
                 files: [
@@ -107,7 +110,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'sass:dist',
+//        'sass:dist',
+        'compass:dist',
         'requirejs:dist',
         'uglify:dist',
         'copy'

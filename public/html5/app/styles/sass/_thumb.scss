@@ -44,6 +44,19 @@
     border-radius: 4px;
 }
 
-.thumb-img:hover {
+@import "sprites/anitest/*.png";
+@include all-anitest-sprites;
+
+.thumb-ani {
+    display: inline-block;
+    position: absolute;
+    left: 145px;
+    top: -15px;
+    width: 150px;
+    height: 120px;
+    //border: 1px solid $colourMid;
+}
+
+.thumb-img:hover, .thumb-ani:hover {
     opacity: 0.7;
 }

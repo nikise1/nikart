@@ -12,12 +12,18 @@ define([], function () {
         timeThumbOut: 0.5,
         timeArticleIn: 1.5,
         timeArticleOut: 0.5,
+        timeAniFrame: 1 / 30,
 
         maxWidthTxtWebImg: 320,
         maxHeightTxtWeb: 240,
         maxHeightImg: 320,
 
         lang: undefined,
+
+        colourDark: '#333333',
+        colourMid: '#999999',
+        colourLight: '#cccccc',
+        colourLightest: '#ffffff',
 
         setLang: function (str) {
             this.lang = str;

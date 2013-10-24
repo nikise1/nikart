@@ -11,7 +11,7 @@ define([
 
     var View = Backbone.View.extend({
 
-        tagName: 'div',
+        tagName: 'li',
 
         className: 'nav-item-container',
 
@@ -22,7 +22,10 @@ define([
         },
 
         initialize: function () {
-//            this.listenTo(this.model, 'destroy', this.remove);
+            this.num = this.options.num;
+            this.numNavItems = this.options.numNavItems;
+            this.extraWidth = 20;
+            this.staggerMaxX = 25;
         },
 
         render: function () {
@@ -38,20 +41,23 @@ define([
             TweenLite.killTweensOf(this.$el);
         },
 
-        aniIn: function (delay) {
+        aniIn: function () {
+            var delay = this.num * common.timeNavStaggerIn;
             this.$el.fadeTo(0, 0);
             TweenLite.delayedCall(delay, this.aniStartIn, [], this);
         },
 
         aniStartIn: function () {
             if (!this.origWidth) {
-                this.origWidth = this.$navItemSpan.width();
+                this.origWidth = this.$navItemSpan.width() + this.extraWidth;
 //                console.log('this.origWidth: ' + this.origWidth);
+                this.$el.css('margin-left', this.num / this.numNavItems * this.staggerMaxX);
             }
             TweenLite.fromTo(this.$el, common.timeNavIn, {width: 0, autoAlpha: 1}, {width: this.origWidth, autoAlpha: 1});
         },
 
-        aniOut: function (delay) {
+        aniOut: function () {
+            var delay = (this.numNavItems - 1 - this.num) * common.timeNavStaggerOut;
             TweenLite.delayedCall(delay, this.aniStartOut, [], this);
         },
 

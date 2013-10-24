@@ -8,7 +8,9 @@ var html5Controller = function (app) {
         var langCode = appModel.getLangCode(req, res);
         var staticFilesStr = appModel.getStaticFilesStr(app);
         var menuStr = (langCode === 'en') ? 'Menu' : 'Menú';
+        var debug = (req.query.debug && parseInt(req.query.debug, 10) === 1) ? true : false;
         res.render('html5', {
+            debug: debug,
             langCode: langCode,
             staticFilesStr: staticFilesStr,
             menuStr: menuStr

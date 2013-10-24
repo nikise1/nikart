@@ -3,13 +3,20 @@
 {% block title %}HTML5/JavaScript site{% endblock %}
 
 {% block head %}
+{% if debug %}
+<link rel="stylesheet" href="app/styles/css/main.css">
+{% else %}
 <link rel="stylesheet" href="dist/styles/css/main.css">
+{% endif %}
 {% endblock %}
 
 {% block content %}
 
 <!--[if lt IE 9]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="browsehappy">
+You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.<br />
+<a href="../fl">Or go to the Flash View</a>
+</p>
 <![endif]-->
 
 <section id="app">
@@ -17,14 +24,15 @@
     <section class="thumb-container">
         <ul class="thumb-list"></ul>
     </section>
-    <section class="breadcrumbs">
-    </section>
+    <!--<section class="breadcrumbs">-->
+    <!--</section>-->
     <nav class="nav-container">
+        <canvas width="150" height="250" class="nav-canvas"></canvas>
         <a href="javascript:;" class="nav-btn-container">
             {{ menuStr }}
         </a>
-        <div class="nav-items-container">
-        </div>
+        <ul class="nav-items-container">
+        </ul>
     </nav>
 </section>
 
@@ -32,8 +40,15 @@
     var nikart = nikart || {};
     nikart.langCode = '{{ langCode }}';
     nikart.staticFilesStr = '{{ staticFilesStr }}';
+    {% if debug %}nikart.debug = {{ debug }};{% endif %}
 </script>
 
+{% if debug %}
+<script data-main="app/scripts/main" src="app/bower_components/requirejs/require.js"></script>
+{% else %}
 <script data-main="dist/scripts/main" src="dist/bower_components/requirejs/require.js"></script>
+{% endif %}
+
+
 
 {% endblock %}

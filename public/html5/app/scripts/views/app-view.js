@@ -25,7 +25,7 @@ define([
             view = new ArticleView({model: this.appModel});
             view = new VideoView({model: this.appModel});
             view = new ThumbView({model: this.appModel});
-            view = new BreadcrumbsView({model: this.appModel});
+//            view = new BreadcrumbsView({model: this.appModel});
             view = new NavView({model: this.appModel});
         },
 
