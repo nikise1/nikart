@@ -564,19 +564,19 @@ h6,
 .nav-items-container {
   position: relative;
   top: 30px;
-  left: 80px;
+  left: 95px;
   margin: 0;
   padding: 0;
   width: 15em;
 }
 
-/* line 44, ../sass/_nav.scss */
+/* line 45, ../sass/_nav.scss */
 .nav-item-container {
   overflow: hidden;
   list-style-type: none;
 }
 
-/* line 50, ../sass/_nav.scss */
+/* line 51, ../sass/_nav.scss */
 .nav-item {
   display: inline-block;
   width: 15em;
@@ -584,14 +584,14 @@ h6,
   cursor: pointer;
 }
 
-/* line 58, ../sass/_nav.scss */
+/* line 59, ../sass/_nav.scss */
 .nav-connector {
   color: #999999;
   font-size: 16px;
   vertical-align: middle;
 }
 
-/* line 64, ../sass/_nav.scss */
+/* line 65, ../sass/_nav.scss */
 .breadcrumbs {
   display: none;
   position: fixed;

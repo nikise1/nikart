@@ -42,7 +42,7 @@ define([
         },
 
         aniIn: function () {
-            var delay = this.num * common.timeNavStaggerIn;
+            var delay = common.timeNavGrowIn + this.num * common.timeNavStaggerIn;
             this.$el.fadeTo(0, 0);
             TweenLite.delayedCall(delay, this.aniStartIn, [], this);
         },

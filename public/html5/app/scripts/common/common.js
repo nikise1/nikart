@@ -5,6 +5,9 @@ define([], function () {
     return {
         timeNavStaggerIn: 0.1,
         timeNavStaggerOut: 0.075,
+        timeNavGrowIn: 0.5,
+        timeNavGrowOut: 0.5,
+        timeNavDelayIn: 0.5,
         timeNavIn: 1.2,
         timeNavOut: 0.5,
         timeDelayThumbIn: 1.5,

@@ -32,44 +32,12 @@ define([
                 this.jsonNav[i].title = common.getLangStr(this.jsonNav[i], 'title');
             }
 
-            this.seUpCanvas();
-
             this.$navItemsContainer = $('.nav-items-container');
             this.$navItemsContainer.hide();
 
             this.addAll(this.jsonNav);
 
             TweenLite.delayedCall(common.timeNavIn, this.readyForOpening, [], this);
-        },
-
-        seUpCanvas: function () {
-            this.$navCanvas = $('.nav-canvas');
-            this.cntxt = this.$navCanvas[0].getContext('2d');
-
-            var dX = 100;
-            var dY = 245;
-            var thickT = 80;
-            var thickB = 10;
-            var halfT = thickT / 2;
-            var halfB = thickB / 2;
-
-            this.cntxt.beginPath();
-            this.cntxt.moveTo(halfT, 0);
-            this.cntxt.bezierCurveTo(100, 20, 100, 120, dX + halfB, dY - halfB);
-            this.cntxt.quadraticCurveTo(dX, dY + halfB, dX - halfB, dY - halfB);
-            this.cntxt.bezierCurveTo(80, 80, 50, 50, 0, halfT);
-
-            this.cntxt.closePath();
-            this.cntxt.lineWidth = 1;
-            this.cntxt.fillStyle = common.colourMid;
-            this.cntxt.fill();
-            this.cntxt.strokeStyle = common.colourMid;
-            this.cntxt.lineCap = 'round';
-            this.cntxt.lineJoin = 'round';
-
-            this.cntxt.stroke();
-
-            TweenLite.fromTo(this.$navCanvas, 1, {left: -100, top: -this.$navCanvas.outerHeight()}, {left: 0, top: 0});
         },
 
         readyForOpening: function () {
@@ -113,8 +81,10 @@ define([
 
             if (this.openBool) {
                 this.$navItemsContainer.show();
+                this.seUpCanvas();
             } else {
-                TweenLite.delayedCall(common.timeNavOut + (this.numNavItems - 1) * common.timeNavStaggerOut, this.doneAniOut, [], this);
+                TweenLite.delayedCall(common.timeNavOut + (this.numNavItems - 1) * common.timeNavStaggerOut, this.doneAniOut, null, this);
+                this.closeCanvas();
             }
             for (i = 0; i < this.numNavItems; i++) {
                 navItemView = this.navItemViewArr[i];
@@ -126,8 +96,52 @@ define([
             }
         },
 
+        seUpCanvas: function () {
+            this.$navCanvas = $('.nav-canvas');
+            this.navCanvas = this.$navCanvas.get(0);
+            this.cntxt = this.navCanvas.getContext('2d');
+            this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height)
+
+            var dTX = 25;
+            var dTY = 0;
+            var dBX = 115;
+            var dBY = 245;
+            var thickT = 90;
+            var thickB = 10;
+            var halfT = thickT / 2;
+            var halfB = thickB / 2;
+
+            this.cntxt.beginPath();
+            this.cntxt.moveTo(dTX + halfT, 0);
+            this.cntxt.bezierCurveTo(105, 20, 120, 120, dBX + halfB, dBY - halfB);
+            this.cntxt.quadraticCurveTo(dBX, dBY + halfB, dBX - halfB, dBY - halfB);
+            this.cntxt.bezierCurveTo(80, 80, 50, 50, 0, dTY + halfT);
+
+            this.cntxt.closePath();
+            this.cntxt.lineWidth = 1;
+            this.cntxt.fillStyle = common.colourMid;
+//            this.cntxt.fillStyle = common.colourLight;
+            this.cntxt.fill();
+            this.cntxt.strokeStyle = common.colourMid;
+            this.cntxt.lineCap = 'round';
+            this.cntxt.lineJoin = 'round';
+
+            this.cntxt.stroke();
+
+            TweenLite.fromTo(this.$navCanvas, common.timeNavGrowIn, {left: -80, top: -(this.$navCanvas.outerHeight() - 40)}, {left: 0, top: 0});
+        },
+
+        closeCanvas: function () {
+            TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: -80, top: -(this.$navCanvas.outerHeight() - 40), onComplete: this.clearCanvas, onCompleteScope: this});
+        },
+
+        clearCanvas: function () {
+            this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height);
+        },
+
         doneAniOut: function () {
             this.$navItemsContainer.hide();
+            this.clearCanvas();
         },
 
         addAll: function (arr) {
