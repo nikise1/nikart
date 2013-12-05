@@ -23,10 +23,12 @@ define([], function () {
 
         lang: undefined,
 
-        colourDark: '#333333',
-        colourMid: '#999999',
-        colourLight: '#cccccc',
-        colourLightest: '#ffffff',
+        colourDark: '#20300B',
+        colourMid: '#4E692D',
+        colourLight: '#ADD181',
+
+        colourDiffDark: '#482A1E',
+        colourDiffLight: '#E0B348',
 
         setLang: function (str) {
             this.lang = str;
@@ -81,6 +83,14 @@ define([], function () {
                 urlLink = this.urlStatic() + '/' + urlLink;
             }
             return {urlLink: urlLink, isSelf: isSelf};
+        },
+
+        strWith0s: function (num, digits) {
+            var str = num.toString();
+            while (str.length < digits) {
+                str = '0' + str;
+            }
+            return str;
         }
     };
 });

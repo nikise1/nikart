@@ -81,10 +81,12 @@ define([
 
             if (this.openBool) {
                 this.$navItemsContainer.show();
-                this.seUpCanvas();
+
+                //*** canvas ani ***
+                this.setUpCanvas();
             } else {
-                TweenLite.delayedCall(common.timeNavOut + (this.numNavItems - 1) * common.timeNavStaggerOut, this.doneAniOut, null, this);
-                this.closeCanvas();
+                var aniOutDelay = common.timeNavOut + (this.numNavItems - 1) * common.timeNavStaggerOut;
+                TweenLite.delayedCall(aniOutDelay, this.doneAniOut, null, this);
             }
             for (i = 0; i < this.numNavItems; i++) {
                 navItemView = this.navItemViewArr[i];
@@ -96,15 +98,17 @@ define([
             }
         },
 
-        seUpCanvas: function () {
+        //*** canvas ani ***
+        setUpCanvas: function () {
             this.$navCanvas = $('.nav-canvas');
             this.navCanvas = this.$navCanvas.get(0);
             this.cntxt = this.navCanvas.getContext('2d');
-            this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height)
+            this.cntxt.imageSmoothingEnabled = true;
+            this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height);
 
-            var dTX = 25;
+            var dTX = 24;
             var dTY = 0;
-            var dBX = 115;
+            var dBX = 117;
             var dBY = 245;
             var thickT = 90;
             var thickB = 10;
@@ -119,10 +123,10 @@ define([
 
             this.cntxt.closePath();
             this.cntxt.lineWidth = 1;
+            this.cntxt.strokeStyle = common.colourMid;
             this.cntxt.fillStyle = common.colourMid;
 //            this.cntxt.fillStyle = common.colourLight;
             this.cntxt.fill();
-            this.cntxt.strokeStyle = common.colourMid;
             this.cntxt.lineCap = 'round';
             this.cntxt.lineJoin = 'round';
 
@@ -131,17 +135,22 @@ define([
             TweenLite.fromTo(this.$navCanvas, common.timeNavGrowIn, {left: -80, top: -(this.$navCanvas.outerHeight() - 40)}, {left: 0, top: 0});
         },
 
+        //*** canvas ani ***
         closeCanvas: function () {
             TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: -80, top: -(this.$navCanvas.outerHeight() - 40), onComplete: this.clearCanvas, onCompleteScope: this});
         },
 
+        //*** canvas ani ***
         clearCanvas: function () {
             this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height);
         },
 
         doneAniOut: function () {
             this.$navItemsContainer.hide();
-            this.clearCanvas();
+
+            //*** canvas ani ***
+            this.closeCanvas();
+//            this.clearCanvas();
         },
 
         addAll: function (arr) {

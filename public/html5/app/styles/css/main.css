@@ -430,8 +430,8 @@ table {
   position: fixed;
   top: 0;
   width: 76%;
-  background: #333333;
-  color: #cccccc;
+  background: #20300b;
+  color: #add181;
   margin: 0 10%;
   padding: 10px 2%;
   z-index: 10000;
@@ -441,7 +441,7 @@ table {
 
 /* line 17, ../sass/_utils.scss */
 .browsehappy a {
-  color: #999999;
+  color: #4e692d;
 }
 
 /* ==========================================================================
@@ -451,7 +451,7 @@ table {
 html, body {
   width: 100%;
   height: 100%;
-  color: #999999;
+  color: #4e692d;
 }
 
 /* line 10, ../sass/_tags-generic.scss */
@@ -459,59 +459,60 @@ body {
   font-size: 0.9em;
   font-family: Helvetica, "Helvetica Neue", sans-serif, Arial;
   line-height: 1.4;
+  background-color: #add181;
 }
 
-/* line 18, ../sass/_tags-generic.scss */
+/* line 19, ../sass/_tags-generic.scss */
 a {
-  color: #333333;
+  color: #20300b;
   text-decoration: none;
 }
 
-/* line 23, ../sass/_tags-generic.scss */
+/* line 24, ../sass/_tags-generic.scss */
 a:hover {
-  color: #999999;
+  color: #4e692d;
   text-decoration: underline;
 }
 
-/* line 28, ../sass/_tags-generic.scss */
+/* line 29, ../sass/_tags-generic.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 36, ../sass/_tags-generic.scss */
+/* line 37, ../sass/_tags-generic.scss */
 h1,
 .h1 {
   font-size: 1.25em;
   font-weight: normal;
   margin: 0.15em 0 0.2em 0;
-  color: #999999;
+  color: #4e692d;
 }
 
-/* line 44, ../sass/_tags-generic.scss */
+/* line 45, ../sass/_tags-generic.scss */
 h2,
 .h2 {
   font-size: 26px;
 }
 
-/* line 49, ../sass/_tags-generic.scss */
+/* line 50, ../sass/_tags-generic.scss */
 h3,
 .h3 {
   font-size: 20px;
 }
 
-/* line 54, ../sass/_tags-generic.scss */
+/* line 55, ../sass/_tags-generic.scss */
 h4,
 .h4 {
   font-size: 18px;
 }
 
-/* line 59, ../sass/_tags-generic.scss */
+/* line 60, ../sass/_tags-generic.scss */
 h5,
 .h5 {
   font-size: 14px;
 }
 
-/* line 64, ../sass/_tags-generic.scss */
+/* line 65, ../sass/_tags-generic.scss */
 h6,
 .h6 {
   font-size: 12px;
@@ -534,7 +535,7 @@ h6,
   position: fixed;
   top: 0;
   left: 0;
-  color: #333333;
+  color: #20300b;
 }
 
 /* line 12, ../sass/_nav.scss */
@@ -548,8 +549,8 @@ h6,
   top: 0;
   left: 0;
   font-size: 1.1em;
-  color: white;
-  background-color: #999999;
+  color: #add181;
+  background-color: #4e692d;
   padding: 12px 20px 12px 10px;
   border-radius: 0 0 30px 0;
 }
@@ -557,7 +558,7 @@ h6,
 /* line 29, ../sass/_nav.scss */
 .nav-btn-container:hover {
   text-decoration: none;
-  color: #333333;
+  color: #20300b;
 }
 
 /* line 35, ../sass/_nav.scss */
@@ -570,13 +571,13 @@ h6,
   width: 15em;
 }
 
-/* line 45, ../sass/_nav.scss */
+/* line 44, ../sass/_nav.scss */
 .nav-item-container {
   overflow: hidden;
   list-style-type: none;
 }
 
-/* line 51, ../sass/_nav.scss */
+/* line 50, ../sass/_nav.scss */
 .nav-item {
   display: inline-block;
   width: 15em;
@@ -584,14 +585,14 @@ h6,
   cursor: pointer;
 }
 
-/* line 59, ../sass/_nav.scss */
+/* line 58, ../sass/_nav.scss */
 .nav-connector {
-  color: #999999;
+  color: #4e692d;
   font-size: 16px;
   vertical-align: middle;
 }
 
-/* line 65, ../sass/_nav.scss */
+/* line 64, ../sass/_nav.scss */
 .breadcrumbs {
   display: none;
   position: fixed;
@@ -599,8 +600,8 @@ h6,
   width: 100%;
   height: 20px;
   padding: 5px 10px 5px 70px;
-  background: #999999;
-  color: white;
+  background: #4e692d;
+  color: #e0b348;
   opacity: 0.5;
 }
 
@@ -627,7 +628,7 @@ h6,
   display: block;
   position: relative;
   height: 100px;
-  margin: 10px 20px 10px 0;
+  margin: 20px 0 20px 0;
   list-style: none;
 }
 
@@ -645,7 +646,7 @@ h6,
 .thumb-img {
   display: inline-block;
   position: absolute;
-  left: 160px;
+  right: 15px;
   top: 0;
   border: 1px solid #cccccc;
   border-radius: 4px;
@@ -710,7 +711,7 @@ h6,
 .thumb-ani {
   display: inline-block;
   position: absolute;
-  left: 145px;
+  right: 0;
   top: -15px;
   width: 150px;
   height: 120px;
@@ -765,7 +766,7 @@ h6,
 
 /* line 37, ../sass/_content.scss */
 .article-img {
-  border: 1px solid #cccccc;
+  border: 1px solid #add181;
   border-radius: 4px;
 }
 
@@ -938,9 +939,9 @@ div.jp-video-full div.jp-gui {
   padding: 20px;
   margin-left: -196.5px;
   font-size: 1em;
-  background-color: white;
-  color: #999999;
-  border: 2px solid #999999;
+  background-color: #e0b348;
+  color: #4e692d;
+  border: 2px solid #4e692d;
   display: none;
 }
 

@@ -20,7 +20,7 @@
     display: block;
     position: relative;
     height: $thumbHeight;
-    margin: 10px 20px 10px 0;
+    margin: 20px 0 20px 0;
     list-style: none;
     //border: 1px solid red;
 }
@@ -38,7 +38,7 @@
 .thumb-img {
     display: inline-block;
     position: absolute;
-    left: 160px;
+    right: 15px;
     top: 0;
     border: 1px solid #cccccc;
     border-radius: 4px;
@@ -50,7 +50,7 @@
 .thumb-ani {
     display: inline-block;
     position: absolute;
-    left: 145px;
+    right: 0;
     top: -15px;
     width: 150px;
     height: 120px;

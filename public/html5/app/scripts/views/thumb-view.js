@@ -25,13 +25,12 @@ define([
             this.listenTo(vent, vent.ventThumbClose, this.closeThis);
 
             this.$el.css('right', -300);
-            this.$el.fadeTo(0, 0);
+//            this.$el.fadeTo(0, 0);
         },
 
         render: function (curItem) {
 
             this.jsonMenu = curItem.menu;
-
 
             //*** Don't show link to own view html5 ***
             for (var i = this.jsonMenu.length - 1; i >= 0; i -= 1) {
@@ -40,7 +39,6 @@ define([
                 }
             }
 //            console.log('this.jsonMenu: ' + JSON.stringify(this.jsonMenu));
-
 
             for (i = 0; i < this.jsonMenu.length; i += 1) {
                 this.jsonMenu[i].title = common.getLangStr(this.jsonMenu[i], 'title');
@@ -64,12 +62,11 @@ define([
         },
 
         doAni: function () {
-
             TweenLite.killDelayedCallsTo(this.doAni);
             TweenLite.killTweensOf(this.$el);
             if (this.openBool) {
                 this.render(this.curItem);
-                this.$el.fadeTo(0, 1);
+//                this.$el.fadeTo(0, 1);
                 TweenLite.to(this.$el, common.timeThumbIn, {right: 0});
             } else {
                 TweenLite.to(this.$el, common.timeThumbOut, {right: -300, onComplete: this.clearAllItems, onCompleteScope: this});

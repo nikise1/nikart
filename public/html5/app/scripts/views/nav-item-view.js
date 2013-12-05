@@ -51,7 +51,8 @@ define([
             if (!this.origWidth) {
                 this.origWidth = this.$navItemSpan.width() + this.extraWidth;
 //                console.log('this.origWidth: ' + this.origWidth);
-                this.$el.css('margin-left', this.num / this.numNavItems * this.staggerMaxX);
+                var fraction = this.num / this.numNavItems;
+                this.$el.css('margin-left', Math.sqrt(fraction) * this.staggerMaxX);
             }
             TweenLite.fromTo(this.$el, common.timeNavIn, {width: 0, autoAlpha: 1}, {width: this.origWidth, autoAlpha: 1});
         },
