@@ -15,6 +15,9 @@ define([
         el: '.content-container',
 
         initialize: function () {
+            this.appModel = this.options.appModel;
+            this.appModel.injectModelsAndColls(this);
+
             this.listenTo(vent, vent.ventVideoOpen, this.videoOpen);
             this.listenTo(vent, vent.ventVideoClose, this.videoClose);
         },

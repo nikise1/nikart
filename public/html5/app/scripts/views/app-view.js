@@ -16,17 +16,29 @@ define([
         el: '#app',
 
         initialize: function () {
+            this.timer = undefined;
+
             this.listenTo(vent, vent.ventInitDataLoaded, this.onInitDataLoaded);
+            window.addEventListener('scroll', function(evt) {
+                vent.trigger(vent.ventScrolling, evt);
+                if(this.timer) {
+                    clearTimeout(this.timer);
+                }
+                this.timer = setTimeout(function() {
+                    vent.trigger(vent.ventScrollingStopped, evt);
+                }, 150);
+            }, false);
+
             this.appModel = new AppModel();
         },
 
         onInitDataLoaded: function () {
             var view;
-            view = new ArticleView({model: this.appModel});
-            view = new VideoView({model: this.appModel});
-            view = new ThumbView({model: this.appModel});
-//            view = new BreadcrumbsView({model: this.appModel});
-            view = new NavView({model: this.appModel});
+            view = new ArticleView({appModel: this.appModel});
+            view = new VideoView({appModel: this.appModel});
+            view = new ThumbView({appModel: this.appModel});
+//            view = new BreadcrumbsView({appModel: this.appModel});
+            view = new NavView({appModel: this.appModel});
         },
 
         setRouter: function (router) {

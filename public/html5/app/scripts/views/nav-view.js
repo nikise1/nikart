@@ -18,6 +18,8 @@ define([
         },
 
         initialize: function () {
+            this.appModel = this.options.appModel;
+            this.appModel.injectModelsAndColls(this);
 
             this.openBool = true;
             this.initDone = false;
@@ -25,7 +27,7 @@ define([
             this.listenTo(vent, vent.ventNavOpen, this.openThis);
             this.listenTo(vent, vent.ventNavClose, this.closeThis);
 
-            this.jsonNav = this.model.getNavItems();
+            this.jsonNav = this.appModel.getNavItems();
             this.numNavItems = this.jsonNav.length;
 
             for (var i = 0; i < this.numNavItems; i += 1) {
@@ -162,7 +164,7 @@ define([
         },
 
         addOne: function (item) {
-            var view = new NavItemView({ model: item, num: this.navItemViewArr.length, numNavItems: NavCollection.length });
+            var view = new NavItemView({ model: item, appModel: this.appModel, num: this.navItemViewArr.length, numNavItems: NavCollection.length });
             var curEl = view.render().el;
             this.$navItemsContainer.append(curEl);
             this.navItemViewArr.push(view);

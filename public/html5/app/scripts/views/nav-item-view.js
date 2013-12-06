@@ -22,6 +22,9 @@ define([
         },
 
         initialize: function () {
+            this.appModel = this.options.appModel;
+            this.appModel.injectModelsAndColls(this);
+
             this.num = this.options.num;
             this.numNavItems = this.options.numNavItems;
             this.extraWidth = 20;

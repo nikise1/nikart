@@ -9,6 +9,10 @@ define([
 
     var Model = Backbone.Model.extend({
 
+        defaults: {
+            thumbsToAnimateArr: []
+        },
+
         curItem: undefined,
         jsonModel: undefined,
         pathArr: [],
@@ -36,6 +40,10 @@ define([
 
         setRouter: function (router) {
             this.router = router;
+        },
+
+        injectModelsAndColls: function (target) {
+            target.jsonModel = this.jsonModel;
         },
 
         getNavItems: function () {

@@ -15,6 +15,8 @@ define([
         },
 
         initialize: function () {
+            this.appModel = this.options.appModel;
+            this.appModel.injectModelsAndColls(this);
 
             this.listenTo(vent, vent.ventPathUpdate, this.pathUpdate);
         },

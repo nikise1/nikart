@@ -16,6 +16,7 @@ define([], function () {
         timeArticleIn: 1.5,
         timeArticleOut: 0.5,
         timeAniFrame: 1 / 30,
+        timeDelayScrollStoppedPoll: 0.01,
 
         maxWidthTxtWebImg: 320,
         maxHeightTxtWeb: 240,

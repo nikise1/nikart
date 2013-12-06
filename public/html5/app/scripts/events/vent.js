@@ -19,6 +19,9 @@ define([
         ventThumbClose: 'ventThumbClose',
         ventThumbItemClicked: 'ventThumbItemClicked',
 
+        ventScrolling: 'ventScrolling',
+        ventScrollingStopped: 'ventScrollingStopped',
+
         ventArticleOpen: 'ventArticleOpen',
         ventArticleClose: 'ventArticleClose',
         ventVideoOpen: 'ventVideoOpen',
