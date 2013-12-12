@@ -1,6 +1,7 @@
 /* global define */
 define([
     'backbone',
+    'common/common',
     'events/vent',
     'models/app-model',
     'views/article-view',
@@ -8,7 +9,7 @@ define([
     'views/thumb-view',
     'views/breadcrumbs-view',
     'views/nav-view'
-], function (Backbone, vent, AppModel, ArticleView, VideoView, ThumbView, BreadcrumbsView, NavView) {
+], function (Backbone, common, vent, AppModel, ArticleView, VideoView, ThumbView, BreadcrumbsView, NavView) {
     'use strict';
 
     var View = Backbone.View.extend({
@@ -26,7 +27,7 @@ define([
                 }
                 this.timer = setTimeout(function() {
                     vent.trigger(vent.ventScrollingStopped, evt);
-                }, 150);
+                }, common.timeDelayScrollStopped * 1000);
             }, false);
 
             this.appModel = new AppModel();
