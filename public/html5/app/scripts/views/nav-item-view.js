@@ -28,7 +28,7 @@ define([
             this.num = this.options.num;
             this.numNavItems = this.options.numNavItems;
             this.extraWidth = 20;
-            this.staggerMaxX = 25;
+            this.staggerMaxX = 30;
         },
 
         render: function () {

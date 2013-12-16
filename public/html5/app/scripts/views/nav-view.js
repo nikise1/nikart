@@ -34,6 +34,7 @@ define([
                 this.jsonNav[i].title = common.getLangStr(this.jsonNav[i], 'title');
             }
 
+            this.$navBtnContainer = $('.nav-btn-container');
             this.$navItemsContainer = $('.nav-items-container');
             this.$navItemsContainer.hide();
 
@@ -108,25 +109,25 @@ define([
             this.cntxt.imageSmoothingEnabled = true;
             this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height);
 
-            var dTX = 24;
-            var dTY = 0;
+            var dTX = 30;
+            var dTY = 10;
             var dBX = 117;
-            var dBY = 245;
-            var thickT = 90;
-            var thickB = 10;
+            var dBY = 258;
+            var thickT = 18;
+            var thickB = 6;
             var halfT = thickT / 2;
             var halfB = thickB / 2;
 
             this.cntxt.beginPath();
             this.cntxt.moveTo(dTX + halfT, 0);
-            this.cntxt.bezierCurveTo(105, 20, 120, 120, dBX + halfB, dBY - halfB);
+            this.cntxt.bezierCurveTo(100, 50, 110, 110, dBX + halfB, dBY - halfB);
             this.cntxt.quadraticCurveTo(dBX, dBY + halfB, dBX - halfB, dBY - halfB);
-            this.cntxt.bezierCurveTo(80, 80, 50, 50, 0, dTY + halfT);
+            this.cntxt.bezierCurveTo(90, 60, 50, 45, 40, dTY + halfT);
 
             this.cntxt.closePath();
             this.cntxt.lineWidth = 1;
-            this.cntxt.strokeStyle = common.colourMid;
-            this.cntxt.fillStyle = common.colourMid;
+            this.cntxt.strokeStyle = common.colourDiffDark;
+            this.cntxt.fillStyle = common.colourDiffDark;
 //            this.cntxt.fillStyle = common.colourLight;
             this.cntxt.fill();
             this.cntxt.lineCap = 'round';
@@ -134,12 +135,14 @@ define([
 
             this.cntxt.stroke();
 
-            TweenLite.fromTo(this.$navCanvas, common.timeNavGrowIn, {left: -80, top: -(this.$navCanvas.outerHeight() - 40)}, {left: 0, top: 0});
+            TweenLite.fromTo(this.$navCanvas, common.timeNavGrowIn, {left: -75, top: -(this.$navCanvas.outerHeight() - 40)}, {left: 0, top: 0});
+            TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: -this.$navBtnContainer.outerWidth(), top: -this.$navBtnContainer.outerHeight()});
         },
 
         //*** canvas ani ***
         closeCanvas: function () {
-            TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: -80, top: -(this.$navCanvas.outerHeight() - 40), onComplete: this.clearCanvas, onCompleteScope: this});
+            TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: -75, top: -(this.$navCanvas.outerHeight() - 40), onComplete: this.clearCanvas, onCompleteScope: this});
+            TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: 0, top: 0});
         },
 
         //*** canvas ani ***

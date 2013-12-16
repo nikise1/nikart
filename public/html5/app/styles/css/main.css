@@ -430,8 +430,8 @@ table {
   position: fixed;
   top: 0;
   width: 76%;
-  background: #20300b;
-  color: #add181;
+  background: #1c6b00;
+  color: #d6d59d;
   margin: 0 10%;
   padding: 10px 2%;
   z-index: 10000;
@@ -441,7 +441,7 @@ table {
 
 /* line 17, ../sass/_utils.scss */
 .browsehappy a {
-  color: #4e692d;
+  color: #94b864;
 }
 
 /* ==========================================================================
@@ -451,68 +451,75 @@ table {
 html, body {
   width: 100%;
   height: 100%;
-  color: #4e692d;
 }
 
-/* line 10, ../sass/_tags-generic.scss */
+/* line 12, ../sass/_tags-generic.scss */
 body {
+  color: #4f3e2d;
   font-size: 0.9em;
   font-family: Helvetica, "Helvetica Neue", sans-serif, Arial;
   line-height: 1.4;
-  background-color: #add181;
+  background: #d6d59d;
+  background: -moz-linear-gradient(top, #d6d59d 0%, #94b864 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6d59d), color-stop(100%, #94b864));
+  background: -webkit-linear-gradient(top, #d6d59d 0%, #94b864 100%);
+  background: -o-linear-gradient(top, #d6d59d 0%, #94b864 100%);
+  background: -ms-linear-gradient(top, #d6d59d 0%, #94b864 100%);
+  background: linear-gradient(to bottom, #d6d59d 0%, #94b864 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$col1', endColorstr='$col2', GradientType=0);
+  background-attachment: fixed;
 }
 
-/* line 19, ../sass/_tags-generic.scss */
+/* line 21, ../sass/_tags-generic.scss */
 a {
-  color: #20300b;
+  color: #1c6b00;
   text-decoration: none;
 }
 
-/* line 24, ../sass/_tags-generic.scss */
-a:hover {
-  color: #4e692d;
+/* line 26, ../sass/_tags-generic.scss */
+.mod-no-touch a:hover {
+  color: #a8682b;
   text-decoration: underline;
 }
 
-/* line 29, ../sass/_tags-generic.scss */
+/* line 31, ../sass/_tags-generic.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 37, ../sass/_tags-generic.scss */
+/* line 39, ../sass/_tags-generic.scss */
 h1,
 .h1 {
   font-size: 1.25em;
   font-weight: normal;
   margin: 0.15em 0 0.2em 0;
-  color: #4e692d;
 }
 
-/* line 45, ../sass/_tags-generic.scss */
+/* line 46, ../sass/_tags-generic.scss */
 h2,
 .h2 {
   font-size: 26px;
 }
 
-/* line 50, ../sass/_tags-generic.scss */
+/* line 51, ../sass/_tags-generic.scss */
 h3,
 .h3 {
   font-size: 20px;
 }
 
-/* line 55, ../sass/_tags-generic.scss */
+/* line 56, ../sass/_tags-generic.scss */
 h4,
 .h4 {
   font-size: 18px;
 }
 
-/* line 60, ../sass/_tags-generic.scss */
+/* line 61, ../sass/_tags-generic.scss */
 h5,
 .h5 {
   font-size: 14px;
 }
 
-/* line 65, ../sass/_tags-generic.scss */
+/* line 66, ../sass/_tags-generic.scss */
 h6,
 .h6 {
   font-size: 12px;
@@ -535,7 +542,6 @@ h6,
   position: fixed;
   top: 0;
   left: 0;
-  color: #20300b;
 }
 
 /* line 12, ../sass/_nav.scss */
@@ -549,35 +555,50 @@ h6,
   top: 0;
   left: 0;
   font-size: 1.1em;
-  color: #add181;
-  background-color: #4e692d;
+  background-color: #4f3e2d;
   padding: 12px 20px 12px 10px;
-  border-radius: 0 0 30px 0;
+  border-radius: 0 0 20px 0;
 }
 
-/* line 29, ../sass/_nav.scss */
-.nav-btn-container:hover {
+/* line 28, ../sass/_nav.scss */
+a.nav-btn-container {
+  color: #d6d59d;
+}
+
+/* line 32, ../sass/_nav.scss */
+.mod-no-touch a.nav-btn-container:hover {
   text-decoration: none;
-  color: #20300b;
+  color: #a8682b;
 }
 
-/* line 35, ../sass/_nav.scss */
+/* line 37, ../sass/_nav.scss */
+.nav-items-container a {
+  color: #1c6b00;
+}
+
+/* line 41, ../sass/_nav.scss */
+.mod-no-touch .nav-items-container a:hover {
+  color: #a8682b;
+}
+
+/* line 45, ../sass/_nav.scss */
 .nav-items-container {
   position: relative;
   top: 30px;
-  left: 95px;
+  left: 87px;
   margin: 0;
   padding: 0;
   width: 15em;
 }
 
-/* line 44, ../sass/_nav.scss */
+/* line 54, ../sass/_nav.scss */
 .nav-item-container {
+  height: 32px;
   overflow: hidden;
   list-style-type: none;
 }
 
-/* line 50, ../sass/_nav.scss */
+/* line 61, ../sass/_nav.scss */
 .nav-item {
   display: inline-block;
   width: 15em;
@@ -585,14 +606,15 @@ h6,
   cursor: pointer;
 }
 
-/* line 58, ../sass/_nav.scss */
+/* line 69, ../sass/_nav.scss */
 .nav-connector {
-  color: #4e692d;
-  font-size: 16px;
-  vertical-align: middle;
+  display: inline-block;
+  width: 15px;
+  height: 12px;
+  background-image: url("../../img/stump.png");
 }
 
-/* line 64, ../sass/_nav.scss */
+/* line 76, ../sass/_nav.scss */
 .breadcrumbs {
   display: none;
   position: fixed;
@@ -600,8 +622,8 @@ h6,
   width: 100%;
   height: 20px;
   padding: 5px 10px 5px 70px;
-  background: #4e692d;
-  color: #e0b348;
+  background: #94b864;
+  color: #a8682b;
   opacity: 0.5;
 }
 
@@ -615,15 +637,15 @@ h6,
   width: 300px;
 }
 
-/* line 11, ../sass/_thumb.scss */
+/* line 12, ../sass/_thumb.scss */
 .thumb-list {
   position: relative;
   right: 0;
   padding: 0 0 0 0;
-  margin: 20px 0 20px 0;
+  margin: 40px 0 40px 0;
 }
 
-/* line 19, ../sass/_thumb.scss */
+/* line 20, ../sass/_thumb.scss */
 .thumb-item-container {
   display: block;
   position: relative;
@@ -632,7 +654,7 @@ h6,
   list-style: none;
 }
 
-/* line 28, ../sass/_thumb.scss */
+/* line 29, ../sass/_thumb.scss */
 .thumb-label {
   display: inline-block;
   position: absolute;
@@ -642,19 +664,19 @@ h6,
   width: 150px;
 }
 
-/* line 38, ../sass/_thumb.scss */
+/* line 39, ../sass/_thumb.scss */
 .thumb-img {
   display: inline-block;
   position: absolute;
   right: 15px;
   top: 0;
-  border: 1px solid #cccccc;
+  border: 1px solid #1c6b00;
   border-radius: 4px;
 }
 
 /* line 114, sprites/anitest/*.png */
 .anitest-sprite, .anitest-fr-0001, .anitest-fr-0002, .anitest-fr-0003, .anitest-fr-0004, .anitest-fr-0005, .anitest-fr-0006, .anitest-fr-0007, .anitest-fr-0008, .anitest-fr-0009, .anitest-fr-0010 {
-  background: url('../../../dist/img/sprites/anitest-s69eeaf4adb.png') no-repeat;
+  background: url('../../../dist/img/sprites/anitest-s78b7713594.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -674,7 +696,7 @@ h6,
 
 /* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .anitest-fr-0004 {
-  background-position: 0 -120px;
+  background-position: 0 -240px;
 }
 
 /* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -684,7 +706,7 @@ h6,
 
 /* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .anitest-fr-0006 {
-  background-position: 0 -240px;
+  background-position: 0 -120px;
 }
 
 /* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -707,7 +729,7 @@ h6,
   background-position: 0 -1080px;
 }
 
-/* line 50, ../sass/_thumb.scss */
+/* line 51, ../sass/_thumb.scss */
 .thumb-ani {
   display: inline-block;
   position: absolute;
@@ -717,8 +739,8 @@ h6,
   height: 120px;
 }
 
-/* line 60, ../sass/_thumb.scss */
-.thumb-img:hover, .thumb-ani:hover {
+/* line 61, ../sass/_thumb.scss */
+.mod-no-touch .thumb-img:hover, .mod-no-touch .thumb-ani:hover {
   opacity: 0.7;
 }
 
@@ -766,7 +788,7 @@ h6,
 
 /* line 37, ../sass/_content.scss */
 .article-img {
-  border: 1px solid #add181;
+  border: 1px solid #94b864;
   border-radius: 4px;
 }
 
@@ -830,7 +852,7 @@ a.btn-full-screen {
 }
 
 /* line 20, ../sass/_btns.scss */
-a.btn-full-screen:hover {
+.mod-no-touch a.btn-full-screen:hover {
   background: url("../../img/btns.png")-50px -100px no-repeat;
 }
 
@@ -849,7 +871,7 @@ a.btn-video-play {
 }
 
 /* line 44, ../sass/_btns.scss */
-a.btn-video-pause:hover {
+.mod-no-touch a.btn-video-pause:hover {
   background: url("../../img/video-pause.png") 146.5px 94px no-repeat;
 }
 
@@ -939,9 +961,9 @@ div.jp-video-full div.jp-gui {
   padding: 20px;
   margin-left: -196.5px;
   font-size: 1em;
-  background-color: #e0b348;
-  color: #4e692d;
-  border: 2px solid #4e692d;
+  background-color: #a8682b;
+  color: #94b864;
+  border: 2px solid #94b864;
   display: none;
 }
 

@@ -25,16 +25,16 @@ define([], function () {
 
         lang: undefined,
 
-        colourDark: '#20300B',
-        colourMid: '#4E692D',
-        colourLight: '#ADD181',
+        colourDark: '#1C6B00',
+        colourMid: '#94B864',
+        colourLight: '#D6D59D',
 
-        colourDiffDark: '#482A1E',
-        colourDiffLight: '#E0B348',
+        colourDiffDark: '#4F3E2D',
+        colourDiffLight: '#A8682B',
 
         setLang: function (str) {
             this.lang = str;
-            console.log('this.lang: ' + this.lang);
+//            console.log('this.lang: ' + this.lang);
         },
 
         getLangStr: function (obj, key) {

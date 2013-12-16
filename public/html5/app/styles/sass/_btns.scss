@@ -17,7 +17,7 @@ a.btn-full-screen {
     background: url("../../img/btns.png") 0 -2*$btnHeight no-repeat;
 }
 
-a.btn-full-screen:hover {
+.mod-no-touch a.btn-full-screen:hover {
     background: url("../../img/btns.png") -$btnWidth -2*$btnHeight no-repeat;
 }
 
@@ -25,7 +25,7 @@ a.btn-restore-screen {
     //background: url("../../img/btns.png") 0 -3*$btnHeight no-repeat;
 }
 
-a.btn-restore-screen:hover {
+.mod-no-touch a.btn-restore-screen:hover {
     //background: url("../../img/btns.png") -$btnWidth -3*$btnHeight no-repeat;
 }
 
@@ -41,7 +41,7 @@ a.btn-video-play {
     background: url("../../img/video-play.png") $videoWidthSm/2-$btnVideoWidth/2 $videoHeightSm/2-$btnVideoHeight/2 no-repeat;
 }
 
-a.btn-video-pause:hover {
+.mod-no-touch a.btn-video-pause:hover {
     background: url("../../img/video-pause.png") $videoWidthSm/2-$btnVideoWidth/2 $videoHeightSm/2-$btnVideoHeight/2 no-repeat;
 }
 

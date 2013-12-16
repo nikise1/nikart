@@ -3,9 +3,9 @@
    ========================================================================== */
 .nav-container {
     position: fixed;
+//    height: 100%;
     top: 0;
     left: 0;
-    color: $colourDark;
     //border: 1px solid red;
 }
 
@@ -19,29 +19,40 @@
     top: 0;
     left: 0;
     font-size: 1.1em;
-    color: $colourLight;
-    background-color: $colourMid;
+    background-color: $colourDiffDark;
     //opacity: 0.5;
     padding: 12px 20px 12px 10px;
-    border-radius: 0 0 30px 0;
+    border-radius: 0 0 20px 0;
 }
 
-.nav-btn-container:hover {
+a.nav-btn-container {
+    color: $colourLight;
+}
+
+.mod-no-touch a.nav-btn-container:hover {
     text-decoration: none;
+    color: $colourDiffLight;
+}
+
+.nav-items-container a {
     color: $colourDark;
-    //background-color: $colourLight;
+}
+
+.mod-no-touch .nav-items-container a:hover {
+    color: $colourDiffLight;
 }
 
 .nav-items-container {
     position: relative;
     top: 30px;
-    left: 95px;
+    left: 87px;
     margin: 0;
     padding: 0;
     width: $navWidth;
 }
 
 .nav-item-container {
+    height: 32px;
     overflow: hidden;
     list-style-type: none;
     //border: 1px solid green;
@@ -56,9 +67,10 @@
 }
 
 .nav-connector {
-    color: $colourMid;
-    font-size: 16px;
-    vertical-align: middle;
+    display: inline-block;
+    width: 15px;
+    height: 12px;
+    background-image: url("../../img/stump.png");
 }
 
 .breadcrumbs {

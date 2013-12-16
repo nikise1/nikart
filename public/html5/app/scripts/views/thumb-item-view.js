@@ -9,7 +9,7 @@ define([
 ], function (Backbone, _, TweenLite, common, vent, thumbItemTemplate) {
     'use strict';
 
-    var View = Backbone.View.extend({
+    return Backbone.View.extend({
 
         tagName: 'li',
 
@@ -80,18 +80,15 @@ define([
 
         checkIfNeedToOpen: function (shouldPlayImmediately) {
             var isScrolledIntoViewObj = this.isScrolledIntoView(this.el);
-            if (!this.isInView && isScrolledIntoViewObj.half) {
-                this.isInView = true;
+            if (!this.isInView && (isScrolledIntoViewObj.half || isScrolledIntoViewObj.full || isScrolledIntoViewObj.all)) {
                 if (shouldPlayImmediately) {
                     this.playAni();
                 } else {
                     var thumbsToAnimateArr = this.appModel.get('thumbsToAnimateArr');
                     if (!_.contains(thumbsToAnimateArr, this.num)) {
                         thumbsToAnimateArr.push(this.num);
-                        if (this.delayedSequence) {
-                            this.delayedSequence.kill();
-                        }
-                        console.log('thumbsToAnimateArr: ' + thumbsToAnimateArr);
+                        this.cleanUpDelayedCalls();
+//                        this.delayedSequence = TweenLite.delayedCall((thumbsToAnimateArr.length) * this.timeTotalAni / 2, this.playAni, null, this);
                         this.delayedSequence = TweenLite.delayedCall((thumbsToAnimateArr.length - 1) * this.timeTotalAni / 2, this.playAni, null, this);
                     }
                 }
@@ -114,17 +111,15 @@ define([
             if (thumbsToAnimateArr.length > 0) {
                 if (_.contains(thumbsToAnimateArr, num)) {
                     this.appModel.set({thumbsToAnimateArr: _.without(thumbsToAnimateArr, num)});
-                    console.log('removed: ' + thumbsToAnimateArr);
                 }
             }
         },
 
         playAni: function () {
             this.removeFromAnimateArr(this.num);
-            if (this.isInView) {
-                this.isPlaying = true;
-                this.nextFrame();
-            }
+            this.isPlaying = true;
+            this.isInView = true;
+            this.nextFrame();
         },
 
         nextFrame: function () {
@@ -183,8 +178,14 @@ define([
 
         onItemClick: function () {
             vent.trigger(vent.ventThumbItemClicked, this.model.get('id'));
+        },
+
+        cleanUpDelayedCalls: function () {
+            if (this.delayedSequence) {
+                this.delayedSequence.kill();
+            }
+            TweenLite.killDelayedCallsTo(this.checkIfNeedToOpen);
+            TweenLite.killDelayedCallsTo(this.nextFrame);
         }
     });
-
-    return View;
 });

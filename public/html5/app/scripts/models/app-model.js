@@ -90,8 +90,8 @@ define([
 
         onItemClicked: function (idStr) {
 
-            var curType;
-            curType = this.curItem.type;
+//            var curType;
+//            curType = this.curItem.type;
 //            console.log('before curType: ' + curType + ', ' + idStr);
 
             var curMenu = this.curItem.menu;
@@ -101,7 +101,7 @@ define([
                     break;
                 }
             }
-            curType = this.curItem.type;
+            var curType = this.curItem.type;
 //            console.log('after curType: ' + curType + ', ' + idStr);
 
             //TODO *** router deep linking and breadcrumbs ***

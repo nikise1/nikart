@@ -26,6 +26,7 @@ define([
                     clearTimeout(this.timer);
                 }
                 this.timer = setTimeout(function() {
+//                    console.log('----------------ventScrollingStopped--------------');
                     vent.trigger(vent.ventScrollingStopped, evt);
                 }, common.timeDelayScrollStopped * 1000);
             }, false);

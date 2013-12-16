@@ -29,11 +29,11 @@ define([
                 var tmpURL = common.urlImg() + '/' + this.curItem.id + '_' + (i + 1) + '.jpg';
                 this.urlImgArr.push(tmpURL);
             }
-            console.log('this.urlImgArr.length: ' + this.urlImgArr.length);
+//            console.log('this.urlImgArr.length: ' + this.urlImgArr.length);
 
             var urlProcessed = common.processURL(common.getLangStr(this.curItem, 'url'));
-            console.log('urlProcessed.urlLink: ' + urlProcessed.urlLink);
-            console.log('urlProcessed.isSelf: ' + urlProcessed.isSelf);
+//            console.log('urlProcessed.urlLink: ' + urlProcessed.urlLink);
+//            console.log('urlProcessed.isSelf: ' + urlProcessed.isSelf);
 
             var data = {
                 title: this.curItem.title,
@@ -50,10 +50,10 @@ define([
 
             this.$articleContent = $('.article-content');
             var articleHeight = this.$articleContent.outerHeight();
-            console.log('articleHeight: ' + articleHeight);
+//            console.log('articleHeight: ' + articleHeight);
             this.$articleContent.css('margin-top', -articleHeight / 2);
 
-            console.log('this.urlImgArr.length: ' + this.urlImgArr.length);
+//            console.log('this.urlImgArr.length: ' + this.urlImgArr.length);
 
             slideshow.init('article-img', 1.25, 0.4, this.urlImgArr, 'article-img');
 
@@ -64,7 +64,7 @@ define([
             slideshow.pause();
             this.$el.empty();
             this.template = undefined;
-            console.log('clearAll: ' + this.$el.html());
+//            console.log('clearAll: ' + this.$el.html());
         },
 
         articleOpen: function (curItem) {
@@ -76,7 +76,7 @@ define([
 
         articleClose: function () {
             if (this.template) {
-                console.log('articleClose');
+//                console.log('articleClose');
                 TweenLite.to(this.$el, common.timeArticleOut, {autoAlpha: 0, onComplete: this.clearAll, onCompleteScope: this});
             }
         }

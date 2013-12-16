@@ -9,13 +9,9 @@ define([
 ], function (Backbone, TweenLite, common, vent, ThumbCollection, ThumbItemView) {
     'use strict';
 
-    var View = Backbone.View.extend({
+    return Backbone.View.extend({
 
         el: '.thumb-list',
-
-        events: {
-//            'click .nav-btn-container': 'toggleNav'
-        },
 
         initialize: function () {
             this.appModel = this.options.appModel;
@@ -27,11 +23,8 @@ define([
 
             this.listenTo(vent, vent.ventThumbOpen, this.openThis);
             this.listenTo(vent, vent.ventThumbClose, this.closeThis);
-//            this.listenTo(vent, vent.ventScrolling, this.onScrolling);
-//            this.listenTo(vent, vent.ventScrollingStopped, this.onScrollingStopped);
 
             this.$el.css('right', -300);
-//            this.$el.fadeTo(0, 0);
         },
 
         render: function (curItem) {
@@ -92,52 +85,18 @@ define([
             this.thumbItemViewArr.push(view);
         },
 
-//        onScrolling: function () {
-//            this.appModel.set({thumbsToAnimateArr: []});
-//        },
-
-//        onScrollingStopped: function () {
-//            var that = this;
-////            TweenLite.killDelayedCallsTo(this.onScrollingStoppedPollAll);
-////            TweenLite.delayedCall(common.timeDelayScrollStoppedPoll, this.onScrollingStoppedPollAll, null, this);
-//            if (this.timer) {
-//                clearTimeout(this.timer);
-//            }
-//            this.timer = setTimeout(function () {
-//                clearTimeout(this.timer);
-//                that.onScrollingStoppedPollAll();
-//            }, common.timeDelayScrollStoppedPoll);
-//        },
-//
-//        onScrollingStoppedPollAll: function () {
-//            var thumbsToAnimateArr = this.appModel.get('thumbsToAnimateArr');
-//            console.log('thumbsToAnimateArr: ' + thumbsToAnimateArr);
-//            var numInAni = 0;
-//            for (var i = 0; i < this.thumbItemViewArr.length; i++) {
-//                var thumbItemView = this.thumbItemViewArr[i];
-//                for (var j = 0; j < thumbsToAnimateArr.length; j++) {
-//                    console.log('thumbItemView.model.get(\'num\'): ' + thumbItemView.model.get('num'));
-//                    console.log('thumbsToAnimateArr[j]: ' + thumbsToAnimateArr[j]);
-//                    if (thumbItemView.model.get('num') === thumbsToAnimateArr[j]) {
-//                        thumbItemView.playAni();
-//                    }
-//                }
-//            }
-//        },
-
-        // Clear all items, destroying their models.
         clearAllItems: function () {
-//            TweenLite.killDelayedCallsTo(this.onScrollingStoppedPollAll);
-            this.thumbItemViewArr = [];
-//            console.log('clearAllItems');
-            for (this.i = ThumbCollection.models.length - 1; this.i >= 0; this.i -= 1) {
-                var item = ThumbCollection.models[this.i];
+            this.appModel.set({thumbsToAnimateArr: []});
+            for (var i = ThumbCollection.models.length - 1; i >= 0; i -= 1) {
+                var item = ThumbCollection.models[i];
                 item.destroy();
+                var view = this.thumbItemViewArr[i];
+                this.thumbItemViewArr[i] = undefined;
+                view.cleanUpDelayedCalls();
+                view.remove();
             }
-            this.$el.html('');
+            this.thumbItemViewArr = [];
             return false;
         }
     });
-
-    return View;
 });

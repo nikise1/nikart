@@ -49,7 +49,7 @@ define([
 
         reOrder: function (changeBool) {
             var i;
-            console.log('changeBool: ' + changeBool);
+//            console.log('changeBool: ' + changeBool);
             if (changeBool) {
                 this.imgsArr.unshift(this.imgsArr.pop());
                 TweenLite.delayedCall(this.timeDelay, this.animate, [], this);
@@ -68,7 +68,7 @@ define([
             if (this.isImageOk(this.topImg.img)) {
                 this.centreImgVertically($(this.topImg.li));
                 TweenLite.to(this.topImg.li, this.timeFade, {autoAlpha: 1});
-                console.log('this.imgsArr.length: ' + this.imgsArr.length);
+//                console.log('this.imgsArr.length: ' + this.imgsArr.length);
                 if (this.imgsArr.length > 1) {
                     TweenLite.delayedCall(this.timeDelay, this.animate, [], this);
                 }
