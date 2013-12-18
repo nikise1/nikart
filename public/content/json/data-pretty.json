@@ -59,22 +59,6 @@
                     "pop": "'600','700','yes','yes','yes'"
                 },
                 {
-                    "id": "terranova",
-                    "type": "web",
-                    "title": "Sky Terra Nova",
-                    "desc": {
-                        "en": "Microsite for Terra Nova TV series. 3D, video, interactive landscape, tweets.",
-                        "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
-                    },
-                    "imgs": 11,
-                    "url": "http:\/\/sky1.sky.com\/sky1hd-shows\/terra-nova",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'1200','850','yes','yes','yes'"
-                },
-                {
                     "id": "ciudad",
                     "type": "web",
                     "title": {
@@ -150,22 +134,6 @@
                     },
                     "imgs": 4,
                     "url": "http:\/\/onedayinmay.co.uk",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'1200','850','yes','yes','yes'"
-                },
-                {
-                    "id": "terranova",
-                    "type": "web",
-                    "title": "Sky Terra Nova",
-                    "desc": {
-                        "en": "Microsite for Terra Nova TV series. 3D, video, interactive landscape, tweets.",
-                        "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
-                    },
-                    "imgs": 11,
-                    "url": "http:\/\/sky1.sky.com\/sky1hd-shows\/terra-nova",
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -256,8 +224,24 @@
                     "pop": "'920','768','yes','yes','yes'"
                 },
                 {
+                    "id": "terranova",
+                    "type": "tex",
+                    "title": "Sky Terra Nova",
+                    "desc": {
+                        "en": "Microsite for Terra Nova TV series. 3D, video, interactive landscape, tweets.",
+                        "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
+                    },
+                    "imgs": 11,
+                    "url": "http:\/\/sky1.sky.com\/sky1hd-shows\/terra-nova",
+                    "launch": {
+                        "en": "Launch Website",
+                        "es": "Abra el Sitio"
+                    },
+                    "pop": "'1200','850','yes','yes','yes'"
+                },
+                {
                     "id": "zubi",
-                    "type": "web",
+                    "type": "tex",
                     "title": "Zubi",
                     "desc": {
                         "en": "Development for the art gallery section of Zubi. This website won silver at the 2009 Hispanic Creative Advertising Awards.",
