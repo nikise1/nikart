@@ -470,24 +470,24 @@ body {
   background-attachment: fixed;
 }
 
-/* line 21, ../sass/_tags-generic.scss */
+/* line 24, ../sass/_tags-generic.scss */
 a {
   color: #1c6b00;
   text-decoration: none;
 }
 
-/* line 26, ../sass/_tags-generic.scss */
+/* line 29, ../sass/_tags-generic.scss */
 .mod-no-touch a:hover {
   color: #a8682b;
   text-decoration: underline;
 }
 
-/* line 31, ../sass/_tags-generic.scss */
+/* line 34, ../sass/_tags-generic.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 39, ../sass/_tags-generic.scss */
+/* line 42, ../sass/_tags-generic.scss */
 h1,
 .h1 {
   font-size: 1.25em;
@@ -495,31 +495,31 @@ h1,
   margin: 0.15em 0 0.2em 0;
 }
 
-/* line 46, ../sass/_tags-generic.scss */
+/* line 49, ../sass/_tags-generic.scss */
 h2,
 .h2 {
   font-size: 26px;
 }
 
-/* line 51, ../sass/_tags-generic.scss */
+/* line 54, ../sass/_tags-generic.scss */
 h3,
 .h3 {
   font-size: 20px;
 }
 
-/* line 56, ../sass/_tags-generic.scss */
+/* line 59, ../sass/_tags-generic.scss */
 h4,
 .h4 {
   font-size: 18px;
 }
 
-/* line 61, ../sass/_tags-generic.scss */
+/* line 64, ../sass/_tags-generic.scss */
 h5,
 .h5 {
   font-size: 14px;
 }
 
-/* line 66, ../sass/_tags-generic.scss */
+/* line 69, ../sass/_tags-generic.scss */
 h6,
 .h6 {
   font-size: 12px;
@@ -551,6 +551,7 @@ h6,
 
 /* line 17, ../sass/_nav.scss */
 .nav-btn-container {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -560,45 +561,45 @@ h6,
   border-radius: 0 0 20px 0;
 }
 
-/* line 28, ../sass/_nav.scss */
+/* line 29, ../sass/_nav.scss */
 a.nav-btn-container {
   color: #d6d59d;
 }
 
-/* line 32, ../sass/_nav.scss */
+/* line 33, ../sass/_nav.scss */
 .mod-no-touch a.nav-btn-container:hover {
   text-decoration: none;
   color: #a8682b;
 }
 
-/* line 37, ../sass/_nav.scss */
+/* line 38, ../sass/_nav.scss */
 .nav-items-container a {
   color: #1c6b00;
 }
 
-/* line 41, ../sass/_nav.scss */
+/* line 42, ../sass/_nav.scss */
 .mod-no-touch .nav-items-container a:hover {
   color: #a8682b;
 }
 
-/* line 45, ../sass/_nav.scss */
+/* line 46, ../sass/_nav.scss */
 .nav-items-container {
   position: relative;
   top: 30px;
-  left: 87px;
+  left: 0;
   margin: 0;
   padding: 0;
   width: 15em;
 }
 
-/* line 54, ../sass/_nav.scss */
+/* line 55, ../sass/_nav.scss */
 .nav-item-container {
   height: 32px;
   overflow: hidden;
   list-style-type: none;
 }
 
-/* line 61, ../sass/_nav.scss */
+/* line 62, ../sass/_nav.scss */
 .nav-item {
   display: inline-block;
   width: 15em;
@@ -606,7 +607,7 @@ a.nav-btn-container {
   cursor: pointer;
 }
 
-/* line 69, ../sass/_nav.scss */
+/* line 70, ../sass/_nav.scss */
 .nav-connector {
   display: inline-block;
   width: 15px;
@@ -614,7 +615,7 @@ a.nav-btn-container {
   background-image: url("../../img/stump.png");
 }
 
-/* line 76, ../sass/_nav.scss */
+/* line 77, ../sass/_nav.scss */
 .breadcrumbs {
   display: none;
   position: fixed;

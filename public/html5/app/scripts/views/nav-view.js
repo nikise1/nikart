@@ -40,12 +40,13 @@ define([
 
             this.addAll(this.jsonNav);
 
+            TweenLite.to(this.$navBtnContainer, 0, {left: -this.$navBtnContainer.outerWidth(), top: -this.$navBtnContainer.outerHeight()});
+
             TweenLite.delayedCall(common.timeNavIn, this.readyForOpening, [], this);
         },
 
         readyForOpening: function () {
             this.initDone = true;
-            $('.nav-btn-container').css('cursor', 'pointer');
             this.doAni();
         },
 
@@ -109,20 +110,17 @@ define([
             this.cntxt.imageSmoothingEnabled = true;
             this.cntxt.clearRect(0, 0, this.navCanvas.width, this.navCanvas.height);
 
-            var dTX = 30;
-            var dTY = 10;
-            var dBX = 117;
+            var dBX = 110;
             var dBY = 258;
-            var thickT = 18;
-            var thickB = 6;
-            var halfT = thickT / 2;
+            var thickT = 20;
+            var thickB = 7;
             var halfB = thickB / 2;
 
             this.cntxt.beginPath();
-            this.cntxt.moveTo(dTX + halfT, 0);
-            this.cntxt.bezierCurveTo(100, 50, 110, 110, dBX + halfB, dBY - halfB);
+            this.cntxt.moveTo(thickT, 0);
+            this.cntxt.bezierCurveTo(70, 83, 92, 167, dBX + halfB, dBY - halfB);
             this.cntxt.quadraticCurveTo(dBX, dBY + halfB, dBX - halfB, dBY - halfB);
-            this.cntxt.bezierCurveTo(90, 60, 50, 45, 40, dTY + halfT);
+            this.cntxt.bezierCurveTo(82, 167, 60, 83, 0, 0);
 
             this.cntxt.closePath();
             this.cntxt.lineWidth = 1;
@@ -142,6 +140,7 @@ define([
         //*** canvas ani ***
         closeCanvas: function () {
             TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: -75, top: -(this.$navCanvas.outerHeight() - 40), onComplete: this.clearCanvas, onCompleteScope: this});
+            this.$navBtnContainer.css('display', 'block');
             TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: 0, top: 0});
         },
 

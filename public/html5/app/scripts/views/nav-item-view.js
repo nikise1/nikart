@@ -28,7 +28,7 @@ define([
             this.num = this.options.num;
             this.numNavItems = this.options.numNavItems;
             this.extraWidth = 20;
-            this.staggerMaxX = 30;
+            this.curveModX = 148;
         },
 
         render: function () {
@@ -54,8 +54,9 @@ define([
             if (!this.origWidth) {
                 this.origWidth = this.$navItemSpan.width() + this.extraWidth;
 //                console.log('this.origWidth: ' + this.origWidth);
-                var fraction = this.num / this.numNavItems;
-                this.$el.css('margin-left', Math.sqrt(fraction) * this.staggerMaxX);
+                var fraction = (this.num + 1) / this.numNavItems;
+                this.$el.css('margin-left', Math.sqrt(fraction * 2) / 2 * this.curveModX);
+//                this.$el.css('margin-left', fraction * this.curveModX);
             }
             TweenLite.fromTo(this.$el, common.timeNavIn, {width: 0, autoAlpha: 1}, {width: this.origWidth, autoAlpha: 1});
         },
