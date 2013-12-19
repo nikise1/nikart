@@ -57,7 +57,7 @@ define([
             var newWidth = window.innerWidth;
             var newHeight = window.innerHeight;
             that.model.setNewDimensions(newWidth, newHeight);
-            console.log(that.model.get('screenCode') + ', ' + that.model.get('orientation') + ', ' + newWidth + 'x' + newHeight);
+//            console.log(that.model.get('screenCode') + ', ' + that.model.get('orientation') + ', ' + newWidth + 'x' + newHeight);
         }
     });
 });

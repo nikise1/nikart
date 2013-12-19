@@ -11,7 +11,7 @@ define([
         },
 
         initialize: function (options) {
-            console.log('router initialize options: ' + options);
+//            console.log('router initialize options: ' + options);
         },
 
         index: function () {

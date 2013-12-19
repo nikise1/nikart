@@ -28,7 +28,8 @@ exports.setLangCode = function (req, res, newLangCode) {
 };
 
 exports.getStaticFilesStr = function (app) {
-    var staticFilesStr = 'http://static.nikart.co.uk.s3-website-us-east-1.amazonaws.com';
+//    var staticFilesStr = 'http://static.nikart.co.uk.s3-website-us-east-1.amazonaws.com';
+    var staticFilesStr = 'http://static.nikart.co.uk';
     if ('development' === app.get('env')) {
         staticFilesStr = '../static';
     }

@@ -65,7 +65,7 @@ define([
 
             $('#jplayer_interactive').bind($.jPlayer.event.resize, function () { //(event)
                 var isFullScreen = self.$player.jPlayer('option', 'fullScreen');
-                console.log('isFullScreen: ' + isFullScreen);
+//                console.log('isFullScreen: ' + isFullScreen);
                 if (isFullScreen) {
                     self.$player.jPlayer('play');
                 }
@@ -88,19 +88,19 @@ define([
         clearAll: function () {
             this.$el.empty();
             this.template = undefined;
-            console.log('clearAll: ' + this.$el.html());
+//            console.log('clearAll: ' + this.$el.html());
         },
 
         videoOpen: function (curItem) {
             this.curItem = curItem;
-            console.log('videoOpen: ' + this.curItem.id);
+//            console.log('videoOpen: ' + this.curItem.id);
             this.render();
             TweenLite.fromTo(this.$el, common.timeArticleIn, {autoAlpha: 0}, {autoAlpha: 1});
         },
 
         videoClose: function () {
             if (this.template) {
-                console.log('videoClose');
+//                console.log('videoClose');
                 if (this.$player && this.$player.jPlayer) {
                     this.$player.jPlayer('pause');
                 }
