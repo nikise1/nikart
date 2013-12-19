@@ -10,7 +10,7 @@ define([
             '*path': 'openPath'
         },
 
-        initialize: function (options) {
+        initialize: function () { // { options }
 //            console.log('router initialize options: ' + options);
         },
 
