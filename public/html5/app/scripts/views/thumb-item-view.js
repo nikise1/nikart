@@ -9,6 +9,11 @@ define([
 ], function (Backbone, _, TweenLite, common, vent, thumbItemTemplate) {
     'use strict';
 
+//    var isUsingSpriteAni = true;
+    var isUsingSpriteAni = false;
+    var opacityOut = 0.05;
+    var scaleNoAniOut = 0.4;
+
     return Backbone.View.extend({
 
         tagName: 'li',
@@ -63,12 +68,19 @@ define([
             this.$thumbLabel.css('cursor', 'pointer');
             this.$thumbImg = this.$el.find('.thumb-img');
             this.$thumbImg.css('cursor', 'pointer');
-            this.$thumbAni = this.$el.find('.thumb-ani');
-            this.$thumbAni.css('cursor', 'pointer');
+            if (isUsingSpriteAni) {
+                this.$thumbAni = this.$el.find('.thumb-ani');
+                this.$thumbAni.css('cursor', 'pointer');
+            }
 
             this.showFrame();
             this.isGoingToOpen = true;
-            TweenLite.to(this.$thumbImg, 0, {scale: 0.5});
+
+            if (isUsingSpriteAni) {
+                TweenLite.to(this.$thumbImg, 0, {scale: 0.5});
+            } else {
+                TweenLite.to(this.$thumbImg, 0, {scale: scaleNoAniOut, opacity: opacityOut});
+            }
             TweenLite.delayedCall(common.timeDelayThumbIn + this.num * this.timeTotalAni / 2, this.checkIfNeedToOpen, [true], this);
 
             return this;
@@ -101,8 +113,12 @@ define([
             this.isInView = false;
             this.removeFromAnimateArr(this.num);
             this.showFrame(1);
-            TweenLite.to(this.$thumbAni, 0, {opacity: 1});
-            TweenLite.to(this.$thumbImg, 0, {scale: 0.5});
+            if (isUsingSpriteAni) {
+                TweenLite.to(this.$thumbAni, 0, {opacity: 1});
+                TweenLite.to(this.$thumbImg, 0, {scale: 0.5});
+            } else {
+                TweenLite.to(this.$thumbImg, 0, {scale: scaleNoAniOut, opacity: opacityOut});
+            }
             this.isGoingToOpen = true;
         },
 
@@ -147,16 +163,22 @@ define([
             if (newFrame) {
                 this.curFrame = newFrame;
             }
-            this.$thumbAni.removeClass(this.aniAllFramesStr);
-            var classToAdd = this.aniPrefix + common.strWith0s(this.curFrame, this.numDigits);
-            this.$thumbAni.addClass(classToAdd);
+            if (isUsingSpriteAni) {
+                this.$thumbAni.removeClass(this.aniAllFramesStr);
+                var classToAdd = this.aniPrefix + common.strWith0s(this.curFrame, this.numDigits);
+                this.$thumbAni.addClass(classToAdd);
+            }
         },
 
         checkForImgAni: function () {
             if (this.isGoingToOpen) {
                 this.isGoingToOpen = false;
-                TweenLite.to(this.$thumbAni, this.timeTotalAni, {opacity: 0, ease: 'Quad.easeIn'});
-                TweenLite.to(this.$thumbImg, this.timeTotalAni, {scale: 1, ease: 'Quad.easeIn'});
+                if (isUsingSpriteAni) {
+                    TweenLite.to(this.$thumbAni, this.timeTotalAni, {opacity: 0, ease: 'Quad.easeIn'});
+                    TweenLite.to(this.$thumbImg, this.timeTotalAni, {scale: 1, ease: 'Quad.easeIn'});
+                } else {
+                    TweenLite.to(this.$thumbImg, this.timeTotalAni, {scale: 1, opacity: 1, ease: 'Quad.easeIn'});
+                }
             }
         },
 

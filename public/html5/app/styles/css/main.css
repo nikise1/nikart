@@ -460,34 +460,35 @@ body {
   font-family: Helvetica, "Helvetica Neue", sans-serif, Arial;
   line-height: 1.4;
   background: #d6d59d;
-  background: -moz-linear-gradient(top, #d6d59d 0%, #94b864 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6d59d), color-stop(100%, #94b864));
-  background: -webkit-linear-gradient(top, #d6d59d 0%, #94b864 100%);
-  background: -o-linear-gradient(top, #d6d59d 0%, #94b864 100%);
-  background: -ms-linear-gradient(top, #d6d59d 0%, #94b864 100%);
-  background: linear-gradient(to bottom, #d6d59d 0%, #94b864 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$col1', endColorstr='$col2', GradientType=0);
+  background-color: #bbc986;
+  background-image: url("../../img/bg.jpg");
+  background: url("../../img/bg.jpg") top left no-repeat, -moz-linear-gradient(top, #d6d59d, #94b864);
+  background: url("../../img/bg.jpg") top left no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from(#d6d59d), to(#94b864));
+  background: url("../../img/bg.jpg") top left no-repeat, -webkit-linear-gradient(top, #d6d59d, #94b864);
+  background: url("../../img/bg.jpg") top left no-repeat, -o-linear-gradient(top, #d6d59d, #94b864);
+  background: url("../../img/bg.jpg") top left no-repeat, linear-gradient(to bottom, #d6d59d, #94b864);
+  background-size: 100% 100%;
   background-attachment: fixed;
 }
 
-/* line 24, ../sass/_tags-generic.scss */
+/* line 29, ../sass/_tags-generic.scss */
 a {
   color: #1c6b00;
   text-decoration: none;
 }
 
-/* line 29, ../sass/_tags-generic.scss */
+/* line 35, ../sass/_tags-generic.scss */
 .mod-no-touch a:hover {
-  color: #a8682b;
-  text-decoration: underline;
+  color: #4f3e2d;
+  text-shadow: 0 0 2px #cc813a;
 }
 
-/* line 34, ../sass/_tags-generic.scss */
+/* line 43, ../sass/_tags-generic.scss */
 img {
   vertical-align: middle;
 }
 
-/* line 42, ../sass/_tags-generic.scss */
+/* line 51, ../sass/_tags-generic.scss */
 h1,
 .h1 {
   font-size: 1.25em;
@@ -495,31 +496,31 @@ h1,
   margin: 0.15em 0 0.2em 0;
 }
 
-/* line 49, ../sass/_tags-generic.scss */
+/* line 58, ../sass/_tags-generic.scss */
 h2,
 .h2 {
   font-size: 26px;
 }
 
-/* line 54, ../sass/_tags-generic.scss */
+/* line 63, ../sass/_tags-generic.scss */
 h3,
 .h3 {
   font-size: 20px;
 }
 
-/* line 59, ../sass/_tags-generic.scss */
+/* line 68, ../sass/_tags-generic.scss */
 h4,
 .h4 {
   font-size: 18px;
 }
 
-/* line 64, ../sass/_tags-generic.scss */
+/* line 73, ../sass/_tags-generic.scss */
 h5,
 .h5 {
   font-size: 14px;
 }
 
-/* line 69, ../sass/_tags-generic.scss */
+/* line 78, ../sass/_tags-generic.scss */
 h6,
 .h6 {
   font-size: 12px;
@@ -549,40 +550,46 @@ h6,
   position: absolute;
 }
 
-/* line 17, ../sass/_nav.scss */
+/* line 50, sprites/curl/*.png */
+.curl-sprite, .nav-btn-container, .mod-no-touch a.nav-btn-container:hover {
+  background: url('../../../dist/img/sprites/curl-s1313d4494c.png') no-repeat;
+}
+
+/* line 19, ../sass/_nav.scss */
 .nav-btn-container {
   display: none;
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 1.1em;
-  background-color: #4f3e2d;
-  padding: 12px 20px 12px 10px;
-  border-radius: 0 0 20px 0;
+  width: 90px;
+  height: 60px;
+  text-indent: -2000px;
+  background-position: 0 -60px;
 }
 
-/* line 29, ../sass/_nav.scss */
+/* line 30, ../sass/_nav.scss */
 a.nav-btn-container {
   color: #d6d59d;
 }
 
-/* line 33, ../sass/_nav.scss */
+/* line 34, ../sass/_nav.scss */
 .mod-no-touch a.nav-btn-container:hover {
   text-decoration: none;
   color: #a8682b;
+  background-position: 0 0;
 }
 
-/* line 38, ../sass/_nav.scss */
+/* line 40, ../sass/_nav.scss */
 .nav-items-container a {
   color: #1c6b00;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-/* line 42, ../sass/_nav.scss */
-.mod-no-touch .nav-items-container a:hover {
-  color: #a8682b;
-}
-
-/* line 46, ../sass/_nav.scss */
+/* line 49, ../sass/_nav.scss */
 .nav-items-container {
   position: relative;
   top: 30px;
@@ -592,14 +599,14 @@ a.nav-btn-container {
   width: 15em;
 }
 
-/* line 55, ../sass/_nav.scss */
+/* line 58, ../sass/_nav.scss */
 .nav-item-container {
   height: 32px;
   overflow: hidden;
   list-style-type: none;
 }
 
-/* line 62, ../sass/_nav.scss */
+/* line 65, ../sass/_nav.scss */
 .nav-item {
   display: inline-block;
   width: 15em;
@@ -607,7 +614,7 @@ a.nav-btn-container {
   cursor: pointer;
 }
 
-/* line 70, ../sass/_nav.scss */
+/* line 73, ../sass/_nav.scss */
 .nav-connector {
   display: inline-block;
   width: 15px;
@@ -615,7 +622,7 @@ a.nav-btn-container {
   background-image: url("../../img/stump.png");
 }
 
-/* line 77, ../sass/_nav.scss */
+/* line 80, ../sass/_nav.scss */
 .breadcrumbs {
   display: none;
   position: fixed;
@@ -663,16 +670,35 @@ a.nav-btn-container {
   margin: 0;
   padding: 32px 10px 0 0;
   width: 150px;
+  text-align: right;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-/* line 39, ../sass/_thumb.scss */
+/* line 41, ../sass/_thumb.scss */
 .thumb-img {
   display: inline-block;
   position: absolute;
   right: 15px;
   top: 0;
-  border: 1px solid #1c6b00;
   border-radius: 4px;
+  border: 1px solid rgba(28, 107, 0, 0.5);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* line 51, ../sass/_thumb.scss */
+.mod-no-touch .thumb-img:hover {
+  -webkit-box-shadow: 0 0 3px #a8682b;
+  -moz-box-shadow: 0 0 3px #a8682b;
+  box-shadow: 0 0 3px #a8682b;
+  border: 1px solid #a8682b;
 }
 
 /* line 114, sprites/anitest/*.png */
@@ -730,7 +756,7 @@ a.nav-btn-container {
   background-position: 0 -1080px;
 }
 
-/* line 51, ../sass/_thumb.scss */
+/* line 60, ../sass/_thumb.scss */
 .thumb-ani {
   display: inline-block;
   position: absolute;
@@ -740,7 +766,7 @@ a.nav-btn-container {
   height: 120px;
 }
 
-/* line 61, ../sass/_thumb.scss */
+/* line 70, ../sass/_thumb.scss */
 .mod-no-touch .thumb-img:hover, .mod-no-touch .thumb-ani:hover {
   opacity: 0.7;
 }
@@ -759,9 +785,14 @@ a.nav-btn-container {
 /* line 11, ../sass/_content.scss */
 .content-container a {
   font-size: 1.1em;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-/* line 15, ../sass/_content.scss */
+/* line 16, ../sass/_content.scss */
 .article-content, .article-content-vid {
   position: absolute;
   top: 50%;
@@ -769,45 +800,43 @@ a.nav-btn-container {
   overflow: visible;
 }
 
-/* line 22, ../sass/_content.scss */
+/* line 23, ../sass/_content.scss */
 .article-content {
   width: 320px;
   margin-left: -160px;
 }
 
-/* line 27, ../sass/_content.scss */
+/* line 28, ../sass/_content.scss */
 .article-content-vid {
   width: 393px;
   margin-left: -196.5px;
   margin-top: -169px;
 }
 
-/* line 33, ../sass/_content.scss */
+/* line 34, ../sass/_content.scss */
 .article-img-container {
   width: 320px;
 }
 
-/* line 37, ../sass/_content.scss */
+/* line 38, ../sass/_content.scss */
 .article-img {
-  border: 1px solid #94b864;
+  border: 1px solid rgba(79, 62, 45, 0.5);
   border-radius: 4px;
 }
 
-/* line 42, ../sass/_content.scss */
+/* line 43, ../sass/_content.scss */
 .article-detail {
   margin: 0.5em 0;
-  font-size: 0.9em;
   text-align: left;
 }
 
-/* line 48, ../sass/_content.scss */
+/* line 49, ../sass/_content.scss */
 .article-link {
   margin: 0.5em 0;
-  font-size: 0.9em;
   text-align: right;
 }
 
-/* line 54, ../sass/_content.scss */
+/* line 55, ../sass/_content.scss */
 .slideshow-container {
   position: relative;
   width: 100%;
@@ -817,7 +846,7 @@ a.nav-btn-container {
   text-align: center;
 }
 
-/* line 63, ../sass/_content.scss */
+/* line 64, ../sass/_content.scss */
 .slideshow-container li {
   position: absolute;
   width: 100%;
@@ -825,7 +854,7 @@ a.nav-btn-container {
   list-style: none outside none;
 }
 
-/* line 70, ../sass/_content.scss */
+/* line 71, ../sass/_content.scss */
 .title-vid, .title-article {
   text-align: center;
 }

@@ -14,21 +14,30 @@ body {
     font-size: 0.9em;
     font-family: Helvetica, "Helvetica Neue", sans-serif, Arial;
     line-height: 1.4;
-    @include bgGradientLinear($colourLight, 0%, $colourMid, 100%);
-//    background-attachment: fixed;
+    background: $colourLight;
+    //    @include bgGradientLinear($colourLight, 0%, $colourMid, 100%);
+    @include bgGradientLinear($colourLight, $colourMid, url("../../img/bg.jpg"));
+    //    background-attachment: fixed;
+    //    background-image: url("../../img/bg.jpg");
+    //    background-position: left;
+    //    background-repeat: no-repeat;
     background-attachment: fixed;
-//    background-image: url("../../img/bg.jpg");
-//    background-repeat: repeat;
 }
+
+@import "compass/css3/text-shadow";
 
 a {
     color: $colourDark;
     text-decoration: none;
+//    @include single-text-shadow(0, 0, 2px, false, lighten($colourLight, 20%));
 }
 
 .mod-no-touch a:hover {
-    color: $colourDiffLight;
-    text-decoration: underline;
+    //    color: $colourDiffLight;
+    color: $colourDiffDark;
+    //    text-decoration: underline;
+    //    @include single-text-shadow(0, 0, 6px, false, lighten($colourLight, 25%));
+    @include single-text-shadow(0, 0, 2px, false, lighten($colourDiffLight, 10%));
 }
 
 img {

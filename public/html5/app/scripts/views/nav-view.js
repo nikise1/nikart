@@ -9,7 +9,10 @@ define([
 ], function (Backbone, TweenLite, common, vent, NavCollection, NavItemView) {
     'use strict';
 
-    var View = Backbone.View.extend({
+    var posCanvasOutX = -120;
+    var posBtnOutX = -30;
+
+    return Backbone.View.extend({
 
         el: '.nav-container',
 
@@ -40,7 +43,7 @@ define([
 
             this.addAll(this.jsonNav);
 
-            TweenLite.to(this.$navBtnContainer, 0, {left: -this.$navBtnContainer.outerWidth(), top: -this.$navBtnContainer.outerHeight()});
+            TweenLite.to(this.$navBtnContainer, 0, {left: posBtnOutX, top: -this.$navBtnContainer.outerHeight()});
 
             TweenLite.delayedCall(common.timeNavIn, this.readyForOpening, [], this);
         },
@@ -133,13 +136,13 @@ define([
 
             this.cntxt.stroke();
 
-            TweenLite.fromTo(this.$navCanvas, common.timeNavGrowIn, {left: -75, top: -(this.$navCanvas.outerHeight() - 40)}, {left: 0, top: 0});
-            TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: -this.$navBtnContainer.outerWidth(), top: -this.$navBtnContainer.outerHeight()});
+            TweenLite.fromTo(this.$navCanvas, common.timeNavGrowIn, {left: posCanvasOutX, top: -(this.$navCanvas.outerHeight())}, {left: 0, top: 0});
+            TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: posBtnOutX, top: -this.$navBtnContainer.outerHeight()});
         },
 
         //*** canvas ani ***
         closeCanvas: function () {
-            TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: -75, top: -(this.$navCanvas.outerHeight() - 40), onComplete: this.clearCanvas, onCompleteScope: this});
+            TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: posCanvasOutX, top: -(this.$navCanvas.outerHeight()), onComplete: this.clearCanvas, onCompleteScope: this});
             this.$navBtnContainer.css('display', 'block');
             TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: 0, top: 0});
         },
@@ -172,6 +175,4 @@ define([
             this.navItemViewArr.push(view);
         }
     });
-
-    return View;
 });

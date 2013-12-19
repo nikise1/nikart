@@ -23,6 +23,8 @@ define([
         },
 
         render: function () {
+            var urlProcessed;
+
             this.template = _.template(articleTemplate);
             this.urlImgArr = [];
             for (var i = 0; i < this.curItem.imgs; i++) {
@@ -31,16 +33,17 @@ define([
             }
 //            console.log('this.urlImgArr.length: ' + this.urlImgArr.length);
 
-            var urlProcessed = common.processURL(common.getLangStr(this.curItem, 'url'));
+            if (this.curItem.type === 'web') {
+                urlProcessed = common.processURL(common.getLangStr(this.curItem, 'url'));
 //            console.log('urlProcessed.urlLink: ' + urlProcessed.urlLink);
 //            console.log('urlProcessed.isSelf: ' + urlProcessed.isSelf);
-
+            }
             var data = {
                 title: this.curItem.title,
                 imgsrc: this.urlImgArr.shift(),
                 desc: common.getLangStr(this.curItem, 'desc'),
-                url: urlProcessed.urlLink,
-                isSelf: urlProcessed.isSelf,
+                url: (urlProcessed) ? urlProcessed.urlLink : undefined,
+                isSelf: (urlProcessed) ? urlProcessed.isSelf : undefined,
                 launch: common.getLangStr(this.curItem, 'launch')
             };
             this.$el.html(this.template(data));

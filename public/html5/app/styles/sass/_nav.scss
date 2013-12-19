@@ -14,16 +14,17 @@
     //border: 1px solid black;
 }
 
+@import "sprites/curl/*.png";
+
 .nav-btn-container {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 1.1em;
-    background-color: $colourDiffDark;
-    //opacity: 0.5;
-    padding: 12px 20px 12px 10px;
-    border-radius: 0 0 20px 0;
+    width: 90px;
+    height: 60px;
+    text-indent: -2000px;
+    @include curl-sprite(normal);
 }
 
 a.nav-btn-container {
@@ -33,14 +34,16 @@ a.nav-btn-container {
 .mod-no-touch a.nav-btn-container:hover {
     text-decoration: none;
     color: $colourDiffLight;
+    @include curl-sprite(hover);
 }
 
 .nav-items-container a {
     color: $colourDark;
+    @include transitionMix(all, 0.3s);
 }
 
 .mod-no-touch .nav-items-container a:hover {
-    color: $colourDiffLight;
+//    color: $colourDiffLight;
 }
 
 .nav-items-container {

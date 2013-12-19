@@ -7,5 +7,7 @@
 
     <p class="article-detail"><%- desc %></p>
 
+    <% if (url) { %>
     <p class="article-link"><a href="<%- url %>"<% if (!isSelf) { %> target="_blank"<% } %>><%- launch %></a></p>
+    <% } %>
 </article>
