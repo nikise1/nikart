@@ -15,22 +15,23 @@ var controller = function (app) {
     });
 
     app.get('/', function (req, res) {
-        var isWindows = false;
-        var isMacintosh = false;
-        var userAgent = req.headers['user-agent'];
-        if (userAgent) {
-            isWindows = userAgent.indexOf('Windows') !== -1;
-            isMacintosh = userAgent.indexOf('Macintosh') !== -1;
-        }
-        if (isWindows || isMacintosh) {
-            res.render('index', {
-                userAgent: userAgent,
-                isWindows: 'isWindows: ' + isWindows,
-                isMacintosh: 'isMacintosh: ' + isMacintosh
-            });
-        } else {
-            res.redirect('/html5');
-        }
+//        var isWindows = false;
+//        var isMacintosh = false;
+//        var userAgent = req.headers['user-agent'];
+//        if (userAgent) {
+//            isWindows = userAgent.indexOf('Windows') !== -1;
+//            isMacintosh = userAgent.indexOf('Macintosh') !== -1;
+//        }
+//        if (isWindows || isMacintosh) {
+//            res.render('index', {
+//                userAgent: userAgent,
+//                isWindows: 'isWindows: ' + isWindows,
+//                isMacintosh: 'isMacintosh: ' + isMacintosh
+//            });
+//        } else {
+//            res.redirect('/html5');
+//        }
+        res.redirect('/html5');
     });
 };
 

@@ -12,41 +12,52 @@ define([
 ], function (Backbone, common, vent, AppModel, ArticleView, VideoView, ThumbView, BreadcrumbsView, NavView) {
     'use strict';
 
-    var View = Backbone.View.extend({
+    var that;
+
+    return Backbone.View.extend({
 
         el: '#app',
 
         initialize: function () {
-            this.timer = undefined;
-
+            that = this;
             this.listenTo(vent, vent.ventInitDataLoaded, this.onInitDataLoaded);
-            window.addEventListener('scroll', function(evt) {
+            that.model = new AppModel();
+        },
+
+        onInitDataLoaded: function () {
+            var view;
+            view = new ArticleView({appModel: that.model});
+            view = new VideoView({appModel: that.model});
+            view = new ThumbView({appModel: that.model});
+//            view = new BreadcrumbsView({appModel: that.model});
+            view = new NavView({appModel: that.model});
+
+            that.timer = undefined;
+            window.addEventListener('scroll', function (evt) {
                 vent.trigger(vent.ventScrolling, evt);
-                if(this.timer) {
-                    clearTimeout(this.timer);
+                if (that.timer) {
+                    clearTimeout(that.timer);
                 }
-                this.timer = setTimeout(function() {
+                that.timer = setTimeout(function () {
 //                    console.log('----------------ventScrollingStopped--------------');
                     vent.trigger(vent.ventScrollingStopped, evt);
                 }, common.timeDelayScrollStopped * 1000);
             }, false);
 
-            this.appModel = new AppModel();
-        },
-
-        onInitDataLoaded: function () {
-            var view;
-            view = new ArticleView({appModel: this.appModel});
-            view = new VideoView({appModel: this.appModel});
-            view = new ThumbView({appModel: this.appModel});
-//            view = new BreadcrumbsView({appModel: this.appModel});
-            view = new NavView({appModel: this.appModel});
+            window.addEventListener('resize', that.resizeApp, false);
+            window.addEventListener('orientationchange', that.resizeApp, false);
+            that.resizeApp();
         },
 
         setRouter: function (router) {
-            this.appModel.setRouter(router);
+            that.model.setRouter(router);
+        },
+
+        resizeApp: function () { //(event)
+            var newWidth = window.innerWidth;
+            var newHeight = window.innerHeight;
+            that.model.setNewDimensions(newWidth, newHeight);
+            console.log(that.model.get('screenCode') + ', ' + that.model.get('orientation') + ', ' + newWidth + 'x' + newHeight);
         }
     });
-
-    return View;
 });

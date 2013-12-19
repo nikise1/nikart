@@ -17,8 +17,8 @@
     background: $image top left no-repeat, -webkit-linear-gradient(top, $startColor, $endColor); // Safari 5.1+, Chrome 10+
     background: $image top left no-repeat, -o-linear-gradient(top, $startColor, $endColor); // Opera 11.10
     background: $image top left no-repeat, linear-gradient(to bottom, $startColor, $endColor); // Standard, IE10
-    background-size: 100% 100%;
-//    background-size: cover;
+//    background-size: 100% 100%;
+    background-size: cover;
 }
 
 @mixin transitionMix($targets, $time) {

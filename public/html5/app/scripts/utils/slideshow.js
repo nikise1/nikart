@@ -44,7 +44,16 @@ define([
         },
 
         centreImgVertically: function ($li) {
-            $li.css('margin-top', -$li.outerHeight() / 2);
+//            console.log('centreImgVertically');
+            this.$liToCentre = $li;
+            this.centre();
+        },
+
+        centre: function () {
+//            console.log('centre: ' + this.$liToCentre);
+            if (this.$liToCentre) {
+                this.$liToCentre.css('margin-top', -this.$liToCentre.outerHeight() / 2);
+            }
         },
 
         reOrder: function (changeBool) {
@@ -132,6 +141,7 @@ define([
             }
             this.reOrder(false);
             this.checkForFirstImgLoad();
+            return this;
         },
 
         pause: function () {

@@ -30,6 +30,7 @@ define([
             };
             this.$el.html(this.template(data));
 
+            this.$titleVid = $('.title-vid');
 
             var videoWidthSm = 393;
             var videoHeightSm = 288;
@@ -78,6 +79,8 @@ define([
                 console.log('event.jPlayer.error.hint: ' + event.jPlayer.error.hint);
             });
 
+            this.resizeApp();
+            this.listenTo(this.appModel, 'change:totalWidth change:totalHeight', this.resizeApp);
 
             return this;
         },
@@ -102,6 +105,22 @@ define([
                     this.$player.jPlayer('pause');
                 }
                 TweenLite.to(this.$el, common.timeArticleOut, {autoAlpha: 0, onComplete: this.clearAll, onCompleteScope: this});
+            }
+        },
+
+        resizeApp: function () { //(event)
+            var screenCode = this.appModel.get('screenCode');
+            var orientation = this.appModel.get('orientation');
+            if (screenCode === 'ty' && orientation === 'portrait') {
+                this.$titleVid.css('text-align', 'right');
+                this.$titleVid.css('margin-left', '7em');
+            } else {
+                this.$titleVid.css('text-align', 'center');
+                if (screenCode === 'ty') {
+                    this.$titleVid.css('margin-left', '2em');
+                } else {
+                    this.$titleVid.css('margin-left', 0);
+                }
             }
         }
     });

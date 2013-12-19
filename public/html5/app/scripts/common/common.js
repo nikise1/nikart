@@ -19,9 +19,10 @@ define([], function () {
         timeDelayScrollStopped: 0.15,
         timeDelayScrollStoppedPoll: 0.01,
 
-        maxWidthTxtWebImg: 320,
         maxHeightTxtWeb: 240,
         maxHeightImg: 320,
+        maxHeightTxtWebXs: 210,
+        maxHeightImgXs: 280,
 
         lang: undefined,
 
@@ -34,7 +35,7 @@ define([], function () {
 
         setLang: function (str) {
             this.lang = str;
-//            console.log('this.lang: ' + this.lang);
+            console.log('this.lang: ' + this.lang);
         },
 
         getLangStr: function (obj, key) {
@@ -49,6 +50,7 @@ define([], function () {
                     curStr = 'Config' + curStr.substr(otherVersionStr.length);
                 }
             }
+            console.log('curStr: ' + curStr);
             return curStr;
         },
 

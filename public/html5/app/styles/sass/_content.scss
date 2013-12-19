@@ -8,7 +8,7 @@
     min-height: $articleMinHeight;
 }
 
-.content-container a {
+.article-content a {
     font-size: 1.1em;
     @include transitionMix(all, 0.3s);
 }
@@ -70,4 +70,5 @@
 
 .title-vid, .title-article  {
     text-align: center;
+//    border: 1px solid $colourDark;
 }

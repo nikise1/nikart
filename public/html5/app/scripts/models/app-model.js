@@ -7,10 +7,28 @@ define([
 ], function (Backbone, common, vent, JSONModel) {
     'use strict';
 
+    var $html;
+
     var Model = Backbone.Model.extend({
 
         defaults: {
-            thumbsToAnimateArr: []
+            thumbsToAnimateArr: [],
+
+            // Extra small screen / phone (-1 is ty max)
+            screenXs: 600,
+            // Small screen / tablet
+            screenSm: 768,
+            // Medium screen / desktop
+            screenMd: 992,
+            // Large screen / wide desktop
+            screenLg: 1200,
+            // So media queries don't overlap when required, calculated below
+            screenTyMax: 0,
+            screenXsMax: 0,
+            screenSmMax: 0,
+            screenMdMax: 0,
+            screenCode: '',
+            orientation: ''
         },
 
         curItem: undefined,
@@ -22,6 +40,16 @@ define([
             var _this = this;
             var langCode = (window.nikart && window.nikart.langCode) ? window.nikart.langCode : 'en';
             common.setLang(langCode);
+
+            if (this.get('screenXsMax') === 0) {
+                this.set({
+                    screenTyMax: this.get('screenXs') - 1,
+                    screenXsMax: this.get('screenSm') - 1,
+                    screenSmMax: this.get('screenMd') - 1,
+                    screenMdMax: this.get('screenLg') - 1
+                });
+            }
+            $html = $('html');
 
             this.listenTo(vent, vent.ventNavItemClicked, this.onNavItemClicked);
             this.listenTo(vent, vent.ventThumbItemClicked, this.onThumbItemClicked);
@@ -123,6 +151,50 @@ define([
                 vent.trigger(vent.ventVideoOpen, this.curItem);
                 break;
             }
+        },
+
+        setNewDimensions: function (newWidth, newHeight) {
+            this.set({
+                totalWidth: newWidth,
+                totalHeight: newHeight,
+                screenCode: this.calculateScreenCode(newWidth),
+                orientation: this.calculateOrientation(newWidth, newHeight)
+            });
+        },
+
+        calculateScreenCode: function (newWidth) {
+            var newCode = '';
+            if (newWidth >= this.get('screenLg')) {
+                newCode = 'lg';
+            } else if (newWidth >= this.get('screenMd') && newWidth <= this.get('screenMdMax')) {
+                newCode = 'md';
+            } else if (newWidth >= this.get('screenSm') && newWidth <= this.get('screenSmMax')) {
+                newCode = 'sm';
+            } else if (newWidth >= this.get('screenXs') && newWidth <= this.get('screenXsMax')) {
+                newCode = 'xs';
+            } else if (newWidth <= this.get('screenTyMax')) {
+                newCode = 'ty';
+            } else {
+                //*** Just in case this doesn't work ***
+                newCode = 'md';
+            }
+//            if (this.get('screenCode') !== newCode) {
+//                console.log('screenCode: ' + newCode);
+//            }
+            return newCode;
+        },
+
+        calculateOrientation: function (newWidth, newHeight) {
+            var newOrientation;
+            if (newWidth < newHeight) {
+                newOrientation = 'portrait';
+                $html.removeClass('landscape');
+            } else {
+                newOrientation = 'landscape';
+                $html.removeClass('portrait');
+            }
+            $html.addClass(newOrientation);
+            return newOrientation;
         }
     });
 

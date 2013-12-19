@@ -6,7 +6,7 @@ exports.data = data;
 
 exports.getLangCode = function (req, res) {
     var langCode;
-    var newLangCode = 'en';
+    var newLangCode;
     if (req.cookies && req.cookies.langcode) {
         langCode = req.cookies.langcode;
     }
@@ -16,6 +16,9 @@ exports.getLangCode = function (req, res) {
             newLangCode = acceptLanguage.substr(0, 2);
         }
         langCode = newLangCode;
+    }
+    if (langCode !== 'en' && langCode !== 'es') {
+        langCode = 'en';
     }
     return langCode;
 };
