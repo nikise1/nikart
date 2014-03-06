@@ -43,6 +43,22 @@
                     "pop": "'1200','850','yes','yes','yes'"
                 },
                 {
+                    "id": "cityread",
+                    "type": "web",
+                    "title": "Cityread London 2014",
+                    "desc": {
+                        "en": "Ruby on Rails site for an annual celebration of literature.",
+                        "es": "Sitio en Ruby on Rails para una celebraci\u00f3n anual de literatura."
+                    },
+                    "imgs": 3,
+                    "url": "http:\/\/www.cityreadlondon.org.uk",
+                    "launch": {
+                        "en": "Open",
+                        "es": "Abra"
+                    },
+                    "pop": "'1016','710','yes','yes','yes'"
+                },
+                {
                     "id": "rockstars_divas",
                     "type": "web",
                     "title": "Rockstars vs Divas - Bestival",
@@ -76,43 +92,6 @@
                         "es": "Comience el Demo"
                     },
                     "pop": "'1200','768','yes','yes','yes'"
-                },
-                {
-                    "id": "ar_heart",
-                    "type": "web",
-                    "title": {
-                        "en": "Away3D heart",
-                        "es": "Coraz\u00f3n en Away3D"
-                    },
-                    "desc": {
-                        "en": "Away3D Lite animated heart using Augmented Reality. (webcam & printer required).",
-                        "es": "Coraz\u00f3n animado en Away3D Lite usando \"Augmented Reality\" (Realidad Aumentada). (webcam e impresora necesarias)."
-                    },
-                    "imgs": 8,
-                    "url": "3d\/away3d\/ar_heart\/index.html",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'1016','710','yes','yes','yes'"
-                },
-                {
-                    "id": "fl",
-                    "type": "web",
-                    "title": {
-                        "en": "Flash View",
-                        "es": "Vista en Flash"
-                    },
-                    "desc": {
-                        "en": "The Flash view of this site.",
-                        "es": "Vista de este sitio en Flash."
-                    },
-                    "imgs": 1,
-                    "url": "_self\/..\/fl",
-                    "launch": {
-                        "en": "Change to the Flash view",
-                        "es": "Cambia a la versi\u00f3n en Flash"
-                    }
                 }
             ],
             "title": {
@@ -139,6 +118,22 @@
                         "es": "Abra el Sitio"
                     },
                     "pop": "'1200','850','yes','yes','yes'"
+                },
+                {
+                    "id": "cityread",
+                    "type": "web",
+                    "title": "Cityread London 2014",
+                    "desc": {
+                        "en": "Ruby on Rails site for an annual celebration of literature.",
+                        "es": "Sitio en Ruby on Rails para una celebraci\u00f3n anual de literatura."
+                    },
+                    "imgs": 3,
+                    "url": "http:\/\/www.cityreadlondon.org.uk",
+                    "launch": {
+                        "en": "Open",
+                        "es": "Abra"
+                    },
+                    "pop": "'1016','710','yes','yes','yes'"
                 },
                 {
                     "id": "ar_heart",
@@ -232,7 +227,6 @@
                         "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
                     },
                     "imgs": 11,
-                    "url": "http:\/\/sky1.sky.com\/sky1hd-shows\/terra-nova",
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -248,7 +242,6 @@
                         "es": "Desarrollo de la secci\u00f3n de galer\u00eda de arte de Zubi. Este sitio web gan\u00f3 la medalla de plata en el \"2009 Hispanic Creative Advertising Awards\" (premios de publicidad Hisp\u00e1nicos 2009)."
                     },
                     "imgs": 6,
-                    "url": "http:\/\/www.zubiad.com",
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -264,7 +257,7 @@
                         "es": "Desarrollo para el sitio del evento musical \"Bandstand\" (quiosco de m\u00fasica) patrocinado por Vauxhall Corsa."
                     },
                     "imgs": 7,
-                    "url": "http:\/\/bandstand.thewebwell.com\/",
+                    "url": "http:\/\/bandstand.thewebwell.com",
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -280,7 +273,6 @@
                         "es": "Desarrollo para la pel\u00edcula de James Bond Quantum of Solace sitio de la cerveza Heineken. Ten\u00eda un reloj de cuenta regresiva hasta el lanzamiento en cines con detr\u00e1s de c\u00e1maras y tr\u00e1ilers."
                     },
                     "imgs": 4,
-                    "url": "http:\/\/www.draughtkeg.co.uk\/007\/",
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -295,8 +287,7 @@
                         "en": "Development for the websites of Bestival festival on the Isle of Wight & Camp Bestival in Dorset.",
                         "es": "Desarrollo para los sitios de los festivales de m\u00fasica Bestival y Camp Bestival en Reino Unido."
                     },
-                    "imgs": 8,
-                    "url": "http:\/\/www.bestival.net\/"
+                    "imgs": 8
                 },
                 {
                     "id": "vidzone",
