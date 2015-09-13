@@ -43,22 +43,6 @@
                     "pop": "'1200','850','yes','yes','yes'"
                 },
                 {
-                    "id": "cityread",
-                    "type": "web",
-                    "title": "Cityread London 2014",
-                    "desc": {
-                        "en": "Ruby on Rails site for an annual celebration of literature.",
-                        "es": "Sitio en Ruby on Rails para una celebraci\u00f3n anual de literatura."
-                    },
-                    "imgs": 3,
-                    "url": "http:\/\/www.cityreadlondon.org.uk",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'1016','710','yes','yes','yes'"
-                },
-                {
                     "id": "rockstars_divas",
                     "type": "web",
                     "title": "Rockstars vs Divas - Bestival",
@@ -121,7 +105,7 @@
                 },
                 {
                     "id": "cityread",
-                    "type": "web",
+                    "type": "tex",
                     "title": "Cityread London 2014",
                     "desc": {
                         "en": "Ruby on Rails site for an annual celebration of literature.",
@@ -156,7 +140,7 @@
                 },
                 {
                     "id": "dataminh",
-                    "type": "web",
+                    "type": "tex",
                     "title": "Dataminh",
                     "desc": {
                         "en": "Responsive landing page for Dataminh.",
@@ -204,7 +188,7 @@
                 },
                 {
                     "id": "stcharles",
-                    "type": "web",
+                    "type": "tex",
                     "title": "St. Charles Bowl",
                     "desc": {
                         "en": "WordPress site for St. Charles Bowl. PHP, HTML, CSS & jQuery with custom theme & fonts",
