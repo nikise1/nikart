@@ -2,8 +2,7 @@
 
 //*** Libraries ***
 var express = require('express'),
-    swig = require('swig'),
-    _ = require('underscore');
+    swig = require('swig');
 //*** Controllers ***
 var indexController = require('./app/controllers/index');
 var html5Controller = require('./app/controllers/html5');
@@ -44,5 +43,5 @@ flController(app);
 
 var port = process.env.PORT || 5000;
 app.listen(port, function () {
-    console.log("Listening on " + port);
+    console.log('Listening on ' + port);
 });
