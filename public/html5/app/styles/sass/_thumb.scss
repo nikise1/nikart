@@ -50,7 +50,7 @@
 
 .mod-no-touch .thumb-img:hover {
     @import "compass/css3/box-shadow";
-    @include single-box-shadow($colourDiffLight, 0, 0, 3px, false, false);
+    @include single-box-shadow(0, 0, 3px, false, $colourDiffLight, false);
     border: 1px solid $colourDiffLight;
 }
 

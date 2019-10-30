@@ -110,8 +110,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-//        'sass:dist',
         'compass:dist',
+        'compass:dev',
         'requirejs:dist',
         'uglify:dist',
         'copy'

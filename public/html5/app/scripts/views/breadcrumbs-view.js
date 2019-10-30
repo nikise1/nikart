@@ -19,6 +19,8 @@ define([
             this.appModel.injectModelsAndColls(this);
 
             this.listenTo(vent, vent.ventPathUpdate, this.pathUpdate);
+
+            this.render();
         },
 
         render: function () {
