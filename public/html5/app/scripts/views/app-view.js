@@ -29,7 +29,7 @@ define([
             view = new ArticleView({appModel: that.model});
             view = new VideoView({appModel: that.model});
             view = new ThumbView({appModel: that.model});
-//            view = new BreadcrumbsView({appModel: that.model});
+            view = new BreadcrumbsView({appModel: that.model});
             view = new NavView({appModel: that.model});
 
             that.timer = undefined;
