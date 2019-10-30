@@ -24,8 +24,8 @@ define([
         render: function () {
 
             var str = '';
-            for (var i = 0; i < this.model.pathArr.length; i++) {
-                var curItemTemp = this.model.pathArr[i];
+            for (var i = 0; i < this.appModel.pathArr.length; i++) {
+                var curItemTemp = this.appModel.pathArr[i];
                 if (i > 0) {
                     str += ' &gt; ';
                 }
