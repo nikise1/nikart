@@ -1,7 +1,7 @@
 'use strict';
 
-var data = {
-};
+var data = {};
+
 exports.data = data;
 
 exports.getLangCode = function (req, res) {
