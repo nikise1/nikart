@@ -12,7 +12,7 @@
 /*
  * Corrects `block` display not defined in IE 8/9.
  */
-/* line 31, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 20, ../../bower_components/normalize-scss/_normalize.scss */
 article,
 aside,
 details,
@@ -31,7 +31,7 @@ summary {
 /**
  * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-/* line 41, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 39, ../../bower_components/normalize-scss/_normalize.scss */
 audio,
 canvas,
 video {
@@ -126,7 +126,7 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
-/* line 175, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 174, ../../bower_components/normalize-scss/_normalize.scss */
 b,
 strong {
   font-weight: bold;
@@ -165,7 +165,7 @@ mark {
 /**
  * Correct font family set oddly in Safari 5 and Chrome.
  */
-/* line 230, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 227, ../../bower_components/normalize-scss/_normalize.scss */
 code,
 kbd,
 pre,
@@ -201,7 +201,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 287, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 286, ../../bower_components/normalize-scss/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -284,7 +284,7 @@ legend {
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  * 4. Improves appearance and consistency in all browsers.
  */
-/* line 421, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 418, ../../bower_components/normalize-scss/_normalize.scss */
 button,
 input,
 select,
@@ -301,7 +301,7 @@ textarea {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 437, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 436, ../../bower_components/normalize-scss/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -313,7 +313,7 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera.
  */
-/* line 449, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 448, ../../bower_components/normalize-scss/_normalize.scss */
 button,
 select {
   text-transform: none;
@@ -328,7 +328,7 @@ select {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-/* line 466, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 463, ../../bower_components/normalize-scss/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -342,7 +342,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 479, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 478, ../../bower_components/normalize-scss/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -354,7 +354,7 @@ html input[disabled] {
  * 3. Removes excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-/* line 491, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 490, ../../bower_components/normalize-scss/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -382,7 +382,7 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 519, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 518, ../../bower_components/normalize-scss/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -391,7 +391,7 @@ input[type="search"]::-webkit-search-decoration {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 528, ../../bower_components/normalize-scss/_normalize.scss */
+/* line 527, ../../bower_components/normalize-scss/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -430,8 +430,8 @@ table {
   position: fixed;
   top: 0;
   width: 76%;
-  background: #1c6b00;
-  color: #d6d59d;
+  background: #1C6B00;
+  color: #D6D59D;
   margin: 0 10%;
   padding: 10px 2%;
   z-index: 10000;
@@ -441,7 +441,7 @@ table {
 
 /* line 17, ../sass/_utils.scss */
 .browsehappy a {
-  color: #94b864;
+  color: #94B864;
 }
 
 /* ==========================================================================
@@ -455,30 +455,30 @@ html, body {
 
 /* line 12, ../sass/_tags-generic.scss */
 body {
-  color: #4f3e2d;
+  color: #4F3E2D;
   font-size: 0.9em;
   font-family: Helvetica, "Helvetica Neue", sans-serif, Arial;
   line-height: 1.4;
-  background-color: #bbc986;
+  background-color: #bcc986;
   background-image: url("../../img/bg.jpg");
-  background: url("../../img/bg.jpg") top left no-repeat, -moz-linear-gradient(top, #d6d59d, #94b864);
-  background: url("../../img/bg.jpg") top left no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from(#d6d59d), to(#94b864));
-  background: url("../../img/bg.jpg") top left no-repeat, -webkit-linear-gradient(top, #d6d59d, #94b864);
-  background: url("../../img/bg.jpg") top left no-repeat, -o-linear-gradient(top, #d6d59d, #94b864);
-  background: url("../../img/bg.jpg") top left no-repeat, linear-gradient(to bottom, #d6d59d, #94b864);
+  background: url("../../img/bg.jpg") top left no-repeat, -moz-linear-gradient(top, #D6D59D, #94B864);
+  background: url("../../img/bg.jpg") top left no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from(#D6D59D), to(#94B864));
+  background: url("../../img/bg.jpg") top left no-repeat, -webkit-linear-gradient(top, #D6D59D, #94B864);
+  background: url("../../img/bg.jpg") top left no-repeat, -o-linear-gradient(top, #D6D59D, #94B864);
+  background: url("../../img/bg.jpg") top left no-repeat, linear-gradient(to bottom, #D6D59D, #94B864);
   background-size: cover;
   background-attachment: fixed;
 }
 
 /* line 21, ../sass/_tags-generic.scss */
 a {
-  color: #1c6b00;
+  color: #1C6B00;
   text-decoration: none;
 }
 
 /* line 26, ../sass/_tags-generic.scss */
 .mod-no-touch a:hover {
-  color: #4f3e2d;
+  color: #4F3E2D;
   text-shadow: 0 0 2px #cc813a;
 }
 
@@ -487,7 +487,7 @@ img {
   vertical-align: middle;
 }
 
-/* line 40, ../sass/_tags-generic.scss */
+/* line 39, ../sass/_tags-generic.scss */
 h1,
 .h1 {
   font-size: 1.25em;
@@ -495,31 +495,31 @@ h1,
   margin: 0.15em 0 0.2em 0;
 }
 
-/* line 47, ../sass/_tags-generic.scss */
+/* line 46, ../sass/_tags-generic.scss */
 h2,
 .h2 {
   font-size: 26px;
 }
 
-/* line 52, ../sass/_tags-generic.scss */
+/* line 51, ../sass/_tags-generic.scss */
 h3,
 .h3 {
   font-size: 20px;
 }
 
-/* line 57, ../sass/_tags-generic.scss */
+/* line 56, ../sass/_tags-generic.scss */
 h4,
 .h4 {
   font-size: 18px;
 }
 
-/* line 62, ../sass/_tags-generic.scss */
+/* line 61, ../sass/_tags-generic.scss */
 h5,
 .h5 {
   font-size: 14px;
 }
 
-/* line 67, ../sass/_tags-generic.scss */
+/* line 66, ../sass/_tags-generic.scss */
 h6,
 .h6 {
   font-size: 12px;
@@ -549,9 +549,10 @@ h6,
   position: absolute;
 }
 
-/* line 50, sprites/curl/*.png */
+/* line 56, sprites/curl/*.png */
 .curl-sprite, .nav-btn-container, .mod-no-touch a.nav-btn-container:hover {
-  background: url('../../../dist/img/sprites/curl-s1313d4494c.png') no-repeat;
+  background-image: url('../../../dist/img/sprites/curl-s1313d4494c.png');
+  background-repeat: no-repeat;
 }
 
 /* line 19, ../sass/_nav.scss */
@@ -568,19 +569,19 @@ h6,
 
 /* line 30, ../sass/_nav.scss */
 a.nav-btn-container {
-  color: #d6d59d;
+  color: #D6D59D;
 }
 
 /* line 34, ../sass/_nav.scss */
 .mod-no-touch a.nav-btn-container:hover {
   text-decoration: none;
-  color: #a8682b;
+  color: #A8682B;
   background-position: 0 0;
 }
 
 /* line 40, ../sass/_nav.scss */
 .nav-items-container a {
-  color: #1c6b00;
+  color: #1C6B00;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -629,8 +630,8 @@ a.nav-btn-container {
   width: 100%;
   height: 20px;
   padding: 5px 10px 5px 70px;
-  background: #94b864;
-  color: #a8682b;
+  background: #94B864;
+  color: #A8682B;
   opacity: 0.5;
 }
 
@@ -694,63 +695,64 @@ a.nav-btn-container {
 
 /* line 51, ../sass/_thumb.scss */
 .mod-no-touch .thumb-img:hover {
-  -webkit-box-shadow: 0 0 3px #a8682b;
-  -moz-box-shadow: 0 0 3px #a8682b;
-  box-shadow: 0 0 3px #a8682b;
-  border: 1px solid #a8682b;
+  box-shadow: 0 0 3px #A8682B;
+  box-shadow: 0 0 3px #A8682B;
+  box-shadow: 0 0 3px #A8682B;
+  border: 1px solid #A8682B;
 }
 
-/* line 114, sprites/anitest/*.png */
+/* line 120, sprites/anitest/*.png */
 .anitest-sprite, .anitest-fr-0001, .anitest-fr-0002, .anitest-fr-0003, .anitest-fr-0004, .anitest-fr-0005, .anitest-fr-0006, .anitest-fr-0007, .anitest-fr-0008, .anitest-fr-0009, .anitest-fr-0010 {
-  background: url('../../../dist/img/sprites/anitest-s78b7713594.png') no-repeat;
+  background-image: url('../../../dist/img/sprites/anitest-s0b1e72af0d.png');
+  background-repeat: no-repeat;
 }
 
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .anitest-fr-0001 {
-  background-position: 0 -720px;
-}
-
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.anitest-fr-0002 {
-  background-position: 0 -600px;
-}
-
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.anitest-fr-0003 {
-  background-position: 0 -360px;
-}
-
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.anitest-fr-0004 {
-  background-position: 0 -240px;
-}
-
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.anitest-fr-0005 {
   background-position: 0 0;
 }
 
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.anitest-fr-0006 {
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.anitest-fr-0002 {
   background-position: 0 -120px;
 }
 
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.anitest-fr-0007 {
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.anitest-fr-0003 {
+  background-position: 0 -240px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.anitest-fr-0004 {
+  background-position: 0 -360px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.anitest-fr-0005 {
   background-position: 0 -480px;
 }
 
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.anitest-fr-0006 {
+  background-position: 0 -600px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.anitest-fr-0007 {
+  background-position: 0 -720px;
+}
+
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .anitest-fr-0008 {
   background-position: 0 -840px;
 }
 
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .anitest-fr-0009 {
   background-position: 0 -960px;
 }
 
-/* line 60, ../../../../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+/* line 84, ../../../../../../../../../usr/local/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
 .anitest-fr-0010 {
   background-position: 0 -1080px;
 }
@@ -990,9 +992,9 @@ div.jp-video-full div.jp-gui {
   padding: 20px;
   margin-left: -196.5px;
   font-size: 1em;
-  background-color: #a8682b;
-  color: #94b864;
-  border: 2px solid #94b864;
+  background-color: #A8682B;
+  color: #94B864;
+  border: 2px solid #94B864;
   display: none;
 }
 
