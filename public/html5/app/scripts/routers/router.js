@@ -1,7 +1,8 @@
 /* global define */
 define([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'events/vent'
+], function (Backbone, vent) {
     'use strict';
 
     var Router = Backbone.Router.extend({
@@ -19,6 +20,7 @@ define([
 
         openPath: function (path) {
             console.log('openPath(' + path + ')');
+            vent.trigger(vent.ventBreadcrumbClicked, path);
         }
     });
 
