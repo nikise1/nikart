@@ -113,11 +113,11 @@ define([
         },
 
         onBreadcrumbClicked: function (idStr) {
-            // if (!this.curItem) {
-            //     this.resetVars();
-            // }
-            // vent.trigger(vent.ventNavClose);
-            // vent.trigger(vent.ventThumbClose);
+            if (!this.curItem) {
+                this.resetVars();
+            }
+            vent.trigger(vent.ventNavClose);
+            vent.trigger(vent.ventThumbClose);
             this.onItemClicked(idStr);
         },
 
@@ -126,12 +126,7 @@ define([
             this.curItem = this.jsonModel.attributes;
         },
 
-        onItemClicked: function (idStr) {
-
-//            var curType;
-//            curType = this.curItem.type;
-//            console.log('before curType: ' + curType + ', ' + idStr);
-
+        setCurItem: function (idStr) {
             var curMenu = this.curItem.menu;
             if (curMenu) {
                 for (var i = 0; i < curMenu.length; i += 1) {
@@ -141,16 +136,14 @@ define([
                     }
                 }
             }
-            var curType = this.curItem.type;
-//            console.log('after curType: ' + curType + ', ' + idStr);
+        },
 
-            //TODO *** router deep linking and breadcrumbs ***
-//            this.router.navigate(curMenu[i].id);
-
+        onItemClicked: function (idStr) {
+            console.log('onItemClicked - before curType: ' + this.curItem.type + ', ' + idStr);
+            this.setCurItem(idStr);
+            console.log('onItemClicked - after curType: ' + this.curItem.type + ', ' + idStr);
             vent.trigger(vent.ventPathUpdate);
-
-//            'men','tex','web','vid','ima'
-            switch (curType) {
+            switch (this.curItem.type) {
                 case 'men':
                     vent.trigger(vent.ventThumbOpen, this.curItem);
                     break;
