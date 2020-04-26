@@ -56,9 +56,11 @@ define([
             this.listenTo(vent, vent.ventBreadcrumbClicked, this.onBreadcrumbClicked);
 
             this.jsonModel = new JSONModel();
-            this.jsonModel.fetch({success: function () { //(model, response, options)
-                _this.onInitDataLoaded();
-            }});
+            this.jsonModel.fetch({
+                success: function () { //(model, response, options)
+                    _this.onInitDataLoaded();
+                }
+            });
         },
 
         onInitDataLoaded: function () {
@@ -136,7 +138,26 @@ define([
                     }
                 }
             }
+            // this.resetVars();
+            // this.findItem(idStr, this.curItem);
         },
+
+        // findItem: function (idStr, menu) {
+        //     var found;
+        //     if (menu) {
+        //         for (var i = 0; i < menu.length; i += 1) {
+        //             if (menu[i].id === idStr) {
+        //                 // this.addToPath(i, menu[i].id, common.getLangStr(menu[i], 'title'));
+        //                 found = menu[i];
+        //                 break;
+        //             }
+        //         }
+        //         this.addToPath(i, found.id, common.getLangStr(found, 'title'));
+        //         if (!found) {
+        //             this.findItem(idStr, this.curItem);
+        //         }
+        //     }
+        // },
 
         onItemClicked: function (idStr) {
             console.log('onItemClicked - before curType: ' + this.curItem.type + ', ' + idStr);
@@ -144,17 +165,17 @@ define([
             console.log('onItemClicked - after curType: ' + this.curItem.type + ', ' + idStr);
             vent.trigger(vent.ventPathUpdate);
             switch (this.curItem.type) {
-                case 'men':
-                    vent.trigger(vent.ventThumbOpen, this.curItem);
-                    break;
-                case 'tex':
-                case 'web':
-                case 'ima':
-                    vent.trigger(vent.ventArticleOpen, this.curItem);
-                    break;
-                case 'vid':
-                    vent.trigger(vent.ventVideoOpen, this.curItem);
-                    break;
+            case 'men':
+                vent.trigger(vent.ventThumbOpen, this.curItem);
+                break;
+            case 'tex':
+            case 'web':
+            case 'ima':
+                vent.trigger(vent.ventArticleOpen, this.curItem);
+                break;
+            case 'vid':
+                vent.trigger(vent.ventVideoOpen, this.curItem);
+                break;
             }
         },
 
@@ -183,9 +204,9 @@ define([
                 //*** Just in case this doesn't work ***
                 newCode = 'md';
             }
-//            if (this.get('screenCode') !== newCode) {
-//                console.log('screenCode: ' + newCode);
-//            }
+            //            if (this.get('screenCode') !== newCode) {
+            //                console.log('screenCode: ' + newCode);
+            //            }
             return newCode;
         },
 
