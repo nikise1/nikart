@@ -90,9 +90,9 @@ define([
         },
 
         addToPath: function (num, id, title) {
-            this.pathArr.push({num: num, id: id, title: title});
+            this.pathArr.push({ num: num, id: id, title: title });
             this.setCorrectMenu();
-            console.log('this.pathArr: ' + JSON.stringify(this.pathArr));
+            console.log('addToPath - this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
         removeFromPath: function () {
@@ -129,35 +129,41 @@ define([
         },
 
         setCurItem: function (idStr) {
-            var curMenu = this.curItem.menu;
-            if (curMenu) {
-                for (var i = 0; i < curMenu.length; i += 1) {
-                    if (curMenu[i].id === idStr) {
-                        this.addToPath(i, curMenu[i].id, common.getLangStr(curMenu[i], 'title'));
+            // var curMenu = this.curItem.menu;
+            // if (curMenu) {
+            //     for (var i = 0; i < curMenu.length; i += 1) {
+            //         if (curMenu[i].id === idStr) {
+            //             this.addToPath(i, curMenu[i].id, common.getLangStr(curMenu[i], 'title'));
+            //             break;
+            //         }
+            //     }
+            // }
+            this.resetVars();
+            this.findItem(idStr, this.curItem.menu);
+            console.log('setCurItem - this.pathArr: ' + JSON.stringify(this.pathArr));
+        },
+
+        findItem: function (idStr, menu) {
+            var found;
+            if (menu) {
+                for (var i = 0; i < menu.length; i += 1) {
+                    var menuItem = menu[i];
+                    var isSelected = menuItem.id === idStr;
+                    if (isSelected) {
+                        found = menuItem;
+                        // this.addToPath(i, found.id, common.getLangStr(found, 'title'));
+                    } else {
+                        found = this.findItem(idStr, menuItem.menu);
+                    }
+                    if (found) {
+                        this.addToPath(i, found.id, common.getLangStr(found, 'title'));
                         break;
                     }
                 }
+                return found;
             }
-            // this.resetVars();
-            // this.findItem(idStr, this.curItem);
+            console.log('findItem - this.pathArr: ' + JSON.stringify(this.pathArr));
         },
-
-        // findItem: function (idStr, menu) {
-        //     var found;
-        //     if (menu) {
-        //         for (var i = 0; i < menu.length; i += 1) {
-        //             if (menu[i].id === idStr) {
-        //                 // this.addToPath(i, menu[i].id, common.getLangStr(menu[i], 'title'));
-        //                 found = menu[i];
-        //                 break;
-        //             }
-        //         }
-        //         this.addToPath(i, found.id, common.getLangStr(found, 'title'));
-        //         if (!found) {
-        //             this.findItem(idStr, this.curItem);
-        //         }
-        //     }
-        // },
 
         onItemClicked: function (idStr) {
             console.log('onItemClicked - before curType: ' + this.curItem.type + ', ' + idStr);
