@@ -89,8 +89,8 @@ define([
             this.curItem = curItemTemp;
         },
 
-        addToPath: function (num, id, title) {
-            this.pathArr.push({ num: num, id: id, title: title });
+        addToPath: function (pathEntry) {
+            this.pathArr.push(pathEntry);
             this.setCorrectMenu();
             console.log('addToPath - this.pathArr: ' + JSON.stringify(this.pathArr));
         },
@@ -139,30 +139,39 @@ define([
             //     }
             // }
             this.resetVars();
-            this.findItem(idStr, this.curItem.menu);
+            this.findItem(idStr, this.curItem.menu, []);
             console.log('setCurItem - this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
-        findItem: function (idStr, menu) {
+        findItem: function (idStr, menu, path) {
             var found;
+            var pathEntry;
             if (menu) {
                 for (var i = 0; i < menu.length; i += 1) {
                     var menuItem = menu[i];
-                    var isSelected = menuItem.id === idStr;
-                    if (isSelected) {
-                        found = menuItem;
-                        // this.addToPath(i, found.id, common.getLangStr(found, 'title'));
-                    } else {
-                        found = this.findItem(idStr, menuItem.menu);
-                    }
+                    found = menuItem.id === idStr;
                     if (found) {
-                        this.addToPath(i, found.id, common.getLangStr(found, 'title'));
+                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem.id, 'title') };
+                        path.push(pathEntry);
+                        console.log('findItem - ' + menuItem.id + ' found: ' + menuItem.id);
                         break;
+                    } else if (menuItem.menu) {
+                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem.id, 'title') };
+                        path.push(pathEntry);
+                        console.log('findItem - ' + menuItem.id + ' not found but menu');
+                        this.findItem(idStr, menuItem.menu, path);
+                    } else {
+                        path = [];
+                        console.log('findItem - ' + menuItem.id + ' not found or menu: ' + menuItem.id);
                     }
                 }
-                return found;
             }
-            console.log('findItem - this.pathArr: ' + JSON.stringify(this.pathArr));
+            if (found) {
+                for (var j = 0; j < path.length; j += 1) {
+                    this.addToPath(path[j]);
+                }
+            }
+            console.log('findItem - idStr: ' + idStr + ' found: ' + found + ' this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
         onItemClicked: function (idStr) {
