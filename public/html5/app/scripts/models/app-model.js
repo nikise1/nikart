@@ -129,49 +129,40 @@ define([
         },
 
         setCurItem: function (idStr) {
-            // var curMenu = this.curItem.menu;
-            // if (curMenu) {
-            //     for (var i = 0; i < curMenu.length; i += 1) {
-            //         if (curMenu[i].id === idStr) {
-            //             this.addToPath(i, curMenu[i].id, common.getLangStr(curMenu[i], 'title'));
-            //             break;
-            //         }
-            //     }
-            // }
             this.resetVars();
-            this.findItem(idStr, this.curItem.menu, []);
-            console.log('setCurItem - this.pathArr: ' + JSON.stringify(this.pathArr));
+            var result = this.findItem(idStr, this.curItem.menu, []);
+            console.log('setCurItem - this.pathArr: ' + JSON.stringify(result));
+            for (var i = 0; i < result.length; i += 1) {
+                var path = result[i];
+                this.addToPath(path);
+            }
         },
 
         findItem: function (idStr, menu, path) {
-            var found;
             var pathEntry;
             if (menu) {
                 for (var i = 0; i < menu.length; i += 1) {
                     var menuItem = menu[i];
-                    found = menuItem.id === idStr;
+                    var found = menuItem.id === idStr;
                     if (found) {
-                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem.id, 'title') };
+                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem, 'title') };
                         path.push(pathEntry);
-                        console.log('findItem - ' + menuItem.id + ' found: ' + menuItem.id);
-                        break;
+                        console.log('findItem - ' + menuItem.id + ' found: ' + menuItem.id + ', path: ' + JSON.stringify(path));
+                        return path;
                     } else if (menuItem.menu) {
-                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem.id, 'title') };
-                        path.push(pathEntry);
-                        console.log('findItem - ' + menuItem.id + ' not found but menu');
-                        this.findItem(idStr, menuItem.menu, path);
+                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem, 'title') };
+                        var tempPath = path.concat([pathEntry]);
+                        console.log('findItem - ' + menuItem.id + ' not found but menu, tempPath: ' + JSON.stringify(tempPath));
+                        var result = this.findItem(idStr, menuItem.menu, tempPath);
+                        if (result) {
+                            return result;
+                        }
                     } else {
-                        path = [];
                         console.log('findItem - ' + menuItem.id + ' not found or menu: ' + menuItem.id);
                     }
                 }
             }
-            if (found) {
-                for (var j = 0; j < path.length; j += 1) {
-                    this.addToPath(path[j]);
-                }
-            }
-            console.log('findItem - idStr: ' + idStr + ' found: ' + found + ' this.pathArr: ' + JSON.stringify(this.pathArr));
+            console.log('findItem - idStr: ' + idStr + ' this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
         onItemClicked: function (idStr) {
