@@ -57,9 +57,10 @@ define([
             if (this.initDone) {
                 this.openBool = !this.openBool;
                 if (this.openBool) {
-                    vent.trigger(vent.ventThumbClose);
-                    vent.trigger(vent.ventArticleClose);
-                    vent.trigger(vent.ventVideoClose);
+                    // vent.trigger(vent.ventThumbClose);
+                    // vent.trigger(vent.ventArticleClose);
+                    // vent.trigger(vent.ventVideoClose);
+                    // vent.trigger(vent.ventNavItemClicked, '');
                 }
                 this.doAni();
             }
@@ -71,8 +72,11 @@ define([
         },
 
         closeThis: function () {
+            var prevOpen = this.openBool;
             this.openBool = false;
-            this.doAni();
+            if (prevOpen) {
+                this.doAni();
+            }
         },
 
         doAni: function () {

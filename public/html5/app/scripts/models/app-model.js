@@ -101,25 +101,15 @@ define([
         },
 
         onNavItemClicked: function (idStr) {
-            this.resetVars();
             vent.trigger(vent.ventNavClose);
             this.onItemClicked(idStr);
         },
 
         onThumbItemClicked: function (idStr) {
-            if (!this.curItem) {
-                this.resetVars();
-            }
-            vent.trigger(vent.ventThumbClose);
             this.onItemClicked(idStr);
         },
 
         onBreadcrumbClicked: function (idStr) {
-            if (!this.curItem) {
-                this.resetVars();
-            }
-            vent.trigger(vent.ventNavClose);
-            vent.trigger(vent.ventThumbClose);
             this.onItemClicked(idStr);
         },
 
@@ -130,7 +120,7 @@ define([
 
         setCurItem: function (idStr) {
             this.resetVars();
-            var result = this.findItem(idStr, this.curItem.menu, []);
+            var result = this.findItem(idStr, this.curItem.menu, []) || [];
             console.log('setCurItem - this.pathArr: ' + JSON.stringify(result));
             for (var i = 0; i < result.length; i += 1) {
                 var path = result[i];
@@ -166,6 +156,12 @@ define([
         },
 
         onItemClicked: function (idStr) {
+            //
+            // vent.trigger(vent.ventNavClose);
+            //
+            vent.trigger(vent.ventThumbClose);
+            vent.trigger(vent.ventArticleClose);
+            vent.trigger(vent.ventVideoClose);
             console.log('onItemClicked - before curType: ' + this.curItem.type + ', ' + idStr);
             this.setCurItem(idStr);
             console.log('onItemClicked - after curType: ' + this.curItem.type + ', ' + idStr);
