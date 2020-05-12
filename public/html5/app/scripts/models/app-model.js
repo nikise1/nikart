@@ -51,9 +51,7 @@ define([
             }
             $html = $('html');
 
-            this.listenTo(vent, vent.ventNavItemClicked, this.onNavItemClicked);
-            this.listenTo(vent, vent.ventThumbItemClicked, this.onThumbItemClicked);
-            this.listenTo(vent, vent.ventBreadcrumbClicked, this.onBreadcrumbClicked);
+            this.listenTo(vent, vent.ventRouterUpdated, this.onRouterUpdated);
 
             this.jsonModel = new JSONModel();
             this.jsonModel.fetch({
@@ -64,7 +62,6 @@ define([
         },
 
         onInitDataLoaded: function () {
-
             this.setCorrectMenu();
             vent.trigger(vent.ventInitDataLoaded);
         },
@@ -98,19 +95,6 @@ define([
         removeFromPath: function () {
             this.pathArr.pop();
             this.setCorrectMenu();
-        },
-
-        onNavItemClicked: function (idStr) {
-            vent.trigger(vent.ventNavClose);
-            this.onItemClicked(idStr);
-        },
-
-        onThumbItemClicked: function (idStr) {
-            this.onItemClicked(idStr);
-        },
-
-        onBreadcrumbClicked: function (idStr) {
-            this.onItemClicked(idStr);
         },
 
         resetVars: function () {
@@ -155,10 +139,8 @@ define([
             console.log('findItem - idStr: ' + idStr + ' this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
-        onItemClicked: function (idStr) {
-            //
-            // vent.trigger(vent.ventNavClose);
-            //
+        onRouterUpdated: function (idStr) {
+            vent.trigger(vent.ventNavClose);
             vent.trigger(vent.ventThumbClose);
             vent.trigger(vent.ventArticleClose);
             vent.trigger(vent.ventVideoClose);

@@ -11,15 +11,14 @@ define([
 
         ventNavOpen: 'ventNavOpen',
         ventNavClose: 'ventNavClose',
-        ventNavItemClicked: 'ventNavItemClicked',
 
         ventPathUpdate: 'ventPathUpdate',
 
         ventThumbOpen: 'ventThumbOpen',
         ventThumbClose: 'ventThumbClose',
-        ventThumbItemClicked: 'ventThumbItemClicked',
 
-        ventBreadcrumbClicked: 'ventBreadcrumbClicked',
+        ventRouterNavigate: 'ventRouterNavigate',
+        ventRouterUpdated: 'ventRouterUpdated',
 
         ventScrolling: 'ventScrolling',
         ventScrollingStopped: 'ventScrollingStopped',

@@ -12,15 +12,22 @@ define([
         },
 
         initialize: function () { // { options }
-//            console.log('router initialize options: ' + options);
+            // console.log('router initialize options: ' + options);
+            this.listenTo(vent, vent.ventRouterNavigate, this.onNavigate);
         },
 
         index: function () {
+            console.log('router - index');
+        },
+        
+        onNavigate: function (path) {
+            console.log('router - onNavigate');
+            this.navigate(path, {trigger: true});
         },
 
         openPath: function (path) {
-            console.log('openPath(' + path + ')');
-            vent.trigger(vent.ventBreadcrumbClicked, path);
+            console.log('router - openPath(' + path + ')');
+            vent.trigger(vent.ventRouterUpdated, path);
         }
     });
 

@@ -199,7 +199,7 @@ define([
         },
 
         onItemClick: function () {
-            vent.trigger(vent.ventThumbItemClicked, this.model.get('id'));
+            vent.trigger(vent.ventRouterNavigate, this.model.get('id'));
         },
 
         cleanUpDelayedCalls: function () {
