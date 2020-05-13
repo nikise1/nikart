@@ -57,9 +57,7 @@ define([
             if (this.initDone) {
                 this.openBool = !this.openBool;
                 if (this.openBool) {
-                    vent.trigger(vent.ventThumbClose);
-                    vent.trigger(vent.ventArticleClose);
-                    vent.trigger(vent.ventVideoClose);
+                    vent.trigger(vent.ventRouterNavigate, 'main');
                 }
                 this.doAni();
             }

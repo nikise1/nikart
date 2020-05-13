@@ -28,8 +28,10 @@ define([
             var str = '';
             for (var i = 0; i < this.appModel.pathArr.length; i++) {
                 var curItemTemp = this.appModel.pathArr[i];
-                str += '<span class="nav-connector-breadcrumbs"></span>';
-                str += '<a href="#' + curItemTemp.id + '">' + curItemTemp.title + '</a>';
+                str += '<div class="breadcrumb-container">';
+                str += '<span class="breadcrumb-connector"></span>';
+                str += '<a class="breadcrumb-link" href="#' + curItemTemp.id + '">' + curItemTemp.title + '</a>';
+                str += '</div>';
             }
 
             this.$el.html(str);

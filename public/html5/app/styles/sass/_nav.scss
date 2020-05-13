@@ -77,21 +77,30 @@ a.nav-btn-container {
     background-image: url("../../img/stump.png");
 }
 
-.nav-connector-breadcrumbs {
+.breadcrumbs {
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap;
+    top: -0.3em;
+    left: 6em;
+    color: $colourDiffLight;
+}
+
+.breadcrumb-container {
+    display: flex;
+    margin: 0 0.3em 0 0;
+}
+
+.breadcrumb-connector {
     display: inline-block;
-    position: relative;
-    top: -0.5em;
+    flex: 0 0 auto;
     width: 15px;
     height: 12px;
-    margin: 0 0.2em 0 1em;
     background-image: url("../../img/stump.png");
     transform: rotate(75deg);
 }
 
-.breadcrumbs {
-    position: fixed;
-    top: 0;
-    left: 8em;
-    color: $colourDiffLight;
-    opacity: 0.5;
+.breadcrumb-link {
+    display: inline-block;
+    padding: 0.3em 0 0 0;
 }
