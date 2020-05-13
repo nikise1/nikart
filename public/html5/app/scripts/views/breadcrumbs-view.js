@@ -28,9 +28,7 @@ define([
             var str = '';
             for (var i = 0; i < this.appModel.pathArr.length; i++) {
                 var curItemTemp = this.appModel.pathArr[i];
-                if (i > 0) {
-                    str += ' &gt; ';
-                }
+                str += '<span class="nav-connector-breadcrumbs"></span>';
                 str += '<a href="#' + curItemTemp.id + '">' + curItemTemp.title + '</a>';
             }
 

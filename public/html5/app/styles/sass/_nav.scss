@@ -77,14 +77,21 @@ a.nav-btn-container {
     background-image: url("../../img/stump.png");
 }
 
+.nav-connector-breadcrumbs {
+    display: inline-block;
+    position: relative;
+    top: -0.5em;
+    width: 15px;
+    height: 12px;
+    margin: 0 0.2em 0 1em;
+    background-image: url("../../img/stump.png");
+    transform: rotate(75deg);
+}
+
 .breadcrumbs {
-    //display: none;
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 20px;
-    padding: 5px 10px 5px 100px;
-    background: $colourMid;
+    left: 8em;
     color: $colourDiffLight;
     opacity: 0.5;
 }
