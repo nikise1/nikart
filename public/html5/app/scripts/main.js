@@ -47,14 +47,7 @@ require([
 ], function (Backbone, AppRouter, AppView) {
     'use strict';
 
-    // Initialize routing and start Backbone.history()
     var appRouter = new AppRouter();
-//    new AppRouter();
-
-    Backbone.history.start();
-
-    // Initialize the application view
     var appView = new AppView();
-//    new AppView();
     appView.setRouter(appRouter);
 });

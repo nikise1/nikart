@@ -8,26 +8,27 @@ define([
     var Router = Backbone.Router.extend({
         routes: {
             '': 'index',
-            '*path': 'openPath'
+            '*idStr': 'openPath'
         },
 
-        initialize: function () { // { options }
-            // console.log('router initialize options: ' + options);
+        initialize: function (options) { // { options }
+            console.log('router - initialize options: ' + options);
             this.listenTo(vent, vent.ventRouterNavigate, this.onNavigate);
         },
 
         index: function () {
             console.log('router - index');
+            this.openPath('main');
         },
         
-        onNavigate: function (path) {
+        onNavigate: function (idStr) {
             console.log('router - onNavigate');
-            this.navigate(path, {trigger: true});
+            this.navigate(idStr, {trigger: true});
         },
 
-        openPath: function (path) {
-            console.log('router - openPath(' + path + ')');
-            vent.trigger(vent.ventRouterUpdated, path);
+        openPath: function (idStr) {
+            console.log('router - openPath(' + idStr + ')');
+            vent.trigger(vent.ventRouterUpdated, idStr);
         }
     });
 

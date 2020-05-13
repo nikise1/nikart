@@ -51,6 +51,7 @@ define([
             }
             $html = $('html');
 
+            console.log('appModel - initialize - listenTo ventRouterUpdated');
             this.listenTo(vent, vent.ventRouterUpdated, this.onRouterUpdated);
 
             this.jsonModel = new JSONModel();
@@ -64,6 +65,7 @@ define([
         onInitDataLoaded: function () {
             this.setCorrectMenu();
             vent.trigger(vent.ventInitDataLoaded);
+            Backbone.history.start();
         },
 
         setRouter: function (router) {
@@ -104,7 +106,7 @@ define([
 
         setCurItem: function (idStr) {
             this.resetVars();
-            var result = this.findItem(idStr, this.curItem.menu, []) || [];
+            var result = this.findItem(idStr, this.curItem, []) || [];
             console.log('setCurItem - this.pathArr: ' + JSON.stringify(result));
             for (var i = 0; i < result.length; i += 1) {
                 var path = result[i];
@@ -112,31 +114,27 @@ define([
             }
         },
 
-        findItem: function (idStr, menu, path) {
+        findItem: function (idStr, menuItem, path) {
             var pathEntry;
-            if (menu) {
-                for (var i = 0; i < menu.length; i += 1) {
-                    var menuItem = menu[i];
-                    var found = menuItem.id === idStr;
-                    if (found) {
-                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem, 'title') };
-                        path.push(pathEntry);
-                        console.log('findItem - ' + menuItem.id + ' found: ' + menuItem.id + ', path: ' + JSON.stringify(path));
-                        return path;
-                    } else if (menuItem.menu) {
-                        pathEntry = { num: i, id: menuItem.id, title: common.getLangStr(menuItem, 'title') };
+            if (menuItem) {
+                var found = menuItem.id === idStr;
+                if (found) {
+                    console.log('findItem - found! ' + menuItem.id + ', path: ' + JSON.stringify(path));
+                    return path;
+                } else if (menuItem.menu) {
+                    for (var i = 0; i < menuItem.menu.length; i += 1) {
+                        var subMenuItem = menuItem.menu[i];
+                        pathEntry = { num: i, id: subMenuItem.id, title: common.getLangStr(subMenuItem, 'title') };
                         var tempPath = path.concat([pathEntry]);
-                        console.log('findItem - ' + menuItem.id + ' not found but menu, tempPath: ' + JSON.stringify(tempPath));
-                        var result = this.findItem(idStr, menuItem.menu, tempPath);
+                        // console.log('findItem - ' + subMenuItem.id + ' not found but menu, tempPath: ' + JSON.stringify(tempPath));
+                        var result = this.findItem(idStr, subMenuItem, tempPath);
                         if (result) {
                             return result;
                         }
-                    } else {
-                        console.log('findItem - ' + menuItem.id + ' not found or menu: ' + menuItem.id);
                     }
                 }
             }
-            console.log('findItem - idStr: ' + idStr + ' this.pathArr: ' + JSON.stringify(this.pathArr));
+            // console.log('findItem - idStr: ' + idStr + ' this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
         onRouterUpdated: function (idStr) {
@@ -144,11 +142,19 @@ define([
             vent.trigger(vent.ventThumbClose);
             vent.trigger(vent.ventArticleClose);
             vent.trigger(vent.ventVideoClose);
-            console.log('onItemClicked - before curType: ' + this.curItem.type + ', ' + idStr);
+            console.log(
+                'onItemClicked - before curType: ' +
+                (this.curItem ? this.curItem.type : undefined) +
+                ', ' +
+                idStr
+            );
             this.setCurItem(idStr);
             console.log('onItemClicked - after curType: ' + this.curItem.type + ', ' + idStr);
             vent.trigger(vent.ventPathUpdate);
             switch (this.curItem.type) {
+            case 'main':
+                vent.trigger(vent.ventNavOpen, this.curItem);
+                break;
             case 'men':
                 vent.trigger(vent.ventThumbOpen, this.curItem);
                 break;

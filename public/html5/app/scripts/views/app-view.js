@@ -21,6 +21,7 @@ define([
         initialize: function () {
             that = this;
             this.listenTo(vent, vent.ventInitDataLoaded, this.onInitDataLoaded);
+            console.log('appView - initialize - creating new AppModel');
             that.model = new AppModel();
         },
 
@@ -50,6 +51,7 @@ define([
         },
 
         setRouter: function (router) {
+            console.log('appView - setRouter');
             that.model.setRouter(router);
         },
 

@@ -24,7 +24,7 @@ define([
             this.appModel = this.options.appModel;
             this.appModel.injectModelsAndColls(this);
 
-            this.openBool = true;
+            this.openBool = false;
             this.initDone = false;
 
             this.listenTo(vent, vent.ventNavOpen, this.openThis);
@@ -45,7 +45,7 @@ define([
 
             TweenLite.to(this.$navBtnContainer, 0, {left: posBtnOutX, top: -this.$navBtnContainer.outerHeight()});
 
-            TweenLite.delayedCall(common.timeNavIn, this.readyForOpening, [], this);
+            this.initDone = true;
         },
 
         readyForOpening: function () {
@@ -57,10 +57,9 @@ define([
             if (this.initDone) {
                 this.openBool = !this.openBool;
                 if (this.openBool) {
-                    // vent.trigger(vent.ventThumbClose);
-                    // vent.trigger(vent.ventArticleClose);
-                    // vent.trigger(vent.ventVideoClose);
-                    // vent.trigger(vent.ventNavItemClicked, '');
+                    vent.trigger(vent.ventThumbClose);
+                    vent.trigger(vent.ventArticleClose);
+                    vent.trigger(vent.ventVideoClose);
                 }
                 this.doAni();
             }
@@ -72,11 +71,8 @@ define([
         },
 
         closeThis: function () {
-            var prevOpen = this.openBool;
             this.openBool = false;
-            if (prevOpen) {
-                this.doAni();
-            }
+            this.doAni();
         },
 
         doAni: function () {
@@ -146,7 +142,9 @@ define([
 
         //*** canvas ani ***
         closeCanvas: function () {
-            TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: posCanvasOutX, top: -(this.$navCanvas.outerHeight()), onComplete: this.clearCanvas, onCompleteScope: this});
+            if (this.$navCanvas) {
+                TweenLite.to(this.$navCanvas, common.timeNavGrowOut, {left: posCanvasOutX, top: -(this.$navCanvas.outerHeight()), onComplete: this.clearCanvas, onCompleteScope: this});
+            }
             this.$navBtnContainer.css('display', 'block');
             TweenLite.to(this.$navBtnContainer, common.timeNavGrowIn, {left: 0, top: 0});
         },
