@@ -106,7 +106,8 @@ define([
 
         setCurItem: function (idStr) {
             this.resetVars();
-            var result = this.findItem(idStr, this.curItem, []) || [];
+            var useFeaturedMenu =  this.useFeaturedMenu(idStr);
+            var result = this.findItem(idStr, this.curItem, [], useFeaturedMenu) || [];
             console.log('setCurItem - this.pathArr: ' + JSON.stringify(result));
             for (var i = 0; i < result.length; i += 1) {
                 var path = result[i];
@@ -114,10 +115,27 @@ define([
             }
         },
 
-        findItem: function (idStr, menuItem, path) {
+        useFeaturedMenu: function (idStr) {
+            const isDestinationMain = idStr === 'main';
+            const pathContainsFeatured = this.pathContainsFeatured(this.pathArr);
+            const result = !isDestinationMain && pathContainsFeatured;
+            return result;
+        },
+
+        pathContainsFeatured: function (pathArr) {
+            const result = pathArr
+                .map(function(path) {return path.id})
+                .includes('featured');
+            return result;
+        },
+
+        findItem: function (idStr, menuItem, path, useFeaturedMenu) {
             var pathEntry;
             if (menuItem) {
                 var found = menuItem.id === idStr;
+                if (found && (!useFeaturedMenu && this.pathContainsFeatured(path))) {
+                    found = undefined;
+                }
                 if (found) {
                     console.log('findItem - found! ' + menuItem.id + ', path: ' + JSON.stringify(path));
                     return path;
