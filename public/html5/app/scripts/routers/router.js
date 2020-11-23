@@ -11,7 +11,7 @@ define([
             '*idStr': 'openPath'
         },
 
-        initialize: function (options) { // { options }
+        initialize: function (options) {
             console.log('router - initialize options: ' + options);
             this.listenTo(vent, vent.ventRouterNavigate, this.onNavigate);
         },
@@ -22,8 +22,9 @@ define([
         },
         
         onNavigate: function (idStr) {
-            console.log('router - onNavigate');
-            this.navigate(idStr, {trigger: true});
+            const useId = idStr === 'main' ? '' : idStr;
+            console.log('router - onNavigate: ' + useId);
+            this.navigate(useId, {trigger: true});
         },
 
         openPath: function (idStr) {

@@ -32,6 +32,7 @@ define([
         },
 
         curItem: undefined,
+        isFeaturedMenu: false,
         jsonModel: undefined,
         pathArr: [],
         router: undefined,
@@ -106,8 +107,8 @@ define([
 
         setCurItem: function (idStr) {
             this.resetVars();
-            var useFeaturedMenu =  this.useFeaturedMenu(idStr);
-            var result = this.findItem(idStr, this.curItem, [], useFeaturedMenu) || [];
+            this.setIsFeaturedMenu(idStr);
+            var result = this.findItem(idStr, this.curItem, []) || [];
             console.log('setCurItem - this.pathArr: ' + JSON.stringify(result));
             for (var i = 0; i < result.length; i += 1) {
                 var path = result[i];
@@ -115,28 +116,33 @@ define([
             }
         },
 
-        useFeaturedMenu: function (idStr) {
-            const isDestinationMain = idStr === 'main';
-            const pathContainsFeatured = this.pathContainsFeatured(this.pathArr);
-            const result = !isDestinationMain && pathContainsFeatured;
+        setIsFeaturedMenu: function (idStr) {
+            const isDestinationMain = idStr === 'main' || idStr === '';
+            if (isDestinationMain) {
+                this.isFeaturedMenu = false;
+            }
+            const isFeaturedClick = idStr === 'featured';
+            if (isFeaturedClick) {
+                this.isFeaturedMenu = true;
+            }
+        },
+
+        pathContainsFeatured: function (idStr, pathArr) {
+            const result = idStr === 'featured' ||
+                pathArr
+                    .map(function (path) { return path.id; })
+                    .includes('featured');
             return result;
         },
 
-        pathContainsFeatured: function (pathArr) {
-            const result = pathArr
-                .map(function(path) {return path.id})
-                .includes('featured');
-            return result;
-        },
-
-        findItem: function (idStr, menuItem, path, useFeaturedMenu) {
+        findItem: function (idStr, menuItem, path) {
             var pathEntry;
             if (menuItem) {
                 var found = menuItem.id === idStr;
-                if (found && (!useFeaturedMenu && this.pathContainsFeatured(path))) {
+                const skipFound = found && this.pathContainsFeatured(idStr, path) && !this.isFeaturedMenu;
+                if (skipFound) {
                     found = undefined;
-                }
-                if (found) {
+                } else if (found) {
                     console.log('findItem - found! ' + menuItem.id + ', path: ' + JSON.stringify(path));
                     return path;
                 } else if (menuItem.menu) {
