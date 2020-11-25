@@ -70,8 +70,8 @@ define([
             TweenLite.to(this.$el, common.timeNavOut, {width: 0});
         },
 
-        clickHandler: function () { //(event)
-            vent.trigger(vent.ventNavItemClicked, this.model.get('id'));
+        clickHandler: function () {
+            vent.trigger(vent.ventRouterNavigate, this.model.get('id'));
         }
     });
 

@@ -21,6 +21,7 @@ define([
         initialize: function () {
             that = this;
             this.listenTo(vent, vent.ventInitDataLoaded, this.onInitDataLoaded);
+            console.log('appView - initialize - creating new AppModel');
             that.model = new AppModel();
         },
 
@@ -29,7 +30,7 @@ define([
             view = new ArticleView({appModel: that.model});
             view = new VideoView({appModel: that.model});
             view = new ThumbView({appModel: that.model});
-//            view = new BreadcrumbsView({appModel: that.model});
+            view = new BreadcrumbsView({appModel: that.model});
             view = new NavView({appModel: that.model});
 
             that.timer = undefined;
@@ -50,6 +51,7 @@ define([
         },
 
         setRouter: function (router) {
+            console.log('appView - setRouter');
             that.model.setRouter(router);
         },
 

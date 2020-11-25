@@ -32,6 +32,7 @@ define([
         },
 
         curItem: undefined,
+        isFeaturedMenu: false,
         jsonModel: undefined,
         pathArr: [],
         router: undefined,
@@ -51,19 +52,21 @@ define([
             }
             $html = $('html');
 
-            this.listenTo(vent, vent.ventNavItemClicked, this.onNavItemClicked);
-            this.listenTo(vent, vent.ventThumbItemClicked, this.onThumbItemClicked);
+            console.log('appModel - initialize - listenTo ventRouterUpdated');
+            this.listenTo(vent, vent.ventRouterUpdated, this.onRouterUpdated);
 
             this.jsonModel = new JSONModel();
-            this.jsonModel.fetch({success: function () { //(model, response, options)
-                _this.onInitDataLoaded();
-            }});
+            this.jsonModel.fetch({
+                success: function () { //(model, response, options)
+                    _this.onInitDataLoaded();
+                }
+            });
         },
 
         onInitDataLoaded: function () {
-
             this.setCorrectMenu();
             vent.trigger(vent.ventInitDataLoaded);
+            Backbone.history.start();
         },
 
         setRouter: function (router) {
@@ -86,10 +89,10 @@ define([
             this.curItem = curItemTemp;
         },
 
-        addToPath: function (num, id, title) {
-            this.pathArr.push({num: num, id: id, title: title});
+        addToPath: function (pathEntry) {
+            this.pathArr.push(pathEntry);
             this.setCorrectMenu();
-            console.log('this.pathArr: ' + JSON.stringify(this.pathArr));
+            console.log('addToPath - this.pathArr: ' + JSON.stringify(this.pathArr));
         },
 
         removeFromPath: function () {
@@ -97,48 +100,85 @@ define([
             this.setCorrectMenu();
         },
 
-        onNavItemClicked: function (idStr) {
-            this.resetVars();
-            vent.trigger(vent.ventNavClose);
-            this.onItemClicked(idStr);
-        },
-
-        onThumbItemClicked: function (idStr) {
-            if (!this.curItem) {
-                this.resetVars();
-            }
-            vent.trigger(vent.ventThumbClose);
-            this.onItemClicked(idStr);
-        },
-
         resetVars: function () {
             this.pathArr = [];
             this.curItem = this.jsonModel.attributes;
         },
 
-        onItemClicked: function (idStr) {
+        setCurItem: function (idStr) {
+            this.resetVars();
+            this.setIsFeaturedMenu(idStr);
+            var result = this.findItem(idStr, this.curItem, []) || [];
+            console.log('setCurItem - this.pathArr: ' + JSON.stringify(result));
+            for (var i = 0; i < result.length; i += 1) {
+                var path = result[i];
+                this.addToPath(path);
+            }
+        },
 
-//            var curType;
-//            curType = this.curItem.type;
-//            console.log('before curType: ' + curType + ', ' + idStr);
+        setIsFeaturedMenu: function (idStr) {
+            const isDestinationMain = idStr === 'main' || idStr === '';
+            if (isDestinationMain) {
+                this.isFeaturedMenu = false;
+            }
+            const isFeaturedClick = idStr === 'featured';
+            if (isFeaturedClick) {
+                this.isFeaturedMenu = true;
+            }
+        },
 
-            var curMenu = this.curItem.menu;
-            for (var i = 0; i < curMenu.length; i += 1) {
-                if (curMenu[i].id === idStr) {
-                    this.addToPath(i, curMenu[i].id, common.getLangStr(curMenu[i], 'title'));
-                    break;
+        pathContainsFeatured: function (idStr, pathArr) {
+            const result = idStr === 'featured' ||
+                pathArr
+                    .map(function (path) { return path.id; })
+                    .includes('featured');
+            return result;
+        },
+
+        findItem: function (idStr, menuItem, path) {
+            var pathEntry;
+            if (menuItem) {
+                var found = menuItem.id === idStr;
+                const skipFound = found && this.pathContainsFeatured(idStr, path) && !this.isFeaturedMenu;
+                if (skipFound) {
+                    found = undefined;
+                } else if (found) {
+                    console.log('findItem - found! ' + menuItem.id + ', path: ' + JSON.stringify(path));
+                    return path;
+                } else if (menuItem.menu) {
+                    for (var i = 0; i < menuItem.menu.length; i += 1) {
+                        var subMenuItem = menuItem.menu[i];
+                        pathEntry = { num: i, id: subMenuItem.id, title: common.getLangStr(subMenuItem, 'title') };
+                        var tempPath = path.concat([pathEntry]);
+                        // console.log('findItem - ' + subMenuItem.id + ' not found but menu, tempPath: ' + JSON.stringify(tempPath));
+                        var result = this.findItem(idStr, subMenuItem, tempPath);
+                        if (result) {
+                            return result;
+                        }
+                    }
                 }
             }
-            var curType = this.curItem.type;
-//            console.log('after curType: ' + curType + ', ' + idStr);
+            // console.log('findItem - idStr: ' + idStr + ' this.pathArr: ' + JSON.stringify(this.pathArr));
+        },
 
-            //TODO *** router deep linking and breadcrumbs ***
-//            this.router.navigate(curMenu[i].id);
-
+        onRouterUpdated: function (idStr) {
+            vent.trigger(vent.ventNavClose);
+            vent.trigger(vent.ventThumbClose);
+            vent.trigger(vent.ventArticleClose);
+            vent.trigger(vent.ventVideoClose);
+            console.log(
+                'onItemClicked - before curType: ' +
+                (this.curItem ? this.curItem.type : undefined) +
+                ', ' +
+                idStr
+            );
+            this.setCurItem(idStr);
+            console.log('onItemClicked - after curType: ' + this.curItem.type + ', ' + idStr);
             vent.trigger(vent.ventPathUpdate);
-
-//            'men','tex','web','vid','ima'
-            switch (curType) {
+            switch (this.curItem.type) {
+            case 'main':
+                vent.trigger(vent.ventNavOpen, this.curItem);
+                break;
             case 'men':
                 vent.trigger(vent.ventThumbOpen, this.curItem);
                 break;
@@ -178,9 +218,9 @@ define([
                 //*** Just in case this doesn't work ***
                 newCode = 'md';
             }
-//            if (this.get('screenCode') !== newCode) {
-//                console.log('screenCode: ' + newCode);
-//            }
+            //            if (this.get('screenCode') !== newCode) {
+            //                console.log('screenCode: ' + newCode);
+            //            }
             return newCode;
         },
 
