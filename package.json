@@ -4,7 +4,8 @@
     "scripts": {
         "test": "forever /usr/local/bin/node-inspector --web-port=9999",
         "restart": "supervisor --debug server.js",
-        "start": "node server.js"
+        "start": "node server.js",
+        "public": "cd public/html5/ && npm start"
     },
     "dependencies": {
         "compression": "^1.7.4",

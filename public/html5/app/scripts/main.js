@@ -29,13 +29,8 @@ require.config({
         backbone: '../bower_components/backbone/backbone-min',
         text: '../bower_components/requirejs-text/text',
         consolepolyfill: '../bower_components/console-polyfill/index',
-
-        jplayer: '../bower_components/jplayer/jquery.jplayer/jquery.jplayer',
-
         tweenlite: '../bower_components/tweenmax/src/minified/TweenLite.min',
         cssplugin: '../bower_components/tweenmax/src/minified/plugins/CSSPlugin.min'
-//        tweenlite: '../bower_components/tweenmax/src/uncompressed/TweenLite',
-//        cssplugin: '../bower_components/tweenmax/src/uncompressed/plugins/CSSPlugin'
     }
 });
 

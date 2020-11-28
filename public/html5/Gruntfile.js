@@ -99,8 +99,6 @@ module.exports = function (grunt) {
                             '*.{ico,txt}',
                             '*.html',
                             'img/{,*/}*.{jpg,png,webp,gif}',
-//                            'bower_components/jplayer/jquery.jplayer/Jplayer.swf'
-                            'Jplayer.swf'
                         ]
                     }
                 ]
