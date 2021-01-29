@@ -87,23 +87,28 @@ define([
         clearAll: function () {
             this.$el.empty();
             this.template = undefined;
-//            console.log('clearAll: ' + this.$el.html());
+            //            console.log('clearAll: ' + this.$el.html());
         },
 
         videoOpen: function (curItem) {
             this.curItem = curItem;
-//            console.log('videoOpen: ' + this.curItem.id);
+            //            console.log('videoOpen: ' + this.curItem.id);
             this.render();
-            TweenLite.fromTo(this.$el, common.timeArticleIn, {autoAlpha: 0}, {autoAlpha: 1});
+
+            var myPlayer = window.videojs('my-video');
+            var vidH264URL = common.urlVideoH264() + '/' + this.curItem.id + '.mp4';
+            myPlayer.src({type: 'video/mp4', src: vidH264URL});
+
+            TweenLite.fromTo(this.$el, common.timeArticleIn, { autoAlpha: 0 }, { autoAlpha: 1 });
         },
 
         videoClose: function () {
             if (this.template) {
-//                console.log('videoClose');
+                //                console.log('videoClose');
                 // if (this.$player && this.$player.jPlayer) {
                 //     this.$player.jPlayer('pause');
                 // }
-                TweenLite.to(this.$el, common.timeArticleOut, {autoAlpha: 0, onComplete: this.clearAll, onCompleteScope: this});
+                TweenLite.to(this.$el, common.timeArticleOut, { autoAlpha: 0, onComplete: this.clearAll, onCompleteScope: this });
             }
         },
 
