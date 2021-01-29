@@ -1,20 +1,33 @@
 <article class='article-content-vid'>
     <h1 class="title-vid"><%- title %></h1>
+    
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="393"
+    height="288"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+  <!-- // var vidH264URL = common.urlVideoH264() + '/' + this.curItem.id + '.mp4'; -->
+  <!-- // var vidWebmURL = common.urlVideoWebm() + '/' + this.curItem.id + '.webm'; -->
+  <!-- // var posterURL = common.urlImg() + '/' + this.curItem.id + '.jpg'; -->
 
-    <!-- <div id="jp_container" class="jp-video jp-video-sm">
-        <div id="jplayer_interactive" class="jp-jplayer"></div>
-        <div class="video-controls-holder">
-            <a href="javascript:;" class="jp-play btn-video-play video-controls-sm" style="display: block;" tabindex="1">play</a>
-            <a href="javascript:;" class="jp-pause btn-video-pause video-controls-sm" tabindex="1">pause</a>
-            <a href="javascript:;" class="jp-full-screen btn-full-screen btn-centred">Full Screen</a>
-            <a href="javascript:;" class="jp-restore-screen btn-restore-screen btn-centred">Restore Screen</a>
-        </div>
-        <div class="jp-no-solution">
-            <h3>Update Required</h3>
 
-            <p>To play the media you will need to either update your browser to a recent version or update your
-                <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.</p>
-        </div>
-    </div> -->
+
+    <source src="MY_VIDEO.mp4" type="video/mp4" />
+    <!-- <source src="MY_VIDEO.webm" type="video/webm" /> -->
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
+
 
 </article>
