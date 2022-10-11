@@ -1,43 +1,36 @@
-{% extends 'layout.html' %}
-
-{% block title %}Home{% endblock %}
-
-{% block head %}
+{% extends 'layout.html' %} {% block title %}Home{% endblock %} {% block head %}
 <style>
-    .content-container {
-        display: none;
-    }
+  .content-container {
+    display: none;
+  }
 </style>
 
 <script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-<script>window.swfobject || document.write('<script src="fl/js/swfobject.js"><\/script>')</script>
+<script>
+  window.swfobject ||
+    document.write('<script src="fl/js/swfobject.js"><\/script>');
+</script>
 
 <script>
-
-    if (swfobject.hasFlashPlayerVersion("8.0.0")) {
-        console.log('has Flash');
-        window.location.replace('fl');
-    }
-    else {
-        window.location.replace('html5');
-    }
-
+  if (swfobject.hasFlashPlayerVersion("8.0.0")) {
+    console.log("has Flash");
+    window.location.replace("fl");
+  } else {
+    window.location.replace("html5");
+  }
 </script>
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 <div class="content-container">
+  <h3>
+    Niki Sehmi - Freelance Interactive Developer & Artist. Experienced in
+    creating Websites, Games, 3D, Installations & Video. UK & Colombia
+  </h3>
 
-    <h3>Niki Sehmi - Freelance Interactive Developer & Artist. Experienced in creating Websites, Games, 3D, Installations & Video. UK & Colombia</h3>
+  <!--<p>{{ userAgent }}</p>-->
 
-    <!--<p>{{ userAgent }}</p>
-    <p>{{ isWindows }}</p>
-    <p>{{ isMacintosh }}</p>-->
-
-    <p><a href="./fl">Flash View</a></p>
-    <p><a href="./html5">HTML5 View</a></p>
+  <p><a href="./fl">Flash View</a></p>
+  <p><a href="./html5">HTML5 View</a></p>
 </div>
 
-<link rel="stylesheet" href="accessible/styles/css/main.css">
+<link rel="stylesheet" href="accessible/styles/css/main.css" />
 {% endblock %}
-
