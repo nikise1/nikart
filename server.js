@@ -1,40 +1,42 @@
 'use strict';
 
 //*** Libraries ***
-var express = require('express'),
-    swig = require('swig');
+var express = require('express');
+var swig = require('swig');
+var compression = require('compression');
+var cookieParser = require('cookie-parser')
 //*** Controllers ***
 var indexController = require('./app/controllers/index');
 var html5Controller = require('./app/controllers/html5');
 var flController = require('./app/controllers/fl');
-var AppModel = require('./app/models/appModel');
+// var AppModel = require('./app/models/appModel');
 
 var app = express();
 
 //app.use(express.logger());
 
 // development only
-app.configure('development', function () {
-    // Swig will cache templates for you, but you can disable
-    // that and use Express's caching instead, if you like:
-    app.set('view cache', false);
-    // To disable Swig's cache, do the following:
-    swig.setDefaults({ cache: false });
-    // NOTE: You should always cache templates in a production environment.
-    // Don't leave both of these to `false` in production!
-});
+// app.configure('development', function () {
+// Swig will cache templates for you, but you can disable
+// that and use Express's caching instead, if you like:
+app.set('view cache', false);
+// To disable Swig's cache, do the following:
+swig.setDefaults({ cache: false });
+// NOTE: You should always cache templates in a production environment.
+// Don't leave both of these to `false` in production!
+// });
 
 // production only
-app.configure('production', function () {
-    app.use(express.compress());
-});
+// app.configure('production', function () {
+app.use(compression());
+// });
 
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
 app.set('views', './app/views');
 
 app.use(express.static('./public'));
-app.use(express.cookieParser());
+app.use(cookieParser());
 //app.use(express.cookieSession({secret: 'nikart'}));
 
 indexController(app);
