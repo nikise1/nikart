@@ -852,8 +852,8 @@
                     },
                     "imgs": 1,
                     "url": {
-                        "en": "_self\/es",
-                        "es": "_self\/en"
+                        "en": "_self\/..\/es",
+                        "es": "_self\/..\/en"
                     },
                     "launch": {
                         "en": "Cambia idioma a Espa\u00f1ol",

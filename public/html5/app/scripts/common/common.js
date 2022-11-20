@@ -63,7 +63,8 @@ define([], function () {
         },
 
         urlData: function () {
-            return this.urlContent() + '/json/data.json';
+            // return this.urlContent() + '/json/data.json';
+            return this.urlContent() + '/json/data-pretty.json';
         },
 
         urlImg: function () {

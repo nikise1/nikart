@@ -5,6 +5,7 @@
 *.iml
 *.sublime-project
 *.sublime-workspace
+.yarn
 node_modules
 npm-debug.log
 

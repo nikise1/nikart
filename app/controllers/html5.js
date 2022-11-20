@@ -19,7 +19,7 @@ var html5Controller = function (app) {
 
     app.get('/html5/:lang', function (req, res) {
         appModel.setLangCode(req, res, req.params.lang);
-        res.redirect('html5');
+        res.redirect('/');
     });
 };
 
