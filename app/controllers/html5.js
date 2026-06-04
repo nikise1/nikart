@@ -1,5 +1,7 @@
 'use strict';
 
+// HTML5 version, the version of the app that needs to be converted
+
 var appModel = require('../models/appModel');
 
 var html5Controller = function (app) {

@@ -1,3 +1,5 @@
+// Unused php code
+
 <?php
 
 require('create_data_obj.php');

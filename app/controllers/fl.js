@@ -1,5 +1,7 @@
 'use strict';
 
+// Flash version, now not able to open in modern browsers but could still have a route somewhere for testing purposes
+
 var appModel = require('../models/appModel');
 
 var flController = function (app) {

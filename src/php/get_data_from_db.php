@@ -1,3 +1,5 @@
+// Unused php code, used to be used to generate json data
+
 <?php
 
 require_once('database.php');
