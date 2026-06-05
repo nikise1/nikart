@@ -1,4 +1,4 @@
-# Migration Plan: Legacy → Modern Stack + AI Agents
+# Migration Overview: Legacy → Modern Stack + AI Agents
 
 **Goal:** Sustainable, agent-maintained portfolio
 
