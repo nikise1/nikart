@@ -105,7 +105,7 @@ Configure CI/CD for scheduled agent tasks.
 
 ## Progress Tracker
 
-- [ ] Step 1: Legacy App Audit
+- [x] Step 1: Legacy App Audit
 - [ ] Step 2: Migration Planning
 - [ ] Step 3: Stack Research & Selection
 - [ ] Step 4: Project Setup & Architecture
