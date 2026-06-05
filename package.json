@@ -14,7 +14,7 @@
     },
     "devDependencies": {},
     "engines": {
-        "node": "6.11.x",
-        "npm": "5.3.x"
+        "node": "22.x",
+        "npm": "10.x"
     }
 }
