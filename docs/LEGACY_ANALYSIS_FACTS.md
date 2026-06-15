@@ -23,14 +23,39 @@
 ### Data Flow
 1. **Language:** Detected from cookie → `Accept-Language` header → defaults to `en`. Stored as a cookie (`langcode`).
 2. **Portfolio data:** Static JSON file (`public/content/json/data.json`) fetched by client-side Backbone model.
-3. **Client routing:** Backbone.Router with hash-based navigation (`#idStr`). Routes resolve to nested menu items in the JSON tree.
+3. **Client routing:** Backbone.Router with hash-based navigation (`#idStr`). Routes resolve to nested menu items in the JSON tree via recursive search.
 4. **State management:** Single `AppModel` (Backbone.Model) holds screen dimensions, current path array, current item, and references to `JSONModel`. No external state library.
+5. **Event bus:** `events/vent.js` (Backbone.Events) coordinates view open/close rather than a single declarative render tree.
+
+### App Boot Flow
+1. `html5.html` (Swig) renders the shell and injects `window.nikart.langCode`, `window.nikart.staticFilesStr`, and optional `window.nikart.debug`.
+2. RequireJS loads `main.js`, which creates `AppRouter` and `AppView`.
+3. `AppView` creates `AppModel`.
+4. `AppModel` fetches `data.json`.
+5. On data load, `AppModel` triggers `ventInitDataLoaded`.
+6. `AppView` instantiates article, video, thumbnail, breadcrumb, and nav views.
+7. Backbone.history starts and hash routes drive the selected content item.
+
+### View Responsibilities
+
+| View | Responsibility |
+|------|---------------|
+| `AppView` | Creates global model, child views, scroll/resize/orientation listeners |
+| `NavView` | Opens/closes menu, draws nav canvas bezier shape, animates nav items |
+| `NavItemView` | Renders and animates individual nav rows with curved stagger |
+| `ThumbView` | Renders item thumbnails, filters `html5` item, animates thumbnail panel |
+| `ThumbItemView` | Scroll-triggered thumbnail animation with queued GSAP timings |
+| `ArticleView` | Renders text/web/image items and image slideshow |
+| `VideoView` | Renders jPlayer video player with H.264/WebM sources |
+| `BreadcrumbsView` | Renders breadcrumb HTML from `pathArr` (string-built, not escaped) |
 
 ### Content Structure (data.json)
 - Nested tree: `main → menu[] → submenu[]`
-- Item types: `main`, `men` (menu), `web`, `tex` (text-only), `ima` (image gallery), `vid` (video)
+- Top-level menu items: 7, maximum nested depth: 3
+- Item types: `main` (1), `men` (menu, 8), `web` (27), `tex` (text-only, 14), `ima` (image gallery, 1), `vid` (video, 29)
 - Bilingual: `en`/`es` strings per item field
-- ~70 portfolio items across 6 categories
+- ~80 portfolio items across 6 categories
+- Multilingual fields and type-specific optional fields are implicit (no schema/validation)
 
 ---
 
@@ -68,7 +93,8 @@
 | **Slideshow** | Cross-fade images | `autoAlpha` on stacked `<li>` elements |
 
 ### Canvas 2D
-- **Nav circle reveal:** Draws expanding arc on a `<canvas width="130" height="260">` using `context.arc()` — triggered on nav open.
+- **Nav shape:** Draws a filled/stroked bezier shape on `<canvas width="130" height="260">` — triggered on nav open, animated as a DOM element via TweenLite after drawing.
+- No Three.js, PixiJS, or broad canvas rendering engine is present.
 
 ### CSS Transitions
 - Sass `@mixin transitionMix(all, 0.3s)` used on:
@@ -105,8 +131,12 @@
 | **No TypeScript** | 🟡 Low | All vanilla JS with `'use strict'` |
 | **No linting config** | 🟡 Low | Only JSHint in Grunt, no modern ESLint |
 | **Hardcoded static URL** | 🟠 Medium | `http://static.nikart.co.uk` embedded in model |
+| **Non-HTTPS URLs** | 🟠 Medium | Production templates include `http://` external URLs |
 | **Cookie-based i18n** | 🟡 Low | Works but not SEO-friendly |
 | **Modernizr/IE conditionals** | 🟡 Low | Unnecessary for modern browsers |
+| **Viewport user-scalable=no** | 🟡 Low | Accessibility issue, prevents zoom |
+| **Mixed ES5/ES6** | 🟡 Low | `const` appears in otherwise ES5-style code |
+| **Breadcrumb XSS surface** | 🟡 Low | Breadcrumb HTML is string-built, not structurally escaped |
 
 ### Complexity Assessment
 
@@ -123,18 +153,36 @@
 | Sprite animations | **Low** | Currently disabled; can be reimplemented with CSS animations or Lottie |
 | Responsive breakpoints | **Low** | Standard breakpoint system, maps to modern CSS or framework utilities |
 
-### Overall Migration Complexity: **Medium**
+---
 
-The app is a classic single-page portfolio with well-separated concerns. The main challenges are:
-1. Converting 8 Backbone views + event bus to a modern component architecture
-2. Reproducing GSAP animation sequences with equivalent fidelity
-3. Preserving the bilingual content system
+## 5. Styling & Layout
 
-The data model (nested JSON tree with route-based navigation) is clean and can be consumed directly by a modern framework.
+- Sass source: `public/html5/app/styles/sass/` with Compass and old Bootstrap Sass dependencies
+- Built CSS exists in both `app/styles/css/main.css` and `dist/styles/css/main.css`
+- Responsive breakpoints are duplicated: defined in both Sass variables and JavaScript (`AppModel.defaults`)
+- Viewport is locked: `maximum-scale=1.0, user-scalable=no` (accessibility concern)
+- Much layout is calculated imperatively in views using jQuery `.outerHeight()`, `.css()` and manual centering
+- `debug` mode toggles between `app/` and `dist/` asset roots via Swig template conditional
 
 ---
 
-## 5. File Statistics
+## 6. Build & Dependency Health
+
+### Root package
+- `npm start` → `node server.js`
+- `npm test` → `forever /usr/local/bin/node-inspector --web-port=9999` (not a real test suite)
+- `npm restart` → `supervisor --debug server.js` (`supervisor` is not declared as a dependency)
+- `engines` pins Node 22 and npm 10
+
+### HTML5 sub-package (`public/html5/`)
+- `npm start` → `grunt`
+- `npm run watch` → `grunt watch`
+- Grunt tasks: Compass Sass compile, RequireJS bundle, uglify, copy assets
+- All dependencies are unmet in the current checkout (not installed)
+
+---
+
+## 7. File Statistics
 
 | Category | Count |
 |----------|-------|
@@ -143,25 +191,18 @@ The data model (nested JSON tree with route-based navigation) is clean and can b
 | Sass partials | 12 |
 | HTML templates (Swig) | 4 |
 | HTML templates (Underscore) | 4 |
-| Portfolio items in JSON | ~70 |
+| Portfolio items in JSON | ~80 |
 | Total lines of JS (estimated) | ~1,500 |
 | Total lines of Sass (estimated) | ~400 |
 
 ---
 
-## 6. Assets & External Dependencies
+## 8. Assets & External Dependencies
 
 - **Images:** `public/content/img/` — portfolio screenshots (referenced by ID in JSON)
-- **Videos:** Hosted externally at `static.nikart.co.uk` (H.264 + WebM formats)
+- **Videos:** Hosted externally at `http://static.nikart.co.uk` (H.264 + WebM formats, non-HTTPS)
 - **Sprites:** `public/html5/app/img/sprites/` — curl animation, test animation frames
-- **Flash SWF:** `public/fl/main.swf` (can be archived/removed)
-- **PHP files:** `src/php/` — legacy database scripts, not connected to current Express app
-
----
-
-## 7. Recommendations for Migration
-
-1. **Drop entirely:** Flash version, Bower, RequireJS, Swig, jPlayer, Modernizr, IE conditionals, PHP files
-2. **Preserve:** JSON data structure, GSAP animation timings/easing, responsive breakpoints, bilingual content
-3. **Modernise:** GSAP 1.x → GSAP 3 or Framer Motion, Backbone → React/framework components, jQuery → native DOM
-4. **Add:** TypeScript, ESLint, testing framework, proper i18n library, native `<video>`
+- **Flash SWF:** `public/fl/main.swf` + `src/fl/main.fla` and ActionScript/GreenSock AS3 classes
+- **PHP files:** `src/php/` — historical JSON-generation code, uses removed `mysql_*` PHP APIs, not connected to current Express app
+- **Analytics:** Classic Google Analytics (`ga.js`, account `UA-11548511-1`)
+- **External static domain:** `http://static.nikart.co.uk` — availability/accessibility unverified

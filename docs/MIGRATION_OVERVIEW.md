@@ -9,7 +9,8 @@
 - Analyse codebase structure (routes, data flow, state management)
 - Inventory animations (CSS, GSAP, Canvas)
 - Identify tech debt and migration complexity
-- **Deliverable:** `LEGACY_ANALYSIS.md`
+- **Deliverable:** `LEGACY_ANALYSIS_FACTS.md` (facts only)
+- **Deliverable:** `LEGACY_ANALYSIS_OPINIONS.md` (recommendations, migration approach, pre-Step-2 decisions)
 
 ---
 
