@@ -14,6 +14,27 @@
 
 ---
 
+## Repo Structure Decision: Option C (Additive, No File Moves)
+
+Three approaches were evaluated for organising legacy and modern code during migration:
+
+| Option | Approach | Heroku Risk | Tradeoff |
+|--------|----------|-------------|----------|
+| A: Fork | Separate repo for modern app | None | Lose shared history, duplicate assets, two repos |
+| B: Monorepo (subfolder) | Move legacy into `legacy/`, modern at root | Medium — requires `heroku-buildpack-monorepo` or root shim | Single repo but adds buildpack complexity |
+| **C: Additive** | **Keep legacy at root, add `modern/` folder** | **None** | **Lowest friction; cleanup after legacy decommission** |
+
+**Decision: Option C**
+
+- Legacy stays at repo root — Heroku deployment unchanged (`Procfile`, `package.json`, `server.js` untouched)
+- Modern app lives in `modern/` — Vercel/Netlify/Cloudflare natively support deploying from a subfolder ("root directory" setting)
+- Both apps deployable simultaneously on separate platforms/URLs during the transition
+- Full git history preserved without `--follow`
+- Shared assets (`public/content/img/`, `data.json`) directly accessible during migration
+- When legacy is decommissioned: single cleanup commit removes legacy files and promotes `modern/` to root
+
+---
+
 ## Step 2: Migration Planning
 
 - Compare frameworks (Next.js, Remix, Astro)
