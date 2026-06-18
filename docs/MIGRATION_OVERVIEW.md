@@ -35,32 +35,27 @@ Three approaches were evaluated for organising legacy and modern code during mig
 
 ---
 
-## Step 2: Migration Planning
-
-- Compare frameworks (Next.js, Remix, Astro)
-- Define migration phases and effort estimates
-- Establish agent maintainability requirements
-- **Deliverable:** `MIGRATION_PLAN.md`
-- **Deliverable:** `PROGRESS.md`
-
----
-
-## Step 3: Stack Research & Selection
+## Step 2: Research
 
 Use AI agents to research and evaluate current best practices:
 
-- **Framework:** Use Copilot/Claude to compare React meta-frameworks (Next.js, Remix, Astro) against project requirements
+- **Framework:** Compare frameworks (Next.js, Remix, Astro, SvelteKit, Nuxt, SolidStart) against project requirements
 - **Animation:** Research modern animation libraries (Framer Motion, Motion One, GSAP React)
 - **State Management:** Evaluate options (Zustand, Jotai, TanStack Query, Redux Toolkit)
 - **Testing:** Compare testing frameworks (Vitest vs Jest, Playwright vs Cypress)
 - **Deployment:** Assess platforms (Vercel, Netlify, Cloudflare Pages)
-
-**AI Research Prompts:**
-- "What are the current best practices for [category] in 2024/2025?"
-- "Compare [option A] vs [option B] for [use case]"
-- "What are the trade-offs of [technology] for AI agent maintainability?"
+- **Agent maintainability:** Evaluate trade-offs for each choice
 
 **Deliverable:** `STACK_DECISION.md` with rationale for each choice
+
+---
+
+## Step 3: Plan & Progress
+
+- Define migration phases and effort estimates
+- Establish agent maintainability requirements
+- **Deliverable:** `MIGRATION_PLAN.md`
+- **Deliverable:** `PROGRESS.md`
 
 ---
 
@@ -128,8 +123,8 @@ Configure CI/CD for scheduled agent tasks.
 ## Progress Tracker
 
 - [x] Step 1: Legacy App Audit
-- [ ] Step 2: Migration Planning
-- [ ] Step 3: Stack Research & Selection
+- [ ] Step 2: Research
+- [ ] Step 3: Plan & Progress
 - [ ] Step 4: Project Setup & Architecture
 - [ ] Step 5: Static Content Migration
 - [ ] Step 6: Animation Modernisation
