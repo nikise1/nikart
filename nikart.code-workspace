@@ -4,5 +4,10 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"chat.tools.terminal.autoApprove": {
+			"npx create-next-app@latest": true,
+			"npm install": true
+		}
+	}
 }

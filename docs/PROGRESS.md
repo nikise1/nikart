@@ -35,14 +35,30 @@
 
 ## Current Step
 
-### Step 4: Project Setup & Architecture — Not Started
+### Step 4: Project Setup & Architecture ✅ (2026-06-29)
 
-- [ ] Init Next.js 16 in `modern/`
-- [ ] Configure TypeScript, Tailwind CSS 4, ESLint
-- [ ] Set up Vitest + Playwright
-- [ ] Install GSAP 3, Zustand, next-intl
-- [ ] Create AGENTS.md with code conventions
-- [ ] Configure Vercel deployment
+- [x] Init Next.js 16 in `modern/` (App Router, React 19, Turbopack)
+- [x] Configure TypeScript strict mode (`noUncheckedIndexedAccess`, `noUnusedLocals`, `exactOptionalPropertyTypes`)
+- [x] Tailwind CSS 4, ESLint
+- [x] Set up Vitest + React Testing Library + jsdom
+- [x] Set up Playwright (Chromium, E2E config)
+- [x] Install & configure next-intl (`/en/...`, `/es/...` routing, middleware, messages)
+- [x] Install GSAP 3 + `@gsap/react` (useGSAP hook wrapper in `src/lib/gsap.ts`)
+- [x] Set up Zustand store (`src/store/ui-store.ts` — nav open/close)
+- [x] Create AGENTS.md with full code conventions
+- [x] Configure Vercel deployment (`vercel.json`)
+- [x] Build passes cleanly
+
+---
+
+## Next Step
+
+### Step 5: Data Layer & Content Types (Phase 2)
+
+- [ ] Type the JSON data model (TypeScript interfaces)
+- [ ] Validate and import `data.json` (Zod)
+- [ ] Create typed content access utilities (tree traversal, path resolution, breadcrumbs)
+- [ ] Unit tests for data utilities
 
 ---
 
@@ -50,11 +66,13 @@
 
 | Step | Description | Status |
 |------|-------------|--------|
-| 4 | Project Setup & Architecture | Not Started |
-| 5 | Static Content Migration | Not Started |
-| 6 | Animation Modernisation | Not Started |
-| 7 | Canvas & Interactivity | Not Started |
-| 8 | AI Agent Infrastructure | Not Started |
+| 4 | Project Setup & Architecture | ✅ Done |
+| 5 | Data Layer & Content Types | Not Started |
+| 6 | Layout & Navigation Shell | Not Started |
+| 7 | Content Views | Not Started |
+| 8 | Animation & Transitions | Not Started |
+| 9 | Polish & Verification | Not Started |
+| 10 | Deployment & Cutover | Not Started |
 
 ---
 
