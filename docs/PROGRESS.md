@@ -61,16 +61,28 @@
 
 ---
 
+### Step 6: Layout & Navigation Shell ✅ (2026-07-01)
+
+- [x] App layout — responsive shell with fixed nav, header (breadcrumbs + lang switcher), content area
+- [x] Route structure — `[locale]/[...path]` catch-all resolving against JSON tree
+- [x] Nav component — Zustand-driven open/close, GSAP staggered item animation with curved margin-left
+- [x] Nav canvas bezier shape — ported exact legacy bezier coordinates, GSAP slide in/out
+- [x] Breadcrumbs component — path-derived, locale-aware titles, linked
+- [x] Language switcher — en↔es toggle preserving current path
+- [x] ContentPage placeholder (menu vs leaf rendering)
+- [x] Build clean, 25 tests passing
+
+---
+
 ## Next Step
 
-### Step 6: Layout & Navigation Shell
+### Step 7: Content Views
 
-- [ ] App layout (responsive shell)
-- [ ] Route structure (`[locale]/[...path]` mapping to JSON tree)
-- [ ] Nav component (open/close, items)
-- [ ] Nav canvas bezier shape
-- [ ] Breadcrumbs component
-- [ ] Language switcher
+- [ ] Thumbnail grid view
+- [ ] Thumbnail item component
+- [ ] Article view (text/web/image)
+- [ ] Video view
+- [ ] Menu/category landing view
 
 ---
 
@@ -83,7 +95,7 @@
 | 3 | — | Plan & Progress | ✅ Done |
 | 4 | Phase 1 | Project Setup & Architecture | ✅ Done |
 | 5 | Phase 2 | Data Layer & Content Types | ✅ Done |
-| 6 | Phase 3 | Layout & Navigation Shell | Not Started |
+| 6 | Phase 3 | Layout & Navigation Shell | ✅ Done |
 | 7 | Phase 4 | Content Views | Not Started |
 | 8 | Phase 5 | Animation & Transitions | Not Started |
 | 9 | Phase 6 | Polish & Verification | Not Started |

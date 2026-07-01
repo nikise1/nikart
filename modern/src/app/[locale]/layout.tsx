@@ -1,6 +1,9 @@
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/routing";
+import { Nav } from "@/components/nav/nav";
+import { Breadcrumbs } from "@/components/breadcrumbs/breadcrumbs";
+import { LanguageSwitcher } from "@/components/language-switcher/language-switcher";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -18,7 +21,16 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
+      <div className="relative flex min-h-screen w-full">
+        <Nav locale={locale as "en" | "es"} />
+        <div className="flex flex-1 flex-col">
+          <header className="flex items-center justify-between px-4 py-2">
+            <Breadcrumbs locale={locale as "en" | "es"} />
+            <LanguageSwitcher locale={locale as "en" | "es"} />
+          </header>
+          {children}
+        </div>
+      </div>
     </NextIntlClientProvider>
   );
 }
