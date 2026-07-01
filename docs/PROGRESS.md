@@ -51,28 +51,43 @@
 
 ---
 
+### Step 5: Data Layer & Content Types ✅ (2026-07-01)
+
+- [x] Typed JSON data model — Zod schemas + TS types (`LocalizedString`, `ContentItem`, `MenuItem`, `SiteData`)
+- [x] Validated import of `data.json` via `DataSchema.parse()` at build time
+- [x] Content access utilities: `localize()`, `localizeUrl()`, `findByPath()`, `findById()`, `getPathTo()`, `getBreadcrumbs()`, `getContentItems()`, `getSubMenus()`, `getTopMenu()`
+- [x] 25 unit tests passing (schema validation + all utilities)
+- [x] Copied `data-pretty.json` into `modern/public/content/json/`
+
+---
+
 ## Next Step
 
-### Step 5: Data Layer & Content Types (Phase 2)
+### Step 6: Layout & Navigation Shell
 
-- [ ] Type the JSON data model (TypeScript interfaces)
-- [ ] Validate and import `data.json` (Zod)
-- [ ] Create typed content access utilities (tree traversal, path resolution, breadcrumbs)
-- [ ] Unit tests for data utilities
+- [ ] App layout (responsive shell)
+- [ ] Route structure (`[locale]/[...path]` mapping to JSON tree)
+- [ ] Nav component (open/close, items)
+- [ ] Nav canvas bezier shape
+- [ ] Breadcrumbs component
+- [ ] Language switcher
 
 ---
 
 ## Upcoming Steps
 
-| Step | Description | Status |
-|------|-------------|--------|
-| 4 | Project Setup & Architecture | ✅ Done |
-| 5 | Data Layer & Content Types | Not Started |
-| 6 | Layout & Navigation Shell | Not Started |
-| 7 | Content Views | Not Started |
-| 8 | Animation & Transitions | Not Started |
-| 9 | Polish & Verification | Not Started |
-| 10 | Deployment & Cutover | Not Started |
+| Step | Migration Phase | Description | Status |
+|------|----------------|-------------|--------|
+| 1 | — | Legacy App Audit | ✅ Done |
+| 2 | — | Research | ✅ Done |
+| 3 | — | Plan & Progress | ✅ Done |
+| 4 | Phase 1 | Project Setup & Architecture | ✅ Done |
+| 5 | Phase 2 | Data Layer & Content Types | ✅ Done |
+| 6 | Phase 3 | Layout & Navigation Shell | Not Started |
+| 7 | Phase 4 | Content Views | Not Started |
+| 8 | Phase 5 | Animation & Transitions | Not Started |
+| 9 | Phase 6 | Polish & Verification | Not Started |
+| 10 | Phase 7 | Deployment & Cutover | Not Started |
 
 ---
 
