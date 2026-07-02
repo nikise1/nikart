@@ -31,6 +31,7 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
           <Link
             href={`/${crumb.path}`}
             className="text-[#1C6B00] transition-colors hover:text-[#A8682B]"
+            transitionTypes={["nav-back"]}
           >
             {crumb.title}
           </Link>

@@ -27,6 +27,7 @@ export function MenuLanding({ menu, locale, basePath }: MenuLandingProps) {
                 <Link
                   href={`/${locale}/${basePath}/${sub.id}`}
                   className="inline-block rounded bg-[#4F3E2D] px-4 py-2 text-sm text-white transition-colors hover:bg-[#94B864]"
+                  transitionTypes={["nav-forward"]}
                 >
                   {localize(sub.title, locale)}
                 </Link>

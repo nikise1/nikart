@@ -21,12 +21,18 @@ export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps)
 
   useGSAP(
     () => {
-      gsap.from(ref.current, {
-        scale: 0.4,
-        opacity: 0,
+      gsap.set(ref.current, { scale: 0.4, opacity: 0 });
+      gsap.to(ref.current, {
+        scale: 1,
+        opacity: 1,
         duration: 0.4,
         delay: index * 0.08,
         ease: "quad.in",
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
       });
     },
     { scope: ref },
@@ -34,7 +40,7 @@ export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps)
 
   return (
     <li ref={ref} className="group">
-      <Link href={href} className="flex flex-col items-center gap-2">
+      <Link href={href} className="flex flex-col items-center gap-2" transitionTypes={["nav-forward"]}>
         <div className="relative h-[90px] w-[120px] overflow-hidden rounded">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

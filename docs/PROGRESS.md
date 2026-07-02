@@ -89,6 +89,21 @@
 
 ---
 
+### Step 8: Animation & Transitions ✅ (2026-07-02)
+
+- [x] ScrollTrigger for thumbnail items — viewport-based stagger entrance with reverse on scroll out
+- [x] GSAP cross-fade slideshow — stacked images with `autoAlpha` transitions, auto-advance timer
+- [x] View Transitions API — `experimental.viewTransition` enabled in next.config.ts
+- [x] Directional route animations — `nav-forward` (slide left) / `nav-back` (slide right) / `crossfade` (default)
+- [x] `transitionTypes` on Links — thumbnails & menu links → forward, breadcrumbs → back
+- [x] Header anchored during transitions (`viewTransitionName: 'site-header'`)
+- [x] `prefers-reduced-motion: reduce` — disables all view transition animations
+- [x] GSAP ScrollTrigger registered globally (`src/lib/gsap.ts`)
+- [x] React Compiler compatible (no manual memoization conflicts)
+- [x] Build clean, lint clean, 33 tests passing
+
+---
+
 ## Upcoming Steps
 
 | Step | Migration Phase | Description | Status |
@@ -100,7 +115,7 @@
 | 5 | Phase 2 | Data Layer & Content Types | ✅ Done |
 | 6 | Phase 3 | Layout & Navigation Shell | ✅ Done |
 | 7 | Phase 4 | Content Views | ✅ Done |
-| 8 | Phase 5 | Animation & Transitions | Not Started |
+| 8 | Phase 5 | Animation & Transitions | ✅ Done |
 | 9 | Phase 6 | Polish & Verification | Not Started |
 | 10 | Phase 7 | Deployment & Cutover | Not Started |
 
