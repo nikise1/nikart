@@ -76,13 +76,16 @@
 
 ## Next Step
 
-### Step 7: Content Views
+### Step 7: Content Views ✅ (2026-07-02)
 
-- [ ] Thumbnail grid view
-- [ ] Thumbnail item component
-- [ ] Article view (text/web/image)
-- [ ] Video view
-- [ ] Menu/category landing view
+- [x] Thumbnail grid view (`src/components/thumbnail/thumbnail-grid.tsx`)
+- [x] Thumbnail item component (`src/components/thumbnail/thumbnail-item.tsx`) — GSAP stagger entrance
+- [x] Article view (`src/components/article/article-view.tsx`) — text/web/image with slideshow
+- [x] Video view (`src/components/video/video-view.tsx`) — native `<video>` with H.264/WebM
+- [x] Menu/category landing view (`src/components/menu-landing/menu-landing.tsx`) — sub-menu links
+- [x] Asset URL utilities (`src/lib/assets.ts`) + 8 unit tests
+- [x] ContentPage refactored to dispatch to correct view by item type
+- [x] Build clean, lint clean, 33 tests passing
 
 ---
 
@@ -96,7 +99,7 @@
 | 4 | Phase 1 | Project Setup & Architecture | ✅ Done |
 | 5 | Phase 2 | Data Layer & Content Types | ✅ Done |
 | 6 | Phase 3 | Layout & Navigation Shell | ✅ Done |
-| 7 | Phase 4 | Content Views | Not Started |
+| 7 | Phase 4 | Content Views | ✅ Done |
 | 8 | Phase 5 | Animation & Transitions | Not Started |
 | 9 | Phase 6 | Polish & Verification | Not Started |
 | 10 | Phase 7 | Deployment & Cutover | Not Started |
