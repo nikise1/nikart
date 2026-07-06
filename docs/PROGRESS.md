@@ -104,6 +104,28 @@
 
 ---
 
+## Next Step
+
+### Step 9: Polish & Verification
+
+#### 9a: ThumbnailGrid fidelity
+- [ ] Remove ScrollTrigger from `ThumbnailItem` — stagger on mount instead
+- [ ] Item initial opacity `0` → `0.05`
+- [ ] Add entrance delay to grid container slide
+- [ ] Verify exit via View Transitions
+- [ ] Match stagger timing to legacy
+
+#### 9b: Background image
+- [ ] Add `bg.jpg` + gradient fallback to body/layout
+
+#### 9c: Nav fidelity
+- [ ] Match legacy `nav-container` positioning (`fixed`, top-left)
+- [ ] Nav button starts off-screen, animates in
+- [ ] Canvas bezier + circle reveal matches legacy coordinates
+- [ ] Nav items stagger in/out timing matches legacy
+
+---
+
 ## Upcoming Steps
 
 | Step | Migration Phase | Description | Status |
@@ -116,7 +138,7 @@
 | 6 | Phase 3 | Layout & Navigation Shell | ✅ Done |
 | 7 | Phase 4 | Content Views | ✅ Done |
 | 8 | Phase 5 | Animation & Transitions | ✅ Done |
-| 9 | Phase 6 | Polish & Verification | Not Started |
+| 9 | Phase 6 | Polish & Verification | In Progress |
 | 10 | Phase 7 | Deployment & Cutover | Not Started |
 
 ---

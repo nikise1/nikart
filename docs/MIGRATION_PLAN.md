@@ -87,6 +87,39 @@
 
 ### Phase 6: Polish & Verification
 
+#### 6a: ThumbnailGrid fidelity
+
+Legacy `thumb-view.js` / `thumb-item-view.js` differences from modern `ThumbnailGrid`:
+
+| Aspect | Legacy | Modern (current) | Fix |
+|--------|--------|-------------------|-----|
+| Item entrance trigger | Immediate on container open | ScrollTrigger (viewport) | Remove ScrollTrigger, stagger on mount |
+| Item initial opacity | `0.05` (ghost) | `0` (invisible) | Change to `0.05` |
+| Container entrance | `right: -300 → 0` after `timeDelayThumbIn` delay | `gsap.from({ x: 300 })` immediately | Add delay |
+| Container exit | Slides to `right: -300`, clears items | View Transitions | Acceptable (React handles unmount) |
+| Stagger timing | Per-item delay in `aniIn()` | `index * 0.08` | Verify against legacy constants |
+
+#### 6b: Background image
+
+Legacy body styling:
+- `bg.jpg` top-left no-repeat, cover, fixed
+- Gradient fallback: `#D6D59D` → `#94B864`
+- Background color: `#bcc986`
+
+Modern needs: apply same background to root layout or `globals.css` body.
+
+#### 6c: Nav fidelity
+
+Legacy `nav-container` / `nav-view.js` behavior:
+- `position: fixed; top: 0; left: 0`
+- Nav button starts off-screen (`left: -30`, `top: -height`), slides into view
+- Canvas positioned absolute within container
+- Canvas bezier shape drawn with specific coordinates: `moveTo(20,0)`, `bezierCurveTo(70,83,92,167,...)`, `quadraticCurveTo(...)`
+- Open: shows items container, draws canvas, staggers `aniIn` per item
+- Close: staggers `aniOut` in reverse, hides after last item finishes (`timeNavOut + (n-1) * timeNavStaggerOut`)
+
+#### 6d: General polish
+
 | Task | Effort | Notes |
 |------|--------|-------|
 | Visual regression tests (Playwright) | Medium | Capture key states, compare against legacy |
@@ -97,7 +130,7 @@
 | Bilingual content verification | Small | All items render correctly in en/es |
 | Fix external asset references | Small | Verify/update static.nikart.co.uk links |
 
-**Phase effort: ~1–2 sessions**
+**Phase effort: ~2–3 sessions**
 
 ---
 
