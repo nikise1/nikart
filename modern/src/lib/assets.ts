@@ -1,5 +1,5 @@
 const STATIC_BASE = "https://static.nikart.co.uk";
-const CONTENT_BASE = `${STATIC_BASE}/content`;
+const CONTENT_BASE = "/content";
 
 export function imgUrl(id: string): string {
   return `${CONTENT_BASE}/img/${id}.jpg`;

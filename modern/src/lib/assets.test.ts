@@ -11,7 +11,7 @@ describe("assets", () => {
   describe("imgUrl", () => {
     it("returns correct thumbnail URL", () => {
       expect(imgUrl("onedayinmay")).toBe(
-        "https://static.nikart.co.uk/content/img/onedayinmay.jpg",
+        "/content/img/onedayinmay.jpg",
       );
     });
   });
@@ -19,7 +19,7 @@ describe("assets", () => {
   describe("imgSlideUrl", () => {
     it("returns correct slide URL with index", () => {
       expect(imgSlideUrl("ciudad", 3)).toBe(
-        "https://static.nikart.co.uk/content/img/ciudad_3.jpg",
+        "/content/img/ciudad_3.jpg",
       );
     });
   });

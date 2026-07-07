@@ -109,11 +109,16 @@
 ### Step 9: Polish & Verification
 
 #### 9a: ThumbnailGrid fidelity
-- [ ] Remove ScrollTrigger from `ThumbnailItem` — stagger on mount instead
-- [ ] Item initial opacity `0` → `0.05`
-- [ ] Add entrance delay to grid container slide
+- [x] Vertical list layout (not grid) — matches legacy `.thumb-list`
+- [x] Item layout: label left + image right — matches legacy `.thumb-item-container`
+- [x] Aligned to right side of screen (`ml-auto`)
+- [x] Hover: brown border + shadow — matches legacy `.thumb-img:hover`
+- [x] `CONTENT_BASE` made relative (`/content`), images symlinked from legacy
+- [x] Remove ScrollTrigger from `ThumbnailItem` — stagger on mount instead
+- [x] Item initial opacity `0` → `0.05`
+- [x] Add entrance delay to grid container slide
 - [ ] Verify exit via View Transitions
-- [ ] Match stagger timing to legacy
+- [x] Match stagger timing to legacy
 
 #### 9b: Background image
 - [ ] Add `bg.jpg` + gradient fallback to body/layout

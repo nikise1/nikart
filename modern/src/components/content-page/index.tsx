@@ -21,7 +21,7 @@ export function ContentPage({ node, path, locale }: ContentPageProps) {
 
     if (hasContentItems) {
       return (
-        <main className="flex-1">
+        <main className="flex flex-1 flex-col">
           <ThumbnailGrid menu={node} locale={locale} basePath={basePath} />
         </main>
       );
