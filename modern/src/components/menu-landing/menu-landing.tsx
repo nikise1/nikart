@@ -16,7 +16,7 @@ export function MenuLanding({ menu, locale, basePath }: MenuLandingProps) {
   const contentItems = getContentItems(menu);
 
   return (
-    <section className="flex flex-1 flex-col p-4">
+    <section data-component="MenuLanding" className="flex flex-1 flex-col p-4">
       <h1 className="text-2xl font-semibold text-[#4F3E2D]">{title}</h1>
 
       {subMenus.length > 0 && (

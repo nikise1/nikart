@@ -108,6 +108,25 @@ Legacy body styling:
 
 Modern needs: apply same background to root layout or `globals.css` body.
 
+#### 6b2: Breadcrumbs fidelity
+
+Legacy breadcrumb styling (`_nav.scss`):
+- `position: fixed; top: -0.3em; left: 6em`
+- Each item: `.breadcrumb-container` flex, `margin: 0 0.3em 0 0`
+- Connector: `stump.png` 15×12px, `rotate(75deg)`, before every item
+- Link: `display: inline-block; padding: 0.3em 0 0 0`
+- Hidden when nav is open
+
+#### 6b3: Language switcher
+
+- No legacy equivalent (language set server-side via `nikart.langCode`)
+- Modern: fixed bottom-left position
+- Legacy `{{otherversions}}` menu item interpolated as "Config" in `localize()`
+
+#### 6b4: Dev ergonomics
+
+- `data-component` attributes on all component root elements for DOM identification
+
 #### 6c: Nav fidelity
 
 Legacy `nav-container` / `nav-view.js` behavior:
@@ -117,6 +136,9 @@ Legacy `nav-container` / `nav-view.js` behavior:
 - Canvas bezier shape drawn with specific coordinates: `moveTo(20,0)`, `bezierCurveTo(70,83,92,167,...)`, `quadraticCurveTo(...)`
 - Open: shows items container, draws canvas, staggers `aniIn` per item
 - Close: staggers `aniOut` in reverse, hides after last item finishes (`timeNavOut + (n-1) * timeNavStaggerOut`)
+- Nav items: `white-space: nowrap` (legacy `overflow: hidden` on 32px-height wrapper clips text)
+- Item width animates from 0 to measured text width + 20px padding
+- Container width: `$navWidth = 15em`
 
 #### 6d: General polish
 

@@ -124,16 +124,17 @@
 - [x] Add `bg.jpg` + gradient fallback to body/layout
 
 #### 9b2: Breadcrumbs fidelity
-- [x] Aligned to right side (like legacy `left: 6em` relative positioning)
-- [x] Hidden when main nav is open
+- [x] Matches legacy positioning and styling
+
+#### 9b3: Language switcher
+- [x] Fixed bottom-left, `{{otherversions}}` interpolation
+
+#### 9b4: Dev ergonomics
+- [x] `data-component` attributes on all components
 
 #### 9c: Nav fidelity
-- [x] Match legacy `nav-container` positioning (`fixed`, top-left)
-- [x] Nav button starts off-screen, animates in on load, hides on nav open, returns on close
-- [x] Canvas close delayed until after items finish animating out (matches legacy `doneAniOut`)
-- [x] Nav items initial `autoAlpha: 0` + proper `fromTo` animation
-- [x] Canvas bezier + circle reveal matches legacy coordinates
-- [x] Nav items stagger in/out timing matches legacy
+- [x] Matches legacy positioning, animation, and timing
+- [x] `whitespace-nowrap` prevents line wrapping
 
 ---
 

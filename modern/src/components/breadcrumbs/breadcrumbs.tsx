@@ -28,13 +28,15 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
   if (navOpen) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className="ml-auto flex items-center gap-1 px-4 py-2 text-sm">
-      {crumbs.map((crumb, index) => (
-        <span key={crumb.id} className="flex items-center gap-1">
-          {index > 0 && <span className="text-[#94B864]">›</span>}
+    <nav aria-label="Breadcrumb" data-component="Breadcrumbs" className="fixed top-[-0.3em] left-[6em] z-50 flex flex-nowrap text-sm">
+      {crumbs.map((crumb) => (
+        <span key={crumb.id} className="mr-[0.3em] flex">
+          <span
+            className="inline-block h-[12px] w-[15px] shrink-0 rotate-[75deg] bg-[url('/content/img/stump.png')] bg-no-repeat"
+          />
           <Link
             href={`/${crumb.path}`}
-            className="text-[#1C6B00] transition-colors hover:text-[#A8682B]"
+            className="inline-block pt-[0.3em] text-[#1C6B00] transition-colors hover:text-[#A8682B]"
             transitionTypes={["nav-back"]}
           >
             {crumb.title}

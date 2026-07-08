@@ -21,14 +21,14 @@ export function ContentPage({ node, path, locale }: ContentPageProps) {
 
     if (hasContentItems) {
       return (
-        <main className="flex flex-1 flex-col">
+        <main data-component="ContentPage" className="flex flex-1 flex-col">
           <ThumbnailGrid menu={node} locale={locale} basePath={basePath} />
         </main>
       );
     }
 
     return (
-      <main className="flex-1">
+      <main data-component="ContentPage" className="flex-1">
         <MenuLanding menu={node} locale={locale} basePath={basePath} />
       </main>
     );
@@ -36,14 +36,14 @@ export function ContentPage({ node, path, locale }: ContentPageProps) {
 
   if (node.type === "vid") {
     return (
-      <main className="flex-1">
+      <main data-component="ContentPage" className="flex-1">
         <VideoView item={node} locale={locale} />
       </main>
     );
   }
 
   return (
-    <main className="flex-1">
+    <main data-component="ContentPage" className="flex-1">
       <ArticleView item={node} locale={locale} />
     </main>
   );

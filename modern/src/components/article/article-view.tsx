@@ -78,7 +78,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
   }
 
   return (
-    <article ref={ref} className="flex flex-1 flex-col items-center p-4">
+    <article ref={ref} data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
       <h1 className="text-center text-2xl font-semibold text-[#4F3E2D]">{title}</h1>
 
       {imgCount > 0 && (

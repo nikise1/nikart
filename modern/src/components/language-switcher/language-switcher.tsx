@@ -22,7 +22,8 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
     <Link
       href={contentPath || "/"}
       locale={otherLocale}
-      className="text-sm text-[#1C6B00] transition-colors hover:text-[#A8682B]"
+      data-component="LanguageSwitcher"
+      className="fixed bottom-4 left-4 z-50 text-sm text-[#1C6B00] transition-colors hover:text-[#A8682B]"
     >
       {label}
     </Link>

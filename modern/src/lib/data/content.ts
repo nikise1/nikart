@@ -11,8 +11,8 @@ import { siteData } from "./index";
 /** Resolve a LocalizedString to the correct locale */
 export function localize(value: LocalizedString | undefined, locale: Locale): string {
   if (value === undefined) return "";
-  if (typeof value === "string") return value;
-  return value[locale];
+  const raw = typeof value === "string" ? value : value[locale];
+  return raw.replace("{{otherversions}}", "Config");
 }
 
 /** Resolve a possibly-localized URL */

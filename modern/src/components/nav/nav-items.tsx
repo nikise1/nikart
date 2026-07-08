@@ -79,14 +79,14 @@ export function NavItems({ items, locale, open }: NavItemsProps) {
   }
 
   return (
-    <ul ref={containerRef} className="relative top-[30px] left-0 hidden w-[15em] list-none p-0">
+    <ul ref={containerRef} data-component="NavItems" className="relative top-[30px] left-0 hidden w-[15em] list-none p-0">
       {items.map((item) => {
         const title = localize(item.title, locale);
         return (
           <li key={item.id} className="nav-item h-8 overflow-hidden">
             <button
               onClick={() => handleClick(item.id)}
-              className="block w-full cursor-pointer border-none bg-transparent px-2 py-1 text-left text-sm text-[#1C6B00] transition-colors hover:text-[#A8682B]"
+              className="block w-full cursor-pointer whitespace-nowrap border-none bg-transparent px-2 py-1 text-left text-sm text-[#1C6B00] transition-colors hover:text-[#A8682B]"
             >
               {title}
             </button>

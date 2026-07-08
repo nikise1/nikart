@@ -27,7 +27,7 @@ export function VideoView({ item, locale }: VideoViewProps) {
   );
 
   return (
-    <article ref={ref} className="flex flex-1 flex-col items-center p-4">
+    <article ref={ref} data-component="VideoView" className="flex flex-1 flex-col items-center p-4">
       <h1 className="text-center text-2xl font-semibold text-[#4F3E2D]">{title}</h1>
 
       <div className="mt-4 w-full max-w-[480px]">
