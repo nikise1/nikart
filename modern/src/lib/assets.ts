@@ -1,4 +1,5 @@
-const STATIC_BASE = "https://static.nikart.co.uk";
+const STATIC_BASE =
+  process.env.NEXT_PUBLIC_STATIC_BASE ?? "http://static.nikart.co.uk";
 const CONTENT_BASE = "/content";
 
 export function imgUrl(id: string): string {

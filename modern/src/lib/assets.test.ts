@@ -27,7 +27,7 @@ describe("assets", () => {
   describe("videoH264Url", () => {
     it("returns correct H264 video URL", () => {
       expect(videoH264Url("spark")).toBe(
-        "https://static.nikart.co.uk/video_h264/spark.mp4",
+        "http://static.nikart.co.uk/video_h264/spark.mp4",
       );
     });
   });
@@ -35,7 +35,7 @@ describe("assets", () => {
   describe("videoWebmUrl", () => {
     it("returns correct WebM video URL", () => {
       expect(videoWebmUrl("spark")).toBe(
-        "https://static.nikart.co.uk/video_webm/spark.webm",
+        "http://static.nikart.co.uk/video_webm/spark.webm",
       );
     });
   });
@@ -50,7 +50,7 @@ describe("assets", () => {
 
     it("handles relative URLs by prepending static base", () => {
       expect(processUrl("games/ciudad_helm/index.html")).toEqual({
-        href: "https://static.nikart.co.uk/games/ciudad_helm/index.html",
+        href: "http://static.nikart.co.uk/games/ciudad_helm/index.html",
         isSelf: false,
       });
     });
