@@ -128,10 +128,12 @@
 - [x] Hidden when main nav is open
 
 #### 9c: Nav fidelity
-- [ ] Match legacy `nav-container` positioning (`fixed`, top-left)
-- [ ] Nav button starts off-screen, animates in
-- [ ] Canvas bezier + circle reveal matches legacy coordinates
-- [ ] Nav items stagger in/out timing matches legacy
+- [x] Match legacy `nav-container` positioning (`fixed`, top-left)
+- [x] Nav button starts off-screen, animates in on load, hides on nav open, returns on close
+- [x] Canvas close delayed until after items finish animating out (matches legacy `doneAniOut`)
+- [x] Nav items initial `autoAlpha: 0` + proper `fromTo` animation
+- [x] Canvas bezier + circle reveal matches legacy coordinates
+- [x] Nav items stagger in/out timing matches legacy
 
 ---
 

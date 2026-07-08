@@ -6,12 +6,17 @@ import { gsap, useGSAP } from "@/lib/gsap";
 interface NavCanvasProps {
   open: boolean;
   containerRef: React.RefObject<HTMLDivElement | null>;
+  numItems: number;
 }
 
 const CANVAS_WIDTH = 130;
 const CANVAS_HEIGHT = 280;
 
-export function NavCanvas({ open, containerRef }: NavCanvasProps) {
+// Timing must match nav-items.tsx
+const TIME_NAV_OUT = 0.5;
+const TIME_NAV_STAGGER_OUT = 0.075;
+
+export function NavCanvas({ open, containerRef, numItems }: NavCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useGSAP(
@@ -27,10 +32,13 @@ export function NavCanvas({ open, containerRef }: NavCanvasProps) {
           { x: 0, y: 0, duration: 0.5, ease: "power2.out" },
         );
       } else {
+        // Delay canvas close until items finish animating out (matches legacy doneAniOut)
+        const closeDelay = TIME_NAV_OUT + (numItems - 1) * TIME_NAV_STAGGER_OUT;
         gsap.to(canvas, {
           x: -120,
           y: -CANVAS_HEIGHT,
           duration: 0.5,
+          delay: closeDelay,
           ease: "power2.in",
           onComplete: () => {
             const ctx = canvas.getContext("2d");

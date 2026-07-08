@@ -40,20 +40,25 @@ export function NavItems({ items, locale, open }: NavItemsProps) {
         itemEls.forEach((el, i) => {
           const fraction = (i + 1) / items.length;
           const marginLeft = (Math.sqrt(fraction * 2) / 2) * CURVE_MOD_X;
-          gsap.set(el, { marginLeft, width: 0, autoAlpha: 1 });
-          gsap.to(el, {
-            width: "auto",
-            autoAlpha: 1,
-            duration: TIMING.itemIn,
-            delay: TIMING.growIn + i * TIMING.staggerIn,
-            ease: "power2.out",
-          });
+          gsap.set(el, { marginLeft, width: 0, autoAlpha: 0 });
+          gsap.fromTo(
+            el,
+            { width: 0, autoAlpha: 0 },
+            {
+              width: "auto",
+              autoAlpha: 1,
+              duration: TIMING.itemIn,
+              delay: TIMING.growIn + i * TIMING.staggerIn,
+              ease: "power2.out",
+            },
+          );
         });
       } else {
         itemEls.forEach((el, i) => {
           const delay = (items.length - 1 - i) * TIMING.staggerOut;
           gsap.to(el, {
             width: 0,
+            autoAlpha: 0,
             duration: TIMING.itemOut,
             delay,
             ease: "power2.in",

@@ -19,7 +19,7 @@ export function Nav({ locale }: NavProps) {
 
   return (
     <div ref={containerRef} className="fixed top-0 left-0 z-50">
-      <NavCanvas open={navOpen} containerRef={containerRef} />
+      <NavCanvas open={navOpen} containerRef={containerRef} numItems={items.length} />
       <NavButton />
       <NavItems items={items} locale={locale} open={navOpen} />
     </div>
