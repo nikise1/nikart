@@ -121,7 +121,11 @@
 - [x] Match stagger timing to legacy
 
 #### 9b: Background image
-- [ ] Add `bg.jpg` + gradient fallback to body/layout
+- [x] Add `bg.jpg` + gradient fallback to body/layout
+
+#### 9b2: Breadcrumbs fidelity
+- [x] Aligned to right side (like legacy `left: 6em` relative positioning)
+- [x] Hidden when main nav is open
 
 #### 9c: Nav fidelity
 - [ ] Match legacy `nav-container` positioning (`fixed`, top-left)
