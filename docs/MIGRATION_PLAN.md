@@ -94,7 +94,7 @@ Legacy `thumb-view.js` / `thumb-item-view.js` differences from modern `Thumbnail
 
 | Aspect | Legacy | Modern (current) | Fix |
 |--------|--------|-------------------|-----|
-| Item entrance trigger | Immediate on container open | ScrollTrigger (viewport, per item) | Keep ScrollTrigger; preserve legacy visual timing/feel; start hidden and drive play/reset from visibility transitions in `onUpdate` (`visibleEnter`/`visibleLeave`), with tween cancellation on reset; dev logs for toggle/play/reset transitions via shared `devDebug` utility |
+| Item entrance trigger | Immediate on container open | IntersectionObserver (threshold 0.01, per item) + GSAP | Switch to observer-driven visibility transitions (`observerEnter`/`observerLeave`) for deterministic play/reset; keep tween cancellation on reset; dev logs via shared `devDebug` utility |
 | Item initial opacity | `0.05` (ghost) | `0.05` (on image container) | Matched |
 | Container entrance | `right: -300 → 0` after `timeDelayThumbIn` delay | `gsap.from({ x: 300 })` immediately | Add delay |
 | Container exit | Slides to `right: -300`, clears items | View Transitions | Acceptable (React handles unmount) |

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { imgUrl } from "@/lib/assets";
 import { localize } from "@/lib/data/content";
 import { devDebug } from "@/lib/logger";
@@ -36,48 +36,45 @@ export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps)
 
   useGSAP(
     () => {
-      let wasVisible = false;
-
+      const itemEl = ref.current;
       resetAni();
-      gsap.to(imgRef.current, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.333,
-        ease: "quad.in",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 85%",
-          end: "bottom top",
-          toggleActions: "none none none none",
-          onToggle: (self) => {
-            const el = ref.current;
-            const visible = el ? ScrollTrigger.isInViewport(el, 0.01) : false;
-            devDebug("[ThumbnailItem] toggle", {
+
+      if (!itemEl) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (!entry) return;
+
+          if (entry.isIntersecting) {
+            devDebug("[ThumbnailItem] play", {
               id: item.id,
               index,
-              isActive: self.isActive,
-              visible,
-              progress: self.progress,
+              event: "observerEnter",
+              ratio: entry.intersectionRatio,
             });
-          },
-          onUpdate: (self) => {
-            const el = ref.current;
-            const visible = el ? ScrollTrigger.isInViewport(el, 0.01) : false;
+            playAni();
+            return;
+          }
 
-            if (!wasVisible && visible && self.isActive) {
-              devDebug("[ThumbnailItem] play", { id: item.id, index, event: "onVisibleEnter" });
-              playAni();
-            }
-
-            if (wasVisible && !visible) {
-              devDebug("[ThumbnailItem] reset", { id: item.id, index, event: "onVisibleLeave" });
-              resetAni();
-            }
-
-            wasVisible = visible;
-          },
+          devDebug("[ThumbnailItem] reset", {
+            id: item.id,
+            index,
+            event: "observerLeave",
+            ratio: entry.intersectionRatio,
+          });
+          resetAni();
         },
-      });
+        {
+          threshold: 0.01,
+        },
+      );
+
+      observer.observe(itemEl);
+
+      return () => {
+        observer.disconnect();
+      };
     },
     { scope: ref },
   );
