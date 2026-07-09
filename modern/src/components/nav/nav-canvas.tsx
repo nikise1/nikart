@@ -53,6 +53,7 @@ export function NavCanvas({ open, containerRef, numItems }: NavCanvasProps) {
   return (
     <canvas
       ref={canvasRef}
+      data-component="NavCanvas"
       width={CANVAS_WIDTH}
       height={CANVAS_HEIGHT}
       className="pointer-events-none absolute"

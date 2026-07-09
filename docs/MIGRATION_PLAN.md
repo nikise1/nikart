@@ -58,11 +58,12 @@
 
 | Task | Effort | Notes |
 |------|--------|-------|
-| Thumbnail grid view | Medium | Filter/display items, responsive grid |
-| Thumbnail item component | Small | Image + label, hover state |
+| Thumbnail grid view | Medium | Shows ALL children of a menu node (sub-menus + content items) — matches legacy `thumb-view.js` rendering `curItem.menu` |
+| Thumbnail item component | Small | Image + label, hover state. Accepts any `DataNode` (not just `ContentItem`) |
 | Article view (text/web/image) | Medium | Type-driven rendering, image slideshow |
 | Video view | Small | Native `<video>` with H.264/WebM sources |
-| Menu/category landing view | Small | Display submenu items or thumbnails |
+
+Note: No dedicated "menu landing" view exists in legacy. Menu nodes always show thumbnail grid of their children. `MenuLanding` was removed.
 
 **Phase effort: ~2 sessions**
 
@@ -93,8 +94,8 @@ Legacy `thumb-view.js` / `thumb-item-view.js` differences from modern `Thumbnail
 
 | Aspect | Legacy | Modern (current) | Fix |
 |--------|--------|-------------------|-----|
-| Item entrance trigger | Immediate on container open | ScrollTrigger (viewport) | Remove ScrollTrigger, stagger on mount |
-| Item initial opacity | `0.05` (ghost) | `0` (invisible) | Change to `0.05` |
+| Item entrance trigger | Immediate on container open | ScrollTrigger (viewport, per item) | Keep ScrollTrigger; preserve legacy visual timing/feel; start hidden and drive play/reset from visibility transitions in `onUpdate` (`visibleEnter`/`visibleLeave`), with tween cancellation on reset; dev logs for toggle/play/reset transitions via shared `devDebug` utility |
+| Item initial opacity | `0.05` (ghost) | `0.05` (on image container) | Matched |
 | Container entrance | `right: -300 → 0` after `timeDelayThumbIn` delay | `gsap.from({ x: 300 })` immediately | Add delay |
 | Container exit | Slides to `right: -300`, clears items | View Transitions | Acceptable (React handles unmount) |
 | Stagger timing | Per-item delay in `aniIn()` | `index * 0.08` | Verify against legacy constants |
@@ -126,6 +127,7 @@ Legacy breadcrumb styling (`_nav.scss`):
 #### 6b4: Dev ergonomics
 
 - `data-component` attributes on all component root elements for DOM identification
+- Components: Nav, NavButton, NavCanvas, NavItems, Breadcrumbs, LanguageSwitcher, ContentPage, ThumbnailGrid, ThumbnailItem, ArticleView, VideoView
 
 #### 6c: Nav fidelity
 

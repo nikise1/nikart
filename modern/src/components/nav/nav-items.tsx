@@ -83,7 +83,15 @@ export function NavItems({ items, locale, open }: NavItemsProps) {
       {items.map((item) => {
         const title = localize(item.title, locale);
         return (
-          <li key={item.id} className="nav-item h-8 overflow-hidden">
+          <li key={item.id} className="nav-item flex h-8 items-center overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/content/img/stump.png"
+              alt=""
+              width={20}
+              height={16}
+              className="inline-block"
+            />
             <button
               onClick={() => handleClick(item.id)}
               className="block w-full cursor-pointer whitespace-nowrap border-none bg-transparent px-2 py-1 text-left text-sm text-[#1C6B00] transition-colors hover:text-[#A8682B]"

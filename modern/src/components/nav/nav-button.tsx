@@ -30,6 +30,7 @@ export function NavButton() {
     <button
       ref={btnRef}
       onClick={toggleNav}
+      data-component="NavButton"
       className="absolute z-10 h-[60px] w-[90px] cursor-pointer border-none bg-[url('/content/img/curl-sprite.png')] bg-no-repeat indent-[-2000px] hover:bg-[position:0_0]"
       style={{ left: BTN_OUT_X, top: -BTN_HEIGHT, backgroundPosition: "0 -60px" }}
       aria-label="Toggle navigation"
