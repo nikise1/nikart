@@ -160,12 +160,45 @@ Legacy `nav-container` / `nav-view.js` behavior:
 
 ### Phase 7: Deployment & Cutover
 
+#### 7a: WIP Deploy — Vercel Preview (do this now, during Phase 6)
+
+The modern app can be deployed to Vercel as a live preview at any point. This gives a shareable URL for visual review without touching the production domain.
+
+**One-time Vercel project setup:**
+
+1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
+2. **Root Directory:** set to `modern/` (critical — do not leave as repo root)
+3. Build settings are auto-detected from `modern/vercel.json` (no changes needed)
+4. Framework preset: Next.js (auto-detected)
+5. Environment variables: none required for WIP (static content, no secrets)
+6. Click Deploy — first deploy takes ~2 min
+
+**After initial deploy:**
+
+- Every push to `main` auto-deploys to the Vercel preview URL (e.g. `nikart-modern.vercel.app`)
+- Every PR/branch gets its own preview URL — use these for visual review of animation changes
+- `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts` — verify these work on the preview URL
+
+**Ongoing WIP checklist (per session):**
+
+- [ ] Push working branch → check Vercel preview URL
+- [ ] Verify `static.nikart.co.uk` video/games rewrites load correctly
+- [ ] Verify both `/en/` and `/es/` routes render
+- [ ] Check nav open/close animation on preview (not just local)
+
+---
+
+#### 7b: Production Cutover (after Phase 6 complete)
+
 | Task | Effort | Notes |
 |------|--------|-------|
-| Vercel production deployment | Small | Configure custom domain |
-| DNS cutover (nikart.co.uk → Vercel) | Small | After verification period |
+| Add custom domain in Vercel dashboard | Small | `nikart.co.uk` → Vercel project settings → Domains |
+| Update DNS at registrar | Small | Add Vercel's A record (`76.76.21.21`) + CNAME (`cname.vercel-dns.com`) for `www` |
+| Verify SSL certificate issued | Small | Vercel provisions Let's Encrypt automatically |
+| Smoke-test production domain | Small | Nav, content, video, both languages |
+| DNS cutover (nikart.co.uk → Vercel) | Small | After verification period; legacy Heroku still live during propagation |
 | Legacy cleanup commit | Small | Remove legacy files, promote `modern/` to root |
-| Decommission Heroku app | Small | After DNS propagation confirmed |
+| Decommission Heroku app | Small | After DNS propagation confirmed (check with `dig nikart.co.uk`) |
 
 **Phase effort: ~1 session**
 

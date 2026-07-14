@@ -7,7 +7,12 @@ import { gsap, useGSAP } from "@/lib/gsap";
 const BTN_OUT_X = -30;
 const BTN_HEIGHT = 60;
 
-export function NavButton() {
+// Must match nav-canvas.tsx / nav-items.tsx timing
+const TIME_NAV_GROW_IN = 0.5;
+const TIME_NAV_OUT = 0.5;
+const TIME_NAV_STAGGER_OUT = 0.075;
+
+export function NavButton({ numItems }: { readonly numItems: number }) {
   const toggleNav = useUIStore((s) => s.toggleNav);
   const navOpen = useUIStore((s) => s.navOpen);
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -18,12 +23,15 @@ export function NavButton() {
       if (!btn) return;
 
       if (navOpen) {
-        gsap.to(btn, { left: BTN_OUT_X, top: -BTN_HEIGHT, duration: 0.5, ease: "power2.in" });
+        // Button hides simultaneously with canvas opening (legacy: setUpCanvas)
+        gsap.to(btn, { left: BTN_OUT_X, top: -BTN_HEIGHT, duration: TIME_NAV_GROW_IN, ease: "power2.in" });
       } else {
-        gsap.to(btn, { left: 0, top: 0, duration: 0.5, ease: "power2.out" });
+        // Button reappears after items finish animating out (legacy: doneAniOut → closeCanvas)
+        const closeDelay = TIME_NAV_OUT + (numItems - 1) * TIME_NAV_STAGGER_OUT;
+        gsap.to(btn, { left: 0, top: 0, duration: TIME_NAV_GROW_IN, delay: closeDelay, ease: "power2.out" });
       }
     },
-    { dependencies: [navOpen] },
+    { dependencies: [navOpen, numItems] },
   );
 
   return (

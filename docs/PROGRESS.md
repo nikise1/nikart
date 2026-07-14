@@ -151,7 +151,8 @@
 | 7 | Phase 4 | Content Views | ✅ Done |
 | 8 | Phase 5 | Animation & Transitions | ✅ Done |
 | 9 | Phase 6 | Polish & Verification | In Progress |
-| 10 | Phase 7 | Deployment & Cutover | Not Started |
+| 10 | Phase 7a | WIP Deploy to Vercel Preview | Not Started |
+| 11 | Phase 7b | Production Cutover | Not Started |
 
 ---
 
