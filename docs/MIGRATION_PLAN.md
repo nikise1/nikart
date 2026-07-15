@@ -6,9 +6,9 @@
 
 ---
 
-## Phases
+## Steps
 
-### Phase 1: Project Scaffold & Infrastructure
+### Step 4: Project Setup & Architecture
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -22,11 +22,11 @@
 | Create AGENTS.md + code conventions | Small | Agent maintainability rules |
 | Vercel project config (root = `modern/`) | Small | Preview deploys from PRs |
 
-**Phase effort: ~1 session**
+**Step effort: ~1 session**
 
 ---
 
-### Phase 2: Data Layer & Content Types
+### Step 5: Data Layer & Content Types
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -35,11 +35,11 @@
 | Create typed content access utilities | Small | Tree traversal, path resolution, breadcrumb generation |
 | Unit tests for data utilities | Small | Path lookup, language field access, type narrowing |
 
-**Phase effort: ~1 session**
+**Step effort: ~1 session**
 
 ---
 
-### Phase 3: Layout & Navigation Shell
+### Step 6: Layout & Navigation Shell
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -50,11 +50,11 @@
 | Breadcrumbs component | Small | Derive from URL path, type-safe |
 | Language switcher | Small | URL-based via next-intl |
 
-**Phase effort: ~2 sessions**
+**Step effort: ~2 sessions**
 
 ---
 
-### Phase 4: Content Views
+### Step 7: Content Views
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -65,11 +65,11 @@
 
 Note: No dedicated "menu landing" view exists in legacy. Menu nodes always show thumbnail grid of their children. `MenuLanding` was removed.
 
-**Phase effort: ~2 sessions**
+**Step effort: ~2 sessions**
 
 ---
 
-### Phase 5: Animation & Transitions
+### Step 8: Animation & Transitions
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -82,11 +82,11 @@ Note: No dedicated "menu landing" view exists in legacy. Menu nodes always show 
 | Image slideshow cross-fade | Small | Stacked elements with `autoAlpha` |
 | View Transitions (route changes) | Medium | React 19.2 View Transitions API integration |
 
-**Phase effort: ~2–3 sessions**
+**Step effort: ~2–3 sessions**
 
 ---
 
-### Phase 6: Polish & Verification
+### Step 9: Polish & Verification
 
 #### 6a: ThumbnailGrid fidelity
 
@@ -154,13 +154,19 @@ Legacy `nav-container` / `nav-view.js` behavior:
 | Bilingual content verification | Small | All items render correctly in en/es |
 | Fix external asset references | Small | Verify/update static.nikart.co.uk links |
 
-**Phase effort: ~2–3 sessions**
+Maintenance note (2026-07-15):
+- Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
+- Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
+- Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
+- Standardized package manager to npm for modern app: added `packageManager: npm@10` in root/modern `package.json`.
+- Simplified `docs/PROGRESS.md` "Upcoming Steps" table to remove redundant separate "Migration Phase" column.
+- Removed remaining phase references from the "Step" labels in `docs/PROGRESS.md` to keep the table concise.
+
+**Step effort: ~2–3 sessions**
 
 ---
 
-### Phase 7: Deployment & Cutover
-
-#### 7a: WIP Deploy — Vercel Preview (do this now, during Phase 6)
+### Step 10: WIP Deploy — Vercel Preview (do this now, during Step 9)
 
 The modern app can be deployed to Vercel as a live preview at any point. This gives a shareable URL for visual review without touching the production domain.
 
@@ -188,7 +194,7 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 
 ---
 
-#### 7b: Production Cutover (after Phase 6 complete)
+### Step 11: Production Cutover (after Step 9 complete)
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -200,21 +206,22 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 | Legacy cleanup commit | Small | Remove legacy files, promote `modern/` to root |
 | Decommission Heroku app | Small | After DNS propagation confirmed (check with `dig nikart.co.uk`) |
 
-**Phase effort: ~1 session**
+**Step effort: ~1 session**
 
 ---
 
 ## Effort Summary
 
-| Phase | Estimated Sessions | Dependency |
-|-------|-------------------|------------|
-| 1. Scaffold & Infrastructure | 1 | — |
-| 2. Data Layer & Content Types | 1 | Phase 1 |
-| 3. Layout & Navigation Shell | 2 | Phase 2 |
-| 4. Content Views | 2 | Phase 3 |
-| 5. Animation & Transitions | 2–3 | Phase 4 |
-| 6. Polish & Verification | 1–2 | Phase 5 |
-| 7. Deployment & Cutover | 1 | Phase 6 |
+| Step | Estimated Sessions | Dependency |
+|------|-------------------|------------|
+| 4. Project Setup & Architecture | 1 | — |
+| 5. Data Layer & Content Types | 1 | Step 4 |
+| 6. Layout & Navigation Shell | 2 | Step 5 |
+| 7. Content Views | 2 | Step 6 |
+| 8. Animation & Transitions | 2–3 | Step 7 |
+| 9. Polish & Verification | 1–2 | Step 8 |
+| 10. WIP Deploy to Vercel Preview | Ongoing | Step 9 |
+| 11. Production Cutover | 1 | Step 9 |
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.
@@ -262,5 +269,5 @@ A "session" = one focused working block with AI agent collaboration.
 | Animation fidelity loss | Visual regression tests comparing legacy screenshots to modern |
 | External video host unavailable | Verify `static.nikart.co.uk` early; fallback plan to self-host media |
 | GSAP React integration complexity | Use established `gsap.context()` pattern; isolate animation logic in custom hooks |
-| Scope creep (redesign temptation) | Phase 5 is about faithful reproduction; any redesign is a separate future phase |
+| Scope creep (redesign temptation) | Step 8 is about faithful reproduction; any redesign is a separate future step |
 | Agent-generated code quality | Strict TypeScript + ESLint + pre-commit hooks catch issues immediately |

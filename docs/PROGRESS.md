@@ -136,23 +136,43 @@
 - [x] Matches legacy positioning, animation, and timing
 - [x] `whitespace-nowrap` prevents line wrapping
 
+#### 9d: Toolchain maintenance (modern app) ✅ (2026-07-15)
+- [x] Added `modern/.nvmrc` with Node `22` to match repo engine target
+- [x] Stage 1 safe dependency updates in `modern/`:
+  - `next` `16.2.9` → `16.2.10`
+  - `eslint-config-next` `16.2.9` → `16.2.10`
+  - `next-intl` `4.13.1` → `4.13.2`
+  - `tailwindcss` `4.3.1` → `4.3.2`
+  - `@tailwindcss/postcss` `4.3.1` → `4.3.2`
+  - `vitest` `4.1.9` → `4.1.10`
+  - `eslint` `9.39.4` → `9.39.5`
+- [x] Stage 2 dependency updates in `modern/`:
+  - `react` `19.2.4` → `19.2.7`
+  - `react-dom` `19.2.4` → `19.2.7`
+- [x] Validation after Stage 1/2: lint clean, tests passing (33/33)
+
+#### 9e: Package manager standardization (modern app) ✅ (2026-07-15)
+- [x] Added `packageManager: npm@10` in root and modern `package.json`
+- [x] Validation after standardization: npm install clean, lint clean, tests passing (33/33)
+- [x] Terminology sync: updated `docs/MIGRATION_PLAN.md` to use Progress-aligned `Step` labels instead of `Phase`
+
 ---
 
 ## Upcoming Steps
 
-| Step | Migration Phase | Description | Status |
-|------|----------------|-------------|--------|
-| 1 | — | Legacy App Audit | ✅ Done |
-| 2 | — | Research | ✅ Done |
-| 3 | — | Plan & Progress | ✅ Done |
-| 4 | Phase 1 | Project Setup & Architecture | ✅ Done |
-| 5 | Phase 2 | Data Layer & Content Types | ✅ Done |
-| 6 | Phase 3 | Layout & Navigation Shell | ✅ Done |
-| 7 | Phase 4 | Content Views | ✅ Done |
-| 8 | Phase 5 | Animation & Transitions | ✅ Done |
-| 9 | Phase 6 | Polish & Verification | In Progress |
-| 10 | Phase 7a | WIP Deploy to Vercel Preview | Not Started |
-| 11 | Phase 7b | Production Cutover | Not Started |
+| Step | Description | Status |
+|------|-------------|--------|
+| 1 | Legacy App Audit | ✅ Done |
+| 2 | Research | ✅ Done |
+| 3 | Plan & Progress | ✅ Done |
+| 4 | Project Setup & Architecture | ✅ Done |
+| 5 | Data Layer & Content Types | ✅ Done |
+| 6 | Layout & Navigation Shell | ✅ Done |
+| 7 | Content Views | ✅ Done |
+| 8 | Animation & Transitions | ✅ Done |
+| 9 | Polish & Verification | In Progress |
+| 10 | WIP Deploy to Vercel Preview | Not Started |
+| 11 | Production Cutover | Not Started |
 
 ---
 
