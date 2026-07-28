@@ -22,6 +22,14 @@ Portfolio site migration from legacy Flash/Backbone to Next.js 16. Faithful repr
 
 ## Commands
 
+From repo root (preferred one-word shortcut):
+
+```bash
+npm run modern       # Dev server — alias for `npm run dev` in this folder
+```
+
+From `modern/`:
+
 ```bash
 npm run dev          # Dev server (Turbopack)
 npm run build        # Production build

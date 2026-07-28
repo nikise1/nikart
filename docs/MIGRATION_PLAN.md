@@ -249,9 +249,10 @@ A "session" = one focused working block with AI agent collaboration.
 
 ### Documentation Requirements
 
-1. **AGENTS.md at `modern/` root** — Describes project structure, commands, patterns, and constraints for AI agents.
-2. **README.md** — Human-readable setup and architecture overview.
-3. **Inline comments only for "why"** — Code should be self-documenting. Comments explain non-obvious decisions only.
+1. **AGENTS.md at repo root** — Workspace agent rules; documents that `modern/` is the main app and the one-word run command `npm run modern`.
+2. **AGENTS.md at `modern/` root** — Describes project structure, commands, patterns, and constraints for AI agents.
+3. **README.md** — Human-readable setup and architecture overview.
+4. **Inline comments only for "why"** — Code should be self-documenting. Comments explain non-obvious decisions only.
 
 ### CI/CD Requirements
 

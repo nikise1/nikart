@@ -188,3 +188,4 @@
 | 2026-06-24 | Vercel | Native Next.js, preview deploys, Adapter API exit |
 | 2026-06-24 | next-intl | URL-based i18n, SEO-friendly |
 | 2026-06-24 | Tailwind CSS 4 | Agent-friendly, zero runtime |
+| 2026-07-28 | `modern/` is the main app; run via `npm run modern` | Root AGENTS.md documents one-word `modern` shortcut |
