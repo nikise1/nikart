@@ -2,21 +2,21 @@
 
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { NAV_TIMING } from "@/lib/nav-timing";
+import type { NavPhase } from "@/store/nav-store";
 
 interface NavCanvasProps {
-  open: boolean;
+  phase: NavPhase;
   containerRef: React.RefObject<HTMLDivElement | null>;
   numItems: number;
 }
 
 const CANVAS_WIDTH = 130;
 const CANVAS_HEIGHT = 280;
+const CANVAS_OUT_X = -120;
+const CANVAS_OUT_Y = -CANVAS_HEIGHT;
 
-// Timing must match nav-items.tsx
-const TIME_NAV_OUT = 0.5;
-const TIME_NAV_STAGGER_OUT = 0.075;
-
-export function NavCanvas({ open, containerRef, numItems }: NavCanvasProps) {
+export function NavCanvas({ phase, containerRef, numItems }: NavCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useGSAP(
@@ -24,30 +24,31 @@ export function NavCanvas({ open, containerRef, numItems }: NavCanvasProps) {
       const canvas = canvasRef.current;
       if (!canvas) return;
 
-      if (open) {
+      if (phase === "opening") {
         drawBezierShape(canvas);
         gsap.fromTo(
           canvas,
-          { x: -120, y: -CANVAS_HEIGHT },
-          { x: 0, y: 0, duration: 0.5, ease: "power2.out" },
+          { x: CANVAS_OUT_X, y: CANVAS_OUT_Y },
+          { x: 0, y: 0, duration: NAV_TIMING.growIn, ease: "power2.out" },
         );
-      } else {
-        // Delay canvas close until items finish animating out (matches legacy doneAniOut)
-        const closeDelay = TIME_NAV_OUT + (numItems - 1) * TIME_NAV_STAGGER_OUT;
+      } else if (phase === "closing-canvas") {
         gsap.to(canvas, {
-          x: -120,
-          y: -CANVAS_HEIGHT,
-          duration: 0.5,
-          delay: closeDelay,
+          x: CANVAS_OUT_X,
+          y: CANVAS_OUT_Y,
+          duration: NAV_TIMING.growOut,
           ease: "power2.in",
           onComplete: () => {
             const ctx = canvas.getContext("2d");
             ctx?.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
           },
         });
+      } else if (phase === "closed") {
+        gsap.set(canvas, { x: CANVAS_OUT_X, y: CANVAS_OUT_Y });
+        const ctx = canvas.getContext("2d");
+        ctx?.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
       }
     },
-    { scope: containerRef, dependencies: [open] },
+    { scope: containerRef, dependencies: [phase, numItems] },
   );
 
   return (

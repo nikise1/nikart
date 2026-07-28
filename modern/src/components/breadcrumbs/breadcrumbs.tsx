@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { getBreadcrumbs } from "@/lib/data/content";
 import { Link } from "@/navigation";
 import type { Locale } from "@/lib/data/schema";
-import { useUIStore } from "@/store/ui-store";
+import { useNavStore } from "@/store/nav-store";
 
 interface BreadcrumbsProps {
   locale: Locale;
@@ -12,7 +12,8 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ locale }: BreadcrumbsProps) {
   const pathname = usePathname();
-  const navOpen = useUIStore((s) => s.navOpen);
+  const navPhase = useNavStore((s) => s.navPhase);
+  const navVisible = navPhase === "opening" || navPhase === "open";
 
   // Extract path segments after /locale/
   const segments = pathname.split("/").filter(Boolean);
@@ -25,7 +26,7 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
 
   if (crumbs.length === 0) return null;
 
-  if (navOpen) return null;
+  if (navVisible) return null;
 
   return (
     <nav aria-label="Breadcrumb" data-component="Breadcrumbs" className="fixed top-[-0.3em] left-[6em] z-50 flex flex-nowrap text-sm">

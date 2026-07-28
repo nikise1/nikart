@@ -135,6 +135,7 @@
 #### 9c: Nav fidelity
 - [x] Matches legacy positioning, animation, and timing
 - [x] `whitespace-nowrap` prevents line wrapping
+- [x] Nav animation phase state machine in Zustand (`nav-store.ts`) — startup close-then-open, item stagger, canvas/button sequencing, deferred route navigation on item click
 
 #### 9d: Toolchain maintenance (modern app) ✅ (2026-07-15)
 - [x] Added `modern/.nvmrc` with Node `22` to match repo engine target
