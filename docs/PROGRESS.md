@@ -136,6 +136,8 @@
 - [x] Matches legacy positioning, animation, and timing
 - [x] `whitespace-nowrap` prevents line wrapping
 - [x] Nav animation phase state machine in Zustand (`nav-store.ts`) — startup close-then-open, item stagger, canvas/button sequencing, deferred route navigation on item click
+- [x] Central `useNavAnimator` orchestrator mirrors legacy `nav-view.js doAni()` (single tween scope, kill on interrupt)
+- [x] NavButton is back-to-main only — hidden on home, shown off main, click navigates to `/`
 
 #### 9d: Toolchain maintenance (modern app) ✅ (2026-07-15)
 - [x] Added `modern/.nvmrc` with Node `22` to match repo engine target

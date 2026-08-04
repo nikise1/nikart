@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useGSAP } from "@/lib/gsap";
-import gsap from "gsap";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { ThumbnailItem } from "./thumbnail-item";
 import type { MenuItem, Locale } from "@/lib/data/schema";
 
@@ -18,14 +17,17 @@ export function ThumbnailGrid({ menu, locale, basePath }: ThumbnailGridProps) {
 
   useGSAP(
     () => {
-      gsap.from(ref.current, {
-        x: 300,
-        duration: 0.6,
-        delay: 0.2,
-        ease: "power2.out",
-      });
+      const el = ref.current;
+      if (!el) return;
+
+      gsap.killTweensOf(el);
+      gsap.fromTo(
+        el,
+        { x: 300 },
+        { x: 0, duration: 0.6, delay: 0.2, ease: "power2.out", overwrite: true },
+      );
     },
-    { scope: ref },
+    { scope: ref, dependencies: [basePath] },
   );
 
   return (

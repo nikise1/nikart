@@ -1,18 +1,17 @@
 import { create } from "zustand";
+import type { NavPhase } from "./nav-types";
 
-export type NavPhase = "closed" | "closing-items" | "closing-canvas" | "opening" | "open";
+export type { NavPhase } from "./nav-types";
 
 interface NavState {
-  /** Target open/closed state (legacy openBool). */
   navOpen: boolean;
-  /** Current animation phase in the nav sequence. */
   navPhase: NavPhase;
-  /** Legacy initDone — nav is mounted and can respond to interactions. */
   navReady: boolean;
-  /** Route to navigate to after the close animation finishes. */
   pendingRoute: string | null;
-  /** Startup: reveal button before opening menu (legacy close-then-open on main). */
+  /** Startup on main: close (button reveal) then open. */
   startupPendingOpen: boolean;
+  /** Route to main while nav is open/closing: open after close completes. */
+  pendingOpenAfterClose: boolean;
 
   setNavReady: () => void;
   runStartupSequence: () => void;
@@ -22,7 +21,7 @@ interface NavState {
   onItemsOutComplete: () => void;
   onCanvasCloseComplete: () => void;
   onOpenComplete: () => void;
-  toggleNav: () => boolean;
+  openHomeMenu: () => void;
   syncToRoute: (isHome: boolean) => void;
   clearPendingRoute: () => void;
   selectNavItem: (route: string) => void;
@@ -34,35 +33,41 @@ export const useNavStore = create<NavState>((set, get) => ({
   navReady: false,
   pendingRoute: null,
   startupPendingOpen: false,
+  pendingOpenAfterClose: false,
 
   setNavReady: () => set({ navReady: true }),
 
   runStartupSequence: () => {
-    // Legacy startup on main: ventNavClose (button reveal) then ventNavOpen.
-    // Items are already hidden, so skip straight to the canvas/button close phase.
+    // Legacy startup on main: ventNavClose then ventNavOpen (items hidden → closeCanvas → open).
     set({
       navOpen: false,
       navPhase: "closing-canvas",
       startupPendingOpen: true,
       pendingRoute: null,
+      pendingOpenAfterClose: false,
     });
   },
 
   runButtonReveal: () => {
-    // Deep-link entry: reveal button via closeCanvas without opening the menu.
     set({
       navOpen: false,
       navPhase: "closing-canvas",
       startupPendingOpen: false,
       pendingRoute: null,
+      pendingOpenAfterClose: false,
     });
   },
 
   requestNavOpen: () => {
     const { navPhase } = get();
     if (navPhase === "open" || navPhase === "opening") return;
-
-    set({ navOpen: true, navPhase: "opening", pendingRoute: null, startupPendingOpen: false });
+    set({
+      navOpen: true,
+      navPhase: "opening",
+      pendingRoute: null,
+      startupPendingOpen: false,
+      pendingOpenAfterClose: false,
+    });
   },
 
   requestNavClose: (pendingRoute?: string) => {
@@ -87,11 +92,15 @@ export const useNavStore = create<NavState>((set, get) => ({
   },
 
   onCanvasCloseComplete: () => {
-    const { navPhase, startupPendingOpen } = get();
+    const { navPhase, startupPendingOpen, pendingOpenAfterClose } = get();
     if (navPhase !== "closing-canvas") return;
 
-    if (startupPendingOpen) {
-      set({ navPhase: "closed", startupPendingOpen: false });
+    if (startupPendingOpen || pendingOpenAfterClose) {
+      set({
+        navPhase: "closed",
+        startupPendingOpen: false,
+        pendingOpenAfterClose: false,
+      });
       get().requestNavOpen();
       return;
     }
@@ -105,25 +114,29 @@ export const useNavStore = create<NavState>((set, get) => ({
     set({ navPhase: "open" });
   },
 
-  toggleNav: () => {
-    const { navReady, navOpen, navPhase } = get();
-    if (!navReady) return false;
+  openHomeMenu: () => {
+    const { navPhase } = get();
 
-    const isVisuallyOpen = navOpen || navPhase === "opening" || navPhase === "open";
-
-    if (isVisuallyOpen) {
+    if (navPhase === "opening" || navPhase === "open") {
+      set({ pendingOpenAfterClose: true });
       get().requestNavClose();
-      return false;
+      return;
     }
 
-    get().requestNavOpen();
-    return true;
+    if (navPhase === "closed") {
+      set({ pendingOpenAfterClose: true, navPhase: "closing-canvas", navOpen: false });
+      return;
+    }
+
+    set({ pendingOpenAfterClose: true });
   },
 
   syncToRoute: (isHome: boolean) => {
     if (isHome) {
-      get().requestNavOpen();
+      get().openHomeMenu();
     } else {
+      // Cancel a pending home open when navigating away (e.g. browser back during startup).
+      set({ pendingOpenAfterClose: false, startupPendingOpen: false });
       get().requestNavClose();
     }
   },

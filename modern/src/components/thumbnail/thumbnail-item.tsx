@@ -5,7 +5,6 @@ import Link from "next/link";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { imgUrl } from "@/lib/assets";
 import { localize } from "@/lib/data/content";
-import { devDebug } from "@/lib/logger";
 import type { DataNode, Locale } from "@/lib/data/schema";
 
 interface ThumbnailItemProps {
@@ -18,12 +17,17 @@ interface ThumbnailItemProps {
 export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps) {
   const ref = useRef<HTMLLIElement>(null);
   const imgRef = useRef<HTMLDivElement>(null);
+  const isInViewRef = useRef(false);
   const title = localize(item.title, locale);
+
   const resetAni = () => {
+    if (!imgRef.current) return;
     gsap.killTweensOf(imgRef.current);
     gsap.set(imgRef.current, { scale: 0.4, opacity: 0.05 });
   };
+
   const playAni = () => {
+    if (!imgRef.current) return;
     gsap.to(imgRef.current, {
       scale: 1,
       opacity: 1,
@@ -47,36 +51,29 @@ export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps)
           if (!entry) return;
 
           if (entry.isIntersecting) {
-            devDebug("[ThumbnailItem] play", {
-              id: item.id,
-              index,
-              event: "observerEnter",
-              ratio: entry.intersectionRatio,
-            });
+            if (isInViewRef.current) return;
+            isInViewRef.current = true;
             playAni();
             return;
           }
 
-          devDebug("[ThumbnailItem] reset", {
-            id: item.id,
-            index,
-            event: "observerLeave",
-            ratio: entry.intersectionRatio,
-          });
+          // Skip reset when a hidden ancestor (e.g. nav open) clips the item — avoids replay on unhide.
+          if (itemEl.offsetParent === null) return;
+
+          isInViewRef.current = false;
           resetAni();
         },
-        {
-          threshold: 0.01,
-        },
+        { threshold: 0.01 },
       );
 
       observer.observe(itemEl);
 
       return () => {
         observer.disconnect();
+        isInViewRef.current = false;
       };
     },
-    { scope: ref },
+    { scope: ref, dependencies: [item.id] },
   );
 
   return (

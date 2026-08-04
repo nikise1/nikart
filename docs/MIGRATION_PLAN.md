@@ -141,7 +141,7 @@ Legacy `nav-container` / `nav-view.js` behavior:
 - Nav items: `white-space: nowrap` (legacy `overflow: hidden` on 32px-height wrapper clips text)
 - Item width animates from 0 to measured text width + 20px padding
 - Container width: `$navWidth = 15em`
-- Animation sequencing via Zustand `navPhase` state machine (`closed` → `closing-items` → `closing-canvas` → `opening` → `open`); startup runs close-then-open on home; route changes sync open/close; item clicks defer navigation until close completes; nav button starts `display: none` and is revealed only during `closing-canvas` (legacy `_nav.scss`)
+- Animation sequencing via Zustand `navPhase` state machine (`closed` → `closing-items` → `closing-canvas` → `opening` → `open`); central `useNavAnimator` hook mirrors legacy `doAni()` with tween kill on phase change; startup and route-to-main run close-then-open; canvas uses `left`/`top` at 130×260; item width measured on label only; close animates width only (no alpha)
 
 #### 6d: General polish
 
