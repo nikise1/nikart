@@ -159,6 +159,13 @@
 - [x] Validation after standardization: npm install clean, lint clean, tests passing (33/33)
 - [x] Terminology sync: updated `docs/MIGRATION_PLAN.md` to use Progress-aligned `Step` labels instead of `Phase`
 
+#### 9f: Flash archival route (`/fl`) ✅ (2026-08-04)
+- [x] Ruffle-based `/fl` page in `modern/` (legacy SWF + flashVars)
+- [x] `/fl/:lang` redirect sets locale cookie (legacy parity)
+- [x] Unit tests for `flash-config` helpers
+- [x] Fix blank SWF: serve `data.json`, Ruffle `base` URL, `window.nikart` bridge, AS2 player settings
+- [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
+
 ---
 
 ## Upcoming Steps

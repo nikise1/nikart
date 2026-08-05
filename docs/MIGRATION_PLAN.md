@@ -155,6 +155,21 @@ Legacy `nav-container` / `nav-view.js` behavior:
 | Bilingual content verification | Small | All items render correctly in en/es |
 | Fix external asset references | Small | Verify/update static.nikart.co.uk links |
 
+#### 6e: Flash archival route (`/fl`)
+
+Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outside locale routing):
+
+- `modern/src/app/fl/` — minimal black layout matching legacy `fl.html`
+- `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
+- `modern/public/fl/main.swf` — copied from legacy `public/fl/main.swf`
+- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`)
+- `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
+- `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
+- Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
+- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`)
+- `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
+- i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
+
 Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
