@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nikart Modern
 
-## Getting Started
+Next.js 16 portfolio app (migration from legacy Express/Backbone).
 
-First, run the development server:
+## Commands
+
+From repo root:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run modern       # dev server (alias for modern/npm run dev)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+From `modern/`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev          # dev server (Turbopack)
+npm run build        # production build
+npm run start        # serve production build
+npm run lint
+npm run test:run     # unit tests
+npm run test:e2e     # Playwright E2E
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy to Vercel (preview)
 
-## Learn More
+**Critical:** set the Vercel project **Root Directory** to `modern/`. The legacy app lives at the repo root and must not be deployed.
 
-To learn more about Next.js, take a look at the following resources:
+### Option A — Git import (recommended)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Open [vercel.com/new](https://vercel.com/new) and import `nikise1/nikart`.
+2. **Root Directory:** `modern/`
+3. Build settings are read from `vercel.json` (Next.js, `npm run build`).
+4. No environment variables required for WIP (static JSON content, videos proxied to `static.nikart.co.uk`).
+5. Deploy. Every push to `main` and every PR gets a preview URL.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option B — CLI
 
-## Deploy on Vercel
+```bash
+cd modern
+npx vercel login
+npx vercel link
+npx vercel          # preview deploy
+npx vercel --prod   # production deploy (after cutover)
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Post-deploy smoke test
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/en/` and `/es/` — locale routes
+- `/content/img/…` — thumbnail images (symlinked from legacy `public/content/img/`)
+- `/video_h264/…` — rewrite to `static.nikart.co.uk`
+- `/fl` — Flash archival (Ruffle)
+
+See `docs/PROGRESS.md` Step 10 for the full checklist.

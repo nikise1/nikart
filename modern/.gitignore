@@ -19,6 +19,9 @@
 /.next/
 /out/
 
+# ruffle runtime (copied from node_modules via postinstall)
+/public/ruffle/
+
 # production
 /build
 

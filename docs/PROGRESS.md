@@ -104,9 +104,40 @@
 
 ---
 
-## Next Step
+## Current Step
 
-### Step 9: Polish & Verification
+### Step 10: WIP Deploy to Vercel Preview (2026-09-02)
+
+Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets.
+
+**Prerequisites verified:**
+- [x] Production build passes locally (`npm run build` in `modern/`)
+- [x] `vercel.json` present in `modern/`
+- [x] Repo on GitHub: `https://github.com/nikise1/nikart`
+
+**One-time setup (manual):**
+- [ ] Import repo at [vercel.com/new](https://vercel.com/new) → select `nikise1/nikart`
+- [ ] Set **Root Directory** to `modern/` (required — do not use repo root)
+- [ ] Framework: Next.js (auto-detected); no env vars needed for WIP
+- [ ] Deploy and note preview URL (e.g. `nikart-modern.vercel.app`)
+
+**Or via CLI** (from `modern/`):
+```bash
+npx vercel login
+npx vercel link    # link to new or existing project
+npx vercel         # preview deploy
+```
+
+**Post-deploy checklist:**
+- [ ] `/en/` and `/es/` routes render
+- [ ] Thumbnail images load (`/content/img/` symlink to legacy assets)
+- [ ] Nav open/close animation on preview (not just local)
+- [ ] Video/games rewrites work (`static.nikart.co.uk` via `next.config.ts`)
+- [ ] `/fl` Flash archival route loads
+
+---
+
+### Step 9: Polish & Verification (continues in parallel)
 
 #### 9a: ThumbnailGrid fidelity
 - [x] Vertical list layout (not grid) — matches legacy `.thumb-list`
@@ -180,8 +211,8 @@
 | 6 | Layout & Navigation Shell | ✅ Done |
 | 7 | Content Views | ✅ Done |
 | 8 | Animation & Transitions | ✅ Done |
-| 9 | Polish & Verification | In Progress |
-| 10 | WIP Deploy to Vercel Preview | Not Started |
+| 9 | Polish & Verification | In Progress (parallel) |
+| 10 | WIP Deploy to Vercel Preview | **Current** |
 | 11 | Production Cutover | Not Started |
 
 ---
@@ -199,3 +230,4 @@
 | 2026-06-24 | next-intl | URL-based i18n, SEO-friendly |
 | 2026-06-24 | Tailwind CSS 4 | Agent-friendly, zero runtime |
 | 2026-07-28 | `modern/` is the main app; run via `npm run modern` | Root AGENTS.md documents one-word `modern` shortcut |
+| 2026-09-02 | Step 10 (Vercel preview) before remaining Step 9 polish | Live preview URL needed for visual review of animations/assets |

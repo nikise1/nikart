@@ -166,7 +166,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
-- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`)
+- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`; **gitignored** — not committed)
 - `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
 
@@ -182,9 +182,11 @@ Maintenance note (2026-07-15):
 
 ---
 
-### Step 10: WIP Deploy — Vercel Preview (do this now, during Step 9)
+### Step 10: WIP Deploy — Vercel Preview (**current — before remaining Step 9 polish**)
 
 The modern app can be deployed to Vercel as a live preview at any point. This gives a shareable URL for visual review without touching the production domain.
+
+**Order change (2026-09-02):** Step 10 moved ahead of finishing Step 9. Remaining polish (e.g. ThumbnailGrid exit via View Transitions, visual regression, a11y) continues in parallel once a preview URL exists.
 
 **One-time Vercel project setup:**
 
@@ -235,9 +237,9 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 | 6. Layout & Navigation Shell | 2 | Step 5 |
 | 7. Content Views | 2 | Step 6 |
 | 8. Animation & Transitions | 2–3 | Step 7 |
-| 9. Polish & Verification | 1–2 | Step 8 |
-| 10. WIP Deploy to Vercel Preview | Ongoing | Step 9 |
-| 11. Production Cutover | 1 | Step 9 |
+| 9. Polish & Verification | 1–2 | Step 8 (parallel with Step 10) |
+| 10. WIP Deploy to Vercel Preview | Ongoing | Step 8 (**current**) |
+| 11. Production Cutover | 1 | Steps 9 + 10 |
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.
