@@ -1,4 +1,4 @@
-# Nikart Modern
+# Nikart Modern migration
 
 Next.js 16 portfolio app (migration from legacy Express/Backbone).
 
