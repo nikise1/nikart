@@ -95,6 +95,15 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     }, ARROW_FLASH_MS);
   }
 
+  function zoneFromClientX(clientX: number): HoverZone | null {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect || rect.width === 0) return null;
+    const t = (clientX - rect.left) / rect.width;
+    if (t < 1 / 3) return "left";
+    if (t < 2 / 3) return "middle";
+    return "right";
+  }
+
   function onCenterClick() {
     const nextPaused = !paused;
     setStickyPaused(nextPaused);
@@ -127,6 +136,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
     if (Math.abs(dx) < SWIPE_THRESHOLD_PX || Math.abs(dx) < Math.abs(dy)) return;
+    if (zoneFromClientX(start.x) === "middle") return;
 
     didSwipeRef.current = true;
     const goingNext = dx < 0;

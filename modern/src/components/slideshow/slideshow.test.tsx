@@ -145,6 +145,32 @@ describe("Slideshow", () => {
     expect(root).toHaveAttribute("data-paused", "false");
   });
 
+  it("does not treat a drag that starts in the centre as a swipe", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const centre = screen.getByTestId("slideshow-pause-zone");
+    vi.spyOn(root, "getBoundingClientRect").mockReturnValue({
+      x: 0,
+      y: 0,
+      top: 0,
+      left: 0,
+      width: 300,
+      height: 240,
+      right: 300,
+      bottom: 240,
+      toJSON() {
+        return {};
+      },
+    });
+
+    fireEvent.pointerDown(centre, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(centre, { clientX: 50, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+
+    fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "true");
+  });
+
   it("fades the side arrow after click even while the pointer stays on that third", () => {
     vi.useFakeTimers();
     renderSlideshow(3);
