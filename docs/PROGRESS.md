@@ -195,6 +195,14 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Fix blank SWF: serve `data.json`, Ruffle `base` URL, `window.nikart` bridge, AS2 player settings
 - [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
 
+#### 9g: Slideshow interaction ✅ (2026-09-07)
+
+- [x] Extract `Slideshow` from `ArticleView` (`src/components/slideshow/slideshow.tsx`)
+- [x] Swipe left/right to change slides (pointer events, 48px threshold)
+- [x] Hover zones: left/right thirds show gradient arrows and click prev/next (no pause); middle third pauses with a two-bar glyph
+- [x] Progress `n / total` centred under the images, clickable to advance
+- [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
+
 ---
 
 ## Upcoming Steps

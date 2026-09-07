@@ -127,7 +127,7 @@ Legacy breadcrumb styling (`_nav.scss`):
 #### 6b4: Dev ergonomics
 
 - `data-component` attributes on all component root elements for DOM identification
-- Components: Nav, NavButton, NavCanvas, NavItems, Breadcrumbs, LanguageSwitcher, ContentPage, ThumbnailGrid, ThumbnailItem, ArticleView, VideoView
+- Components: Nav, NavButton, NavCanvas, NavItems, Breadcrumbs, LanguageSwitcher, ContentPage, ThumbnailGrid, ThumbnailItem, ArticleView, Slideshow, VideoView
 
 #### 6c: Nav fidelity
 
@@ -169,6 +169,15 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`; **gitignored** — not committed)
 - `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
+
+#### 6f: Slideshow interaction (2026-09-07)
+
+Modern `Slideshow` (`src/components/slideshow/slideshow.tsx`) extracted from `ArticleView`:
+
+- Horizontal swipe (pointer events, 48px threshold) advances/rewinds slides; vertical pans still scroll
+- Image is split into thirds: left/right hover shows edge-fade arrows and click prev/next (autoplay continues); middle hover pauses with a two-bar glyph
+- Progress `n / total` sits centred under the images and clicks through to the next slide
+- Cross-fade timing unchanged (`1.25s` delay, `0.4s` `autoAlpha`)
 
 Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
