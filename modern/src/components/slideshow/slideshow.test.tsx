@@ -90,6 +90,21 @@ describe("Slideshow", () => {
     expect(delayedCall).toHaveBeenCalled();
   });
 
+  it("still lets arrow clicks work after a swipe", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+
+    fireEvent.pointerDown(root, { clientX: 200, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
+    fireEvent.pointerUp(root, { clientX: 80, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+
+    const prev = screen.getByRole("button", { name: "Previous image" });
+    fireEvent.pointerDown(prev, { clientX: 10, clientY: 80, pointerId: 3, button: 0 });
+    fireEvent.pointerUp(prev, { clientX: 10, clientY: 80, pointerId: 3, button: 0 });
+    fireEvent.click(prev);
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+  });
+
   it("does not show controls for a single image", () => {
     renderSlideshow(1);
     expect(screen.queryByRole("button", { name: "Next image" })).not.toBeInTheDocument();

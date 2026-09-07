@@ -54,9 +54,11 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   }, [currentSlide, imgCount, paused, goToSlide]);
 
   function onPointerDown(event: PointerEvent<HTMLDivElement>) {
+    didSwipeRef.current = false;
     if (imgCount <= 1) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
-    didSwipeRef.current = false;
+    // Don't capture pointer on the arrow buttons — capture would steal their click.
+    if ((event.target as HTMLElement).closest("button")) return;
     pointerStartRef.current = { x: event.clientX, y: event.clientY, id: event.pointerId };
     event.currentTarget.setPointerCapture?.(event.pointerId);
   }
@@ -76,6 +78,9 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
     didSwipeRef.current = true;
     goToSlide(currentSlideRef.current + (dx < 0 ? 1 : -1));
+    window.setTimeout(() => {
+      didSwipeRef.current = false;
+    }, 0);
   }
 
   function onClickCapture(event: MouseEvent<HTMLDivElement>) {
@@ -121,16 +126,16 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         <>
           <button
             type="button"
-            onClick={() => goToSlide(currentSlide - 1)}
-            className="absolute inset-y-0 left-0 z-20 flex w-[22%] min-w-12 items-center justify-start bg-gradient-to-r from-black/50 to-transparent pl-2 text-3xl leading-none text-white/90 opacity-80 transition-opacity hover:opacity-100"
+            onClick={() => goToSlide(currentSlideRef.current - 1)}
+            className="absolute inset-y-0 left-0 z-20 flex w-[28%] min-w-14 items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]"
             aria-label="Previous image"
           >
             ‹
           </button>
           <button
             type="button"
-            onClick={() => goToSlide(currentSlide + 1)}
-            className="absolute inset-y-0 right-0 z-20 flex w-[22%] min-w-12 items-center justify-end bg-gradient-to-l from-black/50 to-transparent pr-2 text-3xl leading-none text-white/90 opacity-80 transition-opacity hover:opacity-100"
+            onClick={() => goToSlide(currentSlideRef.current + 1)}
+            className="absolute inset-y-0 right-0 z-20 flex w-[28%] min-w-14 items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]"
             aria-label="Next image"
           >
             ›
