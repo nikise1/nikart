@@ -205,9 +205,9 @@ npx vercel         # preview deploy
 
 - [x] Extract `Slideshow` from `ArticleView` (`src/components/slideshow/slideshow.tsx`)
 - [x] Swipe left/right to change slides (pointer events, 48px threshold)
-- [x] Auto-advance pauses on mouseover, with a subtle two-bar pause glyph
-- [x] Arrow controls use full-height transparent gradients to the image edges
-- [x] Colocated unit tests for arrows, swipe, pause, and single-image mode
+- [x] Hover zones: left/right thirds show gradient arrows and click prev/next (no pause); middle third pauses with a two-bar glyph
+- [x] Progress `n / total` centred under the images, clickable to advance
+- [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
 
 ---
 

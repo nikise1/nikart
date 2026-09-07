@@ -11,6 +11,8 @@ interface SlideshowProps {
   className?: string;
 }
 
+type HoverZone = "left" | "middle" | "right";
+
 const SLIDE_DURATION = 1.25;
 const CROSSFADE_DURATION = 0.4;
 const SWIPE_THRESHOLD_PX = 48;
@@ -22,7 +24,8 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   const didSwipeRef = useRef(false);
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [hoverZone, setHoverZone] = useState<HoverZone | null>(null);
+  const paused = hoverZone === "middle";
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -57,20 +60,13 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     didSwipeRef.current = false;
     if (imgCount <= 1) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
-    // Don't capture pointer on the arrow buttons — capture would steal their click.
-    if ((event.target as HTMLElement).closest("button")) return;
     pointerStartRef.current = { x: event.clientX, y: event.clientY, id: event.pointerId };
-    event.currentTarget.setPointerCapture?.(event.pointerId);
   }
 
   function onPointerUp(event: PointerEvent<HTMLDivElement>) {
     const start = pointerStartRef.current;
     pointerStartRef.current = null;
     if (!start || start.id !== event.pointerId || imgCount <= 1) return;
-
-    if (event.currentTarget.hasPointerCapture?.(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    }
 
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
@@ -93,71 +89,100 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   if (imgCount <= 0) return null;
 
   return (
-    <div
-      ref={containerRef}
-      data-component="Slideshow"
-      data-paused={paused ? "true" : "false"}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label={paused ? "Slideshow paused" : "Slideshow"}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onPointerDown={onPointerDown}
-      onPointerUp={onPointerUp}
-      onPointerCancel={() => {
-        pointerStartRef.current = null;
-      }}
-      onClickCapture={onClickCapture}
-      className={`relative overflow-hidden rounded select-none touch-pan-y ${className ?? ""}`}
-    >
-      {Array.from({ length: imgCount }, (_, i) => (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          key={i}
-          src={imgSlideUrl(itemId, i + 1)}
-          alt={`${alt} ${i + 1}`}
-          draggable={false}
-          className="slide-img absolute inset-0 h-full w-full object-contain"
-          style={{ opacity: i === 0 ? 1 : 0, visibility: i === 0 ? "visible" : "hidden" }}
-        />
-      ))}
+    <div data-component="Slideshow" className="flex w-full flex-col items-center">
+      <div
+        ref={containerRef}
+        data-paused={paused ? "true" : "false"}
+        data-hover-zone={hoverZone ?? "none"}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={paused ? "Slideshow paused" : "Slideshow"}
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
+        onPointerCancel={() => {
+          pointerStartRef.current = null;
+        }}
+        onClickCapture={onClickCapture}
+        onMouseLeave={() => setHoverZone(null)}
+        className={`relative overflow-hidden rounded select-none touch-pan-y ${className ?? ""}`}
+      >
+        {Array.from({ length: imgCount }, (_, i) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={i}
+            src={imgSlideUrl(itemId, i + 1)}
+            alt={`${alt} ${i + 1}`}
+            draggable={false}
+            className="slide-img absolute inset-0 h-full w-full object-contain"
+            style={{ opacity: i === 0 ? 1 : 0, visibility: i === 0 ? "visible" : "hidden" }}
+          />
+        ))}
+
+        {imgCount > 1 && (
+          <>
+            <button
+              type="button"
+              onMouseEnter={() => setHoverZone("left")}
+              onClick={() => goToSlide(currentSlideRef.current - 1)}
+              className="absolute inset-y-0 left-0 z-20 w-1/3 cursor-pointer"
+              aria-label="Previous image"
+            >
+              <span
+                className={`flex h-full w-full items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-200 ${
+                  hoverZone === "left" ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                ‹
+              </span>
+            </button>
+
+            <div
+              data-testid="slideshow-pause-zone"
+              onMouseEnter={() => setHoverZone("middle")}
+              className="absolute inset-y-0 left-1/3 z-20 w-1/3"
+            >
+              <div
+                data-testid="slideshow-pause"
+                aria-hidden="true"
+                className={`pointer-events-none flex h-full items-center justify-center transition-opacity duration-300 ${
+                  paused ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="flex items-center gap-1.5 rounded-full bg-black/25 px-3 py-2.5 shadow-sm backdrop-blur-[2px]">
+                  <span className="h-4 w-[3px] rounded-sm bg-white/80" />
+                  <span className="h-4 w-[3px] rounded-sm bg-white/80" />
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onMouseEnter={() => setHoverZone("right")}
+              onClick={() => goToSlide(currentSlideRef.current + 1)}
+              className="absolute inset-y-0 right-0 z-20 w-1/3 cursor-pointer"
+              aria-label="Next image"
+            >
+              <span
+                className={`flex h-full w-full items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-200 ${
+                  hoverZone === "right" ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                ›
+              </span>
+            </button>
+          </>
+        )}
+      </div>
 
       {imgCount > 1 && (
-        <>
-          <button
-            type="button"
-            onClick={() => goToSlide(currentSlideRef.current - 1)}
-            className="absolute inset-y-0 left-0 z-20 flex w-[28%] min-w-14 items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]"
-            aria-label="Previous image"
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            onClick={() => goToSlide(currentSlideRef.current + 1)}
-            className="absolute inset-y-0 right-0 z-20 flex w-[28%] min-w-14 items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)]"
-            aria-label="Next image"
-          >
-            ›
-          </button>
-
-          <div
-            data-testid="slideshow-pause"
-            aria-hidden="true"
-            className={`pointer-events-none absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 ${
-              paused ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div className="flex items-center gap-1.5 rounded-full bg-black/25 px-3 py-2.5 shadow-sm backdrop-blur-[2px]">
-              <span className="h-4 w-[3px] rounded-sm bg-white/80" />
-              <span className="h-4 w-[3px] rounded-sm bg-white/80" />
-            </div>
-          </div>
-
-          <span className="absolute bottom-2 right-2 z-20 rounded bg-black/40 px-2 py-0.5 text-xs text-white">
-            {currentSlide + 1} / {imgCount}
-          </span>
-        </>
+        <button
+          type="button"
+          onClick={() => goToSlide(currentSlideRef.current + 1)}
+          className="mt-2 cursor-pointer text-sm text-[#4F3E2D] hover:underline"
+          aria-label="Advance slideshow"
+        >
+          {currentSlide + 1} / {imgCount}
+        </button>
       )}
     </div>
   );

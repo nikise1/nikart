@@ -175,8 +175,8 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 Modern `Slideshow` (`src/components/slideshow/slideshow.tsx`) extracted from `ArticleView`:
 
 - Horizontal swipe (pointer events, 48px threshold) advances/rewinds slides; vertical pans still scroll
-- Auto-advance pauses on mouseover; a low-opacity pause glyph (two bars) fades in while paused
-- Prev/next controls are full-height edge fades: `from-black/50` → transparent, flush to the image edge
+- Image is split into thirds: left/right hover shows edge-fade arrows and click prev/next (autoplay continues); middle hover pauses with a two-bar glyph
+- Progress `n / total` sits centred under the images and clicks through to the next slide
 - Cross-fade timing unchanged (`1.25s` delay, `0.4s` `autoAlpha`)
 
 Maintenance note (2026-07-15):

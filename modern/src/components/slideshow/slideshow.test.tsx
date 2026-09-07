@@ -16,6 +16,10 @@ function renderSlideshow(imgCount = 3) {
   return render(<Slideshow itemId="onedayinmay" imgCount={imgCount} alt="One Day in May" />);
 }
 
+function arrowVisual(name: "Previous image" | "Next image") {
+  return screen.getByRole("button", { name }).querySelector("span");
+}
+
 describe("Slideshow", () => {
   beforeEach(() => {
     delayedCall.mockClear();
@@ -45,6 +49,22 @@ describe("Slideshow", () => {
     expect(screen.getByText("3 / 3")).toBeInTheDocument();
   });
 
+  it("hides arrow gradients until that third is hovered", () => {
+    renderSlideshow(3);
+    const prevVisual = arrowVisual("Previous image");
+    const nextVisual = arrowVisual("Next image");
+    expect(prevVisual).toHaveClass("opacity-0");
+    expect(nextVisual).toHaveClass("opacity-0");
+
+    fireEvent.mouseEnter(screen.getByRole("button", { name: "Previous image" }));
+    expect(prevVisual).toHaveClass("opacity-100");
+    expect(nextVisual).toHaveClass("opacity-0");
+
+    fireEvent.mouseEnter(screen.getByRole("button", { name: "Next image" }));
+    expect(prevVisual).toHaveClass("opacity-0");
+    expect(nextVisual).toHaveClass("opacity-100");
+  });
+
   it("switches slides with a horizontal swipe", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
@@ -67,7 +87,7 @@ describe("Slideshow", () => {
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
-  it("pauses autoplay on mouseover and shows the pause graphic", () => {
+  it("pauses autoplay only when hovering the middle third", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
     const pause = screen.getByTestId("slideshow-pause");
@@ -76,18 +96,26 @@ describe("Slideshow", () => {
     expect(pause).toHaveClass("opacity-0");
     expect(delayedCall).toHaveBeenCalled();
 
-    delayedCall.mockClear();
-    fireEvent.mouseEnter(root);
+    fireEvent.mouseEnter(screen.getByRole("button", { name: "Previous image" }));
+    expect(root).toHaveAttribute("data-paused", "false");
+    expect(pause).toHaveClass("opacity-0");
 
+    delayedCall.mockClear();
+    fireEvent.mouseEnter(screen.getByTestId("slideshow-pause-zone"));
     expect(root).toHaveAttribute("data-paused", "true");
     expect(root).toHaveAttribute("aria-label", "Slideshow paused");
     expect(pause).toHaveClass("opacity-100");
     expect(delayedCall).not.toHaveBeenCalled();
 
-    fireEvent.mouseLeave(root);
+    fireEvent.mouseEnter(screen.getByRole("button", { name: "Next image" }));
     expect(root).toHaveAttribute("data-paused", "false");
     expect(pause).toHaveClass("opacity-0");
-    expect(delayedCall).toHaveBeenCalled();
+  });
+
+  it("advances when the progress label is clicked", () => {
+    renderSlideshow(3);
+    fireEvent.click(screen.getByRole("button", { name: "Advance slideshow" }));
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
   });
 
   it("still lets arrow clicks work after a swipe", () => {
@@ -108,6 +136,7 @@ describe("Slideshow", () => {
   it("does not show controls for a single image", () => {
     renderSlideshow(1);
     expect(screen.queryByRole("button", { name: "Next image" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Advance slideshow" })).not.toBeInTheDocument();
     expect(screen.queryByTestId("slideshow-pause")).not.toBeInTheDocument();
     expect(delayedCall).not.toHaveBeenCalled();
   });
