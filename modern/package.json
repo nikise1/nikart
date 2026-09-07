@@ -11,9 +11,13 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "playwright test",
-    "postinstall": "node scripts/copy-ruffle.mjs",
+    "postinstall": "node scripts/copy-ruffle.mjs && node scripts/sync-content-images.mjs",
+    "sync:images": "node scripts/sync-content-images.mjs",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod"
+  },
+  "engines": {
+    "node": "22.x"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

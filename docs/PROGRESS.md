@@ -106,18 +106,22 @@
 
 ## Current Step
 
-### Step 10: WIP Deploy to Vercel Preview (2026-09-02)
+### Step 10: WIP Deploy to Vercel Preview (2026-09-02, config 2026-09-07)
 
 Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets.
 
 **Prerequisites verified:**
 - [x] Production build passes locally (`npm run build` in `modern/`)
-- [x] `vercel.json` present in `modern/`
+- [x] `vercel.json` present in `modern/` (`framework: nextjs`; no `outputDirectory`)
 - [x] Repo on GitHub: `https://github.com/nikise1/nikart`
+- [x] Content images: one git copy at repo-root `public/content/img`; install/build copies into `modern/public/_generated/img/` (gitignored); rewrite `/content/img/*` → `/_generated/img/*`
+- [x] `sync:images` is symlink-safe (staging copy; never copies onto the legacy folder)
+- [x] Node `22` pinned via `modern/.nvmrc` and `modern/package.json` `engines`
 
 **One-time setup (manual):**
 - [ ] Import repo at [vercel.com/new](https://vercel.com/new) → select `nikise1/nikart`
 - [ ] Set **Root Directory** to `modern/` (required — do not use repo root)
+- [ ] Keep **Include source files outside of the Root Directory in the Build Step** enabled
 - [ ] Framework: Next.js (auto-detected); no env vars needed for WIP
 - [ ] Deploy and note preview URL (e.g. `nikart-modern.vercel.app`)
 
@@ -130,7 +134,7 @@ npx vercel         # preview deploy
 
 **Post-deploy checklist:**
 - [ ] `/en/` and `/es/` routes render
-- [ ] Thumbnail images load (`/content/img/` symlink to legacy assets)
+- [ ] Thumbnail images load (`/content/img/`)
 - [ ] Nav open/close animation on preview (not just local)
 - [ ] Video/games rewrites work (`static.nikart.co.uk` via `next.config.ts`)
 - [ ] `/fl` Flash archival route loads
@@ -231,3 +235,7 @@ npx vercel         # preview deploy
 | 2026-06-24 | Tailwind CSS 4 | Agent-friendly, zero runtime |
 | 2026-07-28 | `modern/` is the main app; run via `npm run modern` | Root AGENTS.md documents one-word `modern` shortcut |
 | 2026-09-02 | Step 10 (Vercel preview) before remaining Step 9 polish | Live preview URL needed for visual review of animations/assets |
+| 2026-09-07 | Vendor `modern/public/content/img` + drop `outputDirectory` | Vercel Root Directory cannot follow the legacy symlink; `.next` as output breaks Next.js middleware/SSR |
+| 2026-09-07 | `sync:images` never copies onto the legacy symlink | `cp` errors when dest is `../../../public/content/img` (same dir as source) |
+| 2026-09-07 | Keep a single git copy of images at repo-root `public/content/img` | Avoid duplicates and leave the legacy app untouched; modern copies at install/build |
+| 2026-09-07 | Generated images live at `modern/public/_generated/img` | Distinct from legacy `public/content/img` so gitignore cannot collide; app still uses `/content/img/` via rewrite |

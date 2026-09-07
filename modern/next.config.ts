@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
+        source: "/content/img/:path*",
+        destination: "/_generated/img/:path*",
+      },
+      {
         source: "/video_h264/:path*",
         destination: `${STATIC_HOST}/video_h264/:path*`,
       },

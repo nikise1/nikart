@@ -22,6 +22,9 @@
 # ruffle runtime (copied from node_modules via postinstall)
 /public/ruffle/
 
+# generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
+/public/_generated/
+
 # production
 /build
 

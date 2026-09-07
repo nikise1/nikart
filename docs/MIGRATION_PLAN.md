@@ -191,15 +191,22 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 **One-time Vercel project setup:**
 
 1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
-2. **Root Directory:** set to `modern/` (critical — do not leave as repo root)
-3. Build settings are auto-detected from `modern/vercel.json` (no changes needed)
-4. Framework preset: Next.js (auto-detected)
-5. Environment variables: none required for WIP (static content, no secrets)
-6. Click Deploy — first deploy takes ~2 min
+2. **Root Directory:** set to `modern/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
+3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `public/content/img`
+4. Build settings come from `modern/vercel.json` (`framework: nextjs`). Do not set Output Directory to `.next` — that breaks next-intl middleware and SSR
+5. Framework preset: Next.js (auto-detected); Node `22` from `modern/.nvmrc` / `engines`
+6. Environment variables: none required for WIP (static content, no secrets)
+7. Click Deploy — first deploy takes ~2 min
+
+**Deploy blockers fixed (2026-09-07):**
+
+- Removed `outputDirectory: ".next"` from `modern/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
+- Do **not** symlink `modern/public/content/img` → `../../../public/content/img` — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
+- Single git copy stays at legacy `public/content/img` (legacy app untouched). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`
 
 **After initial deploy:**
 
-- Every push to `main` auto-deploys to the Vercel preview URL (e.g. `nikart-modern.vercel.app`)
+- Every push to `master` auto-deploys to the Vercel preview URL (e.g. `nikart-modern.vercel.app`)
 - Every PR/branch gets its own preview URL — use these for visual review of animation changes
 - `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts` — verify these work on the preview URL
 

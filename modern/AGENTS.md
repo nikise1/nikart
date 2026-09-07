@@ -37,6 +37,8 @@ npm run lint         # ESLint
 npm run test         # Vitest watch mode
 npm run test:run     # Vitest single run
 npm run test:e2e     # Playwright E2E
+npm run sync:images  # Copy repo-root public/content/img → public/_generated/img (gitignored)
+npm run deploy       # Vercel preview (requires vercel login + link)
 ```
 
 ## Code Conventions
