@@ -116,8 +116,9 @@ describe("Slideshow", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
     const pause = screen.getByTestId("slideshow-pause");
+    const centre = screen.getByTestId("slideshow-pause-zone");
 
-    fireEvent.click(screen.getByRole("button", { name: "Pause slideshow" }));
+    fireEvent.click(centre);
     expect(root).toHaveAttribute("data-paused", "true");
     expect(pause).toHaveClass("opacity-100");
 
@@ -126,10 +127,41 @@ describe("Slideshow", () => {
     expect(screen.getByRole("button", { name: "Play slideshow" })).toBeInTheDocument();
 
     delayedCall.mockClear();
-    fireEvent.click(screen.getByRole("button", { name: "Play slideshow" }));
+    fireEvent.click(centre);
     expect(root).toHaveAttribute("data-paused", "false");
     expect(pause).toHaveClass("opacity-0");
     expect(delayedCall).toHaveBeenCalled();
+  });
+
+  it("toggles off hover-pause when the centre is clicked", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const centre = screen.getByTestId("slideshow-pause-zone");
+
+    fireEvent.mouseEnter(centre);
+    expect(root).toHaveAttribute("data-paused", "true");
+
+    fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "false");
+  });
+
+  it("fades the side arrow after click even while the pointer stays on that third", () => {
+    vi.useFakeTimers();
+    renderSlideshow(3);
+    const prev = screen.getByRole("button", { name: "Previous image" });
+    const prevVisual = arrowVisual("Previous image");
+
+    fireEvent.mouseEnter(prev);
+    expect(prevVisual).toHaveClass("opacity-100");
+
+    fireEvent.click(prev);
+    expect(prevVisual).toHaveClass("opacity-100");
+
+    act(() => {
+      vi.advanceTimersByTime(900);
+    });
+    expect(prevVisual).toHaveClass("opacity-0");
+    vi.useRealTimers();
   });
 
   it("flashes the side arrow on tap then fades it out", () => {

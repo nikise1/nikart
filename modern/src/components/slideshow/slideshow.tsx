@@ -26,12 +26,15 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   const didSwipeRef = useRef(false);
   const pointerTypeRef = useRef<string>("mouse");
   const flashTimerRef = useRef<number | null>(null);
+  const hoverZoneRef = useRef<HoverZone | null>(null);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoverZone, setHoverZone] = useState<HoverZone | null>(null);
   const [stickyPaused, setStickyPaused] = useState(false);
+  const [ignoreHoverPause, setIgnoreHoverPause] = useState(false);
   const [flashSide, setFlashSide] = useState<ArrowSide | null>(null);
-  const paused = stickyPaused || hoverZone === "middle";
+  const [hoverArrowSuppressed, setHoverArrowSuppressed] = useState(false);
+  const paused = stickyPaused || (hoverZone === "middle" && !ignoreHoverPause);
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -70,16 +73,32 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
   function enterZone(zone: HoverZone) {
     if (pointerTypeRef.current === "touch") return;
+    if (hoverZoneRef.current !== zone) setHoverArrowSuppressed(false);
+    hoverZoneRef.current = zone;
     setHoverZone(zone);
+  }
+
+  function leaveSlideshow() {
+    hoverZoneRef.current = null;
+    setHoverZone(null);
+    setIgnoreHoverPause(false);
+    setHoverArrowSuppressed(false);
   }
 
   function flashArrow(side: ArrowSide) {
     setFlashSide(side);
+    setHoverArrowSuppressed(true);
     if (flashTimerRef.current !== null) window.clearTimeout(flashTimerRef.current);
     flashTimerRef.current = window.setTimeout(() => {
       setFlashSide(null);
       flashTimerRef.current = null;
     }, ARROW_FLASH_MS);
+  }
+
+  function onCenterClick() {
+    const nextPaused = !paused;
+    setStickyPaused(nextPaused);
+    setIgnoreHoverPause(true);
   }
 
   function onPrevClick() {
@@ -127,8 +146,8 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
   if (imgCount <= 0) return null;
 
-  const showPrevArrow = hoverZone === "left" || flashSide === "left";
-  const showNextArrow = hoverZone === "right" || flashSide === "right";
+  const showPrevArrow = flashSide === "left" || (hoverZone === "left" && !hoverArrowSuppressed);
+  const showNextArrow = flashSide === "right" || (hoverZone === "right" && !hoverArrowSuppressed);
 
   return (
     <div data-component="Slideshow" className="flex w-full flex-col items-center">
@@ -146,7 +165,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
           pointerStartRef.current = null;
         }}
         onClickCapture={onClickCapture}
-        onMouseLeave={() => setHoverZone(null)}
+        onMouseLeave={leaveSlideshow}
         className={`relative overflow-hidden rounded select-none touch-pan-y ${className ?? ""}`}
       >
         {Array.from({ length: imgCount }, (_, i) => (
@@ -183,9 +202,9 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
               type="button"
               data-testid="slideshow-pause-zone"
               onMouseEnter={() => enterZone("middle")}
-              onClick={() => setStickyPaused((value) => !value)}
+              onClick={onCenterClick}
               className="absolute inset-y-0 left-1/3 z-20 w-1/3 cursor-pointer"
-              aria-label={stickyPaused ? "Play slideshow" : "Pause slideshow"}
+              aria-label={paused ? "Play slideshow" : "Pause slideshow"}
             >
               <div
                 data-testid="slideshow-pause"
