@@ -12,20 +12,26 @@ interface SlideshowProps {
 }
 
 type HoverZone = "left" | "middle" | "right";
+type ArrowSide = "left" | "right";
 
 const SLIDE_DURATION = 1.25;
 const CROSSFADE_DURATION = 0.4;
 const SWIPE_THRESHOLD_PX = 48;
+const ARROW_FLASH_MS = 900;
 
 export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentSlideRef = useRef(0);
   const pointerStartRef = useRef<{ x: number; y: number; id: number } | null>(null);
   const didSwipeRef = useRef(false);
+  const pointerTypeRef = useRef<string>("mouse");
+  const flashTimerRef = useRef<number | null>(null);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoverZone, setHoverZone] = useState<HoverZone | null>(null);
-  const paused = hoverZone === "middle";
+  const [stickyPaused, setStickyPaused] = useState(false);
+  const [flashSide, setFlashSide] = useState<ArrowSide | null>(null);
+  const paused = stickyPaused || hoverZone === "middle";
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -56,7 +62,38 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     };
   }, [currentSlide, imgCount, paused, goToSlide]);
 
+  useEffect(() => {
+    return () => {
+      if (flashTimerRef.current !== null) window.clearTimeout(flashTimerRef.current);
+    };
+  }, []);
+
+  function enterZone(zone: HoverZone) {
+    if (pointerTypeRef.current === "touch") return;
+    setHoverZone(zone);
+  }
+
+  function flashArrow(side: ArrowSide) {
+    setFlashSide(side);
+    if (flashTimerRef.current !== null) window.clearTimeout(flashTimerRef.current);
+    flashTimerRef.current = window.setTimeout(() => {
+      setFlashSide(null);
+      flashTimerRef.current = null;
+    }, ARROW_FLASH_MS);
+  }
+
+  function onPrevClick() {
+    flashArrow("left");
+    goToSlide(currentSlideRef.current - 1);
+  }
+
+  function onNextClick() {
+    flashArrow("right");
+    goToSlide(currentSlideRef.current + 1);
+  }
+
   function onPointerDown(event: PointerEvent<HTMLDivElement>) {
+    pointerTypeRef.current = event.pointerType;
     didSwipeRef.current = false;
     if (imgCount <= 1) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
@@ -88,12 +125,16 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
   if (imgCount <= 0) return null;
 
+  const showPrevArrow = hoverZone === "left" || flashSide === "left";
+  const showNextArrow = hoverZone === "right" || flashSide === "right";
+
   return (
     <div data-component="Slideshow" className="flex w-full flex-col items-center">
       <div
         ref={containerRef}
         data-paused={paused ? "true" : "false"}
         data-hover-zone={hoverZone ?? "none"}
+        data-flash-side={flashSide ?? "none"}
         role="region"
         aria-roledescription="carousel"
         aria-label={paused ? "Slideshow paused" : "Slideshow"}
@@ -122,24 +163,27 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
           <>
             <button
               type="button"
-              onMouseEnter={() => setHoverZone("left")}
-              onClick={() => goToSlide(currentSlideRef.current - 1)}
+              onMouseEnter={() => enterZone("left")}
+              onClick={onPrevClick}
               className="absolute inset-y-0 left-0 z-20 w-1/3 cursor-pointer"
               aria-label="Previous image"
             >
               <span
-                className={`flex h-full w-full items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-200 ${
-                  hoverZone === "left" ? "opacity-100" : "opacity-0"
+                className={`flex h-full w-full items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-300 ${
+                  showPrevArrow ? "opacity-100" : "opacity-0"
                 }`}
               >
                 ‹
               </span>
             </button>
 
-            <div
+            <button
+              type="button"
               data-testid="slideshow-pause-zone"
-              onMouseEnter={() => setHoverZone("middle")}
-              className="absolute inset-y-0 left-1/3 z-20 w-1/3"
+              onMouseEnter={() => enterZone("middle")}
+              onClick={() => setStickyPaused((value) => !value)}
+              className="absolute inset-y-0 left-1/3 z-20 w-1/3 cursor-pointer"
+              aria-label={stickyPaused ? "Play slideshow" : "Pause slideshow"}
             >
               <div
                 data-testid="slideshow-pause"
@@ -148,23 +192,29 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
                   paused ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <div className="flex items-center gap-1.5 rounded-full bg-black/25 px-3 py-2.5 shadow-sm backdrop-blur-[2px]">
-                  <span className="h-4 w-[3px] rounded-sm bg-white/80" />
-                  <span className="h-4 w-[3px] rounded-sm bg-white/80" />
-                </div>
+                {stickyPaused && hoverZone !== "middle" ? (
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/25 pl-0.5 shadow-sm backdrop-blur-[2px]">
+                    <span className="border-y-[6px] border-l-[10px] border-y-transparent border-l-white/85" />
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1.5 rounded-full bg-black/25 px-3 py-2.5 shadow-sm backdrop-blur-[2px]">
+                    <span className="h-4 w-[3px] rounded-sm bg-white/80" />
+                    <span className="h-4 w-[3px] rounded-sm bg-white/80" />
+                  </div>
+                )}
               </div>
-            </div>
+            </button>
 
             <button
               type="button"
-              onMouseEnter={() => setHoverZone("right")}
-              onClick={() => goToSlide(currentSlideRef.current + 1)}
+              onMouseEnter={() => enterZone("right")}
+              onClick={onNextClick}
               className="absolute inset-y-0 right-0 z-20 w-1/3 cursor-pointer"
               aria-label="Next image"
             >
               <span
-                className={`flex h-full w-full items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-200 ${
-                  hoverZone === "right" ? "opacity-100" : "opacity-0"
+                className={`flex h-full w-full items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-300 ${
+                  showNextArrow ? "opacity-100" : "opacity-0"
                 }`}
               >
                 ›

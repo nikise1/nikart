@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { Slideshow } from "./slideshow";
 
@@ -110,6 +110,47 @@ describe("Slideshow", () => {
     fireEvent.mouseEnter(screen.getByRole("button", { name: "Next image" }));
     expect(root).toHaveAttribute("data-paused", "false");
     expect(pause).toHaveClass("opacity-0");
+  });
+
+  it("toggles play and pause when the centre is clicked", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const pause = screen.getByTestId("slideshow-pause");
+
+    fireEvent.click(screen.getByRole("button", { name: "Pause slideshow" }));
+    expect(root).toHaveAttribute("data-paused", "true");
+    expect(pause).toHaveClass("opacity-100");
+
+    fireEvent.mouseLeave(root);
+    expect(root).toHaveAttribute("data-paused", "true");
+    expect(screen.getByRole("button", { name: "Play slideshow" })).toBeInTheDocument();
+
+    delayedCall.mockClear();
+    fireEvent.click(screen.getByRole("button", { name: "Play slideshow" }));
+    expect(root).toHaveAttribute("data-paused", "false");
+    expect(pause).toHaveClass("opacity-0");
+    expect(delayedCall).toHaveBeenCalled();
+  });
+
+  it("flashes the side arrow on tap then fades it out", () => {
+    vi.useFakeTimers();
+    renderSlideshow(3);
+    const prev = screen.getByRole("button", { name: "Previous image" });
+    const prevVisual = arrowVisual("Previous image");
+
+    fireEvent.pointerDown(prev, { pointerType: "touch", pointerId: 1, button: 0, clientX: 10, clientY: 80 });
+    fireEvent.pointerUp(prev, { pointerType: "touch", pointerId: 1, button: 0, clientX: 10, clientY: 80 });
+    fireEvent.click(prev);
+
+    expect(prevVisual).toHaveClass("opacity-100");
+    expect(screen.getByRole("region")).toHaveAttribute("data-flash-side", "left");
+
+    act(() => {
+      vi.advanceTimersByTime(900);
+    });
+    expect(prevVisual).toHaveClass("opacity-0");
+    expect(screen.getByRole("region")).toHaveAttribute("data-flash-side", "none");
+    vi.useRealTimers();
   });
 
   it("advances when the progress label is clicked", () => {
