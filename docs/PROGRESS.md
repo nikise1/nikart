@@ -106,7 +106,7 @@
 
 ## Current Step
 
-### Step 10: WIP Deploy to Vercel Preview (2026-09-02, config 2026-09-07)
+### Step 10: WIP Deploy to Vercel Preview (2026-09-07)
 
 Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets.
 
@@ -118,19 +118,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] `sync:images` is symlink-safe (staging copy; never copies onto the legacy folder)
 - [x] Node `22` pinned via `modern/.nvmrc` and `modern/package.json` `engines`
 
-**One-time setup (manual):**
-- [ ] Import repo at [vercel.com/new](https://vercel.com/new) → select `nikise1/nikart`
-- [ ] Set **Root Directory** to `modern/` (required — do not use repo root)
-- [ ] Keep **Include source files outside of the Root Directory in the Build Step** enabled
-- [ ] Framework: Next.js (auto-detected); no env vars needed for WIP
-- [ ] Deploy and note preview URL (e.g. `nikart-modern.vercel.app`)
-
-**Or via CLI** (from `modern/`):
-```bash
-npx vercel login
-npx vercel link    # link to new or existing project
-npx vercel         # preview deploy
-```
+**One-time setup:**
+- [x] Git repo imported to Vercel project [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart)
+- [x] Root Directory `modern/`; include files outside root enabled
+- [x] Framework Next.js; Node 22; no WIP env vars
+- [x] `master` auto-deploys — first Git deploy (`8cc8046`) failed; `e70e2b1` succeeded
+- [x] Deployment dashboard: [e70e2b1](https://vercel.com/nikise1s-projects/nikart/EnPwiCayBWymivxog83ojpYMvWnR)
 
 **Post-deploy checklist:**
 - [ ] `/en/` and `/es/` routes render
@@ -138,6 +131,7 @@ npx vercel         # preview deploy
 - [ ] Nav open/close animation on preview (not just local)
 - [ ] Video/games rewrites work (`static.nikart.co.uk` via `next.config.ts`)
 - [ ] `/fl` Flash archival route loads
+- [ ] Deployment Protection currently requires Vercel login — disable or add viewers before sharing a public preview URL
 
 ---
 
@@ -216,7 +210,7 @@ npx vercel         # preview deploy
 | 7 | Content Views | ✅ Done |
 | 8 | Animation & Transitions | ✅ Done |
 | 9 | Polish & Verification | In Progress (parallel) |
-| 10 | WIP Deploy to Vercel Preview | **Current** |
+| 10 | WIP Deploy to Vercel Preview | **Current** (project live; smoke tests pending) |
 | 11 | Production Cutover | Not Started |
 
 ---

@@ -188,7 +188,9 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 
 **Order change (2026-09-02):** Step 10 moved ahead of finishing Step 9. Remaining polish (e.g. ThumbnailGrid exit via View Transitions, visual regression, a11y) continues in parallel once a preview URL exists.
 
-**One-time Vercel project setup:**
+**One-time Vercel project setup:** ✅ (2026-09-07)
+
+Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart). Root Directory `modern/`. Latest successful deploy: `e70e2b1`.
 
 1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
 2. **Root Directory:** set to `modern/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
@@ -206,16 +208,18 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 
 **After initial deploy:**
 
-- Every push to `master` auto-deploys to the Vercel preview URL (e.g. `nikart-modern.vercel.app`)
+- Every push to `master` auto-deploys (see [Vercel project](https://vercel.com/nikise1s-projects/nikart))
 - Every PR/branch gets its own preview URL — use these for visual review of animation changes
 - `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts` — verify these work on the preview URL
+- Deployment Protection is on — preview URLs currently require Vercel login
 
 **Ongoing WIP checklist (per session):**
 
-- [ ] Push working branch → check Vercel preview URL
+- [x] Push working branch → Vercel deploy of `e70e2b1` succeeded
 - [ ] Verify `static.nikart.co.uk` video/games rewrites load correctly
 - [ ] Verify both `/en/` and `/es/` routes render
 - [ ] Check nav open/close animation on preview (not just local)
+- [ ] Turn off Deployment Protection or add viewers if a public share URL is needed
 
 ---
 
