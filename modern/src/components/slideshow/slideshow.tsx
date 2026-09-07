@@ -110,7 +110,9 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     if (Math.abs(dx) < SWIPE_THRESHOLD_PX || Math.abs(dx) < Math.abs(dy)) return;
 
     didSwipeRef.current = true;
-    goToSlide(currentSlideRef.current + (dx < 0 ? 1 : -1));
+    const goingNext = dx < 0;
+    flashArrow(goingNext ? "right" : "left");
+    goToSlide(currentSlideRef.current + (goingNext ? 1 : -1));
     window.setTimeout(() => {
       didSwipeRef.current = false;
     }, 0);
@@ -192,16 +194,12 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
                   paused ? "opacity-100" : "opacity-0"
                 }`}
               >
-                {stickyPaused && hoverZone !== "middle" ? (
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-black/25 pl-0.5 shadow-sm backdrop-blur-[2px]">
-                    <span className="border-y-[6px] border-l-[10px] border-y-transparent border-l-white/85" />
-                  </div>
-                ) : (
+                {paused ? (
                   <div className="flex items-center gap-1.5 rounded-full bg-black/25 px-3 py-2.5 shadow-sm backdrop-blur-[2px]">
                     <span className="h-4 w-[3px] rounded-sm bg-white/80" />
                     <span className="h-4 w-[3px] rounded-sm bg-white/80" />
                   </div>
-                )}
+                ) : null}
               </div>
             </button>
 
