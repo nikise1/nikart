@@ -201,6 +201,14 @@ npx vercel         # preview deploy
 - [x] Fix blank SWF: serve `data.json`, Ruffle `base` URL, `window.nikart` bridge, AS2 player settings
 - [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
 
+#### 9g: Slideshow interaction ✅ (2026-09-07)
+
+- [x] Extract `Slideshow` from `ArticleView` (`src/components/slideshow/slideshow.tsx`)
+- [x] Swipe left/right to change slides (pointer events, 48px threshold)
+- [x] Auto-advance pauses on mouseover, with a subtle two-bar pause glyph
+- [x] Arrow controls use full-height transparent gradients to the image edges
+- [x] Colocated unit tests for arrows, swipe, pause, and single-image mode
+
 ---
 
 ## Upcoming Steps
