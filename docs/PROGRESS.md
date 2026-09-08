@@ -200,7 +200,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Extract `Slideshow` from `ArticleView` (`src/components/slideshow/slideshow.tsx`)
 - [x] Swipe left/right to change slides (pointer events, 48px threshold)
 - [x] Hover zones: left/right thirds show gradient arrows and click prev/next (no pause); middle third pauses with a two-bar glyph
-- [x] Centre click toggles play/pause even while hovering the middle third (pointerup on the photo thirds; hover pause does not override)
+- [x] Centre click toggles sticky play/pause (hovering the middle then clicking locks pause; a second click plays even while still hovering)
 - [x] Left/right click flashes arrows then fades them on all devices, including desktop hover
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode

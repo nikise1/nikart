@@ -175,13 +175,11 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   }
 
   function onCenterClick() {
-    const currentlyPaused =
-      stickyPausedRef.current || (hoverZoneRef.current === "middle" && !ignoreHoverPauseRef.current);
-    const nextPaused = !currentlyPaused;
-    stickyPausedRef.current = nextPaused;
-    ignoreHoverPauseRef.current = true;
-    setStickyPaused(nextPaused);
-    setIgnoreHoverPause(true);
+    const nextSticky = !stickyPausedRef.current;
+    stickyPausedRef.current = nextSticky;
+    ignoreHoverPauseRef.current = !nextSticky;
+    setStickyPaused(nextSticky);
+    setIgnoreHoverPause(!nextSticky);
   }
 
   function onPrevClick() {

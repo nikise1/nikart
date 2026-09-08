@@ -149,7 +149,7 @@ describe("Slideshow", () => {
     expect(delayedCall).toHaveBeenCalled();
   });
 
-  it("toggles off hover-pause when the centre is clicked", () => {
+  it("locks hover-pause on the first centre click and plays on the second", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
     const centre = screen.getByTestId("slideshow-pause-zone");
@@ -158,7 +158,12 @@ describe("Slideshow", () => {
     expect(root).toHaveAttribute("data-paused", "true");
 
     fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "true");
+
+    delayedCall.mockClear();
+    fireEvent.click(centre);
     expect(root).toHaveAttribute("data-paused", "false");
+    expect(delayedCall).toHaveBeenCalled();
   });
 
   it("toggles pause on a centre pointerup without a separate click", () => {
