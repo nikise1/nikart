@@ -232,7 +232,12 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
-    const isSwipe = Math.abs(dx) >= SWIPE_THRESHOLD_PX && Math.abs(dx) >= Math.abs(dy);
+    const startZone = zoneFromClientX(start.x);
+    const endZone = zoneFromClientX(event.clientX);
+    const canHitTest = startZone !== null || endZone !== null;
+    const crossedZone = startZone !== null && endZone !== null && startZone !== endZone;
+    const movedFar = Math.abs(dx) >= SWIPE_THRESHOLD_PX && Math.abs(dx) >= Math.abs(dy);
+    const isSwipe = movedFar && (!canHitTest || crossedZone);
 
     if (isSwipe) {
       handledPointerRef.current = true;
@@ -242,7 +247,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
       return;
     }
 
-    const zone = zoneFromClientX(start.x) ?? zoneFromClientX(event.clientX);
+    const zone = startZone ?? endZone;
     if (!zone) return;
     handledPointerRef.current = true;
     activateZone(zone);

@@ -176,7 +176,7 @@ Modern `Slideshow` (`src/components/slideshow/slideshow.tsx`) extracted from `Ar
 
 - Horizontal swipe (pointer events, 48px threshold) advances/rewinds slides; vertical pans still scroll
 - Image is split into thirds: left/right hover shows edge-fade arrows and click prev/next (autoplay continues); middle hover pauses with a two-bar glyph
-- Centre click/tap toggles play/pause from pointerup on the photo’s middle third (so a slightly drifted click is not lost, and hover pause does not override the click)
+- Centre click/tap toggles play/pause from pointerup on the photo’s middle third (same-third presses are taps even if the pointer drifts; hover pause does not override the click)
 - Hit zones follow the visible `object-contain` image, not the letterboxed frame
 - Left/right click flashes the gradient arrow then fades it on every device, including while the pointer stays on that third
 - Progress `n / total` sits centred under the images and clicks through to the next slide

@@ -188,6 +188,17 @@ describe("Slideshow", () => {
     expect(root).toHaveAttribute("data-paused", "true");
   });
 
+  it("treats a large move that stays in the centre third as a tap, not a swipe", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 190, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+    expect(root).toHaveAttribute("data-paused", "true");
+  });
+
   it("swipes even when the gesture starts in the centre third", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
