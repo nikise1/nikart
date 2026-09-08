@@ -20,6 +20,22 @@ function arrowVisual(name: "Previous image" | "Next image") {
   return screen.getByRole("button", { name }).querySelector("span");
 }
 
+function mockStageRect(el: HTMLElement, width = 300, height = 240) {
+  vi.spyOn(el, "getBoundingClientRect").mockReturnValue({
+    x: 0,
+    y: 0,
+    top: 0,
+    left: 0,
+    width,
+    height,
+    right: width,
+    bottom: height,
+    toJSON() {
+      return {};
+    },
+  });
+}
+
 describe("Slideshow", () => {
   beforeEach(() => {
     delayedCall.mockClear();
@@ -145,30 +161,41 @@ describe("Slideshow", () => {
     expect(root).toHaveAttribute("data-paused", "false");
   });
 
-  it("does not treat a drag that starts in the centre as a swipe", () => {
+  it("toggles pause on a centre pointerup without a separate click", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
-    const centre = screen.getByTestId("slideshow-pause-zone");
-    vi.spyOn(root, "getBoundingClientRect").mockReturnValue({
-      x: 0,
-      y: 0,
-      top: 0,
-      left: 0,
-      width: 300,
-      height: 240,
-      right: 300,
-      bottom: 240,
-      toJSON() {
-        return {};
-      },
-    });
+    mockStageRect(root);
 
-    fireEvent.pointerDown(centre, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(centre, { clientX: 50, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    expect(screen.getByText("1 / 3")).toBeInTheDocument();
-
-    fireEvent.click(centre);
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
     expect(root).toHaveAttribute("data-paused", "true");
+    expect(screen.getByTestId("slideshow-pause")).toHaveClass("opacity-100");
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 2, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 150, clientY: 80, pointerId: 2, button: 0, pointerType: "mouse" });
+    expect(root).toHaveAttribute("data-paused", "false");
+    expect(screen.getByTestId("slideshow-pause")).toHaveClass("opacity-0");
+  });
+
+  it("still toggles pause when a centre press drifts a little before release", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 125, clientY: 88, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+    expect(root).toHaveAttribute("data-paused", "true");
+  });
+
+  it("swipes even when the gesture starts in the centre third", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 50, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
   });
 
   it("fades the side arrow after click even while the pointer stays on that third", () => {
@@ -187,6 +214,27 @@ describe("Slideshow", () => {
       vi.advanceTimersByTime(900);
     });
     expect(prevVisual).toHaveClass("opacity-0");
+    vi.useRealTimers();
+  });
+
+  it("fades the side arrow after a left/right pointerup on every device", () => {
+    vi.useFakeTimers();
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const prevVisual = arrowVisual("Previous image");
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 40, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 40, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(prevVisual).toHaveClass("opacity-100");
+    expect(root).toHaveAttribute("data-flash-side", "left");
+    expect(screen.getByText("3 / 3")).toBeInTheDocument();
+
+    act(() => {
+      vi.advanceTimersByTime(900);
+    });
+    expect(prevVisual).toHaveClass("opacity-0");
+    expect(root).toHaveAttribute("data-flash-side", "none");
     vi.useRealTimers();
   });
 

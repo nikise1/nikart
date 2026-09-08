@@ -19,14 +19,40 @@ const CROSSFADE_DURATION = 0.4;
 const SWIPE_THRESHOLD_PX = 48;
 const ARROW_FLASH_MS = 900;
 
+function objectContainBox(
+  containerW: number,
+  containerH: number,
+  naturalW: number,
+  naturalH: number,
+): { left: number; top: number; width: number; height: number } {
+  const scale = Math.min(containerW / naturalW, containerH / naturalH);
+  const width = naturalW * scale;
+  const height = naturalH * scale;
+  return {
+    left: (containerW - width) / 2,
+    top: (containerH - height) / 2,
+    width,
+    height,
+  };
+}
+
+function zoneFromRatio(t: number): HoverZone | null {
+  if (t < 0 || t > 1) return null;
+  if (t < 1 / 3) return "left";
+  if (t < 2 / 3) return "middle";
+  return "right";
+}
+
 export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentSlideRef = useRef(0);
   const pointerStartRef = useRef<{ x: number; y: number; id: number } | null>(null);
-  const didSwipeRef = useRef(false);
+  const handledPointerRef = useRef(false);
   const pointerTypeRef = useRef<string>("mouse");
   const flashTimerRef = useRef<number | null>(null);
   const hoverZoneRef = useRef<HoverZone | null>(null);
+  const stickyPausedRef = useRef(false);
+  const ignoreHoverPauseRef = useRef(false);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [hoverZone, setHoverZone] = useState<HoverZone | null>(null);
@@ -34,6 +60,12 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   const [ignoreHoverPause, setIgnoreHoverPause] = useState(false);
   const [flashSide, setFlashSide] = useState<ArrowSide | null>(null);
   const [hoverArrowSuppressed, setHoverArrowSuppressed] = useState(false);
+  const [hitBox, setHitBox] = useState<{
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+  } | null>(null);
   const paused = stickyPaused || (hoverZone === "middle" && !ignoreHoverPause);
 
   const goToSlide = useCallback(
@@ -55,6 +87,19 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     [imgCount],
   );
 
+  const syncHitBox = useCallback(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const cr = container.getBoundingClientRect();
+    const slides = container.querySelectorAll<HTMLImageElement>(".slide-img");
+    const img = slides[currentSlideRef.current] ?? slides[0];
+    if (!img || img.naturalWidth === 0 || img.naturalHeight === 0 || cr.width === 0 || cr.height === 0) {
+      setHitBox(null);
+      return;
+    }
+    setHitBox(objectContainBox(cr.width, cr.height, img.naturalWidth, img.naturalHeight));
+  }, []);
+
   useEffect(() => {
     if (imgCount <= 1 || paused) return;
     const tween = gsap.delayedCall(SLIDE_DURATION + CROSSFADE_DURATION, () => {
@@ -71,6 +116,20 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     };
   }, []);
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container || imgCount <= 1) return;
+    syncHitBox();
+    if (typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(() => {
+      syncHitBox();
+    });
+    observer.observe(container);
+    return () => {
+      observer.disconnect();
+    };
+  }, [imgCount, currentSlide, syncHitBox]);
+
   function enterZone(zone: HoverZone) {
     if (pointerTypeRef.current === "touch") return;
     if (hoverZoneRef.current !== zone) setHoverArrowSuppressed(false);
@@ -81,6 +140,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   function leaveSlideshow() {
     hoverZoneRef.current = null;
     setHoverZone(null);
+    ignoreHoverPauseRef.current = false;
     setIgnoreHoverPause(false);
     setHoverArrowSuppressed(false);
   }
@@ -96,16 +156,30 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   }
 
   function zoneFromClientX(clientX: number): HoverZone | null {
-    const rect = containerRef.current?.getBoundingClientRect();
-    if (!rect || rect.width === 0) return null;
-    const t = (clientX - rect.left) / rect.width;
-    if (t < 1 / 3) return "left";
-    if (t < 2 / 3) return "middle";
-    return "right";
+    const container = containerRef.current;
+    if (!container) return null;
+    const cr = container.getBoundingClientRect();
+    if (cr.width === 0) return null;
+
+    const slides = container.querySelectorAll<HTMLImageElement>(".slide-img");
+    const img = slides[currentSlideRef.current] ?? slides[0];
+    let left = cr.left;
+    let width = cr.width;
+    if (img && img.naturalWidth > 0 && img.naturalHeight > 0) {
+      const box = objectContainBox(cr.width, cr.height, img.naturalWidth, img.naturalHeight);
+      left = cr.left + box.left;
+      width = box.width;
+    }
+    if (width <= 0) return null;
+    return zoneFromRatio((clientX - left) / width);
   }
 
   function onCenterClick() {
-    const nextPaused = !paused;
+    const currentlyPaused =
+      stickyPausedRef.current || (hoverZoneRef.current === "middle" && !ignoreHoverPauseRef.current);
+    const nextPaused = !currentlyPaused;
+    stickyPausedRef.current = nextPaused;
+    ignoreHoverPauseRef.current = true;
     setStickyPaused(nextPaused);
     setIgnoreHoverPause(true);
   }
@@ -120,12 +194,35 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     goToSlide(currentSlideRef.current + 1);
   }
 
+  function activateZone(zone: HoverZone) {
+    if (zone === "middle") onCenterClick();
+    else if (zone === "left") onPrevClick();
+    else onNextClick();
+  }
+
+  function capturePointer(event: PointerEvent<HTMLDivElement>) {
+    if (typeof event.currentTarget.setPointerCapture !== "function") return;
+    try {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    } catch {
+      // jsdom and some pointer types cannot capture
+    }
+  }
+
   function onPointerDown(event: PointerEvent<HTMLDivElement>) {
     pointerTypeRef.current = event.pointerType;
-    didSwipeRef.current = false;
+    handledPointerRef.current = false;
     if (imgCount <= 1) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
     pointerStartRef.current = { x: event.clientX, y: event.clientY, id: event.pointerId };
+    capturePointer(event);
+  }
+
+  function onPointerMove(event: PointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "touch") return;
+    const zone = zoneFromClientX(event.clientX);
+    if (!zone) return;
+    enterZone(zone);
   }
 
   function onPointerUp(event: PointerEvent<HTMLDivElement>) {
@@ -135,29 +232,36 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
     const dx = event.clientX - start.x;
     const dy = event.clientY - start.y;
-    if (Math.abs(dx) < SWIPE_THRESHOLD_PX || Math.abs(dx) < Math.abs(dy)) return;
-    if (zoneFromClientX(start.x) === "middle") return;
+    const isSwipe = Math.abs(dx) >= SWIPE_THRESHOLD_PX && Math.abs(dx) >= Math.abs(dy);
 
-    didSwipeRef.current = true;
-    const goingNext = dx < 0;
-    flashArrow(goingNext ? "right" : "left");
-    goToSlide(currentSlideRef.current + (goingNext ? 1 : -1));
-    window.setTimeout(() => {
-      didSwipeRef.current = false;
-    }, 0);
+    if (isSwipe) {
+      handledPointerRef.current = true;
+      const goingNext = dx < 0;
+      flashArrow(goingNext ? "right" : "left");
+      goToSlide(currentSlideRef.current + (goingNext ? 1 : -1));
+      return;
+    }
+
+    const zone = zoneFromClientX(start.x) ?? zoneFromClientX(event.clientX);
+    if (!zone) return;
+    handledPointerRef.current = true;
+    activateZone(zone);
   }
 
   function onClickCapture(event: MouseEvent<HTMLDivElement>) {
-    if (!didSwipeRef.current) return;
+    if (!handledPointerRef.current) return;
     event.preventDefault();
     event.stopPropagation();
-    didSwipeRef.current = false;
+    handledPointerRef.current = false;
   }
 
   if (imgCount <= 0) return null;
 
   const showPrevArrow = flashSide === "left" || (hoverZone === "left" && !hoverArrowSuppressed);
   const showNextArrow = flashSide === "right" || (hoverZone === "right" && !hoverArrowSuppressed);
+  const overlayStyle = hitBox
+    ? { left: hitBox.left, top: hitBox.top, width: hitBox.width, height: hitBox.height }
+    : { inset: 0 };
 
   return (
     <div data-component="Slideshow" className="flex w-full flex-col items-center">
@@ -170,6 +274,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         aria-roledescription="carousel"
         aria-label={paused ? "Slideshow paused" : "Slideshow"}
         onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
         onPointerCancel={() => {
           pointerStartRef.current = null;
@@ -185,22 +290,23 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
             src={imgSlideUrl(itemId, i + 1)}
             alt={`${alt} ${i + 1}`}
             draggable={false}
+            onLoad={syncHitBox}
             className="slide-img absolute inset-0 h-full w-full object-contain"
             style={{ opacity: i === 0 ? 1 : 0, visibility: i === 0 ? "visible" : "hidden" }}
           />
         ))}
 
         {imgCount > 1 && (
-          <>
+          <div className="absolute z-20" style={overlayStyle}>
             <button
               type="button"
               onMouseEnter={() => enterZone("left")}
               onClick={onPrevClick}
-              className="absolute inset-y-0 left-0 z-20 w-1/3 cursor-pointer"
+              className="absolute inset-y-0 left-0 w-1/3 cursor-pointer"
               aria-label="Previous image"
             >
               <span
-                className={`flex h-full w-full items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-300 ${
+                className={`flex h-full w-full items-center justify-start bg-gradient-to-r from-black/65 via-black/20 to-transparent pl-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-500 ${
                   showPrevArrow ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -213,7 +319,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
               data-testid="slideshow-pause-zone"
               onMouseEnter={() => enterZone("middle")}
               onClick={onCenterClick}
-              className="absolute inset-y-0 left-1/3 z-20 w-1/3 cursor-pointer"
+              className="absolute inset-y-0 left-1/3 w-1/3 cursor-pointer"
               aria-label={paused ? "Play slideshow" : "Pause slideshow"}
             >
               <div
@@ -236,18 +342,18 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
               type="button"
               onMouseEnter={() => enterZone("right")}
               onClick={onNextClick}
-              className="absolute inset-y-0 right-0 z-20 w-1/3 cursor-pointer"
+              className="absolute inset-y-0 right-0 w-1/3 cursor-pointer"
               aria-label="Next image"
             >
               <span
-                className={`flex h-full w-full items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-300 ${
+                className={`flex h-full w-full items-center justify-end bg-gradient-to-l from-black/65 via-black/20 to-transparent pr-2.5 text-4xl leading-none text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.75)] transition-opacity duration-500 ${
                   showNextArrow ? "opacity-100" : "opacity-0"
                 }`}
               >
                 ›
               </span>
             </button>
-          </>
+          </div>
         )}
       </div>
 
