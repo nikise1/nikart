@@ -207,6 +207,16 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ---
 
+### Cloud Agent Dev Environment ✅ (2026-09-07)
+
+- [x] Added repo-managed `.cursor/environment.json` (default image, Node 22 preinstalled)
+- [x] `install` installs both apps: `npm install && npm install --prefix modern` (modern `postinstall` copies Ruffle + syncs content images)
+- [x] `terminals`: `modern` (Next.js dev :3000) and `legacy` (Express/Swig :5000); `ports` 3000 + 5000 exposed
+- [x] Verified end-to-end: install idempotent, lint clean, 59 unit tests passing, production build clean
+- [x] Both servers serve: modern `/` → `/en` (200), `/es` (200); legacy `/` → 302, `/html5/` (200)
+
+---
+
 ## Upcoming Steps
 
 | Step | Description | Status |

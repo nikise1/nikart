@@ -269,6 +269,16 @@ A "session" = one focused working block with AI agent collaboration.
 
 ---
 
+## Cloud Agent Dev Environment
+
+- `.cursor/environment.json` (2026-09-07): repo-managed Cloud Agent environment on the default image (Node 22 preinstalled).
+  - `install`: `npm install && npm install --prefix modern` — installs legacy (root) and modern deps; modern `postinstall` copies the Ruffle runtime and syncs `public/content/img` → `modern/public/_generated/img`.
+  - `terminals`: `modern` (`npm run modern`, Next.js dev on :3000) and `legacy` (`npm start`, Express/Swig on :5000).
+  - `ports`: 3000 (modern) and 5000 (legacy) exposed.
+  - Validated: lint clean, 59 unit tests passing, production build clean, both dev servers serve (`/en`, `/es`, and legacy `/html5/`).
+
+---
+
 ## Agent Maintainability Requirements
 
 ### Code Conventions (enforced via AGENTS.md + ESLint)
