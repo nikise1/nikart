@@ -15,6 +15,7 @@ interface SlideshowProps {
   alt: string;
   className?: string;
   advanceVariant?: SlideshowAdvanceVariant;
+  autoplay?: boolean;
 }
 
 type HoverZone = "left" | "middle" | "right";
@@ -55,6 +56,7 @@ export function Slideshow({
   alt,
   className,
   advanceVariant = "plain",
+  autoplay = true,
 }: SlideshowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentSlideRef = useRef(0);
@@ -113,14 +115,14 @@ export function Slideshow({
   }, []);
 
   useEffect(() => {
-    if (imgCount <= 1 || paused) return;
+    if (imgCount <= 1 || paused || !autoplay) return;
     const tween = gsap.delayedCall(SLIDE_DURATION + CROSSFADE_DURATION, () => {
       goToSlide(currentSlideRef.current + 1);
     });
     return () => {
       tween.kill();
     };
-  }, [currentSlide, imgCount, paused, goToSlide]);
+  }, [currentSlide, imgCount, paused, autoplay, goToSlide]);
 
   useEffect(() => {
     return () => {
@@ -282,7 +284,8 @@ export function Slideshow({
 
   return (
     <div data-component="Slideshow" className="flex w-full flex-col items-center">
-      <div className={`relative w-full max-w-[320px] sm:max-w-[480px] ${advanceVariant === "tendril" ? "pb-24" : ""}`}>
+      <div className={`w-full max-w-[320px] sm:max-w-[480px] ${advanceVariant === "tendril" ? "pb-24" : ""}`}>
+      <div className="relative overflow-visible">
       <div
         ref={containerRef}
         data-paused={paused ? "true" : "false"}
@@ -398,6 +401,7 @@ export function Slideshow({
       {imgCount > 1 && advanceVariant === "tendril" && (
         <AdvanceTendril current={advanceCurrent} total={imgCount} onAdvance={onAdvance} />
       )}
+      </div>
       </div>
     </div>
   );

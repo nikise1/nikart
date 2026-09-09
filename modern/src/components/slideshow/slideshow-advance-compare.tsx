@@ -39,6 +39,7 @@ export function SlideshowAdvanceCompare() {
               imgCount={4}
               alt="One Day in May"
               advanceVariant={variant.id}
+              autoplay={false}
               className="h-[240px] w-full sm:h-[300px]"
             />
           </section>
