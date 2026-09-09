@@ -3,12 +3,18 @@
 import { useCallback, useEffect, useRef, useState, type MouseEvent, type PointerEvent } from "react";
 import { gsap } from "@/lib/gsap";
 import { imgSlideUrl } from "@/lib/assets";
+import { AdvanceNotch } from "./advance-notch";
+import { AdvancePetiole } from "./advance-petiole";
+import { AdvanceTendril } from "./advance-tendril";
+
+export type SlideshowAdvanceVariant = "plain" | "petiole" | "notch" | "tendril";
 
 interface SlideshowProps {
   itemId: string;
   imgCount: number;
   alt: string;
   className?: string;
+  advanceVariant?: SlideshowAdvanceVariant;
 }
 
 type HoverZone = "left" | "middle" | "right";
@@ -43,7 +49,13 @@ function zoneFromRatio(t: number): HoverZone | null {
   return "right";
 }
 
-export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) {
+export function Slideshow({
+  itemId,
+  imgCount,
+  alt,
+  className,
+  advanceVariant = "plain",
+}: SlideshowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentSlideRef = useRef(0);
   const pointerStartRef = useRef<{ x: number; y: number; id: number } | null>(null);
@@ -265,9 +277,12 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
   const overlayStyle = hitBox
     ? { left: hitBox.left, top: hitBox.top, width: hitBox.width, height: hitBox.height }
     : { inset: 0 };
+  const advanceCurrent = currentSlide + 1;
+  const onAdvance = () => goToSlide(currentSlideRef.current + 1);
 
   return (
     <div data-component="Slideshow" className="flex w-full flex-col items-center">
+      <div className={`relative w-full max-w-[320px] sm:max-w-[480px] ${advanceVariant === "tendril" ? "pb-24" : ""}`}>
       <div
         ref={containerRef}
         data-paused={paused ? "true" : "false"}
@@ -360,16 +375,30 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         )}
       </div>
 
-      {imgCount > 1 && (
+      {imgCount > 1 && advanceVariant === "plain" && (
         <button
           type="button"
-          onClick={() => goToSlide(currentSlideRef.current + 1)}
+          onClick={onAdvance}
           className="mt-2 cursor-pointer text-sm text-[#4F3E2D] hover:underline"
           aria-label="Advance slideshow"
         >
-          {currentSlide + 1} / {imgCount}
+          {advanceCurrent} / {imgCount}
         </button>
       )}
+      {imgCount > 1 && advanceVariant === "petiole" && (
+        <div className="flex w-full justify-center">
+          <AdvancePetiole current={advanceCurrent} total={imgCount} onAdvance={onAdvance} />
+        </div>
+      )}
+      {imgCount > 1 && advanceVariant === "notch" && (
+        <div className="flex w-full justify-center">
+          <AdvanceNotch current={advanceCurrent} total={imgCount} onAdvance={onAdvance} />
+        </div>
+      )}
+      {imgCount > 1 && advanceVariant === "tendril" && (
+        <AdvanceTendril current={advanceCurrent} total={imgCount} onAdvance={onAdvance} />
+      )}
+      </div>
     </div>
   );
 }

@@ -180,6 +180,7 @@ Modern `Slideshow` (`src/components/slideshow/slideshow.tsx`) extracted from `Ar
 - Hit zones follow the visible `object-contain` image, not the letterboxed frame
 - Left/right click flashes the gradient arrow then fades it on every device, including while the pointer stays on that third
 - Progress `n / total` sits centred under the images and clicks through to the next slide
+- Three plant-like advance attachments (petiole, notch, tendril) can be compared at `/en/slideshow-advance`; article pages keep the plain count until one is chosen
 - Cross-fade timing unchanged (`1.25s` delay, `0.4s` `autoAlpha`)
 
 Maintenance note (2026-07-15):

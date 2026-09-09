@@ -203,6 +203,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Centre click toggles sticky play/pause (hovering the middle then clicking locks pause; a second click plays even while still hovering)
 - [x] Left/right click flashes arrows then fades them on all devices, including desktop hover
 - [x] Progress `n / total` centred under the images, clickable to advance
+- [x] Three plant-like advance attachments (petiole / notch / tendril) on `/en/slideshow-advance` for picking
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
 
 ---
