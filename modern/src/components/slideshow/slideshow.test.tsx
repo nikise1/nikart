@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { Slideshow } from "./slideshow";
 
@@ -18,6 +18,22 @@ function renderSlideshow(imgCount = 3) {
 
 function arrowVisual(name: "Previous image" | "Next image") {
   return screen.getByRole("button", { name }).querySelector("span");
+}
+
+function mockStageRect(el: HTMLElement, width = 300, height = 240) {
+  vi.spyOn(el, "getBoundingClientRect").mockReturnValue({
+    x: 0,
+    y: 0,
+    top: 0,
+    left: 0,
+    width,
+    height,
+    right: width,
+    bottom: height,
+    toJSON() {
+      return {};
+    },
+  });
 }
 
 describe("Slideshow", () => {
@@ -110,6 +126,153 @@ describe("Slideshow", () => {
     fireEvent.mouseEnter(screen.getByRole("button", { name: "Next image" }));
     expect(root).toHaveAttribute("data-paused", "false");
     expect(pause).toHaveClass("opacity-0");
+  });
+
+  it("toggles play and pause when the centre is clicked", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const pause = screen.getByTestId("slideshow-pause");
+    const centre = screen.getByTestId("slideshow-pause-zone");
+
+    fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "true");
+    expect(pause).toHaveClass("opacity-100");
+
+    fireEvent.mouseLeave(root);
+    expect(root).toHaveAttribute("data-paused", "true");
+    expect(screen.getByRole("button", { name: "Play slideshow" })).toBeInTheDocument();
+
+    delayedCall.mockClear();
+    fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "false");
+    expect(pause).toHaveClass("opacity-0");
+    expect(delayedCall).toHaveBeenCalled();
+  });
+
+  it("locks hover-pause on the first centre click and plays on the second", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const centre = screen.getByTestId("slideshow-pause-zone");
+
+    fireEvent.mouseEnter(centre);
+    expect(root).toHaveAttribute("data-paused", "true");
+
+    fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "true");
+
+    delayedCall.mockClear();
+    fireEvent.click(centre);
+    expect(root).toHaveAttribute("data-paused", "false");
+    expect(delayedCall).toHaveBeenCalled();
+  });
+
+  it("toggles pause on a centre pointerup without a separate click", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(root).toHaveAttribute("data-paused", "true");
+    expect(screen.getByTestId("slideshow-pause")).toHaveClass("opacity-100");
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 2, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 150, clientY: 80, pointerId: 2, button: 0, pointerType: "mouse" });
+    expect(root).toHaveAttribute("data-paused", "false");
+    expect(screen.getByTestId("slideshow-pause")).toHaveClass("opacity-0");
+  });
+
+  it("still toggles pause when a centre press drifts a little before release", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 125, clientY: 88, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+    expect(root).toHaveAttribute("data-paused", "true");
+  });
+
+  it("treats a large move that stays in the centre third as a tap, not a swipe", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 190, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("1 / 3")).toBeInTheDocument();
+    expect(root).toHaveAttribute("data-paused", "true");
+  });
+
+  it("swipes even when the gesture starts in the centre third", () => {
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 50, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+  });
+
+  it("fades the side arrow after click even while the pointer stays on that third", () => {
+    vi.useFakeTimers();
+    renderSlideshow(3);
+    const prev = screen.getByRole("button", { name: "Previous image" });
+    const prevVisual = arrowVisual("Previous image");
+
+    fireEvent.mouseEnter(prev);
+    expect(prevVisual).toHaveClass("opacity-100");
+
+    fireEvent.click(prev);
+    expect(prevVisual).toHaveClass("opacity-100");
+
+    act(() => {
+      vi.advanceTimersByTime(900);
+    });
+    expect(prevVisual).toHaveClass("opacity-0");
+    vi.useRealTimers();
+  });
+
+  it("fades the side arrow after a left/right pointerup on every device", () => {
+    vi.useFakeTimers();
+    renderSlideshow(3);
+    const root = screen.getByRole("region", { name: "Slideshow" });
+    const prevVisual = arrowVisual("Previous image");
+    mockStageRect(root);
+
+    fireEvent.pointerDown(root, { clientX: 40, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerUp(root, { clientX: 40, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    expect(prevVisual).toHaveClass("opacity-100");
+    expect(root).toHaveAttribute("data-flash-side", "left");
+    expect(screen.getByText("3 / 3")).toBeInTheDocument();
+
+    act(() => {
+      vi.advanceTimersByTime(900);
+    });
+    expect(prevVisual).toHaveClass("opacity-0");
+    expect(root).toHaveAttribute("data-flash-side", "none");
+    vi.useRealTimers();
+  });
+
+  it("flashes the side arrow on tap then fades it out", () => {
+    vi.useFakeTimers();
+    renderSlideshow(3);
+    const prev = screen.getByRole("button", { name: "Previous image" });
+    const prevVisual = arrowVisual("Previous image");
+
+    fireEvent.pointerDown(prev, { pointerType: "touch", pointerId: 1, button: 0, clientX: 10, clientY: 80 });
+    fireEvent.pointerUp(prev, { pointerType: "touch", pointerId: 1, button: 0, clientX: 10, clientY: 80 });
+    fireEvent.click(prev);
+
+    expect(prevVisual).toHaveClass("opacity-100");
+    expect(screen.getByRole("region")).toHaveAttribute("data-flash-side", "left");
+
+    act(() => {
+      vi.advanceTimersByTime(900);
+    });
+    expect(prevVisual).toHaveClass("opacity-0");
+    expect(screen.getByRole("region")).toHaveAttribute("data-flash-side", "none");
+    vi.useRealTimers();
   });
 
   it("advances when the progress label is clicked", () => {

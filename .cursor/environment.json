@@ -1,0 +1,20 @@
+{
+  "name": "nikart",
+  "install": "npm install && npm install --prefix modern",
+  "terminals": [
+    {
+      "name": "modern",
+      "command": "npm run modern",
+      "description": "Main app: Next.js 16 dev server (http://localhost:3000)."
+    },
+    {
+      "name": "legacy",
+      "command": "npm start",
+      "description": "Legacy Express/Swig site (http://localhost:5000)."
+    }
+  ],
+  "ports": [
+    { "name": "modern", "port": 3000 },
+    { "name": "legacy", "port": 5000 }
+  ]
+}

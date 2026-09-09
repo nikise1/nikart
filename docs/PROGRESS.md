@@ -200,8 +200,20 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Extract `Slideshow` from `ArticleView` (`src/components/slideshow/slideshow.tsx`)
 - [x] Swipe left/right to change slides (pointer events, 48px threshold)
 - [x] Hover zones: left/right thirds show gradient arrows and click prev/next (no pause); middle third pauses with a two-bar glyph
+- [x] Centre click toggles sticky play/pause (hovering the middle then clicking locks pause; a second click plays even while still hovering)
+- [x] Left/right click flashes arrows then fades them on all devices, including desktop hover
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
+
+---
+
+### Cloud Agent Dev Environment ✅ (2026-09-07)
+
+- [x] Added repo-managed `.cursor/environment.json` (default image, Node 22 preinstalled)
+- [x] `install` installs both apps: `npm install && npm install --prefix modern` (modern `postinstall` copies Ruffle + syncs content images)
+- [x] `terminals`: `modern` (Next.js dev :3000) and `legacy` (Express/Swig :5000); `ports` 3000 + 5000 exposed
+- [x] Verified end-to-end: install idempotent, lint clean, 59 unit tests passing, production build clean
+- [x] Both servers serve: modern `/` → `/en` (200), `/es` (200); legacy `/` → 302, `/html5/` (200)
 
 ---
 

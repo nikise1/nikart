@@ -176,6 +176,9 @@ Modern `Slideshow` (`src/components/slideshow/slideshow.tsx`) extracted from `Ar
 
 - Horizontal swipe (pointer events, 48px threshold) advances/rewinds slides; vertical pans still scroll
 - Image is split into thirds: left/right hover shows edge-fade arrows and click prev/next (autoplay continues); middle hover pauses with a two-bar glyph
+- Centre click/tap toggles a sticky play/pause (first click while hovering the middle locks pause; second click plays even if the pointer stays there)
+- Hit zones follow the visible `object-contain` image, not the letterboxed frame
+- Left/right click flashes the gradient arrow then fades it on every device, including while the pointer stays on that third
 - Progress `n / total` sits centred under the images and clicks through to the next slide
 - Cross-fade timing unchanged (`1.25s` delay, `0.4s` `autoAlpha`)
 
@@ -263,6 +266,16 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.
+
+---
+
+## Cloud Agent Dev Environment
+
+- `.cursor/environment.json` (2026-09-07): repo-managed Cloud Agent environment on the default image (Node 22 preinstalled).
+  - `install`: `npm install && npm install --prefix modern` — installs legacy (root) and modern deps; modern `postinstall` copies the Ruffle runtime and syncs `public/content/img` → `modern/public/_generated/img`.
+  - `terminals`: `modern` (`npm run modern`, Next.js dev on :3000) and `legacy` (`npm start`, Express/Swig on :5000).
+  - `ports`: 3000 (modern) and 5000 (legacy) exposed.
+  - Validated: lint clean, 59 unit tests passing, production build clean, both dev servers serve (`/en`, `/es`, and legacy `/html5/`).
 
 ---
 
