@@ -187,6 +187,7 @@ Maintenance note (2026-07-15):
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
 - Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
 - Standardized package manager to npm for modern app: added `packageManager: npm@10` in root/modern `package.json`.
+- Package manager comparison (2026-09-10): **keep npm 10**. Yarn Classic cannot import `modern/` lockfileVersion 3; Yarn 4 and a lockless Yarn 1 install re-resolve the tree; pnpm can import the lockfile but is not worth switching mid–Step 10. Full write-up in `docs/STACK_DECISION.md`. `packageManager: "npm@10"` is not a valid Corepack spec (needs a full semver); Vercel uses Node 22’s bundled npm 10 from the lockfile, which is the intended path.
 - Simplified `docs/PROGRESS.md` "Upcoming Steps" table to remove redundant separate "Migration Phase" column.
 - Removed remaining phase references from the "Step" labels in `docs/PROGRESS.md` to keep the table concise.
 
