@@ -91,18 +91,6 @@ body {
   animation: none;
 }
 
-/* Live GSAP on breadcrumbs — do not snapshot/freeze the bar. */
-::view-transition-group(breadcrumbs) {
-  animation: none;
-  z-index: 110;
-}
-::view-transition-old(breadcrumbs) {
-  display: none;
-}
-::view-transition-new(breadcrumbs) {
-  display: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(*),
   ::view-transition-new(*),

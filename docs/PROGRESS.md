@@ -213,7 +213,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Only newly added crumbs enter; removed crumbs mask out then the notch moves up
 - [x] Notch rest matches the original slightly-negative Y (`-0.3em`)
 - [x] Hidden while nav is open; trail lives in Zustand so view-transition remounts still add/exit only the changed suffix
-- [x] Rendered outside the `site-header` view-transition group, with a named `breadcrumbs` group whose snapshots are hidden, so add/exit GSAP plays live on navigation
+- [x] Rendered outside the `site-header` view-transition group so the entrance is not frozen on navigation
 
 ---
 

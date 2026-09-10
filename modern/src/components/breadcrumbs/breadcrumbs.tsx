@@ -67,7 +67,6 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
       ref={containerRef}
       aria-label="Breadcrumb"
       data-component="Breadcrumbs"
-      style={{ viewTransitionName: "breadcrumbs" }}
       className="fixed top-[-0.3em] left-[6em] z-50 flex flex-nowrap text-sm"
     >
       {visualCrumbs.map((crumb) => {
