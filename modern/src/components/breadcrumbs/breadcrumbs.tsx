@@ -6,7 +6,11 @@ import { getBreadcrumbs } from "@/lib/data/content";
 import { Link } from "@/navigation";
 import type { Locale } from "@/lib/data/schema";
 import { useNavStore } from "@/store/nav-store";
-import { BREADCRUMB_NOTCH_FROM_Y, useBreadcrumbAnimator } from "./use-breadcrumb-animator";
+import {
+  BREADCRUMB_MASK_CLIP_HIDDEN,
+  BREADCRUMB_NOTCH_FROM_Y,
+  useBreadcrumbAnimator,
+} from "./use-breadcrumb-animator";
 
 interface BreadcrumbsProps {
   locale: Locale;
@@ -52,7 +56,10 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
               className="breadcrumb-connector inline-block h-[12px] w-[15px] rotate-[75deg] bg-[url('/content/img/stump.png')] bg-no-repeat"
             />
           </span>
-          <span className="breadcrumb-text-mask inline-block w-0 overflow-hidden whitespace-nowrap">
+          <span
+            className="breadcrumb-text-mask inline-block overflow-hidden whitespace-nowrap"
+            style={{ clipPath: BREADCRUMB_MASK_CLIP_HIDDEN }}
+          >
             <Link
               href={`/${crumb.path}`}
               className="breadcrumb-link inline-block pt-[0.3em] text-[#1C6B00] transition-colors hover:text-[#A8682B]"

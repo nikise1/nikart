@@ -7,21 +7,24 @@ import { NAV_TIMING } from "@/lib/nav-timing";
 /** Drop in from above the viewport so notches enter at the page top. */
 export const BREADCRUMB_NOTCH_FROM_Y = -48;
 
+/** Matches the pre-animation rest (`top: -0.3em` on the breadcrumb bar). */
+export const BREADCRUMB_NOTCH_TO_Y = "-0.3em";
+
+/** Slightly slower than nav `itemIn` (1.2s) so the clip-reveal is easier to read. */
+export const BREADCRUMB_TEXT_IN = 1.5;
+
+export const BREADCRUMB_MASK_CLIP_HIDDEN = "inset(0 100% 0 0)";
+export const BREADCRUMB_MASK_CLIP_SHOWN = "inset(0 0% 0 0)";
+
 interface UseBreadcrumbAnimatorOptions {
   containerRef: RefObject<HTMLElement | null>;
   crumbKey: string;
   enabled: boolean;
 }
 
-function measureMaskWidth(el: HTMLElement): number {
-  const child = el.firstElementChild;
-  const childWidth = child instanceof HTMLElement ? child.scrollWidth : 0;
-  return Math.max(el.scrollWidth, childWidth);
-}
-
 /**
- * Staggered notch drop from the page top, then horizontal width-mask reveal
- * matching main nav item text (`overflow: hidden` + width 0 → measured).
+ * Staggered notch drop from the page top, then left-to-right clip-path reveal
+ * (same visual as main nav text masks, without shrinking width so siblings stay put).
  */
 export function useBreadcrumbAnimator({
   containerRef,
@@ -42,7 +45,7 @@ export function useBreadcrumbAnimator({
           el,
           { y: BREADCRUMB_NOTCH_FROM_Y },
           {
-            y: 0,
+            y: BREADCRUMB_NOTCH_TO_Y,
             duration: NAV_TIMING.growIn,
             delay: i * NAV_TIMING.staggerIn,
             ease: "power2.out",
@@ -52,13 +55,12 @@ export function useBreadcrumbAnimator({
 
       masks.forEach((el, i) => {
         gsap.killTweensOf(el);
-        const targetWidth = measureMaskWidth(el);
         gsap.fromTo(
           el,
-          { width: 0 },
+          { clipPath: BREADCRUMB_MASK_CLIP_HIDDEN },
           {
-            width: targetWidth,
-            duration: NAV_TIMING.itemIn,
+            clipPath: BREADCRUMB_MASK_CLIP_SHOWN,
+            duration: BREADCRUMB_TEXT_IN,
             delay: NAV_TIMING.growIn + i * NAV_TIMING.staggerIn,
           },
         );

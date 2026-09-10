@@ -154,7 +154,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 #### 9b2: Breadcrumbs fidelity
 - [x] Matches legacy positioning and styling
-- [x] Staggered notch drop from the page top, then width-mask text reveal matching main nav links (`use-breadcrumb-animator.ts`)
+- [x] Staggered notch drop from the page top (rest at `-0.3em`), then clip-path text reveal without horizontal slot shift (`use-breadcrumb-animator.ts`)
 
 #### 9b3: Language switcher
 - [x] Fixed bottom-left, `{{otherversions}}` interpolation
@@ -209,7 +209,8 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 #### 9h: Breadcrumb entrance animation ✅ (2026-09-10)
 
 - [x] Image notches (`stump.png`) drop in from above the page top, staggered with nav `staggerIn`
-- [x] Labels then unmask via `overflow: hidden` + width tween (`itemIn`), matching main nav text links
+- [x] Labels then unmask via `clip-path` inset (left-to-right, 1.5s) so crumb slots stay put
+- [x] Notch rest matches the original slightly-negative Y (`-0.3em`)
 - [x] Hidden while nav is open; replay on remount; colocated unit tests
 - [x] Rendered outside the `site-header` view-transition group so the entrance is not frozen on navigation
 

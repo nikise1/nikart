@@ -2,7 +2,13 @@ import type { ReactNode } from "react";
 import { act, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NAV_TIMING } from "@/lib/nav-timing";
-import { BREADCRUMB_NOTCH_FROM_Y } from "./use-breadcrumb-animator";
+import {
+  BREADCRUMB_MASK_CLIP_HIDDEN,
+  BREADCRUMB_MASK_CLIP_SHOWN,
+  BREADCRUMB_NOTCH_FROM_Y,
+  BREADCRUMB_NOTCH_TO_Y,
+  BREADCRUMB_TEXT_IN,
+} from "./use-breadcrumb-animator";
 import { Breadcrumbs } from "./breadcrumbs";
 
 const gsapFromTo = vi.hoisted(() => vi.fn());
@@ -93,7 +99,7 @@ describe("Breadcrumbs", () => {
     );
   });
 
-  it("drops notches from the page top, then mask-reveals text like nav links", async () => {
+  it("drops notches from the page top, then clip-reveals text without shrinking width", async () => {
     const { container } = await renderBreadcrumbs();
 
     const notches = container.querySelectorAll(".breadcrumb-notch");
@@ -103,6 +109,7 @@ describe("Breadcrumbs", () => {
 
     for (const mask of masks) {
       expect(mask).toHaveClass("overflow-hidden");
+      expect(mask).not.toHaveClass("w-0");
     }
 
     const notchTweens = gsapFromTo.mock.calls.filter(([target]) =>
@@ -119,7 +126,7 @@ describe("Breadcrumbs", () => {
       expect(target).toBe(notches[i]);
       expect(fromVars).toEqual({ y: BREADCRUMB_NOTCH_FROM_Y });
       expect(toVars).toMatchObject({
-        y: 0,
+        y: BREADCRUMB_NOTCH_TO_Y,
         duration: NAV_TIMING.growIn,
         delay: i * NAV_TIMING.staggerIn,
       });
@@ -127,10 +134,10 @@ describe("Breadcrumbs", () => {
 
     maskTweens.forEach(([target, fromVars, toVars], i) => {
       expect(target).toBe(masks[i]);
-      expect(fromVars).toEqual({ width: 0 });
+      expect(fromVars).toEqual({ clipPath: BREADCRUMB_MASK_CLIP_HIDDEN });
       expect(toVars).toMatchObject({
-        width: 80,
-        duration: NAV_TIMING.itemIn,
+        clipPath: BREADCRUMB_MASK_CLIP_SHOWN,
+        duration: BREADCRUMB_TEXT_IN,
         delay: NAV_TIMING.growIn + i * NAV_TIMING.staggerIn,
       });
     });
