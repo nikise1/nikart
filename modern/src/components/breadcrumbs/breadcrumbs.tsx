@@ -8,12 +8,32 @@ import type { Locale } from "@/lib/data/schema";
 import { useNavStore } from "@/store/nav-store";
 import {
   BREADCRUMB_MASK_CLIP_HIDDEN,
+  BREADCRUMB_MASK_CLIP_SHOWN,
   BREADCRUMB_NOTCH_FROM_Y,
+  BREADCRUMB_NOTCH_TO_Y,
   useBreadcrumbAnimator,
 } from "./use-breadcrumb-animator";
+import { useBreadcrumbTrail } from "./use-breadcrumb-trail";
+import type { VisualBreadcrumb } from "./breadcrumb-trail";
 
 interface BreadcrumbsProps {
   locale: Locale;
+}
+
+function crumbStartStyles(phase: VisualBreadcrumb["phase"]): {
+  notchY: string;
+  clipPath: string;
+} {
+  if (phase === "entering") {
+    return {
+      notchY: `${BREADCRUMB_NOTCH_FROM_Y}px`,
+      clipPath: BREADCRUMB_MASK_CLIP_HIDDEN,
+    };
+  }
+  return {
+    notchY: BREADCRUMB_NOTCH_TO_Y,
+    clipPath: BREADCRUMB_MASK_CLIP_SHOWN,
+  };
 }
 
 export function Breadcrumbs({ locale }: BreadcrumbsProps) {
@@ -22,21 +42,24 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
   const navVisible = navPhase === "opening" || navPhase === "open";
   const containerRef = useRef<HTMLElement>(null);
 
-  // Extract path segments after /locale/
   const segments = pathname.split("/").filter(Boolean);
-  // Remove locale segment
   const contentPath = segments.slice(1);
-  const crumbs = contentPath.length === 0 ? [] : getBreadcrumbs(contentPath, locale);
-  const visible = crumbs.length > 0 && !navVisible;
-  const crumbKey = crumbs.map((crumb) => `${crumb.id}:${crumb.title}`).join("/");
+  const urlCrumbs = contentPath.length === 0 ? [] : getBreadcrumbs(contentPath, locale);
+
+  const { visualCrumbs, onExitsComplete, onEntersComplete } = useBreadcrumbTrail(
+    urlCrumbs,
+    !navVisible,
+  );
 
   useBreadcrumbAnimator({
     containerRef,
-    crumbKey,
-    enabled: visible,
+    visualCrumbs,
+    enabled: !navVisible && visualCrumbs.length > 0,
+    onExitsComplete,
+    onEntersComplete,
   });
 
-  if (!visible) return null;
+  if (navVisible || visualCrumbs.length === 0) return null;
 
   return (
     <nav
@@ -45,31 +68,39 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
       data-component="Breadcrumbs"
       className="fixed top-[-0.3em] left-[6em] z-50 flex flex-nowrap text-sm"
     >
-      {crumbs.map((crumb) => (
-        <span key={crumb.id} className="breadcrumb-container mr-[0.3em] flex">
+      {visualCrumbs.map((crumb) => {
+        const start = crumbStartStyles(crumb.phase);
+        return (
           <span
-            className="breadcrumb-notch inline-block shrink-0"
-            style={{ transform: `translateY(${BREADCRUMB_NOTCH_FROM_Y}px)` }}
+            key={crumb.id}
+            data-breadcrumb-phase={crumb.phase}
+            className={`breadcrumb-container mr-[0.3em] flex${crumb.phase === "exiting" ? " pointer-events-none" : ""}`}
+            aria-hidden={crumb.phase === "exiting"}
           >
             <span
-              aria-hidden="true"
-              className="breadcrumb-connector inline-block h-[12px] w-[15px] rotate-[75deg] bg-[url('/content/img/stump.png')] bg-no-repeat"
-            />
-          </span>
-          <span
-            className="breadcrumb-text-mask inline-block overflow-hidden whitespace-nowrap"
-            style={{ clipPath: BREADCRUMB_MASK_CLIP_HIDDEN }}
-          >
-            <Link
-              href={`/${crumb.path}`}
-              className="breadcrumb-link inline-block pt-[0.3em] text-[#1C6B00] transition-colors hover:text-[#A8682B]"
-              transitionTypes={["nav-back"]}
+              className="breadcrumb-notch inline-block shrink-0"
+              style={{ transform: `translateY(${start.notchY})` }}
             >
-              {crumb.title}
-            </Link>
+              <span
+                aria-hidden="true"
+                className="breadcrumb-connector inline-block h-[12px] w-[15px] rotate-[75deg] bg-[url('/content/img/stump.png')] bg-no-repeat"
+              />
+            </span>
+            <span
+              className="breadcrumb-text-mask inline-block overflow-hidden whitespace-nowrap"
+              style={{ clipPath: start.clipPath }}
+            >
+              <Link
+                href={`/${crumb.path}`}
+                className="breadcrumb-link inline-block pt-[0.3em] text-[#1C6B00] transition-colors hover:text-[#A8682B]"
+                transitionTypes={["nav-back"]}
+              >
+                {crumb.title}
+              </Link>
+            </span>
           </span>
-        </span>
-      ))}
+        );
+      })}
     </nav>
   );
 }

@@ -12,19 +12,28 @@ import {
 import { Breadcrumbs } from "./breadcrumbs";
 
 const gsapFromTo = vi.hoisted(() => vi.fn());
+const gsapSet = vi.hoisted(() => vi.fn());
 const gsapKill = vi.hoisted(() => vi.fn());
 let pathname = "/en/art/install/spark";
 let navPhase = "closed";
 
-vi.mock("@/lib/gsap", () => ({
-  gsap: {
-    fromTo: gsapFromTo,
-    killTweensOf: gsapKill,
-  },
-  useGSAP: (callback: () => void) => {
-    queueMicrotask(callback);
-  },
-}));
+vi.mock("@/lib/gsap", async () => {
+  const React = await vi.importActual<typeof import("react")>("react");
+  return {
+    gsap: {
+      fromTo: gsapFromTo,
+      set: gsapSet,
+      killTweensOf: gsapKill,
+    },
+    useGSAP: (callback: () => void, config?: { dependencies?: unknown[] }) => {
+      /* eslint-disable react-hooks/exhaustive-deps -- test mock of useGSAP */
+      React.useLayoutEffect(() => {
+        callback();
+      }, config?.dependencies);
+      /* eslint-enable react-hooks/exhaustive-deps */
+    },
+  };
+});
 
 vi.mock("next/navigation", () => ({
   usePathname: () => pathname,
@@ -51,11 +60,15 @@ vi.mock("@/store/nav-store", () => ({
     selector({ navPhase }),
 }));
 
-async function renderBreadcrumbs() {
-  const view = render(<Breadcrumbs locale="en" />);
+async function flushAnimation() {
   await act(async () => {
     await Promise.resolve();
   });
+}
+
+async function renderBreadcrumbs() {
+  const view = render(<Breadcrumbs locale="en" />);
+  await flushAnimation();
   return view;
 }
 
@@ -64,13 +77,8 @@ describe("Breadcrumbs", () => {
     pathname = "/en/art/install/spark";
     navPhase = "closed";
     gsapFromTo.mockClear();
+    gsapSet.mockClear();
     gsapKill.mockClear();
-    Object.defineProperty(HTMLElement.prototype, "scrollWidth", {
-      configurable: true,
-      get() {
-        return 80;
-      },
-    });
   });
 
   it("renders nothing on the home path", async () => {
@@ -99,18 +107,13 @@ describe("Breadcrumbs", () => {
     );
   });
 
-  it("drops notches from the page top, then clip-reveals text without shrinking width", async () => {
+  it("drops notches from the page top, then clip-reveals only on first mount", async () => {
     const { container } = await renderBreadcrumbs();
 
     const notches = container.querySelectorAll(".breadcrumb-notch");
     const masks = container.querySelectorAll(".breadcrumb-text-mask");
     expect(notches).toHaveLength(3);
     expect(masks).toHaveLength(3);
-
-    for (const mask of masks) {
-      expect(mask).toHaveClass("overflow-hidden");
-      expect(mask).not.toHaveClass("w-0");
-    }
 
     const notchTweens = gsapFromTo.mock.calls.filter(([target]) =>
       (target as HTMLElement).classList.contains("breadcrumb-notch"),
@@ -141,5 +144,78 @@ describe("Breadcrumbs", () => {
         delay: NAV_TIMING.growIn + i * NAV_TIMING.staggerIn,
       });
     });
+  });
+
+  it("masks out then lifts only removed crumbs when the trail shortens", async () => {
+    const { container, rerender } = await renderBreadcrumbs();
+    gsapFromTo.mockClear();
+    gsapSet.mockClear();
+
+    pathname = "/en/art/install";
+    rerender(<Breadcrumbs locale="en" />);
+    await flushAnimation();
+
+    const spark = [...container.querySelectorAll(".breadcrumb-container")].find(
+      (el) => el.querySelector(".breadcrumb-link")?.textContent === "Spark",
+    );
+    expect(spark).toHaveAttribute("data-breadcrumb-phase", "exiting");
+
+    const sparkNotch = spark?.querySelector(".breadcrumb-notch");
+    const sparkMask = spark?.querySelector(".breadcrumb-text-mask");
+
+    const notchTweens = gsapFromTo.mock.calls.filter(([target]) =>
+      (target as HTMLElement).classList.contains("breadcrumb-notch"),
+    );
+    const maskTweens = gsapFromTo.mock.calls.filter(([target]) =>
+      (target as HTMLElement).classList.contains("breadcrumb-text-mask"),
+    );
+
+    expect(notchTweens).toHaveLength(1);
+    expect(maskTweens).toHaveLength(1);
+    expect(maskTweens[0]?.[0]).toBe(sparkMask);
+    expect(maskTweens[0]?.[1]).toEqual({ clipPath: BREADCRUMB_MASK_CLIP_SHOWN });
+    expect(maskTweens[0]?.[2]).toMatchObject({
+      clipPath: BREADCRUMB_MASK_CLIP_HIDDEN,
+      duration: BREADCRUMB_TEXT_IN,
+      delay: 0,
+    });
+    expect(notchTweens[0]?.[0]).toBe(sparkNotch);
+    expect(notchTweens[0]?.[1]).toEqual({ y: BREADCRUMB_NOTCH_TO_Y });
+    expect(notchTweens[0]?.[2]).toMatchObject({
+      y: BREADCRUMB_NOTCH_FROM_Y,
+      duration: NAV_TIMING.growIn,
+      delay: BREADCRUMB_TEXT_IN,
+    });
+  });
+
+  it("animates only the newly appended crumb when drilling down", async () => {
+    pathname = "/en/art/install";
+    const { container, rerender } = await renderBreadcrumbs();
+    gsapFromTo.mockClear();
+
+    pathname = "/en/art/install/spark";
+    rerender(<Breadcrumbs locale="en" />);
+    await flushAnimation();
+
+    const spark = [...container.querySelectorAll(".breadcrumb-container")].find(
+      (el) => el.querySelector(".breadcrumb-link")?.textContent === "Spark",
+    );
+    expect(spark).toHaveAttribute("data-breadcrumb-phase", "entering");
+
+    const sparkNotch = spark?.querySelector(".breadcrumb-notch");
+    const sparkMask = spark?.querySelector(".breadcrumb-text-mask");
+
+    const notchTweens = gsapFromTo.mock.calls.filter(([target]) =>
+      (target as HTMLElement).classList.contains("breadcrumb-notch"),
+    );
+    const maskTweens = gsapFromTo.mock.calls.filter(([target]) =>
+      (target as HTMLElement).classList.contains("breadcrumb-text-mask"),
+    );
+
+    expect(notchTweens).toHaveLength(1);
+    expect(maskTweens).toHaveLength(1);
+    expect(notchTweens[0]?.[0]).toBe(sparkNotch);
+    expect(maskTweens[0]?.[0]).toBe(sparkMask);
+    expect(maskTweens[0]?.[2]).toMatchObject({ duration: BREADCRUMB_TEXT_IN });
   });
 });
