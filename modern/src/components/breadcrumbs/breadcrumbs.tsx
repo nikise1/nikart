@@ -5,7 +5,9 @@ import { usePathname } from "next/navigation";
 import { getBreadcrumbs } from "@/lib/data/content";
 import { Link } from "@/navigation";
 import type { Locale } from "@/lib/data/schema";
+import { useBreadcrumbStore } from "@/store/breadcrumb-store";
 import { useNavStore } from "@/store/nav-store";
+import type { VisualBreadcrumb } from "./breadcrumb-trail";
 import {
   BREADCRUMB_MASK_CLIP_HIDDEN,
   BREADCRUMB_MASK_CLIP_SHOWN,
@@ -14,7 +16,6 @@ import {
   useBreadcrumbAnimator,
 } from "./use-breadcrumb-animator";
 import { useBreadcrumbTrail } from "./use-breadcrumb-trail";
-import type { VisualBreadcrumb } from "./breadcrumb-trail";
 
 interface BreadcrumbsProps {
   locale: Locale;
@@ -46,10 +47,10 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
   const contentPath = segments.slice(1);
   const urlCrumbs = contentPath.length === 0 ? [] : getBreadcrumbs(contentPath, locale);
 
-  const { visualCrumbs, onExitsComplete, onEntersComplete } = useBreadcrumbTrail(
-    urlCrumbs,
-    !navVisible,
-  );
+  useBreadcrumbTrail(urlCrumbs, !navVisible);
+  const visualCrumbs = useBreadcrumbStore((s) => s.visual);
+  const onExitsComplete = useBreadcrumbStore((s) => s.onExitsComplete);
+  const onEntersComplete = useBreadcrumbStore((s) => s.onEntersComplete);
 
   useBreadcrumbAnimator({
     containerRef,

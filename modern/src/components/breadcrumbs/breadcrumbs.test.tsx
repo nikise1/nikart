@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { act, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NAV_TIMING } from "@/lib/nav-timing";
+import { resetBreadcrumbStore, useBreadcrumbStore } from "@/store/breadcrumb-store";
 import {
   BREADCRUMB_MASK_CLIP_HIDDEN,
   BREADCRUMB_MASK_CLIP_SHOWN,
@@ -76,6 +77,7 @@ describe("Breadcrumbs", () => {
   beforeEach(() => {
     pathname = "/en/art/install/spark";
     navPhase = "closed";
+    resetBreadcrumbStore();
     gsapFromTo.mockClear();
     gsapSet.mockClear();
     gsapKill.mockClear();
@@ -217,5 +219,57 @@ describe("Breadcrumbs", () => {
     expect(notchTweens[0]?.[0]).toBe(sparkNotch);
     expect(maskTweens[0]?.[0]).toBe(sparkMask);
     expect(maskTweens[0]?.[2]).toMatchObject({ duration: BREADCRUMB_TEXT_IN });
+  });
+
+  it("does not replay the whole trail after a remount of the same path", async () => {
+    const { unmount } = await renderBreadcrumbs();
+    act(() => {
+      useBreadcrumbStore.getState().onEntersComplete();
+    });
+    unmount();
+    gsapFromTo.mockClear();
+    gsapSet.mockClear();
+
+    const { container } = await renderBreadcrumbs();
+    const phases = [...container.querySelectorAll(".breadcrumb-container")].map(
+      (el) => el.getAttribute("data-breadcrumb-phase"),
+    );
+    expect(phases).toEqual(["present", "present", "present"]);
+    expect(gsapFromTo).not.toHaveBeenCalled();
+    expect(gsapSet).toHaveBeenCalled();
+  });
+
+  it("exits only the dropped crumb after a remount onto a shorter path", async () => {
+    const { unmount } = await renderBreadcrumbs();
+    act(() => {
+      useBreadcrumbStore.getState().onEntersComplete();
+    });
+    unmount();
+    gsapFromTo.mockClear();
+
+    pathname = "/en/art/install";
+    const { container } = await renderBreadcrumbs();
+
+    const spark = [...container.querySelectorAll(".breadcrumb-container")].find(
+      (el) => el.querySelector(".breadcrumb-link")?.textContent === "Spark",
+    );
+    expect(spark).toHaveAttribute("data-breadcrumb-phase", "exiting");
+
+    const notchTweens = gsapFromTo.mock.calls.filter(([target]) =>
+      (target as HTMLElement).classList.contains("breadcrumb-notch"),
+    );
+    const maskTweens = gsapFromTo.mock.calls.filter(([target]) =>
+      (target as HTMLElement).classList.contains("breadcrumb-text-mask"),
+    );
+    expect(notchTweens).toHaveLength(1);
+    expect(maskTweens).toHaveLength(1);
+    expect(maskTweens[0]?.[2]).toMatchObject({
+      clipPath: BREADCRUMB_MASK_CLIP_HIDDEN,
+      duration: BREADCRUMB_TEXT_IN,
+    });
+    expect(notchTweens[0]?.[2]).toMatchObject({
+      y: BREADCRUMB_NOTCH_FROM_Y,
+      delay: BREADCRUMB_TEXT_IN,
+    });
   });
 });

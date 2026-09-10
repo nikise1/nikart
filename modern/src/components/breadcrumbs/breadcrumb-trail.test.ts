@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { diffBreadcrumbs } from "./breadcrumb-trail";
+import { diffBreadcrumbs, nextTrailSnapshot } from "./breadcrumb-trail";
 
 describe("diffBreadcrumbs", () => {
   const art = { id: "art", title: "Art", path: "art" };
@@ -45,6 +45,48 @@ describe("diffBreadcrumbs", () => {
       kept: [artEs],
       removed: [],
       added: [],
+    });
+  });
+});
+
+describe("nextTrailSnapshot", () => {
+  const art = { id: "art", title: "Art", path: "art" };
+  const install = { id: "install", title: "Installations", path: "art/install" };
+  const spark = { id: "spark", title: "Spark", path: "art/install/spark" };
+  const games = { id: "games", title: "Games", path: "games" };
+
+  it("marks only the new suffix as entering", () => {
+    expect(nextTrailSnapshot([art, install], [art, install, spark])).toEqual({
+      live: [art, install, spark],
+      pendingAdded: [],
+      visual: [
+        { ...art, phase: "present" },
+        { ...install, phase: "present" },
+        { ...spark, phase: "entering" },
+      ],
+    });
+  });
+
+  it("marks only the dropped suffix as exiting", () => {
+    expect(nextTrailSnapshot([art, install, spark], [art, install])).toEqual({
+      live: [art, install],
+      pendingAdded: [],
+      visual: [
+        { ...art, phase: "present" },
+        { ...install, phase: "present" },
+        { ...spark, phase: "exiting" },
+      ],
+    });
+  });
+
+  it("exits the old branch before entering the new one", () => {
+    expect(nextTrailSnapshot([art, install], [games])).toEqual({
+      live: [games],
+      pendingAdded: [games],
+      visual: [
+        { ...art, phase: "exiting" },
+        { ...install, phase: "exiting" },
+      ],
     });
   });
 });
