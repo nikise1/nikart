@@ -118,6 +118,7 @@ Legacy breadcrumb styling (`_nav.scss`):
 - Link: `display: inline-block; padding: 0.3em 0 0 0`
 - Hidden when nav is open
 - Entrance (modern): stump notches drop in from above the page top, staggered with `NAV_TIMING.staggerIn`; after each notch lands (`NAV_TIMING.growIn`), the label unmasks by tweening width 0 → measured inside `overflow: hidden` — the same clip-reveal as main nav item text (`NAV_TIMING.itemIn`)
+- Breadcrumbs render outside the `site-header` view-transition group so the GSAP entrance is not snapshotted/frozen during route changes
 
 #### 6b3: Language switcher
 

@@ -211,6 +211,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Image notches (`stump.png`) drop in from above the page top, staggered with nav `staggerIn`
 - [x] Labels then unmask via `overflow: hidden` + width tween (`itemIn`), matching main nav text links
 - [x] Hidden while nav is open; replay on remount; colocated unit tests
+- [x] Rendered outside the `site-header` view-transition group so the entrance is not frozen on navigation
 
 ---
 
