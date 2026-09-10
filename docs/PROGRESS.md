@@ -154,6 +154,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 #### 9b2: Breadcrumbs fidelity
 - [x] Matches legacy positioning and styling
+- [x] Staggered notch drop from the page top, then width-mask text reveal matching main nav links (`use-breadcrumb-animator.ts`)
 
 #### 9b3: Language switcher
 - [x] Fixed bottom-left, `{{otherversions}}` interpolation
@@ -204,6 +205,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Left/right click flashes arrows then fades them on all devices, including desktop hover
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
+
+#### 9h: Breadcrumb entrance animation ✅ (2026-09-10)
+
+- [x] Image notches (`stump.png`) drop in from above the page top, staggered with nav `staggerIn`
+- [x] Labels then unmask via `overflow: hidden` + width tween (`itemIn`), matching main nav text links
+- [x] Hidden while nav is open; replay on remount; colocated unit tests
 
 ---
 
