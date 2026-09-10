@@ -222,6 +222,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] `terminals`: `modern` (Next.js dev :3000) and `legacy` (Express/Swig :5000); `ports` 3000 + 5000 exposed
 - [x] Verified end-to-end: install idempotent, lint clean, 59 unit tests passing, production build clean
 - [x] Both servers serve: modern `/` → `/en` (200), `/es` (200); legacy `/` → 302, `/html5/` (200)
+- [x] Re-verified on a fresh VM (2026-09-10): `install` clean, both dev servers up; smoke tests pass — modern `/en`, `/es`, `/fl`, `/content/img/*` rewrite all 200; legacy `/` → 302 `/html5/` (200); browser walkthrough confirms both apps render
 
 ---
 
