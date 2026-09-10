@@ -205,6 +205,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
 
+#### 9h: Package manager comparison (keep npm) ✅ (2026-09-10)
+
+- [x] Compared Yarn Classic, Yarn 4, pnpm, Bun, and staying on npm against this repo’s three install trees, Vercel, Heroku, and Cloud Agent wiring
+- [x] Timed installs on `modern/`: `npm ci` 7.5s; Yarn 1 `import` fails on lockfileVersion 3; Yarn 4 / lockless Yarn 1 re-resolve deps; pnpm import succeeds (warm 0.4s) but is a later-optional switch
+- [x] Decision: **keep npm 10**; do not switch during Step 10. Write-up in `docs/STACK_DECISION.md`
+
 ---
 
 ### Cloud Agent Dev Environment ✅ (2026-09-07)
@@ -253,3 +259,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-09-07 | `sync:images` never copies onto the legacy symlink | `cp` errors when dest is `../../../public/content/img` (same dir as source) |
 | 2026-09-07 | Keep a single git copy of images at repo-root `public/content/img` | Avoid duplicates and leave the legacy app untouched; modern copies at install/build |
 | 2026-09-07 | Generated images live at `modern/public/_generated/img` | Distinct from legacy `public/content/img` so gitignore cannot collide; app still uses `/content/img/` via rewrite |
+| 2026-09-10 | Keep npm 10 (do not switch to Yarn) | Yarn Classic cannot import lockfile v3; Yarn 4 re-resolves the tree; pnpm is the only later alternative; switch cost hits Vercel/Heroku/Cloud Agent during Step 10 |

@@ -153,6 +153,73 @@ For bilingual content (en/es):
 
 ---
 
+## Package Manager: npm 10
+
+**Date:** 2026-09-10
+**Question:** Switch the modern app (and/or the whole repo) to Yarn, keep npm, or pick something else?
+
+This repo already standardized on npm in Step 9e (`packageManager: npm@10` on `modern/`, `engines.npm: 10.x` on the legacy root). The comparison below is against that status quo, not a greenfield choice.
+
+### What is already wired to npm
+
+Three separate install trees, none of them npm/Yarn/pnpm workspaces:
+
+| Tree | Lockfile | Role |
+|------|----------|------|
+| repo root | `package-lock.json` (lockfileVersion 3) | Legacy Express/Swig on Heroku; `engines.npm: 10.x`; `Procfile` is `node server.js` |
+| `modern/` | `package-lock.json` (lockfileVersion 3, ~935 packages, 470KiB) | Next.js 16 on Vercel; `packageManager: "npm@10"` |
+| `public/html5/` | `package-lock.json` (lockfileVersion 1) | Legacy Grunt 0.4 / Compass pipeline |
+
+Install/run commands are npm throughout: `.cursor/environment.json` (`npm install && npm install --prefix modern`), `modern/vercel.json` (`installCommand: "npm install"`), `AGENTS.md` (`npm run modern`), Playwright `webServer.command`, READMEs.
+
+`modern/` `postinstall` copies Ruffle from `node_modules/@ruffle-rs/ruffle` into `public/ruffle/`. Anything that drops a real `node_modules` layout (Yarn PnP, some isolated linkers) would break that copy unless rewritten.
+
+### Candidates Evaluated
+
+| Manager | Strengths (this repo) | Weaknesses (this repo) |
+|---------|----------------------|------------------------|
+| **npm 10** (current) | Ships with Node 22; Vercel Node 22 → npm 10; Heroku `engines.npm` already pins it; lockfiles already committed; `create-next-app` / agent docs default; no extra toolchain | Hoisted `node_modules` (phantom deps possible); largest on-disk tree in the bench |
+| Yarn Classic (v1.22) | Familiar CLI; still auto-detected by Vercel via `yarn.lock` | Unmaintained; **cannot import** this `lockfileVersion` 3 (`yarn import` → "source file(s) corrupted"); `packageManager: "npm@10"` makes Yarn 1 abort (`yarn@npm@10`); a fresh `yarn install` re-resolves newer patches (e.g. jest-dom 6.10 vs locked 6.9.1) |
+| Yarn 4 (Berry) | Faster than Yarn 1 once cached; Vercel supports it via Corepack + `packageManager` | Needs Corepack, `.yarnrc.yml`, and `nodeLinker: node-modules` (default PnP would break the Ruffle copy); also re-resolves the tree (bench pulled Playwright 1.63 vs locked 1.61, Tailwind 4.3.3 vs 4.3.2); documented Vercel Yarn versions are 1–3 without Corepack |
+| **pnpm** | Only alternative that **imported** the existing npm lockfile; smallest `node_modules` (865M vs npm 1.2G); warm install 0.4s; Ruffle path still present as a symlink; Vercel detects `pnpm-lock.yaml` | Not a workspaces monorepo, so workspace features buy little; Vercel docs list pnpm 6–10 (Corepack on this VM pulled pnpm 12 — version skew risk); would rewrite Vercel, Cloud Agent, docs, and scripts; strict layout can surface undeclared deps |
+| Bun | Fastest installs in generic 2026 roundups; Vercel supports `bun.lock` / `bun.lockb` | Not installed in this environment; extra runtime beside Node 22; poor fit for legacy Grunt/html5 and Heroku `engines.npm`; least agent-training surface |
+
+### Install timings (2026-09-10, this VM)
+
+`modern/` copied to `/tmp`, `postinstall` stripped, scripts ignored. Node v22.14.0 / npm 10.9.7.
+
+| Command | Cold | Warm (frozen/immutable) | `node_modules` | Preserves current lock? |
+|---------|------|-------------------------|----------------|-------------------------|
+| `npm ci` | 7.5s | n/a (`ci` always unpacks) | 1.2G | Yes |
+| Yarn 1 `import` | **fails** | — | — | No |
+| Yarn 1 `install` (no lock) | 31.8s | 4.4s | 1.2G | No (re-resolved) |
+| Yarn 4.9.2 `install` (`node-modules` linker) | 19.9s | 5.9s | 962M | No (re-resolved) |
+| `pnpm import` + `pnpm install` | 5.9s | 0.4s | 865M | Yes (import succeeded) |
+
+Cold npm is already fast enough that install time is not a migration bottleneck. The modern tree is ~745 top-level packages after install, not a large monorepo.
+
+### Decision Rationale
+
+1. **Keep npm 10.** Switching package managers does not unblock Step 10 (Vercel preview) or Step 11 (cutover). It would replace working lockfiles during an active deploy track.
+
+2. **Yarn is the weakest of the “switch” options here.** Classic cannot ingest the current lockfile, fights the existing `packageManager` field, and is in maintenance. Yarn 4 is a different tool: Corepack + config + a re-resolved dependency tree, for no product feature.
+
+3. **pnpm is the only credible alternative**, and only later. It uniquely imported `package-lock.json`, shrank disk use, and left the Ruffle layout intact. Revisit after production cutover if Cloud Agent / CI install time or phantom-dependency bugs become real pain. Until then the migration cost (Vercel `installCommand`, `.cursor/environment.json`, AGENTS.md, Playwright, three lockfiles, Corepack pin compatible with Vercel’s pnpm 6–10) outweighs the gain.
+
+4. **Do not introduce workspaces now.** Option C keeps legacy at repo root for Heroku. A Yarn/pnpm workspace would couple the Heroku app to the Next.js app’s installer — the opposite of the additive strategy.
+
+5. **Leave Bun out** until the legacy trees are gone. It is a runtime choice as much as an installer choice.
+
+### Optional hygiene (still npm, not a switch)
+
+`modern/package.json` has `"packageManager": "npm@10"`. Corepack rejects that (`expected a semver version`). Vercel therefore ignores Corepack and uses Node 22’s bundled npm 10 from the lockfile — which is what we want. If Corepack pinning is ever needed, use a full version such as `"packageManager": "npm@10.9.7"`. Root `package.json` never received `packageManager` (only `engines.npm`); that is fine while Heroku is live.
+
+### What a switch would touch
+
+Yarn or pnpm would need all of: new lockfile(s), delete `package-lock.json` in the switched tree(s), `packageManager` rewrite, `modern/vercel.json` `installCommand`, `.cursor/environment.json` `install` / terminal commands, `AGENTS.md` / READMEs / Playwright `webServer.command`, and a Vercel preview smoke test. Yarn PnP would also require rewriting `scripts/copy-ruffle.mjs`. Do not do this mid–Step 10.
+
+---
+
 ## Summary
 
 | Category | Choice | Key Reason |
@@ -164,6 +231,7 @@ For bilingual content (en/es):
 | Deployment | Vercel | Native Next.js, preview deploys, exit via Adapter API |
 | i18n | next-intl | URL-based, SEO-friendly, TypeScript-safe |
 | Styling | Tailwind CSS 4 | Agent-friendly, zero runtime, responsive utilities |
+| Package manager | npm 10 | Already standardized; Yarn cannot import the lockfile; pnpm only if install pain appears after cutover |
 
 ---
 
@@ -177,3 +245,4 @@ All choices optimise for AI agent maintenance:
 4. **Vitest/Playwright** — Standard testing APIs. Agents can write and run tests confidently.
 5. **Tailwind** — Utility classes are highly pattern-matchable. AI agents generate Tailwind more accurately than custom CSS.
 6. **TypeScript throughout** — Type errors surface issues immediately. Agents get IDE-level feedback.
+7. **npm 10** — Ships with Node 22, matches Vercel/Heroku/Cloud Agent commands, and is the default in agent-generated Next.js snippets. No second CLI for agents to guess.
