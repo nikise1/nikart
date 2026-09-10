@@ -118,7 +118,7 @@ Legacy breadcrumb styling (`_nav.scss`):
 - Link: `display: inline-block; padding: 0.3em 0 0 0`
 - Hidden when nav is open
 - Entrance (modern): only newly added crumbs animate — stump notches drop in from above the page top (staggered with `NAV_TIMING.staggerIn`) and rest at `y: -0.3em`; after each new notch lands (`NAV_TIMING.growIn`), the label unmasks via `clip-path` inset (left-to-right, `BREADCRUMB_TEXT_IN` 0.75s) so reserved width does not shove later crumbs. Removed crumbs reverse: mask out, then the notch moves up. Unchanged crumbs stay put. The live trail is stored in Zustand (`breadcrumb-store.ts`) so a view-transition remount still diffs against the previous crumbs instead of replaying the whole bar.
-- Breadcrumbs render outside the `site-header` view-transition group so the GSAP entrance is not snapshotted/frozen during route changes
+- Breadcrumbs render outside the `site-header` view-transition group, and the bar itself uses `view-transition-name: breadcrumbs` with snapshots disabled, so the GSAP add/exit plays live during route changes
 
 #### 6b3: Language switcher
 
