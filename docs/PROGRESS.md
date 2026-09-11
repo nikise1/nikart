@@ -154,6 +154,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 #### 9b2: Breadcrumbs fidelity
 - [x] Matches legacy positioning and styling
+- [x] Staggered notch drop from the page top (rest at `-0.3em`); only new crumbs enter; removed crumbs reverse-exit (`use-breadcrumb-animator.ts`)
 
 #### 9b3: Language switcher
 - [x] Fixed bottom-left, `{{otherversions}}` interpolation
@@ -204,6 +205,15 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Left/right click flashes arrows then fades them on all devices, including desktop hover
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
+
+#### 9h: Breadcrumb entrance animation ✅ (2026-09-10)
+
+- [x] Image notches (`stump.png`) drop in from above the page top, staggered with nav `staggerIn`
+- [x] Labels unmask via `clip-path` inset (left-to-right, 0.75s) so crumb slots stay put
+- [x] Only newly added crumbs enter; removed crumbs mask out then the notch moves up
+- [x] Notch rest matches the original slightly-negative Y (`-0.3em`)
+- [x] Hidden while nav is open; trail lives in Zustand so view-transition remounts still add/exit only the changed suffix
+- [x] Rendered outside the `site-header` view-transition group so the entrance is not frozen on navigation
 
 ---
 
