@@ -281,6 +281,14 @@ describe("Slideshow", () => {
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
   });
 
+  it.each(["petiole", "notch", "tendril"] as const)("advances from the %s plant control", (variant) => {
+    render(<Slideshow itemId="onedayinmay" imgCount={3} alt="One Day in May" advanceVariant={variant} />);
+    const advance = screen.getByRole("button", { name: "Advance slideshow" });
+    expect(advance).toHaveAttribute("data-advance-variant", variant);
+    fireEvent.click(advance);
+    expect(screen.getByText("2 / 3")).toBeInTheDocument();
+  });
+
   it("still lets arrow clicks work after a swipe", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
