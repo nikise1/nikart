@@ -278,6 +278,7 @@ A "session" = one focused working block with AI agent collaboration.
   - `terminals`: `modern` (`npm run modern`, Next.js dev on :3000) and `legacy` (`npm start`, Express/Swig on :5000).
   - `ports`: 3000 (modern) and 5000 (legacy) exposed.
   - Validated: lint clean, 59 unit tests passing, production build clean, both dev servers serve (`/en`, `/es`, and legacy `/html5/`).
+- Re-verified (2026-09-10) on a fresh Cloud Agent VM: `install` ran clean (both apps + `postinstall` Ruffle/image sync), both `terminals` came up, and HTTP smoke tests passed — modern `/` → 307 `/en` (200), `/es` (200), `/fl` (200), `/content/img/*` rewrite (200); legacy `/` → 302 `/html5/` (200). Browser walkthrough confirmed both apps render.
 
 ---
 
