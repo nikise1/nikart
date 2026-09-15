@@ -133,7 +133,43 @@ export function parseFlashEmbed(
     return embedFromMovie(moviePath, pageUrl, "100%", "100%");
   }
 
+  const acFl = parseAcFlRunContent(html, pageUrl);
+  if (acFl) {
+    return acFl;
+  }
+
   return null;
+}
+
+export function siblingSwfCandidates(pageUrl: string): string[] {
+  const url = new URL(pageUrl, "http://localhost");
+  const dir = url.pathname.replace(/\/[^/]*$/, "/");
+  return [`${dir}Main.swf`, `${dir}main.swf`];
+}
+
+function parseAcFlRunContent(html: string, pageUrl: string): FlashEmbed | null {
+  const blocks = html.matchAll(/AC_FL_RunContent\s*\(([\s\S]*?)\)\s*;/gi);
+  let best: FlashEmbed | null = null;
+  for (const block of blocks) {
+    const body = block[1] ?? "";
+    const src = acFlArg(body, "src");
+    if (!src || /playerProductInstall/i.test(src)) {
+      continue;
+    }
+    const movie = src.toLowerCase().endsWith(".swf") ? src : `${src}.swf`;
+    const width = acFlArg(body, "width") ?? "100%";
+    const height = acFlArg(body, "height") ?? "100%";
+    const backgroundColor = acFlArg(body, "bgcolor");
+    best = embedFromMovie(movie, pageUrl, width, height, backgroundColor);
+  }
+  return best;
+}
+
+function acFlArg(body: string, key: string): string | undefined {
+  const match = body.match(
+    new RegExp(`['"]${key}['"]\\s*,\\s*['"]([^'"]*)['"]`, "i"),
+  );
+  return match?.[1];
 }
 
 function embedFromMovie(

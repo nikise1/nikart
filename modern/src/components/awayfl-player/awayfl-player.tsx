@@ -4,6 +4,7 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import {
   parseFlashEmbed,
+  siblingSwfCandidates,
   toProxiedStaticUrl,
   type FlashEmbed,
 } from "@/lib/awayfl-static";
@@ -166,11 +167,27 @@ async function resolveEmbed(proxied: string): Promise<FlashEmbed> {
     throw new Error(`Could not fetch wrapper HTML (${response.status})`);
   }
   const html = await response.text();
-  const embed = parseFlashEmbed(html, pageUrl);
+  const embed =
+    parseFlashEmbed(html, pageUrl) ?? (await resolveSiblingSwf(pageUrl));
   if (!embed) {
     throw new Error("No SWF embed found in that page.");
   }
   return embed;
+}
+
+async function resolveSiblingSwf(pageUrl: string): Promise<FlashEmbed | null> {
+  for (const path of siblingSwfCandidates(pageUrl)) {
+    const response = await fetch(path, { method: "HEAD" });
+    if (response.ok) {
+      return {
+        swfUrl: path,
+        width: "100%",
+        height: "100%",
+        parameters: {},
+      };
+    }
+  }
+  return null;
 }
 
 function parsePx(value: string): number | undefined {

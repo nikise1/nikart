@@ -50,6 +50,13 @@ export default async function FlPage({ searchParams }: FlPageProps) {
           >
             Away3D heart
           </Link>
+          {" · "}
+          <Link
+            href="/fl/away?src=3d%2Faway3d%2Fflar_lizard%2Fpub%2Findex.html&w=830&h=480&title=flar_lizard"
+            target="_blank"
+          >
+            FLAR lizard
+          </Link>
         </p>
       </div>
     </div>
