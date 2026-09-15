@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">Option B  Ruffle embed of a remote SWF</title>
+  <desc id="desc">A dedicated /fl/embed route loads a proxied SWF from the static bucket with Ruffle base set to that directory so relative assets resolve.</desc>
+  <rect width="1100" height="620" fill="#0b0b0b"/>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option B  Dedicated Ruffle embed of a remote SWF</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Reuse FlashPlayer. Point url + base at a proxied directory on static.nikart.co.uk (example: Whiplash).</text>
+
+  <defs>
+    <marker id="b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#95cf89"/>
+    </marker>
+  </defs>
+
+  <!-- steps -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13">
+    <rect x="40" y="110" width="240" height="90" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="160" y="142" text-anchor="middle" fill="#ffffff">1. Launch from /fl</text>
+    <text x="160" y="164" text-anchor="middle" fill="#c8c8c8">or a games thumbnail</text>
+    <text x="160" y="182" text-anchor="middle" fill="#888888" font-size="11">instead of window.open HTTP</text>
+
+    <rect x="320" y="110" width="340" height="90" rx="8" fill="#142414" stroke="#95cf89" stroke-width="2"/>
+    <text x="490" y="138" text-anchor="middle" fill="#ffffff">2. /fl/embed?src=</text>
+    <text x="490" y="158" text-anchor="middle" fill="#95cf89" font-size="12">/static/games/whiplash/whiplash_cmb.swf</text>
+    <text x="490" y="178" text-anchor="middle" fill="#888888" font-size="11">base = /static/games/whiplash/</text>
+
+    <rect x="700" y="110" width="200" height="90" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="800" y="142" text-anchor="middle" fill="#ffffff">3. Next rewrite</text>
+    <text x="800" y="164" text-anchor="middle" fill="#c8c8c8">/static/* ’ S3</text>
+    <text x="800" y="182" text-anchor="middle" fill="#888888" font-size="11">same origin to browser</text>
+
+    <rect x="940" y="110" width="120" height="90" rx="8" fill="#1a1a1a" stroke="#e0b060" stroke-width="2"/>
+    <text x="1000" y="152" text-anchor="middle" fill="#ffffff">4. S3</text>
+    <text x="1000" y="174" text-anchor="middle" fill="#e0b060" font-size="11">SWF 200</text>
+  </g>
+
+  <g stroke="#95cf89" stroke-width="2" fill="none" marker-end="url(#b)">
+    <line x1="280" y1="155" x2="320" y2="155"/>
+    <line x1="660" y1="155" x2="700" y2="155"/>
+    <line x1="900" y1="155" x2="940" y2="155"/>
+  </g>
+
+  <rect x="40" y="230" width="1020" height="160" rx="10" fill="#121812" stroke="#3d6b3d"/>
+  <text x="60" y="262" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Probed files that this would target</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="60" y="296">Game  /games/whiplash/whiplash_cmb.swf (Flash 6, 354 KB, HTTP 200)</text>
+    <text x="60" y="320">Banner  /banners/standardlife/standardlife.swf (Flash 9, swfobject wrapper)</text>
+    <text x="60" y="344">Banner  /banners/hellboy/hb_expanded_lb.swf (allowscriptaccess always)</text>
+    <text x="60" y="368">Site  /websites/claro/swf/claro.swf (Flash 9, 100% scale)</text>
+  </g>
+
+  <rect x="40" y="410" width="1020" height="170" rx="10" fill="#1a1610" stroke="#6b5a3d"/>
+  <text x="60" y="444" fill="#e0b060" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Watch-outs</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="60" y="478">Set Ruffle base to the SWF directory so relative XML / MP3 / child SWFs stay on /static/&</text>
+    <text x="60" y="502">Player version differs per file (6 vs 8 vs 9). Ciudad Helm also talks SCORM via ExternalInterface.</text>
+    <text x="60" y="526">Away3D / Papervision / FLAR (heart, lizard, spaceship) are a poor Ruffle fit.</text>
+    <text x="60" y="550">Do not load http://static.nikart.co.uk from the browser  proxy first or mixed content / CORS will fail.</text>
+  </g>
+</svg>
