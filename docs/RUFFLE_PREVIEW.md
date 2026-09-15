@@ -130,7 +130,10 @@ The bucket still has playable SWFs (probed 2026-09-15). Examples:
 | Banner | `/banners/standardlife/index.html` | `standardlife.swf` (Flash 9) |
 | Banner | `/banners/hellboy/index.html` | `hb_expanded_lb.swf` |
 | Site | `/websites/claro/index.html` | `swf/claro.swf` (Flash 9) |
-| 3D | `/3d/away3d/ar_heart/index.html` | HTML + later SWF/AR stages |
+| 3D | `/3d/away3d/ar_heart/turn-on-your-webcam.html` | `Main.swf` — AVM2 FP10, Away3D Lite + FLAR + Camera |
+| 3D | `/3d/away3d/flar_lizard/pub/index.html` | `FLARLizard_ex.swf` — AVM2 FP10, Away3D + FLARToolkit + Flex UI |
+| 3D | `/3d/papervision3d/spaceship/index.html` | `Spaceship.swf` — AVM2 FP9, Papervision3D (software rasterizer) |
+| 3D | `/3d/shockwave3d/index.html` | `japanese.dcr` — **Director, not Flash** (neither Ruffle nor AwayFL) |
 | Video (HTML5) | — | `/video_h264/*.mp4` (not FLV) |
 
 Ruffle cannot load those files **directly from HTTP S3** on an HTTPS page: mixed content, and S3 sends no `Access-Control-Allow-Origin`.
@@ -226,15 +229,92 @@ Copy the pieces you care about into the app (legacy already gitignores `public/s
 **Good for:** offline / archival demos.  
 **Cost:** large binaries in git or a release artifact; stale copies.
 
+### Option F — AwayFL for S3 AS3 / Away3D (keep Ruffle on `/fl`)
+
+[AwayFL](https://github.com/awayfl/awayfl-player) is a TypeScript Flash emulator (FP 6+, AVM1 and AVM2) whose renderer is [AwayJS](https://github.com/awayjs) — the WebGL port of **Away3D**, the same engine used in the heart and lizard pieces. Coolmath Games ships production titles on it. Embed paths: intercept `swfobject` (`awayfl-embed`), or `new AWAYFL.Player(); player.loadBuffer(arrayBuffer)`.
+
+It is **not** a swap for the current `/fl` player. `main.swf` is AS2 / Flash 8 and already runs in Ruffle. AwayFL’s advantage is the **S3 AS3 catalog**, especially software-rendered 3D.
+
+![Option F AwayFL dual player](diagrams/ruffle-potential-awayfl.svg)
+
+```mermaid
+flowchart TB
+  click["Launch from /fl or HTML5 thumbs"]
+  pick{"What is the file?"}
+  ruffle["Ruffle<br/>already on /fl"]
+  away["AwayFL Player<br/>/fl/away?src=…"]
+  none["Neither"]
+  proxy["Option A: /static rewrite → S3"]
+
+  click --> pick
+  pick -->|"AS2 site main.swf, FP6–8 games/banners"| ruffle
+  pick -->|"AS3 Away3D / Papervision / Flex / PureMVC"| away
+  pick -->|"Shockwave .dcr"| none
+  ruffle --> proxy
+  away --> proxy
+```
+
+#### Why AwayFL matches this bucket
+
+AwayFL did not start as a general SWF polyfill. Away Studios ported Away3D to JavaScript (AwayJS), then taught that renderer to execute SWF bytecode. That lineage is the opposite of Ruffle (Rust WASM, display-list first, Stage3D still catching up).
+
+Probed 2026-09-15:
+
+| File | Runtime | AwayFL angle | Ruffle angle |
+|------|---------|--------------|--------------|
+| `/fl/main.swf` (local) | AS2 FP8 | Can run; no reason to switch | **Already previewing** |
+| `games/whiplash/whiplash_cmb.swf` | AS2 FP6 | Possible | Prefer Ruffle |
+| `banners/standardlife/standardlife.swf` | AS3 FP9 PureMVC + TweenMax | Strong (Coolmath-style AVM2) | Try second |
+| `websites/claro/swf/claro.swf` | AS3 FP9 Sprite | Strong | Try second |
+| `3d/papervision3d/spaceship/Spaceship.swf` | AS3 FP9 Papervision3D | **Better shot** — software triangles via `flash.display`, not Stage3D GPU | Weak; PV3D is a heavy display-list 3D engine |
+| `3d/away3d/ar_heart/Main.swf` | AS3 FP10 Away3D Lite + FLAR + Camera | **Best unique fit** for the 3D viewport (`away3dlite` → AwayJS). AR still needs Camera | Weak |
+| `3d/away3d/flar_lizard/pub/FLARLizard_ex.swf` | AS3 FP10 Away3D + FLARToolkit + **Flex** UI | 3D engine friendly; Flex `mx.controls` + Camera are extra risk | Weak |
+| `3d/shockwave3d/japanese.dcr` | Director | No | No |
+
+#### What AwayFL does **not** magically fix
+
+Running an Away3D SWF in AwayFL is **not** the same as rewriting it to AwayJS. The SWF still contains original AS3 (`away3d.*`, `away3dlite.*`, `org.papervision3d.*`). AwayFL’s AVM2 interprets that code against `playerglobal`; AwayJS only draws whatever `flash.display` / BitmapData those engines use.
+
+- **FLAR / webcam:** both heart and lizard call `com.transmote.flar` + `FLARCameraSource` (`flash.media.Camera`). Mapping Camera to `getUserMedia` is incomplete in both emulators. Realistic preview is the **3D mesh without live tracking**, or the lizard’s built-in `FLARProxy` (mouse-as-marker) if that path is reachable.
+- **Flex:** `FLARLizard_ex.swf` is a Flex `SystemManager` app (`mx.controls.RadioButton`, etc.). AwayFL is game-oriented; Flex chrome often breaks first.
+- **Papervision ≠ Away3D:** Spaceship still has to emulate PV3D’s software rasterizer. AwayFL may do better than Ruffle because AVM2 + BitmapData is its home turf, not because it “is Papervision”.
+- **Same HTTP/CORS wall as Ruffle:** AwayFL `fetch`es SWF bytes. Without Option A (or D), HTTPS nikart cannot load `http://static.nikart.co.uk`.
+- **Integration cost:** `@awayfl/awayfl-player` is a webpack/runtime bundle (`runtime.js`), not a one-script drop-in like `@ruffle-rs/ruffle`. Plan a `public/awayfl/` copy similar to `public/ruffle/`, plus per-SWF `baseUrl` / `binary` config ([awayfl-embed](https://github.com/awayfl/awayfl-embed)).
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor User
+  participant Site as nikart
+  participant Away as /fl/away AwayFL
+  participant Proxy as Next /static rewrite
+  participant S3 as static.nikart.co.uk
+
+  User->>Site: open Away3D heart or FLAR lizard
+  Site->>Away: src=/static/3d/away3d/…/Main.swf
+  Away->>Away: new AWAYFL.Player(); loadBuffer()
+  Away->>Proxy: GET SWF + relative XML / patterns / textures
+  Proxy->>S3: HTTP server-side
+  S3-->>Proxy: AVM2 SWF (Away3D Lite / FLAR)
+  Proxy-->>Away: same-origin bytes
+  Note over Away: WebGL via AwayJS<br/>Camera/FLAR may no-op<br/>3D viewport is the win
+```
+
+**Good for:** S3 AS3, especially Away3D heart/lizard viewports and Papervision spaceship; AS3 banners/sites that fail in Ruffle.  
+**Keep Ruffle for:** `/fl` archival site and simple AVM1.  
+**Out of scope:** Shockwave `.dcr`.
+
 ---
 
 ## Recommendation (not implemented)
 
 To **preview S3 Flash content** from `/fl` without mixed content:
 
-1. **Option A** so `staticfilesstr` is same-origin.
-2. **Option B or C** so those SWFs actually run in Ruffle instead of a dead `swfobject` page.
-3. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today.
+1. **Option A** so `staticfilesstr` (and AwayFL fetches) are same-origin.
+2. **Split players:** Ruffle for `main.swf` + AVM1; **Option F (AwayFL)** for Away3D / Papervision / stubborn AS3; Ruffle Option B/C for the rest.
+3. Treat FLAR webcam as a stretch goal (Camera API). Aim first at the 3D models, using `FLARProxy` on the lizard if present.
+4. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today.
+5. Leave Shockwave 3D as an HTML/screenshot fallback.
 
 Option D is complementary if you want a public HTTPS static CDN later.
 
@@ -248,3 +328,4 @@ Option D is complementary if you want a public HTTPS static CDN later.
 - `modern/src/lib/flash-bridge.ts` — `window.nikart`
 - `modern/next.config.ts` — existing S3 rewrites for HTML5
 - `app/views/fl.html` — legacy swfobject embed this route mirrors
+- [AwayFL player](https://github.com/awayfl/awayfl-player) / [embed](https://github.com/awayfl/awayfl-embed) — Option F runtime (not in this repo yet)
