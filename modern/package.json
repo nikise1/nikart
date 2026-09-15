@@ -11,7 +11,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "playwright test",
-    "postinstall": "node scripts/copy-ruffle.mjs && node scripts/sync-content-images.mjs",
+    "postinstall": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs",
     "sync:images": "node scripts/sync-content-images.mjs",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod"
@@ -20,6 +20,7 @@
     "node": "22.x"
   },
   "dependencies": {
+    "@awayfl/awayfl-player": "^0.2.53",
     "@gsap/react": "^2.1.2",
     "@ruffle-rs/ruffle": "^0.5.0",
     "gsap": "^3.15.0",
