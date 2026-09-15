@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Option F  AwayFL for S3 Away3D/AS3, Ruffle for /fl</title>
+  <desc id="desc">Keep Ruffle on the local AS2 site. Route S3 ActionScript 3 and Away3D SWFs through AwayFL after a same-origin /static proxy. Shockwave DCR is out of scope.</desc>
+  <rect width="1100" height="720" fill="#0b0b0b"/>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option F  AwayFL for S3 3D / AS3 (keep Ruffle on /fl)</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">AwayFL is Away3D ’ AwayJS ’ SWF VM. Use it for the buckets AS3 3D, not as a replacement for the AS2 archival site.</text>
+
+  <rect x="40" y="100" width="500" height="230" rx="10" fill="#121812" stroke="#3d6b3d"/>
+  <text x="60" y="132" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Ruffle (already shipping)</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="60" y="164">/fl/main.swf  AS2 FP8 lizard site</text>
+    <text x="60" y="188">Whiplash and other AVM1 games</text>
+    <text x="60" y="212">Simple banners if they run</text>
+    <text x="60" y="246" fill="#888888">Drop-in /ruffle/ruffle.js + WASM</text>
+    <text x="60" y="270" fill="#888888">playerVersion 8, window.nikart bridge</text>
+    <text x="60" y="294" fill="#888888">Do not rip this out for AwayFL</text>
+  </g>
+
+  <rect x="560" y="100" width="500" height="230" rx="10" fill="#14181f" stroke="#6a8cbf"/>
+  <text x="580" y="132" fill="#8cb4e8" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">AwayFL (new /fl/away)</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="580" y="164">ar_heart/Main.swf  Away3D Lite + FLAR</text>
+    <text x="580" y="188">FLARLizard_ex.swf  Away3D + Flex UI</text>
+    <text x="580" y="212">Spaceship.swf  Papervision3D</text>
+    <text x="580" y="236">Claro / Standard Life  AS3 FP9</text>
+    <text x="580" y="270" fill="#888888">@awayfl/awayfl-player + embed.js</text>
+    <text x="580" y="294" fill="#888888">new AWAYFL.Player(); loadBuffer()</text>
+  </g>
+
+  <rect x="40" y="350" width="1020" height="70" rx="10" fill="#1a1a1a" stroke="#95cf89"/>
+  <text x="550" y="378" text-anchor="middle" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14">Both players fetch through Option A: /static/:path* ’ http://static.nikart.co.uk (no mixed content, no CORS)</text>
+  <text x="550" y="400" text-anchor="middle" fill="#888888" font-family="Helvetica, Arial, sans-serif" font-size="12">AwayFL still needs same-origin SWF bytes. HTTPS nikart cannot GET the HTTP S3 host directly.</text>
+
+  <rect x="40" y="440" width="660" height="160" rx="10" fill="#1a1610" stroke="#6b5a3d"/>
+  <text x="60" y="472" fill="#e0b060" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Away3D does not imply working AR</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="60" y="504">Heart + lizard still call flash.media.Camera + FLARToolkit.</text>
+    <text x="60" y="526">Expect the 3D mesh first; live marker tracking is a stretch.</text>
+    <text x="60" y="548">Lizard SWF includes FLARProxy (mouse as marker)  use that.</text>
+    <text x="60" y="570">Flex radio-button chrome on the lizard may fail independently.</text>
+  </g>
+
+  <rect x="720" y="440" width="340" height="160" rx="10" fill="#1a1212" stroke="#6b3d3d"/>
+  <text x="740" y="472" fill="#e07a7a" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Not Flash</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="740" y="504">shockwave3d/japanese.dcr</text>
+    <text x="740" y="526">Director 8.5, not a SWF.</text>
+    <text x="740" y="548">AwayFL and Ruffle skip this.</text>
+    <text x="740" y="570">Screenshot / video fallback.</text>
+  </g>
+
+  <text x="40" y="640" fill="#888888" font-family="Helvetica, Arial, sans-serif" font-size="12">AwayFL interpreting away3d.* bytecode ` a rewrite to AwayJS. The original AS3 still has to run against playerglobal.</text>
+  <text x="40" y="662" fill="#888888" font-family="Helvetica, Arial, sans-serif" font-size="12">Papervision is a different engine; AwayFL helps because it is strong AVM2, not because it is PV3D.</text>
+  <text x="40" y="684" fill="#888888" font-family="Helvetica, Arial, sans-serif" font-size="12">Integration: webpack runtime.js, not a one-line script tag like Ruffle.</text>
+</svg>

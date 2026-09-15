@@ -197,6 +197,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
 - [x] Remove lizard tongue chord in Ruffle: copy `modern/public/fl/main.swf` to `main.ruffle.swf` and edit only that copy (two open `curveTo` strokes with `moveTo(0,0)` before each); `/fl` loads the copy so the Animate export stays untouched
 - [x] Document current Ruffle preview + options for Flash on `static.nikart.co.uk` (`docs/RUFFLE_PREVIEW.md`, 2026-09-15)
+- [x] Add AwayFL as a dual-player option for S3 Away3D / AS3 (keep Ruffle on `/fl`)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
