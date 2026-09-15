@@ -28,6 +28,29 @@ export default async function FlPage({ searchParams }: FlPageProps) {
           {" · "}
           <Link href="/es">HTML5 view (Spanish)</Link>
         </p>
+        <p>
+          AwayFL preview:{" "}
+          <Link
+            href="/fl/away?src=websites%2Fclaro%2Findex.html&w=960&h=700&title=claro"
+            target="_blank"
+          >
+            Claro
+          </Link>
+          {" · "}
+          <Link
+            href="/fl/away?src=games%2Fwhiplash%2Findex.html&w=550&h=400&title=whiplash"
+            target="_blank"
+          >
+            Whiplash
+          </Link>
+          {" · "}
+          <Link
+            href="/fl/away?src=3d%2Faway3d%2Far_heart%2Findex.html&w=960&h=700&title=ar_heart"
+            target="_blank"
+          >
+            Away3D heart
+          </Link>
+        </p>
       </div>
     </div>
   );

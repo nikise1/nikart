@@ -186,6 +186,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 
   Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `modern/public/fl/main.ruffle.swf` and edit only that copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). The Animate export stays at `public/fl/main.swf` and `modern/public/fl/main.swf`. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace both `main.swf` files, copy the new export onto `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
 - Architecture diagrams (current `/fl` preview + options for S3 Flash, including AwayFL): [`docs/RUFFLE_PREVIEW.md`](RUFFLE_PREVIEW.md) (2026-09-15)
+- AwayFL popup mock: `/fl/away` + `/static` rewrite; `popWin` and HTML5 launches for S3 Flash wrappers open AwayFL instead of a dead swfobject page (Claro is the default).
 
 #### 6f: Slideshow interaction (2026-09-07)
 
