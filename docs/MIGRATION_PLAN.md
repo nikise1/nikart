@@ -171,6 +171,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`; **gitignored** — not committed)
 - `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
+- Architecture diagrams (current `/fl` preview + options for S3 Flash): [`docs/RUFFLE_PREVIEW.md`](RUFFLE_PREVIEW.md) (2026-09-15)
 
 #### 6f: Slideshow interaction (2026-09-07)
 

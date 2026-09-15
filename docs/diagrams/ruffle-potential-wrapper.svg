@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">Option C  proxy HTML wrappers and inject Ruffle</title>
+  <desc id="desc">Serve original swfobject pages through Next, inject ruffle.js, and let the polyfill upgrade embed/object tags so relative SWFs load via the /static proxy.</desc>
+  <rect width="1100" height="560" fill="#0b0b0b"/>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option C  Proxy HTML wrappers, inject Ruffle</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Keep the original index.html shells. Inject /ruffle/ruffle.js so swfobject embeds become Ruffle players.</text>
+
+  <defs>
+    <marker id="c" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#95cf89"/>
+    </marker>
+  </defs>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13">
+    <rect x="40" y="120" width="190" height="88" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="135" y="152" text-anchor="middle" fill="#ffffff">popWin</text>
+    <text x="135" y="174" text-anchor="middle" fill="#c8c8c8" font-size="12">/static/games/&/index.html</text>
+
+    <rect x="280" y="120" width="190" height="88" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="375" y="152" text-anchor="middle" fill="#ffffff">Next rewrite</text>
+    <text x="375" y="174" text-anchor="middle" fill="#c8c8c8" font-size="12">fetch S3 HTML</text>
+
+    <rect x="520" y="120" width="250" height="88" rx="8" fill="#142414" stroke="#95cf89" stroke-width="2"/>
+    <text x="645" y="148" text-anchor="middle" fill="#ffffff">Inject script</text>
+    <text x="645" y="170" text-anchor="middle" fill="#95cf89" font-size="12">&lt;script src="/ruffle/ruffle.js"&gt;</text>
+    <text x="645" y="188" text-anchor="middle" fill="#888888" font-size="11">polyfill upgrades object/embed</text>
+
+    <rect x="820" y="120" width="240" height="88" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="940" y="148" text-anchor="middle" fill="#ffffff">Relative SWF</text>
+    <text x="940" y="170" text-anchor="middle" fill="#c8c8c8" font-size="12">whiplash_cmb.swf</text>
+    <text x="940" y="188" text-anchor="middle" fill="#888888" font-size="11">same /static origin</text>
+  </g>
+
+  <g stroke="#95cf89" stroke-width="2" fill="none" marker-end="url(#c)">
+    <line x1="230" y1="164" x2="280" y2="164"/>
+    <line x1="470" y1="164" x2="520" y2="164"/>
+    <line x1="770" y1="164" x2="820" y2="164"/>
+  </g>
+
+  <rect x="40" y="240" width="500" height="180" rx="10" fill="#121812" stroke="#3d6b3d"/>
+  <text x="60" y="274" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Best fit</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="60" y="308">Whiplash, Standard Life, Hellboy,</text>
+    <text x="60" y="330">Nintendo, Shell, Claro  pages that</text>
+    <text x="60" y="352">already call swfobject.embedSWF</text>
+    <text x="60" y="374">with a relative .swf next to the HTML.</text>
+    <text x="60" y="396">Preserves original stage size / bgcolor.</text>
+  </g>
+
+  <rect x="560" y="240" width="500" height="180" rx="10" fill="#1a1610" stroke="#6b5a3d"/>
+  <text x="580" y="274" fill="#e0b060" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Harder cases</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
+    <text x="580" y="308">Ciudad Helm / Escalera  SCORM JS</text>
+    <text x="580" y="330">talks to the SWF (ExternalInterface).</text>
+    <text x="580" y="352">Away3D AR heart, Papervision, Shockwave</text>
+    <text x="580" y="374">3D  not a Ruffle polyfill job.</text>
+    <text x="580" y="396">HTML may still pull http:// third parties.</text>
+  </g>
+
+  <rect x="40" y="440" width="1020" height="90" rx="10" fill="#141414" stroke="#333"/>
+  <text x="60" y="474" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Pair with Option A</text>
+  <text x="60" y="504" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="14">Proxy the HTML and the SWF on the same origin. Injecting Ruffle into a raw http://static.nikart.co.uk page from an HTTPS app will still hit mixed content.</text>
+</svg>
