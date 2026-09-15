@@ -58,7 +58,7 @@ export function isAwayFlLaunch(href: string): boolean {
   }
 
   const path = proxied.slice(STATIC_PREFIX.length).split("?")[0] ?? "";
-  if (path.toLowerCase().endsWith(".dcr")) {
+  if (path.toLowerCase().endsWith(".dcr") || path.startsWith("3d/shockwave3d/")) {
     return false;
   }
 
@@ -104,6 +104,13 @@ export function parseFlashEmbed(
   html: string,
   pageUrl: string,
 ): FlashEmbed | null {
+  const urlMovie = html.match(
+    /urlMovie\s*=\s*['"]([^'"]+\.swf)['"][\s\S]{0,400}?embedSWF\s*\(\s*urlMovie\s*,\s*['"][^'"]*['"]\s*,\s*['"]?([^'",\s]+)['"]?\s*,\s*['"]?([^'",\s)]+)/i,
+  );
+  if (urlMovie?.[1] && urlMovie[2] && urlMovie[3]) {
+    return embedFromMovie(urlMovie[1], pageUrl, urlMovie[2], urlMovie[3]);
+  }
+
   const embedSwf = html.match(
     /embedSWF\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"][^'"]*['"]\s*,\s*['"]?([^'",\s]+)['"]?\s*,\s*['"]?([^'",\s)]+)/i,
   );
@@ -139,6 +146,38 @@ export function parseFlashEmbed(
   }
 
   return null;
+}
+
+export function parseAllFlashEmbeds(
+  html: string,
+  pageUrl: string,
+): FlashEmbed[] {
+  const found: FlashEmbed[] = [];
+  const seen = new Set<string>();
+
+  const add = (embed: FlashEmbed | null): void => {
+    if (!embed) {
+      return;
+    }
+    const key = embed.swfUrl.split("?")[0]?.toLowerCase() ?? embed.swfUrl;
+    if (seen.has(key) || key.includes("playerproductinstall")) {
+      return;
+    }
+    seen.add(key);
+    found.push(embed);
+  };
+
+  add(parseFlashEmbed(html, pageUrl));
+
+  for (const match of html.matchAll(/['"]([^'"]+\.swf[^'"]*)['"]/gi)) {
+    const movie = match[1];
+    if (!movie || movie.includes("<?")) {
+      continue;
+    }
+    add(embedFromMovie(movie, pageUrl, "100%", "100%"));
+  }
+
+  return found;
 }
 
 export function siblingSwfCandidates(pageUrl: string): string[] {
