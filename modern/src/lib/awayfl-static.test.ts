@@ -5,6 +5,7 @@ import {
   buildAwayFlPopupUrl,
   parsePopSize,
   parseFlashEmbed,
+  siblingSwfCandidates,
 } from "./awayfl-static";
 
 describe("awayfl-static", () => {
@@ -110,6 +111,47 @@ describe("awayfl-static", () => {
         height: "400",
         parameters: {},
       });
+    });
+
+    it("parses AC_FL_RunContent and skips the installer stub", () => {
+      const html = `
+        AC_FL_RunContent(
+          "src", "playerProductInstall",
+          "width", "100%",
+          "height", "100%"
+        );
+        AC_FL_RunContent(
+          "src", "Spaceship",
+          "width", "100%",
+          "height", "100%",
+          "bgcolor", "#000000"
+        );
+      `;
+      expect(
+        parseFlashEmbed(
+          html,
+          "http://localhost/static/3d/papervision3d/spaceship/index.html",
+        ),
+      ).toEqual({
+        swfUrl: "/static/3d/papervision3d/spaceship/Spaceship.swf",
+        width: "100%",
+        height: "100%",
+        parameters: {},
+        backgroundColor: "#000000",
+      });
+    });
+  });
+
+  describe("siblingSwfCandidates", () => {
+    it("guesses Main.swf next to a splash HTML page", () => {
+      expect(
+        siblingSwfCandidates(
+          "http://localhost/static/3d/away3d/ar_heart/index.html",
+        ),
+      ).toEqual([
+        "/static/3d/away3d/ar_heart/Main.swf",
+        "/static/3d/away3d/ar_heart/main.swf",
+      ]);
     });
   });
 });
