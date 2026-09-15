@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 420" role="img" aria-labelledby="title desc">
+  <title id="title">Option D  HTTPS and CORS on the static bucket</title>
+  <desc id="desc">Put CloudFront or S3 HTTPS in front of the bucket with CORS so Ruffle can load SWFs cross-origin without a Next proxy.</desc>
+  <rect width="1100" height="420" fill="#0b0b0b"/>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option D  HTTPS + CORS on the bucket</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Infrastructure change, not an app rewrite. Ruffle still needs a page (B or C) that constructs the player.</text>
+
+  <defs>
+    <marker id="d" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#95cf89"/>
+    </marker>
+  </defs>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13">
+    <rect x="40" y="120" width="280" height="90" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="180" y="152" text-anchor="middle" fill="#ffffff">Ruffle on HTTPS nikart</text>
+    <text x="180" y="176" text-anchor="middle" fill="#c8c8c8" font-size="12">player.load({ url, base })</text>
+
+    <rect x="400" y="120" width="300" height="90" rx="8" fill="#142414" stroke="#95cf89" stroke-width="2"/>
+    <text x="550" y="148" text-anchor="middle" fill="#ffffff">CloudFront / TLS</text>
+    <text x="550" y="168" text-anchor="middle" fill="#95cf89" font-size="12">https://static.nikart.co.uk</text>
+    <text x="550" y="188" text-anchor="middle" fill="#888888" font-size="11">Access-Control-Allow-Origin</text>
+
+    <rect x="780" y="120" width="280" height="90" rx="8" fill="#1a1a1a" stroke="#e0b060" stroke-width="2"/>
+    <text x="920" y="152" text-anchor="middle" fill="#ffffff">S3 bucket</text>
+    <text x="920" y="176" text-anchor="middle" fill="#c8c8c8" font-size="12">games / banners / video_*</text>
+  </g>
+
+  <g stroke="#95cf89" stroke-width="2" fill="none" marker-end="url(#d)">
+    <line x1="320" y1="165" x2="400" y2="165"/>
+    <line x1="700" y1="165" x2="780" y2="165"/>
+  </g>
+
+  <rect x="40" y="250" width="1020" height="130" rx="10" fill="#141414" stroke="#333"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#c8c8c8">
+    <text x="60" y="286">Today the bucket is an HTTP S3 website (no CORS headers). A browser GET of a .swf from an HTTPS app is blocked twice:</text>
+    <text x="60" y="314">1. mixed content (http from https) · 2. CORS (Ruffle fetch of the SWF bytes).</text>
+    <text x="60" y="348">This option is complementary to B/C. It is not configured in this repo (DNS / CloudFront / bucket CORS).</text>
+  </g>
+</svg>

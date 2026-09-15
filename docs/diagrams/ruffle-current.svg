@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Current Ruffle preview at /fl</title>
+  <desc id="desc">Browser hits Next.js /fl, FlashPlayer loads self-hosted Ruffle and local main.swf. JSON and images stay same-origin. Production flashVars point staticfilesstr at HTTP S3 for pop-ups and FLV.</desc>
+  <rect width="1100" height="720" fill="#0b0b0b"/>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Current: Ruffle preview at /fl</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Same-origin player + SWF. static.nikart.co.uk is only the production staticfilesstr flashVar.</text>
+
+  <!-- boxes -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13">
+    <rect x="40" y="110" width="200" height="70" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="140" y="140" text-anchor="middle" fill="#ffffff">Browser</text>
+    <text x="140" y="160" text-anchor="middle" fill="#95cf89">GET /fl</text>
+
+    <rect x="300" y="110" width="240" height="70" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="420" y="136" text-anchor="middle" fill="#ffffff">Next.js FlPage</text>
+    <text x="420" y="156" text-anchor="middle" fill="#c8c8c8">lang + buildFlashVars()</text>
+    <text x="420" y="172" text-anchor="middle" fill="#888888" font-size="11">app/fl/page.tsx</text>
+
+    <rect x="600" y="110" width="240" height="70" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
+    <text x="720" y="136" text-anchor="middle" fill="#ffffff">FlashPlayer</text>
+    <text x="720" y="156" text-anchor="middle" fill="#c8c8c8">installFlashBridge()</text>
+    <text x="720" y="172" text-anchor="middle" fill="#888888" font-size="11">window.nikart.popWin</text>
+
+    <rect x="900" y="110" width="160" height="70" rx="8" fill="#142414" stroke="#95cf89" stroke-width="2"/>
+    <text x="980" y="140" text-anchor="middle" fill="#ffffff">Ruffle</text>
+    <text x="980" y="160" text-anchor="middle" fill="#95cf89">AVM1 v8</text>
+  </g>
+
+  <!-- arrows top -->
+  <g stroke="#95cf89" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <line x1="240" y1="145" x2="300" y2="145"/>
+    <line x1="540" y1="145" x2="600" y2="145"/>
+    <line x1="840" y1="145" x2="900" y2="145"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#95cf89"/>
+    </marker>
+    <marker id="arrowMuted" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#888888"/>
+    </marker>
+  </defs>
+
+  <!-- same origin panel -->
+  <rect x="40" y="220" width="500" height="280" rx="10" fill="#121812" stroke="#3d6b3d" stroke-width="1.5"/>
+  <text x="60" y="250" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Same origin (works today)</text>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#eaeaea">
+    <rect x="60" y="270" width="220" height="54" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="170" y="292" text-anchor="middle">/ruffle/ruffle.js + WASM</text>
+    <text x="170" y="310" text-anchor="middle" fill="#888888" font-size="11">postinstall copy, gitignored</text>
+
+    <rect x="300" y="270" width="220" height="54" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="410" y="292" text-anchor="middle">/fl/main.swf</text>
+    <text x="410" y="310" text-anchor="middle" fill="#888888" font-size="11">AS2 CWS, base = /fl/</text>
+
+    <rect x="60" y="344" width="220" height="54" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="170" y="366" text-anchor="middle">/content/json/data.json</text>
+    <text x="170" y="384" text-anchor="middle" fill="#888888" font-size="11">SWF LoadVars ../content/&</text>
+
+    <rect x="300" y="344" width="220" height="54" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="410" y="366" text-anchor="middle">/content/img/*.jpg</text>
+    <text x="410" y="384" text-anchor="middle" fill="#888888" font-size="11">rewrite ’ /_generated/img</text>
+
+    <text x="60" y="430" fill="#c8c8c8">Ruffle load()</text>
+    <text x="60" y="450" fill="#888888" font-size="12">url: /fl/main.swf · allowNetworking: all</text>
+    <text x="60" y="468" fill="#888888" font-size="12">parameters: dotracking, embedlang, staticfilesstr</text>
+  </g>
+
+  <!-- s3 panel -->
+  <rect x="560" y="220" width="500" height="280" rx="10" fill="#1a1212" stroke="#6b3d3d" stroke-width="1.5"/>
+  <text x="580" y="250" fill="#e07a7a" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">HTTP S3 (production flashVar only)</text>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#eaeaea">
+    <rect x="580" y="270" width="460" height="40" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="810" y="295" text-anchor="middle">staticfilesstr = http://static.nikart.co.uk</text>
+
+    <rect x="580" y="324" width="220" height="48" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="690" y="344" text-anchor="middle">games / banners / 3d</text>
+    <text x="690" y="362" text-anchor="middle" fill="#888888" font-size="11">popWin HTML + SWF</text>
+
+    <rect x="820" y="324" width="220" height="48" rx="6" fill="#1a1a1a" stroke="#555"/>
+    <text x="930" y="344" text-anchor="middle">video_h264 / video_webm</text>
+    <text x="930" y="362" text-anchor="middle" fill="#888888" font-size="11">HTML5 uses these</text>
+
+    <rect x="580" y="386" width="460" height="48" rx="6" fill="#2a1010" stroke="#e07a7a"/>
+    <text x="810" y="406" text-anchor="middle" fill="#e07a7a">/video_flv/{id}  SWF NetStream path, 404</text>
+    <text x="810" y="424" text-anchor="middle" fill="#888888" font-size="11">No CORS · HTTP only · mixed content on HTTPS</text>
+
+    <text x="580" y="468" fill="#888888" font-size="12">Dev uses staticfilesstr = ../static (not served; public/static gitignored)</text>
+  </g>
+
+  <!-- bottom legend -->
+  <rect x="40" y="530" width="1020" height="150" rx="10" fill="#141414" stroke="#333"/>
+  <text x="60" y="560" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">What a visitor actually sees</text>
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13">
+    <text x="60" y="590" fill="#95cf89">Plays in Ruffle:</text>
+    <text x="200" y="590" fill="#c8c8c8">lizard UI, menus, thumbs, slideshows, language, same-origin _self/ links</text>
+    <text x="60" y="618" fill="#e0b060">Pop-ups to S3:</text>
+    <text x="200" y="618" fill="#c8c8c8">games / banners / 3d HTML still call swfobject  You need Flash Player unless Ruffle is on that page</text>
+    <text x="60" y="646" fill="#e07a7a">Broken / blocked:</text>
+    <text x="200" y="646" fill="#c8c8c8">FLV video keys missing; HTTPS page cannot fetch http://static.nikart.co.uk (mixed content)</text>
+  </g>
+</svg>
