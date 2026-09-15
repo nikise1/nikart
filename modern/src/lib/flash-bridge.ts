@@ -1,3 +1,5 @@
+import { buildAwayFlPopupUrl, isAwayFlLaunch } from "@/lib/awayfl-static";
+
 declare global {
   interface Window {
     nikart?: FlashBridge;
@@ -20,6 +22,13 @@ export interface FlashBridge {
 export function installFlashBridge(): void {
   const nikart: FlashBridge = window.nikart ?? {
     popWin(filename, winname, width, height, resize, scrollbars, location) {
+      const href = isAwayFlLaunch(filename)
+        ? buildAwayFlPopupUrl(filename, {
+            width,
+            height,
+            title: winname,
+          })
+        : filename;
       const left = screen.availWidth / 2 - width / 2;
       const top = screen.availHeight / 2 - height / 2;
       const specs = [
@@ -35,7 +44,7 @@ export function installFlashBridge(): void {
         `scrollbars=${scrollbars}`,
         `location=${location}`,
       ].join(",");
-      const popup = window.open(filename, winname, specs);
+      const popup = window.open(href, winname, specs);
       popup?.focus();
       nikart.doTracker(`${winname}_launch`);
     },

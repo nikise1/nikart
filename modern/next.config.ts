@@ -27,6 +27,10 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
+      {
+        source: "/static/:path*",
+        destination: `${STATIC_HOST}/:path*`,
+      },
     ];
   },
 };

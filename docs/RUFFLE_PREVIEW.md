@@ -300,15 +300,22 @@ sequenceDiagram
   Note over Away: WebGL via AwayJS<br/>Camera/FLAR may no-op<br/>3D viewport is the win
 ```
 
-**Good for:** S3 AS3, especially Away3D heart/lizard viewports and Papervision spaceship; AS3 banners/sites that fail in Ruffle.  
-**Keep Ruffle for:** `/fl` archival site and simple AVM1.  
-**Out of scope:** Shockwave `.dcr`.
+### Option F — AwayFL popup (mocked)
+
+`/fl/away` loads static wrapper HTML (or a `.swf`) through the `/static` rewrite, extracts the movie with the same parser for every piece, and plays it in AwayFL.
+
+- `nikart.popWin` on `/fl` now opens that page instead of the raw S3 HTML for `games/`, `banners/`, `websites/`, and `3d/` (Shockwave `.dcr` is skipped).
+- HTML5 article launch buttons for those URLs go to the same popup page.
+- Default / Claro shortcut: `/fl/away?src=websites/claro/index.html&w=960&h=700`.
+- Runtime is copied from `@awayfl/awayfl-player` to `public/awayfl/` in `postinstall` (gitignored).
+
+If a wrapper has no SWF embed, the page shows an error instead of a blank plugin fallback.
 
 ---
 
-## Recommendation (not implemented)
+## Recommendation
 
-To **preview S3 Flash content** from `/fl` without mixed content:
+The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S3 Flash wrappers open that page through the `/static` rewrite. Remaining work to preview S3 Flash from `/fl` without mixed content:
 
 1. **Option A** so `staticfilesstr` (and AwayFL fetches) are same-origin.
 2. **Split players:** Ruffle for `main.swf` + AVM1; **Option F (AwayFL)** for Away3D / Papervision / stubborn AS3; Ruffle Option B/C for the rest.
@@ -328,4 +335,8 @@ Option D is complementary if you want a public HTTPS static CDN later.
 - `modern/src/lib/flash-bridge.ts` — `window.nikart`
 - `modern/next.config.ts` — existing S3 rewrites for HTML5
 - `app/views/fl.html` — legacy swfobject embed this route mirrors
-- [AwayFL player](https://github.com/awayfl/awayfl-player) / [embed](https://github.com/awayfl/awayfl-embed) — Option F runtime (not in this repo yet)
+- `modern/src/app/fl/away/` — AwayFL popup page
+- `modern/src/components/awayfl-player/` — UMD loader + `playSWF`
+- `modern/src/lib/awayfl-static.ts` — `/static` proxy + HTML→SWF parser
+- `modern/scripts/copy-awayfl.mjs` — copies UMD + vendored ABC builtins
+- [AwayFL player](https://github.com/awayfl/awayfl-player) / [embed](https://github.com/awayfl/awayfl-embed) — Option F runtime
