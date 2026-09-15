@@ -15,7 +15,7 @@ describe("flash-bridge", () => {
     expect(typeof window.nikart?.doTracker).toBe("function");
   });
 
-  it("opens static Flash wrappers in the AwayFL popup page", () => {
+  it("opens static Flash wrappers on the Ruffle vs AwayFL compare page", () => {
     const open = vi.spyOn(window, "open").mockReturnValue(null);
     installFlashBridge();
 
@@ -30,9 +30,8 @@ describe("flash-bridge", () => {
     );
 
     expect(open).toHaveBeenCalledWith(
-      "/fl/away?src=http%3A%2F%2Fstatic.nikart.co.uk%2Fwebsites%2Fclaro%2Findex.html&w=960&h=700&title=claro",
+      "/swf-compare/pieces/claro/index.html",
       "claro",
-      expect.stringContaining("width=960"),
     );
   });
 

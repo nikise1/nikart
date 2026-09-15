@@ -173,6 +173,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
 - Architecture diagrams (current `/fl` preview + options for S3 Flash, including AwayFL): [`docs/RUFFLE_PREVIEW.md`](RUFFLE_PREVIEW.md) (2026-09-15)
 - AwayFL popup mock: `/fl/away` + `/static` rewrite; `popWin` and HTML5 launches for S3 Flash wrappers open AwayFL instead of a dead swfobject page (Claro is the default).
+- Temporary Ruffle vs AwayFL compare kit: `npm run swf-compare:sync` copies SWFs locally; one HTML page per SWF with generic players (Ruffle autoplay on, unmute overlay hidden); menu/popWin open `/swf-compare/` instead of the popup.
 
 #### 6f: Slideshow interaction (2026-09-07)
 

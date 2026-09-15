@@ -311,7 +311,10 @@ sequenceDiagram
 - Wrapper HTML with no embed (Away3D heart splash) still tries sibling `Main.swf`. `AC_FL_RunContent` (Papervision Spaceship) is parsed the same way as SWFObject.
 - First-run notes: Claro’s SWF executes (client XML traces) but the stage stays white because AwayFL `TextField` / `LoaderInfo.parameters` are stubbed. Whiplash’s menu renders. Heart splash has no embed; the player then loads `Main.swf` beside it.
 
-If a wrapper has no SWF embed, the page shows an error instead of a blank plugin fallback.
+### Option F — side-by-side compare kit (temporary)
+
+`/swf-compare/` copies S3 SWFs and sidecars into `modern/public/swf-compare/pieces/` (gitignored). Each SWF gets its own HTML page with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup. Refresh copies with `npm run swf-compare:sync --prefix modern`.
+
 
 ---
 
