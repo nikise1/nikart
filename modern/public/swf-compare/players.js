@@ -77,6 +77,8 @@
       publicPath: "/ruffle/",
       allowScriptAccess: true,
       allowNetworking: "all",
+      autoplay: "on",
+      unmuteOverlay: "hidden",
       compatibilityRules: true,
       warnOnUnsupportedContent: true,
       logLevel: "warn",
