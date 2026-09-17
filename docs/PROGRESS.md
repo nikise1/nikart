@@ -195,7 +195,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Unit tests for `flash-config` helpers
 - [x] Fix blank SWF: serve `data.json`, Ruffle `base` URL, `window.nikart` bridge, AS2 player settings
 - [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
-- [x] Remove lizard tongue chord in Ruffle: copy `main.swf` to `main.ruffle.swf` and edit only the copy (two open `curveTo` strokes with `moveTo(0,0)` before each); `/fl` loads the copy so the Animate export stays untouched
+- [x] Remove lizard tongue chord in Ruffle: copy `modern/public/fl/main.swf` to `main.ruffle.swf` and edit only that copy (two open `curveTo` strokes with `moveTo(0,0)` before each); `/fl` loads the copy so the Animate export stays untouched
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

@@ -184,7 +184,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
   lizard.tongue.curveTo(midx,midy,0,0); // returns to origin → closed path / chord
   ```
 
-  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `main.ruffle.swf` and edit only the copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). Original `public/fl/main.swf` / `modern/public/fl/main.swf` stay the Animate export. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace `main.swf`, copy it to `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
+  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `modern/public/fl/main.ruffle.swf` and edit only that copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). The Animate export stays at `public/fl/main.swf` and `modern/public/fl/main.swf`. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace both `main.swf` files, copy the new export onto `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
 
 #### 6f: Slideshow interaction (2026-09-07)
 
