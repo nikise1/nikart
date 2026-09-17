@@ -163,7 +163,8 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 
 - `modern/src/app/fl/` — minimal black layout matching legacy `fl.html`
 - `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
-- `modern/public/fl/main.swf` — copied from legacy `public/fl/main.swf`
+- `modern/public/fl/main.swf` — untouched Animate export, copied from legacy `public/fl/main.swf`
+- `modern/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
 - `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`)
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
@@ -183,7 +184,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
   lizard.tongue.curveTo(midx,midy,0,0); // returns to origin → closed path / chord
   ```
 
-  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: `moveTo(0,0)` before each `curveTo`, and draw the inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). Patched in the published `public/fl/main.swf` and `modern/public/fl/main.swf` via JPEXS (no Animate republish). If you export again from Adobe Animate, paste the same change into the frame-22 tongue draw script in `src/fl/main.fla` or the chord will come back.
+  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `main.ruffle.swf` and edit only the copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). Original `public/fl/main.swf` / `modern/public/fl/main.swf` stay the Animate export. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace `main.swf`, copy it to `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
 
 #### 6f: Slideshow interaction (2026-09-07)
 
