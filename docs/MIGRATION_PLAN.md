@@ -163,7 +163,8 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 
 - `modern/src/app/fl/` — minimal black layout matching legacy `fl.html`
 - `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
-- `modern/public/fl/main.swf` — copied from legacy `public/fl/main.swf`
+- `modern/public/fl/main.swf` — untouched Animate export, copied from legacy `public/fl/main.swf`
+- `modern/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
 - `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`)
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
@@ -171,6 +172,19 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`; **gitignored** — not committed)
 - `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
+- Lizard tongue chord (2026-09-15): the `/fl` Ruffle preview was drawing the quadratic tongue **and** a straight line between the mouth and the tip. That is not a Next.js/Ruffle embed setting — it is the AVM1 Drawing API path in `main.swf` (FLA timeline frame 22). Original AS2:
+
+  ```
+  lizard.tongue.clear();
+  lizard.tongue.lineStyle(10,"0x340101",100);
+  midx = tongueTarget._x + Math.cos(tongueTarget.curAngle) * 75;
+  midy = tongueTarget._y + Math.sin(tongueTarget.curAngle) * 75;
+  lizard.tongue.curveTo(midx,midy,tongueTarget._x,tongueTarget._y);
+  lizard.tongue.lineStyle(6,"0xBA0101",100);
+  lizard.tongue.curveTo(midx,midy,0,0); // returns to origin → closed path / chord
+  ```
+
+  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `modern/public/fl/main.ruffle.swf` and edit only that copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). The Animate export stays at `public/fl/main.swf` and `modern/public/fl/main.swf`. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace both `main.swf` files, copy the new export onto `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
 
 #### 6f: Slideshow interaction (2026-09-07)
 

@@ -18,7 +18,7 @@ export default async function FlPage({ searchParams }: FlPageProps) {
 
   return (
     <div id="container">
-      <FlashPlayer swfUrl="/fl/main.swf" parameters={flashVars} />
+      <FlashPlayer swfUrl="/fl/main.ruffle.swf" parameters={flashVars} />
       <div className="fl-fallback">
         <p>
           <Link href="/fl">Reload the Flash view</Link>
