@@ -12,6 +12,17 @@ export const NAV_POS = {
   canvasHeight: CANVAS_HEIGHT,
 } as const;
 
+/** True when the back button is parked on-screen (not hidden or fully off the top). */
+export function isNavButtonOnScreen(button: HTMLElement): boolean {
+  if (button.style.display === "none") return false;
+  const fromGsap = gsap.getProperty(button, "top");
+  const top =
+    typeof fromGsap === "number"
+      ? fromGsap
+      : parseFloat(String(fromGsap || button.style.top || "0"));
+  return Number.isFinite(top) && top > -NAV_POS.btnHeight * 0.5;
+}
+
 /** Kill all active nav tweens within the given scope element (legacy doAni preamble). */
 export function killNavTweens(scope: Element | null | undefined): void {
   if (!scope) return;

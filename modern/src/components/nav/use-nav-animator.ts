@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { NAV_TIMING, itemsCloseDuration } from "@/lib/nav-timing";
-import { drawNavBezier, killNavTweens, NAV_POS } from "@/lib/nav-animations";
+import { drawNavBezier, isNavButtonOnScreen, killNavTweens, NAV_POS } from "@/lib/nav-animations";
 import { useNavStore } from "@/store/nav-store";
 import type { NavPhase } from "@/store/nav-types";
 import type { DataNode } from "@/lib/data/schema";
@@ -50,24 +50,36 @@ export function useNavAnimator({
       const { onItemsOutComplete, onCanvasCloseComplete, onOpenComplete } = useNavStore.getState();
 
       if (phase === "opening") {
-        // Legacy doAni open: show items, setUpCanvas, aniIn per item.
+        // Button slides up first when it is on-screen; canvas waits so they do not overlap.
         gsap.set(itemsContainer, { display: "block" });
+
+        const buttonOnScreen = isNavButtonOnScreen(button);
+        const canvasDelay = buttonOnScreen ? NAV_TIMING.growIn : 0;
+
+        if (buttonOnScreen) {
+          gsap.to(button, {
+            left: NAV_POS.btnOutX,
+            top: -NAV_POS.btnHeight,
+            duration: NAV_TIMING.growIn,
+            onComplete: () => {
+              button.style.display = "none";
+            },
+          });
+        } else {
+          gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
+          button.style.display = "none";
+        }
 
         drawNavBezier(canvas);
         gsap.fromTo(
           canvas,
           { left: NAV_POS.canvasOutX, top: NAV_POS.canvasOutY },
-          { left: 0, top: 0, duration: NAV_TIMING.growIn },
+          { left: 0, top: 0, duration: NAV_TIMING.growIn, delay: canvasDelay },
         );
-        gsap.to(button, {
-          left: NAV_POS.btnOutX,
-          top: -NAV_POS.btnHeight,
-          duration: NAV_TIMING.growIn,
-        });
 
         itemEls.forEach((el, i) => {
           const itemId = items[i]?.id ?? String(i);
-          const delay = NAV_TIMING.growIn + i * NAV_TIMING.staggerIn;
+          const delay = canvasDelay + NAV_TIMING.growIn + i * NAV_TIMING.staggerIn;
 
           gsap.set(el, { autoAlpha: 0, width: 0 });
 
@@ -94,7 +106,7 @@ export function useNavAnimator({
           });
         });
 
-        const lastDelay = NAV_TIMING.growIn + (numItems - 1) * NAV_TIMING.staggerIn;
+        const lastDelay = canvasDelay + NAV_TIMING.growIn + (numItems - 1) * NAV_TIMING.staggerIn;
         gsap.delayedCall(lastDelay + NAV_TIMING.itemIn, () => {
           if (useNavStore.getState().navPhase === "opening") {
             onOpenComplete();
@@ -143,8 +155,16 @@ export function useNavAnimator({
               },
             },
           );
+        } else if (isNavButtonOnScreen(button)) {
+          // Leave the button on-screen; opening slides it up before the canvas enters.
+          gsap.delayedCall(0, () => {
+            if (useNavStore.getState().navPhase === "closing-canvas") {
+              onCanvasCloseComplete();
+            }
+          });
         } else {
           gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
+          button.style.display = "none";
           gsap.delayedCall(NAV_TIMING.growOut, () => {
             if (useNavStore.getState().navPhase === "closing-canvas") {
               onCanvasCloseComplete();

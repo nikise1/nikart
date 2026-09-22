@@ -168,6 +168,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Nav animation phase state machine in Zustand (`nav-store.ts`) — startup close-then-open, item stagger, canvas/button sequencing, deferred route navigation on item click
 - [x] Central `useNavAnimator` orchestrator mirrors legacy `nav-view.js doAni()` (single tween scope, kill on interrupt)
 - [x] NavButton is back-to-main only — hidden on home, shown off main, click navigates to `/`
+- [x] Opening sequences the back button first: if it is on-screen it slides up (`growIn`) before `NavCanvas` moves in; startup (button already hidden) still opens the canvas immediately
 
 #### 9d: Toolchain maintenance (modern app) ✅ (2026-07-15)
 - [x] Added `modern/.nvmrc` with Node `22` to match repo engine target

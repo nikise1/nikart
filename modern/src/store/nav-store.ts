@@ -96,8 +96,8 @@ export const useNavStore = create<NavState>((set, get) => ({
     if (navPhase !== "closing-canvas") return;
 
     if (startupPendingOpen || pendingOpenAfterClose) {
+      // Skip `closed` so an on-screen back button is not snapped away before opening.
       set({
-        navPhase: "closed",
         startupPendingOpen: false,
         pendingOpenAfterClose: false,
       });
