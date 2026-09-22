@@ -57,6 +57,7 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
     const container = containerRef.current;
     let cancelled = false;
     let player: { dispose?: () => void } | undefined;
+    let onResize: (() => void) | undefined;
 
     async function start(): Promise<void> {
       const proxied = toProxiedStaticUrl(source) ?? source;
@@ -78,27 +79,48 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
 
       const canvas = document.createElement("canvas");
       canvas.id = "awayfl_stage";
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
       container.replaceChildren(canvas);
+
+      const viewport = measureViewport(container, width, height, embed);
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+
       window.awayflplayer.StageManager.htmlCanvas = canvas;
       window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS_BASE;
-
-      const stageWidth = width ?? parsePx(embed.width) ?? container.clientWidth;
-      const stageHeight =
-        height ?? parsePx(embed.height) ?? container.clientHeight;
 
       setStatus("Starting AwayFL…");
       const instance = new window.awayflplayer.AVMPlayer({
         files: [],
         x: 0,
         y: 0,
-        w: stageWidth || "100%",
-        h: stageHeight || "100%",
+        w: viewport.width,
+        h: viewport.height,
         stageScaleMode: "showAll",
       });
       player = instance;
       const swfHref = new URL(embed.swfUrl, window.location.origin).href;
+      const refit = () => {
+        if (cancelled) {
+          return;
+        }
+        const next = measureViewport(container, width, height, embed);
+        instance.setStageDimensions?.(0, 0, next.width, next.height);
+      };
+      if (cancelled) {
+        try {
+          instance.dispose?.();
+        } catch {
+          // AwayFL dispose is best-effort for this mock.
+        }
+        return;
+      }
+      onResize = refit;
+      window.addEventListener("resize", refit);
       instance.addEventListener("loaderComplete", () => {
         if (!cancelled) {
+          refit();
           setStatus("");
         }
       });
@@ -115,6 +137,9 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
 
     return () => {
       cancelled = true;
+      if (onResize) {
+        window.removeEventListener("resize", onResize);
+      }
       try {
         player?.dispose?.();
       } catch {
@@ -196,4 +221,21 @@ function parsePx(value: string): number | undefined {
   }
   const parsed = Number.parseInt(value, 10);
   return Number.isFinite(parsed) ? parsed : undefined;
+}
+
+function measureViewport(
+  container: HTMLElement,
+  width: number | undefined,
+  height: number | undefined,
+  embed: FlashEmbed,
+): { width: number; height: number } {
+  const availW = Math.max(1, container.clientWidth);
+  const availH = Math.max(1, container.clientHeight);
+  const nativeW = width ?? parsePx(embed.width) ?? availW;
+  const nativeH = height ?? parsePx(embed.height) ?? availH;
+  const scale = Math.min(availW / nativeW, availH / nativeH);
+  return {
+    width: Math.max(1, Math.round(nativeW * scale)),
+    height: Math.max(1, Math.round(nativeH * scale)),
+  };
 }

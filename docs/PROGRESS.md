@@ -201,6 +201,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Temporary local SWF compare kit: one HTML page per SWF with generic Ruffle + AwayFL players (Ruffle autoplay on); menu/popWin open `/swf-compare/` (2026-09-15)
 - [x] Commit `/swf-compare/pieces/` SWFs and sidecars so the Vercel preview can live-play them (2026-09-22)
 - [x] Commit Ruffle + AwayFL runtimes (`public/ruffle`, `public/awayfl`) so compare pages work on Vercel, not just locally (2026-09-22)
+- [x] Fit AwayFL to the pane (viewport = column size, not SWF pixels / `100%` of the window) so compare stages match Ruffle (2026-09-22)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
