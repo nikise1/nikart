@@ -203,11 +203,11 @@ function renderPieceHtml(piece, siblings, prev, next) {
     <div class="split">
       <section class="pane">
         <h2>Ruffle</h2>
-        <div class="stage" data-player="ruffle" data-swf="${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
+        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
       </section>
       <section class="pane">
         <h2>AwayFL</h2>
-        <div class="stage" data-player="awayfl" data-swf="${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
+        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
       </section>
     </div>
   </div>
