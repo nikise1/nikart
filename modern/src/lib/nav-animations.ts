@@ -12,16 +12,21 @@ export const NAV_POS = {
   canvasHeight: CANVAS_HEIGHT,
 } as const;
 
-/** True when the back button is parked on-screen (not hidden or fully off the top). */
-export function isNavButtonOnScreen(button: HTMLElement): boolean {
-  if (button.style.display === "none") return false;
-  const fromGsap = gsap.getProperty(button, "top");
-  const top =
-    typeof fromGsap === "number"
-      ? fromGsap
-      : parseFloat(String(fromGsap || button.style.top || "0"));
-  return Number.isFinite(top) && top > -NAV_POS.btnHeight * 0.5;
-}
+/** Off-screen rest — where the back button enters from and exits to. */
+export const NAV_BUTTON_HIDDEN = {
+  left: NAV_POS.btnOutX,
+  top: -NAV_POS.btnHeight,
+} as const;
+
+/** On-screen rest after the enter tween. */
+export const NAV_BUTTON_SHOWN = {
+  left: 0,
+  top: 0,
+} as const;
+
+/** Enter uses GSAP's default ease; hide is the time-reverse of that motion. */
+export const NAV_BUTTON_SHOW_EASE = "power1.out";
+export const NAV_BUTTON_HIDE_EASE = "power1.in";
 
 /** Kill all active nav tweens within the given scope element (legacy doAni preamble). */
 export function killNavTweens(scope: Element | null | undefined): void {

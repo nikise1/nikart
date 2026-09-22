@@ -1,1 +1,7 @@
-export type NavPhase = "closed" | "closing-items" | "closing-canvas" | "opening" | "open";
+export type NavPhase =
+  | "closed"
+  | "hiding-button"
+  | "closing-items"
+  | "closing-canvas"
+  | "opening"
+  | "open";

@@ -138,7 +138,7 @@ Legacy `nav-container` / `nav-view.js` behavior:
 - Nav button starts off-screen (`left: -30`, `top: -height`), slides into view
 - Canvas positioned absolute within container
 - Canvas bezier shape drawn with specific coordinates: `moveTo(20,0)`, `bezierCurveTo(70,83,92,167,...)`, `quadraticCurveTo(...)`
-- Open: if the back button is on-screen it slides up first (`NAV_TIMING.growIn`); the canvas then slides in; items stagger after the canvas. Startup (button already hidden) still opens the canvas immediately.
+- Open: if the back button is parked on-screen, a `hiding-button` phase plays the reverse of its enter tween (`NAV_BUTTON_HIDDEN` + `power1.in`), then `NavCanvas` slides in and items stagger. Startup (button already hidden) still opens the canvas immediately. Clicking the back button starts that reverse-out before the home route view-transition so the curl is not snapped away.
 - Close: staggers `aniOut` in reverse, hides after last item finishes (`timeNavOut + (n-1) * timeNavStaggerOut`)
 - Nav items: `white-space: nowrap` (legacy `overflow: hidden` on 32px-height wrapper clips text)
 - Item width animates from 0 to measured text width + 20px padding

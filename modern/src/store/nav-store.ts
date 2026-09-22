@@ -12,14 +12,19 @@ interface NavState {
   startupPendingOpen: boolean;
   /** Route to main while nav is open/closing: open after close completes. */
   pendingOpenAfterClose: boolean;
+  /** Back button is parked on-screen (enter complete); click should reverse it before opening. */
+  buttonParked: boolean;
 
   setNavReady: () => void;
   runStartupSequence: () => void;
   runButtonReveal: () => void;
+  parkNavButton: () => void;
+  unparkNavButton: () => void;
   requestNavOpen: () => void;
   requestNavClose: (pendingRoute?: string) => void;
   onItemsOutComplete: () => void;
   onCanvasCloseComplete: () => void;
+  onButtonHideComplete: () => void;
   onOpenComplete: () => void;
   openHomeMenu: () => void;
   syncToRoute: (isHome: boolean) => void;
@@ -34,6 +39,7 @@ export const useNavStore = create<NavState>((set, get) => ({
   pendingRoute: null,
   startupPendingOpen: false,
   pendingOpenAfterClose: false,
+  buttonParked: false,
 
   setNavReady: () => set({ navReady: true }),
 
@@ -45,6 +51,7 @@ export const useNavStore = create<NavState>((set, get) => ({
       startupPendingOpen: true,
       pendingRoute: null,
       pendingOpenAfterClose: false,
+      buttonParked: false,
     });
   },
 
@@ -57,6 +64,9 @@ export const useNavStore = create<NavState>((set, get) => ({
       pendingOpenAfterClose: false,
     });
   },
+
+  parkNavButton: () => set({ buttonParked: true }),
+  unparkNavButton: () => set({ buttonParked: false }),
 
   requestNavOpen: () => {
     const { navPhase } = get();
@@ -72,7 +82,7 @@ export const useNavStore = create<NavState>((set, get) => ({
 
   requestNavClose: (pendingRoute?: string) => {
     const { navPhase } = get();
-    if (navPhase === "closed" || navPhase === "closing-items" || navPhase === "closing-canvas") {
+    if (navPhase === "closed" || navPhase === "hiding-button" || navPhase === "closing-items" || navPhase === "closing-canvas") {
       if (pendingRoute) set({ pendingRoute });
       return;
     }
@@ -92,20 +102,29 @@ export const useNavStore = create<NavState>((set, get) => ({
   },
 
   onCanvasCloseComplete: () => {
-    const { navPhase, startupPendingOpen, pendingOpenAfterClose } = get();
+    const { navPhase, startupPendingOpen, pendingOpenAfterClose, buttonParked } = get();
     if (navPhase !== "closing-canvas") return;
 
     if (startupPendingOpen || pendingOpenAfterClose) {
-      // Skip `closed` so an on-screen back button is not snapped away before opening.
       set({
         startupPendingOpen: false,
         pendingOpenAfterClose: false,
       });
+      if (buttonParked) {
+        set({ navPhase: "hiding-button", navOpen: false });
+        return;
+      }
       get().requestNavOpen();
       return;
     }
 
     set({ navPhase: "closed" });
+  },
+
+  onButtonHideComplete: () => {
+    const { navPhase } = get();
+    if (navPhase !== "hiding-button") return;
+    get().requestNavOpen();
   },
 
   onOpenComplete: () => {
@@ -115,16 +134,18 @@ export const useNavStore = create<NavState>((set, get) => ({
   },
 
   openHomeMenu: () => {
-    const { navPhase } = get();
+    const { navPhase, buttonParked } = get();
 
-    if (navPhase === "opening" || navPhase === "open") {
-      set({ pendingOpenAfterClose: true });
-      get().requestNavClose();
+    if (navPhase === "hiding-button" || navPhase === "opening" || navPhase === "open") {
       return;
     }
 
     if (navPhase === "closed") {
-      set({ pendingOpenAfterClose: true, navPhase: "closing-canvas", navOpen: false });
+      if (buttonParked) {
+        set({ navPhase: "hiding-button", navOpen: false });
+        return;
+      }
+      get().requestNavOpen();
       return;
     }
 

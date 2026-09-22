@@ -91,6 +91,18 @@ body {
   animation: none;
 }
 
+/* Keep GSAP nav (button reverse-out, canvas enter) live during route transitions. */
+::view-transition-group(nav-shell) {
+  animation: none;
+  z-index: 110;
+}
+::view-transition-old(nav-shell) {
+  display: none;
+}
+::view-transition-new(nav-shell) {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(*),
   ::view-transition-new(*),

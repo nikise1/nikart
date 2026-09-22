@@ -25,6 +25,7 @@ export function Nav({ locale }: NavProps) {
   const setNavReady = useNavStore((s) => s.setNavReady);
   const runStartupSequence = useNavStore((s) => s.runStartupSequence);
   const runButtonReveal = useNavStore((s) => s.runButtonReveal);
+  const openHomeMenu = useNavStore((s) => s.openHomeMenu);
   const items = getTopMenu();
 
   const isHome = isHomePath(pathname);
@@ -53,11 +54,17 @@ export function Nav({ locale }: NavProps) {
   }, [setNavReady, runStartupSequence, runButtonReveal, isHome]);
 
   function handleNavigateHome(): void {
+    openHomeMenu();
     router.push("/", { transitionTypes: ["nav-back"] });
   }
 
   return (
-    <div ref={containerRef} data-component="Nav" className="fixed top-0 left-0 z-50">
+    <div
+      ref={containerRef}
+      data-component="Nav"
+      className="fixed top-0 left-0 z-50"
+      style={{ viewTransitionName: "nav-shell" }}
+    >
       <NavRouteSync />
       <NavCanvas />
       <NavButton onNavigateHome={handleNavigateHome} />
