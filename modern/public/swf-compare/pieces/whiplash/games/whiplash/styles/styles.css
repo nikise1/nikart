@@ -1,0 +1,45 @@
+html, body { 
+	height:100%; 
+}
+body { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color:#000000;
+}
+
+body, #contain {
+	margin:0px; 
+	padding:0px; 
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+a {
+	color:#95CF89;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border: 0px;
+}
+
+#swf_container {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	font-family: helvetica,arial;
+	font-size: 14px;
+	color: #FFFFFF;
+}
+
+.blackText {
+	color: #000000;
+}

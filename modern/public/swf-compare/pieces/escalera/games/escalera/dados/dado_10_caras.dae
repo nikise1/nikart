@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.61.0 r42615</authoring_tool>
+    </contributor>
+    <created>2012-03-26T15:59:38</created>
+    <modified>2012-03-26T15:59:38</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Material-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.370298 0.02749636 0.02749636 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+    <effect id="Material_001-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>1</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+      <extra><technique profile="MAX3D"><double_sided>1</double_sided></technique></extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material-material" name="Material">
+      <instance_effect url="#Material-effect"/>
+    </material>
+    <material id="Material_001-material" name="Material.001">
+      <instance_effect url="#Material_001-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="dado_10_data-mesh">
+      <mesh>
+        <source id="dado_10_data-mesh-positions">
+          <float_array id="dado_10_data-mesh-positions-array" count="36">0.02427101 -0.1116588 3.323478 2.977042 0.8568902 0.3154683 2.977521 -1.073166 -0.3863028 1.851612 2.405687 -0.3908017 0.0204631 3.009942 0.3106661 -1.803267 2.405714 -0.3909854 0.02374148 -0.1128873 -3.380445 -2.928236 -1.072691 -0.3870672 -2.928386 0.857614 0.3151655 -1.804396 -2.617067 0.3188618 1.853934 -2.617849 0.3188114 0.01812499 -3.216872 -0.3840115</float_array>
+          <technique_common>
+            <accessor source="#dado_10_data-mesh-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dado_10_data-mesh-normals">
+          <float_array id="dado_10_data-mesh-normals-array" count="36">-0.9370098 -0.3048189 -0.1703848 -0.00100708 -0.98587 -0.1674855 -0.5798822 -0.7961059 0.1729484 0 -0.001220703 -0.9999695 0.9369183 -0.3051546 -0.1704154 0.579516 -0.7967773 0.1710257 -0.5799432 0.7957091 -0.1744743 -0.9372234 0.3046663 0.1695608 0.9370709 0.305002 0.1697439 0.5798212 0.7960448 -0.1734672 -5.18815e-4 0.9862362 0.1652577 0 -0.001098632 0.9999695</float_array>
+          <technique_common>
+            <accessor source="#dado_10_data-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="dado_10_data-mesh-map-0">
+          <float_array id="dado_10_data-mesh-map-0-array" count="120">0.8659085 0.2558957 0.6059082 0.1864055 0.7536825 0.1557833 0.661526 0.5001488 0.6059082 0.1864055 0.8659085 0.2558957 0.6044681 0.81362 0.4557504 0.7913481 0.3843953 0.6573964 0.6044681 0.81362 0.3843953 0.6573964 0.661526 0.5001488 0.9802017 0.5005115 0.8659085 0.2558957 0.984953 0.3499299 0.9802017 0.5005115 0.661526 0.5001488 0.8659085 0.2558957 0.752878 0.8449211 0.6044681 0.81362 0.8656374 0.744925 0.6044681 0.81362 0.661526 0.5001488 0.8656374 0.744925 0.8656374 0.744925 0.9802017 0.5005115 0.984953 0.6514951 0.8656374 0.744925 0.661526 0.5001488 0.9802017 0.5005115 0.3941696 0.8154984 0.2463104 0.8453842 0.1343315 0.7449092 0.3390977 0.5003066 0.3941696 0.8154984 0.1343315 0.7449092 0.3945544 0.1861884 0.543572 0.2072775 0.616075 0.3401122 0.3390977 0.5003066 0.3945544 0.1861884 0.616075 0.3401122 0.3945544 0.1861884 0.1344743 0.2561513 0.2461731 0.1557833 0.3390977 0.5003066 0.1344743 0.2561513 0.3945544 0.1861884 0.02060186 0.5007563 0.01557201 0.3501356 0.1344743 0.2561513 0.3390977 0.5003066 0.02060186 0.5007563 0.1344743 0.2561513 0.01557201 0.6508536 0.02060186 0.5007563 0.1343315 0.7449092 0.3390977 0.5003066 0.1343315 0.7449092 0.02060186 0.5007563</float_array>
+          <technique_common>
+            <accessor source="#dado_10_data-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="dado_10_data-mesh-vertices">
+          <input semantic="POSITION" source="#dado_10_data-mesh-positions"/>
+        </vertices>
+        <polylist material="Material1" count="20">
+          <input semantic="VERTEX" source="#dado_10_data-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#dado_10_data-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#dado_10_data-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>7 0 0 11 1 1 9 2 2 6 3 3 11 1 4 7 0 5 2 4 6 10 5 7 11 1 8 2 4 9 11 1 10 6 3 11 5 6 12 7 0 13 8 7 14 5 6 15 6 3 16 7 0 17 1 8 18 2 4 19 3 9 20 2 4 21 6 3 22 3 9 23 3 9 24 5 6 25 4 10 26 3 9 27 6 3 28 5 6 29 4 10 30 5 6 31 8 7 32 0 11 33 4 10 34 8 7 35 1 8 36 3 9 37 4 10 38 0 11 39 1 8 40 4 10 41 1 8 42 10 5 43 2 4 44 0 11 45 10 5 46 1 8 47 9 2 48 11 1 49 10 5 50 0 11 51 9 2 52 10 5 53 7 0 54 9 2 55 8 7 56 0 11 57 8 7 58 9 2 59</p>
+        </polylist>
+      </mesh>
+      <extra><technique profile="MAYA"><double_sided>1</double_sided></technique></extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="dado_10_obj" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <instance_geometry url="#dado_10_data-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material1" target="#Material-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="Material_0012" target="#Material_001-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

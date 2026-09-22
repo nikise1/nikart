@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<debug activo="si" paneles="no" arrastrar="si" />
+
+	<!-- Tamaños -->
+	<tamano ancho="1024" alturaTotal="768" />
+
+	<mostrar barAlpha="1" />
+	
+	<!-- Carros -->
+	<carro velocidadMod=".5" pitsActivo="si" />
+	
+	<!-- Tiempos -->
+	<tiempos cadaConexionPrueba="15" />
+	
+	<!-- textos_general -->
+	<XMLLoader url="xml/textos.xml" name="trans" load="true" />
+
+	<!-- assets_general -->
+	<SWFLoader url="swf/assets_general.swf" name="assets_general" load="true" />
+	
+	<!-- millonario -->
+	<millonario soloMillonarioYSinPista="no">
+		<SWFLoader url="Millonario.swf" name="millonario" load="true" />
+		<puntaje correcta="100" incorrecta="25" />
+	</millonario>
+	
+	<!-- escenarios -->
+	<escenarios ordenRestriccion="no" puedeRepasarNiveles="si">
+		
+		<!-- escenario 1 -->
+		<escenario carpeta="escenario_1">
+			<titulo><![CDATA[Cultura Pacífico]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_1/xml/preguntas1.xml" name="preguntas_1" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_1/assets_escenario.swf" name="escenario_1" load="false" />
+			<rondas restriccion="no">
+				<ronda dia="24" mes="04" ano="2012"/>
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 2 -->
+		<escenario carpeta="escenario_2">
+			<titulo><![CDATA[Gestión de riesgos]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_2/xml/preguntas2.xml" name="preguntas_2" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_2/assets_escenario.swf" name="escenario_2" load="false" />
+			<rondas restriccion="no">
+				<ronda dia="25" mes="12" ano="2012"/>
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 3 -->
+		<escenario carpeta="escenario_3">
+			<titulo><![CDATA[Seguros generales - Empresas]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_3/xml/preguntas3.xml" name="preguntas_3" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_3/assets_escenario.swf" name="escenario_3" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 4 -->
+		<escenario carpeta="escenario_4">
+			<titulo><![CDATA[Seguros generales - Líneas personales]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_4/xml/preguntas4.xml" name="preguntas_4" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_4/assets_escenario.swf" name="escenario_4" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 5 -->
+		<escenario carpeta="escenario_5">
+			<titulo><![CDATA[Seguros generales - Negocios vehiculares]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_5/xml/preguntas5.xml" name="preguntas_5" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_5/assets_escenario.swf" name="escenario_5" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 6 -->
+		<escenario carpeta="escenario_6">
+			<titulo><![CDATA[Negocios de salud]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_6/xml/preguntas6.xml" name="preguntas_6" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_6/assets_escenario.swf" name="escenario_6" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 7 -->
+		<escenario carpeta="escenario_7">
+			<titulo><![CDATA[Negocios de vida]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_7/xml/preguntas7.xml" name="preguntas_7" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_7/assets_escenario.swf" name="escenario_7" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 8 -->
+		<escenario carpeta="escenario_8">
+			<titulo><![CDATA[Regulatorios y Control interno]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_8/xml/preguntas8.xml" name="preguntas_8" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_8/assets_escenario.swf" name="escenario_8" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+		<!-- escenario 9 -->
+		<escenario carpeta="escenario_9">
+			<titulo><![CDATA[Glosario]]></titulo>
+			<!-- preguntas -->
+			<XMLLoader url="escenario_9/xml/preguntas9.xml" name="preguntas_9" load="true" />
+			<!-- assets_escenario load="false" para cargar en abrir -->
+			<SWFLoader url="escenario_9/assets_escenario.swf" name="escenario_9" load="false" />
+			<rondas restriccion="no">
+				<!--<ronda dia="25" mes="12" ano="2011"/>-->
+			</rondas>
+		</escenario>
+		
+	</escenarios>
+	
+	<!-- Archivos -->
+	<carpeta img="img" />
+	<img startReto="c" term=".jpg" />
+  
+</data>
