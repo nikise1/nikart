@@ -200,6 +200,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Mock AwayFL popup for static Flash (`/fl/away`, `/static` proxy, Claro first; same HTML→SWF path for games/banners/websites/3d). Vendored AVM2 ABC catalogs that npm omits.
 - [x] Temporary local SWF compare kit: one HTML page per SWF with generic Ruffle + AwayFL players (Ruffle autoplay on); menu/popWin open `/swf-compare/` (2026-09-15)
 - [x] Commit `/swf-compare/pieces/` SWFs and sidecars so the Vercel preview can live-play them (2026-09-22)
+- [x] Commit Ruffle + AwayFL runtimes (`public/ruffle`, `public/awayfl`) so compare pages work on Vercel, not just locally (2026-09-22)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

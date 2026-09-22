@@ -9,6 +9,21 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  async headers() {
+    return [
+      {
+        source: "/ruffle/:path*.wasm",
+        headers: [{ key: "Content-Type", value: "application/wasm" }],
+      },
+      {
+        source: "/swf-compare/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

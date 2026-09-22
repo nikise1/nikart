@@ -2,6 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "npm install",
-  "buildCommand": "npm run sync:images && npm run build",
+  "buildCommand": "npm run sync:images && node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && npm run build",
   "devCommand": "npm run dev"
 }

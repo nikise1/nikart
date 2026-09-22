@@ -168,7 +168,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
-- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`; **gitignored** — not committed)
+- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall`/`prebuild` from `@ruffle-rs/ruffle`; **committed** so Vercel preview can serve it)
 - `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
 - Architecture diagrams (current `/fl` preview + options for S3 Flash, including AwayFL): [`docs/RUFFLE_PREVIEW.md`](RUFFLE_PREVIEW.md) (2026-09-15)
