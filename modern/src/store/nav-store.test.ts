@@ -11,6 +11,7 @@ describe("useNavStore", () => {
       startupPendingOpen: false,
       pendingOpenAfterClose: false,
       buttonParked: false,
+      homeNavAfterButton: false,
     });
   });
 
@@ -21,6 +22,7 @@ describe("useNavStore", () => {
 
     expect(useNavStore.getState().navPhase).toBe("hiding-button");
     expect(useNavStore.getState().navOpen).toBe(false);
+    expect(useNavStore.getState().homeNavAfterButton).toBe(true);
   });
 
   it("opens the canvas after the back button reverse-exit completes", () => {

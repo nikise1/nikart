@@ -40,6 +40,8 @@ export function useNavAnimator({
   revealButton,
 }: UseNavAnimatorOptions): void {
   const widthCache = useRef<Map<string, number>>(new Map());
+  const revealButtonRef = useRef(revealButton);
+  revealButtonRef.current = revealButton;
 
   useGSAP(
     () => {
@@ -149,7 +151,7 @@ export function useNavAnimator({
           },
         });
 
-        if (revealButton) {
+        if (revealButtonRef.current) {
           button.style.display = "block";
           gsap.fromTo(
             button,
@@ -180,7 +182,7 @@ export function useNavAnimator({
         const ctx = canvas.getContext("2d");
         ctx?.clearRect(0, 0, NAV_POS.canvasWidth, NAV_POS.canvasHeight);
 
-        if (revealButton) {
+        if (revealButtonRef.current) {
           button.style.display = "block";
           gsap.set(button, NAV_BUTTON_SHOWN);
         } else {
@@ -191,7 +193,7 @@ export function useNavAnimator({
     },
     {
       scope: containerRef,
-      dependencies: [phase, numItems, items, revealButton],
+      dependencies: [phase, numItems, items],
       // Keep GSAP inline positions across phase changes so a parked button can reverse-exit.
       revertOnUpdate: false,
     },

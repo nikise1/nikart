@@ -168,7 +168,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Nav animation phase state machine in Zustand (`nav-store.ts`) — startup close-then-open, item stagger, canvas/button sequencing, deferred route navigation on item click
 - [x] Central `useNavAnimator` orchestrator mirrors legacy `nav-view.js doAni()` (single tween scope, kill on interrupt)
 - [x] NavButton is back-to-main only — hidden on home, shown off main, click navigates to `/`
-- [x] Clicking NavButton (or otherwise opening home while the curl is parked) plays the reverse of the enter tween (`hiding-button`, `power1.in` to `NAV_BUTTON_HIDDEN`) and only then animates `NavCanvas` in; startup (button already hidden) still opens the canvas immediately
+- [x] Clicking NavButton (or otherwise opening home while the curl is parked) plays the reverse of the enter tween (`hiding-button`, `power1.in` to `NAV_BUTTON_HIDDEN`) and only then animates `NavCanvas` in; the home route is deferred until that canvas enter has played so a view-transition cannot snap the curl away; startup (button already hidden) still opens the canvas immediately
 - [x] Nav shell is excluded from view-transition snapshots (`nav-shell`) so the GSAP reverse-out is not frozen during `nav-back`
 
 #### 9d: Toolchain maintenance (modern app) ✅ (2026-07-15)

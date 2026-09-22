@@ -74,6 +74,7 @@ describe("useNavAnimator", () => {
       startupPendingOpen: false,
       pendingOpenAfterClose: false,
       buttonParked: true,
+      homeNavAfterButton: false,
     });
   });
 

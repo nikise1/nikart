@@ -14,6 +14,8 @@ interface NavState {
   pendingOpenAfterClose: boolean;
   /** Back button is parked on-screen (enter complete); click should reverse it before opening. */
   buttonParked: boolean;
+  /** Home route is deferred until the reverse-exit and canvas enter have played. */
+  homeNavAfterButton: boolean;
 
   setNavReady: () => void;
   runStartupSequence: () => void;
@@ -27,6 +29,7 @@ interface NavState {
   onButtonHideComplete: () => void;
   onOpenComplete: () => void;
   openHomeMenu: () => void;
+  clearHomeNavAfterButton: () => void;
   syncToRoute: (isHome: boolean) => void;
   clearPendingRoute: () => void;
   selectNavItem: (route: string) => void;
@@ -40,6 +43,7 @@ export const useNavStore = create<NavState>((set, get) => ({
   startupPendingOpen: false,
   pendingOpenAfterClose: false,
   buttonParked: false,
+  homeNavAfterButton: false,
 
   setNavReady: () => set({ navReady: true }),
 
@@ -67,6 +71,7 @@ export const useNavStore = create<NavState>((set, get) => ({
 
   parkNavButton: () => set({ buttonParked: true }),
   unparkNavButton: () => set({ buttonParked: false }),
+  clearHomeNavAfterButton: () => set({ homeNavAfterButton: false }),
 
   requestNavOpen: () => {
     const { navPhase } = get();
@@ -142,7 +147,7 @@ export const useNavStore = create<NavState>((set, get) => ({
 
     if (navPhase === "closed") {
       if (buttonParked) {
-        set({ navPhase: "hiding-button", navOpen: false });
+        set({ navPhase: "hiding-button", navOpen: false, homeNavAfterButton: true });
         return;
       }
       get().requestNavOpen();
