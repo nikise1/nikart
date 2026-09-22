@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+ 
+<head> 
+	<title>Genzyme calcified heart</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<meta http-equiv="content-language" content="en"/> 
+	<meta name="description" content="Serious" />
+	<link rel="stylesheet" rev="stylesheet" href="css/reset.css" type="text/css" media="all" /> 
+	<link rel="stylesheet" rev="stylesheet" href="css/main.css" type="text/css" media="all" /> 
+	
+	<!--[if lt IE 7]>
+<script language="JavaScript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 & 6.
+{
+   var arVersion = navigator.appVersion.split("MSIE")
+   var version = parseFloat(arVersion[1])
+   if ((version >= 5.5) && (document.body.filters)) 
+   {
+      for(var i=0; i<document.images.length; i++)
+      {
+         var img = document.images[i]
+         var imgName = img.src.toUpperCase()
+         if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+         {
+            var imgID = (img.id) ? "id='" + img.id + "' " : ""
+            var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+            var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+            var imgStyle = "display:inline-block;" + img.style.cssText 
+            if (img.align == "left") imgStyle = "float:left;" + imgStyle
+            if (img.align == "right") imgStyle = "float:right;" + imgStyle
+            if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+            var strNewHTML = "<span " + imgID + imgClass + imgTitle
+            + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+            + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+            + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+            img.outerHTML = strNewHTML
+            i = i-1
+         }
+      }
+   }    
+}
+window.attachEvent("onload", correctPNG);
+</script>
+<![endif]--> 
+	
+</head> 
+<body>
+	<div class="container">
+		<div class="header">
+
+			<div class="share">
+			<script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=f9c42002-be72-41e7-b627-5f43a5fbef18&amp;type=website&amp;post_services=email%2Cfacebook%2Ctwitter%2Cgbuzz%2Cmyspace%2Cdigg%2Csms%2Cwindows_live%2Cdelicious%2Cstumbleupon%2Creddit%2Cgoogle_bmarks%2Clinkedin%2Cbebo%2Cybuzz%2Cblogger%2Cyahoo_bmarks%2Cmixx%2Ctechnorati%2Cfriendfeed%2Cpropeller%2Cwordpress%2Cnewsvine"></script>
+			</div>
+		</div>
+		<ul class="nav">
+			<li><img src="i/nav-start-off.jpg" width="220" height="30" /></li>
+			<li><img src="i/nav-see-on.jpg" width="215" height="30" /></li>
+			<li><img src="i/nav-instructions-off.jpg" width="215" height="30" /></li>
+
+			<li><img src="i/nav-launch-off.jpg" width="200" height="30" /></li>
+		</ul>
+		<div class="left">
+			<a href="index.html"><img src="i/button-left.jpg" width="57" height="164" /></a>
+		</div>
+		<div class="centre-see-how-it-works">
+			<a href="card.pdf" target="_blank" class="a-print" onclick="location='instructions.html'"></a>
+			<a href="turn-on-your-webcam.html" class="a-launch"></a>
+			<a href="instructions.html" class="a-skip"></a>
+
+		</div>
+		<div class="right">
+			<a href="instructions.html"><img src="i/button-right.jpg" width="57" height="164" /></a>
+		</div>
+		<div class="footer">
+			<a href="#" class="a-link"></a>
+		</div>
+		<img src="i/man-2.png" width="413" height="619" class="man" />
+	</div>
+
+</body>
+</html>

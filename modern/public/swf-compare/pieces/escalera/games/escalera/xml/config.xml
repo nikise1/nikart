@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<!-- <debug /> - varios ayudas para desarrollar, por ejemplo muestra la respuesta correcta en los preguntas. -->
+	<!-- Para poner el proyecto en vivo tiene que apagar: activo="no" -->
+	<!-- dibujarTrampasEscaleras="si/no" – Solo para probar que los trampas y escalera están en las lugares correctas.-->
+	<debug activo="si" dibujarTrampasEscaleras="no" />
+	
+	<!-- <tamano /> - El tamaño total del Main.fla -->
+	<tamano anchoTotal="800" alturaTotal="600" />
+	
+	<!-- <jugadores /> - Se puede elegir 1 hasta maxNum. Se pone 1 no muestra PaginaSeleccionar -->
+	<jugadores maxNum="3" />
+	
+	<!-- <dado /> - Numeros son 1 hasta maxNum -->
+	<!-- Ahora hay animaciones para 6 y 10. Otros numeros muestran solo texto. -->
+	<dado maxNum="10" />
+	
+	<!-- <respuestas /> - retroalimentacionGenerico = si usa la <realimentacion> de la respuesta o textos.xml -->
+	<respuestas retroalimentacionGenerico="no" />
+	
+	<!-- <tiempo /> - Tiempos -->
+	<!-- cadaPregunta="5" - Por una pregunta -->
+	<tiempo cadaPregunta="60" />
+	
+	<!-- <orden /> - Preguntas aleatorio o en orden aleatorio="si/no" -->
+	<orden aleatorio="si" />
+	
+	<!-- <json /> - maxLength = max numero de caracteres que qguardamos en SCORM -->
+	<!-- Creo que el maximum en SCORM 1.2 es 4096 -->
+	<!-- http://scorm.com/scorm-explained/technical-scorm/run-time/run-time-reference/  -->
+	<json maxLength="3500" />
+	
+	<niveles>
+		
+		<!-- <nivel /> - Nivel ejemplo aleatorio -->
+		<!-- tiempo = Solo para 1 jugador 0=ilimitado -->
+		<!-- numCasillas = Numero de Casillas -->
+		<!-- numColumnas = Numero de Columnas -->
+		<nivel tiempo="120" numCasillas="40" numColumnas="8">
+			<trampasEscaleras aleatorio="si">
+				<!-- <trampa /> - Cantidad y maximum distancia de los trampas aleatorias -->
+				<trampa cantidad="6" maxX="2" maxY="2" />
+				<!-- <escalera /> - Cantidad y maximum distancia de los escaleras aleatorias -->
+				<escalera cantidad="6" maxX="2" maxY="2" />
+			</trampasEscaleras>
+		</nivel>
+		
+		<!-- <nivel /> - Nivel ejemplo fijo -->
+		<!-- tiempo = Solo para 1 jugador 0=ilimitado -->
+		<!-- numCasillas = Numero de Casillas -->
+		<!-- numColumnas = Numero de Columnas -->
+		<nivel tiempo="180" numCasillas="56" numColumnas="8">
+			<!-- <trampasEscaleras /> - Los trampas y escaleras son fijos --> -->
+			<trampasEscaleras aleatorio="no">
+				<!-- <trampa /> - Casilla numero y distancia de una trampa fijo -->
+				<!--  x="_2" y="_1" - El "_" significa negativo y corresponda a los nombres de los MovieClips -->
+				<trampa casillaNum="54" x="0" y="_2" />
+				<trampa casillaNum="40" x="_1" y="_1" />
+				<trampa casillaNum="36" x="2" y="_2" />
+				<trampa casillaNum="51" x="2" y="_1" />
+				<trampa casillaNum="31" x="4" y="_3" />
+				<!-- <escalera /> - Casilla numero y distancia de una escalera fijo -->
+				<escalera casillaNum="33" x="0" y="2" />
+				<escalera casillaNum="27" x="1" y="1" />
+				<escalera casillaNum="23" x="_2" y="2" />
+				<escalera casillaNum="13" x="0" y="2" />
+				<escalera casillaNum="7" x="_4" y="3" />
+			</trampasEscaleras>
+		</nivel>
+		
+	</niveles>
+	
+	<!-- <pop /> - Configuración de los pops -->
+	<pop>
+		<!-- <desactivar /> - Configuración de la capa para desactivar botones -->
+		<desactivar color="0xFFFFFF" alpha=".5" />
+	</pop>
+	
+	<!-- <LoaderMax /> - Cargar recursos -->
+	<LoaderMax name="queue1" prependURLs="" load="true">
+		<!-- preguntas.xml - Preguntas -->
+		<XMLLoader url="xml/preguntas.xml" name="preguntas" />
+		<!-- textos.xml - Textos generales en el applicación -->
+		<XMLLoader url="xml/textos.xml" name="trans" />
+		<!-- assets.swf - Recursos que contiene los MovieClips y gráficos -->
+		<SWFLoader url="swf/assets.swf" name="assets" />
+	</LoaderMax>
+	
+	<!-- <extension /> - Extensión de los archivos cargados para las preguntas -->
+	<extension img=".jpg" />
+	
+</data>

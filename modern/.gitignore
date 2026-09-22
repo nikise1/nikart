@@ -25,8 +25,7 @@
 # awayfl runtime (copied from node_modules via postinstall)
 /public/awayfl/
 
-# temporary local copies of S3 SWFs + sidecars for /swf-compare
-/public/swf-compare/pieces/
+# generated catalog from swf-compare:sync (HTML/SWF copies are committed for Vercel preview)
 /public/swf-compare/generated-catalog.json
 
 # generated from repo-root public/content/img (see scripts/sync-content-images.mjs)

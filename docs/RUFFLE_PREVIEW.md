@@ -313,7 +313,7 @@ sequenceDiagram
 
 ### Option F — side-by-side compare kit (temporary)
 
-`/swf-compare/` copies S3 SWFs and sidecars into `modern/public/swf-compare/pieces/` (gitignored). Each SWF gets its own HTML page with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup. Refresh copies with `npm run swf-compare:sync --prefix modern`.
+`/swf-compare/` copies S3 SWFs and sidecars into `modern/public/swf-compare/pieces/` (committed so Vercel preview can live-play them). Each SWF gets its own HTML page with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup. Refresh copies with `npm run swf-compare:sync --prefix modern`.
 
 
 ---

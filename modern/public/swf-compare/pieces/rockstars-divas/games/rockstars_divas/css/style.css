@@ -1,0 +1,116 @@
+/*
+Project: STARTER-PACK
+File: css/style.css
+Last edited: October 18, 2010, 7:49 am
+*/
+
+/*  Main  */
+body {
+ font-family: Georgia, Arial, Helvetica, sans-serif;
+ font-size: 12px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 520px;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #000;
+	text-shadow: none;
+	text-decoration: none;
+}
+
+.clear { clear: both; }
+.left { float: left; }
+.right { float: right;}
+
+p {
+	margin-bottom: 10px;
+}
+
+h1 {
+	font-size: 54px;
+}
+
+h2 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+h3 {
+	font-size: 24px;
+	margin-bottom: 8px;
+}
+
+h4 {
+	font-size: 16px;
+	margin-bottom: 8px;
+}
+
+.indent {
+	padding-left: 10px;
+}
+
+.spacer {
+	display: block;
+	height: 20px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+
+/* Layout */
+
+.wrapper {
+	position: relative;
+	width: 520px;
+	margin: 0px auto;
+}
+
+#content {
+	position: relative;
+	height: 598px;	
+}
+
+
+
+.footer {
+	position: relative;
+	height: 20px;
+	padding: 1px;
+	background: #FFF;
+	width: 518px;
+	text-align: center;
+}
+
+.footer  a, .footer  div {
+	display: block;
+	height: 23px;
+}
+
+.footer  .terms{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 300px;
+	background: url(../images/terms.gif) no-repeat left top;
+	
+}
+
+.footer  .drink-aware{
+	position: absolute;
+	top:-1px;
+	left: 300px;
+	width: 200px;
+	background: url(../images/drink_aware.gif) no-repeat left bottom;;
+	
+}
