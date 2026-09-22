@@ -16,6 +16,7 @@ interface AwayFlPlayerInstance {
   play(offset?: number): void;
   dispose(): void;
   addEventListener(type: string, listener: (event: unknown) => void): void;
+  setStageDimensions?(x: number, y: number, w: number, h: number): void;
 }
 
 declare global {
