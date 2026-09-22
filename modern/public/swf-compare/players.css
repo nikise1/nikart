@@ -73,13 +73,16 @@ h1 {
 
 .stage {
   position: relative;
-  min-height: 360px;
   overflow: hidden;
+  line-height: 0;
+  background: #000;
 }
 
 .stage ruffle-player,
 .stage canvas {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .status {
