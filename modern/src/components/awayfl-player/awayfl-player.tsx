@@ -18,7 +18,7 @@ export interface AwayFlPlayerProps {
   height?: number | undefined;
 }
 
-export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
+export function AwayFlPlayer({ source }: AwayFlPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(
     () => typeof window !== "undefined" && Boolean(window.awayflplayer),
@@ -58,6 +58,7 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
     let cancelled = false;
     let player: { dispose?: () => void } | undefined;
     let onResize: (() => void) | undefined;
+    let resizeObserver: ResizeObserver | undefined;
 
     async function start(): Promise<void> {
       const proxied = toProxiedStaticUrl(source) ?? source;
@@ -79,13 +80,10 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
 
       const canvas = document.createElement("canvas");
       canvas.id = "awayfl_stage";
-      canvas.style.width = "100%";
-      canvas.style.height = "100%";
+      canvas.style.display = "block";
       container.replaceChildren(canvas);
 
-      const viewport = measureViewport(container, width, height, embed);
-      canvas.width = viewport.width;
-      canvas.height = viewport.height;
+      const viewport = measureViewport(container);
 
       window.awayflplayer.StageManager.htmlCanvas = canvas;
       window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS_BASE;
@@ -105,7 +103,7 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
         if (cancelled) {
           return;
         }
-        const next = measureViewport(container, width, height, embed);
+        const next = measureViewport(container);
         instance.setStageDimensions?.(0, 0, next.width, next.height);
       };
       if (cancelled) {
@@ -118,6 +116,10 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
       }
       onResize = refit;
       window.addEventListener("resize", refit);
+      if (typeof ResizeObserver === "function") {
+        resizeObserver = new ResizeObserver(refit);
+        resizeObserver.observe(container);
+      }
       instance.addEventListener("loaderComplete", () => {
         if (!cancelled) {
           refit();
@@ -137,6 +139,7 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
 
     return () => {
       cancelled = true;
+      resizeObserver?.disconnect();
       if (onResize) {
         window.removeEventListener("resize", onResize);
       }
@@ -150,7 +153,7 @@ export function AwayFlPlayer({ source, width, height }: AwayFlPlayerProps) {
       }
       container.replaceChildren();
     };
-  }, [ready, source, width, height]);
+  }, [ready, source]);
 
   const phase = loadError ? "error" : status ? "loading" : "ready";
 
@@ -215,27 +218,9 @@ async function resolveSiblingSwf(pageUrl: string): Promise<FlashEmbed | null> {
   return null;
 }
 
-function parsePx(value: string): number | undefined {
-  if (value.endsWith("%")) {
-    return undefined;
-  }
-  const parsed = Number.parseInt(value, 10);
-  return Number.isFinite(parsed) ? parsed : undefined;
-}
-
-function measureViewport(
-  container: HTMLElement,
-  width: number | undefined,
-  height: number | undefined,
-  embed: FlashEmbed,
-): { width: number; height: number } {
-  const availW = Math.max(1, container.clientWidth);
-  const availH = Math.max(1, container.clientHeight);
-  const nativeW = width ?? parsePx(embed.width) ?? availW;
-  const nativeH = height ?? parsePx(embed.height) ?? availH;
-  const scale = Math.min(availW / nativeW, availH / nativeH);
+function measureViewport(container: HTMLElement): { width: number; height: number } {
   return {
-    width: Math.max(1, Math.round(nativeW * scale)),
-    height: Math.max(1, Math.round(nativeH * scale)),
+    width: Math.max(1, container.clientWidth),
+    height: Math.max(1, container.clientHeight),
   };
 }

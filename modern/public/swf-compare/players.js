@@ -40,29 +40,28 @@
     }
   }
 
-  function stageSize(el) {
+  function nativeSize(el) {
     const width = Number.parseInt(el.dataset.width ?? "", 10);
     const height = Number.parseInt(el.dataset.height ?? "", 10);
     return {
-      width: Number.isFinite(width) ? width : el.clientWidth || 640,
-      height: Number.isFinite(height) ? height : el.clientHeight || 400,
+      width: Number.isFinite(width) ? width : 640,
+      height: Number.isFinite(height) ? height : 400,
     };
   }
 
-  function fitToElement(el, nativeWidth, nativeHeight) {
-    const avail = Math.max(1, el.clientWidth || nativeWidth);
-    const scale = avail / nativeWidth;
-    return {
-      width: Math.max(1, Math.round(nativeWidth * scale)),
-      height: Math.max(1, Math.round(nativeHeight * scale)),
-    };
+  function applyStageBox(el) {
+    const native = nativeSize(el);
+    el.style.setProperty("--swf-aspect", `${native.width} / ${native.height}`);
   }
 
-  function applyCanvasBox(canvas, width, height) {
-    canvas.width = width;
-    canvas.height = height;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
+  function paneBox(el) {
+    const native = nativeSize(el);
+    const width = Math.max(1, Math.round(el.clientWidth || native.width));
+    const height = Math.max(
+      1,
+      Math.round(el.clientHeight || (width * native.height) / native.width),
+    );
+    return { width, height };
   }
 
   function swfHref(el) {
@@ -70,6 +69,7 @@
   }
 
   async function startRuffle(el) {
+    applyStageBox(el);
     setStatus(el, "Loading Ruffle…");
     await loadScript(RUFFLE_SRC);
     const started = Date.now();
@@ -80,13 +80,10 @@
       throw new Error("Ruffle player failed to load.");
     }
     const url = swfHref(el);
-    const native = stageSize(el);
-    const size = fitToElement(el, native.width, native.height);
     const ruffle = window.RufflePlayer.newest();
     const player = ruffle.createPlayer();
-    player.style.width = `${size.width}px`;
-    player.style.height = `${size.height}px`;
-    player.style.maxWidth = "100%";
+    player.style.width = "100%";
+    player.style.height = "100%";
     el.replaceChildren(player);
     await player.load({
       url: url.href,
@@ -104,6 +101,7 @@
   }
 
   async function startAwayFl(el) {
+    applyStageBox(el);
     setStatus(el, "Loading AwayFL…");
     await loadScript(AWAYFL_SRC);
     const started = Date.now();
@@ -114,8 +112,6 @@
       throw new Error("AwayFL player failed to load.");
     }
     const url = swfHref(el);
-    const native = stageSize(el);
-    const size = fitToElement(el, native.width, native.height);
     const response = await fetch(url.href);
     if (!response.ok) {
       throw new Error(`SWF request failed (${response.status})`);
@@ -123,8 +119,9 @@
     const buffer = await response.arrayBuffer();
     const canvas = document.createElement("canvas");
     canvas.id = `awayfl_stage_${el.dataset.swf?.replace(/\W+/g, "_") ?? "swf"}`;
-    applyCanvasBox(canvas, size.width, size.height);
+    canvas.style.display = "block";
     el.replaceChildren(canvas);
+    const size = paneBox(el);
     window.awayflplayer.StageManager.htmlCanvas = canvas;
     window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS;
     const player = new window.awayflplayer.AVMPlayer({
@@ -137,7 +134,7 @@
     });
     let lastBox = `${size.width}x${size.height}`;
     const refit = () => {
-      const next = fitToElement(el, native.width, native.height);
+      const next = paneBox(el);
       const key = `${next.width}x${next.height}`;
       if (key === lastBox) {
         return;
@@ -146,7 +143,13 @@
       player.setStageDimensions?.(0, 0, next.width, next.height);
     };
     window.addEventListener("resize", refit);
-    player.addEventListener("loaderComplete", () => setStatus(el, ""));
+    if (typeof ResizeObserver === "function") {
+      new ResizeObserver(refit).observe(el);
+    }
+    player.addEventListener("loaderComplete", () => {
+      refit();
+      setStatus(el, "");
+    });
     player.playSWF(buffer, url.href);
     setStatus(el, "Starting AwayFL…");
   }
@@ -159,6 +162,7 @@
   window.SwfCompare = { startRuffle, startAwayFl };
 
   document.querySelectorAll("[data-player]").forEach((el) => {
+    applyStageBox(el);
     const kind = el.dataset.player;
     const start = starters[kind];
     if (!start) {
