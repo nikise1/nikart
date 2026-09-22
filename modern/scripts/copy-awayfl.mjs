@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync } from "node:fs";
+import { existsSync, cpSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,6 +6,12 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const pkg = join(root, "node_modules", "@awayfl", "awayfl-player");
 const vendor = join(root, "vendor", "awayfl-builtins");
 const target = join(root, "public", "awayfl");
+
+if (!existsSync(join(pkg, "bundle", "awayfl-player.umd.js"))) {
+  throw new Error(
+    "AwayFL package missing. Run npm install before copy-awayfl.",
+  );
+}
 
 mkdirSync(join(target, "builtins"), { recursive: true });
 
