@@ -170,7 +170,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
-- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall` from `@ruffle-rs/ruffle`; **gitignored** — not committed)
+- Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall`/`prebuild` from `@ruffle-rs/ruffle`; **committed** so Vercel preview can serve it)
 - `/fl/:lang` route handler sets `NEXT_LOCALE` cookie and redirects to `/fl` (legacy parity)
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
 - Lizard tongue chord (2026-09-15): the `/fl` Ruffle preview was drawing the quadratic tongue **and** a straight line between the mouth and the tip. That is not a Next.js/Ruffle embed setting — it is the AVM1 Drawing API path in `main.swf` (FLA timeline frame 22). Original AS2:
