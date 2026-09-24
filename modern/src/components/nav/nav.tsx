@@ -10,6 +10,7 @@ import { NavButton } from "./nav-button";
 import { NavRouteSync } from "./nav-route-sync";
 import { useNavAnimator } from "./use-nav-animator";
 import { isHomePath } from "@/lib/nav-route";
+import { tweenNavButtonExit } from "@/lib/nav-animations";
 import type { Locale } from "@/lib/data/schema";
 
 interface NavProps {
@@ -32,6 +33,7 @@ export function Nav({ locale }: NavProps) {
   const revealButton = !isHome || leavingHome;
 
   const initialized = useRef(false);
+  const exitingButton = useRef(false);
 
   useNavAnimator({
     containerRef,
@@ -53,7 +55,16 @@ export function Nav({ locale }: NavProps) {
   }, [setNavReady, runStartupSequence, runButtonReveal, isHome]);
 
   function handleNavigateHome(): void {
-    router.push("/", { transitionTypes: ["nav-back"] });
+    if (exitingButton.current) return;
+    const button = containerRef.current?.querySelector<HTMLButtonElement>('[data-component="NavButton"]');
+    if (!button) {
+      router.push("/", { transitionTypes: ["nav-back"] });
+      return;
+    }
+    exitingButton.current = true;
+    tweenNavButtonExit(button, () => {
+      router.push("/", { transitionTypes: ["nav-back"] });
+    });
   }
 
   return (

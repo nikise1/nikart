@@ -139,6 +139,7 @@ Legacy `nav-container` / `nav-view.js` behavior:
 - Canvas positioned absolute within container
 - Canvas bezier shape drawn with specific coordinates: `moveTo(20,0)`, `bezierCurveTo(70,83,92,167,...)`, `quadraticCurveTo(...)`
 - Open: shows items container, draws canvas, staggers `aniIn` per item
+- NavButton click: reverse of the enter tween (`from (0,0)` back to `left: -30, top: -height`, `power1.in`) on the current page, then navigate home
 - Close: staggers `aniOut` in reverse, hides after last item finishes (`timeNavOut + (n-1) * timeNavStaggerOut`)
 - Nav items: `white-space: nowrap` (legacy `overflow: hidden` on 32px-height wrapper clips text)
 - Item width animates from 0 to measured text width + 20px padding
