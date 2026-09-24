@@ -1,29 +1,39 @@
 import { describe, expect, it, vi } from "vitest";
-import {
-  NAV_BUTTON_HIDE_EASE,
-  NAV_BUTTON_HIDDEN,
-  NAV_BUTTON_SHOW_EASE,
-  NAV_BUTTON_SHOWN,
-  NAV_POS,
-} from "./nav-animations";
+import { NAV_POS, tweenNavButtonExit } from "./nav-animations";
+import { NAV_TIMING } from "./nav-timing";
+
+const gsapFromTo = vi.hoisted(() => vi.fn());
+const gsapKill = vi.hoisted(() => vi.fn());
 
 vi.mock("@/lib/gsap", () => ({
   gsap: {
-    killTweensOf: vi.fn(),
+    fromTo: gsapFromTo,
+    killTweensOf: gsapKill,
   },
 }));
 
-describe("nav button enter/exit", () => {
-  it("hides to the same off-screen rest the enter starts from", () => {
-    expect(NAV_BUTTON_HIDDEN).toEqual({
-      left: NAV_POS.btnOutX,
-      top: -NAV_POS.btnHeight,
-    });
-    expect(NAV_BUTTON_SHOWN).toEqual({ left: 0, top: 0 });
-  });
+describe("tweenNavButtonExit", () => {
+  it("reverses the enter tween (off-screen rest + power1.in)", () => {
+    const button = document.createElement("button");
+    const onComplete = vi.fn();
 
-  it("uses the time-reverse ease of the enter tween", () => {
-    expect(NAV_BUTTON_SHOW_EASE).toBe("power1.out");
-    expect(NAV_BUTTON_HIDE_EASE).toBe("power1.in");
+    tweenNavButtonExit(button, onComplete);
+
+    expect(gsapKill).toHaveBeenCalledWith(button);
+    expect(gsapFromTo).toHaveBeenCalledWith(
+      button,
+      { left: 0, top: 0 },
+      expect.objectContaining({
+        left: NAV_POS.btnOutX,
+        top: -NAV_POS.btnHeight,
+        duration: NAV_TIMING.growIn,
+        ease: "power1.in",
+      }),
+    );
+
+    const vars = gsapFromTo.mock.calls[0]?.[2] as { onComplete?: () => void };
+    vars.onComplete?.();
+    expect(button.style.display).toBe("none");
+    expect(onComplete).toHaveBeenCalledTimes(1);
   });
 });

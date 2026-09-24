@@ -3,15 +3,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { NAV_TIMING, itemsCloseDuration } from "@/lib/nav-timing";
-import {
-  drawNavBezier,
-  killNavTweens,
-  NAV_BUTTON_HIDE_EASE,
-  NAV_BUTTON_HIDDEN,
-  NAV_BUTTON_SHOW_EASE,
-  NAV_BUTTON_SHOWN,
-  NAV_POS,
-} from "@/lib/nav-animations";
+import { drawNavBezier, killNavTweens, NAV_POS } from "@/lib/nav-animations";
 import { useNavStore } from "@/store/nav-store";
 import type { NavPhase } from "@/store/nav-types";
 import type { DataNode } from "@/lib/data/schema";
@@ -40,8 +32,6 @@ export function useNavAnimator({
   revealButton,
 }: UseNavAnimatorOptions): void {
   const widthCache = useRef<Map<string, number>>(new Map());
-  const revealButtonRef = useRef(revealButton);
-  revealButtonRef.current = revealButton;
 
   useGSAP(
     () => {
@@ -57,28 +47,11 @@ export function useNavAnimator({
 
       if (!canvas || !button || !itemsContainer) return;
 
-      const { onItemsOutComplete, onCanvasCloseComplete, onButtonHideComplete, onOpenComplete } =
-        useNavStore.getState();
+      const { onItemsOutComplete, onCanvasCloseComplete, onOpenComplete } = useNavStore.getState();
 
-      if (phase === "hiding-button") {
-        // Reverse of the enter tween, then the store opens the canvas.
-        button.style.display = "block";
-        gsap.to(button, {
-          ...NAV_BUTTON_HIDDEN,
-          duration: NAV_TIMING.growIn,
-          ease: NAV_BUTTON_HIDE_EASE,
-          onComplete: () => {
-            button.style.display = "none";
-            useNavStore.getState().unparkNavButton();
-            if (useNavStore.getState().navPhase === "hiding-button") {
-              onButtonHideComplete();
-            }
-          },
-        });
-      } else if (phase === "opening") {
+      if (phase === "opening") {
+        // Legacy doAni open: show items, setUpCanvas, aniIn per item.
         gsap.set(itemsContainer, { display: "block" });
-        gsap.set(button, NAV_BUTTON_HIDDEN);
-        button.style.display = "none";
 
         drawNavBezier(canvas);
         gsap.fromTo(
@@ -86,6 +59,11 @@ export function useNavAnimator({
           { left: NAV_POS.canvasOutX, top: NAV_POS.canvasOutY },
           { left: 0, top: 0, duration: NAV_TIMING.growIn },
         );
+        gsap.to(button, {
+          left: NAV_POS.btnOutX,
+          top: -NAV_POS.btnHeight,
+          duration: NAV_TIMING.growIn,
+        });
 
         itemEls.forEach((el, i) => {
           const itemId = items[i]?.id ?? String(i);
@@ -151,25 +129,23 @@ export function useNavAnimator({
           },
         });
 
-        if (revealButtonRef.current) {
+        if (revealButton) {
           button.style.display = "block";
           gsap.fromTo(
             button,
-            { ...NAV_BUTTON_HIDDEN },
+            { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight },
             {
-              ...NAV_BUTTON_SHOWN,
+              left: 0,
+              top: 0,
               duration: NAV_TIMING.growIn,
-              ease: NAV_BUTTON_SHOW_EASE,
+              ease: "power1.out",
               onComplete: () => {
-                useNavStore.getState().parkNavButton();
                 useNavStore.getState().onCanvasCloseComplete();
               },
             },
           );
         } else {
-          gsap.set(button, NAV_BUTTON_HIDDEN);
-          button.style.display = "none";
-          useNavStore.getState().unparkNavButton();
+          gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
           gsap.delayedCall(NAV_TIMING.growOut, () => {
             if (useNavStore.getState().navPhase === "closing-canvas") {
               onCanvasCloseComplete();
@@ -182,20 +158,15 @@ export function useNavAnimator({
         const ctx = canvas.getContext("2d");
         ctx?.clearRect(0, 0, NAV_POS.canvasWidth, NAV_POS.canvasHeight);
 
-        if (revealButtonRef.current) {
+        if (revealButton) {
           button.style.display = "block";
-          gsap.set(button, NAV_BUTTON_SHOWN);
+          gsap.set(button, { left: 0, top: 0 });
         } else {
           button.style.display = "none";
-          gsap.set(button, NAV_BUTTON_HIDDEN);
+          gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
         }
       }
     },
-    {
-      scope: containerRef,
-      dependencies: [phase, numItems, items],
-      // Keep GSAP inline positions across phase changes so a parked button can reverse-exit.
-      revertOnUpdate: false,
-    },
+    { scope: containerRef, dependencies: [phase, numItems, items, revealButton] },
   );
 }

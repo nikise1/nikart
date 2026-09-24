@@ -1,4 +1,5 @@
 import { gsap } from "@/lib/gsap";
+import { NAV_TIMING } from "@/lib/nav-timing";
 
 const CANVAS_WIDTH = 130;
 const CANVAS_HEIGHT = 260;
@@ -12,21 +13,24 @@ export const NAV_POS = {
   canvasHeight: CANVAS_HEIGHT,
 } as const;
 
-/** Off-screen rest — where the back button enters from and exits to. */
-export const NAV_BUTTON_HIDDEN = {
-  left: NAV_POS.btnOutX,
-  top: -NAV_POS.btnHeight,
-} as const;
-
-/** On-screen rest after the enter tween. */
-export const NAV_BUTTON_SHOWN = {
-  left: 0,
-  top: 0,
-} as const;
-
-/** Enter uses GSAP's default ease; hide is the time-reverse of that motion. */
-export const NAV_BUTTON_SHOW_EASE = "power1.out";
-export const NAV_BUTTON_HIDE_EASE = "power1.in";
+/** Reverse of the closeCanvas enter: from (0,0) back to off-screen. */
+export function tweenNavButtonExit(button: HTMLElement, onComplete?: () => void): void {
+  gsap.killTweensOf(button);
+  gsap.fromTo(
+    button,
+    { left: 0, top: 0 },
+    {
+      left: NAV_POS.btnOutX,
+      top: -NAV_POS.btnHeight,
+      duration: NAV_TIMING.growIn,
+      ease: "power1.in",
+      onComplete: () => {
+        button.style.display = "none";
+        onComplete?.();
+      },
+    },
+  );
+}
 
 /** Kill all active nav tweens within the given scope element (legacy doAni preamble). */
 export function killNavTweens(scope: Element | null | undefined): void {
