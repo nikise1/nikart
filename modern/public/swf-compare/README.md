@@ -2,7 +2,7 @@
 
 One HTML page per portfolio SWF, with **Ruffle** and **AwayFL** side by side.
 
-Players load movies from `http://static.nikart.co.uk` through `/static`. A Node route handler fetches the HTTP origin so Vercel HTTPS previews are not blocked by mixed content or a broken rewrite. Ruffle `base` and AwayFL’s play URL are that movie directory, so child SWF/XML/JPEG requests stay on `/static/…`.
+Players load movies from `http://static.nikart.co.uk` through `/static`. A Node route handler fetches the HTTP origin (there is no `next.config` rewrite for `/static`, because that rewrite wins on Vercel and never reaches the route). Ruffle `base` and AwayFL’s play URL are that movie directory, so child SWF/XML/JPEG requests stay on `/static/…`.
 
 ```bash
 npm run swf-compare:sync --prefix modern

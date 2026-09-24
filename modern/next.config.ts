@@ -42,10 +42,9 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
-      {
-        source: "/static/:path*",
-        destination: `${STATIC_HOST}/:path*`,
-      },
+      // /static is handled by app/static/[...path]/route.ts (Node fetch of the
+      // HTTP origin). An afterFiles rewrite to that host wins on Vercel and
+      // never reaches the route, so HTTPS previews fail to load SWFs.
     ];
   },
 };

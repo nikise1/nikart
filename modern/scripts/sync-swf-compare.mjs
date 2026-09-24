@@ -489,7 +489,7 @@ function renderIndex(pieces) {
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies and sidecars load from <code>static.nikart.co.uk</code> through the <code>/static</code> rewrite.</p>
+    <p class="note">One page per SWF, both players side by side. Movies and sidecars load from <code>static.nikart.co.uk</code> through the <code>/static</code> origin proxy.</p>
     ${sections}
   </div>
 </body>
