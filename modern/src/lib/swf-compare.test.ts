@@ -3,6 +3,7 @@ import {
   compareHrefForItem,
   compareHrefForSource,
   piecePageHref,
+  staticMovieUrl,
 } from "./swf-compare";
 
 describe("swf-compare", () => {
@@ -27,5 +28,17 @@ describe("swf-compare", () => {
 
   it("ignores off-site URLs", () => {
     expect(compareHrefForSource("http://onedayinmay.co.uk")).toBeNull();
+  });
+
+  it("maps movie paths onto the /static origin proxy", () => {
+    expect(staticMovieUrl("games/ciudad_helm/Main.swf")).toBe(
+      "/static/games/ciudad_helm/Main.swf",
+    );
+    expect(staticMovieUrl("/static/games/weeds/weeds.swf")).toBe(
+      "/static/games/weeds/weeds.swf",
+    );
+    expect(
+      staticMovieUrl("http://static.nikart.co.uk/websites/claro/swf/claro.swf"),
+    ).toBe("/static/websites/claro/swf/claro.swf");
   });
 });
