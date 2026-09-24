@@ -205,6 +205,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Keep compare `.stage` height with SWF `aspect-ratio` so AwayFL `position:absolute` canvas is not clipped; pass pane CSS pixels as `w`/`h` (2026-09-22)
 - [x] Copy child SWFs/XML sidecars for compare pages (resolve Loader URLs from the SWF directory, not the XML file) (2026-09-24)
 - [x] Copy JPEG sidecars the SWFs load at runtime (`img/fin_del_juego.jpg`, Escalera `img/p_{n}/{i}.jpg`, DAE textures) (2026-09-24)
+- [x] Load compare-kit movies from `static.nikart.co.uk` through `/static` so child files come from the origin (2026-09-24)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

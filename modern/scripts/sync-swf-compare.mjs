@@ -436,17 +436,17 @@ function renderPieceHtml(piece, siblings, prev, next) {
       ${next ? `<a href="../${next.id}/index.html">${escapeHtml(next.title)} →</a>` : ""}
     </nav>
     <h1>${escapeHtml(piece.title)}</h1>
-    <p class="meta">${escapeHtml(piece.swfPath)} · ${piece.width}×${piece.height}</p>
+    <p class="meta">/static/${escapeHtml(piece.swfPath)} · ${piece.width}×${piece.height}</p>
     ${siblingLinks ? `<p class="siblings">Same item: ${siblingLinks}</p>` : ""}
-    <p class="note">Same local SWF in both players. Some files work in Ruffle, some in AwayFL, some in neither.</p>
+    <p class="note">Both players load the movie from <code>/static</code> (proxied <code>static.nikart.co.uk</code>). Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.</p>
     <div class="split">
       <section class="pane">
         <h2>Ruffle</h2>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
+        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="/static/${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
       </section>
       <section class="pane">
         <h2>AwayFL</h2>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
+        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="/static/${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
       </section>
     </div>
   </div>
@@ -489,7 +489,7 @@ function renderIndex(pieces) {
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Files are copied locally under <code>public/swf-compare/pieces/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies and sidecars load from <code>static.nikart.co.uk</code> through the <code>/static</code> rewrite.</p>
     ${sections}
   </div>
 </body>

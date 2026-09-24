@@ -65,7 +65,29 @@
   }
 
   function swfHref(el) {
-    return new URL(el.dataset.swf ?? "", window.location.href);
+    const raw = (el.dataset.swf ?? "").trim();
+    if (!raw) {
+      return new URL("/static/", window.location.origin);
+    }
+    if (/^https?:\/\//i.test(raw)) {
+      try {
+        const url = new URL(raw);
+        if (url.hostname === "static.nikart.co.uk") {
+          return new URL(
+            `/static${url.pathname}${url.search}`,
+            window.location.origin,
+          );
+        }
+        return url;
+      } catch {
+        return new URL("/static/", window.location.origin);
+      }
+    }
+    if (raw.startsWith("/static/")) {
+      return new URL(raw, window.location.origin);
+    }
+    const path = raw.replace(/^\.\//, "").replace(/^\//, "");
+    return new URL(`/static/${path}`, window.location.origin);
   }
 
   async function startRuffle(el) {

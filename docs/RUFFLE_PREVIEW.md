@@ -313,7 +313,7 @@ sequenceDiagram
 
 ### Option F — side-by-side compare kit (temporary)
 
-`/swf-compare/` copies S3 SWFs and sidecars into `modern/public/swf-compare/pieces/` (committed so Vercel preview can live-play them). Ruffle (`public/ruffle/`) and AwayFL (`public/awayfl/`) are also committed, because gitignored postinstall copies never reached the preview. Each SWF gets its own HTML page with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Child SWF/XML paths in `xml/config.xml` are resolved from the movie directory (the Flash Loader base), not from the XML file’s folder. Sync also expands runtime JPEG folders (`<carpeta img>` / `fin=`, Escalera `img/p_{n}/{i}.jpg`, Collada textures beside the DAE). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup. Refresh copies with `npm run swf-compare:sync --prefix modern`.
+`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Both players load the movie from `/static/{path}` (Next.js rewrite to `http://static.nikart.co.uk`), so child SWF/XML/JPEG URLs resolve from the origin movie directory without a local sidecar copy. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
 
 
 ---
