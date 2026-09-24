@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[¿Qué cubre el seguro vehicular?]]></texto>
+<respuesta>
+<texto><![CDATA[Todos los gastos correspondientes a la reparación, reposición o indemnización como consecuencia de un hecho amparado por la póliza, hasta los límites especificados en el endosado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Todos los gastos correspondientes a la reparación, reposición o indemnización como consecuencia de un hecho amparado por la póliza, hasta los límites especificados en el sumario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todos los gastos correspondientes a la reparación, reposición o indemnización como consecuencia de un hecho amparado por la póliza, hasta los límites especificados en las condiciones generales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las principales coberturas?]]></texto>
+<respuesta>
+<texto><![CDATA[* Daños a vehículos de teceros, * Responsabilidad Civil, * Accidentes personales de ocupantes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Daños al vehículo,
+* Responsabilidad civil o daños a terceros,
+* Accidentes personales de ocupantes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Daños a terceros, * Responsabilidad civil por siniestros vehiculares, * Daños personales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[¿A qué se refieren los daños al vehículo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Son los daños que pueda sufrir el vehículo asegurado por los siguientes riesgos: accidente, incendio, robo, riesgos de la naturaleza o riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las pérdidas que pueda sufrir el vehículo asegurado por los siguientes riesgos: accidente, incendio, robo o riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son los daños y pérdidas que pueda sufrir el vehículo asegurado por los siguientes riesgos: Accidente, incendio, robo o riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[¿A que se refieren los daños por riegos políticos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[A las pérdidas o daños que sufra el vehículo causados por huelga, vandalismo, terrorismo, daño malicioso y/o conmoción civil, siempre y cuando la póliza contratada cuente con la cláusula de riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A las pérdidas o daños que sufra el vehículo causados por huelga, terrorismo y/o conmoción civil, siempre y cuando la póliza contratada cuente con la cláusula de riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A las pérdidas o daños que sufra el vehículo causados por vandalismo, daño mal intencionado y/o conmoción civil, siempre y cuando la póliza contratada cuente con la cláusula de riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[¿Qué puede comprender la cobertura por accidentes personales de ocupantes?]]></texto>
+<respuesta>
+<texto><![CDATA[* Gastos de hospitalización y tratamientos, * Discapacidad, * Muerte.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Gastos de curación, * Invalidez permanente,* Muerte, * Gastos de sepelio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Gastos de curación, * Invalidez provisional, * Muerte.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[¿Cuál es el significado de GPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Great Positioning System.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Guidance Positioning System.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Global Positioning System.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[¿Cuántos kilómetros regala el seguro vehicular LanPass?]]></texto>
+<respuesta>
+<texto><![CDATA[2,000 Km.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[3,000 Km.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5,000 Km.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_8 -->
+<pregunta> <texto><![CDATA[¿Qué diferencia hay entre el seguro vehicular de Pacífico vs. el de la competencia?]]></texto>
+<respuesta>
+<texto><![CDATA[Ofrece el servicio de chofer de reemplazo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Ofrece el servicio de asesores en accidente que llegan máximo en 15 minutos o te dan un bono de $200 para usarlo en Pacífico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ofrece cobertura de responsabilidad civil para terceros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[¿A través de qué canales se ofrecen los seguros de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Corredores, Bancos y Fuerza de Ventas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Corredores, Fuerza de Ventas y Dealers de Autos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Corredores, Fuerza de Ventas, Telemarketing, Web, Alianzas (Retails, Bancos, Dealers, etc)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[¿Qué es lo que debe hacer inmediatamente un asegurado de cualquiera de los planes vehiculares en caso de chocar con su vehículo?]]></texto>
+<respuesta>
+<texto><![CDATA[Verificar los daños ocurridos y dar aviso a la Central de Emergencias y Asistencia al 4151515.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Asegurar la presencia de un efectivo policial y dar aviso a la Central de Emergencias y Asistencia al 4151515.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Dar aviso inmediatamente a la Central de Emergencias y Asistencia al 4151515 y denunciar el siniestro a la autoridad policial y someterse a Dosaje Etílico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[¿Cómo se realiza la venta de SOAT en las tiendas Listo de los grifos Primax?]]></texto>
+<respuesta>
+<texto><![CDATA[A través del grifero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[A través de un teléfono que está conectado con el Call de Ventas de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A través del vendedor de la tienda Listo!]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[¿El bono de US$ 200 puede utilizarse para pagar el deducible del siniestro?]]></texto>
+<respuesta>
+<texto><![CDATA[En algunos casos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Si, bajo la modalidad de reembolso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[¿Qué contempla la cobertura del Seguro Vehicular Particular en cuanto a riesgos de la naturaleza?]]></texto>
+<respuesta>
+<texto><![CDATA[Terremoto, inundación y huayco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Terremoto, lluvia y huayco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Terremoto, lluvia, inundación y huayco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[¿Qué beneficios adicionales se contemplan en el seguro vehicular particular?]]></texto>
+<respuesta>
+<texto><![CDATA[Chofer de reemplazo, grúa, vehículo de reemplazo y asesoría legal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Chofer de reemplazo, auto de reemplazo, auxilio mecánico, grúa, ambulancia y asesoría legal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Autoreserva, auto de reemplazo, mecánicos en línea y grúa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[¿Cuál es el costo por cada servicio de auxilio mecánico que Pacífico ofrece a sus asegurados?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Estos servicios no tienen ningún costo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[$ 25 por evento]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Estos servicios son gratuitos las 3 primeras veces.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[¿Cuál de los siguientes servicios está sujeto al pago de un deducible?]]></texto>
+<respuesta>
+<texto><![CDATA[Chofer de reemplazo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Auto de Reemplazo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Auxilio mecánico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[¿Cuántos servicios de chofer de reemplazo gratuitos tiene en la actualidad la póliza de servicio vehicular particular?]]></texto>
+<respuesta>
+<texto><![CDATA[Cuenta con más de 3 servicios a la vigencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuenta con 3 servicios en la vigencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuenta con menos de 3 servicios a la vigencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[¿Cuál es el tiempo máximo en que debe llegar un asesor para un Siniestro Express?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El tiempo máximo es de 15 minutos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El tiempo máximo es de 10 minutos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El tiempo máximo es de 30 minutos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[El servicio de chofer de reemplazo no podrá realizarse bajo ninguna condición cuando:]]></texto>
+<respuesta>
+<texto><![CDATA[El asegurado no se encuentra inhabilitado para conducir.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El asegurado no muestra signos de embriaguez.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El asegurado no está al día en sus pagos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[¿Cuál es el deducible contemplado en el plan vehicular particular en talleres afiliados para unidades de bajo riesgo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El deducible es el 15% del monto del siniestro, mínimo $150.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El deducible es el 10% del monto del siniestro, mínimo $150.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El deducible es el 20% del monto del siniestro, mínimo $200.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[De acuerdo a los tiempos estimados de respuesta de un reclamo, ¿Cuánto tiempo demora la resolución de un reclamo vehicular?]]></texto>
+<respuesta>
+<texto><![CDATA[15 días.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[7 días.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es inmediato.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[¿En base a qué lista se establecen los valores comerciales de una unidad asegurable?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[A la lista de la Asociación Peruana de Empresas de Seguros (APESEG).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A la lista de Pacífico Seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A la lista de la Asociación Mundial de Empresas de Seguros (AMESEG).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las coberturas que ofrece el SOAT?]]></texto>
+<respuesta>
+<texto><![CDATA[Muerte, incapacidad temporal, gastos de sepelio y gastos de curación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Muerte, invalidez, gastos de sepelio, gastos de curación y responsabilidad civil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte, invalidez permanente, incapacidad temporal, gastos de curación y gastos de sepelio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[¿A quiénes cubre el SOAT?]]></texto>
+<respuesta>
+<texto><![CDATA[A todas las personas que sufren lesiones o muerte como consecuencia del accidente de un vehículo automotor y a los terceros afectados en caso de atropello.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Al titular de la póliza que figure en la tarjeta de propiedad y a los terceros afectados en caso de atropello.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[A los ocupantes del vehículo asegurado y a terceros no ocupantes de un vehículo automotor, que sufren lesiones o muerte como consecuencia de un accidente y a los terceros afectados en caso de atropello.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[¿Cuál es el monto fijado en caso de muerte para el SOAT?]]></texto>
+<respuesta>
+<texto><![CDATA[La indemnización en caso de muerte es de 2 UIT (Unidades Impositivas Tributarias)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La indemnización en caso de muerte es de 4 UIT (Unidades Impositivas Tributarias)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La indemnización en caso de muerte es de 10 UIT (Unidades Impositivas Tributarias)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[¿Cuál es el monto fijado para gastos de curación?]]></texto>
+<respuesta>
+<texto><![CDATA[Se contempla una indemnización máxima por concepto de gastos médicos ascendente a 4 UIT]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se contempla una indemnización máxima por concepto de gastos médicos ascendente a 1 UIT]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se contempla una indemnización máxima por concepto de gastos de curación ascendente a 5 UIT]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[¿La cobertura del SOAT es para todos los lesionados por un monto total o por cada uno?]]></texto>
+<respuesta>
+<texto><![CDATA[Cubre los riesgos del contratante del seguro y de terceros no ocupantes de un vehículo automotor.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre los riesgos de ocupantes y terceros no ocupantes dependiendo de la gravedad de las lesiones de cada uno.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre los riesgos por cada una de las personas, ocupante o tercero no ocupante de un vehículo automotor asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[¿Qué pasa si al beneficiario de la póliza SOAT se le agota la cobertura para sus gastos médicos?]]></texto>
+<respuesta>
+<texto><![CDATA[El paciente deberá contratar de inmediato un seguro particular o privado o asumir los gastos por montos mayores a 5 UIT (S/. 18,000), monto máximo de cobertura del seguro SOAT.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El SOAT tiene cobertura para los gastos médicos hasta un máximo de 5 UIT (S/. 18,000) después de ese monto los gastos deben ser cubiertos de manera particular por el paciente o un seguro particular si lo tiene contratado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El paciente podrá aplicar a una cobertura mayor que la máxima otorgada por el SOAT (S/. 18,000), si presenta los documentos requeridos a Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[¿Por cuánto tiempo se puede atender un paciente del SOAT?]]></texto>
+<respuesta>
+<texto><![CDATA[Por un período máximo de 3 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hasta completar su curación o hasta agotar el monto máximo de cobertura por gastos médicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El tiempo dependerá de si el establecimiento es público o privado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[En caso de fallecimiento de una persona, producto de un accidente de tránsito cubierto por el SOAT, en primera instancia, ¿A quién se le debe indemnizar?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cónyuge sobreviviente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Al cónyuge sobreviviente y a los hijos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Al cónyuge sobreviviente y a los familiares directos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[¿Cuáles son algunas excepciones del SOAT?]]></texto>
+<respuesta>
+<texto><![CDATA[Accidentes causados en carreras de autos, descarrilamientos, despistes y sismos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Accidentes causados en carreras de autos, suicidios, despistes, accidentes causados por guerras y sismos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Accidentes causados en carreras de autos, suicidios, accidentes causados por guerras y sismos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[¿En un accidente vehicular, los daños causados a la carga de un vehículo asegurado están cubiertos por la póliza de automóviles?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En algunos casos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[¿La cobertura de Responsabilidad Civil, cubre las lesiones del conductor asegurado?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En algunos casos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[¿La cobertura de gastos de curación se aplica en exceso a la cobertura médica del SOAT?]]></texto>
+<respuesta>
+<texto><![CDATA[Primero se aplica la cobertura de gastos de curación y luego el SOAT.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sólo si la unidad contase con los dos seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sólo si el asegurado lo solicitase.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[¿Cuál es el costo del cuarto servicio de chofer de reemplazo en una póliza vehicular?]]></texto>
+<respuesta>
+<texto><![CDATA[El costo del cuarto servicio es es de $50.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El costo del cuarto servicio es de $25.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El cuarto servicio es gratuito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[¿Qué es el Servicio de Asesoría en Accidentes de Tránsito (SAAT)?]]></texto>
+<respuesta>
+<texto><![CDATA[Servicio que se dedica a la venta del SOAT por Delivery]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Servicio que brinda la asesoría a nuestros clientes cuando ocurre un siniestro vehicular.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Servicio dedicado al Chofer de Reemplazo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_37 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los departamentos de cobertura del servicio SAAT?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Lima, Piura, Chiclayo, Trujillo y Arequipa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lima, Cajamarca, Puno, Trujillo y Cusco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lima, Piura, Chiclayo y Tacna.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_38 -->
+<pregunta> <texto><![CDATA[¿Cuál es el horario del Servicio de Asesoría en Accidentes de Tránsito (SAAT)?]]></texto>
+<respuesta>
+<texto><![CDATA[De Lunes a Viernes en horario de oficina]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Las 24 horas del día y los 365 días del año]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todos los días de 09:00 a 17:00 hrs.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_39 -->
+<pregunta> <texto><![CDATA[¿Qué es un Servicio Express?]]></texto>
+<respuesta>
+<texto><![CDATA[Servicio en el cual llegamos en 30 min. a un siniestro vehicular]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Servicio en el cual nos comprometemos a llegar dentro de los primeros 15 minutos al lugar del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Servicio en el cual brindamos asesoría de siniestros por teléfono mediante la Central de Emergencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_40 -->
+<pregunta> <texto><![CDATA[¿Qué tipo de siniestros es considerado como Express?]]></texto>
+<respuesta>
+<texto><![CDATA[Siniestros por riesgos políticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Siniestros por riesgos de la naturaleza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Siniestros por accidente de tránsito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_41 -->
+<pregunta> <texto><![CDATA[¿Qué condición especial aplica para que un siniestro sea considerado como Express?]]></texto>
+<respuesta>
+<texto><![CDATA[Si el accidente se produjo en estacionamientos, cocheras privadas, sótanos o vías cerradas al libre tránsito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Si el accidente se encuentra dentro de las causales de exclusión de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El conductor, o un ocupante, debe ser quien realice la llamada desde el lugar del accidente e inmediatamente después de ocurrido este, el conductor debe encontrarse en el lugar del siniestro a la llegada del asesor.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_42 -->
+<pregunta> <texto><![CDATA[¿Qué es un Siniestro Fast Track?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es la aprobación inmediata de cobertura que realiza el asesor SAAT al momento de atender un siniestro vehicular.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la evaluación del evento realizada por el ejecutivo de siniestro en forma rápida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la aprobación inmediata que realiza el técnico ajustador en el taller.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_43 -->
+<pregunta> <texto><![CDATA[¿Qué es el Check List del asesor de siniestros?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es una serie de criterios y condiciones que tiene que llenar el asesor SAAT para calificar la aprobación inmediata de cobertura de un siniestro (Fast Track).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un listado de preguntas que sirve al asesor de siniestros para la atención de los servicios Express.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el resumen de la relación de siniestros que atendió durante el día.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_44 -->
+<pregunta> <texto><![CDATA[¿En qué consiste el servicio de SOAT Delivery?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[En entregar a domicilio una póliza SOAT en un plazo máximo de 30 minutos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En entregar a domicilio una póliza SOAT en un plazo máximo de 15 minutos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En entregar en la dirección solicitada una póliza SOAT en un plazo máximo de 25 minutos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_45 -->
+<pregunta> <texto><![CDATA[¿Qué beneficio tiene el cliente cuando el SOAT Delivery llega después de los 30 minutos?]]></texto>
+<respuesta>
+<texto><![CDATA[Se hace acreedor a una póliza vehicular.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El costo del certificado SOAT es gratuito]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se le entrega un bono del $200 dólares]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_46 -->
+<pregunta> <texto><![CDATA[El servicio de asistencia SOAT Delivery 30 minutos o Gratis pertenece al servicio….]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Inmediato]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Programado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Express]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_47 -->
+<pregunta> <texto><![CDATA[¿A qué número deberá llamar para un servicio de SOAT Delivery?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[4151515]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5135000 y 5184000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[4151515 y 5184000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_48 -->
+<pregunta> <texto><![CDATA[¿En qué horario se puede solicitar un SOAT Delivery?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[De 10:00 a 20:00 Hrs]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De 09:00 a 20:00 Hrs]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De 10:00 a 22:00 Hrs]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_49 -->
+<pregunta> <texto><![CDATA[¿Pacífico cuenta con grúas propias?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Si]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[N/A]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_50 -->
+<pregunta> <texto><![CDATA[¿En qué provincias se extiende el servicio de grúas de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo en Lima]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Lima, Arequipa, Trujillo, Chiclayo y Piura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A nivel nacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_51 -->
+<pregunta> <texto><![CDATA[¿Qué pólizas tienen derecho al servicio de grúas?]]></texto>
+<respuesta>
+<texto><![CDATA[Pólizas vehiculares y de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pólizas de seguros de vida y SOAT.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Pólizas de seguros vehiculares únicamente y de asistencia vehicular.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_52 -->
+<pregunta> <texto><![CDATA[¿Qué tipo de servicio realizan las grúas?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Traslado de vehículos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Traslado de vehículos y auxilio mecánico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Auxilio mecánico, rescate y traslado de vehículos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_53 -->
+<pregunta> <texto><![CDATA[¿Cuántas veces se puede tener servicio de grúa?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Ilimitado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo 3 veces al año.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Depende del tipo de producto adquirido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_54 -->
+<pregunta> <texto><![CDATA[¿Qué vehículos acceden al servicio de grúa?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Todos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Motos, autos y camionetas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo autos y camionetas de uso particular]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_55 -->
+<pregunta> <texto><![CDATA[¿En qué consiste el servicio de chofer de reemplazo?]]></texto>
+<respuesta>
+<texto><![CDATA[Servicio por el cual se pone a su disposición un chofer permanente para la conducción de la unidad asegurada durante todo el día.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[En caso de estar indispuesto para conducir tu vehículo, Pacífico envía un chofer para conducirlo hasta su destino.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pacífico envía un chofer que conducirá su vehículo durante una semana.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_56 -->
+<pregunta> <texto><![CDATA[¿Qué pólizas tienen el beneficio de chofer de reemplazo?]]></texto>
+<respuesta>
+<texto><![CDATA[Las pólizas de seguros vehiculares y vida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las pólizas de seguro de salud, vehicular y vida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Solo las pólizas vehiculares todo riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_57 -->
+<pregunta> <texto><![CDATA[¿En Lima, hasta donde se extiende el servicio de chofer de reemplazo por el sur (campaña de verano)?]]></texto>
+<respuesta>
+<texto><![CDATA[Km. 130]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Km. 126]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Km. 140]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_58 -->
+<pregunta> <texto><![CDATA[¿Contando con una póliza vehicular, a cuantos servicios se tiene derecho?]]></texto>
+<respuesta>
+<texto><![CDATA[Ilimitado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5 servicios al mes]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[3 servicios al año]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_59 -->
+<pregunta> <texto><![CDATA[¿En qué ciudades se da el servicio de Chofer de reemplazo?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo en Lima]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lima, Trujillo y Arequipa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Lima, Trujillo, Chiclayo, Piura Y Arequipa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_60 -->
+<pregunta> <texto><![CDATA[¿Qué servicios se ofrecen como Auxilio Mecánico?]]></texto>
+<respuesta>
+<texto><![CDATA[Apertura de puertas, cambio de llanta, reparación de motor y cambio de aceite.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Paso de corriente, desbloqueo de alarmas, cambio de llanta y apertura de puertas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cambio de llantas, apertura de puertas y paso de corriente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_61 -->
+<pregunta> <texto><![CDATA[¿En qué ciudades se brinda el servicio de Auxilio Mecánico?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo en Lima y Trujillo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Lima, Trujillo, Chiclayo, Piura y Arequipa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lima Cajamarca, Trujillo, Ica, Arequipa y Cusco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_62 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los distritos de cobertura en Trujillo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Trujillo, Víctor Larco, Moche y Huanchaco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Trujillo, Bellavista, Laredo, Moche y Huanchaco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Trujillo, La Esperanza, El Milagro, Huanchaco y Moche.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_63 -->
+<pregunta> <texto><![CDATA[Para asegurados de asistencia vehicular el número máximo de atenciones al mes es de:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Ilimitado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[2 veces]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5 veces]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_64 -->
+<pregunta> <texto><![CDATA[Las coberturas geográficas en Lima, por el norte y el sur son:]]></texto>
+<respuesta>
+<texto><![CDATA[Sur hasta el Km. 97, norte hasta el Km. 30]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sur hasta el Km. 127, norte hasta el Km. 48]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sur hasta el Km. 140, norte hasta el Km. 48]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_65 -->
+<pregunta> <texto><![CDATA[¿A qué números se debe solicitar el servicio de Auxilio Mecánico?]]></texto>
+<respuesta>
+<texto><![CDATA[5184000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[4151515]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5135000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_66 -->
+<pregunta> <texto><![CDATA[¿Cuántos servicios corresponden por póliza mensual o anual?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[3 servicios al año]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[3 servicios al mes]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5 servicios al año]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_67 -->
+<pregunta> <texto><![CDATA[¿Qué tipo de servicios se ofrecen en asistencia domiciliaria?]]></texto>
+<respuesta>
+<texto><![CDATA[Gasfitería, cerrajería y vidriero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Gasfitería, cerrajería y electricista.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Gasfitería, cerrajería, electricista y vidriero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_68 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los límites de cobertura?]]></texto>
+<respuesta>
+<texto><![CDATA[No hay límite de cobertura.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sur, San Juan de Miraflores. Norte, Ventanilla. Este, Cieneguilla. Oeste, La Punta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sur, Villa el Salvador. Norte, Ancón. Este, Chaclacayo. Oeste, Callao.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_69 -->
+<pregunta> <texto><![CDATA[¿El servicio de auxilio domiciliario cubre reparaciones de equipos electrónicos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Si.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De emergencias, solo reparaciones menores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_70 -->
+<pregunta> <texto><![CDATA[En los servicios de gasfitería no incluye:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Trabajos de albañilería]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mano de obra]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Traslado del operario al domicilio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_71 -->
+<pregunta> <texto><![CDATA[En los servicios de electricidad no cubre:]]></texto>
+<respuesta>
+<texto><![CDATA[La reparación o cambio de tableros eléctricos, llaves de cuchillas, interruptores, o fusibles dañados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La mano de obra, el traslado del operario y costo de sus materiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cualquier tipo de reparación en áreas comunes o en instalaciones de propiedad de la Empresa de Energía Eléctrica.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_72 -->
+<pregunta> <texto><![CDATA[Una de las exclusiones del servicio de cerrajería es:]]></texto>
+<respuesta>
+<texto><![CDATA[Abrir las cerraduras de las puertas interiores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Apertura, cambio, reposición o reparación de cerraduras de guardarropas, alacenas y similares.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Aperturar la puerta del baño.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_73 -->
+<pregunta> <texto><![CDATA[¿Qué riesgos cubre la cobertura de Daño Propio?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Daños que sufre el vehículo asegurado a consecuencia de accidentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Daños que sufre el vehículo asegurado y todo lo que ocasiona a consecuencia de accidentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todos los anteriores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_74 -->
+<pregunta> <texto><![CDATA[¿Qué es el interés asegurable?]]></texto>
+<respuesta>
+<texto><![CDATA[El interés que te cobra la compañía de seguros por financiar el monto de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La relación que debe existir entre el bien asegurado y el contratante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El bien que la compañía de seguros tiene interés por asegurar.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_75 -->
+<pregunta> <texto><![CDATA[¿Cómo y de qué forma se cubre un siniestro de vehículos por terremoto?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Solo si cuenta con la cobertura de Riesgos de la Naturaleza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si cuenta con la cobertura de Daño Propio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si cuenta con la cobertura de Responsabilidad Civil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_76 -->
+<pregunta> <texto><![CDATA[¿Qué uso debe estar especificado en la póliza, para que a la unidad que esté prestando servicio de taxi se le cubra en caso de Siniestro?]]></texto>
+<respuesta>
+<texto><![CDATA[Particular]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Comercial]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Público]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_77 -->
+<pregunta> <texto><![CDATA[¿La cobertura de Responsabilidad Civil, cubre las lesiones del conductor asegurado?]]></texto>
+<respuesta>
+<texto><![CDATA[Si]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A veces]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_78 -->
+<pregunta> <texto><![CDATA[¿Cuál es el significado de GPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Global Pacífico Seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Global Positioning System]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Global Positioning a Seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_79 -->
+<pregunta> <texto><![CDATA[¿Las infracciones de tránsito están cubiertas bajo la póliza de automóvil?]]></texto>
+<respuesta>
+<texto><![CDATA[Si]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si tiene la cláusula de Ausencia de Control]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_80 -->
+<pregunta> <texto><![CDATA[¿Qué es un Autoreserva?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es un beneficio que te brinda Pacífico según condiciones de la póliza contratada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pacífico te ofrece un auto de reemplazo por un tiempo indeterminado mientras tengas una póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las dos anteriores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_81 -->
+<pregunta> <texto><![CDATA[¿Qué cubre la cobertura de Responsabilidad Civil de ocupantes bajo el seguro de automóviles?]]></texto>
+<respuesta>
+<texto><![CDATA[Cubre las pérdidas materiales de los ocupantes que se encontraban viajando dentro del vehículo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre las lesiones personales ocurridas a los ocupantes que se encontraban viajando dentro del vehículo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre los daños personales ocasionados al chofer de la unidad asegurada]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_82 -->
+<pregunta> <texto><![CDATA[¿A qué llamamos Infraseguro en la póliza de automóviles?]]></texto>
+<respuesta>
+<texto><![CDATA[Es cuando se asegura un vehículo por un ligero monto mayor al valor real para una unidad de las mismas características del mercado para cubrir su depreciación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es cuando se asegura el vehículo por debajo del valor real del mercado para una unidad de las mismas características.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es cuando la unidad asegurada es sobreevaluada en la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_83 -->
+<pregunta> <texto><![CDATA[¿A qué denominamos pérdida total del vehículo?]]></texto>
+<respuesta>
+<texto><![CDATA[Cuando sufre un siniestro y el asegurado no desea que esta sea reparada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuando el valor de la reparación excede el valor comercial de la unidad o el monto asegurado en la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuando la unidad es robada y no aparece.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_84 -->
+<pregunta> <texto><![CDATA[¿Qué cubre la cláusula de alcoholemia?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre la intoxicación alcohólica en un porcentaje mayor al que especifica la póliza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Excluye el estado de embriaguez del asegurado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se usa para cubrir el estado de drogadicción del asegurado al momento del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_85 -->
+<pregunta> <texto><![CDATA[¿Qué cubre la cobertura de Gastos de Curación?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre los gastos médicos incurridos por los ocupantes de un vehículo al ocurrir un siniestro, según cobertura de póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre gastos por ambulancia y otros transportes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo cubre gastos por hospitalización.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_86 -->
+<pregunta> <texto><![CDATA[¿Quién es el técnico automotriz de automóviles?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es aquel profesional que acude al taller a revisar el presupuesto y confirmar que lo que se está incluyendo corresponde al siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es aquel profesional que acude al auxilio mecánico del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es aquel profesional experto en la venta de seguros de automóviles.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_87 -->
+<pregunta> <texto><![CDATA[La cobertura de gastos de curación se aplica en exceso a la cobertura médica del SOAT:]]></texto>
+<respuesta>
+<texto><![CDATA[Solo si son lesiones muy graves]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Solo si el vehículo contase con los dos seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si el asegurado tiene la cobertura compleja en la póliza
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_88 -->
+<pregunta> <texto><![CDATA[Para que el robo de autopartes de un vehículo asegurado tenga cobertura, se indica que tienen que ser partes funcionales y fijas; el robo de las llaves del vehículo, cuando le roban al asegurado caminando por las calles tendrá cobertura:]]></texto>
+<respuesta>
+<texto><![CDATA[Si]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Solo si la póliza lo establece]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_89 -->
+<pregunta> <texto><![CDATA[Si un ocupante del vehículo asegurado sufre lesiones graves, es atendido por la cobertura de Accidentes Personales, queda inválido y es indemnizado por el íntegro de dicha cobertura, luego fallece y sus familiares reclaman la indemnización por muerte, ¿es procedente por la póliza de automóviles?]]></texto>
+<respuesta>
+<texto><![CDATA[Si]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El SOAT se encarga
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_90 -->
+<pregunta> <texto><![CDATA[Cuando el vehículo asegurado en plena vigencia de póliza deja de pertenecer al asegurado y lo vende, traspasa a un nuevo propietario sin avisar a la Compañía y presenta un siniestro, ¿es causal de?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Resolución de póliza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Causal de rechazo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reclamación fraudulenta]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_91 -->
+<pregunta> <texto><![CDATA[La Cobertura de Responsabilidad Civil, solo cubre:]]></texto>
+<respuesta>
+<texto><![CDATA[Daños por lucro cesante de terceros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Daños materiales y lesiones personales a terceros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Daños a terceros indicados en una conciliación o un proceso legal]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_92 -->
+<pregunta> <texto><![CDATA[Si el vehículo asegurado sufre alteración en su estructura, y/o mecanismo y/o uso normal que agrave el riesgo, es causal de:]]></texto>
+<respuesta>
+<texto><![CDATA[Subrogación y rechazo del siniestro]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reclamación fraudulenta]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Resolución de póliza
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_93 -->
+<pregunta> <texto><![CDATA[¿Cuál no es procedimiento del asegurado en la cobertura de Responsabilidad Civil?]]></texto>
+<respuesta>
+<texto><![CDATA[Rechazar cualquier reclamación o responsabilidad que comprometa el interés de la Compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Llegar a arreglos o pactos con terceros sin la autorización de la Compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Impedir que se efectúen procesos judiciales sin la autorización de la Compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_94 -->
+<pregunta> <texto><![CDATA[En Responsabilidad Civil, los daños que ocasiona la carga de un camión a terceros se encuentran:]]></texto>
+<respuesta>
+<texto><![CDATA[Con cobertura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sin cobertura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Debe pagar primero el deducible]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_95 -->
+<pregunta> <texto><![CDATA[El lucro cesante, la pérdida y/o gasto que experimente el asegurado por demora en las reparaciones del vehículo, incluyendo pérdida de garantía, es causal de:]]></texto>
+<respuesta>
+<texto><![CDATA[Cobertura del siniestro por la cobertura de lucro cesante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Exclusión de cobertura.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cobertura por la Responsabilidad Civil Extracontractual.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_96 -->
+<pregunta> <texto><![CDATA[Desperfectos en el sistema del airbag o que hubiesen sido producidos a consecuencia de la activación accidental del airbag, son materia de:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Exclusión del siniestro]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cobertura del siniestro]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Responsabilidad de quien vendió el automóvil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_97 -->
+<pregunta> <texto><![CDATA[No es un deber y/o carga del asegurado:]]></texto>
+<respuesta>
+<texto><![CDATA[Facilitar a las personas autorizadas por la Compañía el acceso al vehículo asegurado para la apreciación del riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Acreditar ante la Compañía la ocurrencia del siniestro y las pérdidas sufridas, aportando la documentación veraz, completa e idónea.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cancelar el importe de los daños y/o pérdidas amparados por la póliza en exceso del deducible y hasta los límites de la suma asegurada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_98 -->
+<pregunta> <texto><![CDATA[Para que proceda la cobertura de un siniestro por daño malicioso, vandalismo y terrorismo, debe existir:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El acto mal intencionado de cualquier persona]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La requisa, captura, arresto, retención, confiscación por parte de la autoridad competente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Insubordinación, levantamiento popular, insurrección.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_99 -->
+<pregunta> <texto><![CDATA[Cuando ocurre un siniestro, el conductor o asegurado tiene que:]]></texto>
+<respuesta>
+<texto><![CDATA[Pagar la prima de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Dar aviso inmediato de la ocurrencia del siniestro a la Compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Llamar a Pacífico y solicitar la grúa para llevar el vehículo al taller que eligió.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_100 -->
+<pregunta> <texto><![CDATA[En el procedimiento al ocurrir un siniestro, si el asegurado denuncia el hecho a la autoridad policial y se somete al dosaje a las tres horas de ocurrido el hecho, pero nos avisa recién al día siguiente:]]></texto>
+<respuesta>
+<texto><![CDATA[Le cubrimos por que el seguro tiene máxima buena fe]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se le cubre porque la póliza tiene ausencia de control]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se rechaza por no avisarnos inmediatamente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_101 -->
+<pregunta> <texto><![CDATA[Si a un asegurado, le están reparando su vehículo en el taller, bajo un siniestro cubierto por la Compañía, y lo chocan dentro del taller:]]></texto>
+<respuesta>
+<texto><![CDATA[No está cubierto, lo asume el taller]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Si está cubierto, lo asume la Compañía]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El asegurado lo soluciona con el taller.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_102 -->
+<pregunta> <texto><![CDATA[Si un cliente tiene 3 accidentes con su vehículo asegurado, dos choques, uno a las 10:30 a.m., el segundo a las 10:40 a.m. y el tercero es un robo parcial de autopartes a las 10:50 a.m., todos el mismo día, se considera:]]></texto>
+<respuesta>
+<texto><![CDATA[Un siniestro y se cobra un solo deducible porque todos los accidentes han sido casi en el mismo lapso de tiempo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Dos siniestros y se cobra dos deducibles, porque dos siniestros son choques y uno es robo parcial de auto partes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Tres siniestros y se cobra tres deducibles, porque son tres accidentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+</data>

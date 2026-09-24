@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+	
+	<opcionPorDefecto tipo="txt" usarCaraImg="si" puntajeCadaPregunta="10" />
+	
+	<!-- pregunta 1 -->
+	<!-- tipo="txt/img" - textos o imagenes. Imagenes cargados desde la capeta con el numero de la pregunta -->
+	<!-- puede sobrescribir el tipo por defecto -->
+	<pregunta tipo="img">
+		<texto><![CDATA[¿Pregunta con imágenes? (Question with images?)]]></texto>
+		<respuesta>
+			<texto><![CDATA[A. Respuesta 1 (Answer 1)]]></texto>
+			<realimentacion><![CDATA[¡Incorrecto! (False!)]]></realimentacion>
+		</respuesta>
+		<respuesta correcta="si">
+			<texto><![CDATA[B. Respuesta 2 (Answer 2)]]></texto>
+			<realimentacion><![CDATA[¡Correcta! (Correct!)]]></realimentacion>
+		</respuesta>
+		<respuesta>
+			<texto><![CDATA[C. Respuesta 3 (Answer 3)]]></texto>
+			<realimentacion><![CDATA[¡Incorrecto! (False!)]]></realimentacion>
+		</respuesta>
+	</pregunta>
+    
+	<!-- pregunta 2 -->
+	<!-- <pregunta tipo="txt"> puede sobrescribir el tipo por defecto -->
+	<pregunta>
+		<texto><![CDATA[¿Pregunta con solo texto? (Question with just text?)]]></texto>
+		<respuesta>
+			<texto><![CDATA[A. Respuesta 1 (Answer 1)]]></texto>
+			<realimentacion><![CDATA[¡Incorrecto! (False!)]]></realimentacion>
+		</respuesta>
+		<respuesta>
+			<texto><![CDATA[B. Respuesta 2 (Answer 2)]]></texto>
+			<realimentacion><![CDATA[¡Incorrecto! (False!)]]></realimentacion>
+		</respuesta>
+		<respuesta correcta="si">
+			<texto><![CDATA[C. Respuesta 3 (Answer 3)]]></texto>
+			<realimentacion><![CDATA[¡Correcta! (Correct!)]]></realimentacion>
+		</respuesta>
+		<respuesta>
+			<texto><![CDATA[D. Respuesta 4 (Answer 4)]]></texto>
+			<realimentacion><![CDATA[¡Incorrecto! (False!)]]></realimentacion>
+		</respuesta>
+	</pregunta>
+    
+</data>

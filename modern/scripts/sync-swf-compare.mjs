@@ -18,7 +18,22 @@ const MAX_BYTES = 80 * 1024 * 1024;
 const sources = JSON.parse(readFileSync(catalogPath, "utf8"));
 
 const ASSET_EXT =
-  /\.(?:swf|xml|jpg|jpeg|png|gif|dae|mp3|wav|flv|json|css|js|html|txt|obj|mtl|atf|csv)(?:$|[?#])/i;
+  /\.(?:swf|xml|jpg|jpeg|png|gif|dae|mp3|wav|flv|json|css|js|html|txt|obj|mtl|atf|csv|pdf|pat|dat)(?:$|[?#])/i;
+
+const SWF_DIR_SEEDS = [
+  "xml/config.xml",
+  "xml/textos.xml",
+  "xml/preguntas.xml",
+  "xml/conexion_prueba.xml",
+  "xml/mapa.xml",
+  "xml/casos.xml",
+  "xml/saber.xml",
+  "swf/assets.swf",
+  "swf/assets_general.swf",
+  "assets/flarConfig.xml",
+  "assets/loading_mc.swf",
+  "flarConfig.xml",
+];
 
 function hostPathFromHref(href, pageUrl) {
   try {
@@ -75,29 +90,70 @@ function findSwfMovies(html, pageUrl) {
   return movies;
 }
 
-function localRefsFromText(text, pageUrl) {
+function dirUrl(path) {
+  const trimmed = path.replace(/[^/]+$/, "");
+  return `${ORIGIN}/${trimmed}`;
+}
+
+function looksLikeAsset(href) {
+  if (!href || href.startsWith("data:") || href.startsWith("mailto:")) {
+    return false;
+  }
+  if (href.startsWith("javascript:") || href.startsWith("#")) {
+    return false;
+  }
+  return ASSET_EXT.test(href) || /^[.A-Za-z0-9_/-]+$/.test(href);
+}
+
+function resolveRef(href, fromPath, swfPath) {
+  if (!looksLikeAsset(href)) {
+    return [];
+  }
+  const bases = [dirUrl(fromPath), dirUrl(swfPath), `${ORIGIN}/`];
+  const paths = new Set();
+  for (const base of bases) {
+    const resolved = hostPathFromHref(href, base);
+    if (resolved) {
+      paths.add(resolved.split("?")[0] ?? resolved);
+    }
+  }
+  if (!ASSET_EXT.test(href)) {
+    for (const extra of [".txt", ".dat", ".pat", ".xml", ".swf"]) {
+      for (const base of bases) {
+        const resolved = hostPathFromHref(`${href}${extra}`, base);
+        if (resolved) {
+          paths.add(resolved.split("?")[0] ?? resolved);
+        }
+      }
+    }
+  }
+  const baseName = href.split("/").pop();
+  if (baseName && ASSET_EXT.test(baseName)) {
+    const swfDir = swfPath.replace(/[^/]+$/, "");
+    paths.add(`${swfDir}assets/${baseName.split("?")[0]}`);
+  }
+  return [...paths];
+}
+
+function refsFromText(text) {
   const found = new Set();
   const patterns = [
-    /(?:href|src)=["']([^"']+)["']/gi,
+    /\b(?:href|src|url|path)=["']([^"']+)["']/gi,
     /url\(["']?([^"')]+)["']?\)/gi,
-    /["']([^"']+\.(?:swf|xml|jpg|jpeg|png|gif|dae|mp3|wav|json|css|js|html|txt|obj|mtl))["']/gi,
+    /["']([^"']+\.(?:swf|xml|jpg|jpeg|png|gif|dae|mp3|wav|json|css|js|html|txt|obj|mtl|atf|pdf|pat|dat|flv))["']/gi,
   ];
   for (const pattern of patterns) {
     for (const match of text.matchAll(pattern)) {
       const href = match[1];
-      if (!href || href.startsWith("data:") || href.startsWith("mailto:")) {
-        continue;
-      }
-      const path = hostPathFromHref(href, pageUrl);
-      if (path && ASSET_EXT.test(path)) {
-        found.add(path.split("?")[0] ?? path);
+      if (looksLikeAsset(href)) {
+        found.add(href.split("?")[0] ?? href);
       }
     }
   }
   return [...found];
 }
 
-function swfAssetPaths(buffer, swfPath) {
+function swfRawRefs(buffer) {
   let payload = buffer;
   const sig = buffer.subarray(0, 3).toString("ascii");
   if (sig === "CWS") {
@@ -109,26 +165,9 @@ function swfAssetPaths(buffer, swfPath) {
   }
   const body = payload.toString("latin1");
   const matches = body.match(
-    /[A-Za-z0-9_./%-]{3,180}\.(?:xml|jpg|jpeg|png|gif|dae|mp3|wav|flv|json|css|swf|txt|html|obj|mtl|atf)/gi,
+    /(?:\.\.\/)?[A-Za-z0-9_./%-]{2,180}\.(?:xml|jpg|jpeg|png|gif|dae|mp3|wav|flv|json|css|swf|txt|html|obj|mtl|atf|pdf|pat|dat)/gi,
   );
-  if (!matches) {
-    return [];
-  }
-  const swfUrl = `${ORIGIN}/${swfPath}`;
-  const paths = new Set();
-  for (const match of matches) {
-    const cleaned = match.replace(/^[./]+/, "./" + match.replace(/^\.?\//, ""));
-    const path = hostPathFromHref(match, swfUrl);
-    if (path && !path.includes("..")) {
-      paths.add(path.split("?")[0] ?? path);
-    } else {
-      const relative = hostPathFromHref(cleaned.startsWith("./") ? cleaned : `./${match}`, swfUrl);
-      if (relative && !relative.includes("..")) {
-        paths.add(relative.split("?")[0] ?? relative);
-      }
-    }
-  }
-  return [...paths];
+  return matches ?? [];
 }
 
 async function fetchBuffer(path) {
@@ -150,19 +189,59 @@ async function savePath(pieceDir, path, buffer) {
   writeFileSync(dest, buffer);
 }
 
-async function downloadInto(pieceDir, path, cache) {
+function enqueue(queue, seen, path) {
   const key = path.split("?")[0] ?? path;
-  if (cache.has(key)) {
-    return cache.get(key);
+  if (!key || seen.has(key) || key.includes("..")) {
+    return;
   }
-  cache.set(key, false);
-  const buffer = await fetchBuffer(key);
-  if (!buffer) {
-    return false;
+  seen.add(key);
+  queue.push(key);
+}
+
+function enqueueRef(queue, seen, href, fromPath, swfPath) {
+  for (const candidate of resolveRef(href, fromPath, swfPath)) {
+    enqueue(queue, seen, candidate);
   }
-  await savePath(pieceDir, key, buffer);
-  cache.set(key, true);
+}
+
+async function ingestPath(pieceDir, path, swfPath, queue, seen, fetched) {
+  const dest = join(pieceDir, path);
+  let buffer;
+  if (existsSync(dest)) {
+    buffer = readFileSync(dest);
+  } else {
+    buffer = await fetchBuffer(path);
+    if (!buffer) {
+      return false;
+    }
+    await savePath(pieceDir, path, buffer);
+    fetched.push(path);
+  }
+  if (/\.swf$/i.test(path)) {
+    for (const ref of swfRawRefs(buffer)) {
+      enqueueRef(queue, seen, ref, path, swfPath);
+    }
+  } else if (/\.(?:html|js|css|xml|txt)$/i.test(path)) {
+    const text = buffer.toString("utf8");
+    for (const ref of refsFromText(text)) {
+      enqueueRef(queue, seen, ref, path, swfPath);
+    }
+    for (const extra of localRefsFromText(text, `${ORIGIN}/${path}`)) {
+      enqueue(queue, seen, extra);
+    }
+  }
   return true;
+}
+
+function localRefsFromText(text, pageUrl) {
+  const found = new Set();
+  for (const href of refsFromText(text)) {
+    const path = hostPathFromHref(href, pageUrl);
+    if (path) {
+      found.add(path.split("?")[0] ?? path);
+    }
+  }
+  return [...found];
 }
 
 function escapeHtml(value) {
@@ -308,46 +387,51 @@ async function syncSource(source, produced) {
         ? source.title
         : `${source.title} (${movie.path.split("/").pop()})`;
     const pieceDir = join(piecesRoot, id);
-    const cache = new Map();
-
-    const swfBuffer = await fetchBuffer(movie.path);
+    const swfDest = join(pieceDir, movie.path);
+    const swfBuffer = existsSync(swfDest)
+      ? readFileSync(swfDest)
+      : await fetchBuffer(movie.path);
     if (!swfBuffer) {
       console.warn(`missing SWF ${movie.path}`);
       continue;
     }
     mkdirSync(pieceDir, { recursive: true });
     await savePath(pieceDir, source.wrapper, wrapperBuf);
-    cache.set(source.wrapper, true);
-    await savePath(pieceDir, movie.path, swfBuffer);
-    cache.set(movie.path, true);
-    const queue = new Set([
-      movie.path,
-      ...localRefsFromText(html, pageUrl),
-    ]);
-    for (const extra of swfAssetPaths(swfBuffer, movie.path)) {
-      queue.add(extra);
+    if (!existsSync(swfDest)) {
+      await savePath(pieceDir, movie.path, swfBuffer);
     }
 
-    for (const path of queue) {
+    const seen = new Set();
+    const queue = [];
+    const fetched = [];
+    enqueue(queue, seen, source.wrapper);
+    enqueue(queue, seen, movie.path);
+    for (const href of refsFromText(html)) {
+      enqueueRef(queue, seen, href, source.wrapper, movie.path);
+    }
+    for (const extra of localRefsFromText(html, pageUrl)) {
+      enqueue(queue, seen, extra);
+    }
+    for (const ref of swfRawRefs(swfBuffer)) {
+      enqueueRef(queue, seen, ref, movie.path, movie.path);
+    }
+    const swfDir = movie.path.replace(/[^/]+$/, "");
+    for (const seed of SWF_DIR_SEEDS) {
+      enqueue(queue, seen, `${swfDir}${seed}`);
+    }
+
+    while (queue.length > 0) {
+      const path = queue.shift();
       if (path === movie.path || path === source.wrapper) {
+        await ingestPath(pieceDir, path, movie.path, queue, seen, fetched);
         continue;
       }
-      const ok = await downloadInto(pieceDir, path, cache);
-      if (!ok) {
-        continue;
-      }
-      if (/\.(?:html|js|css|xml)$/i.test(path)) {
-        const text = readFileSync(join(pieceDir, path), "utf8");
-        for (const nested of localRefsFromText(text, `${ORIGIN}/${path}`)) {
-          if (!cache.has(nested)) {
-            await downloadInto(pieceDir, nested, cache);
-          }
-        }
-      }
+      await ingestPath(pieceDir, path, movie.path, queue, seen, fetched);
     }
 
-    const copied = [...cache.entries()].filter(([, ok]) => ok).length;
-    console.log(`  ${id}: ${movie.path} (+${copied} files)`);
+    console.log(
+      `  ${id}: ${movie.path} (${seen.size} candidates, +${fetched.length} new)`,
+    );
     produced.push({
       id,
       title,

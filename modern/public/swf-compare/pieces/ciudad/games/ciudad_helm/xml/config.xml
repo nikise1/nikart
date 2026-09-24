@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<debug activo="si"/>
+		
+	<ceroDatos activo="no"/>
+		
+	<amanecer hora="6" minutos="30"/>
+	<atardecer hora="18" minutos="0"/>
+		
+	<btns maxNumRetoActive="3"/>
+	
+	<restriccionRonda activo="si"/>
+	
+	<!-- 1 -->
+	<ronda dia="20" mes="2" ano="2012"/>
+	<!-- 2 -->
+	<ronda dia="27" mes="2" ano="2012"/>
+	<!-- 3 -->
+	<ronda dia="5" mes="3" ano="2012"/>
+	<!-- 4 -->
+	<ronda dia="12" mes="3" ano="2012"/>
+	<!-- 5 -->
+	<ronda dia="20" mes="3" ano="2012"/>
+	<!-- 6 -->
+	<ronda dia="26" mes="3" ano="2012"/>
+	<!-- 7 -->
+	<ronda dia="2" mes="4" ano="2012"/>
+	<!-- 8 -->
+	<ronda dia="9" mes="4" ano="2012"/>
+	<!-- 9 -->
+	<ronda dia="16" mes="4" ano="2012"/>
+	<!-- 10 -->
+	<ronda dia="23" mes="4" ano="2012"/>
+	<!-- 11 -->
+	<ronda dia="30" mes="4" ano="2012"/>
+	
+	<archivos>
+		<texto KB="4"/>
+		<mapa KB="12"/>
+		<casos KB="61"/>
+		<saber KB="12"/>
+		<assets KB="950"/>
+	</archivos>
+	
+	<carpeta img="img" swf="swf"/>
+	<img startReto="c" startSaber="s" term=".jpg" fin="fin_del_juego.jpg"/>
+	<actividades carpeta="actividades" nombre="actividad" term=".swf"/>
+	<condiciones path="docs/tabla_condiciones.pdf"/>
+	
+	<frame dia="dia" noche="noche"/>
+</config>
