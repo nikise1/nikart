@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<rtwc>
+    <translations>
+        <copyno><![CDATA[Where in the world?]]></copyno>
+        <copy><![CDATA[WHERE IN
+THE WORLD?]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Leaderboard]]></copyno>
+        <copy><![CDATA[Leaderboard]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Leaderboard_expired]]></copyno>
+        <copy><![CDATA[Leaderboard (expired)]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Instructions]]></copyno>
+        <copy><![CDATA[Instructions]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Play Now]]></copyno>
+        <copy><![CDATA[Play Now]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Back]]></copyno>
+        <copy><![CDATA[Back]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Proceed]]></copyno>
+        <copy><![CDATA[Proceed]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Next]]></copyno>
+        <copy><![CDATA[Next]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Name]]></copyno>
+        <copy><![CDATA[Name]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Level]]></copyno>
+        <copy><![CDATA[Level]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Time]]></copyno>
+        <copy><![CDATA[Time]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Score]]></copyno>
+        <copy><![CDATA[Score]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Instructions_body]]></copyno>
+        <copy><![CDATA[The aim of the Where in the World game is to place the cities within the countries as fast as you can. There are 10 levels in total that get harder as you progress. 
+
+When the timer starts, simply drag the cities into the correct empty squares on the map. When you have them correctly in place, click the proceed button. Hurry though! If the timer runs out then it’s game over.
+
+Once you have gone as far as you can, you can post your score to facebook, view the leaderboard or try again.]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Good luck!]]></copyno>
+        <copy><![CDATA[Good luck!]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Time remaining]]></copyno>
+        <copy><![CDATA[Time remaining]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Drag the cities]]></copyno>
+        <copy><![CDATA[Drag the cities to the
+right places on the map]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Portugal]]></copyno>
+        <copy><![CDATA[Portugal]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Porto]]></copyno>
+        <copy><![CDATA[Porto]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Lisbon]]></copyno>
+        <copy><![CDATA[Lisbon]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Spain]]></copyno>
+        <copy><![CDATA[Spain]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Madrid]]></copyno>
+        <copy><![CDATA[Madrid]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Barcelona]]></copyno>
+        <copy><![CDATA[Barcelona]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Valencia]]></copyno>
+        <copy><![CDATA[Valencia]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[France]]></copyno>
+        <copy><![CDATA[France]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Paris]]></copyno>
+        <copy><![CDATA[Paris]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Marseille]]></copyno>
+        <copy><![CDATA[Marseille]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Toulouse]]></copyno>
+        <copy><![CDATA[Toulouse]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[UnitedKingdom]]></copyno>
+        <copy><![CDATA[United Kingdom]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[London]]></copyno>
+        <copy><![CDATA[London]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Birmingham]]></copyno>
+        <copy><![CDATA[Birmingham]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Manchester]]></copyno>
+        <copy><![CDATA[Manchester]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Germany]]></copyno>
+        <copy><![CDATA[Germany]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Berlin]]></copyno>
+        <copy><![CDATA[Berlin]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Hannover]]></copyno>
+        <copy><![CDATA[Hannover]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Stuttgart]]></copyno>
+        <copy><![CDATA[Stuttgart]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Munich]]></copyno>
+        <copy><![CDATA[Munich]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Italy]]></copyno>
+        <copy><![CDATA[Italy]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Milan]]></copyno>
+        <copy><![CDATA[Milan]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Rome]]></copyno>
+        <copy><![CDATA[Rome]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Naples]]></copyno>
+        <copy><![CDATA[Naples]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Venice]]></copyno>
+        <copy><![CDATA[Venice]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[USA]]></copyno>
+        <copy><![CDATA[USA]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[NewYork]]></copyno>
+        <copy><![CDATA[New York]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[LasVegas]]></copyno>
+        <copy><![CDATA[Las Vegas]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Chicago]]></copyno>
+        <copy><![CDATA[Chicago]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Miami]]></copyno>
+        <copy><![CDATA[Miami]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Canada]]></copyno>
+        <copy><![CDATA[Canada]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Calgary]]></copyno>
+        <copy><![CDATA[Calgary]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Montreal]]></copyno>
+        <copy><![CDATA[Montreal]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Ottawa]]></copyno>
+        <copy><![CDATA[Ottawa]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Toronto]]></copyno>
+        <copy><![CDATA[Toronto]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Vancouver]]></copyno>
+        <copy><![CDATA[Vancouver]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Norway]]></copyno>
+        <copy><![CDATA[Norway]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Oslo]]></copyno>
+        <copy><![CDATA[Oslo]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Bergen]]></copyno>
+        <copy><![CDATA[Bergen]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Trondheim]]></copyno>
+        <copy><![CDATA[Trondheim]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Stavanger]]></copyno>
+        <copy><![CDATA[Stavanger]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Drammen]]></copyno>
+        <copy><![CDATA[Drammen]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Greece]]></copyno>
+        <copy><![CDATA[Greece]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Athens]]></copyno>
+        <copy><![CDATA[Athens]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Thessaloniki]]></copyno>
+        <copy><![CDATA[Thessaloniki]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Patrai]]></copyno>
+        <copy><![CDATA[Patrai]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Iraklion]]></copyno>
+        <copy><![CDATA[Iraklion]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Larissa]]></copyno>
+        <copy><![CDATA[Larissa]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Sorry...]]></copyno>
+        <copy><![CDATA[Sorry...]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Time's up!]]></copyno>
+        <copy><![CDATA[Time's up!]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Congratulations!]]></copyno>
+        <copy><![CDATA[Congratulations!]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Submit to Facebook]]></copyno>
+        <copy><![CDATA[Submit to Facebook]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[Can you do better?]]></copyno>
+        <copy><![CDATA[Can you do better?]]></copy>
+    </translations>
+    
+    
+    <!-- These compound sentences replace the previous translations. ActionScript will find and replace the codes in square brackets -->
+    <translations>
+        <copyno><![CDATA[You scored [number_correct]]]></copyno>
+        <copy><![CDATA[You scored [number_correct] out of [number_total] correct]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[[name_of_player] scored]]></copyno>
+        <copy><![CDATA[[name_of_player] scored [number_correct] out of [number_total] correct]]></copy>
+    </translations>
+    <translations>
+        <copyno><![CDATA[in [minutes] minutes]]></copyno>
+        <copy><![CDATA[in [minutes] minutes, [seconds] seconds]]></copy>
+    </translations>
+</rtwc>
