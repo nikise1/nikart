@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	
+    <LoaderMax name="queue1" prependURLs="" load="true">
+    
+        <XMLLoader url="xml/config.xml" name="config" />
+        
+        <SWFLoader url="swf/assets.swf" name="assets" />
+        
+        <SWFLoader url="swf/sounds.swf" name="sounds" />
+        
+    </LoaderMax>
+    
+</data>
