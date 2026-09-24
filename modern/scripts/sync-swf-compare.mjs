@@ -2,6 +2,7 @@ import { inflateSync } from "node:zlib";
 import {
   existsSync,
   mkdirSync,
+  readdirSync,
   readFileSync,
   writeFileSync,
 } from "node:fs";
@@ -267,6 +268,75 @@ function enqueueXmlDerived(text, swfPath, queue, seen) {
   }
 }
 
+function walkFiles(dir, acc = []) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      walkFiles(full, acc);
+    } else {
+      acc.push(full);
+    }
+  }
+  return acc;
+}
+
+function aliasDaeTextures(pieceDir) {
+  if (!existsSync(pieceDir)) {
+    return;
+  }
+  for (const file of walkFiles(pieceDir)) {
+    if (!/\.(?:dae|mtl)$/i.test(file)) {
+      continue;
+    }
+    const fromPath = file.slice(pieceDir.length + 1).replaceAll("\\", "/");
+    const fromDir = fromPath.replace(/[^/]+$/, "");
+    const text = readFileSync(file, "utf8");
+    const hits = [
+      ...text.matchAll(/<init_from>\s*([^<]+)\s*<\/init_from>/gi),
+      ...text.matchAll(/^[ \t]*map_Kd[ \t]+(\S+)/gim),
+    ];
+    for (const match of hits) {
+      const href = match[1].trim();
+      const baseName = href.split("/").pop()?.split("?")[0];
+      if (!href || href.startsWith("file:") || !baseName) {
+        continue;
+      }
+      const sibling = join(pieceDir, fromDir, baseName);
+      if (!existsSync(sibling)) {
+        continue;
+      }
+      let resolved;
+      try {
+        resolved = decodeURIComponent(
+          new URL(href, `http://local/${fromPath}`).pathname.replace(/^\//, ""),
+        );
+      } catch {
+        continue;
+      }
+      if (!resolved || resolved.includes("..")) {
+        continue;
+      }
+      const dests = new Set([resolved, `${fromDir}${baseName}`]);
+      const parentDir = fromDir.replace(/[^/]+\/$/, "");
+      if (parentDir && parentDir !== fromDir) {
+        dests.add(`${parentDir}meshes/${baseName}`);
+      }
+      const buffer = readFileSync(sibling);
+      for (const rel of dests) {
+        if (!rel || rel.includes("..")) {
+          continue;
+        }
+        const dest = join(pieceDir, rel);
+        if (existsSync(dest)) {
+          continue;
+        }
+        mkdirSync(dirname(dest), { recursive: true });
+        writeFileSync(dest, buffer);
+      }
+    }
+  }
+}
+
 function enqueueTextureRefs(text, fromPath, swfPath, queue, seen) {
   const hits = [
     ...text.matchAll(/<init_from>\s*([^<]+)\s*<\/init_from>/gi),
@@ -520,6 +590,8 @@ async function syncSource(source, produced) {
       }
       await ingestPath(pieceDir, path, movie.path, queue, seen, fetched);
     }
+
+    aliasDaeTextures(pieceDir);
 
     console.log(
       `  ${id}: ${movie.path} (${seen.size} candidates, +${fetched.length} new)`,
