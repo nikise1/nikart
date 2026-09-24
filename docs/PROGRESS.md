@@ -208,6 +208,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Load compare-kit movies from `static.nikart.co.uk` through `/static` so child files come from the origin (2026-09-24)
 - [x] Proxy `/static` with a Node route handler so Vercel preview can fetch the HTTP origin (2026-09-24)
 - [x] Drop the `next.config` `/static` rewrite so Vercel cannot bypass the Node proxy (HTTPS preview was still blank) (2026-09-24)
+- [x] Switch compare-kit movies back to `/swf-compare/pieces/{id}/` copies after the origin `/static` proxy still failed on Vercel (2026-09-24)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

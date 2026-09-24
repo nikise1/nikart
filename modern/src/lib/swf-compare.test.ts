@@ -2,8 +2,8 @@ import { describe, it, expect } from "vitest";
 import {
   compareHrefForItem,
   compareHrefForSource,
+  pieceMovieUrl,
   piecePageHref,
-  staticMovieUrl,
 } from "./swf-compare";
 
 describe("swf-compare", () => {
@@ -30,15 +30,18 @@ describe("swf-compare", () => {
     expect(compareHrefForSource("http://onedayinmay.co.uk")).toBeNull();
   });
 
-  it("maps movie paths onto the /static origin proxy", () => {
-    expect(staticMovieUrl("games/ciudad_helm/Main.swf")).toBe(
-      "/static/games/ciudad_helm/Main.swf",
+  it("maps movie paths onto the local /swf-compare/pieces/ copies", () => {
+    expect(pieceMovieUrl("ciudad", "games/ciudad_helm/Main.swf")).toBe(
+      "/swf-compare/pieces/ciudad/games/ciudad_helm/Main.swf",
     );
-    expect(staticMovieUrl("/static/games/weeds/weeds.swf")).toBe(
-      "/static/games/weeds/weeds.swf",
+    expect(pieceMovieUrl("weeds", "/static/games/weeds/weeds.swf")).toBe(
+      "/swf-compare/pieces/weeds/games/weeds/weeds.swf",
     );
     expect(
-      staticMovieUrl("http://static.nikart.co.uk/websites/claro/swf/claro.swf"),
-    ).toBe("/static/websites/claro/swf/claro.swf");
+      pieceMovieUrl(
+        "claro",
+        "http://static.nikart.co.uk/websites/claro/swf/claro.swf",
+      ),
+    ).toBe("/swf-compare/pieces/claro/websites/claro/swf/claro.swf");
   });
 });
