@@ -18,6 +18,21 @@ export function piecePageHref(id: string): string {
   return `/swf-compare/pieces/${id}/index.html`;
 }
 
+/** Same-origin movie URL. Ruffle/AwayFL load this so child files hit `/static` → origin. */
+export function staticMovieUrl(swfPath: string): string {
+  const trimmed = swfPath.trim();
+  if (!trimmed) {
+    return "/static/";
+  }
+  if (trimmed.startsWith("/static/")) {
+    return trimmed;
+  }
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+    return toProxiedStaticUrl(trimmed) ?? trimmed;
+  }
+  return `/static/${trimmed.replace(/^\.\//, "").replace(/^\//, "")}`;
+}
+
 export function compareIndexHref(hash?: string): string {
   return hash ? `/swf-compare/index.html#${hash}` : "/swf-compare/index.html";
 }
