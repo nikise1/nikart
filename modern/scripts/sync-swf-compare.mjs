@@ -38,6 +38,9 @@ const SWF_DIR_SEEDS = [
   "assets/flarConfig.xml",
   "assets/loading_mc.swf",
   "flarConfig.xml",
+  "img/fin_del_juego.jpg",
+  "images/get_flash_player.gif",
+  "assets/logo_flash_player.jpg",
 ];
 
 function hostPathFromHref(href, pageUrl) {
@@ -123,7 +126,7 @@ function resolveRef(href, fromPath, swfPath) {
     }
   }
   if (!ASSET_EXT.test(href)) {
-    for (const extra of [".txt", ".dat", ".pat", ".xml", ".swf"]) {
+    for (const extra of [".txt", ".dat", ".pat", ".xml", ".swf", ".jpg", ".png", ".gif"]) {
       for (const base of bases) {
         const resolved = hostPathFromHref(`${href}${extra}`, base);
         if (resolved) {
@@ -209,6 +212,82 @@ function enqueueRef(queue, seen, href, fromPath, swfPath) {
   }
 }
 
+function xmlAttr(tag, name) {
+  return tag.match(new RegExp(`\\b${name}="([^"]*)"`, "i"))?.[1];
+}
+
+function enqueueXmlDerived(text, swfPath, queue, seen) {
+  const swfDir = swfPath.replace(/[^/]+$/, "");
+  const carpeta = text.match(/<carpeta\b([^>]*)\/?>/i)?.[1] ?? "";
+  const imgFolder = xmlAttr(carpeta, "img") || "img";
+  const imgTag = text.match(/<img\b([^>]*)\/?>/i)?.[1] ?? "";
+  const term = xmlAttr(imgTag, "term") || ".jpg";
+  const fin = xmlAttr(imgTag, "fin");
+  const startReto = xmlAttr(imgTag, "startReto");
+  const startSaber = xmlAttr(imgTag, "startSaber");
+  if (fin) {
+    enqueue(queue, seen, `${swfDir}${imgFolder}/${fin}`);
+  }
+  if (startReto) {
+    for (let n = 1; n <= 40; n += 1) {
+      enqueue(queue, seen, `${swfDir}${imgFolder}/${startReto}${n}${term}`);
+    }
+  }
+  if (startSaber) {
+    for (let n = 1; n <= 12; n += 1) {
+      enqueue(queue, seen, `${swfDir}${imgFolder}/${startSaber}${n}${term}`);
+    }
+  }
+  for (const match of text.matchAll(/<escenario\b([^>]*)>/gi)) {
+    const folder = xmlAttr(match[1], "carpeta");
+    if (!folder || !startReto) {
+      continue;
+    }
+    for (let n = 1; n <= 12; n += 1) {
+      enqueue(
+        queue,
+        seen,
+        `${swfDir}${folder}/${imgFolder}/${startReto}${n}${term}`,
+      );
+    }
+  }
+  const extTag = text.match(/<extension\b([^>]*)\/?>/i)?.[1] ?? "";
+  const imgExt = xmlAttr(extTag, "img") || ".jpg";
+  const preguntas = [...text.matchAll(/<pregunta\b/gi)];
+  if (
+    preguntas.length > 0 &&
+    (/tipo="img"/i.test(text) || /<extension\b[^>]*\bimg=/i.test(text))
+  ) {
+    preguntas.forEach((_, index) => {
+      const n = index + 1;
+      for (let j = 0; j <= 8; j += 1) {
+        enqueue(queue, seen, `${swfDir}img/p_${n}/${j}${imgExt}`);
+      }
+    });
+  }
+}
+
+function enqueueTextureRefs(text, fromPath, swfPath, queue, seen) {
+  const hits = [
+    ...text.matchAll(/<init_from>\s*([^<]+)\s*<\/init_from>/gi),
+    ...text.matchAll(/^[ \t]*map_Kd[ \t]+(\S+)/gim),
+  ];
+  const fromDir = fromPath.replace(/[^/]+$/, "");
+  const swfDir = swfPath.replace(/[^/]+$/, "");
+  for (const match of hits) {
+    const href = match[1].trim();
+    if (!href || href.startsWith("file:")) {
+      continue;
+    }
+    enqueueRef(queue, seen, href, fromPath, swfPath);
+    const baseName = href.split("/").pop()?.split("?")[0];
+    if (baseName && ASSET_EXT.test(baseName)) {
+      enqueue(queue, seen, `${fromDir}${baseName}`);
+      enqueue(queue, seen, `${swfDir}assets/${baseName}`);
+    }
+  }
+}
+
 async function ingestPath(pieceDir, path, swfPath, queue, seen, fetched) {
   const dest = join(pieceDir, path);
   let buffer;
@@ -226,13 +305,19 @@ async function ingestPath(pieceDir, path, swfPath, queue, seen, fetched) {
     for (const ref of swfRawRefs(buffer)) {
       enqueueRef(queue, seen, ref, path, swfPath);
     }
-  } else if (/\.(?:html|js|css|xml|txt)$/i.test(path)) {
+  } else if (/\.(?:html|js|css|xml|txt|dae|mtl)$/i.test(path)) {
     const text = buffer.toString("utf8");
     for (const ref of refsFromText(text)) {
       enqueueRef(queue, seen, ref, path, swfPath);
     }
     for (const extra of localRefsFromText(text, `${ORIGIN}/${path}`)) {
       enqueue(queue, seen, extra);
+    }
+    if (/\.xml$/i.test(path)) {
+      enqueueXmlDerived(text, swfPath, queue, seen);
+    }
+    if (/\.(?:dae|mtl)$/i.test(path)) {
+      enqueueTextureRefs(text, path, swfPath, queue, seen);
     }
   }
   return true;
@@ -421,8 +506,10 @@ async function syncSource(source, produced) {
       enqueueRef(queue, seen, ref, movie.path, movie.path);
     }
     const swfDir = movie.path.replace(/[^/]+$/, "");
+    const wrapperDir = source.wrapper.replace(/[^/]+$/, "");
     for (const seed of SWF_DIR_SEEDS) {
       enqueue(queue, seen, `${swfDir}${seed}`);
+      enqueue(queue, seen, `${wrapperDir}${seed}`);
     }
 
     while (queue.length > 0) {
