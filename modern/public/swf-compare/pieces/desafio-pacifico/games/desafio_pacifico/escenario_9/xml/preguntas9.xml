@@ -1,0 +1,699 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validador.xsd">
+
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[Agente]]></texto>
+<respuesta>
+<texto><![CDATA[Personal de la compañía de seguros responsable por la administración del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Personal de la compañía de seguros que la representa en el asesoramiento y venta de los productos y servicios de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Persona natural o jurídica, externa a la compañía, que la representa en el asesoramiento y venta de los productos y servicios de seguros. Actúa como intermediario entre la compañía de seguros y el asegurado final, percibiendo una comisión por las ventas realizadas. No representan a una aseguradora con exclusividad, y puede ofrecer productos de diferentes compañías. Debe estar registrado como corredor en la SBS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[Afiliado]]></texto>
+<respuesta>
+<texto><![CDATA[Persona designada en la póliza por el asegurado o contratante como titular de los derechos indemnizatorios que en dicho documento se establecen.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Persona natural que tiene derecho a cobertura bajo un plan de salud EPS. Es un rol del cliente.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Persona Natural o Jurídica comprometida por condición de un contrato a realizar desembolsos de dinero para cubrir un monto establecido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cliente que celebra o suscribe con una entidad aseguradora un contrato de seguro y se obliga al pago de la prima.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[Ajustador de Siniestros]]></texto>
+<respuesta>
+<texto><![CDATA[Claim Representative. Persona jurídica que se encarga del manejo y administración de cada uno de los siniestros sobre una póliza de seguros. Sus funciones incluyen solo recopilar y solucionar controversias Tiene autoridad limitada establecida ya sea por contrato, por jerarquía o por tipo de negocio. Hay tres tipos de ajustadores: 
+Externo: Persona jurídica calificada y autorizada por la Superintendencia de Banca y Seguros y autorizada para ejercer dicho cargo.
+Interno: Personal de la compañía de seguros responsable por la administración del siniestro.
+Exterior: persona juridica que radica en el exterior.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Claim Representative. Persona natural o jurídica que se encarga del manejo y administración de cada uno de los siniestros sobre una póliza de seguros. Sus funciones incluyen: recopilar información, validar la cobertura, solucionar controversias y establecer el monto justo de las pérdidas imputables a la póliza. Tiene autoridad limitada establecida ya sea por contrato, por jerarquía o por tipo de negocio. Hay dos tipos de ajustadores: 
+Externo: Persona jurídica calificada y autorizada por la Superintendencia de Banca y Seguros y autorizada para ejercer dicho cargo.
+Interno: Personal de la compañía de seguros responsable por la administración del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Claim Representative. Persona natural que se encarga del manejo y administración de cada uno de los siniestros sobre una póliza de seguros. Sus funciones incluyen solo recopilar información, validar la cobertura, solucionar controversias.Tiene autoridad limitada establecida ya sea por contrato, por jerarquía o por tipo de negocio. Solo hay un tipo de ajustador: Externo: Persona jurídica calificada y autorizada por la Superintendencia de Banca y Seguros y autorizada para ejercer dicho cargo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[Asegurado]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Claimant. Rol del cliente para el cual sus bienes o intereses económicos se encuentran expuestos al riesgo, y a su favor se extiende la póliza de Seguro (para planes de salud EPS este rol se denomina afiliado). Su personalidad puede o no coincidir con la del beneficiario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Claimant. Rol del cliente para el cual sus bienes que se encuentran expuestos al riesgo, y a su favor se extiende la póliza de Seguro (para planes de salud EPS este rol tambien se denomina asegurado). Su personalidad coincide con la del beneficiario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Claimant. Rol del cliente para el cual sus bienes o intereses económicos se encuentran expuestos al riesgo, y a su favor se extiende la póliza de Seguro (para planes de salud EPS este rol se denomina beneficiario). Su personalidad no coincide con la del beneficiario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[Beneficiario]]></texto>
+<respuesta>
+<texto><![CDATA[Rol del cliente para el cual sus bienes o intereses económicos se encuentran expuestos al riesgo, y a su favor se extiende la póliza de Seguro.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Persona designada en la póliza por el asegurado o contratante como titular de los derechos indemnizatorios que en dicho documento se establecen. 
+Su designación puede ser expresa o tácita, y generalmente de libre nombramiento, aunque es práctica normal que exista algún vínculo común de intereses personales, familiares o económicos con el asegurado o contratante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Rol del acreedor para el cual sus bienes o intereses económicos se encuentran expuestos al riesgo, y a su favor se extiende la póliza de Seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[Calificación Reasegurador]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Nota y/o apreciación financiera y de solvencia que se le otorga al reasegurador según las agencias calificadoras. Esto permite identificar cuales reaseguradores cumplen con las exigencias definidas por la SBS y la Gerencia Integral de Riesgos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Nota financiera y de solvencia que se le otorga al reasegurador según las agencias calificadoras. Esto permite identificar cuales reaseguradores cumplen con las exigencias definidas solo por la Gerencia Integral de Riesgos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Apreciación financiera y de solvencia que se le otorga al reasegurador según las agencias calificadoras. Esto permite identificar cuales reaseguradores cumplen con las exigencias definidas solo por la SBS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[Canal]]></texto>
+<respuesta>
+<texto><![CDATA[Distribution system. Es aquel medio que pone a disposicion la compañía de seguros para el contacto físico o virtual con los usuarios de la para solicitar u obtener un servicio. Los canales conforman una jerarquía que presenta tres niveles: I) Compañía, II) Canal de Distribución y III)) Canal propiamente dicho, el cual puede ser asumido por un grupo comercial 
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Distribution system. Es aquel medio usado por la compañía de seguros para transferir sus productos y servicios al cliente final. Estos canales pueden asumen el rol de venta y entrega. Los canales conforman una jerarquía que presenta cuatro niveles: I) Compañía, II) Canal de Distribución, III) Grupo de Canales, y IV) Canal propiamente dicho, el cual puede ser asumido por un grupo comercial 
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+
+Distribution system. Es aquel medio usado por la compañía de seguros para llevar o transferir sus productos y servicios al cliente final. Estos canales pueden asumir diferentes roles como venta, entrega, servicios, entre otros. Un canal puede tener varios roles a la vez; por ejemplo la plataforma distribuye pólizas, las vende y da servicios a los clientes. Los canales conforman una jerarquía que presenta cuatro niveles: I) Compañía, II) Canal de Distribución, III) Grupo de Canales, y IV) Canal propiamente dicho, el cual puede ser asumido por un grupo comercial (Nivel IV en la política de gestión canales) o un agente (Nivel V en la política de gestión canales).
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_8 -->
+<pregunta> <texto><![CDATA[Canal de Servicio]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Medio de contacto físico o virtual que utilizan los usuarios con la compañía de seguros para solicitar u obtener un servicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Medio de contacto virtual que utilizan los usuarios con la compañía de seguros para solicitar u obtener un servicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es aquel medio usado por la compañía de seguros para llevar o transferir sus productos y servicios al cliente final.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[Categoría de Vehículo]]></texto>
+<respuesta>
+<texto><![CDATA[Clasificación conformada a partir de la clase, modelo y marca del automóvil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Clasificación conformada a partir de la clase, uso, modelo y marca del automóvil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Clasificación conformada a partir del uso, modelo y marca del automóvil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[Causa Siniestro]]></texto>
+<respuesta>
+<texto><![CDATA[Cause of loss (peril). Es el que llevo a cabo el siniestro. Estos pueden variar según la línea de negocio, pero hay lineas que son iguales. Se detalla en las condiciones técnicas de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cause of loss (peril). Es el que llevo a cabo el hecho fortuito o siniestro. Estos no varian según la línea de negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cause of loss (peril). Razón o motivo por la cual sucedió el siniestro o hecho fortuito. Estos pueden variar según la línea de negocio y se detalla en las condiciones técnicas de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[Certificado]]></texto>
+<respuesta>
+<texto><![CDATA[Contract of adhesion. Es el certificado asociado a una póliza suscrita por un cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Contract of adhesion. Evidencia de la cobertura dada sobre un bien, persona o grupo a través de una póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Contract of adhesion. Es el certificado asociado a una póliza renovable en el período.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[Cliente]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Persona natural o jurídica que establece una relación con la compañía de seguros y que puede asumir uno o varios de los siguientes roles: contratante, asegurado, afiliado, beneficiario y pagante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Persona natural o jurídica que adquiere por primera vez, al menos un producto durante un período determinado de medición. Excluye a los clientes recuperados. Se mide a nivel de Pacifico Seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Persona natural que adquiere un producto durante durante durante un período determinado de medición.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[Coaseguros]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Coinsurance. Sistema de seguros por el cual se comparte el riesgo entre varias aseguradoras, recibiendo cada uno una parte determinada de la prima y respondiendo proporcionalmente en el pago de cualquier demanda o siniestro que surja. 
+En los seguros de salud, generalmente el asegurado y la compañía de seguros comparten proporcionalmente los gastos relacionados a un servicio después de aplicar el deducible correspondiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la transferencia del riesgo asumido por la empresa de seguros mediante un contrato, donde el asegurador directo es el único obligado con respecto al asegurado o tomador de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sistema de seguros por el cual se comparte el riesgo entre varias aseguradoras, donde una de ellas es la única obligada con respecto al asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[Cobertura]]></texto>
+<respuesta>
+<texto><![CDATA[Coverage. Alcance de la protección acordada bajo un contrato de seguros. Describe las circunstancias en una póliza de seguro bajo las cuales el beneficio puede o no puede ser otorgado. Algunas aplicaciones de este concepto en las líneas de negocio son las siguientes: En seguros de propiedad engloba los peligros y lugares involucrados, actividades y bienes asegurados, En seguros de vida incluye beneficios de muerte. En seguros de salud engloba atenciones ambulatorias y riesgos especiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Coverage. Alcance de la protección o indemnización acordada bajo un contrato de seguros. Describe las circunstancias en una póliza de seguro bajo las cuales un beneficio es otorgado. Algunas aplicaciones de este concepto en las líneas de negocio son las siguientes: En seguros de propiedad engloba los peligros, objetos, lugares involucrados, beneficios, actividades y bienes asegurados, En seguros de vida incluye beneficios de vida y muerte. En seguros de salud engloba atenciones ambulatorias, atenciones hospitalarias y riesgos especiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Coverage. Alcance de indemnización acordada bajo un contrato de seguros. Describe las circunstancias en una póliza de seguro no otorga el beneficio. Algunas aplicaciones de este concepto en las líneas de negocio son las siguientes: En seguros de propiedad engloba los peligros, objetos, bienes asegurados, En seguros de vida incluye beneficios de vida y muerte. En seguros de salud engloba atenciones hospitalarias y riesgos especiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[Comisión]]></texto>
+<respuesta>
+<texto><![CDATA[Commission. Remuneración que el reasegurador abona a la compañía de seguros, por los gastos de adquisición y de administración del negocio de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Commission. Cantidad que es pagada por la aseguradora a un intermediario como compensación por la venta de productos o prestación de servicios a la aseguradora. Los agentes y corredores de seguros suelen ser compensados al otorgarse un determinado porcentaje de las primas que producen.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Commission. Son aquellos gastos producto de las asesorías brindadas por quienes participan activamente en la venta (producción de primas).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[Contratante]]></texto>
+<respuesta>
+<texto><![CDATA[Original contractholder. Rol del cliente (jurídico) que celebra o suscribe con una entidad aseguradora un contrato de seguro y se obliga al pago de la prima. Su personalidad no coincide con la del asegurado. Solo el contratante puede solicitar modificaciones a la póliza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Original contractholder. Rol del cliente (natural) que celebra o suscribe con una entidad aseguradora un contrato de seguro y se obliga al pago de la prima. Su personalidad coincide con la del asegurado. Solo el contratante puede solicitar modificaciones a la póliza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Original contractholder. Rol del cliente (natural o jurídico) que celebra o suscribe con una entidad aseguradora un contrato de seguro y se obliga al pago de la prima. Su personalidad puede o no coincidir con la del asegurado. Solo el contratante puede solicitar modificaciones a la póliza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[Contrato Catastrófico]]></texto>
+<respuesta>
+<texto><![CDATA[Contrato que presenta pérdidas producidas por eventos catastróficos que pueden ser generados por la propia naturaleza (terremotos, huracanes, maremotos), o tambien generados por el hombre y que no estan controlados y por lo tanto afectan varios riesgos del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Contrato que presenta pérdidas producidas por eventos catastróficos, solo aquellos generados por la propia naturaleza (terremotos, huracanes, maremotos), perfectamente localizado y controlado (incendio en almacenes generales de depósito, bodegas) afectan varios riesgos del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Contrato que presenta pérdidas producidas por eventos catastróficos generados por la propia naturaleza (terremotos, huracanes, maremotos), por motines o por un evento que, aunque perfectamente localizado y controlado (incendio en almacenes generales de depósito, bodegas) afectan varios riesgos del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[CPCU]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Chartered Property Casualty Underwriter. Programa americano de certificación de agentes de seguros. Consiste en cuatro cursos fundacionales, un curso electivo y tres cursos ya sea en líneas personales o líneas comerciales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Chartered Property Consumers Underwriter. Programa americano de certificación que consiste en 8 cursos, 2 electivos, 3 obligatorios y 3 de especializacion entre lineas comerciales, personales o de empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Chartered Proper Casualt Underwriter. Programa americano de certificación que consiste 3 electivos, 2 obligatorios y 3 de especializacion entre lineas comerciales, personales o de empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Chartered Property Consumers Underwriter. . Programa americano de certificación de agentes de seguros. Consiste en tres cursos fundacionales, dos curso electivo y tres cursos de especialidad, entre lineas de empresa o lineas personales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[Cúmulo]]></texto>
+<respuesta>
+<texto><![CDATA[Se aplica en aquellos casos donde se produce una suma de capitales asegurados que pudieran verse expuestos o afectados por un mismo siniestro. ES conocido para el asegurador, razón por la que se protege con todos los medios disponibles (Reaseguro facultativo, contrato catastrófico).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se aplica en aquellos casos donde se produce una suma de varios capitales asegurados (tienen que ser mas de tres) que pudieran verse expuestos o afectados por un mismo siniestro. Es desconocido para el asegurador, razón por la que debe protegerse con los medios disponibles (Reaseguro facultativo, contrato catastrófico).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se aplica en aquellos casos donde se produce una suma de capitales asegurados que pudieran verse expuestos o afectados por un mismo siniestro. Puede ser conocido o desconocido para el asegurador, razón por la que debe protegerse con los medios disponibles (Reaseguro facultativo, contrato catastrófico).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[Deducible]]></texto>
+<respuesta>
+<texto><![CDATA[Alcance de la protección o indemnización acordada bajo un contrato de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cantidad o porcentaje establecido en una póliza cuyo importe ha de superarse para que se pague una reclamación. Solo se paga la pérdida en exceso de tal importe.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Valor económico que contractualmente está obligado a pagar el asegurador en caso de producirse un siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Monto de dinero que representa una compensación adicional definida ocasionalmente en el contexto de un contrato de trabajo con un proveedor o intermediario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[Derecho de Emisión]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Policy administration fee. Recargo que en algunos casos incluyen las entidades aseguradoras en el primer recibo de cobro de la prima para compensar los gastos derivados de la emisión de la póliza. Ejemplo: Cargo por expedición de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Policy administration fee. Recargo que en algunos casos incluyen las entidades aseguradoras en el utimo recibo de cobro de la prima para compensar los gastos derivados de la emisión de la póliza. Ejemplo: Cargo por expedición de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Policy administration fee. Recargo que incluyen las entidades aseguradoras en todos los recibos de cobro de la prima para compensar los gastos derivados de la emisión de la póliza. Ejemplo: Cargo por expedición de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[  Días de Estancia (Hospitalización)]]></texto>
+<respuesta>
+<texto><![CDATA[Permanencia del paciente en un hospital o clínica. El seguro de salud cubre los gastos en un 90%, dentro de los límites que se establezcan en las condiciones particulares y siempre que sea como consecuencia de una operación de riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Permanencia del paciente en un hospital o clínica. El seguro de salud cubre los gastos derivados de la misma en un 80% segun las condiciones particulares y siempre que sea como consecuencia de una enfermedad o lesión contemplada en la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Permanencia del paciente en un hospital o clínica. El seguro de salud cubre los gastos derivados de la misma, dentro de los límites que se establezcan en las condiciones particulares y siempre que sea como consecuencia de una enfermedad o lesión contemplada en la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[Estado de la Póliza]]></texto>
+<respuesta>
+<texto><![CDATA[Cada una de las instancias por las que pasa la póliza durante su ciclo de vida.
+ Los estados son:
+Póliza en Modificación 
+Póliza en proceso
+Póliza vigente
+Póliza anulada]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cada una de las instancias por la que puede pasar la póliza durante su ciclo de vida. Los estados son:
+Póliza en Modificación 
+Póliza en proceso
+Póliza renovada
+Póliza vigente
+Póliza anulada]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cada una de las instancias por las que pasa la póliza durante su ciclo de vida.
+ Los estados son:
+Póliza en Modificación 
+Póliza renovada
+Póliza vigente
+Póliza anulada]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[Estado del Siniestro]]></texto>
+<respuesta>
+<texto><![CDATA[Determina la etapa en la cual se encuentra el siniestro durante su procesamiento. Los estados en Riesgos Generales son:
+Pre-registrado
+En Modificación
+Cerrado
+Anulado
+Pagado
+En salud son:
+Pre-registrado
+En proceso de liquidacion
+Transferido a Acsel x
+Cancelado
+por autorizar
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Determina la etapa en la cual se encuentra el siniestro durante su procesamiento. Los estados en Riesgos Generales son:
+Pre-registrado
+En Modificación
+Cerrado
+Activo
+Anulado
+Pagado
+En salud son:
+Pre-registrado
+Rechazado
+En proceso de liquidacion
+Transferido a Acsel x
+Devuelto
+Cancelado
+por autorizar
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Determina la etapa en la cual se encuentra el siniestro durante su procesamiento. Los estados en Riesgos Generales son:
+Pre-registrado
+En Modificación
+Activo
+Anulado
+Pagado
+En salud son:
+Rechazado
+En proceso de liquidacion
+Devuelto
+Cancelado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[Expuesto]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Unidad o conjunto de unidades aseguradas susceptibles de sufrir o producir un siniestro. Ejemplo:
+Autos - vehículo
+Vida Ley - planilla
+RRGG - predios, bienes
+Salud - persona]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Unidad o conjunto de unidades aseguradas susceptibles de sufrir o producir un siniestro. Nos referimos unicamente a:
+Autos - vehículo
+Salud - persona]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Unidad o conjunto de unidades aseguradas susceptibles de sufrir o producir un siniestro. Nos referimos unicamente a:
+Autos - vehículo
+Vida Ley - planilla
+RRGG - predios, bienes
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[Grupo de Riesgo]]></texto>
+<respuesta>
+<texto><![CDATA[Grupo de personas naturales con similares características de riesgo. Concepto utilizado también para clasificar la cartera y permitir tener tasas diferenciadas ( Media y Baja)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Grupo de personas jurídicas con similares características de riesgo. Concepto utilizado también para clasificar la cartera y permitir tener tasas diferenciadas (Alta o Media).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Grupo de personas naturales o jurídicas con similares características de riesgo. Concepto utilizado también para clasificar la cartera y permitir tener tasas diferenciadas (Alta, Media, Baja).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[IBNR]]></texto>
+<respuesta>
+<texto><![CDATA[Incurred But Not Reported. Son aquellos siniestros ocurridos que no han sido comunicados a la compañía de seguros en el momento oportuno. Este concepto pretende ajustar la provisión de siniestros pendientes de liquidación, introduciendo un factor corrector a aplicar sobre los siniestros comunicados, con el objetivo de constituir provisiones técnicas reales para aquellos siniestros no comunicados oportunamente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Incurred But Not Reported. Son aquellos siniestros ocurridos que no han sido comunicados a la compañía de seguros. Este concepto pretende ajustar la provisión de siniestros pendientes de liquidación, introduciendo un factor corrector a aplicar sobre los siniestros comunicados, con el objetivo de constituir provisiones técnicas reales que no originen desviaciones cuando se produzca la liquidación de los siniestros, tanto conocidos como desconocidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Incurred But Not Reported. Son aquellos siniestros ocurridos que no han sido comunicados a la compañía de seguros. Este concepto pretende ajustar la provisión de siniestros por los siniestros no comunicados con el objetivo de constituir provisiones técnicas reales que no originen desviaciones cuando se produzca la liquidación solo de siniestros desconocidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[Indemnización]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Indemnity. Valor Económico que contractualmente está obligado a pagar el asegurador en caso de producirse un siniestro sobre la cobertura de una póliza de seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Indemnity. Pago total realizado al beneficiario como indemnización por el siniestro reclamado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Indemnity. Valor que puede pagar el asegurado en caso de producirse un siniestro sobre la cobertura de una póliza de seguro, pero no esta obligado a realizarlo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[Inspección de Riesgo]]></texto>
+<respuesta>
+<texto><![CDATA[Actividad que forma parte del proceso de la evaluación de riesgos solo de las pólizas de la parte de las cargas , que consiste en el levantamiento de información in situ. El entregable consiste en un informe de inspección de riesgos que contiene las acciones a tomar (observaciones) por parte del asegurado para la mitigación, control o eliminación del riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Actividad que forma parte del proceso de la evaluación de riesgos solo de las pólizas patrimoniales, que consiste en el levantamiento de información in situ. El entregable consiste en un informe de inspección de riesgos que contiene las acciones a tomar (observaciones) por parte del asegurado para la mitigación, control o eliminación del riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Actividad que forma parte del proceso de la evaluación de riesgos de las pólizas patrimoniales y parte de las cargas y obligaciones del asegurado expresadas en el Condicionado General Común, que consiste en el levantamiento de información in situ. El entregable consiste en un informe de inspección de riesgos que contiene las acciones a tomar (observaciones) por parte del asegurado para la mitigación, control o eliminación del riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[Línea de Negocio]]></texto>
+<respuesta>
+<texto><![CDATA[Line of business. Conjunto de modalidades de seguro relacionadas a riesgos de características semejantes. Las líneas de negocio en Pacífico son las siguientes:Automóviles, Riesgos Generales, Líneas Personales, Salud y Vida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Line of business. Conjunto de modalidades de seguro relacionadas a riesgos de características semejantes. Las líneas de negocio en Pacífico son las siguientes: Automóviles, Riesgos Generales, SOAT, Asistencia Médica, Salud y Vida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Line of business. Conjunto de modalidades de seguro relacionadas a riesgos de características semejantes. Las líneas de negocio en Pacífico son Automóviles, Riesgos Generales, SOAT, Asistencia Médica, Líneas Personales, Salud y Vida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[Monto Asegurado]]></texto>
+<respuesta>
+<texto><![CDATA[Insured amount. Es el límite promedio de responsabilidad económica del asegurador. Todo siniestro indemnizable o toda indemnización que la compañía pague reducirá automáticamente en igual cantidad el monto asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Insured amount. Es el límite máximo de responsabilidad económica del asegurador. Todo siniestro indemnizable o toda indemnización que la compañía pague reducirá automáticamente en igual cantidad el monto asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Insured amount. Es el límite minimo de responsabilidad económica del asegurador. Todo siniestro indemnizable o toda indemnización que la compañía pague reducirá automáticamente en igual cantidad el monto asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[Número de Rodaje]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Número de placa del vehículo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Numero de ruedas del automovil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Número del total del periodo de ajuste y suavización en el funcionamiento de un automóvil nuevo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[Pagante]]></texto>
+<respuesta>
+<texto><![CDATA[Premium paye. Solo aplica a personas Naturales comprometida por condición de un contrato a realizar desembolsos de dinero para cubrir un monto establecido en un periodo de tiempo establecido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Premium paye. Persona Natural o Jurídica comprometida por condición de un contrato a realizar desembolsos de dinero para cubrir un monto establecido. 
+Rol de un cliente asociado a una póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Premium paye. Solo aplica a personas Jurídicas comprometida por condición de un contrato a realizar desembolsos de dinero para cubrir un monto establecido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[Perito (de Averías)]]></texto>
+<respuesta>
+<texto><![CDATA[Técnico experto responsable de efectuar solo la identificación de las causas, y el alcance de los daños materia de un siniestro sufrido por un bien asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Técnico experto responsable de efectuar solo la identificación de los alcances y valoración de los daños materia de un siniestro sufrido por un bien asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Técnico experto responsable de efectuar la identificación de las causas, alcance y valoración de los daños materia de un siniestro sufrido por un bien asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[Plan]]></texto>
+<respuesta>
+<texto><![CDATA[Conjunto de coberturas y/o servicios que forman parte de un producto, estructurados bajo un mismo nombre. Las coberturas generalmente están asociadas a uno o varios ramos. Un producto debe contener varios planes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Conjunto de coberturas y/o servicios que forman parte de un producto, estructurados bajo un mismo nombre. Las coberturas generalmente están asociadas a uno o varios ramos. Un producto puede contener uno o varios planes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Conjunto de coberturas y/o servicios, estructurados combinados para satisfacer necesidades de mercado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[Plazo de atención]]></texto>
+<respuesta>
+<texto><![CDATA[Número de días que toma la aseguradora para atender una solicitud de reembolso]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Número de días que toma la aseguradora para dar respuesta a una queja y reclamo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Número de días que toma la aseguradora para dar atender una solicitud de afiliacion.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_37 -->
+<pregunta> <texto><![CDATA[Póliza]]></texto>
+<respuesta>
+<texto><![CDATA[Policy. Documento que sirve para demostrar la validez de un contrato, en seguros, bolsa y en otros negocios; en él aparecen las condiciones, características, cláusulas, etc., del contrato]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Policy. Documento que acredita la formalización del contrato de seguro y que está constituido por la solicitud del seguro, el informe de inspección, las condiciones generales, cláusulas adicionales, condiciones particulares y especiales, así como por los endosos y anexos que se adhieran a ella. Al ser emitido se declara formalmente la existencia del contrato de seguro y las condiciones en que se ha pactado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Policy. Documento que acredita la formalización del contrato de seguro y que está constituido solo por la solicitud del seguro, cláusulas adicionales y condiciones particulares y especiales. Al ser firmado se declara formalmente la existencia del contrato de seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_38 -->
+<pregunta> <texto><![CDATA[Prima]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Premium. Contraprestación económica por la cobertura de riesgo que la aseguradora le ofrece al asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la prima total de todas las pólizas suscritas durante un período de tiempo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Monto de prima acordada, asociada a un contrato de reaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la prima retenida menos la variación de la reserva de riesgo en curso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_39 -->
+<pregunta> <texto><![CDATA[Queja]]></texto>
+<respuesta>
+<texto><![CDATA[Constituye unicamente una comunicación escrita que expresa su insatisfacción con el servicio y requiere necesariamente un pronunciamiento o respuesta de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Demanda o exigencia por parte de un individuo u organización para hacer ejercicio de un derecho o beneficio ofrecido.
+Según la CIRCULAR Nº G - 146 - 2009 de la SBS, el reclamo es la comunicación que presenta un usuario expresando su insatisfacción con el servicio y/o producto recibido o manifestando la presunta afectación de su legítimo interés.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Expresión de malestar o disconformidad sobre un servicio prestado o condición, pero no necesariamente requiere la emisión de un pronunciamiento o respuesta de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_40 -->
+<pregunta> <texto><![CDATA[Ramo]]></texto>
+<respuesta>
+<texto><![CDATA[Conjunto de coberturas de naturaleza similar, agrupadas por el bien o persona protegidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Conjunto de coberturas de naturaleza similar, agrupadas ya sea por el bien o persona protegidos, o por el evento a cubrir contemplado en dichas coberturas. Ejemplo de las primeras seria el ramo Automóviles y de las segundas el ramo Incendio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Conjunto de coberturas de naturaleza similar, agrupadas por el evento a cubrir contemplado en dichas coberturas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Conjunto de coberturas , agrupadas por el evento a cubrir contemplado en dichas coberturas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_41 -->
+<pregunta> <texto><![CDATA[Ratio de Bateo]]></texto>
+<respuesta>
+<texto><![CDATA[Índice que mide qué porcentaje de la prima es utilizado para la colocación de la misma.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Indicador que mide la rentabilidad técnica:suma de siniestros netos más costos de adquisición más gastos generales sobre la prima neta ganada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hit Ratio. Razón que mide la cantidad de pólizas emitidas del total de cotizaciones entregadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Razón que mide la cantidad de pólizas anuladas del total de cotizaciones entregadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_42 -->
+<pregunta> <texto><![CDATA[Reaseguro]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Reinsurance. Es la transferencia del riesgo asumido por la empresa de seguros mediante un contrato con una segunda empresa aseguradora. Esto permite al asegurador directo tomar riesgos mayores a los que está en capacidad de cubrir. El asegurador directo es el único obligado con respecto al asegurado o tomador de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reinsurance. Es la transferencia del riesgo asumido por la empresa de seguros mediante un contrato con una segunda empresa aseguradora. Esto permite al asegurador directo tener un menor riesgo. El reasegurador es el único obligado con respecto al asegurado o tomador de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reinsurance. Es la transferencia del riesgo asumido por la empresa de seguros mediante un contrato con una segunda empresa aseguradora. Esto permite al asegurador directo tomar riesgos mayores a los que está en capacidad de cubrir. El reasegurador y el asegurador tienen responsabilidad compartida antes el asegurado o tomador de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_43 -->
+<pregunta> <texto><![CDATA[Reclamo]]></texto>
+<respuesta>
+<texto><![CDATA[Demanda o exigencia por parte de un individuo u organización para hacer ejercicio de un derecho o beneficio ofrecido.
+Según la CIRCULAR Nº G - 148 - 2008 de la SBS, el reclamo constituye unicamente una comunicación escrita que expresa su insatisfacción con el servicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Expresión de malestar o disconformidad sobre un servicio prestado o condición, pero no necesariamente requiere la emisión de un pronunciamiento o respuesta de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Demanda o exigencia por parte de un individuo u organización para hacer ejercicio de un derecho o beneficio ofrecido.
+Según la CIRCULAR Nº G - 146 - 2009 de la SBS, el reclamo es la comunicación que presenta un usuario expresando su insatisfacción con el servicio y/o producto recibido o manifestando la presunta afectación de su legítimo interés.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_44 -->
+<pregunta> <texto><![CDATA[Reclamo Fundado]]></texto>
+<respuesta>
+<texto><![CDATA[Reclamación presentada por el cliente, donde éste puede o no tener la razón.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Reclamación presentada por el cliente, donde éste tiene la razón.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reclamación presentada por el cliente, donde éste en duda si tiene la razón pero nos da argumentos fundados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_45 -->
+<pregunta> <texto><![CDATA[Recupero]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Subrogation. Palabra que en el argot de la industria aseguradora se utiliza para representar un recobro a un tercero (o de su Aseguradora) responsable de un accidente o siniestro previamente pagado por la aseguradora a su asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Subrogation. Palabra que en el argot de la industria aseguradora se utiliza para representar un recobro al asegurado responsable de un accidente o siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Subrogation. Palabra que en el argot de la industria aseguradora se utiliza para representar un recobro a un tercero y al asegurado (50% cada uno) por un siniestro previamente pagado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_46 -->
+<pregunta> <texto><![CDATA[Renovación]]></texto>
+<respuesta>
+<texto><![CDATA[Cantidad de pólizas renovables por vencerse en un período determinado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Persistency. Acto por el cual, por acuerdo expreso o tácito entre las partes que han suscrito un contrato de seguro, éste se extiende a un nuevo período de cobertura. 
+Aclaración: la renovación es susceptible de ser medida en unidades de moneda, certificados, pólizas, asegurados, etc. Se calcula a partir de las unidades que han llegado al fin de vigencia y no mantienen necesariamente las mismas condiciones de la vigencia anterior.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Extensión del periodo de cobertura de un contrato de seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cantidad de pólizas renovables vencidas en un período determinado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_47 -->
+<pregunta> <texto><![CDATA[Reserva]]></texto>
+<respuesta>
+<texto><![CDATA[Loss Reserve. Monto por medio del cual se estima la siniestralidad que se espera para determinado período de tiempo, y es reservado por la aseguradora por dicho período. Existen tres tipos de reserva, la reserva por caso o individuales y la reserva agregada y la reserva de riesgo en curso. Esta última presenta tres tipos; IBNR (Incurred but not enough reported), IBNER (Incurred but not enough recorded) y reserva de siniestros que han sido cerrados y posteriormente abiertos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Loss Reserve.Complemento a la provisión de primas no consumidas en la medida en que su importe no sea suficiente para reflejar la valoración de todos los riesgos y gastos a cubrir por la entidad aseguradora que se correspondan con el período de cobertura no transcurrido a la fecha de cierre del ejercicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Loss Reserve. Monto por medio del cual se estima la siniestralidad que se espera para determinado ramo y período de tiempo, y es reservado por la aseguradora por dicho período. Existen dos tipos de reserva, la reserva por caso o individuales (case reserve) y la reserva agregada (bulk reserve). Esta última presenta tres tipos; IBNR (Incurred but not enough reported), IBNER (Incurred but not enough recorded) y reserva de siniestros que han sido cerrados y posteriormente abiertos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_48 -->
+<pregunta> <texto><![CDATA[Reserva de riesgo en curso]]></texto>
+<respuesta>
+<texto><![CDATA[Complemento a la provisión de primas no consumidas en la medida en que su importe no sea suficiente para reflejar la valoración de todos los riesgos y gastos a cubrir por la entidad aseguradora que se correspondan con el período de cobertura transcurrido a la fecha de cierre del ejercicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Monto por medio del cual se estima la siniestralidad que se espera para determinado ramo y período de tiempo, y es reservado por la aseguradora por dicho período. Existen dos tipos de reserva, la reserva por caso o individuales (case reserve) y la reserva agregada (bulk reserve). Esta última presenta tres tipos; IBNR (Incurred but not enough reported), IBNER (Incurred but not enough recorded) y reserva de siniestros que han sido cerrados y posteriormente abiertos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Complemento a la provisión de primas no consumidas en la medida en que su importe no sea suficiente para reflejar la valoración de todos los riesgos y gastos a cubrir por la entidad aseguradora que se correspondan con el período de cobertura no transcurrido a la fecha de cierre del ejercicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_49 -->
+<pregunta> <texto><![CDATA[Retención de Cliente]]></texto>
+<respuesta>
+<texto><![CDATA[Acto por el cual, solo por acuerdo expreso entre las partes que han suscrito un contrato de seguro, este se extiende a una renovacion de un nuevo período de cobertura. Aclaración: la retención es susceptible de ser medida en unidades de moneda, certificados, pólizas, asegurados, etc. A diferencia de la renovación, la retención se calcula a partir de las unidades que iniciaron vigencia (pueden haberse anulado por solicitud del cliente o falta de pago).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Acto por el cual, por acuerdo expreso o tácito entre las partes que han suscrito un contrato de seguro, este se extiende a un nuevo período de cobertura. Aclaración: la retención es susceptible de ser medida en unidades de moneda, certificados, pólizas, asegurados, etc. A diferencia de la renovación, la retención se calcula a partir de las unidades que iniciaron vigencia (pueden haberse anulado por solicitud del cliente o falta de pago).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Acto por el cual, solo por acuerdo tácito entre las partes que han suscrito un contrato de seguro, este se extiende a un nuevo período de cobertura. Aclaración: la retención es susceptible de ser medida en unidades de moneda, certificados, pólizas, asegurados, etc. A diferencia de la renovación, la retención se calcula a partir de las unidades que iniciaron vigencia (pueden haberse anulado por solicitud del cliente o falta de pago).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_50 -->
+<pregunta> <texto><![CDATA[Riesgo]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Risk. La posibilidad que un evento ocurra e impacte negativamente sobre los objetivos de la empresa. En algunos casos el riesgo es considerado una oportunidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Risk. La posibilidad que un evento impacte negativamente sobre los objetivos de la empresa y nos perjudique financieramente..]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Risk. La posibilidad que un evento ocurra independientemente que impacte negativamente o favorablemente sobre los objetivos de la empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_51 -->
+<pregunta> <texto><![CDATA[Riesgos Altos de Auditoría]]></texto>
+<respuesta>
+<texto><![CDATA[Son aquellas operaciones en la que el área de auditoria interna consideran que pueden llegar a tener un impacto moderado en los resultados de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son aquellas operaciones en la que el área de control y/o auditoria interna y/o externa consideran que pueden llegar a tener un alto impacto en los resultados de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son aquellas operaciones en la que el área de control y/o auditoria interna y/o externa consideran riesgosas pero de un impacto parcial en el resultado de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_52 -->
+<pregunta> <texto><![CDATA[Salvamento]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Salvage. Objetos o partes de un objeto, que conservan algún valor comercial, aun como chatarra, después de la ocurrencia de un siniestro.  También suele denominarse así al monto o importe logrado por la venta de tales partes u objetos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Salvage.Se refiere a las partes de un objeto, que logran salvarse después de la ocurrencia de un siniestro, no incluye chatarra.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Salvage. Partes de un objeto que solo conservan el valor comercial como chatarra, después de la ocurrencia de un siniestro.  ]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_53 -->
+<pregunta> <texto><![CDATA[Siniestralidad]]></texto>
+<respuesta>
+<texto><![CDATA[Pérdida o daño sufrido por una persona natural , la cual está amparada por una póliza de seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son aquellas operaciones en la que el área de auditoria interna consideran que pueden llegar a tener un impacto moderado en los resultados de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Índice que mide qué porción de la prima es usada para cubrir los siniestros, su formula está dada por la división de los siniestros directos sobre la prima directa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_54 -->
+<pregunta> <texto><![CDATA[Siniestro]]></texto>
+<respuesta>
+<texto><![CDATA[Pérdida o daño sufrido por una persona natural o jurídica, la cual está amparada por una póliza de seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Pérdida o daño sufrido por una persona natural o jurídica, la cual puede, o no, estar amparada por una póliza de seguro.
+Siniestro es la materialización del riesgo, no necesariamente cubierto, causado por un evento súbito e imprevisto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pérdida o daño sufrido por una persona natural , la cual no está amparada por una póliza de seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Siniestro que por su baja complejidad y pequeña cuantía -hasta USD 5,000-, es atendido bajo un esquema simplificado de soporte y es indemnizado dentro de las 24 horas en el que es reportado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_55 -->
+<pregunta> <texto><![CDATA[Siniestro "Express"]]></texto>
+<respuesta>
+<texto><![CDATA[Siniestro que por su baja complejidad y pequeña cuantía -hasta USD 3,000-, es atendido bajo un esquema simplificado de soporte y es indemnizado dentro de las 48 horas en el que es reportado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Siniestro que por su baja complejidad y pequeña cuantía -hasta USD 3,000-, es atendido bajo un esquema simplificado de soporte y es indemnizado dentro de las 24 horas en el que es reportado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es aquel siniestro que por su baja complejidad y pequeña cuantía -hasta USD 5,000-, es atendido bajo un esquema simplificado de soporte y es indemnizado dentro de las 48 horas en el que es reportado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_56 -->
+<pregunta> <texto><![CDATA[Slip]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Documento utilizado por el Broker para ofrecerle un negocio a la Compañía de Seguros y/o la Compañía de Seguros para cotizarle un negocio al Broker, en el cual se consignan los datos descriptivos y característicos de un riesgo (ubicación, peligros a cubrir, valores declarados, etc.), así como los términos y condiciones (tasas, deducibles, sumas aseguradas, sublímites, comisiones, garantías, etc.) bajo los cuales requiere ser suscrito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Documento utilizado unicamente por el Broker para ofrecerle un negocio a la Compañía de Seguros, en el cual se consignan los datos descriptivos y característicos de un riesgo (ubicación, peligros a cubrir, valores declarados, etc.), así como las condiciones (tasas, deducibles, sumas aseguradas, sublímites, comisiones, garantías, etc.) las cuales pueden variar.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Documento solo utilizado por la Compañía de Seguros para cotizarle un negocio al Broker, en el cual se consignan los datos descriptivos y característicos de un riesgo (ubicación, peligros a cubrir, valores declarados, etc.), así como los términos y condiciones (tasas, deducibles, sumas aseguradas, comisiones, garantías, etc.) bajo los cuales requiere ser suscrito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_57 -->
+<pregunta> <texto><![CDATA[Tipo de Seguro]]></texto>
+<respuesta>
+<texto><![CDATA[Type of insurance. Categorización de productos de seguro y pólizas. Existen tres tipos: Seguro Individual, Colectivo y familiares]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Type of insurance. Categorización de productos de seguro y pólizas según soporten individuos o grupos asegurados. Existen dos tipos: Seguro Individual y Colectivo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Type of insurance. Categorización de seguros según el tipo de riesgo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_58 -->
+<pregunta> <texto><![CDATA[Tipo de Servicio Vehículos]]></texto>
+<respuesta>
+<texto><![CDATA[Atención brindada al cliente como parte de las coberturas de su póliza de automóviles que solo incluye: Asistencia, Grúa, Auxilio Mecánico y Auto de Reemplazo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Atención brindada al cliente como parte de las coberturas de su póliza de automóviles que solo incluye:Asistencia, Grúa y Chofer de Reemplazo .]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Atención brindada al cliente como parte de las coberturas de su póliza de automóviles: Asistencia, Grúa, Auxilio Mecánico, Chofer de Reemplazo y Auto de Reemplazo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_59 -->
+<pregunta> <texto><![CDATA[Unidades Recuperadas]]></texto>
+<respuesta>
+<texto><![CDATA[Bienes (mercancías o autos) reportados en siniestros de robo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Bienes (mercancías o autos) reportados en siniestros de robo y que han sido encontrados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Bienes (mercancías o autos) reportados en siniestros de choque y que han sido arreglados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_60 -->
+<pregunta> <texto><![CDATA[Unidades Robadas]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Bienes (mercancías o autos) reportados en siniestros de robo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Bienes (mercancías o autos) reportados en siniestros de robo y que han sido encontrados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Bienes (mercancías o autos) reportados en siniestros de choque.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_61 -->
+<pregunta> <texto><![CDATA[Zona de Riesgo]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Área geográfica que identifica una extensión de terreno de interés en la evaluación de riesgos. Área expuesta a un evento y/o peligro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Área geográfica que identifica una extensión de terreno que no neceriamente esta delimitada y que esta expuesta a un evento y/o peligro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Área geográfica que identifica una extensión de terreno que no necesariamente esta expuesta a un evento y/o peligro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+
+</data>

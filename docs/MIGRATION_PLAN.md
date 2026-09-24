@@ -173,7 +173,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
 - Architecture diagrams (current `/fl` preview + options for S3 Flash, including AwayFL): [`docs/RUFFLE_PREVIEW.md`](RUFFLE_PREVIEW.md) (2026-09-15)
 - AwayFL popup mock: `/fl/away` + `/static` rewrite; `popWin` and HTML5 launches for S3 Flash wrappers open AwayFL instead of a dead swfobject page (Claro is the default).
-- Temporary Ruffle vs AwayFL compare kit: `npm run swf-compare:sync` copies SWFs locally; one HTML page per SWF with generic players (Ruffle autoplay on, unmute overlay hidden); menu/popWin open `/swf-compare/` instead of the popup. Piece SWFs/sidecars are committed so Vercel preview can serve them. Compare stages use the SWF aspect-ratio so AwayFL’s absolutely positioned canvas cannot collapse the pane; `w`/`h` is the pane box (SHOW_ALL), not native SWF pixels or `100%` of the window.
+- Temporary Ruffle vs AwayFL compare kit: `npm run swf-compare:sync` copies SWFs locally; one HTML page per SWF with generic players (Ruffle autoplay on, unmute overlay hidden); menu/popWin open `/swf-compare/` instead of the popup. Piece SWFs/sidecars are committed so Vercel preview can serve them. Compare stages use the SWF aspect-ratio so AwayFL’s absolutely positioned canvas cannot collapse the pane; `w`/`h` is the pane box (SHOW_ALL), not native SWF pixels or `100%` of the window. Sync resolves child SWF/XML URLs from the movie directory (Flash Loader base), so `xml/config.xml` can pull `swf/assets.swf` and escenario files.
 
 #### 6f: Slideshow interaction (2026-09-07)
 

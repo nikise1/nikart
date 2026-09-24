@@ -1,0 +1,2171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por carta de garantía?]]></texto>
+<respuesta>
+<texto><![CDATA[Una carta por la cual Pacífico se compromete a pagar todos los gastos médicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Es la autorización escrita que Pacífico otorga al centro de salud para realizar la atención médica luego de validar que las coberturas y los procedimientos sean los adecuados según el diagnóstico médico presentado.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la autorización escrita que Pacífico otorga al centro de salud para realizar exámenes médicos a los asegurados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[¿Cuál es el plazo establecido para presentar facturas por atenciones para el trámite de reembolso?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[90 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[30 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[180 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[¿El trabajador que se afilia a una EPS pierde el derecho a atenderse en EsSalud?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí lo pierde.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo en caso de ausencia de médicos en el barrio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No pierde su derecho de atención debido a que el empleador continúa aportando a EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[Documento indispensable para activar el beneficio oncológico]]></texto>
+<respuesta>
+<texto><![CDATA[Reporte operatorio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Anatomía patológica]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Epicrisis]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[¿Qué es el monto asegurado?]]></texto>
+<respuesta>
+<texto><![CDATA[Valor declarado de un bien.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Monto total de atenciones de salud para un asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Límite máximo de responsabilidad económica del asegurador.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[Exámenes, pruebas de laboratorio y otras pruebas previas a la suscripción de la póliza]]></texto>
+<respuesta>
+<texto><![CDATA[Chequeos preventivos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Exámenes de rutina]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Examen de asegurabilidad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los objetivos básicos de un médico auditor concurrente?]]></texto>
+<respuesta>
+<texto><![CDATA[Promover que todos los asegurados usen el 100% de su cobertura.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Auditoría de calidad, servicio al asegurado y control eficiente del gasto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Promover el uso del seguro de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_8 -->
+<pregunta> <texto><![CDATA[Es toda condición de salud o enfermedad previa al inicio de la cobertura del seguro]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Preexistencia]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reticencia]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Declaración falsa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[¿Qué es una EPS y cuál es su objetivo?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un producto de Pacífico para atender los reembolsos de salud que no cubrió EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es una Entidad Privada de Salud, y su objetivo es prestar servicios de atención para la salud en EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es una Entidad Prestadora de Salud, y su objetivo es prestar servicios de atención para la salud en el mercado del Sistema Privado de Seguridad Social.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los beneficios y coberturas de las prestaciones preventivas y promocionales que ofrece Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Hospitalizaciones 2) Vacunas e inmunizaciones
+3) Charlas
+4) Control de riesgos
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Análisis médicos 
+2) Laboratorio 3) Rayos X
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Chequeos médicos anuales
+2) Vacunas e inmunizaciones
+3) Educación para la salud
+4) Evaluación y control de riesgos
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[¿Qué son las Prestaciones de Recuperación de Salud?]]></texto>
+<respuesta>
+<texto><![CDATA[Atenciones médicas que buscan rehabilitar al paciente asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Atenciones médicas que buscan tratar las enfermedades que tiene en ese momento el paciente asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Atenciones en proveedores que buscan el mejor precio para el paciente asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los beneficios y coberturas de las Prestaciones de Recuperación de Salud que ofrece Pacífico? Las cuatro más importantes:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[1) Atención ambulatoria
+2) Atención hospitalaria
+3) Emergencias
+4) Maternidad
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Atención psicológica
+2) Emergencias
+3) Maternidad
+4) Oftalmología
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Maternidad
+2) Oftalmología
+3) Odontología
+4) Oncología]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los beneficios adicionales que ofrece Pacífico en todos sus planes estándares?]]></texto>
+<respuesta>
+<texto><![CDATA[1) VIH (Sida)
+2) Prueba de Elisa
+3) Prueba de sífilis 
+4) PetScan]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Segunda opinión internacional
+2) Segunda opinión nacional
+3) Sepelio
+4) Desamparo súbito familiar
+ 
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Prótesis dentales
+2) Lentes y monturas
+3) Ortodoncia (brackets)
+4) Plantillas ortopédicas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[¿El trabajador que se afilia a una EPS pierde el derecho a atenderse en EsSalud? ¿Por qué?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí pierde su derecho de atención en capa compleja, pero podrá atenderse en capa simple porque el empleador sigue aportando a EsSalud]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[.
+
+No pierde su derecho de atención en capa compleja. Porque el empleador continúa aportando a EsSalud, pero no podrá atenderse en capa simple.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No pierde su derecho de atención en Maternidad y Emergencia porque el empleador sigue aportado a EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[¿Los afiliados a Pacífico tienen derecho a cobertura de diagnósticos preexistentes? ¿En qué condiciones?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí. Pacífico cubre los diagnósticos preexistentes que pertenezcan a la capa simple y la capa compleja.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí. Pacífico cubre los diagnósticos preexistentes que pertenezcan a la capa compleja.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí. Pacífico cubre los diagnósticos preexistentes que pertenezcan a la capa simple.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[¿Los afiliados a Pacífico tienen derecho a cobertura de enfermedades congénitas? ¿En qué condiciones?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Sí. Pacífico cubre las enfermedades congénitas de todo bebé que: 1) nació dentro de la póliza, 2) haya sido inscrito dentro de los 30 días posteriores al nacimiento y 3) que la concepción de ese niño haya sido dentro de la EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí. Pacífico cubre las enfermedades congénitas de todo bebé que: 1) nació dentro de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí. Pacífico cubre las enfermedades congénitas de todo bebé que: 1) nació dentro de la póliza y 2) haya sido inscrito dentro de los 30 días posteriores al nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[Los trabajadores afiliados a una EPS, ¿bajo qué condiciones pueden regresar a EsSalud cuando se jubilan?
+
+]]></texto>
+<respuesta>
+<texto><![CDATA[Pueden regresar a EsSalud con el descuento del 9% sobre su pensión de jubilación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Pueden regresar a EsSalud con el descuento del 4% sobre su pensión de jubilación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No pueden regresar a EsSalud bajo ninguna circunstancia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[¿Cuál es el límite de edad para que un trabajador se afilie y permanezca en una EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Hasta los 65 años y mientras mantenga su vínculo laboral con su entidad empleadora.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Puede permanecer en la EPS hasta los 65 años de edad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No existe límite de edad mientras mantenga su vínculo laboral con su entidad empleadora.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[¿Qué sucede con las prestaciones económicas, como los subsidios por maternidad, lactancia e incapacidad temporal, si son requeridas por un trabajador que se afilie a una EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Estas seguirán siendo otorgadas por la EPS y EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Estas serán otorgadas por la EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Estas seguirán siendo otorgadas por EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[Dentro del beneficio de maternidad que ofrece Pacífico, ¿qué vitaminas están cubiertas?]]></texto>
+<respuesta>
+<texto><![CDATA[Se cubren todas las vitaminas que indique su médico durante el período pre y postnatal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Solo se cubre fierro y calcio durante el período pre y postnatal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo se cubre calcio durante el período prenatal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[¿Las emergencias que deriven en una hospitalización son cubiertas al 100%?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No. Si la emergencia requiere de hospitalización y/o internamiento, se aplicarán las condiciones del contrato, es decir, los copagos o deducibles que le correspondan a una atención hospitalaria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, toda emergencia que requiere de hospitalización y/o internamiento será cubierta al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No. Si la emergencia requiere de hospitalización y/o internamiento, no es cubierta por la póliza EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[¿A cuánto asciende el copago del Plan de Vacunación que ofrece Pacífico para los niños afiliados (de 0 a 10 años)?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No se aplican copagos, la cobertura es al 100% y corresponden al Programa Niño Sano.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se aplicarán las condiciones del contrato, es decir, los copagos o deducibles que le correspondan a una atención de vacunación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El Programa Niño Sano tiene como único deducible o copago S/.35,00 al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[¿Cuál de los mencionados corresponden a las exclusiones y limitaciones de las prestaciones de capa simple?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Hipertensión arterial esencial y no complicada
+2) Asma no complicada
+3) Diabetes mellitus tipo II no complicada
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Terapias o procedimientos cosméticos, estéticos o suntuarios
+2) Suicidio o intento, lesiones autoinflingidas
+3) Cobertura de prótesis, órtesis y otros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Parto normal
+2) Epilepsia
+3) Gastritis 4) Rinitis aguda]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[¿Quiénes son los beneficiarios según ley de los planes de salud de la EPS y cuáles son los límites de edad de ingreso en cada uno de los casos?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Los trabajadores titulares hasta 65 años de edad
+2) Cónyuge o conviviente hasta los 65 años de edad
+3) Los hijos del titular hasta los 18 años
+4) Los hijos discapacitados del titular sin límite de edad
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+
+1) Los trabajadores en planilla titulares sin límite de edad
+2) Cónyuge o conviviente sin límite de edad
+3) Los hijos menores de 18 años del titular 
+4) Los hijos discapacitados del titular que no perciban renta por trabajo remunerado, sin límite de edad
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Los trabajadores titulares en planilla o por contrato hasta los 70 años de edad
+2) Cónyuge o conviviente hasta los 70 años de edad
+3) Los hijos del titular hasta los 25 años
+4) Los hijos discapacitados del titular hasta los 30 años
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[¿Qué es la capa simple y cuántos diagnósticos considera?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el conjunto de intervenciones o diagnósticos de salud graves y de mayor frecuencia. Son apróximadamente 800 diagnósticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el conjunto de intervenciones o diagnósticos de salud de menor frecuencia que ya no atiende EsSalud. Son apróximadamente 10 000 diagnósticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el conjunto de intervenciones o diagnósticos de salud de mayor frecuencia y menor complejidad. Son aproximadamente 400 diagnósticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[¿Qué es la capa compleja y cuántos diagnósticos considera?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el conjunto de intervenciones de salud de mayor frecuencia y menor complejidad y que no están consideradas en la capa simple. Son aproximadamente 7000 diagnósticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el conjunto de intervenciones de salud de mayor complejidad, y que no están consideradas en la capa simple. Son aproximadamente 100 000 diagnósticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el conjunto de intervenciones de salud de menor frecuencia y mayor complejidad, y que no están consideradas en la capa simple. Son aproximadamente 14 000 diagnósticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[Para utilizar el sistema de reembolso de los planes de salud de la EPS, ¿qué documentos hay que presentar?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Recibos por honorarios profesionales por la consulta a nombre del titular-afiliado
+2) Facturas por medicinas o laboratorio
+No se reembolsan procedimientos ni exámenes distintos a los indicados en el punto 2
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+
+1) Recibos por honorarios profesionales por la consulta a nombre del paciente-afiliado
+2) Facturas o boletas por clínica, medicinas y otros servicios médicos
+3) De haberse requerido análisis, radiografías o exámenes especializados, adjuntar copia de los informes]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Facturas por la consulta a nombre del afiliado
+2) Facturas por clínica, medicinas y otros servicios médicos
+3) De haberse requerido análisis, radiografías o exámenes especializados, adjuntar original y copia de los informes
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los requisitos para la atención de una emergencia médica o accidental en las clínicas afiliadas a la EPS?
+
+]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La sola presentación de la credencial de asegurado y/o DNI.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) La presentación de la credencial del asegurado y/o DNI 2) La solicitud de beneficios firmada por el empleador]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No necesita llevar nada]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[¿Qué es el período de latencia?
+
+]]></texto>
+<respuesta>
+<texto><![CDATA[Período de cobertura que ofrece Pacífico en el período pre y postnatal, dentro de la cobertura de maternidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Período de cobertura a través de EsSalud y Pacífico, que se ofrece a los trabajadores que hayan terminado su vínculo laboral con la empresa en la que laboraban.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Período de cobertura a través de Pacífico que se ofrece a los trabajadores que hayan sido despedidos y/o cesados de su centro laboral en cualquiera de sus formas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[¿Puede el trabajador atenderse todos los diagnósticos a través de Pacífico durante el período de latencia que le corresponda?
+
+]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No. Porque de acuerdo a ley corresponden solo las atenciones de capa simple a través de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí. Porque de acuerdo a ley corresponden todas las atenciones de capa simple y compleja a través de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No. Porque de acuerdo a ley corresponden solo las atenciones de capa compleja a través de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[¿Cuál es el máximo de tiempo que un trabajador puede tener de período de latencia y quiénes asumen las coberturas?
+
+]]></texto>
+<respuesta>
+<texto><![CDATA[12 meses. Los primeros 6 meses a través de Pacífico, y los otros 6 meses a través de EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[6 meses. Los primeros 6 meses los diagnósticos de capa simple y compleja a través de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[12 meses. Los primeros 6 meses los diagnósticos de capa simple a través de Pacífico, y los diagnósticos de capa compleja a través de EsSalud. Los siguientes 6 meses, solo a través de EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[¿Cuál es el requisito para poder acogerse al período de latencia? ¿Cómo se distribuye de acuerdo al tiempo de aportación?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Haber cesado de la empresa con un mínimo de 6 meses de aportación a EsSalud y/o a una EPS en los últimos 2 años antes del cese.
+2) Por cada 6 meses de aportación, accede a 1 mes de período de latencia en capa simple a través de una EPS, y a 1 mes en capa compleja a través de EsSalud (a partir del cese).
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Haber cesado de la empresa con un mínimo de 5 meses de aportación a EsSalud y/o a una EPS en los últimos 3 años antes del cese.
+2) Por cada 5 meses de aportación, accede a un mes de período de latencia en capa simple a través de una EPS, y a dos meses en capa compleja a través de EsSalud (a partir del cese).
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Haber cesado de la empresa con un mínimo 12 meses de aportación a EsSalud y/o a una EPS en los últimos 3 años antes del cese.
+2) Por cada 5 meses de aportación, accede a 2 meses de período de latencia en capa simple a través de una EPS, y a 2 meses en capa compleja a través de EsSalud (a partir del cese).
+
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[¿Cuáles diagnósticos de los detallados son considerados solo capa compleja?]]></texto>
+<respuesta>
+<texto><![CDATA[1) VIH (Sida)
+2) Hipertensión arterial
+3) Bronquitis
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Asma
+2) Diabetes mellitus tipo I
+3) Parto normal 
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Enfermedad coronaria
+2) Cáncer
+3) Cesárea]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los requisitos mínimos para poder cotizar una EPS a una empresa que solo cuenta con la cobertura de Essalud?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Planilla anual
+2) Pagos SUNAT (últimos 12 meses)
+3) Tener 10 trabajadores como mínimo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Número de trabajadores en planilla
+2) Contar con los pagos a EsSalud al día
+3) Tener 30 trabajadores como mínimo 
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Número de trabajadores en planilla
+2) Composición familiar de estos
+3) Planilla mensual bruta o aporte anual a EsSalud 
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los requisitos mínimos que pide Pacífico para cotizarles EPS a una empresa que viene de otra EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Número de trabajadores en planilla
+2) Composición familiar de estos
+3) Planilla mensual bruta o aporte anual a EsSalud
+4) Plan de salud vigente con su actual EPS
+5) Maternidades en curso
+6) Casos severos en curso
+7) Ficha técnica de Pacífico
+8) Pago de derecho de emisión]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Número de trabajadores en planilla
+2) Composición familiar de estos
+3) Planilla mensual bruta o aporte anual a EsSalud
+4) Plan de salud vigente con su actual EPS
+5) Siniestralidad y detalle del consumo por proveedor, por tipo de asegurado, por tipo de beneficio de los últimos 12 meses con su actual EPS 6)Maternidades en curso 
+7) Casos severos en curso]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Número de trabajadores en planilla
+2) Composición familiar de estos
+3) Planilla mensual bruta o aporte anual a EsSalud]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[¿Qué tipos de cartera de empresas existen en EPS y cuál es la diferencia de afiliados entre una y otra?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[1) Empresas A (de 1 a 99 afiliados) 2) Empresas AA (de 100 a 499 afiliados) 3) Empresas AAA (de 500 a más afiliados)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Empresas A (de 1 a 99 afiliados) 2) Empresas B (de 100 a 499 afiliados) 3) Empresas C (de 500 a más afiliados)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Empresas A (de 1 a 50 afiliados) 2) Empresas AA (de 51 a 100 afiliados) 3) Empresas AAA (de 101 a más afiliados)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_37 -->
+<pregunta> <texto><![CDATA[¿Cómo puede una empresa de 100 colaboradores contratar una EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Siempre la contrata directamente el empleador, invitando a 2 o 3 EPS y será él quien elegirá con cual EPS trabajará.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El empleador debe realizar un proceso de elección entre una o más EPS participando a sus colaboradores en un proceso de votación, este proceso determinará por mayoría, la EPS elegida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son los trabajadores los que deben elegir y contratar a la EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_38 -->
+<pregunta> <texto><![CDATA[¿Qué tipo de empresa no necesita llevar a cabo un proceso de elección o concurso ?]]></texto>
+<respuesta>
+<texto><![CDATA[1) Empresas A (de 1 a 99 afiliados)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1) Empresas MYPE
+2) Empresas con menos de 25 colaboradores en cualquiera de sus formas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Toda empresa necesita llevar a cabo un concurso o proceso de elección]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_39 -->
+<pregunta> <texto><![CDATA[¿Qué documentos necesitamos para formalizar una cuenta luego de un proceso o concurso?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[1) Acta de resultados de la elección
+2) Formato de afiliación de empresa (para el contrato)
+3) Fichas o solicitudes de afiliación de los colaboradores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Acta de resultados
+2) Factura de la EPS
+3) Carta de la SUNASA]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1) Cargo de la comunicación escrita a la SUNASA
+2) Constancia de RUC de la empresa emitida por la SUNAT
+3) Fotos de los colaboradores y sus familias]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_40 -->
+<pregunta> <texto><![CDATA[¿Puede una persona natural contratar una EPS?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No, es solo para empresas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, si puede.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si paga una prima con recargo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_41 -->
+<pregunta> <texto><![CDATA[¿De cuánto es el crédito que concede EsSalud para financiar los planes de EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el 2,50% de la planilla anual bruta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[2, 55% de la planilla neta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+
+2, 25% de la planilla bruta mensual o 25% del aporte del 9% mensual o anual.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_42 -->
+<pregunta> <texto><![CDATA[¿Qué es el servicio de médico a domicilio?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un servicio de consulta médica que se da al asegurado a través del teléfono. Para ello, el asegurado deberá llamar a Pacífico Asiste al 01-415-1515 desde Lima y provincias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un servicio de atención médica ambulatoria que se da al asegurado en la comodidad de su hogar. Para ello, el asegurado deberá llamar a Pacífico Asiste al 01-518-4000 desde Lima y provincias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es un servicio de atención médica ambulatoria que se da al asegurado en la comodidad de su hogar. Para ello, el asegurado deberá llamar a Pacífico Asiste al 01-415-1515 desde Lima y provincias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_43 -->
+<pregunta> <texto><![CDATA[¿Cúales son las especialidades médicas con las que cuenta el servicio de médico a domicilio?]]></texto>
+<respuesta>
+<texto><![CDATA[Pediatría, medicina interna, cardiología, dermatología, geriatría y oftalmología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Pediatría, medicina interna, cardiología, dermatología, geriatría y gastroenterología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pediatría, medicina interna, cardiología, dermatología, geriatría y ginecología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_44 -->
+<pregunta> <texto><![CDATA[¿Qué es el servicio de Centrosalud Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es un servicio de atención médica ambulatoria en consultorios exclusivos para asegurados de Pacífico, ubicados en las instalaciones de la clínica Tezza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un servicio de atención médica ambulatoria en consultorios exclusivos para asegurados de Pacífico, ubicados en la oficina principal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un servicio de atención médica ambulatoria en consultorios exclusivos para asegurados de Pacífico y sus familiares, ubicados en las instalaciones de la clínica Montesur.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_45 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las especialidades médicas que ofrece Centrosalud Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Medicina interna, pediatría y geriatría.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Medicina interna, pediatría y gastroenterología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Medicina interna, pediatría y ginecología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_46 -->
+<pregunta> <texto><![CDATA[¿Qué son las prestaciones preventivas y promocionales?]]></texto>
+<respuesta>
+<texto><![CDATA[Son atenciones que previenen la presentación de enfermedades, a través de exámenes clínicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son atenciones que previenen la presentación de enfermedades, a través de vacunas o de descartes por exámenes de laboratorio o clínicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son atenciones que promocionan algún tipo de vitamina o suplemento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_47 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los beneficios y coberturas de las prestaciones preventivas y promocionales que ofrece Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[* Chequeos médicos anuales
+* Vacunas e inmunizaciones
+* Educación para la salud
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Médico a domicilio
+* Segunda opinión internacional
+* Sepelio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Chequeo preventivo mensual
+* Vacunas e inmunizaciones
+* Médico a domicilio
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_48 -->
+<pregunta> <texto><![CDATA[¿Qué exámenes regulares se incluyen dentro de un chequeo preventivo?]]></texto>
+<respuesta>
+<texto><![CDATA[* Cardiológico
+* De orina completo
+* Examen oftalmógico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* De tórax
+* De orina completo
+* Hemograma]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* De tórax
+* De orina completo.
+* Examen odontológico * Examen oftalmológico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_49 -->
+<pregunta> <texto><![CDATA[¿Qué es el programa de Maxisalud?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un programa ambulatorio de atención y control del cáncer.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es un programa ambulatorio de atención y control de enfermedades crónicas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un programa ambulatorio de atención y control del niño sano.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_50 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las enfermedades crónicas que cubre el programa de Maxisalud?]]></texto>
+<respuesta>
+<texto><![CDATA[Hipertensión arterial y diabetes mellitus II.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Asma y diabetes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Hipertensión arterial, asma y diabetes mellitus II.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_51 -->
+<pregunta> <texto><![CDATA[¿En qué lugares se pueden atender los inscritos al programa Maxisalud?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[En los consultorios de Centrosalud Pacífico o en su domicilio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En las clínicas de todas las redes que ofrece el plan de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En su domicilio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_52 -->
+<pregunta> <texto><![CDATA[¿Cuál es el beneficio de ser parte de un programa Maxisalud?]]></texto>
+<respuesta>
+<texto><![CDATA[Cobertura al 100% de medicamentos y exámenes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cobertura al 100%: consulta médica, medicamentos y exámenes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cobertura al 90%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_53 -->
+<pregunta> <texto><![CDATA[¿Qué otros beneficios adicionales gratuitos tiene el programa Maxisalud?]]></texto>
+<respuesta>
+<texto><![CDATA[Nutrición, podología y oftalmología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Nutrición, psicología, podología y oftalmología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Nutrición, psicología y podología (únicamente para diabéticos).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_54 -->
+<pregunta> <texto><![CDATA[¿En 2011 Pacífico firmó una alianza con qué organización para fortalecer el tema preventivo?]]></texto>
+<respuesta>
+<texto><![CDATA[Clínica San Pablo y Clínica El Golf.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[John Hopkins Medicine International.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Con la American Institute for Preventive Medicine, organización americana con amplia experiencia en programas integrales de prevención.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_55 -->
+<pregunta> <texto><![CDATA[¿Cuántos tipos de chequeos preventivos EPS hay?]]></texto>
+<respuesta>
+<texto><![CDATA[Chequeo médico, oftalmológico y odontológico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Chequeo médico, ginecológico, oftalmológico y oncológico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Chequeo médico, ginecológico, oftalmológico y odontológico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_56 -->
+<pregunta> <texto><![CDATA[El beneficio del chequeo preventivo de la EPS es 1 vez al año. Precisar si este beneficio es:]]></texto>
+<respuesta>
+<texto><![CDATA[Al año calendario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Al año de vigencia de póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_57 -->
+<pregunta> <texto><![CDATA[¿Quiénes tienen derecho a realizar el chequeo preventivo de la EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Titulares y derechohabientes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Titulares a partir de los 18 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Titulares y derechohabientes a partir de los 18 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_59 -->
+<pregunta> <texto><![CDATA[¿Qué incluye el programa de maternidad?]]></texto>
+<respuesta>
+<texto><![CDATA[Control prenatal (consultas, exámenes y esquemas preventivos), parto (vaginal, cesárea o múltiple) y control postnatal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Control prenatal (consultas, exámenes y vitaminas), parto (vaginal, cesárea o múltiple), atención del recién nacido y control postnatal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Control prenatal (consultas, exámenes y vitaminas) y parto (vaginal, cesárea o múltiple).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_60 -->
+<pregunta> <texto><![CDATA[¿Hasta cuándo aplica el control postnatal?]]></texto>
+<respuesta>
+<texto><![CDATA[Hasta 60 días posteriores al parto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Hasta 30 días posteriores al parto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hasta 45 días posteriores al parto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_61 -->
+<pregunta> <texto><![CDATA[¿Qué incluye el programa de Control de Niño Sano e Inmunizaciones?]]></texto>
+<respuesta>
+<texto><![CDATA[Evaluación pediátrica mensual durante el primer año hasta los 5 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Evaluación pediátrica mensual durante el primer año y luego coincidente con el esquema EPS de vacunación que se ofrece hasta los 10 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Evaluación pediátrica mensual durante el primer año y luego coincidente con el esquema EPS de vacunación que se ofrece hasta los 5 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_62 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por asegurabilidad?]]></texto>
+<respuesta>
+<texto><![CDATA[Conjunto de documentos que presenta una persona para que pueda ser admitida por el seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Conjunto de requisitos que cumple una persona para asegurarse.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Conjunto de circunstancias que determinan que una persona pueda ser admitida por el seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_63 -->
+<pregunta> <texto><![CDATA[¿Qué documentos conforman la póliza?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[* Sumario
+* Aviso de cobranza
+* Convenio de pago de primas
+* Condicionado general
+* Condiciones especiales y particulares
+* Exclusiones]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Sumario
+* Aviso de cobranza
+* Condiciones especiales y particulares
+* Exclusiones]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[
+* Aviso de cobranza
+* Convenio de pago de primas
+* Condicionado general
+* Condiciones especiales y particulares
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_64 -->
+<pregunta> <texto><![CDATA[¿Qué información contiene el sumario?]]></texto>
+<respuesta>
+<texto><![CDATA[Resume las coberturas, identifica al asegurado titular y a sus dependientes, y las condiciones generales, especiales y particulares contratadas. Asimismo, contiene el detalle de la tabla de beneficios y gastos cubiertos en las diferentes redes de atención.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Resume las coberturas, identifica al asegurado titular y a sus dependientes, el período de vigencia del seguro, la prima total a pagar, y las condiciones generales, especiales y particulares contratadas. Asimismo, contiene el detalle de la tabla de beneficios y gastos cubiertos en las diferentes redes de atención.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Resume las coberturas, identifica al asegurado titular y a sus dependientes, el período de vigencia del seguro, la prima total a pagar y las condiciones generales, especiales y particulares contratadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_65 -->
+<pregunta> <texto><![CDATA[¿Qué información contiene el aviso de cobranza?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Detalla el monto que debe pagar por su seguro médico. Asimismo, si decide fraccionarlo, muestra el importe de las cuotas por cancelar.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Detalla el monto que debe pagar por su seguro médico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Detalla el importe de las cuotas por cancelar.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_66 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por prima?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el pago para poder ser evaluado, antes de que la aseguradora decida si le da cobertura.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El primer pago de un asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el pago que el asegurado realiza a cambio de obtener la cobertura del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_67 -->
+<pregunta> <texto><![CDATA[¿Qué información contiene el convenio de pago de primas?]]></texto>
+<respuesta>
+<texto><![CDATA[Establece las cuotas. Se deberá devolver este convenio firmado a Pacífico en señal de aceptación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Establece las cuotas y condiciones del fraccionamiento de la prima. Se deberá devolver este convenio firmado a Pacífico en señal de aceptación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Establece las cuotas y condiciones del fraccionamiento de la prima.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_68 -->
+<pregunta> <texto><![CDATA[¿Qué información contiene el condicionado general?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Contiene aquellas cláusulas que aplican en igualdad de condiciones para todos los asegurados del producto de salud que está adquiriendo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Contiene aquellas cláusulas que aplican solo y específicamente para el asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Contiene aquellas cláusulas sobre el seguro adquirido por el asegurado, dependiendo del plan elegido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_69 -->
+<pregunta> <texto><![CDATA[¿Qué información contienen las condiciones particulares?]]></texto>
+<respuesta>
+<texto><![CDATA[Son las cláusulas que aplican específicamente solo a los asegurados dependientes al plan de salud que usted ha adquirido y lo diferencian de otros planes dentro del mismo producto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las cláusulas que aplican específicamente para usted sobre el plan de salud que ha adquirido, excluye a sus dependientes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son las cláusulas que aplican específicamente al plan de salud que el cliente ha adquirido y lo diferencian de otros planes dentro del mismo producto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_70 -->
+<pregunta> <texto><![CDATA[¿Qué información contienen las condiciones especiales?]]></texto>
+<respuesta>
+<texto><![CDATA[Son las cláusulas que indican qué hacer en casos especiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las cláusulas que establecen condiciones generales para todos los asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son las cláusulas que establecen condiciones específicas para cada asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_71 -->
+<pregunta> <texto><![CDATA[¿Qué información contienen las exclusiones?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Son las cláusulas que enumeran aquellas condiciones que no están cubiertas por su seguro médico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las cláusulas que indican en qué caso se realiza el reembolso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las cláusulas que enumeran aquellas condiciones que están cubiertas parcialmente por su seguro médico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_72 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por atención al crédito?]]></texto>
+<respuesta>
+<texto><![CDATA[Son las atenciones en las redes de clínicas o centros de salud afiliados y garantizados por Pacífico. Para estos casos, el asegurado no deberá asumir el copago por consulta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son las atenciones en las redes de clínicas o centros de salud afiliados y garantizados por Pacífico. Para estos casos, el asegurado solo deberá asumir el copago por consulta. En caso de que se soliciten exámenes adicionales, medicinas u operaciones, también deberá asumir los coaseguros correspondientes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las atenciones en centros de salud afiliados y garantizados por Pacífico. En donde se paga y luego se realiza un reembolso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_73 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por atención a reembolso?]]></texto>
+<respuesta>
+<texto><![CDATA[Son las atenciones en clínicas a nivel nacional (afiliadas o no a Pacífico), por las que luego el asegurado solicitará el reembolso correspondiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las atenciones en clínicas no afiliadas a Pacífico, por las que luego el asegurado solicitará a Pacífico el reembolso correspondiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son las atenciones en clínicas o centros no afiliados a Pacífico en las que el asegurado asumirá el total de los gastos. Luego deberá presentar una solicitud de reembolso para que Pacífico efectúe la devolución correspondiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_74 -->
+<pregunta> <texto><![CDATA[¿Cómo define usted el término "solicitud de reembolso" en las pólizas de salud de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Documento preimpreso, en el cual el asegurado llena el detalle únicamente de la consulta médica realizada que solicita se le reintegre.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Documento generalmente preimpreso que el asegurado llena y suscribe resumiendo la relación de pagos realizados directamente al médico y/o clínicas que solicita se le reintegren.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Documento preimpreso en el cual el asegurado llena el detalle de pagos únicamente por medicinas y exámenes realizados y que solicita se le reintegren.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_75 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por beneficio máximo anual?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el monto máximo de cobertura que ofrece su seguro para usted y sus dependientes inscritos durante 2 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el monto máximo de cobertura que ofrece su seguro para usted y sus dependientes inscritos durante un año.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el monto máximo de cobertura solo para algunos beneficios que ofrece su seguro, para usted y sus dependientes inscritos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_76 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por coaseguro?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es el porcentaje de los gastos que se encuentran amparados por la póliza que debe pagar el asegurado después de aplicar el copago correspondiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el porcentaje que debe pagar el asegurado en los centros de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el monto mínimo de los gastos amparados por la póliza que le corresponde pagar al asegurado por derecho de atención. Ambos términos significan lo mismo y suelen ser utilizados indistintamente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_77 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por copago o deducible?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el monto máximo de los gastos amparados por la póliza que le corresponde pagar al asegurado por derecho de atención.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el porcentaje de los gastos que se encuentran amparados por la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el monto mínimo de los gastos amparados por la póliza que le corresponde pagar al asegurado por derecho de atención. Ambos términos significan lo mismo y suelen ser utilizados indistintamente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_78 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por declaración de salud?]]></texto>
+<respuesta>
+<texto><![CDATA[Es la información que debe brindar el solicitante y sus dependientes a Pacífico acerca de los tratamientos pasados. La declaración de salud forma parte de la solicitud del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es la información que debe brindar el solicitante y sus dependientes a Pacífico acerca de los antecedentes médicos, síntomas, dolencias, enfermedades y/o tratamientos pasados y presentes que permitan evaluar el actual estado de salud de cada uno de los solicitantes al momento de la afiliación. La declaración de salud forma parte de la solicitud del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la información que debe brindar el solicitante y sus dependientes a Pacífico acerca de su estado de salud presente. La declaración de salud forma parte de la solicitud del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_79 -->
+<pregunta> <texto><![CDATA[¿Cómo define usted el término "enfermedad congénita" en las pólizas de salud de Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cualquier enfermedad, defecto físico o desorden orgánico que estaba presente al momento del nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cualquier enfermedad que estaba presente al momento del nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cualquier defecto físico o desorden orgánico que estaba presente al momento del nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_80 -->
+<pregunta> <texto><![CDATA[¿Cómo define usted el término "enfermedad crónica" en las pólizas de salud de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Enfermedad de curso mayor a 10 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Enfermedad de curso mayor a 6 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Enfermedad de curso mayor a 3 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_81 -->
+<pregunta> <texto><![CDATA[¿Cómo define usted el término "salud" en las pólizas de salud de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[El completo estado de bienestar mental del individuo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El completo estado de bienestar físico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El completo estado de bienestar físico y mental del individuo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_82 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los principales productos personales de salud que tiene Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[* Multisalud.
+* Medicvida Nacional. 
+* Medicvida Internacional.
+* Oncomedic Nacional.
+* Oncomedic Internacional.
+* Enfermedades y accidentes graves.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Multisalud.
+* Medicvida Nacional. 
+* Medicvida Internacional.
+* Enfermedades y accidentes graves.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Multisalud.
+* Medicvida Nacional. 
+* Medicvida Internacional.
+* Oncomedic Nacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_83 -->
+<pregunta> <texto><![CDATA[¿Qué cubre un seguro de salud?]]></texto>
+<respuesta>
+<texto><![CDATA[Cubre todos los gastos necesarios correspondientes al tratamiento de un accidente que se encuentre amparado por su póliza hasta el monto de $2000.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre todos los gastos necesarios correspondientes al tratamiento de una enfermedad que se encuentre amparada por su póliza, hasta el monto de $ 1000,00.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre todos los gastos necesarios correspondientes al tratamiento de una enfermedad o accidente que se encuentre amparado por su póliza hasta el beneficio máximo que aparece en el sumario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_84 -->
+<pregunta> <texto><![CDATA[¿Quiénes pueden contratar un seguro de salud?]]></texto>
+<respuesta>
+<texto><![CDATA[Cualquier persona entre 18 y 50 años. Los padres de familia pueden incluir a sus hijos hasta los 20 años de edad con permanencia hasta los 26.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cualquier persona entre 18 y 60 años. Los padres de familia pueden incluir a sus hijos hasta los 23 años de edad con permanencia hasta los 26.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cualquier persona entre 18 y 65 años. Los padres de familia pueden incluir a sus hijos hasta los 18 años de edad con permanencia hasta los 26.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_85 -->
+<pregunta> <texto><![CDATA[¿Cuál es el tiempo límite para que un asegurado pueda inscribir a su hijo, cuyo nacimiento ha sido cubierto por la póliza, y que pueda tener derecho a todos los beneficios sin aplicar período de carencia?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Esta inscripción se debe hacer dentro de los 30 días posteriores al nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Esta inscripción se debe hacer dentro de los 15 días posteriores al nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Esta inscripción se debe hacer dentro de los 60 días posteriores al nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_86 -->
+<pregunta> <texto><![CDATA[Detallar el tiempo de carencia para atenderse a través de una póliza personal.]]></texto>
+<respuesta>
+<texto><![CDATA[* 15 días calendario para atenciones en el Perú.
+* 30 días calendario para atenciones en el extranjero. 
+* 45 días calendario para los casos oncológicos en el Perú y en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* 60 días calendario para atenciones en el Perú.
+* 90 días calendario para atenciones en el extranjero. 
+* 120 días calendario para los casos oncológicos en el Perú y en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* 30 días calendario para atenciones en el Perú.
+* 60 días calendario para atenciones en el extranjero. 
+* 90 días calendario para los casos oncológicos en el Perú y en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_87 -->
+<pregunta> <texto><![CDATA[¿Cuál es el tiempo máximo para declarar una emergencia accidental en los productos modulares?]]></texto>
+<respuesta>
+<texto><![CDATA[12 horas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[48 horas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[24 horas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_88 -->
+<pregunta> <texto><![CDATA[En los productos modulares las enfermedades congénitas están cubiertas solo en las siguientes pólizas:]]></texto>
+<respuesta>
+<texto><![CDATA[* Medicvida Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+* Medicvida Internacional. 
+* Medicvida Nacional.
+* Multisalud.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Medicvida Nacional.
+* Multisalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_89 -->
+<pregunta> <texto><![CDATA[¿Hasta qué edad máxima pueden asegurarse los titulares y sus cónyuges o convivientes en los principales productos personales de salud de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Hasta los 55 años de edad inclusive.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hasta los 65 años de edad inclusive, de 61 a 65 años previo examen de asegurabilidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Hasta los 65 años de edad inclusive.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_90 -->
+<pregunta> <texto><![CDATA[¿Cuál es el límite de edad de ingreso y permanencia bajo la cobertura de la póliza para los hijos registrados como dependientes en los principales productos personales de salud de Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Para el ingreso es de 23 años, y pueden permanecer hasta los 26 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Para el ingreso es de 20 años, y pueden permanecer hasta los 28 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Para el ingreso es de 18 años, y pueden permanecer hasta los 25 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_91 -->
+<pregunta> <texto><![CDATA[Respecto a los principales productos personales de salud de Pacífico, ¿en qué circunstancias un hijo de asegurado recién nacido es cubierto por la póliza?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cuando es inscrito en la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuando tiene DNI.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuando cumple 1 mes de nacido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_92 -->
+<pregunta> <texto><![CDATA[¿Cuál es el período de espera de maternidad para una asegurada que ingresa como titular a un Seguro de Salud Total o Seguro de Salud Internacional?]]></texto>
+<respuesta>
+<texto><![CDATA[El período de espera es de 12 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El período de espera es de 18 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El período de espera es de 36 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_93 -->
+<pregunta> <texto><![CDATA[Respecto a los principales productos personales de salud de Pacífico, ¿cuál es el beneficio máximo anual del Seguro de Salud Internacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Beneficio máximo anual por persona $3 000 000.
+A partir de los 75 años $400 000.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Beneficio máximo anual por persona $4 000 000.
+A partir de los 75 años $300 000.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Beneficio máximo anual por persona $3 000 000 incluso para personas a partir de 75 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_94 -->
+<pregunta> <texto><![CDATA[¿Cuál es el plazo para que el asegurado devuelva la póliza y solicite su anulación si considera que el contenido de la misma no refleja las condiciones ofrecidas?]]></texto>
+<respuesta>
+<texto><![CDATA[20 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[15 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[30 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_95 -->
+<pregunta> <texto><![CDATA[Cuatro coberturas de las pólizas modulares son:]]></texto>
+<respuesta>
+<texto><![CDATA[Cobertura ambulatoria, hospitalaria, análisis y oncología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cobertura ambulatoria, hospitalaria, maternidad y accidentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cobertura ambulatoria, hospitalaria, maternidad y oncología.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_96 -->
+<pregunta> <texto><![CDATA[¿Qué productos de salud pueden ser pagados mediante tarjetas de crédito o cargos recurrentes?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo el seguro Medicvida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Todos los productos de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo el seguro Multisalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_97 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los gastos cubiertos en los casos de hospitalización en los productos modulares de salud?]]></texto>
+<respuesta>
+<texto><![CDATA[
+Exámenes de laboratorio,
+otros servicios que tengan directa relación con el tratamiento médico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo la habitación, sala de operaciones y los medicamentos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Habitación
+* Sala de operaciones
+* Medicamentos
+* Exámenes de laboratorio
+* Otros servicios que tengan directa relación con el tratamiento médico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_98 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las principales coberturas del seguro de Salud Internacional?
+]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[* Atenciones ambulatorias
+* Atenciones hospitalarias
+* Emergencias médicas o accidentales
+* Atenciones en el extranjero
+* Cobertura oncológica
+* Gastos de sepelio
+* Atenciones de maternidad
+* Atenciones odontológicas
+* Atenciones oftalmológicas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Atenciones ambulatorias
+* Atenciones hospitalarias
+* Emergencias médicas o accidentales
+* Atenciones en el extranjero
+* Cobertura oncológica
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[
+* Gastos de sepelio
+* Atenciones de maternidad
+* Atenciones odontológicas
+* Atenciones oftalmológicas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_99 -->
+<pregunta> <texto><![CDATA[¿Qué póliza personal ofrece el beneficio de atención en el extranjero?]]></texto>
+<respuesta>
+<texto><![CDATA[Seguro de Salud y Enfermedades Graves]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Seguro de Salud Internacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_100 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por atenciones de maternidad?]]></texto>
+<respuesta>
+<texto><![CDATA[Son las relacionadas únicamente con el alumbramiento del bebé.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Son las relacionadas con la gestación y el nacimiento, así como con las complicaciones durante el embarazo y el alumbramiento del bebé.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las relacionadas con la gestación, el nacimiento y el alumbramiento del bebé. No cubre complicaciones durante el embarazo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_101 -->
+<pregunta> <texto><![CDATA[Respecto al beneficio de transplante de órganos que tienen nuestros seguros de Salud Total y Salud Internacional, ¿cubren la compra de órganos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No, porque está prohibida por ley.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No, porque son demasiado riesgosos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, solo de algunos órganos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_102 -->
+<pregunta> <texto><![CDATA[La cirugía plástica (estética) y/o situaciones preexistentes para embellecimiento, ¿están cubiertas en el Seguro de Salud Internacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí. Algunos productos de salud de Pacífico cubren la cirugía estética.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No. Ningún producto de salud de Pacífico cubre la cirugía estética ni de embellecimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí. Solo al 50% la cirugía estética y de embellecimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_103 -->
+<pregunta> <texto><![CDATA[Mencione las coberturas especiales por viaje en el extranjero que ofrece el Seguro de Salud Internacional.]]></texto>
+<respuesta>
+<texto><![CDATA[Asistencia al viajero a través AXB, ambulancia aérea, prolongación de estancia en el extranjero por accidente o enfermedad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Asistencia al viajero a través AXAI, transporte y repatriación de restos humanos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Asistencia al viajero a través AXA, transporte y repatriación de restos humanos, ambulancia aérea, prolongación de estancia en el extranjero por accidente o enfermedad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_104 -->
+<pregunta> <texto><![CDATA[¿Cuál es el beneficio máximo anual por persona del Seguro de Salud Total?]]></texto>
+<respuesta>
+<texto><![CDATA[S/. 9 200,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[S/. 9 600,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[S/. 9 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_105 -->
+<pregunta> <texto><![CDATA[¿Cuánto es el tiempo de carencia del Seguro de Salud Total?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[30 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[50 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[20 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_106 -->
+<pregunta> <texto><![CDATA[¿Cuánto es el tiempo de carencia del Seguro de Salud Internacional?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[30 días para atenciones dentro del territorio nacional y 60 días para atenciones en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[15 días para atenciones dentro del territorio nacional y 50 días para atenciones en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[60 días para atenciones dentro del territorio nacional y 120 días para atenciones en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_107 -->
+<pregunta> <texto><![CDATA[Respecto a los productos Salud, Salud Total y Salud Internacional, ¿cuál es el tiempo del período de espera para el beneficio de maternidad?]]></texto>
+<respuesta>
+<texto><![CDATA[15 meses para la titular sola y 20 meses para la cónyuge del titular o titular con cónyuge.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[20 meses para la titular sola y 15 meses para la cónyuge del titular o titular con cónyuge.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[24 meses para la titular sola y 18 meses para titular sola y también para la cónyuge del titular.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_108 -->
+<pregunta> <texto><![CDATA[En todos los productos personales de salud de Pacífico, ¿por qué no se cubren los gastos por concepto de sangre o plasma?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo están cubiertos los gastos por plasma.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Porque son demasiado riesgosos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Porque no está permitido por ley.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_109 -->
+<pregunta> <texto><![CDATA[¿Qué seguro de salud personal mantiene el beneficio de reembolso?]]></texto>
+<respuesta>
+<texto><![CDATA[Seguro de Salud y Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Seguro de Salud Total y Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Total y Seguro de Salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_110 -->
+<pregunta> <texto><![CDATA[La atención médica a domicilio en caso de emergencia a través del equipo médico y de ambulancias es un beneficio que solo se ofrece en:]]></texto>
+<respuesta>
+<texto><![CDATA[* Seguro de Salud Internacional
+* Seguro de Salud]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Todos los productos de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Seguro de Salud Internacional 
+* Seguro de Salud Total
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_111 -->
+<pregunta> <texto><![CDATA[El servicio de emergencia a domicilio en Lima (ambulancias), ¿tiene algún costo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El servicio de emergencias médicas a domicilio no tiene ningún costo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El servicio de emergencias médicas a domicilio sí tiene un costo, que va a depender del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El servicio de emergencias médicas a domicilio solo esta cubierto al 50%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_112 -->
+<pregunta> <texto><![CDATA[Si un asegurado de cualquiera de los productos de salud personal desea cambiar su plan con deducible adicional anual, ¿cuándo puede hacerlo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[A su renovación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A los 12 meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A los 18 meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_113 -->
+<pregunta> <texto><![CDATA[¿Cuál es el tiempo máximo para que un asegurado de Salud Total o Salud Internacional pueda presentar la solicitud de reembolso?]]></texto>
+<respuesta>
+<texto><![CDATA[Dentro de los 120 días siguientes, después de haber pagado directamente sus servicios y honorarios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Dentro de los 90 días siguientes, después de haber pagado directamente sus servicios y honorarios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Dentro de los 60 días siguientes, después de haber pagado directamente sus servicios y honorarios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_114 -->
+<pregunta> <texto><![CDATA[¿Quiénes pueden acceder a un seguro de salud personal de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Cualquier persona entre 18 y 55 años. Los padres de familia pueden incluir a sus hijos hasta los 20 años de edad con permanencia hasta los 26.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cualquier persona entre 15 y 60 años. Los padres de familia pueden incluir a sus hijos hasta 25 años con permanencia hasta los 30.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cualquier persona entre 18 y 60 años. Los padres de familia pueden incluir a sus hijos hasta los 23 años de edad con permanencia hasta los 26.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_115 -->
+<pregunta> <texto><![CDATA[¿La póliza de Seguro de Salud cubre VIH/ Sida?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Depende de la fase de la enfermedad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_116 -->
+<pregunta> <texto><![CDATA[¿Cuál es el beneficio máximo anual y por persona del Seguro de Salud?]]></texto>
+<respuesta>
+<texto><![CDATA[S/. 3 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[S/. 3 400,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[S/. 3 200,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_117 -->
+<pregunta> <texto><![CDATA[Respecto a los seguros de salud personal, las enfermedades que se inicien durante el período de espera serán cubiertas siempre y cuando:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No sean preexistentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sean preexistentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En algunos casos cubre enfermedades preexistentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_118 -->
+<pregunta> <texto><![CDATA[¿El Seguro de Salud cubre atenciones a reembolso?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, permite atenderse al crédito en clínicas afiliadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No, solo permite atenderse al crédito en clínicas afiliadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_119 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por cobertura oncológica?]]></texto>
+<respuesta>
+<texto><![CDATA[Las atenciones (citas médicas) cubiertas para el tratamiento del cáncer.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Las atenciones y gastos cubiertos para el tratamiento del cáncer.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los gastos en medicinas cubiertos para el tratamiento del cáncer.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_120 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico, ¿cuáles son los seguros que ofrece?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Ofrece: Seguro Oncológico Total y Seguro Oncológico Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro Oncológico Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro Oncológico Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_121 -->
+<pregunta> <texto><![CDATA[Las enfermedades oncológicas tratadas dentro del territorio nacional se cubren bajo la póliza:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Seguro de Salud Total y Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_122 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico, ¿cuál es el beneficio anual?]]></texto>
+<respuesta>
+<texto><![CDATA[Oncológico Internacional: US$1 400 000,00 y Oncológico Total US$ 1 400 000,00.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Oncológico Internacional: US$1 500 000,00 y Oncológico Total US$ 1 650 000,00.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Oncológico Internacional: US$1 000 000,00 y Oncológico Total US$ 1 600 000,00.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_123 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico, ¿cuál es la cobertura de los gastos hospitalarios al crédito en el Perú?]]></texto>
+<respuesta>
+<texto><![CDATA[La cobertura es al 90% en clínicas afiliadas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La cobertura es al 100% en clínicas afiliadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La cobertura es al 95% en clínicas afiliadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_124 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico Internacional, ¿cuál es la cobertura ambulatoria al crédito en el extranjero?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La cobertura en clínicas afiliadas es US$200 al 70%, el deducible aplica a cada consulta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La cobertura en clínicas afiliadas es US$200 al 60%, el deducible aplica a cada consulta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La cobertura en clínicas afiliadas es US$300 al 50%, el deducible aplica a cada consulta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_125 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico Internacional, ¿cuál es la cobertura hospitalaria al crédito en el extranjero?]]></texto>
+<respuesta>
+<texto><![CDATA[La cobertura a crédito tiene un deducible de US$2500 al 70% hasta US$50 000, exceso al 90%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La cobertura a crédito tiene un deducible de US$2500 al 80% hasta US$50,000, exceso al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La cobertura a crédito tiene un deducible de US$2000 al 80% hasta US$40 000, exceso al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_126 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico Total ,¿cómo se cubre el reembolso hospitalario?]]></texto>
+<respuesta>
+<texto><![CDATA[Reembolso hospitalario a nivel nacional al 40%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reembolso hospitalario a nivel nacional al 50%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Reembolso hospitalario a nivel nacional al 70%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_127 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico, ¿hay alguna restricción en el uso de medicamentos para el tratamiento de cáncer? ¿Por qué?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí, todo medicamento deberá contar con el sustento médico (medicina basada en la evidencia con ensayos clínicos de fase II concluidos y con beneficio demostrado) y con la autorización de la NCNN categoría 2A.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí, todo medicamento deberá contar con el sustento médico (medicina basada en la evidencia con ensayos clínicos de fase III concluidos y con beneficio demostrado) y con la autorización de la NCCN categoría 1 y 2A (ambos criterios).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, todo medicamento deberá contar con el sustento médico (medicina basada en la evidencia con ensayos clínicos de fase IV concluidos y con beneficio demostrado) y con la autorización de la NCCN categoría 1 y 3A (ambos criterios).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_128 -->
+<pregunta> <texto><![CDATA[Respecto al Seguro Oncológico, ¿cuál es el período de carencia?]]></texto>
+<respuesta>
+<texto><![CDATA[El período de carencia es de 80 días.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El período de carencia es de 90 días.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El período de carencia es de 60 días.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_129 -->
+<pregunta> <texto><![CDATA[¿El Seguro Oncológico cubre tratamientos experimentales?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No cubre tratamientos experimentales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí , cubre los tratamientos en la Clinica Guidelines in Oncology.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí cubre, pero solo algunos tratamientos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_130 -->
+<pregunta> <texto><![CDATA[Respecto a enfermedades y accidentes graves, ¿cuál es el beneficio anual por persona?]]></texto>
+<respuesta>
+<texto><![CDATA[US$ 5 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US$ 1 500,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[US$ 1 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_131 -->
+<pregunta> <texto><![CDATA[Respecto a enfermedades y accidentes graves, ¿cuál es el alcance geográfico de los gastos cubiertos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[En el Perú y en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En el Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo en Lima y algunas provincias en las cuales Pacífico tienen una sede.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_132 -->
+<pregunta> <texto><![CDATA[Respecto a enfermedades y accidentes graves, ¿cuál es el deducible y copago para las atenciones al crédito en el Perú?]]></texto>
+<respuesta>
+<texto><![CDATA[En el Perú las atenciones ambulatorias y/o hospitalarias son al 80%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[En el Perú las atenciones ambulatorias y/o hospitalarias son al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En el Perú las atenciones ambulatorias y/o hospitalarias son al 50%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_133 -->
+<pregunta> <texto><![CDATA[Respecto a enfermedades y accidentes graves, ¿se cubre el reembolso en el Perú?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Sí, se cubre al 70% en el Perú, con autorización de la compañía en base a la tarifa A.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No se cubre.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, se cubre al 90% en el Perú, con autorización de la compañía en base a la tarifa A.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_134 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los diagnósticos cubiertos por enfermedades graves?]]></texto>
+<respuesta>
+<texto><![CDATA[Cirugías para enfermedades del corazón, cirugía para enfermedades del sistema nervioso central y periférico, cirugía para transplante solo de riñón, corazón, hígado, páncreas, córnea y médula ósea.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Tratamiento integral del cáncer, enfermedades del sistema nervioso central y periférico, cirugía para transplante solo de páncreas, pulmones, córnea y médula ósea.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Tratamiento integral del cáncer, cirugía para enfermedades del corazón; cirugía para enfermedades del sistema nervioso central y periférico; cirugía para transplante de riñón, corazón, hígado, páncreas, pulmones, córnea y médula ósea. Adicionalmente, quemaduras de tercer grado, accidentes de trauma mayor y diálisis por insuficiencia renal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_135 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los requisitos para la atención de una emergencia médica o accidental en las clínicas afiliadas a la EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[La presentación de la credencial y el DNI del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La sola presentación de la credencial de afiliado o el DNI.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La sola presentación del DNI.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_136 -->
+<pregunta> <texto><![CDATA[¿Por cuánto tiempo el asegurado puede pasar una continuación de emergencia accidental?]]></texto>
+<respuesta>
+<texto><![CDATA[60 días posteriores a la ocurrencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[90 días posteriores a la ocurrencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[15 días posteriores a la ocurrencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_137 -->
+<pregunta> <texto><![CDATA[¿Cuál es el límite de edad para que un trabajador se afilie y permanezca en una EPS?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No existe límite de edad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[65 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[70 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_138 -->
+<pregunta> <texto><![CDATA[¿Qué son las Prestaciones de Recuperación de Salud?]]></texto>
+<respuesta>
+<texto><![CDATA[Atenciones médicas a domicilio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Atenciones médicas que buscan tratar las enfermedades que tuvo anteriormente el paciente asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Atenciones médicas que buscan tratar las enfermedades que tiene en ese momento el paciente asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_139 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los beneficios y coberturas de los servicios adicionales que ofrece Pacífico? Mencione al menos 2 de ellos.]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[* Médico a domicilio
+* Segunda opinión internacional
+* Sepelio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Chequeos médicos anuales.
+* Vacunas e inmunizaciones
+* Educación para la salud
+* Evaluación y control de riesgos
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Médico a domicilio
+* Vacunas e inmunizaciones
+* Cobertura contra el cáncer]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_140 -->
+<pregunta> <texto><![CDATA[¿El trabajador que se afilia a una EPS pierde el derecho a atenderse en EsSalud? ¿Por qué?]]></texto>
+<respuesta>
+<texto><![CDATA[No pierde su derecho de atención, puede atenderse indistintamente en EsSalud o en la EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí pierde su derecho de atención en EsSalud por contar con un seguro privado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No pierde su derecho de atención por diagnósticos de capa compleja, debido a que el empleador continúa aportando a EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_141 -->
+<pregunta> <texto><![CDATA[¿Los afiliados a Pacífico tienen derecho a cobertura de diagnósticos preexistentes y enfermedades congénitas?]]></texto>
+<respuesta>
+<texto><![CDATA[No. Pacífico no cubre diagnósticos de preexistencias ni enfermedades congénitas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí. Pacífico cubre los diagnósticos preexistentes y las enfermedades congénitas que pertenezcan a la capa simple.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pacífico solo cubre los diagnósticos de preexistencias de capa simple o compleja.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_142 -->
+<pregunta> <texto><![CDATA[¿Qué sucede con las prestaciones económicas, como los subsidios por maternidad, lactancia e incapacidad temporal, si son requeridas por un trabajador que se afilie a una EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Las prestaciones económicas las asume el empleador.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las prestaciones económicas las asume la EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Las prestaciones económicas las asume EsSalud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_143 -->
+<pregunta> <texto><![CDATA[¿Las emergencias ambulatorias son siempre cubiertas al 100%?]]></texto>
+<respuesta>
+<texto><![CDATA[Toda emergencia accidental de carácter ambulatorio, que no requiera internamiento u hospitalización, será cubierta al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí. Toda emergencia accidental o médica de carácter ambulatorio, que no requiera internamiento u hospitalización, será cubierta al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí. Toda emergencia accidental o médica de carácter ambulatorio que requiera o no internamiento u hospitalización, será cubierta al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_144 -->
+<pregunta> <texto><![CDATA[¿A cuánto asciende el copago del plan de vacunación que ofrece Pacífico para los niños afiliados (de 0 a 10 años)?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No se aplican copagos, la cobertura es al 100%. Corresponde al programa Control del Niño Sano.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El copago corresponde a la tarifa de red 1.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No se aplican copagos, pero el costo de la vacuna debe ser asumido al 50%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_145 -->
+<pregunta> <texto><![CDATA[Nombre al menos dos de las exclusiones y limitaciones de las prestaciones de la EPS.]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[- Terapias o procedimientos cosméticos, estéticos o suntuarios.
+- Suicidio o intento, lesiones autoinflingidas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El plan de salud de EPS no tiene exclusiones ni limitaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[EL plan de salud de la EPS solo contempla limitaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_146 -->
+<pregunta> <texto><![CDATA[¿Quiénes son los beneficiarios según ley de los planes de salud de las EPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Los padres, los hijos mayores de 18 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Titular y sus derechohabientes legales (cónyuge, concubino(s), hijos menores de 18 años) e hijos mayores de 18 años declarados con incapacidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El titular y sus hijos menores de 18 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_147 -->
+<pregunta> <texto><![CDATA[Para utilizar el sistema de reembolso de los planes de salud de la EPS, ¿qué documentos hay que presentar?]]></texto>
+<respuesta>
+<texto><![CDATA[Recibos por honorarios profesionales a nombre del afiliado e informes médicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo el recibo por honorarios profesionales a nombre de la EPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Recibos por honorarios profesionales a nombre del afiliado, facturas por clínica, medicinas y otros servicios médicos adjuntando los informes médicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_148 -->
+<pregunta> <texto><![CDATA[¿Bajo qué condición en un seguro EPS se cubren enfermedades congénitas?]]></texto>
+<respuesta>
+<texto><![CDATA[Se cubre incluso para los niños cuya concepción no fue dentro de la vigencia del plan de salud de la entidad empleadora actual.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+La cobertura es para los niños cuya concepción fue dentro de la vigencia del plan de salud de la entidad empleadora actual y cuya inscripción sea dentro del mes de nacimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La cobertura aplica solo para los niños hasta los 5 años de edad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_149 -->
+<pregunta> <texto><![CDATA[¿Qué es el período de latencia?]]></texto>
+<respuesta>
+<texto><![CDATA[Período de cobertura a través de Pacífico, se activa cuando el trabajador lo solicite.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Período de cobertura únicamente a través de EsSalud, que se ofrece solo a algunos trabajadores que hayan terminado su vínculo laboral con la empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Período de cobertura a través de EsSalud y Pacífico que se ofrece a los trabajadores que hayan terminado su vínculo laboral con la empresa en la que laboraban. Se extiende a sus derechohabientes legales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_150 -->
+<pregunta> <texto><![CDATA[¿Cuál es el requisito para poder acogerse al período de latencia, y cómo se distribuye de acuerdo al tiempo de aportación?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Mínimo 5 meses de aportación a EsSalud y/o a una EPS en los últimos 3 años antes del cese.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mínimo 12 meses de aportación a EsSalud y/o a una EPS en los últimos 3 años antes del cese.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mínimo 6 meses de aportación a EsSalud y/o a una EPS en los últimos 3 años antes del cese.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_151 -->
+<pregunta> <texto><![CDATA[En un seguro de salud de practicantes, ¿cuál es el beneficio máximo anual por enfermedad?]]></texto>
+<respuesta>
+<texto><![CDATA[18 sueldos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+14 sueldos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[24 sueldos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_152 -->
+<pregunta> <texto><![CDATA[En un seguro de salud de practicantes, ¿cuál es el beneficio máximo anual por accidente?]]></texto>
+<respuesta>
+<texto><![CDATA[20 sueldos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[24 sueldos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+30 sueldos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_153 -->
+<pregunta> <texto><![CDATA[¿Cuál es el período de espera de maternidad para una asegurada del Seguro de Salud Grupal Empresas?]]></texto>
+<respuesta>
+<texto><![CDATA[El período de espera es de 12 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El período de espera es de 10 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El período de espera es de 18 meses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_154 -->
+<pregunta> <texto><![CDATA[¿Cómo se establecen las primas en un Seguro de Salud Grupal Empresas?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Si el grupo tiene menos de 25 asegurados, por rango de edad. Si tiene 25 o más, por composición de grupo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Si el grupo tiene menos de 50 asegurados, por rango de edad. Si tiene 50 o más, por composición de grupo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Si el grupo tiene menos de 25 asegurados, por composición de grupo. Si tiene 25 o más, por rango de edad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_155 -->
+<pregunta> <texto><![CDATA[Respecto al producto oncológico, ¿cuál es el tiempo de espera para el trasplante de médula ósea?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[24 meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[18 meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No hay tiempo de espera]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_156 -->
+<pregunta> <texto><![CDATA[Respecto al producto oncológico, ¿cuál de las siguientes no están cubiertos?]]></texto>
+<respuesta>
+<texto><![CDATA[Nutricionista.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reconstrucción mamaria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Contaminación nuclear.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_157 -->
+<pregunta> <texto><![CDATA[Respecto al producto oncológico, ¿cuándo puedo tener acceso al despistaje oncológico gratuito?]]></texto>
+<respuesta>
+<texto><![CDATA[A partir del primer pago.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+A partir de la primera renovación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Una vez cumplido el tiempo de carencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_158 -->
+<pregunta> <texto><![CDATA[Respecto al producto oncológico, los gastos de sepelio tienen cobertura:]]></texto>
+<respuesta>
+<texto><![CDATA[A reembolso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+A crédito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A crédito y reembolso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_159 -->
+<pregunta> <texto><![CDATA[¿Cuál es el porcentaje de exceso cubierto de la cobertura oncológica del seguro de salud Red Preferente?]]></texto>
+<respuesta>
+<texto><![CDATA[Al 100%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Al 75%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Al 85%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_160 -->
+<pregunta> <texto><![CDATA[¿Cuál es el beneficio máximo anual y por persona del seguro de salud Red Preferente?]]></texto>
+<respuesta>
+<texto><![CDATA[S/. 2 200,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[S/. 2 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[S/. 2 500,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_161 -->
+<pregunta> <texto><![CDATA[El servicio de médico a domicilio del seguro de salud Red Preferente en provincias, ¿con qué especialidades cuenta?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Oncología y medicina general]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pediatría y medicina general]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[
+Medicina general]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_162 -->
+<pregunta> <texto><![CDATA[¿Cuál es el límite de la suma asegurada para enfermedades epidémicas en el seguro de salud Red Preferente?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[40000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[100000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[S/. 2 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_163 -->
+<pregunta> <texto><![CDATA[¿Qué producto de Asistencia Médica cuenta con el paquete de sepelio VIP?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Seguro de Salud Internacional y Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo seguro de Salud Nacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_164 -->
+<pregunta> <texto><![CDATA[Las ejecutivas premium atienden a clientes del:]]></texto>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Internacional y Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_165 -->
+<pregunta> <texto><![CDATA[¿Qué producto cuenta con la cobertura especial de ambulacia aérea?]]></texto>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Internacional y Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_166 -->
+<pregunta> <texto><![CDATA[La cobertura de enfermedades congénitas no diagnosticadas para el producto de Salud Total es:]]></texto>
+<respuesta>
+<texto><![CDATA[Hasta S/.50 000 por vida. Según condiciones amb/hosp.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hasta S/. 80 000 por vida. Según condiciones amb/hosp.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Hasta $ 60 000 por vida. Según condiciones amb/hosp.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_167 -->
+<pregunta> <texto><![CDATA[¿Qué producto(s) de Asistencia Médica cuentan con la Red 7?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Seguro de Salud Internacional y Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo Seguro de Salud Internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de Salud Total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_168 -->
+<pregunta> <texto><![CDATA[¿Qué es el Aseguramiento Universal en Salud (AUS)?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un proceso orientado a lograr que toda la población de escasos recursos residente en el territorio nacional en zonas de extrema pobreza pueda disponer de un seguro de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un proceso orientado a lograr que toda la población residente  en el territorio nacional  de escasos recursos pueda disponer de un seguro de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es un proceso orientado a lograr que toda la población residente en el territorio nacional pueda disponer de un seguro de salud.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_169 -->
+<pregunta> <texto><![CDATA[¿ Qué es el Plan Esencial de Aseguramiento en Salud (PEAS)?]]></texto>
+<respuesta>
+<texto><![CDATA[Es una lista priorizada de diagnósticos de capa simple que deben ser financiadas a todos los asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es una lista priorizada de condiciones no preexistentes que deben ser financiadas a todos los asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es una lista priorizada de condiciones asegurables e intervenciones que como mínimo deben ser financiadas a todos los asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_170 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las nuevas condiciones que se deben cubrir bajo el PEAS?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Las nuevas condiciones a cubrir son: VIH/Sida, enfermedades mentales (esquizofrenia, ansiedad, depresión, alcoholismo), planificación familiar.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo enfermedades mentales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo VIH/Sida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_171 -->
+<pregunta> <texto><![CDATA[¿Cuál es el límite de edad para ingresar al PEAS?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo se admiten asegurados hasta los 65 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El PEAS no tiene límite de edad de ingreso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo se admiten asegurados hasta los 60 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_172 -->
+<pregunta> <texto><![CDATA[El nombre del operador internacional para atenciones programadas de pólizas modulares es:]]></texto>
+<respuesta>
+<texto><![CDATA[Olympios]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguritas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Olympus]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_173 -->
+<pregunta> <texto><![CDATA[¿Qué entendemos por atenciones en el extranjero?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Las atenciones ambulatorias, hospitalarias y/o por emergencia médica o accidental fuera del Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las atenciones solo por emergencia médica o accidental fuera del Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las atenciones solo ambulatorias fuera del Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_174 -->
+<pregunta> <texto><![CDATA[¿Qué es una precertificación?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es una carta de garantía para atenciones internacionales. Dicha precertificación la emite el operador internacional, una vez el caso tenga aprobación médica y administrativa de PPS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un certificado provisional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es una aprobación solo con el 50% de votos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_175 -->
+<pregunta> <texto><![CDATA[¿Qué pólizas cuentan con cobertura de asistencia médica y del viajero en el extranjero?]]></texto>
+<respuesta>
+<texto><![CDATA[Maxisalud y Medicvida Nacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Multisalud y Medic Vida Internacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Medicvida Internacional y Medicvida Nacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_176 -->
+<pregunta> <texto><![CDATA[¿Cuál es el operador que se encarga de la asistencia médica y del viajero en el extranjero?]]></texto>
+<respuesta>
+<texto><![CDATA[Overall Business]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Axa Assistance]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Executive Solutions]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_177 -->
+<pregunta> <texto><![CDATA[¿Cuál es el límite de cobertura de Axa Assistance para una atención de emergencia en los países Schengen?]]></texto>
+<respuesta>
+<texto><![CDATA[Hasta 15 000 euros o su equivalente en dólares americanos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Hasta 30 000 nuevos soles o su equivalente en dólares americanos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hasta 30 000 euros o su equivalente en dólares americanos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_178 -->
+<pregunta> <texto><![CDATA[¿Qué es la UCE?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es la Unidad de Consejería para atenciones en el extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la Unidad de Cuidados en el Extranjero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la Unidad para Certificados Extemporáneos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_179 -->
+<pregunta> <texto><![CDATA[¿Qué son los círculos de calidad?]]></texto>
+<respuesta>
+<texto><![CDATA[Son círculos perfectos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son reuniones con los proveedores de salud, donde se realiza el feedback para la mejora continua.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son figuras geométricas bien diseñadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_180 -->
+<pregunta> <texto><![CDATA[¿Qué es un caso complejo?]]></texto>
+<respuesta>
+<texto><![CDATA[Son los casos que nadie quiere atender.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un caso derivado de un cliente problemático.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es aquel en donde un área de Pacífico ha detectado una dificultad administrativa, médica o una enfermedad singular.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_181 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los tipos de casos complejos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Administrativo, médico y singularidad de enfermedad o tratamiento médico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Matemático, relaciones entre médicos y relaciones médico-pacientes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_182 -->
+<pregunta> <texto><![CDATA[¿Cuál de estos parámetros corresponde a un caso médico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Controversia sobre la pertinencia en el tratamiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cambios de política.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Tratamientos recientemente probados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_183 -->
+<pregunta> <texto><![CDATA[¿Qué es una plataforma de atención en clínica?]]></texto>
+<respuesta>
+<texto><![CDATA[Son pisos de las clínicas para atender a asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Son oficinas de asesoría al asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son zonas donde se encuentran solo los asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_184 -->
+<pregunta> <texto><![CDATA[¿Cuál de estas corresponde a una función de ejecutivas de clínicas?]]></texto>
+<respuesta>
+<texto><![CDATA[Se encargan de velar por las necesidades de la clínica.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se encargan solo de entregar volantes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Brindar asesoría a los asegurados, solucionando el caso presentado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_185 -->
+<pregunta> <texto><![CDATA[¿Cuántas plataformas hay en Lima y cuántas en provincias?]]></texto>
+<respuesta>
+<texto><![CDATA[5 en Lima y 1 en provincias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[14 en Lima y 12 en provincias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo hay en Lima.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_186 -->
+<pregunta> <texto><![CDATA[En la EPS, ¿cuántos afiliados tiene una empresa A?]]></texto>
+<respuesta>
+<texto><![CDATA[De 100 a 499 afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[De 1 a 99 afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De 500 a más.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_187 -->
+<pregunta> <texto><![CDATA[En la EPS, ¿cuántos afiliados tiene una empresa AA?]]></texto>
+<respuesta>
+<texto><![CDATA[De 500 a más.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De 1 a 99 afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+De 100 a 499 afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_188 -->
+<pregunta> <texto><![CDATA[En la EPS, ¿cuántos afiliados tiene una empresa AAA?]]></texto>
+<respuesta>
+<texto><![CDATA[De 1 a 99 afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De 100 a 499 afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[De 500 a más afiliados]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_189 -->
+<pregunta> <texto><![CDATA[¿Cómo se denomina al ingreso promedio que recibe la EPS por afiliado por mes?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[PMPM aporte]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[PMPM prestación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[PMPM contribución]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_190 -->
+<pregunta> <texto><![CDATA[¿Cómo se denomina al gasto promedio que realiza la EPS por afiliado por mes?]]></texto>
+<respuesta>
+<texto><![CDATA[PMPM aporte]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[PMPM prestación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[PMPM contribución]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_191 -->
+<pregunta> <texto><![CDATA[¿Cómo se denomina al ingreso promedio que recibe la EPS por afiliado por mes menos el gasto promedio que realiza la EPS por afiliado por mes?]]></texto>
+<respuesta>
+<texto><![CDATA[PMPM aporte]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[PMPM prestación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[PMPM contribución]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_192 -->
+<pregunta> <texto><![CDATA[¿Cómo se denomina a la división del gasto promedio que realiza la EPS por afiliado por mes dividido entre el ingreso promedio que recibe por afiliado por mes?]]></texto>
+<respuesta>
+<texto><![CDATA[Ratio combinado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Siniestralidad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Índice de gastos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_193 -->
+<pregunta> <texto><![CDATA[Considerando el riesgo oncológico, un fumador se considera que...]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Tiene mayor riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Tiene menor riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es indiferente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_194 -->
+<pregunta> <texto><![CDATA[En una póliza médica individual es importante la relación entre la estatura y el peso del asegurado, índices muy altos o bajos pueden ser problemáticos para la salud. ¿Cómo es conocida esta relación?]]></texto>
+<respuesta>
+<texto><![CDATA[Siniestralidad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ratio combinado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Índice de Masa Corporal (IMC)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_195 -->
+<pregunta> <texto><![CDATA[En la EPS, el PMPM aporte menos el PMPM prestación es igual al PMPM contribución, si este último es negativo entonces:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La siniestralidad es mayor a 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La siniestralidad es menor a 100%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La siniestralidad es igual a 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+
+</data>

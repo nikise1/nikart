@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+    <text>
+        <copyno><![CDATA[puntos]]></copyno>
+        <copy><![CDATA[puntos]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[temas]]></copyno>
+        <copy><![CDATA[]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[orden]]></copyno>
+        <copy><![CDATA[Tema bloqueado. Debes ver los temas en orden.]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[no_repasar]]></copyno>
+        <copy><![CDATA[No se puede repasar]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[terminado]]></copyno>
+        <copy><![CDATA[Has terminado]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[num_de_total]]></copyno>
+        <copy><![CDATA[Pregunta {num} de {total}]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[sin_internet]]></copyno>
+        <copy><![CDATA[No hay conexión a internet!
+Conecta para continuar el curso]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[esperar]]></copyno>
+        <copy><![CDATA[Debes esperar hasta {fecha}]]></copy>
+    </text>
+</data>

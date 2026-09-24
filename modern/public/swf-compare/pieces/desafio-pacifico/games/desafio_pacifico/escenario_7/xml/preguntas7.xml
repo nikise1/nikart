@@ -1,0 +1,2583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+  <!-- pregunta_1 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la cobertura por muerte natural en el seguro de Vida Ley?]]></texto>
+    <respuesta>
+      <texto><![CDATA[8 sueldos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[24 sueldos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[16 sueldos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_2 -->
+  <pregunta>
+    <texto><![CDATA[¿Quién asume el costo del seguro de Vida Ley?]]></texto>
+    <respuesta>
+      <texto><![CDATA[La familia]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[La Empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El trabajador]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_3 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la cobertura por invalidez total y permanente por accidente en el seguro de Vida Ley?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[32 sueldos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[16 sueldos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[24 sueldos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_4 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es el límite de edad para que un hermano sano pueda ser considerado como beneficiario en Vida Ley?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[18 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[21 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[23 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_5 -->
+  <pregunta>
+    <texto><![CDATA[¿Quiénes podrían ser beneficiarios del seguro de Vida Ley si no tengo cónyuge, hijos, padres o hermanos menores de 18 años?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Tíos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[La Empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Primos o amigos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_6 -->
+  <pregunta>
+    <texto><![CDATA[Según el D.L. 688, la cobertura de invalidez total y permanente en el Seguro de Vida Ley se aplica cuando hay:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Pérdida de alguna extremidad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Pérdida de ambos pies o ambas manos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Pérdida de dos falanges o más]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_7 -->
+  <pregunta>
+    <texto><![CDATA[¿Quiénes son los primeros beneficiarios en el seguro de Vida Ley?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Padres]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hermanos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cónyuge e hijos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_8 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué pasaría si el trabajador no cumplió con llenar la Declaratoria de Beneficiarios en Vida Ley?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Se debe esperar la declaratoria de herederos inscrita en Registros Públicos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Se paga a los herederos legales de acuerdo a lo indicado por el SPP.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[La empresa es la que indica a quién pagar el beneficio a través de una carta notarial.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_9 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo se determina la remuneración con la cual se calcula el beneficio de muerte natural en el seguro de Vida Ley?]]></texto>
+    <respuesta>
+      <texto><![CDATA[La última boleta]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Promedio de 3 meses]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Promedio 6 meses]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_10 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué antigüedad requiere el trabajador para tener derecho al Seguro de Vida Ley?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[4 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[1 día]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[3 meses]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_11 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué plazo tiene el trabajador para solicitar la continuidad de su seguro de Vida Ley una vez que cesa del empleo?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[30 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[1 día]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[6 meses]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_12 -->
+  <pregunta>
+    <texto><![CDATA[Al cesar el trabajador, ¿cuál es el plazo para proceder a solicitar la continuidad del seguro de Vida Ley?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Indefinido]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[30 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[90 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_13 -->
+  <pregunta>
+    <texto><![CDATA[¿En qué año se inició la cobertura de SCTR?]]></texto>
+    <respuesta>
+      <texto><![CDATA[1997]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[1998]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[2000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_14 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué coberturas comprende el SCTR?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Salud]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Prestaciones económicas]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Salud más Prestaciones económicas]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_15 -->
+  <pregunta>
+    <texto><![CDATA[¿Quién da la cobertura de SCTR Salud?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Aseguradora]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[ONP]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[EPS/EsSalud]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_16 -->
+  <pregunta>
+    <texto><![CDATA[¿Quién da la cobertura de SCTR en lo que se refiere a prestaciones económicas?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Aseguradora/ONP]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[EPS]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[EsSalud]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_17 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué porcentaje del sueldo se paga en caso de invalidez con un menoscabo entre 50% y 67%?]]></texto>
+    <respuesta>
+      <texto><![CDATA[0.2]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[0.7]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[0.5]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_18 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué porcentaje del sueldo se paga en caso de invalidez con un menoscabo superior a 67%?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[0.7]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[0.2]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[0.5]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_19 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la edad límite para que un hijo pueda ser beneficiario en caso de sobrevivencia en SCTR?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[18]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[21]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[23]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_20 -->
+  <pregunta>
+    <texto><![CDATA[¿Quién asume el costo del seguro de SCTR?]]></texto>
+    <respuesta>
+      <texto><![CDATA[El trabajador]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[La Empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[La familia]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_21 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son las coberturas más usuales en los seguros de desgravamen?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Gastos de curación]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Sepelio]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Fallecimiento más invalidez]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_22 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es el límite de edad usual para otorgar cobertura en los seguros grupales?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_23 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál de estos eventos sería considerado riesgo excluido en los seguros grupales?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Caída de edificios]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Accidente de tránsito]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Suicidio]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_24 -->
+  <pregunta>
+    <texto><![CDATA[¿Cada cuánto se actualiza la Remuneración Máxima Asegurable?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Cada 6 meses]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todos los meses]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cada trimestre]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_26 -->
+  <pregunta>
+    <texto><![CDATA[¿Los trabajadores de cuarta categoría deben ser considerados dentro del SCTR?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Sí, todos deben estar asegurados.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[La norma solo menciona personal formalmente en planilla y que sea aportante a EsSalud.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es potestad de la empresa incluirlos o no.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_27 -->
+  <pregunta>
+    <texto><![CDATA[¿Quién es responsable por el traslado del trabajador accidentado desde el punto del accidente al centro de atención Médica?]]></texto>
+    <respuesta>
+      <texto><![CDATA[La compañía de seguros]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El mismo trabajador]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[El empleador]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_28 -->
+  <pregunta>
+    <texto><![CDATA[¿Todo lo que ocurre en el centro de riesgo o trabajo es considerado accidente de trabajo?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Sí, basta que esté en el centro de trabajo para que tenga cobertura.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es la empresa quien indica los lugares dentro del centro de trabajo que tienen cobertura.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Sí, siempre y cuando guarde relación con la actividad laboral.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_29 -->
+  <pregunta>
+    <texto><![CDATA[¿Quién es responsable del llenado del Registro Obligatorio de Seguro de Vida Ley para el Ministerio de Trabajo?]]></texto>
+    <respuesta>
+      <texto><![CDATA[La compañía de seguros]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[El empleador]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cada trabajador]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_30 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuándo termina la cobertura de SCTR Salud?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cuando es declarado de alta por el médico tratado, fallece o tiene una declaración de invalidez parcial o total.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Nunca termina. Según la norma, se debe seguir atendiendo de por vida.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cuando el trabajador fallece a causa del accidente o es dado de alta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_31 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la edad de contratación del producto Seguro Vida Inversión Oro y/o Seguro Vida Inversión?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Entre 18 y 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Entre 18 y 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Entre 18 y 95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_32 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la edad máxima de cobertura del los productos Seguro Vida Inversión Oro y/o Seguro Vida Inversión?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_33 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la característica principal de los productos Seguro Vida Inversión Oro y/o Seguro Vida Inversión?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Brindan una alternativa garantizada de protección para la familia y ahorro.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Brindan una alternativa de protección para la familia y garantizan el ahorro.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Brindan una alternativa de protección para la familia y una posibilidad de ahorro no garantizado.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_34 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué significa Prima de Excedentes en el producto Seguro Vida Inversión Oro y/o Seguro Vida Inversión?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Es el monto opcional que el Asegurado deposita de manera regular o no regular.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es el monto obligatorio que el Asegurado deposita de manera regular o no regular.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es el monto obligatorio que el Asegurado deposita de manera regular.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_35 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo se realizan los retiros parciales, en el producto Seguro Vida Inversión Oro y/o Seguro Vida Inversión?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Se pueden realizar del saldo de la cuenta individual.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Se pueden realizar desde $250 para el Seguro Vida Inversión y $150 para el Premium Life Max.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Se pueden realizar del saldo de la cuenta de excedentes desde $150 para el Seguro Vida Inversión y $250 para el Premium Life Max.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_36 -->
+  <pregunta>
+    <texto><![CDATA[En el producto Seguro Vida Inversión Oro y/o Seguro Vida Inversión, ¿cuáles son los 3 fondos de inversión que se manejan?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Fondo 1, Fondo 2 y Fondo 3]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Fondo Controlado, Fondo Balanceado y Fondo de Capitalización]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Fondo Moderado, Fondo Mixto y Fondo de Arriesgado]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_37 -->
+  <pregunta>
+    <texto><![CDATA[La definición correcta de Edad Actuarial es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Es la edad que el Asegurado tiene en la actualidad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es la edad que el Asegurado tendrá el siguiente año.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Es la edad 6 meses más cercana a la fecha de cumpleaños.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_38 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo se realizan los aportes de Prima de Excedentes regular en el producto Seguro Vida Inversión Oro y/o Seguro Vida Inversión?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Se pueden realizar de manera aleatoria en cualquier momento.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Se realizan de acuerdo a la frecuencia de pago de la póliza: mensual, semestral o anual.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Se pueden realizan dos veces al año.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_39 -->
+  <pregunta>
+    <texto><![CDATA[Acerca del rol del asesor, señala la alternativa correcta:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Vender productos de ahorro.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Ayudar a los clientes a tomar una decisión sobre la protección de sus familias.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Prevenir enfermedades crónicas.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_40 -->
+  <pregunta>
+    <texto><![CDATA[Sobre la definición del Asesor Profesional, señala la alternativa correcta:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Es la persona que vende solo productos de ahorro.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es la persona que brinda consejos sobre defensa personal.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Es la persona que a través de un trabajo metódico y organizado ayuda a sus clientes a que se protejan.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_41 -->
+  <pregunta>
+    <texto><![CDATA[Dentro del Sistema de Prospección, identificamos al candidato con el perfil NASA que significa que tiene la:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Necesidad, Asegurabilidad, Soltura, Accesibilidad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Necesidad, Asegurabilidad, Solvencia, Accesibilidad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Necesidad, Accesibilidad, Solvencia, Anotación.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_42 -->
+  <pregunta>
+    <texto><![CDATA[¿En qué consiste El Sistema de Prospección?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Consiste en: identificar, anotar, presentar el plan de beneficios y cerrar la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Consiste en: identificar, clasificar, concertar y realizar el análisis de necesidades.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Consiste en: identificar, anotar, clasificar y contactar.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_43 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué preguntas pueden ayudarte a identificar a la persona NASA en cuanto a la necesidad?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[¿Qué edad tienen sus hijos y quiénes dependen económicamente de él?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Qué trabajo tiene y qué cargo ocupa?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Tiene mucho dinero?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_44 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué preguntas pueden ayudarte a identificar a la persona NASA en cuanto a la asegurabilidad?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[¿Está aparentemente bien de salud, y tiene un trabajo peligroso?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Tiene mucho dinero?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Tiene hijos?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_45 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué preguntas pueden ayudarte a identificar a la persona NASA en cuanto a la solvencia?]]></texto>
+    <respuesta>
+      <texto><![CDATA[¿Vive dentro del país?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[¿Usa tarjetas de crédito y gana más de $1250?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Tiene un trabajo peligroso?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_46 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué preguntas pueden ayudarte a identificar a la persona NASA en cuanto a la accesibilidad?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[¿Puedo establecer contacto fácilmente con él?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Tiene personas que dependen económicamente de él?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[¿Está bien de salud?]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_47 -->
+  <pregunta>
+    <texto><![CDATA[En relación al producto Accidentes Triple Cobertura, indica qué riesgos cubre dicho producto.]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Muerte accidental que se duplica o triplica según la forma de ocurrir el accidente.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Muerte e invalidez accidental del asegurado.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Invalidez y desmembramiento accidental del asegurado]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_48 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la edad máxima de cobertura que tiene el producto Accidentes Triple Cobertura?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_49 -->
+  <pregunta>
+    <texto><![CDATA[En relación al producto Accidentes Multicobertura, señala la alternativa que contenga las 4 coberturas de dicho producto.]]></texto>
+    <respuesta>
+      <texto><![CDATA[Muerte accidental, renta hospitalaria diaria, cáncer y vida (muerte natural).]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Muerte accidental, invalidez o desmembramiento accidental, renta hospitalaria diaria por accidente o enfermedad y cáncer.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Muerte accidental, invalidez o desmembramiento accidental, indemnización hospitalaria diaria por accidente o enfermedad y vida (muerte natural).]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_50 -->
+  <pregunta>
+    <texto><![CDATA[Respecto al producto Viva Seguro, señala la alternativa que contenga los riesgos que cubre dicho producto.]]></texto>
+    <respuesta>
+      <texto><![CDATA[Muerte accidental, indemnización hospitalaria diaria por accidente o enfermedad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Muerte accidental y reembolso de gastos hospitalarios por accidente.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Muerte accidental, invalidez o desmembramiento accidental.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_51 -->
+  <pregunta>
+    <texto><![CDATA[En relación al producto Viva Seguro, señala la alternativa que indique hasta qué edad se puede contratar.]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_52 -->
+  <pregunta>
+    <texto><![CDATA[¿En qué producto se reembolsará los gastos médicos que irrogue el asegurado en un accidente, por el exceso de $35.00?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Accidentes Reembolso]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Accidentes Multicobertura]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Accidentes Cobertura Total]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_53 -->
+  <pregunta>
+    <texto><![CDATA[Acerca del producto Accidentes Cobertura Total,señala la alternativa correcta:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Se puede contratar desde los 18 años hasta los 65 años y tiene cobertura hasta los 70 años.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Se puede contratar desde los 18 años hasta los 70 años y tiene cobertura hasta los 95 años.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Se puede contratar desde los 18 años hasta los 64 años y tiene cobertura hasta los 65 años.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_54 -->
+  <pregunta>
+    <texto><![CDATA[Acerca del producto Educación Segura, selecciona la alternativa correcta que señale las 2 coberturas que tiene el producto.]]></texto>
+    <respuesta>
+      <texto><![CDATA[(1)Muerte accidental que se duplica o triplica según la forma de ocurrir el accidente. (2)Indemnización hospitalaria diaria.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[(1)Muerte accidental que se duplica o triplica según la forma de ocurrir el accidente. (2)Rembolso de gastos médicos por accidente.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[(1)Muerte accidental que se duplica o triplica según la forma de ocurrir el accidente. (2)Invalidez o desmembramiento accidental.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_55 -->
+  <pregunta>
+    <texto><![CDATA[En el Viva Seguro opción Familiar, indica ¿quién es el beneficiario obligatorio al fallecimiento del cónyuge?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Cualquier beneficiario indicado en la póliza del titular.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cualquiera de los hijos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[El asegurado titular.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_56 -->
+  <pregunta>
+    <texto><![CDATA[En un Viva Seguro Familiar por $100,000, ¿cuánto recibirán los beneficiarios en el caso que fallecieran accidentalmente ambos cónyuges?]]></texto>
+    <respuesta>
+      <texto><![CDATA[$100,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[$150,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$200,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_57 -->
+  <pregunta>
+    <texto><![CDATA[En el producto Educación Segura, ¿en cuántas cuotas se paga la suma asegurada contratada por fallecimiento del asegurado en dicho producto?]]></texto>
+    <respuesta>
+      <texto><![CDATA[En un solo pago]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[En 60 cuotas mensuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En 5 cuotas en 3 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_58 -->
+  <pregunta>
+    <texto><![CDATA[¿cuánto tiempo puede pasar desde la ocurrencia del accidente para que se considere como muerte accidental?]]></texto>
+    <respuesta>
+      <texto><![CDATA[30 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[60 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[90 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_59 -->
+  <pregunta>
+    <texto><![CDATA[El formato para entregar la póliza es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[UND-40]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[UND 35]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[UND-22]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_60 -->
+  <pregunta>
+    <texto><![CDATA[En la visita productiva usamos el formato:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[UND-40]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[UND 35]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[UND-22]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_61 -->
+  <pregunta>
+    <texto><![CDATA[El pago por invalidez total y permanente en un producto de Vida es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[En una cuota]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En 2 cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[En tres cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_62 -->
+  <pregunta>
+    <texto><![CDATA[El pago por invalidez total y permanente en un producto de accidentes personales(excepto en Educación Segura):]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[En una cuota]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En 2 cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En tres cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_63 -->
+  <pregunta>
+    <texto><![CDATA[Las sumas aseguradas en el Fondo Universitario van:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Desde $40,000 hasta $300,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Desde $10,000 hasta $200,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Desde $10,000 hasta $100,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_64 -->
+  <pregunta>
+    <texto><![CDATA[¿En cuántas cuotas se recibe el beneficio en el Fondo Universitario?]]></texto>
+    <respuesta>
+      <texto><![CDATA[En 1 cuota]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En 3 cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Entre 1 a 5 cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_65 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuántos beneficiarios pueden consignarse en la póliza Fondo Universitario?]]></texto>
+    <respuesta>
+      <texto><![CDATA[4 beneficiarios]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[3 beneficiarios]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[1 beneficiario]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_66 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es el plazo mínimo de inversión en el Fondo Universitario?]]></texto>
+    <respuesta>
+      <texto><![CDATA[5 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[10 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[12 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_67 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es el plazo máximo de inversión en el Fondo Universitario?]]></texto>
+    <respuesta>
+      <texto><![CDATA[10 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[12 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[18 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_68 -->
+  <pregunta>
+    <texto><![CDATA[Con el Fondo Universitario, ¿en qué momento recibe el fondo el beneficiario?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[El primero de enero del año siguiente al término del plazo establecido.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Al concluir el plazo establecido.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Al cabo de 18 años.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_69 -->
+  <pregunta>
+    <texto><![CDATA[En el Fondo Universitario, ¿qué sucede si el beneficiario fallece antes del plazo establecido?]]></texto>
+    <respuesta>
+      <texto><![CDATA[El asegurado rescata con penalidad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[El asegurado rescata sin penalidad, los primeros 6 meses luego del fallecimiento.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El asegurado rescata con penalidad, los primeros 6 meses luego del fallecimiento]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_70 -->
+  <pregunta>
+    <texto><![CDATA[En el Fondo Universitario, ¿cuál es la edad de contratación?]]></texto>
+    <respuesta>
+      <texto><![CDATA[De 18 a 50 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[De 18 a 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[De 18 a 60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_71 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la edad máxima de cobertura del Accidentes Multicobertura?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_72 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la edad máxima de contratación del Accidente Multicobertura?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 55 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 50 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 59 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_73 -->
+  <pregunta>
+    <texto><![CDATA[¿En el Sistema de Ventas, qué es el ADN?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Análisis de Necesidades]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Acido desoxirribonucleico]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Anotación de necesidades]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_74 -->
+  <pregunta>
+    <texto><![CDATA[¿Por qué es importante realizar el Análisis de Necesidades antes de ofrecer cualquier producto?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Porque ayudamos al candidato a reconocer sus necesidades de protección.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Porque se cae la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Porque es la política de la Empresa.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_75 -->
+  <pregunta>
+    <texto><![CDATA[Una persona puede tomar una póliza de Fondo Universitario para colocar como beneficiario:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[A un hijo o nieto o tutelado]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[A un hijo o sobrino o tutelado]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[A un hijo o sobrino o hermano]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_76 -->
+  <pregunta>
+    <texto><![CDATA[En el Fondo Universitario, al concluir el período de gracia, tiene para rehabilitar hasta:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Un año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Dos años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta tres años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_77 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué es interés asegurable?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Rendimiento que puedo garantizar.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Pérdida económica que sufre el o los Beneficiarios de la Póliza si el Asegurado(a) fallece]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Activos que puedo asegurar.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_78 -->
+  <pregunta>
+    <texto><![CDATA[Juan Pérez protege a sus hijos tomando para él una póliza de seguros, sus hijos serían los:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Asegurados]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Contratantes]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Beneficiarios]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_79 -->
+  <pregunta>
+    <texto><![CDATA[Capital Asegurado es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[La suma asegurada]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Lo que se paga mensualmente por el seguro]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es el rendimiento prometido por la empresa.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_80 -->
+  <pregunta>
+    <texto><![CDATA[En el Seguro Vida Inversión las sumas aseguradas van:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Desde $40,000 hasta $70,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Desde $30,000 hasta $70,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Desde $100,000 hasta $300,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_81 -->
+  <pregunta>
+    <texto><![CDATA[En el Seguro Vida Inversión Oro las sumas aseguradas van:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Desde $40,000 hasta $70,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Desde $30,000 hasta $70,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Desde $100,000 hasta $300,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_82 -->
+  <pregunta>
+    <texto><![CDATA[En el Seguro Vida Inversión Oro, al concluir el período de gracia, tiene para rehabilitar hasta:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta 3 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta 1 año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta 2 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_83 -->
+  <pregunta>
+    <texto><![CDATA[En el Seguro Vida Inversión, al concluir el período de gracia, tiene para rehabilitar:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta 3 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta 1 año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta 2 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_84 -->
+  <pregunta>
+    <texto><![CDATA[En cualquier producto de Accidentes Personales, al concluir el período de gracia, tiene para rehabilitar:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Hasta 3 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta 1 año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta 2 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_85 -->
+  <pregunta>
+    <texto><![CDATA[En el Accidentes Multicobertura el período máximo de indemnización hospitalaria es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[365 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[180 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[30 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_86 -->
+  <pregunta>
+    <texto><![CDATA[Será considerado muerte accidental, en caso de que falleciera como consecuencia:]]></texto>
+    <respuesta>
+      <texto><![CDATA[De una negligencia médica]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Por salvar vidas humanas]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[por sonambulismo]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_87 -->
+  <pregunta>
+    <texto><![CDATA[Un Accidentes Multicobertura te cubrirá por muerte accidental, si el asegurado fallece:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Haciendo canotaje]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[suicidándose]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Salvando vidas humanas]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_88 -->
+  <pregunta>
+    <texto><![CDATA[Si un asegurado fallece atropellado por un transporte público y cuenta con un Accidentes Triple Cobertura]]></texto>
+    <respuesta>
+      <texto><![CDATA[Los beneficiarios recibirán doble indemnización.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Los beneficiarios recibirán triple indemnización.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Los beneficiarios recibirán la suma básica contratada.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_89 -->
+  <pregunta>
+    <texto><![CDATA[Los 4 pasos de la prospección son:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Identificación, anotación, clasificación y contacto.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Necesidad, asegurabilidad, solvencia y accesibilidad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Necesidad, característica, beneficio y precierre.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_90 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál será un candidato NASA?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Soltero que paga sus estudios de posgrado.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Juan ,con 50 años, un niño de 5 años y un pago de $2,500.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Pedro, de 27 años, que gana $750 y tiene un hijo de 5 años.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_91 -->
+  <pregunta>
+    <texto><![CDATA[Los entornos ayudan en el negocio como:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Fuente de candidatos y centro de influencia]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Apoyo económico]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Apoyo moral]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_92 -->
+  <pregunta>
+    <texto><![CDATA[La mejor manera de contar con un candidato mejor clasificado para la venta es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Nombres conseguidos a través de la guía telefónica]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Nombres conseguidos a través de encuestas]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Nombres conseguidos a través de la petición de referidos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_93 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál de las siguientes opciones se ajusta más, a la técnica utilizada para concertar citas?]]></texto>
+    <respuesta>
+      <texto><![CDATA["Señor, ¿qué día tiene disponible para recibirme?"]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA["Señor, ¿le parece bien el lunes a las 3:00 p. m. o el martes a las 4:00 p. m.?"]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA["Señor, ¿que puede ser el lunes? A la hora que usted diga"]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_94 -->
+  <pregunta>
+    <texto><![CDATA[La concertación de citas tiene como objetivo:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Intentar ofrecer el producto.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Dar información sobre los productos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Pactar una reunión en un lugar con fecha y hora determinada.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_95 -->
+  <pregunta>
+    <texto><![CDATA[En los productos de Vida, excepto el Fondo Universitario, ¿En cuántas cuotas se recibe la suma asegurada?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[En una sola cuota]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En cinco cuotas anuales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[En tres cuotas anuale.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_96 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo se llama la técnica para concertar citas?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Alternativa inevitable]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Consentimiento implícito]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Miedo a la pérdida]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_97 -->
+  <pregunta>
+    <texto><![CDATA[La edad máxima de contratación en el producto Vida Temporal Oro es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 64 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_98 -->
+  <pregunta>
+    <texto><![CDATA[Una de las ocupaciones no asegurables en un producto de Vida es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Ingeniero civil]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Sacerdote católico]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Piloto de vuelos comerciales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_99 -->
+  <pregunta>
+    <texto><![CDATA[Los 4 pasos de la segunda entrevista son:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Rompa el hielo, revise el análisis de necesidades, halle la descobertura y cierre la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Rompa el hielo, realice la visita productiva, presente el plan de beneficios y pida referidos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Rompa el hielo, revise el análisis de necesidades, presente el plan de beneficios y cierre la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_100 -->
+  <pregunta>
+    <texto><![CDATA[Nuestro sistema de ventas consta de 4 entrevistas, las cuales son:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Primera entrevista, segunda entrevista, tercera entrevista y cuarta entrevista]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Primera entrevista, segunda entrevista, entrega de póliza y cobranza]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Primera entrevista, segunda entrevista, entrevista de entrega de póliza y entrevista de servicio]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_101 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál de las siguientes opciones es una exclusión de un producto de accidentes personales?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Si eres víctima de un acto terrorista.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Fallecimiento por un desastre natural.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Suicidio.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_102 -->
+  <pregunta>
+    <texto><![CDATA[Los entornos son:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Personas que viven cerca a mí.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Personas que me conocen.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Personas que me recomiendan.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_103 -->
+  <pregunta>
+    <texto><![CDATA[En Lima, el ingreso mínimo de un NASA es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[$1,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$800]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[$1,250]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_104 -->
+  <pregunta>
+    <texto><![CDATA[En provincias, el ingreso mínimo de un NASA es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[$1000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$800]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$1,250]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_105 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es considerado un deporte riesgoso, que califica a una persona como no asegurable?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Beisbol]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Fútbol americano]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Inmersión submarina]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_106 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué comunica más?]]></texto>
+    <respuesta>
+      <texto><![CDATA[El lenguaje verbal]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[El lenguaje corporal]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El tono de voz]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_107 -->
+  <pregunta>
+    <texto><![CDATA[Los 4 pasos de la primera entrevista son:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Rompa el hielo, descubra el motivo de compra, halle la descobertura y cierre la entrevista.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Rompa el hielo, realice la visita productiva, presente el plan de beneficios y pida referidos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Rompa el hielo, revise el análisis de necesidades, presente el plan de beneficios y cierre la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_108 -->
+  <pregunta>
+    <texto><![CDATA[La edad máxima de cobertura en el producto Educación Segura es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_109 -->
+  <pregunta>
+    <texto><![CDATA[Al culminar la entrevista debo pedir siempre:]]></texto>
+    <respuesta>
+      <texto><![CDATA[La copia del DNI]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Referidos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Información de la Empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_110 -->
+  <pregunta>
+    <texto><![CDATA[Solicitar el valor de rescate de una póliza de vida significa:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Solicitar todo lo acumulado en las cuentas individual y de excedentes respectivamente, menos el cargo por rescate.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Solicitar todo las primas aportadas hasta el momento.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Solicitar todo lo acumulado en la cuenta de excedentes.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_111 -->
+  <pregunta>
+    <texto><![CDATA[En el Fondo Universitario, si el asegurado quedara completamente discapacitado y tiene actualmente 58 años, tendrá exoneración de pago de prima]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Siempre y cuando haya tomado el producto hasta los cincuenta años.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Porque no interesa la edad al momento de contratación, de todas maneras tendrá exoneración de pago prima.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Porque en todos los seguros de vida existe el beneficio de exoneración de pago de primas.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_112 -->
+  <pregunta>
+    <texto><![CDATA[En el producto Seguro Vida Inversión Oro y/o Seguro Vida Inversión, ¿cuántas veces al año puedo cambiar de fondos de inversión?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Dos veces por año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Tres veces por año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Una vez por año]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_113 -->
+  <pregunta>
+    <texto><![CDATA[Los 4 pasos para manejar una objeción son:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Descubrir la verdadera objeción, aislarla y condicionarla, responderla y cerrar la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Escuchar la objeción, pensar, responder y cerrar la venta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Escuchar, pensar, discutir la objeción y responderla.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_114 -->
+  <pregunta>
+    <texto><![CDATA[Al mostrarle un producto de Vida o de Accidentes Personales al cliente:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Me enfoco en la características del producto.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Me enfoco en los beneficios del producto.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Me enfoco en el costo del producto.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_115 -->
+  <pregunta>
+    <texto><![CDATA[El período de gracia en un producto de Vida es de:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[30 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[60 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[90 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_116 -->
+  <pregunta>
+    <texto><![CDATA[El período de gracia en un producto de Accidentes Personales es de:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[30 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[60 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[90 días]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_117 -->
+  <pregunta>
+    <texto><![CDATA[La cobertura por invalidez total y permanente en un producto de Vida es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_118 -->
+  <pregunta>
+    <texto><![CDATA[La cobertura por invalidez total y permanente en un el Viva Seguro es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Hasta los 60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Hasta los 70 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Hasta los 65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_119 -->
+  <pregunta>
+    <texto><![CDATA[Las frecuencias de pagos de los productos de Vida son:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Mensual, trimestral y anual]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Mensual, trimestral y semestral]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Mensual, semestral y anual]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_120 -->
+  <pregunta>
+    <texto><![CDATA[Las frecuencias de pagos de los Accidentes Personales son:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Mensual, trimestral y anual]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Mensual, trimestral y semestral]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Mensual, semestral y anual]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_121 -->
+  <pregunta>
+    <texto><![CDATA[En el producto Educación Segura, la opción familiar cubre al:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Titular y al cónyuge]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Titular y a los hijos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Titular, al cónyuge y a los hijos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_122 -->
+  <pregunta>
+    <texto><![CDATA[El Fondo Controlado (Fondo de Inversión) está compuesto por:]]></texto>
+    <respuesta>
+      <texto><![CDATA[100% renta variable]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[50% renta variable y 50% renta fija]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[100% renta fija]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_123 -->
+  <pregunta>
+    <texto><![CDATA[El Fondo Balanceado (Fondo de Inversión) está compuesto por:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[60% renta fija y 40% renta variable]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[50% renta variable y 50% renta fija]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[40% renta fija y 60% renta variable]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_124 -->
+  <pregunta>
+    <texto><![CDATA[El Fondo Capitalización (Fondo de Inversión) está compuesto por:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[100% renta variable]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[50% renta variable y 50% renta fija]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[100% renta fija]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_125 -->
+  <pregunta>
+    <texto><![CDATA[La prima mínima en el producto Seguro Vida Inversión es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[$45]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$65]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$55]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_126 -->
+  <pregunta>
+    <texto><![CDATA[La prima mínima en el producto Seguro Vida Inversión Oro es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[$45]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[$65]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[$55]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_127 -->
+  <pregunta>
+    <texto><![CDATA[En el Vida Temporal Oro las sumas aseguradas van:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Desde $150,000 hasta $500,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Desde $30,000 hasta $70,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Desde $100,000 hasta $300,000]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_128 -->
+  <pregunta>
+    <texto><![CDATA[En el Vida Temporal Oro la edad máxima de cobertura es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[74 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_129 -->
+  <pregunta>
+    <texto><![CDATA[En el Seguro Vida Inversión Platino la edad máxima de contratación es:]]></texto>
+    <respuesta>
+      <texto><![CDATA[95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[74 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_130 -->
+  <pregunta>
+    <texto><![CDATA[En el Seguro Vida Inversión Platino la edad máxima de cobertura es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[95 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[65 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[60 años]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+</data>

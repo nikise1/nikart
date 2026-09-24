@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mapa>
+	<mostrar grid="no" xy="no" mostrarTodos="no" esconderTodos="no" barAlpha="1"/>
+	
+	<tamano ancho="1024" alturaTotal="768" alturaIso="720" isoY="15" casilla="25" numCasillasXY="46"/>
+	
+    <graficos>
+    	<!-- reto_1 -->
+        <grafico reto="si" id="Reto1" x="13" y="13" numX="2" numY="2" altura="75"/>
+    	<!-- reto_2 -->
+        <grafico reto="si" id="Reto2" x="18" y="18" numX="2" numY="2" altura="75"/>
+		<!-- reto_3 -->
+        <grafico reto="si" id="Reto3" x="18" y="15" numX="2" numY="2" altura="75"/>
+		<!-- reto_4 -->
+        <grafico reto="si" id="Reto4" x="21" y="15" numX="2" numY="2" altura="75"/>
+		<!-- reto_5 -->
+        <grafico reto="si" id="Reto5" x="24" y="18" numX="2" numY="2" altura="75"/>
+		<!-- reto_6 -->
+        <grafico reto="si" id="Reto6" x="24" y="15" numX="2" numY="2" altura="75"/>
+		<!-- reto_7 -->
+        <grafico reto="si" id="Reto7" x="27" y="18" numX="2" numY="2" altura="75"/>
+		<!-- reto_8 -->
+        <grafico reto="si" id="Reto8" x="30" y="15" numX="2" numY="2" altura="75"/>
+		<!-- reto_9 -->
+        <grafico reto="si" id="Reto9_11" x="21" y="23" numX="2" numY="2" altura="75"/>
+		<!-- reto_10 -->
+        <grafico reto="si" id="Reto9_11" x="26" y="23" numX="2" numY="2" altura="75"/>
+		<!-- reto_11 -->
+        <grafico reto="si" id="Reto9_11" x="31" y="23" numX="2" numY="2" altura="75"/>
+        <!-- reto 12 -->
+		<grafico reto="si" id="Reto12_13" x="29" y="35" numX="2" numY="2" altura="75"/>
+		<!-- reto 13 -->
+		<grafico reto="si" id="Reto12_13" x="29" y="38" numX="2" numY="2" altura="75"/>
+		<!-- reto 14 -->
+		<grafico reto="si" id="Reto14" x="35" y="35" numX="2" numY="2" altura="75"/>
+		<!-- reto 15 -->
+		<grafico reto="si" id="Reto15" x="23" y="40" numX="2" numY="2" altura="75"/>
+		<!-- reto 16 -->
+		<grafico reto="si" id="Reto16" x="27" y="40" numX="1" numY="2" altura="75"/>
+		<!-- reto 17 -->
+		<grafico reto="si" id="Reto17_18" x="10" y="27" numX="2" numY="2" altura="75"/>
+		<!-- reto 18 -->
+		<grafico reto="si" id="Reto17_18" x="10" y="23" numX="2" numY="2" altura="75"/>
+		<!-- reto 19 -->
+		<grafico reto="si" id="Reto19" x="13" y="23" numX="2" numY="2" altura="75"/>
+		<!-- reto 20 -->
+		<grafico reto="si" id="Reto20" x="14" y="31" numX="1" numY="2" altura="75"/>
+		<!-- reto 21 -->
+		<grafico reto="si" id="Edificio1" x="21" y="18" numX="2" numY="2" altura="75"/>
+		
+		<!-- aquí empiezan las  actividades -->
+		
+		<!-- reto 22 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto22_24_26" x="20" y="25" numX="1" numY="5" altura="75"/>
+		<!-- reto 23 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto21_23_25" x="23" y="25" numX="1" numY="5" altura="75"/>
+		<!-- reto 24 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto22_24_26" x="25" y="25" numX="1" numY="5" altura="75"/>
+		<!-- reto 25 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto21_23_25" x="28" y="25" numX="1" numY="5" altura="75"/>
+		<!-- reto 26 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto22_24_26" x="30" y="25" numX="1" numY="5" altura="75"/>
+		<!-- reto 27 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto27" x="37" y="23" numX="2" numY="2" altura="75"/>
+		<!-- reto 28 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto28" x="39" y="23" numX="2" numY="2" altura="75"/>
+		<!-- reto 29 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto29" x="10" y="13" numX="2" numY="2" altura="75"/>
+		<!-- reto 30 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto30" x="13" y="9" numX="2" numY="2" altura="75"/>
+		<!-- reto 31 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Reto21_23_25" x="18" y="25" numX="1" numY="5" altura="75"/>
+		<!-- reto 32 -->
+		<grafico reto="si" puntaje="100" actividad="si" id="Noria" x="10" y="29" numX="3" numY="3" altura="75"/>
+		<!-- reto 33 -->
+		<grafico reto="si" puntaje="30" actividad="si" id="Arco" x="30" y="19" numX="2" numY="1" altura="75"/>
+		
+		
+		<!-- saber 1 -->
+		<grafico saberID="1" id="Saber1" x="30" y="31" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="28" y="31" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="25" y="31" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="23" y="31" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="20" y="31" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="18" y="31" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="44" y="30" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="44" y="28" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="42" y="28" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="42" y="30" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="40" y="26" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="33" y="23" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="28" y="23" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="23" y="23" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="31" y="11" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="28" y="11" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="25" y="11" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="23" y="11" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="30" y="41" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="14" y="29" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="12" y="32" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="14" y="34" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="6" y="24" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="6" y="21" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="6" y="18" numX="1" numY="1" altura="75"/>
+		<grafico saberID="1" id="Saber1" x="6" y="15" numX="1" numY="1" altura="75"/>
+		
+		<!-- saber 2 -->
+		<grafico saberID="2" id="Saber2_3" x="18" y="11" numX="1" numY="1" altura="75"/>
+		<grafico saberID="2" id="Saber2_1" x="8" y="4" numX="1" numY="1" altura="75"/>
+		<grafico saberID="2" id="Saber2_4" x="18" y="23" numX="1" numY="1" altura="75"/>
+		<grafico saberID="2" id="Saber2_5" x="33" y="19" numX="1" numY="1" altura="75"/>
+		<!-- saber 3 -->
+		<grafico saberID="3" id="Saber3" x="37" y="28" numX="4" numY="4" altura="75"/>
+		
+		<!-- saber 4 -->
+		<grafico saberID="4" id="Saber4" x="22" y="7" numX="4" numY="4" altura="75"/>
+		
+		<!-- saber 5 -->
+		<grafico saberID="5" id="Saber5_1" x="23" y="35" numX="4" numY="4" altura="75"/>
+		<grafico saberID="5" id="Saber5_1" x="18" y="7" numX="4" numY="4" altura="75"/>
+		<grafico saberID="5" id="Saber5_2" x="12" y="16" numX="2" numY="1" altura="75"/>
+		<grafico saberID="5" id="Saber5_2" x="41" y="26" numX="3" numY="1" altura="75"/>
+		
+		<!--  -->
+        <!-- Cine -->
+        <grafico cine="si" id="Cine" x="12" y="25" numX="4" numY="4" altura="75"/>
+        
+    	<!-- Solo Gráficos -->
+		<grafico id="Carro1" x="8" y="5" numX="1" numY="1" altura="75"/>
+		<grafico id="Carro2" x="9" y="5" numX="1" numY="1" altura="75"/>
+        <grafico id="Calle" x="0" y="0" numX="1" numY="1" altura="75"/>
+		
+		<grafico id="Casa" x="5" y="23" numX="1" numY="1" altura="75"/>
+        <grafico id="Casa" x="5" y="22" numX="1" numY="1" altura="75"/>
+        <grafico id="Casa" x="5" y="21" numX="1" numY="1" altura="75"/>
+        <grafico id="Casa" x="5" y="20" numX="1" numY="1" altura="75"/>
+        <grafico id="Casa" x="5" y="19" numX="1" numY="1" altura="75"/>
+        <grafico id="Casa" x="5" y="18" numX="1" numY="1" altura="75"/>
+		<grafico id="Banco" x="10" y="18" numX="4" numY="2" altura="75"/>
+		<grafico id="Casa2p" x="41" y="23" numX="2" numY="1" altura="75"/>
+		<grafico id="Bodega1" x="10" y="9" numX="2" numY="2" altura="75"/>
+		<grafico id="Bodega1" x="13" y="11" numX="2" numY="2" altura="75"/>
+		<grafico id="Edificio2" x="27" y="15" numX="2" numY="2" altura="75"/>
+		<grafico id="Reto6" x="10" y="11" numX="2" numY="2" altura="75"/>
+		<grafico id="Reto12_13" x="32" y="35" numX="2" numY="2" altura="75"/>
+		<grafico id="Reto12_13" x="32" y="38" numX="2" numY="2" altura="75"/>
+		<grafico id="Reto14" x="35" y="38" numX="2" numY="2" altura="75"/>
+		<grafico id="Reto14" x="38" y="35" numX="2" numY="2" altura="75"/>
+		
+		<grafico id="Paseo" x="25" y="40" numX="1" numY="4" altura="75"/>
+		<grafico id="Tienda" x="27" y="9" numX="1" numY="1" altura="75"/>
+		<grafico id="Pajaros" x="44" y="44" numX="1" numY="1" altura="75"/>
+    </graficos>
+</mapa>
