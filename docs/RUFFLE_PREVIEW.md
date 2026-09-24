@@ -313,7 +313,7 @@ sequenceDiagram
 
 ### Option F — side-by-side compare kit (temporary)
 
-`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Both players load the movie from `/static/{path}` (Next.js rewrite to `http://static.nikart.co.uk`), so child SWF/XML/JPEG URLs resolve from the origin movie directory without a local sidecar copy. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
+`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Both players load the movie from `/static/{path}`. A Node route handler fetches `http://static.nikart.co.uk` (the `next.config` rewrite is not reliable on Vercel HTTPS previews), so child SWF/XML/JPEG URLs resolve from the origin movie directory. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
 
 
 ---
