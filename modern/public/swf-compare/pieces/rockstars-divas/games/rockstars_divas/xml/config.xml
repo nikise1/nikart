@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	
+	<debug active="no"/>
+	
+	<errorNoDebugTxt><![CDATA[SORRY, THERE HAS BEEN A PROBLEM.]]></errorNoDebugTxt>
+	
+	<errorSessionTxt><![CDATA[SORRY, YOU CAN ONLY BE LOGGED IN ONCE.]]></errorSessionTxt>
+	
+	<meter timeBetweenRequests="120" timeBetweenWibbles="3" timeWibbleAnimation="3"/>
+	
+	<rank maxDisplay="20"/>
+	
+</data>

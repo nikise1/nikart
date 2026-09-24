@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[¿Cuál de los siguientes productos de accidentes personales tiene una cobertura por muerte natural?]]></texto>
+<respuesta>
+<texto><![CDATA[Total Benefit]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Multilife]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Educación Segura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[¿En cuántas rentas mensuales es pagada la suma asegurada de Educación Segura en caso de siniestro?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[60 rentas mensuales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[120 rentas mensuales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[12 rentas mensuales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[¿En cuál de los siguientes casos no me cubriría si tengo el Viva Seguro?]]></texto>
+<respuesta>
+<texto><![CDATA[Muerte por desastres naturales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Muerte por tratar de defenderme ante un robo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte por participar en una huelga]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[¿Cuál de los siguientes productos me triplica la suma asegurada en caso de muerte en accidente aéreo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Educación Segura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Multilife]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Accidental Plus]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las principales coberturas de los seguros de estudiantes PPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Muerte natural, muerte accidental, invalidez, gastos de curación y gastos de sepelio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Muerte accidental, invalidez, gastos de sepelio, renta hospitalaria, gastos de curación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte accidental, invalidez, gastos de sepelio, gastos de curación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[¿Dé que forma los padres de familia pueden adquirir los seguros de estudiantes?]]></texto>
+<respuesta>
+<texto><![CDATA[A través de su corredor de seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[En el centro educativo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En el centro educativo o a través de su corredor de seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[¿De qué forma se ofrecen los seguros de accidentes colectivos?]]></texto>
+<respuesta>
+<texto><![CDATA[Producto con coberturas fijas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Producto cotizado uno a uno]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Producto con coberturas fijas o cotizado uno a uno.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_8 -->
+<pregunta> <texto><![CDATA[¿Quién es el operador internacional del seguro de viajes?]]></texto>
+<respuesta>
+<texto><![CDATA[Axa Assistance]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Travel Guard]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Olympus]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[¿Qué plan del seguro de viajes está diseñado especialmente para cumplir los requisitos de las visas de la comunidad Schengen?]]></texto>
+<respuesta>
+<texto><![CDATA[Plan Mundo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Plan Joven]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Plan Europa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[En el seguro de viajes, ¿cuál es el tiempo mínimo de demora de un viaje para que la cobertura de retraso de viaje se active?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[8 horas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[3 horas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[20 horas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[¿Qué cobertura del seguro de viajes está activa antes de la vigencia del viaje?]]></texto>
+<respuesta>
+<texto><![CDATA[Muerte accidental]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Evacuación médica]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cancelación de viaje]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[En el seguro de viajes, ¿cuál es el máximo de días de viaje consecutivo en el plan nacional?]]></texto>
+<respuesta>
+<texto><![CDATA[180 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[90 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[20 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[¿Qué país tiene cobertura solo a reembolso?]]></texto>
+<respuesta>
+<texto><![CDATA[Irak]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuba]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[EE. UU.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[En el seguro de viajes, ¿cuál es el máximo de días que puede precomprar una empresa?]]></texto>
+<respuesta>
+<texto><![CDATA[1000 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[100 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Infinitos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[¿Cómo es la indemnización por pérdida de equipaje?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Por peso]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Por robo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Por pérdida]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[¿Qué coberturas del seguro de viajes son siempre a reembolso?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Imprevistos en el viaje]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Accidentes personales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Gastos médicos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[¿Cuál es la edad máxima para contratar el Plan Europa?]]></texto>
+<respuesta>
+<texto><![CDATA[85 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[70 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[60 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los planes internacionales individuales que actualmente se comercializan en PPS?]]></texto>
+<respuesta>
+<texto><![CDATA[Turista, Joven, Primera, Schengen]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Oro, Plata, Platino]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Mundo, Mundo Primera, América Latina y Europa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[¿Cuál es el mínimo saldo de días para contratar una póliza colectiva de viajes?]]></texto>
+<respuesta>
+<texto><![CDATA[50 días.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[10 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[100 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[¿Cuál de estos países no está cubierto por el seguro de viajes?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[República del Congo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Rumania]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Holanda]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[¿El seguro de viajes cuenta con deducibles?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No, el pago es al 100%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, el deducible varía según el plan.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, el deducible es de 50%.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[¿Cuándo se puede contratar una póliza del seguro de viajes?]]></texto>
+<respuesta>
+<texto><![CDATA[Durante el viaje.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Antes del viaje.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En cualquier momento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los productos que cubre la garantía extendida?]]></texto>
+<respuesta>
+<texto><![CDATA[Centro de entretenimiento y sofá]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Televisor LCD y laptop]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Bicicleta y skate]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[¿Qué documentos necesito tener para hacer uso de mi garantía extendida?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Contrato más garantía, nota de venta, factura o boleta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Factura o boleta y póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[¿Cuánto tiempo dura la garantía extendida de reparación?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[1, 2 o 3 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[8, 9 o 10 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[5, 6 o 7 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[¿A qué número se debe llamar en caso de siniestro?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[0-800 (línea gratuita)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[01415-1515]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[01513-5000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los productos que cumplen con el plan de reemplazo?]]></texto>
+<respuesta>
+<texto><![CDATA[Cocina y congeladora]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Microondas y secadora de ropa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sandwich maker y hervidor eléctrico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[¿Desde cuándo puedo hacer uso de la garantía extendida?]]></texto>
+<respuesta>
+<texto><![CDATA[Desde el día de la compra del electrodoméstico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuando vence la garantía de fábrica.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Luego de dos semanas de comprar el electrodoméstico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[¿Cuál es el plan de garantía extendida para electrodomésticos mayores?]]></texto>
+<respuesta>
+<texto><![CDATA[Reemplazo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Reparación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Opción 1 y 2]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[¿En qué momento se efectúa el pago por una garantía extendida?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Al momento de comprar el electrodoméstico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1 mes despúes de la compra del electrodoméstico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La siguiente semana de la compra del electrodoméstico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[¿ Puedo comprar varias garantías extendidas para un mismo producto?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí, puede comprar 3 como máximo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En algunos casos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No, solo se puede comprar una por producto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[¿Cuál es el bien asegurado?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El electrodoméstico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La casa]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El vehículo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[¿Puedo hacer uso de mi garantía extendida si no tengo a la mano mi factura o boleta?]]></texto>
+<respuesta>
+<texto><![CDATA[No puede hacer uso de la misma.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí puede hacer uso de la misma.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Tiene que entregar una copia de su DNI para poder usarla.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[¿Al reemplazar el electrodoméstico por otro nuevo expira la garantía extendida?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Sí]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Depende del caso]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[En el microseguro, ¿qué partes intervienen?]]></texto>
+<respuesta>
+<texto><![CDATA[Asegurador y asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Asegurador, contratante y asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Asegurador, contratante y/o comercializador y asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[¿Qué tipos de pólizas de microseguros se comercializan?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo pólizas individuales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Pólizas individuales o colectivas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo pólizas colectivas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_37 -->
+<pregunta> <texto><![CDATA[En los microseguros, la póliza simplificada significa:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Un documento que acredita la contratación del seguro individual e incorpora la solicitud de seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La póliza provisional hasta la entrega de la definitiva.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La póliza que se entrega al cliente solo contiene lo más importante de la póliza matriz.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_38 -->
+<pregunta> <texto><![CDATA[¿Los microseguros tienen límite de prima máxima?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí, no pueden costar más de S/. 1 mensual.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí, no pueden costar más de S/. 10 mensuales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No hay restricción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_39 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las coberturas ofrecidas en el microseguro de accidentes?]]></texto>
+<respuesta>
+<texto><![CDATA[Muerte accidental y desamparo súbito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Invalidez total y permanente]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte accidental, desamparo súbito e invalidez total y permanente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_40 -->
+<pregunta> <texto><![CDATA[¿Cuál es el precio mensual del microseguro de accidentes?]]></texto>
+<respuesta>
+<texto><![CDATA[S/.5,00]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[S/.3,00]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[S/.10,00]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_41 -->
+<pregunta> <texto><![CDATA[¿Cuál es la edad mínima de ingreso al microseguro de accidentes?]]></texto>
+<respuesta>
+<texto><![CDATA[15 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[18 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[20 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_42 -->
+<pregunta> <texto><![CDATA[Si el microseguro se vendió mediante un comercializador, las indemnizaciones se deben reclamar:]]></texto>
+<respuesta>
+<texto><![CDATA[De forma directa a la compañía de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Mediante el comercializador.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En donde se adquirió el seguro (punto de venta).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_43 -->
+<pregunta> <texto><![CDATA[Después de recibida la documentación sustentatoria por el siniestro, ¿dentro de cuánto tiempo como máximo se realiza el pago de la indemnización?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[10 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[14 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[7 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_44 -->
+<pregunta> <texto><![CDATA[¿Cuál es la forma de pago del microseguro de accidentes?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El pago de la prima será incorporado en la cuota del crédito y se pagará por adelantado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El pago de la prima será mediante 3 cuotas al año.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El cliente pagará la prima mediante transferencia bancaria en una sola cuota.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_45 -->
+<pregunta> <texto><![CDATA[¿Cuál no es un caso de término de la cobertura del microseguro de accidentes?]]></texto>
+<respuesta>
+<texto><![CDATA[Al vencimiento del plazo establecido en la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Fallecimiento del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Al contratar un seguro similar con otra compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_46 -->
+<pregunta> <texto><![CDATA[¿Qué ocurre si el asegurado en el microseguro de accidentes no ha designado a un beneficiario?]]></texto>
+<respuesta>
+<texto><![CDATA[La indemnización se le otorga a la empresa con la que mantiene la deuda.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La indemnización se repartirá entre sus herederos legales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No se entrega la indemnización.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_47 -->
+<pregunta> <texto><![CDATA[¿Qué ocurre si el beneficiario en el microseguro de accidentes es menor de edad?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La indemnización se pagará mediante la apertura de una cuenta de ahorros en el banco que designe la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La indemnización se pagará cuando cumpla la mayoría de edad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La indemnización se le pagará a los apoderados del menor.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_48 -->
+<pregunta> <texto><![CDATA[¿Cuál no es una cobertura del Multirriesgo Líneas Personales?]]></texto>
+<respuesta>
+<texto><![CDATA[Desastres naturales (lluvias, inundaciones, huaicos).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Incendio y/o rayo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte accidental del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_49 -->
+<pregunta> <texto><![CDATA[¿Cuál es un requisito para poder adquirir el seguro de Multirriesgo Líneas Personales?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Ser propietario de un negocio que se dedique a los giros de negocio asegurables por la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ser dueño del negocio por más de 2 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Tener un negocio propio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_50 -->
+<pregunta> <texto><![CDATA[¿Cuál es la forma de pago del seguro Multirriesgo Líneas Personales?]]></texto>
+<respuesta>
+<texto><![CDATA[El pago de la prima será mediante 2 cuotas al año.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El pago de la prima se incluirá en el préstamo y el pago será por adelantado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El cliente pagará la prima mediante transferencia bancaria en una sola cuota.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_51 -->
+<pregunta> <texto><![CDATA[¿Cómo es el cálculo de la prima para el seguro Multirriesgo Líneas Personales?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La prima se calcula en base a la tasa que depende del monto del préstamo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un precio mensual único.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La prima depende del tiempo del préstamo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_52 -->
+<pregunta> <texto><![CDATA[¿Cuál no es un caso de terminación de la cobertura en el seguro Multirriesgo Líneas Personales?]]></texto>
+<respuesta>
+<texto><![CDATA[Por dolo o fraude del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Por renuncia escrita del asegurado dirigido a la Empresa con preaviso de 30 días calendario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Por fallecimiento del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_53 -->
+<pregunta> <texto><![CDATA[¿El seguro Multirriesgo Líneas Personales es un seguro a primer riesgo?]]></texto>
+<respuesta>
+<texto><![CDATA[Depende de las coberturas seleccionadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_54 -->
+<pregunta> <texto><![CDATA[¿Cuál o cuáles son los giros de negocio que se pueden asegurar con el producto Negocio Protegido?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Comercio, industria y servicio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Comercio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Comercio e industria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_55 -->
+<pregunta> <texto><![CDATA[¿Cuál no es una cobertura del seguro Negocio Protegido?]]></texto>
+<respuesta>
+<texto><![CDATA[Incendio todo riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Robo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Desamparo súbito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_56 -->
+<pregunta> <texto><![CDATA[¿Cuál sería un plan opcional en el seguro Negocio Protegido?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Plan básico + accidentes personales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Plan básico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Plan básico + terremoto + accidentes personales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_57 -->
+<pregunta> <texto><![CDATA[¿Cuál es la edad mínima de ingreso al seguro Negocio Protegido?]]></texto>
+<respuesta>
+<texto><![CDATA[18 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[21 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[25 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_58 -->
+<pregunta> <texto><![CDATA[¿Qué es lo que no se puede asegurar en el seguro Negocio Protegido?]]></texto>
+<respuesta>
+<texto><![CDATA[Equipos de oficina, mobiliarios, útiles, enseres.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Bienes a la intemperie.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Herramientas, instrumentos y maquinaria en general.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_59 -->
+<pregunta> <texto><![CDATA[¿Cuál es la vigencia del seguro Negocio Protegido?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Anual]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mensual]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Semestral]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_60 -->
+<pregunta> <texto><![CDATA[¿Quiénes pueden asegurarse en la cobertura de accidentes en la póliza de Negocio Protegido?]]></texto>
+<respuesta>
+<texto><![CDATA[Los familiares del propietario del negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Terceras personas ajenas al negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Personas naturales titulares del negocio o accionistas mayoritarios que compren el seguro Negocio Protegido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_61 -->
+<pregunta> <texto><![CDATA[¿Cuándo se puede contratar el seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[En cualquier momento que el cliente necesite un seguro para proteger su vivienda.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuando el cliente solicite un crédito hipotecario o con garantía hipotecaria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuando un cliente solicite cualquier tipo de crédito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_62 -->
+<pregunta> <texto><![CDATA[¿Quiénes pueden solicitar el seguro Hipotecario Vivienda?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Personas naturales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Personas jurídicas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Tanto personas naturales como jurídicas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_63 -->
+<pregunta> <texto><![CDATA[¿Qué se asegura con el seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[Edificación y contenido]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Valor de terreno]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Solo edificación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_64 -->
+<pregunta> <texto><![CDATA[Para que pueda acceder al seguro, el uso del inmueble debe ser:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Exclusivamente vivienda.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Vivienda o comercio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El inmueble puede tener cualquier uso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_65 -->
+<pregunta> <texto><![CDATA[¿Actualmente mediante qué canales se puede adquirir el seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[Corredores y fuerza de venta]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[BCP y Citibank]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Exclusivamente BCP]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_66 -->
+<pregunta> <texto><![CDATA[¿Cuál es la vigencia de la póliza del seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[Anual]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mensual]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Toda la duración del crédito]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_67 -->
+<pregunta> <texto><![CDATA[En caso de pérdida total, PPS pagará:]]></texto>
+<respuesta>
+<texto><![CDATA[A valor de tasación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[A valor de reconstrucción]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A valor actual menos la depreciación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_68 -->
+<pregunta> <texto><![CDATA[¿Cuál es la forma de pago del seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[El cliente debe acercarse a PPS todos los meses a pagar su seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se le carga la prima del seguro en las cuotas mensuales del crédito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Puede pagar las cuotas del seguro en las oficinas de Pacífico o en el BCP.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_69 -->
+<pregunta> <texto><![CDATA[¿Cuál es el alcance de la cobertura de rotura accidental de vidrios y cristales?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Hasta 5% de la suma asegurada. Máximo US$ 5,000.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Hasta 10% de la suma asegurada. Máximo US$ 5 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Hasta 10% de la suma asegurada. Máximo US$ 1 000.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_70 -->
+<pregunta> <texto><![CDATA[¿Quién es el beneficiario en caso de siniestro?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo el banco contratante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El banco contratante hasta el monto de su acreencia y el asegurado en cualquier exceso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo el asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_71 -->
+<pregunta> <texto><![CDATA[¿Qué cobertura no está incluida en el seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[Daños por agua.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Gastos por alquiler de vivienda temporal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lluvia e inundación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_72 -->
+<pregunta> <texto><![CDATA[¿Qué documentos recibe el cliente cuando adquiere su seguro Hipotecario Vivienda?]]></texto>
+<respuesta>
+<texto><![CDATA[El condicionado general del producto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El certificado del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un solifolleto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_73 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los bienes asegurados en un Seguro de Hogar?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La edificación de la vivienda, sin considerar el valor del terreno, además de los contenidos de la misma.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La edificación de la vivienda, además de los contenidos de la misma, incluyendo bienes de propiedad de terceros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La edificación de la vivienda, incluyendo el valor del terreno, además de los contenidos de la misma.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_74 -->
+<pregunta> <texto><![CDATA[En todos los casos, ¿la vivienda debe pasar por inspección en un Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí, siempre.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No, depende únicamente del monto asegurado por edificación y/o contenidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No, depende del monto asegurado por edificación y/o contenidos, ubicación, año y material de construcción de la vivienda, entre otros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_75 -->
+<pregunta> <texto><![CDATA[¿A qué se denomina edificación en el Seguro de Hogar?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cimientos, pisos, paredes, techos, puertas, ventanas, elementos fijos de decoración e instalaciones fijas; sin considerar el terreno.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cimientos, pisos, paredes, techos, puertas, ventanas, elementos fijos de decoración e instalaciones fijas; incluyendo el terreno.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cimientos, pisos, paredes, techos, puertas, ventanas, elementos no colocados fijamente; sin considerar el terreno.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_76 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los servicios de atención de emergencias del hogar que ofrecen todos los planes del Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[Electricidad, gasfitería, cerrajería y central de alarmas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Electricidad, gasfitería, jardinería y cerrajería.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Electricidad, gasfitería, cerrajería, vidriería.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_77 -->
+<pregunta> <texto><![CDATA[¿Cuál es el radio de cobertura de los servicios gratuitos por emergencia del Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[Lima Metropolitana exceptuando balnearios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Lima Metropolitana exceptuando Ancón, Punta Hermosa, San Bartolo, Santa María y Pucusana.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todo el Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_78 -->
+<pregunta> <texto><![CDATA[¿Cuál es el horario de atención de los 4 servicios gratuitos por emergencia del Seguro de Hogar?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Las 24 horas del día, los 365 días del año.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De lunes a viernes de 9 a. m. a 6 p. m.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las 24 horas del día, excepto domingos y feriados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_79 -->
+<pregunta> <texto><![CDATA[¿Cuál es la vigencia de la póliza del Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[Semestral]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Anual]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mensual]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_80 -->
+<pregunta> <texto><![CDATA[¿Cuál es el número máximo de viviendas que se pueden asegurar con el Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[Como máximo 1 vivienda.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No hay límite.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Como máximo 5 viviendas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_81 -->
+<pregunta> <texto><![CDATA[¿Se puede asegurar una casa de playa con el Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[No, por el alto riesgo que implican.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, siempre que asegure su casa de residencia permanente con nosotros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí, siempre que asegure su casa de residencia permanente con nosotros o de manera independiente mediante el Plan Playas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_82 -->
+<pregunta> <texto><![CDATA[¿Cuál es la suma asegurada máxima a contratar en el Seguro de Hogar?]]></texto>
+<respuesta>
+<texto><![CDATA[US$1 000,000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US$ 500 000.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No hay un límite máximo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_83 -->
+<pregunta> <texto><![CDATA[Para el Seguro de Hogar, ¿cuál es el cupón mínimo mensual?]]></texto>
+<respuesta>
+<texto><![CDATA[US$ 20]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[US$ 25]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US$ 30]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_84 -->
+<pregunta> <texto><![CDATA[Para la cobertura de gastos médicos por accidentes de trabajadores del hogar del Seguro de Hogar, ¿cuándo aplica esta cobertura?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es indiferente si ocurre dentro y/o fuera del hogar, mientras se estén cumpliendo las funciones propias de su cargo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si el accidente ocurre dentro del hogar, mientras se estén cumpliendo las funciones propias de su cargo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo si el accidente ocurre fuera del hogar, mientras se estén cumpliendo las funciones propias de su cargo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_85 -->
+<pregunta> <texto><![CDATA[Para el Seguro de Hogar, ¿cuál es la tasa de la cobertura de todo riesgo?]]></texto>
+<respuesta>
+<texto><![CDATA[3 por mil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[2 por mil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[1 por mil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_86 -->
+<pregunta> <texto><![CDATA[¿Qué riesgos cubre el Seguro de Protección de Tarjeta?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Robo, asalto, secuestro, hurto, extravío y fraude.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Robo, asalto, secuestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Robo con fractura, asalto, secuestro, hurto y extravío.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_87 -->
+<pregunta> <texto><![CDATA[El Seguro de Protección de Tarjetas cubre las tarjetas:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Emitidas a nombre del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Emitidas a nombre del asegurado y de sus adicionales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Depende del plan contratado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_88 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las principales coberturas del Seguro de Protección de Tarjeta?]]></texto>
+<respuesta>
+<texto><![CDATA[Robo de compras.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Uso indebido de la tarjeta en establecimientos comerciales y/o cajeros automáticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Muerte accidental.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_89 -->
+<pregunta> <texto><![CDATA[¿Cuál de estas coberturas adicionales de accidentes personales cubre el Seguro de Protección de Tarjeta?]]></texto>
+<respuesta>
+<texto><![CDATA[Muerte accidental y consultas médicas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Muerte accidental y gastos de sepelio como consecuencia del robo de sus tarjetas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte accidental y gastos de hospitalización como consecuencia del robo de sus tarjetas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_90 -->
+<pregunta> <texto><![CDATA[El medio de pago del Seguro de Protección de Tarjetas es por:]]></texto>
+<respuesta>
+<texto><![CDATA[Cupones]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Efectivo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cargo a la tarjeta de crédito o débito]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_91 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los documentos obligatorios que debe presentar el cliente ante un siniestro?]]></texto>
+<respuesta>
+<texto><![CDATA[* Denuncia policial]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Carta simple a Pacífico informando la ocurrencia del siniestro
+* Documentos que sustenten la cobertura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Denuncia policial
+* Carta simple a Pacífico informando la ocurrencia del siniestro
+* Documentos que sustenten la cobertura]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_92 -->
+<pregunta> <texto><![CDATA[En casos de siniestros el cliente deberá presentar su siniestro por las siguientes vías:]]></texto>
+<respuesta>
+<texto><![CDATA[Solo en las agencias comerciales del banco o entidad financiera donde adquirió el seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo en Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[En Pacífico o en las agencias del banco o entidad financiera donde adquirió el seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_93 -->
+<pregunta> <texto><![CDATA[Si me secuestran, ¿por cuánto tiempo estoy protegido?]]></texto>
+<respuesta>
+<texto><![CDATA[Solo por 4 horas desde el secuestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Desde el momento del secuestro hasta 4 horas después de la liberación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Desde el momento del secuestro hasta 1 hora después de la liberación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_94 -->
+<pregunta> <texto><![CDATA[¿Cuál es la vigencia de la póliza del Seguro de Protección de Tarjeta?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Mensual o anual dependiendo del plan elegido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Anual.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mensual.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_95 -->
+<pregunta> <texto><![CDATA[¿Hasta qué edad puedo contratar el producto Total Benefit?]]></texto>
+<respuesta>
+<texto><![CDATA[70 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[65 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[75 años]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_96 -->
+<pregunta> <texto><![CDATA[¿Cuál de las siguientes opciones no es una exclusión de los productos de Accidentes Personales?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Muerte por tratar de salvar vidas humanas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Práctica de deportes de riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_97 -->
+<pregunta> <texto><![CDATA[¿Cuál es el período de franquicia para la cobertura de renta hospitalaria del producto Total Benefit?]]></texto>
+<respuesta>
+<texto><![CDATA[3 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[1 día]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[2 días]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_98 -->
+<pregunta> <texto><![CDATA[¿Cuál de estos es un plan para empresas?]]></texto>
+<respuesta>
+<texto><![CDATA[Plan Mundo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Plan Latinoamérica]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Plan Ejecutivo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_99 -->
+<pregunta> <texto><![CDATA[¿Qué país tiene cobertura solo a reembolso?]]></texto>
+<respuesta>
+<texto><![CDATA[Irak]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuba]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[EE. UU.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+
+</data>

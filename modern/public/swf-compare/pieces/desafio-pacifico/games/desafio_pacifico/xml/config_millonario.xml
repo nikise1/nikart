@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<juego objeto-id="3">
+  
+  <titulo>Desafío</titulo>
+  
+  <!-- Configuración de tiempo -->
+  <tiempo>
+    <segundos-juego>30</segundos-juego>
+    <!--<segundos-pregunta>180</segundos-pregunta>-->
+	  <segundos-personaje-cambia>3</segundos-personaje-cambia>
+  </tiempo>
+  
+  <!-- Configuración de preguntas -->
+  <preguntas>
+	  
+	<!-- Este cambia cuano carga preguntas desde "MillonarioComunicacion" -->
+    <lista-preguntas-id>1,2,3</lista-preguntas-id>
+	
+	  <confirmacion>false</confirmacion>
+    <!--<preguntas-aleatorias>true</preguntas-aleatorias>-->
+  </preguntas>
+  <!-- Configuración de puntaje -->
+  
+  <respuestas>
+    <aleatorias>false</aleatorias>
+  </respuestas>
+  
+  <puntaje>
+	<!-- Puede ser cambiado desde "MillonarioComunicacion" y "config.xml" -->
+    <respuesta-correcta>100</respuesta-correcta>
+    <respuesta-incorrecta>25</respuesta-incorrecta>
+  </puntaje>
+  
+  <correctas>0</correctas>
+  <incorrectas>0</incorrectas>
+  <acumulado>0</acumulado>
+  <ayudas>0,0,0,0</ayudas>
+  
+  <opinometro>
+	  <respuestas-max>200</respuestas-max>
+	  <respuestas-min>100</respuestas-min>
+	  <aleatorio-porcentaje-max>95</aleatorio-porcentaje-max>
+	  <aleatorio-porcentaje-min>0</aleatorio-porcentaje-min>
+  </opinometro>
+  
+</juego>
