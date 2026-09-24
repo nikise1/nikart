@@ -1,0 +1,1090 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validador.xsd">
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[¿Qué es gestión integral de riesgos?]]></texto>
+<respuesta>
+<texto><![CDATA[Realizar auditorías a todos los riesgos y controles de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Elaborar matrices de riesgo y almacenarlos en una base de datos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+La gestión integral de riesgos es el proceso efectuado por el Directorio, Gerencia y el Personal, aplicado en toda la Empresa y en la definición de su estrategia, diseñado para identificar potenciales eventos que pueden afectarla, gestionarlos de acuerdo a su apetito por el riesgo y proveer una seguridad razonable en el logro de sus objetivos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[¿La gestión integral de riesgos es únicamente un tema regulatorio?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[No, además de ser un ejercicio de cumplimiento regulatorio, es una importante herramienta de gestión.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[También debe ser considerado un modelo para elaborar presupuestos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es únicamente un tema regulatorio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[¿Cuál es la entidad en Perú que regula la gestión integral de riesgos?]]></texto>
+<respuesta>
+<texto><![CDATA[Conasev]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Superintendencia de Banca y Seguros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[SUNAT]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[Adoptar las mejores prácticas en gestión de riesgos te da la posibilidad de:]]></texto>
+<respuesta>
+<texto><![CDATA[Registrar los gastos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Adquirir un software.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Acompañar al negocio en el día a día de manera más eficiente a fin de satisfacer a los stakeholders.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[¿Cuál es la definición de riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Posibilidad de pérdida por sanciones por parte del regulador debido al incumplimiento de normas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la posibilidad de que se forme una opinión pública negativa sobre la imagen de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+Posibilidad de ocurrencia de pérdidas debido a procesos inadecuados, fallas del personal, tecnología de información o eventos externos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[¿Cómo se debe tratar un riesgo operativo inherente al proceso que desempeñamos en la Empresa?]]></texto>
+<respuesta>
+<texto><![CDATA[En función al nivel económico de los clientes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+En función al nivel de riesgo que la Empresa esté dispuesta a asumir.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En función al nivel de endeudamiento de los corredores de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las formas de tratar un riesgo operativo?]]></texto>
+<respuesta>
+<texto><![CDATA[* Rechazar el riesgo.
+* Retener el riesgo.
+* Difundir el riesgo.
+* Transferir el riesgo.
+* Aplastar el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Evitar el susto.
+* Detener el riesgo.
+* Eliminar el riesgo.
+* Diferir el riesgo.
+* Aprovechar o explotar el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Evitar el riesgo.
+* Retener el riesgo.
+* Reducir el riesgo.
+* Transferir el riesgo.
+* Aprovechar o explotar el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[¿Qué significa evitar un riesgo operativo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Significa tomar cualquier acción estratégica, operacional y/o financiera para eliminar la exposición a un riesgo específico no deseado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Significa manifestar a la Gerencia de la Empresa los riesgos bajos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Significa asumir riesgos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[¿Qué significa retener un riesgo operativo?]]></texto>
+<respuesta>
+<texto><![CDATA[Significa administrar el inventario de activos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Significa conservar el riesgo cuidando retornos apropiados y asegurando adecuada administración y monitoreo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Significa transferir el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[¿En qué consiste la reducción de un riesgo operativo?]]></texto>
+<respuesta>
+<texto><![CDATA[Consiste en incrementar el impacto del riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Significa controlar o mitigar el riesgo a niveles aceptables.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Consiste en establecer todos los controles automáticos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[¿Cuál de las siguientes opciones es un ejemplo de transferencia del riesgo operativo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Una joyería que contrata los servicios de una empresa especializada para el transporte de dinero de sus oficinas al banco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Una tienda de arte que contrata los servicios de una consultora especializada en marketing.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un banco que decide no ofrecer a algunos clientes el préstamo bancario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[¿Qué significa aprovechar un riesgo operativo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Significa administrar dinámicamente la exposición al riesgo con el fin de obtener ventajas competitivas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Significa ver el riesgo como una oportunidad de obtener mejores resultados en informes de auditoría.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Significa ver el riesgo como una oportunidad de mejorar las políticas de la Compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los factores de éxito para la gestión del riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[*Dejar toda la gestión de riesgos al área de riesgo operacional.
+*Reportar los incidentes cuando me acuerdo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[*Cooperación entre las unidades de negocio, áreas de soporte y unidades de control (Auditoría y Riesgo Operacional).
+*Reporte Oportuno de los incidentes, riesgos o eventos de Riesgo Operacional, para una adecuada gestión de riesgos operacionales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[*Trabajar de manera aislada cada área.
+*No autogestionar los riesgos y dejar el trabajo al área de riesgo operacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[¿Quiénes conforman la estructura conceptual adoptada por Pacífico para llevar a cabo una eficiente gestión de riesgos de operación?]]></texto>
+<respuesta>
+<texto><![CDATA[* Comité Apeseg
+* Area de Riesgo Operacional
+* SUNASA
+* Unidades de Negocio
+* Todo el personal]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Directorio de AIG
+* Gerencia de Auditoría
+* Gerencia General
+* Comité Integral de Riesgos
+* Área de Riesgo de Mercado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Directorio
+* Gerencia General
+* Comité Integral de Riesgos
+* GIR / Area de Riesgo Operacional
+* Unidades de Negocio
+* Todo el personal]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[¿Quiénes son los responsables directos de la gestión de riesgos de operación en los procesos de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Los integrantes del Comité Integral de Riesgos de Pacífico y Apeseg.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Las Unidades de Negocio son responsables directas de la gestión de los riesgos de operación en sus procesos de acuerdo a su ámbito de acción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los integrantes del Área de Riesgo Operacional y Cumplimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[¿Cuál es el rol de la Gerencia de Riesgo Operacional y Cumplimiento en Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Desarrollar metodologías de gestión de riesgos de operación, así como de asesorar a unidades responsables.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cumplir con las ventas presupuestadas para Riesgos Generales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Realizar audioría financiera.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[¿Cuál es la gerencia que fija las políticas institucionales y asigna los recursos necesarios para adecuar la gestión de riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Gerencia de Investigaciones Especiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+El Directorio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Gerencia de Suscripción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[¿Qué es un Gestor de Riesgos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es un líder que identifica riesgos y los gestiona en su ámbito de acción, tiene ascendencia en su equipo y en la organización.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el integrante de un equipo externo de consultores tributarios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es quien brinda capacitaciones sobre cumplimiento regulatorio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[¿Qué es el apetito por el riesgo?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el nivel de ventas que la empresa busca en comparación con su competencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el nivel de rentabilidad presupuestado por la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el nivel de riesgo que la empresa está dispuesta a asumir en su búsqueda de rentabilidad y creación de valor.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[¿Qué es la tolerancia al riesgo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es el nivel de variación que la empresa está dispuesta a aceptar en caso de desviación a los objetivos empresariales trazados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un indicador de desempeño del colaborador.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es una calificación establecida por las empresas clasificadoras de riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los componentes indispensables para definir correctamente un riesgo operativo?]]></texto>
+<respuesta>
+<texto><![CDATA[* Descripción de la Unidad a la que pertenece el riesgo
+* Descripción del evento
+* Concepto de póliza]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Código de cliente
+* Descripción del evento
+* Descripción del plan de mitigación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Descripción de la causa
+* Descripción del evento
+* Descripción del efecto]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[¿Cuál es el rol de la Gerencia General en la gestión de riesgos en Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Elaborar la matriz de riesgos de operación de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Asegurar el desarrollo de la Gestión de riesgos de operación en su ámbito de acción,dentro de las políticas, límites y procedimientos establecidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Desarrollar los modelos cuantitativos para la administración de riesgos en la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[¿Cuál es el rol del Comité Integral de Riesgos en la gestión de riesgos de operación en Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Asesorar directamente a los Corredores de Seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Desarrollar metodologías de riesgo y elaborar flujos de procesos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Supervisar y aprobar las metodologías y normas para la administración de los riesgos de operación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[¿En qué consiste la metodología ARO?]]></texto>
+<respuesta>
+<texto><![CDATA[Evitando o rechazando todos los riesgos de operación identificados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Consiste en la identificación, análisis y medición, evaluación, tratamiento, monitoreo y comunicación constante de riesgos operativos en los procesos, productos y actividades de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A través del trabajo en equipo y reduciendo gastos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los tipos de controles que se aplican a los riesgos identificados para su tratamiento?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[*Preventivo
+*Detectivo
+*De aplicación
+*Generales de IT.
+*Manual
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[*Previsivo
+*Detectivo
+*Manual 
+*Automatizado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[*Regulatorio
+*Detectivo
+*Sancionador
+*Automatizado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[¿Cómo se calcula el nivel de riesgo para Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es resultado de multiplicar el valor de probabilidad de ocurrencia por el valor del impacto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es resultado de multiplicar el valor de probabilidad de ocurrencia por vulnerabilidad y por el valor del impacto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es resultado de multiplicar el valor de amenaza por vulnerabilidad y por el valor del impacto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[¿Ante que cambios o sucesos debe realizarse una evaluación de riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[*Análisis de siniestros.
+*Nuevas iniciativas en procesos, proyectos y relación con proveedores.
+*Relación con proveedores de bienes y servicios críticos.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Nuevas iniciativas en procesos, proyectos y relación con proveedores.
+* Cambios en el ambiente operativo e Informático.
+* Procesos clave o críticos (PAAE-RO)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[*Gestión RO en nuevas iniciativas (nuevos productos, servicios y proyectos).
+* Gestión RO en iniciativas de cambio (procesos, sistemas, productos y servicios).
+* Gestión RO en la relación con proveedores de bienes y servicios críticos.
+* Gestión RO en procesos clave o críticos (PAAE-RO - Proceso Anual de Auto-Evaluación de Riesgos de Operación).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[¿Cuál es una premisa verdadera de la gestión de riesgo operacional de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[
+La gestión de riesgos es solo responsabilidad del Directorio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La gestión de riesgo operacional solo es gestionado por un consultor externo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La gestión de riesgo operacional es un proceso realizado por todos los colaboradores, diseñado con el fin de disminuir las pérdidas y aprovechar las oportunidades.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[¿En qué consiste el monitoreo dentro de la gestión de riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Es monitorear la información.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es evaluar el adecuado funcionamiento de la gestión de riesgo operacional y de la implementación de modificaciones o planes de acción propuestos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es monitorear el avance de los proyectos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[¿Quién es responsable de informar a la Gerencia General y al Comité Integral de Riesgos los aspectos relevantes de la gestión de riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Los integrantes del Comité Integral de Riesgos de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las Unidades de Negocio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El área de Riesgo Operacional y Cumplimiento]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[¿Quién tiene como responsabilidad el establecer un sistema de incentivos que fomente la adecuada gestión del riesgo operacional?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El Directorio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las Unidades de Negocio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los integrantes del Comité Integral de Riesgos de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[¿Por qué hacemos continuidad de negocios en Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Porque lo solicita la Alta Gerencia]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Porque es una buena práctica y debemos estar preparados para responder ante incidentes graves que pueden paralizar nuestras operaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No es necesario realizar continuidad de negocios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[¿A qué se llama incidente grave?]]></texto>
+<respuesta>
+<texto><![CDATA[Al desabastecimiento de hojas de impresión, problemas con un aplicativo u olvido de clave de red.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A solicitudes de ambulancia y doctores a domicilio, consultas de coberturas en clínicas y afiliados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[A incidentes que pueden parar la operación de la empresa como por ejemplo, terremotos, pandemias, tsunamis y huelgas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[¿Está regulada la continuidad de negocios?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Sí, por la SBS.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, por SUNASA]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[¿Quién es responsable de implementar la continuidad de negocios en Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Cada área individualmente apoyados por sus gerencias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La Unidad de Continuidad de Negocios está a cargo de implementarla en toda la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La Alta Gerencia apoyada por las gerencias de las Unidades de Negocio, quienes deben velar por la continuidad de sus procesos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_37 -->
+<pregunta> <texto><![CDATA[¿Cuál es el rol de la Unidad de Continuidad de Negocios?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Brindar las metodologías, coordinar, monitorear y medir la gestión de continuidad de negocios en Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Realizar la continuidad de negocios en Pacífico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Auditar la gestión de continuidad de negocios en Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_38 -->
+<pregunta> <texto><![CDATA[¿Qué es un plan de continuidad de negocios?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un archivo en el que se indican los procedimientos de acción en caso de un incidente leve de interrupción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es uno o varios documentos que deben ser interiorizados por cada persona y sirven de guía para recuperar los procesos vitales de la Empresa en caso de un evento grave de interrupción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el plan estratégico de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_39 -->
+<pregunta> <texto><![CDATA[¿Cómo sabemos si un proceso necesita un plan de continuidad de negocios?]]></texto>
+<respuesta>
+<texto><![CDATA[Todos los procesos necesitan planes de continuidad de negocios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se efectúa la consulta al Gerente responsable del proceso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se determina a través de un "análisis de impacto" donde se evalúa si la interrupción/falla del proceso pone en riesgo la continuidad de las operaciones de todo Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_40 -->
+<pregunta> <texto><![CDATA[¿Cómo sabemos cuándo activar los planes de continuidad?]]></texto>
+<respuesta>
+<texto><![CDATA[Cada persona puede decidir en qué momento activar su plan de continuidad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuando lo indica la SBS]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuando el Comité de Manejo de Crisis ha declarado la situación en contingencia salvo en los casos en los que se indique en el plan que puede activarse en contingencia en determinadas circunstancias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_41 -->
+<pregunta> <texto><![CDATA[¿Quiénes conforman el Comité de Manejo de Crisis?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Miembros de la Alta Gerencia de la Empresa, asesorados por los expertos de sus unidades de negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los Brigadistas, Jefe de Seguridad, GyDH y ADM.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Personal de Asistencia y Siniestros RRGG]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_42 -->
+<pregunta> <texto><![CDATA[¿Cómo se mide la continuidad de negocios?]]></texto>
+<respuesta>
+<texto><![CDATA[A través de los indicadores de ventas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[A través de los ejercicios y pruebas de los planes de continuidad; y mediante indicadores en cada una de las unidades de negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es medida por la SBS]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_43 -->
+<pregunta> <texto><![CDATA[¿Cuándo debe ser actualizado un plan de continuidad de negocios?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Como mínimo una vez al año y cada vez que se presenten cambios significativos en el proceso objeto del plan.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Como mínimo una vez cada dos años y cada vez que se presenten cambios significativos en el proceso objeto del plan.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se debe actualizar anualmente, sin importar si han ocurrido o no cambios significativos en el proceso objeto del plan.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_44 -->
+<pregunta> <texto><![CDATA[¿Quién es responsable de actualizar y probar el plan de continuidad de negocios?]]></texto>
+<respuesta>
+<texto><![CDATA[La Unidad de Continuidad de Negocios]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El Equipo de GyDH es responsable de actualizar y probar los planes de continuidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El dueño del proceso, quien debe mantener "vivo" su plan, capacitar a su equipo y realizar las pruebas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_45 -->
+<pregunta> <texto><![CDATA[¿Qué es un plan de emergencias?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un documento en el que se detallan las estrategias para recuperar los sistemas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es un documento que refleja la estrategia de la Empresa para proteger la vida humana en caso de un incidente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un documento en el que se indican los procedimientos de acción en caso de un incidente leve de interrupción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_46 -->
+<pregunta> <texto><![CDATA[¿Qué debo prever ante un sismo de grandes dimensiones dentro o fuera de Pacífico?]]></texto>
+<respuesta>
+<texto><![CDATA[Asegurarse que su vehículo cuente con SOAT vigente y evacuar cuando el movimiento telúrico se haya detenido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Identificar las salidas de emergencia, establecer puntos de encuentro con nuestros familares y tener preparada una mochila de emergencia.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Identificar las salidas de emergencia, establecer puntos de encuentro con nuestros familares, tener preparada una mochila de emergencia y procurar tener cerca el celular, llaves y efectivo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_47 -->
+<pregunta> <texto><![CDATA[¿Cómo debo actuar en caso de un sismo de grandes dimensiones?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Mantén la calma, sigue los procedimientos de evacuación y reúnete de ser necesario con tus familiares.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Alerta a todos tus compañeros y evacúen por los ascensores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Evacúa rápidamente por la escalera más cercana antes de que termine el sismo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_48 -->
+<pregunta> <texto><![CDATA[¿Qué es un evento?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Suceso o serie de sucesos, pueden ser internos o externos a la empresa, originados por la misma causa y durante un periodo de tiempo, afectando el curso normal de los procesos.
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la materialización de un riesgo operativo que tiene impacto económico negativo en el estado de resultados o en el patrimonio de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la ocurrencia de una emergencia para la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_49 -->
+<pregunta> <texto><![CDATA[¿Qué es un evento de pérdida por riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[Es la ocurrencia de una falla en los procesos internos de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un riesgo operativo que no significa un registro contable para la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es la materialización de un riesgo operativo que tiene impacto económico negativo en el estado de resultados o en el patrimonio de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_50 -->
+<pregunta> <texto><![CDATA[¿Qué son las Unidades de Reporte de Eventos de Pérdida (UREP)?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Son los responsables de reportar las salidas monetarias originadas por la materialización de un evento de riesgo operacional en sus procesos operativos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son los encargados de asesorar sobre los registros contables asociados a los eventos de pérdida por riesgo operacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Son las unidades encargadas de la creación de cuentas contables para pérdidas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_51 -->
+<pregunta> <texto><![CDATA[¿Cuál de los siguientes grupos de opciones corresponde a categorías generales de eventos de pérdida por riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[* Relaciones laborales y seguridad en el puesto de trabajo
+* Segregación de funciones
+* Fraude Externo
+* Cese de personal crítico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Fraude Interno
+* Fraude Externo
+* Daños a activos materiales
+* Interrupción del negocio y falla de sistemas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Clientes, productos y práctica empresarial
+* Aseguramiento con recargo de prima
+* Ejecución, entrega y gestión de procesos
+* Seguridad de la Información]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_52 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las causas genéricas que pueden originar un evento de pérdida por riesgo operacional?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[* Fallas en los procesos
+* Fallas de las personas
+* Fallas en los sistemas
+* Eventos externos adversos
+* Fallas en la relación con terceros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Fraude Interno
+* Fraude Externo
+* Incremento de primas
+* Gestión de Proveedores
+* Seguridad y Salud en el trabajo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Falla de las personas
+* Tarificación
+* Mejora continua
+* Gestión de procesos
+* Capacitación]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_53 -->
+<pregunta> <texto><![CDATA[¿Quiénes participan en mantener un adecuado registro y gestión de los eventos de pérdida?]]></texto>
+<respuesta>
+<texto><![CDATA[* Contabilidad
+* Unidades de Reporte de Eventos de Pérdida
+* Seguridad de la Información]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Legal
+* Gestión de Eventos de Pérdida
+* Sistemas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Contabilidad
+* Unidades de Reporte de Eventos de Pérdida
+* Gestión de Eventos de Pérdida]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_54 -->
+<pregunta> <texto><![CDATA[¿Cuándo se reportan los eventos de pérdida y a quién?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[En la oportunidad que se descubre o mensualmente en la fecha acordada con Gestión de Eventos de Pérdida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Semestralmente a Contabilidad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mensualmente a la SBS]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_55 -->
+<pregunta> <texto><![CDATA[¿Dónde deben estar registrados los eventos de pérdida por riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[* No debe significar un registro contable para la Empresa.
+* En la base de datos de eventos de pérdida por riesgo operacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Debe significar un registro contable para la Empresa.
+* En la base de datos de eventos de pérdida por riesgo operacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Cada área debe tener sus propios registros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_56 -->
+<pregunta> <texto><![CDATA[¿Por qué es importante que la Empresa capture, registre, analice y gestione los eventos de pérdida por riesgo operacional?]]></texto>
+<respuesta>
+<texto><![CDATA[* Para presupuestar las pérdidas.
+* Para incluir indicadores de pérdidas.
+* Cumplir con el código de consumo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[* Para identificar cuánto se pierde.
+* Sancionar a los involucrados en las pérdidas.
+* Cumplir con el código de ética.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[* Evitar pérdidas futuras a través del tratamiento de su origen.
+* Optimizar la asignación de capital. 
+* Cumplir con la regulación y normas Credicorp.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_57 -->
+<pregunta> <texto><![CDATA[¿Cuál es la normativa local que enmarca la gestión de los eventos de pérdida por riesgo operacional?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Resolución SBS N.* 2116-2009 -“Reglamento para la Gestión de Riesgo Operacional”]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Código Civil]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Código de Ética y Estándares de conducta.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_58 -->
+<pregunta> <texto><![CDATA[¿Como miembro de una UREP cómo participo en la gestión de eventos de pérdida de la Empresa?]]></texto>
+<respuesta>
+<texto><![CDATA[Reportando el ingreso de nuevos proveedores y participando en las capacitaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Proporcionando información a Gestión de Eventos de Pérdida, sobre los eventos de pérdida identificados, asimismo participando activamente en las gestiones de prevención y mitigación de futuros eventos de pérdida generados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reportando los nuevos productos lanzados al mercado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_59 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo de cumplimiento?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un riesgo asegurable]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo que se refiere a la volatilidad de los mercados de instrumentos financieros tales como acciones, deuda y derivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el riesgo de sanciones legales o normativas, pérdida financiera material, o pérdida de reputación que la entidad puede sufrir como resultado de incumplir con las leyes, regulaciones, normas, estándares de autorregulación de la organización, y códigos de conducta aplicables a sus actividades.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_60 -->
+<pregunta> <texto><![CDATA[¿Cuál es el objetivo de la función de cumplimiento?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El objetivo es velar por el adecuado cumplimiento de la normativa que le sea aplicable a la Empresa, tanto interna como externa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cumplir sólo con normas internas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Promocionar los productos y servicios de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_61 -->
+<pregunta> <texto><![CDATA[¿Cuál es la misión del Área de Cumplimiento Normativo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La misón es implantar una cultura de cumplimiento con enfoque en riesgos que promueva los valores y comportamientos éticos en la organización.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Modificar las normas publicadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Registrar normas nuevas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_62 -->
+<pregunta> <texto><![CDATA[En relación al Cumplimiento Normativo, es política de Credicorp la siguiente afirmación:]]></texto>
+<respuesta>
+<texto><![CDATA[Atender los requerimientos de los reguladores fuera del plazo establecido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es política de Credicorp y sus subsidiarias que todos sus representantes y colaboradores cumplan con las leyes, reglamentos y requisitos gubernamentales aplicables a los negocios desarrollados tanto en el Perú como en otras jurisdicciones donde opera la corporación.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Infringir el Reglamento interno de trabajo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_63 -->
+<pregunta> <texto><![CDATA[¿Quiénes son los responsables directos de gestionar los riesgos de cumplimiento?]]></texto>
+<respuesta>
+<texto><![CDATA[Los clientes]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los brokers]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Unidades de Negocio, Servicio y Soporte, apoyándose en la asesoría del Área de Cumplimiento Normativo y otras si fuera necesario.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_64 -->
+<pregunta> <texto><![CDATA[¿Las normas de qué entidades reguladoras se deben tener siempre en cuenta?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Tener siempre en cuenta las normas dictadas por la SBS, SUNASA, SUNAT y el Ministerio de Trabajo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo de Conasev]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Fenacrep]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_65 -->
+<pregunta> <texto><![CDATA[¿Quiénes deben y cómo se debe cumplir con el Código de Ética?]]></texto>
+<respuesta>
+<texto><![CDATA[Los brokers y sólo al ingresar a oficinas de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Todos los colaboradores de Pacífico deberán cumplir con el Código de Ética dentro de las oficinas, fuera de ellas, durante el horario de trabajo y fuera de este horario, ya que todos somos representantes de nuestra Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los gerentes solo en el horario de trabajo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_66 -->
+<pregunta> <texto><![CDATA[¿Qué es el lavado de activos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El lavado de activos es un delito que consiste en dar apariencia lícita al dinero que tiene una procedencia ilícita.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la posibilidad de ocurrencia de pérdida monetaria directa o indirecta por fallas en los procesos, personas, relaciones con terceros, tecnología y/o eventos externos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sanciones por parte del regulador por incumplimiento de normas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_67 -->
+<pregunta> <texto><![CDATA[De acuerdo a la normativa vigente de Prevención de Lavado de Activos, ¿quiénes son considerados clientes sensibles?]]></texto>
+<respuesta>
+<texto><![CDATA[Dentro de la categoría de clientes sensibles se podría considerar al Gerente de una empresa privada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Un PEP (Persona Expuesta Políticamente). Son personas que cumplen o han cumplido funciones públicas destacadas en los últimos dos años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cliente sensible podría ser considerado una persona, quien contrata una póliza de seguro, cuyos ingresos no guarda relación con la suma asegurada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_68 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las etapas del lavado de activos?]]></texto>
+<respuesta>
+<texto><![CDATA[Inversión, colocación, recolección y suscripción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Emisión, mezcla, recolección e inversión.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Recolección, colocación, mezcla e inversión.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_69 -->
+<pregunta> <texto><![CDATA[¿En relación a Prevención de Lavado de Activos, qué es el riesgo reputacional?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es el riesgo que se forme una opinión pública negativa sobre la imagen y el prestigio de la empresa en caso de que se vea involucrada en una operación de lavado de activos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es una calificación establecida por las empresas clasificadoras de riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el nivel de variación que la empresa está dispuesta a asumir en caso de desviación a los objetivos empresariales trazados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_70 -->
+<pregunta> <texto><![CDATA[¿Cuál de las siguientes afirmaciones es uno de los mecanismos más importantes de prevención de lavado de activos para el financiamiento del terrorismo?]]></texto>
+<respuesta>
+<texto><![CDATA[Conocimiento del empleado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Conocimiento del cliente]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Conocimiento del mercado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_71 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es un aspecto relacionado con la sicología del ser humano, con las matemáticas y la experiencia adquirida a través de los años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo que se refiere a la volatilidad de los mercados de instrumentos financieros tales como acciones, deuda o derivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el riesgo de sanciones legales o normativas, pérdida financiera material, o pérdida de reputación que la entidad puede sufrir como resultado de incumplir con las leyes, regulaciones, normas, estándares de autorregulación de la organización, y códigos de conducta aplicables a sus actividades.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_72 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo de mercado?]]></texto>
+<respuesta>
+<texto><![CDATA[Es entendido como la posibilidad de ocurrencia de pérdidas financieras, originadas por fallas o insuficiencias de procesos, personas, sistemas internos, tecnología y en la presencia de eventos externos imprevistos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es la pérdida potencial en el valor de los activos financieros debido a movimientos adversos en los factores que determinan su precio, también conocidos como factores de riesgo; por ejemplo: las tasas de interés o el tipo de cambio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pérdidas que podrían resultar como consecuencia de no concretar oportunidades de negocio atribuibles a un desprestigio de una institución.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_73 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo crediticio?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es la posible pérdida que asume un agente económico como consecuencia del incumplimiento de las obligaciones contractuales que incumben a las contrapartes con las que se relaciona.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se refiere a las pérdidas que puede sufrir una institución al requerir una mayor cantidad de recursos para financiar sus activos a un costo posiblemente inaceptable.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se refiere a la pérdida que se sufre en caso de que exista incumplimiento de una contraparte y no se pueda exigir, por la vía jurídica, cumplir con los compromisos de pago.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_74 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo de liquidez?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el riesgo de sanciones legales o normativas, pérdida financiera material, o pérdida de reputación que la entidad puede sufrir como resultado de incumplir con las leyes, regulaciones, normas, estándares de autorregulación de la organización y códigos de conducta aplicables a sus actividades.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo que se refiere a la volatilidad de los mercados de instrumentos financieros tales como acciones, deuda o derivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se refiere a las pérdidas que puede sufrir una institución al requerir una mayor cantidad de recursos para financiar sus activos a un costo posiblemente inaceptable.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_75 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo legal?]]></texto>
+<respuesta>
+<texto><![CDATA[El riesgo legal es la posible pérdida que asume un agente económico como consecuencia del incumplimiento de las obligaciones contractuales que incumben a las contrapartes con las que se relaciona.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es entendido como la posibilidad de ocurrencia de pérdidas financieras, originadas por fallas o insuficiencias de procesos, personas, sistemas internos, tecnología, y en la presencia de eventos externos imprevistos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se refiere a la pérdida que se sufre en caso de que exista incumplimiento de una contraparte y no se pueda exigir, por la vía jurídica, cumplir con los compromisos de pago.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_76 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo de tipo de cambio?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es el riesgo relacionado con la volatilidad de las divisas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un aspecto relacionado con la sicología del ser humano, con las matemáticas y la experiencia adquirida a través de los años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo que se refiere a la volatilidad de los mercados de instrumentos financieros tales como acciones, deuda o derivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_77 -->
+<pregunta> <texto><![CDATA[¿Qué es el riesgo tipo de interés?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el riesgo de sanciones legales o normativas, pérdida financiera material, o pérdida de reputación que la entidad puede sufrir como resultado de incumplir con las leyes, regulaciones, normas, estándares de autorregulación de la organización y códigos de conducta aplicables a sus actividades.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el riesgo relacionado con la volatilidad de los tipos de interés.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se refiere a la pérdida que se sufre en caso de que exista incumplimiento de una contraparte y no se pueda exigir, por la vía jurídica, cumplir con los compromisos de pago.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_78 -->
+<pregunta> <texto><![CDATA[¿Cómo se entiende la función de la "administración de riesgo"?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el riesgo de sanciones legales o normativas, pérdida financiera material, o pérdida de reputación que la entidad puede sufrir como resultado de incumplir con las leyes, regulaciones, normas, estándares de autorregulación de la organización y códigos de conducta aplicables a sus actividades.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[En esencia, es un método racional y sistemático para entender los riesgos, medirlos y controlarlos en un entorno en el que prevalecen instrumentos financieros sofisticados, mercados financieros que se mueven con gran rapidez y avances tecnológicos en los sistemas de información que marcan nuestra era.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pérdidas que podrían resultar como consecuencia de no concretar oportunidades de negocio atribuibles a un desprestigio de una institución.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_79 -->
+<pregunta> <texto><![CDATA[¿Para qué sirve un modelo?]]></texto>
+<respuesta>
+<texto><![CDATA[Para hacer análisis de discriminantes lineal y de regresión lineal múltiple.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Para encontrar las ganancias o pérdidas de la Empresa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sirve para la simplificación de la realidad y así describir relaciones económicas/financieras de causa-efecto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_80 -->
+<pregunta> <texto><![CDATA[¿En qué se basa el modelo econométrico del riesgo de crédito?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Se basa en un análisis de discriminantes lineal y de regresión lineal múltiple.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se basa en la teoría de las opciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En múltiples teorías financieras de flujos de caja.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_81 -->
+<pregunta> <texto><![CDATA[¿En qué se basa el modelo KMV Moody´s?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Se basa en la teoría de las opciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se basa en un análisis de discriminantes lineal y de regresión lineal múltiple.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se basa en la teoría de los flujos futuros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_82 -->
+<pregunta> <texto><![CDATA[Indica cuáles son los principales usos del VAR:]]></texto>
+<respuesta>
+<texto><![CDATA[Gestión de ganancias, medida del riesgo, control financiero, reporte financiero y cálculo del capital regulatorio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Gestión del riesgo, medida del riesgo, control financiero, reporte financiero y cálculo del capital regulatorio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Gestión del riesgo, medida de la pérdida, control financiero, reporte financiero y cálculo del capital regulatorio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_83 -->
+<pregunta> <texto><![CDATA[¿Qué son las opciones en las finanzas?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un contrato por medio del cual un comprador adquiere el deber a comprar o vender un activo, dentro de un plazo predefinido (período de contrato), en un precio (de ejercicio) fijado de antemano en el momento de firmarse el contrato.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es un contrato por medio del cual un comprador adquiere el derecho a comprar o vender un activo, dentro de un plazo predefinido (período de contrato), en un precio (de ejercicio) fijado de antemano en el momento de firmarse el contrato.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un contrato por medio del cual un comprador adquiere el derecho a comprar o vender un activo, dentro de un plazo indefinido (período de contrato).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_84 -->
+<pregunta> <texto><![CDATA[¿Para qué se usa el término volatilidad en el mundo financiero?]]></texto>
+<respuesta>
+<texto><![CDATA[Sirve para determinar el precio futuro de las acciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se usa para determinar las ganancias o pérdidas de los flujos financieros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Se usa en los mercados financieros para diferenciar los activos financieros estables de los que no lo son y supone la medida y grado de oscilación alrededor de un valor medio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_85 -->
+<pregunta> <texto><![CDATA[¿Qué es el S&P 500 Index?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Índice de las 500 acciones más comerciadas en EE.UU. y mide el comportamiento general del mercado estadounidense.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Índice de las 500 acciones más comerciadas en Asia y mide el comportamiento general del mercado estadounidense.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Índice de las 500 acciones más comerciadas en la Unión Europea y mide el comportamiento general del mercado estadounidense.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_86 -->
+<pregunta> <texto><![CDATA[¿Qué es el Beta?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Se trata de un indicador de riesgo que marca en qué medida una acción sigue las fluctuaciones del mercado. Cuanto mayor de 1 es su valor, mayor es el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se trata de un precio de riesgo que marca en qué medida una acción sigue las fluctuaciones del mercado. Cuanto mayor de 1 es su valor, mayor es el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se trata de un ratio de riesgo que marca en qué medida una acción sigue las fluctuaciones del mercado. Cuanto mayor de 1 es su valor, mayor es el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_87 -->
+<pregunta> <texto><![CDATA[¿Qué significa la probabilidad de default?]]></texto>
+<respuesta>
+<texto><![CDATA[Es la probabilidad que una parte de la Empresa no cumpla y/o decida dejar el pago de sus obligaciones en los periodos establecidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la probabilidad que una parte de la Empresa cumpla y/o decida pagar sus obligaciones en los periodos establecidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es la probabilidad que un emisor no cumpla y/o decida dejar el pago de sus obligaciones en los periodos establecidos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_88 -->
+<pregunta> <texto><![CDATA[¿Qué significa la clasificación de riesgo?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el puesto que se le da a las empresas que generan mayores flujos de ingresos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el posicionamiento de un papel en una escala asignada de acuerdo a su capacidad de cumplimiento de obligaciones y/o compromisos establecidos en el papel ofrecido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el puesto que se le da a las empresas que generan pocos flujos de ingresos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_89 -->
+<pregunta> <texto><![CDATA[¿Para qué sirve la equivalencia internacional de una clasificación de riesgo?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Sirve para determinar la equivalencia de una clasificación asignada en el entorno local expresada a nivel de un contexto internacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sirve para determinar la equivalencia de una clasificación asignada en el entorno internacional expresada a nivel de un contexto local.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sirve para determina la equivalencia de una clasificación asignada en el entorno nacional expresada a nivel del contexto de EE.UU.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_90 -->
+<pregunta> <texto><![CDATA[¿Qué es la tasa de descuento?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es una operación matemática mediante la cual se obtiene el valor presente de flujos futuros. ]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pérdidas que podrían resultar como consecuencia de no concretar oportunidades de negocio atribuibles a un desprestigio de una institución.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo que se refiere a la volatilidad de los mercados de instrumentos financieros tales como acciones, deuda o derivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_91 -->
+<pregunta> <texto><![CDATA[¿Cuál de estos temas estaría relacionado con el riesgo de mercado?]]></texto>
+<respuesta>
+<texto><![CDATA[Riesgo operacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[
+VAR]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Incumplimiento de pagos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_92 -->
+<pregunta> <texto><![CDATA[¿Cuál de estos temas estaría relacionado con el riesgo de crédito?]]></texto>
+<respuesta>
+<texto><![CDATA[Clasificación de riesgo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Probabilidad de default]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Las dos anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_93 -->
+<pregunta> <texto><![CDATA[¿Cuál de estos temas estaría relacionado con el riesgo de liquidez?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cantidad de recursos disponibles]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Precio futuro de las acciones]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las dos anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_94 -->
+<pregunta> <texto><![CDATA[Para la búsqueda de una clasificación de riesgos se usa la información de:]]></texto>
+<respuesta>
+<texto><![CDATA[Bancos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Clasificadoras]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se inventan]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_95 -->
+<pregunta> <texto><![CDATA[El modelo KMV Moody's se utiliza en:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Riesgo de crédito]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo de mercado]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Riesgo operacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_96 -->
+<pregunta> <texto><![CDATA[La incertidumbre se convierte en oportunidad cuando:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Se administra el riesgo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se hace econometría]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se invierte más]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_97 -->
+<pregunta> <texto><![CDATA[El Área de Riesgo Financiero abarca principalmente los riesgos de:]]></texto>
+<respuesta>
+<texto><![CDATA[Mercado, Crediticio y Operacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Mercado, Legal y Operacional]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Mercado, Crediticio y Liquidez]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_98 -->
+<pregunta> <texto><![CDATA[Para un correcto análisis de riesgo el área apunta a trabajar con:]]></texto>
+<respuesta>
+<texto><![CDATA[Dinero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Modelos económicos/financieros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Econometría]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_99 -->
+<pregunta> <texto><![CDATA[El riesgo de Crédito en una empresa aseguradora se desarrollará principalmente en:]]></texto>
+<respuesta>
+<texto><![CDATA[Posibles siniestros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Posibilidad que los clientes de la empresa no paguen.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Instrumentos financieros]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_100 -->
+<pregunta> <texto><![CDATA[La equivalencia internacional se puede utilizar para clasificadoras como:]]></texto>
+<respuesta>
+<texto><![CDATA[S&P]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Apoyo]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[VAR]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+</data>

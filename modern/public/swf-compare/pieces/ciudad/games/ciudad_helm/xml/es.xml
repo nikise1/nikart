@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<translations>
+    <text>
+        <copyno><![CDATA[puntos]]></copyno>
+        <copy><![CDATA[puntos]]></copy>
+    </text>
+    
+    <!-- Tooltip -->
+    <text>
+        <copyno><![CDATA[selectar_retos]]></copyno>
+        <copy><![CDATA[Selecciona más retos para continuar (Select more challenges to continue).]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[terminar_retos]]></copyno>
+        <copy><![CDATA[Debes terminar los retos seleccionados (You have to finish the selected challenges).]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[retos_lleno]]></copyno>
+        <copy><![CDATA[Ya completaste los retos de la semana.]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[hacer_saber]]></copyno>
+        <copy><![CDATA[Responde saber y sumar para obtener más puntos (Answer saber y sumar to continue).]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[esperar]]></copyno>
+        <copy><![CDATA[Debes esperar hasta {fecha}]]></copy>
+    </text>
+</translations>

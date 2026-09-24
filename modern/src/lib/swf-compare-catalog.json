@@ -1,0 +1,214 @@
+[
+  {
+    "id": "claro",
+    "title": "Claro",
+    "group": "websites",
+    "itemId": "claro",
+    "wrapper": "websites/claro/index.html",
+    "primary": true,
+    "width": 960,
+    "height": 700
+  },
+  {
+    "id": "118aua-energyball",
+    "title": "118 118 — Energy ball",
+    "group": "websites",
+    "itemId": "118aua",
+    "wrapper": "websites/118aua/energyball.html",
+    "primary": true,
+    "width": 1010,
+    "height": 640
+  },
+  {
+    "id": "118aua-livefeed",
+    "title": "118 118 — Live feed",
+    "group": "websites",
+    "itemId": "118aua",
+    "wrapper": "websites/118aua/livefeed.html",
+    "width": 982,
+    "height": 494
+  },
+  {
+    "id": "rockstars-divas",
+    "title": "Rockstars vs Divas",
+    "group": "games",
+    "itemId": "rockstars_divas",
+    "wrapper": "games/rockstars_divas/index.html",
+    "primary": true,
+    "width": 600,
+    "height": 700
+  },
+  {
+    "id": "ciudad",
+    "title": "Isometric Cities",
+    "group": "games",
+    "itemId": "ciudad",
+    "wrapper": "games/ciudad_helm/index.html",
+    "primary": true,
+    "width": 1200,
+    "height": 768
+  },
+  {
+    "id": "avis-donde",
+    "title": "Avis — Where in the world",
+    "group": "games",
+    "itemId": "avis_donde",
+    "wrapper": "games/avis_donde/index.html",
+    "primary": true,
+    "width": 600,
+    "height": 600
+  },
+  {
+    "id": "whiplash",
+    "title": "Whiplash",
+    "group": "games",
+    "itemId": "whiplash",
+    "wrapper": "games/whiplash/index.html",
+    "primary": true,
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "desafio-pacifico",
+    "title": "Desafío Pacífico",
+    "group": "games",
+    "itemId": "desafio_pacifico",
+    "wrapper": "games/desafio_pacifico/index.html",
+    "primary": true,
+    "width": 1000,
+    "height": 700
+  },
+  {
+    "id": "reading-leeds",
+    "title": "Reading vs Leeds",
+    "group": "games",
+    "itemId": "reading_leeds",
+    "wrapper": "games/reading_leeds/index.html",
+    "primary": true,
+    "width": 800,
+    "height": 893
+  },
+  {
+    "id": "escalera",
+    "title": "Snakes & Ladders",
+    "group": "games",
+    "itemId": "escalera",
+    "wrapper": "games/escalera/index.html",
+    "primary": true,
+    "width": 1000,
+    "height": 700
+  },
+  {
+    "id": "slate20",
+    "title": "Slate 20",
+    "group": "games",
+    "itemId": "slate20",
+    "wrapper": "games/slate20/index.html",
+    "primary": true,
+    "width": 808,
+    "height": 606
+  },
+  {
+    "id": "weeds",
+    "title": "Mow the Lawn",
+    "group": "games",
+    "itemId": "weeds",
+    "wrapper": "games/weeds/index.html",
+    "primary": true,
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "ar-heart",
+    "title": "Away3D heart",
+    "group": "3d",
+    "itemId": "ar_heart",
+    "wrapper": "3d/away3d/ar_heart/index.html",
+    "primary": true,
+    "width": 1016,
+    "height": 710
+  },
+  {
+    "id": "ar-lizard",
+    "title": "FLAR lizard",
+    "group": "3d",
+    "itemId": "ar_lizard",
+    "wrapper": "3d/away3d/flar_lizard/pub/index.html",
+    "primary": true,
+    "width": 830,
+    "height": 480
+  },
+  {
+    "id": "spaceship",
+    "title": "Papervision3D Spaceship",
+    "group": "3d",
+    "itemId": "spaceship",
+    "wrapper": "3d/papervision3d/spaceship/index.html",
+    "primary": true,
+    "width": 960,
+    "height": 700
+  },
+  {
+    "id": "banner-standardlife",
+    "title": "Banner — Standard Life",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/standardlife/index.html",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "banner-standardlife-lite",
+    "title": "Banner — Standard Life Lite",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/standardlife/index_lite.html",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "banner-johnfrieda",
+    "title": "Banner — John Frieda",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/johnfrieda/index.html",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "banner-hellboy",
+    "title": "Banner — Hellboy",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/hellboy/index.html",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "banner-nintendo",
+    "title": "Banner — Nintendo",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/nintendo/index.html",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "banner-shell",
+    "title": "Banner — Shell",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/shell/index.html",
+    "width": 800,
+    "height": 600
+  },
+  {
+    "id": "banner-trunk",
+    "title": "Banner — Trunk",
+    "group": "banners",
+    "itemId": "banners",
+    "wrapper": "banners/trunk/index.html",
+    "width": 800,
+    "height": 600
+  }
+]

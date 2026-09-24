@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>118</title>
+<link href="css/aua_styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+
+var preload_1 = new Image();
+preload_1.src = "images/menu_1a.png";
+var preload_2 = new Image();
+preload_2.src = "images/menu_2a.png";
+var preload_3 = new Image();
+preload_3.src = "images/menu_3a.png";
+var preload_4 = new Image();
+preload_4.src = "images/menu_4a.png";
+
+function swapImages(img_name_1, img_src_1, img_name_2, img_src_2)
+{
+	document[img_name_1].src = img_src_1;
+	if (img_name_2) document[img_name_2].src = img_src_2;
+}
+
+function clear_textbox(obj){
+	obj.value = "";
+	obj.className = "try_input_box_selected";
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<div id="wrap">
+
+  <div id="menu"><a href="#"><img src="images/transparent.gif" alt="118.com" name="menu_118_com" width="115" height="50" border="0" id="menu_118_com"/></a>
+    <ul id="menu_buts">
+      <li>
+        <a href="index.html" onmouseover="swapImages('menu_1', 'images/menu_1a.png')" onmouseout="swapImages('menu_1', 'images/menu_1.png')">
+        <img src="images/menu_1.png" alt="Home" name="menu_1" width="56" height="34" border="0" id="menu_1" /></a></li>
+      <li>
+        <a href="livefeed.html" onmouseover="swapImages('menu_2', 'images/menu_2a.png')" onmouseout="swapImages('menu_2', 'images/menu_2.png')">
+        <img src="images/menu_2.png" alt="Question Feed" name="menu_2" width="104" height="34" border="0" id="menu_2" /></a></li>
+      <li>
+        <a href="energyball.html" onmouseover="swapImages('menu_3', 'images/menu_3a.png')" onmouseout="swapImages('menu_3', 'images/menu_3.png')">
+        <img src="images/menu_3.png" alt="Interactive Questions" name="menu_3" width="146" height="34" border="0" id="menu_3" /></a></li>
+      <li>
+        <img src="images/menu_4b.png" alt="Try us for Free" name="menu_4" width="100" height="34" border="0" id="menu_4" /></li>
+    </ul>
+  </div>
+
+  <div id="try_content">
+    <div class="right_content">
+      <div id="try_form">
+
+  <form>
+
+        <br />
+        <br />
+        <br />
+        <!--<asp:Label name="lblMessage" id="lblMessage" Text="-->Type in a question and we'll send the response to your mobile<!-- " runat="server"/>--><br />
+        <br />
+
+      <input name="mobile" type="text" id="txtAUAMobile" class="try_input_box" value="Your phone number (no spaces)" onfocus="JavaScript:clear_textbox(this);" /><br />
+
+      <input name="question" type="text" value="Type your question here" id="txtAUAQuestion" class="try_input_box" onfocus="JavaScript:clear_textbox(this);" /><br />
+
+      <input type="image" name="Image1" id="Image1" src="images/try_submit.png" class="submit_but" runat="server"/>
+
+  </form>
+
+      </div>
+        <br />
+        * T&amp;Cs apply<br />
+        <br />
+        Texting 118 118 will cost your standard network charge, the response  costs 35p. Calls to us cost 25p per minute plus 69p from most landlines, mobiles vary. (Prices correct at 23.07.08)</div>
+  </div>
+
+  <div id="footer">
+    <span class="footer_left">&copy; 2008 The Number UK Ltd. all rights reserved</span>
+    <span class="footer_right"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="tellamate.html">Tell a mate</a> | <a href="#">118.com</a></span>
+  </div>
+
+</div>
+	
+</body>
+</html>

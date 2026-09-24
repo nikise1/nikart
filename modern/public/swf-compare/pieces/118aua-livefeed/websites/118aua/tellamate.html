@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>118</title>
+<link href="css/aua_styles.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+<!--
+
+var preload_1 = new Image();
+preload_1.src = "images/menu_1a.png";
+var preload_2 = new Image();
+preload_2.src = "images/menu_2a.png";
+var preload_3 = new Image();
+preload_3.src = "images/menu_3a.png";
+var preload_4 = new Image();
+preload_4.src = "images/menu_4a.png";
+
+function swapImages(img_name_1, img_src_1, img_name_2, img_src_2)
+{
+	document[img_name_1].src = img_src_1;
+	if (img_name_2) document[img_name_2].src = img_src_2;
+}
+
+
+	function validate()	{
+
+
+		var ptrEmail = /^.*?@.*?\..+$/;
+
+		with(document.forms[0])	{
+
+			if (name.value == "")	{
+				alert('Please enter your name')
+				name.focus()
+				return false
+			}
+			else if (email.value == "")	{
+				alert('Please enter your email address')
+				email.focus()
+				return false
+			}
+			else if (!ptrEmail.test(email.value))	{
+				alert('Please enter a valid email address')
+				email.focus()
+				return false
+			}
+			else if (friendname1.value == "")	{
+				alert('Please enter your friends name')
+				friendname1.focus()
+				return false
+			}
+			else if (friendemail1.value == "")	{
+				alert('Please enter your friends email address')
+				friendemail1.focus()
+				return false
+			}
+			else if (!ptrEmail.test(friendemail1.value))	{
+				alert('Please enter a valid email address for your friend')
+				friendemail1.focus()
+				return false
+			}
+			else if (friendname2.value != "" && friendemail2.value == "")	{
+				alert('Please enter an email address for your friend')
+				friendemail2.focus()
+				return false
+			}
+			else if (friendname2.value != "" && !ptrEmail.test(friendemail2.value))	{
+				alert('Please enter a valid email address for your friend')
+				friendemail2.focus()
+				return false
+			}
+			else if (friendname3.value != "" && friendemail3.value == "")	{
+				alert('Please enter an email address for your friend')
+				friendemail3.focus()
+				return false
+			}
+			else if (friendname3.value != "" && !ptrEmail.test(friendemail3.value))	{
+				alert('Please enter a valid email address for your friend')
+				friendemail3.focus()
+				return false
+			}
+			else {
+				return true
+			}
+
+		}
+
+	}
+
+-->
+</script>
+</head>
+
+<body>
+
+<div id="wrap">
+
+  <div id="menu"><a href="#"><img src="images/transparent.gif" alt="118.com" name="menu_118_com" width="115" height="50" border="0" id="menu_118_com"/></a>
+    <ul id="menu_buts">
+      <li>
+        <a href="index.html" onmouseover="swapImages('menu_1', 'images/menu_1a.png')" onmouseout="swapImages('menu_1', 'images/menu_1.png')">
+        <img src="images/menu_1.png" alt="Home" name="menu_1" width="56" height="34" border="0" id="menu_1" /></a></li>
+      <li>
+        <a href="livefeed.html" onmouseover="swapImages('menu_2', 'images/menu_2a.png')" onmouseout="swapImages('menu_2', 'images/menu_2.png')">
+        <img src="images/menu_2.png" alt="Question Feed" name="menu_2" width="104" height="34" border="0" id="menu_2" /></a></li>
+      <li>
+        <a href="energyball.html" onmouseover="swapImages('menu_3', 'images/menu_3a.png')" onmouseout="swapImages('menu_3', 'images/menu_3.png')">
+        <img src="images/menu_3.png" alt="Interactive Questions" name="menu_3" width="146" height="34" border="0" id="menu_3" /></a></li>
+      <li>
+        <a href="try.html" onmouseover="swapImages('menu_4', 'images/menu_4a.png')" onmouseout="swapImages('menu_4', 'images/menu_4.png')">
+        <img src="images/menu_4.png" alt="Try us for Free" name="menu_4" width="100" height="34" border="0" id="menu_4" /></a></li>
+    </ul>
+  </div>
+
+  <div id="home_content">
+    <div class="centre_content">
+
+<form>
+
+      <img src="images/tellamate_title.png" alt="TELL A MATE" width="173" height="23" /><br />
+      <br />
+      Can't keep this site to yourself? Then feel free to tell your friends. Simply fill<br />
+        in the forms below and soon you'll have mates with minds as full of really<br />
+      useful stuff as your own!<br />
+      <br />
+      <br />
+
+      <div class="tell_form_sender_row">
+        <div class="tell_form_left">Your Name:</div>
+        <div class="tell_form_right">Your Email:</div>
+        <div class="tell_form_left"><input name="name" id="name" type="text" class="tell_input_sender_box" /></div>
+        <div class="tell_form_right"><input name="email" id="email" type="text" class="tell_input_sender_box" /></div>
+      </div>
+      <div class="tell_form_row">
+        <div class="tell_form_left">Mate's Name (1):</div>
+        <div class="tell_form_right">Mate's Email (1):</div>
+        <div class="tell_form_left"><input name="friendname1" id="friendname1" type="text" class="tell_input_box" /></div>
+        <div class="tell_form_right"><input name="friendemail1" id="friendemail1" type="text" class="tell_input_box" /></div>
+      </div>
+      <div class="tell_form_row">
+        <div class="tell_form_left">Mate's Name (2):</div>
+        <div class="tell_form_right">Mate's Email (2):</div>
+        <div class="tell_form_left"><input name="friendname2" id="friendname2" type="text" class="tell_input_box" /></div>
+        <div class="tell_form_right"><input name="friendemail2" email="friendemail2" type="text" class="tell_input_box" /></div>
+      </div>
+      <div class="tell_form_row">
+        <div class="tell_form_left">Mate's Name (3):</div>
+        <div class="tell_form_right">Mate's Email (3):</div>
+        <div class="tell_form_left"><input name="friendname3" id="friendname3" type="text" class="tell_input_box" /></div>
+        <div class="tell_form_right"><input name="friendemail3" id="friendemail3" type="text" class="tell_input_box" /></div>
+      </div>
+      <div class="tell_form_row">
+      <!--
+          <div id="tell_form_cb"><input name="consent" id="consent" type="checkbox" value="Y" /></div>
+          <div id="tell_form_cb_txt">Your friend is happy to receive news and<br />
+          information on the 118 Ask Us Anything service.</div>-->
+          <div id="tell_form_submit"><input type="image" name="Image1" id="Image1" src="images/tellamate_submit.png"/></div>
+      </div>
+
+</form>
+
+    </div>
+  </div>
+
+  <div id="footer">
+    <span class="footer_left">&copy; 2008 The Number UK Ltd. all rights reserved</span>
+    <span class="footer_right"><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="tellamate.html">Tell a mate</a> | <a href="#">118.com</a></span>
+  </div>
+
+</div>
+</body>
+</html>

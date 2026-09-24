@@ -50,6 +50,14 @@ describe("awayfl-static", () => {
       ).toBe(false);
     });
 
+    it("rejects Shockwave wrapper HTML", () => {
+      expect(
+        isAwayFlLaunch(
+          "http://static.nikart.co.uk/3d/shockwave3d/index.html",
+        ),
+      ).toBe(false);
+    });
+
     it("rejects off-site URLs", () => {
       expect(isAwayFlLaunch("http://onedayinmay.co.uk")).toBe(false);
     });
@@ -93,6 +101,21 @@ describe("awayfl-static", () => {
         height: "100%",
         parameters: { base_url: "" },
         backgroundColor: "#FFFFFF",
+      });
+    });
+
+    it("parses embedSWF when the movie is in urlMovie", () => {
+      const html = `
+        var urlMovie = "weeds.swf" + paramsURL;
+        swfobject.embedSWF(urlMovie, "objFlash", "800", "600", "6", false, flashvars, params, attributes);
+      `;
+      expect(
+        parseFlashEmbed(html, "http://localhost/static/games/weeds/index.html"),
+      ).toEqual({
+        swfUrl: "/static/games/weeds/weeds.swf",
+        width: "800",
+        height: "600",
+        parameters: {},
       });
     });
 

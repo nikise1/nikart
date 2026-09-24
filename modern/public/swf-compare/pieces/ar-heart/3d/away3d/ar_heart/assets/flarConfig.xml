@@ -1,0 +1,37 @@
+<!-- this file specifies configurations for FLARManager. -->
+<!-- to use this file to initialize FLARManager, pass its path into FLARManager.initFromFile(). -->
+<!-- note that all relative paths listed here must be relative to the .swf location; absolute paths may also be used. -->
+
+<flar_config>
+	<!-- source settings -->
+	<flarSourceSettings
+		sourceWidth="320"
+		sourceHeight="240"
+		displayWidth="494"
+		displayHeight="370"
+		framerate="30"
+		downsampleRatio="1" />
+
+	<!-- miscellaneous FLARManager settings -->
+	<!-- <flarManagerSettings
+		mirrorDisplay="true"
+		smoothing="3">
+		<smoother className="FLARMatrixSmoother_Average" />
+		<thresholdAdapter className="DrunkHistogramThresholdAdapter" speed="0.3" />
+	</flarManagerSettings> -->
+	<flarManagerSettings
+		mirrorDisplay="true"
+		smoothing="3" />
+	
+	<!-- location of camera parameters file, e.g. FLARCameraParams.dat or camera_para.dat. -->
+	<cameraParamsFile path="assets/FLARCameraParams.txt" />
+	
+	<!-- list of file paths of patterns for FLARToolkit to detect. -->
+	<!-- @resolution specifies the resolution at which the patterns were generated. -->
+	<patterns resolution="16" patternToBorderRatio="65" minConfidence="0.5">
+		<!-- <pattern path="../assets/marker_res_16_1.pat" /> -->
+		<pattern path="assets/marker_res_16_65.pat" />
+		<!-- <pattern path="../assets/marker_original.pat" /> -->
+	</patterns>
+	
+</flar_config>

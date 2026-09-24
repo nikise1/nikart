@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<saber>
+	<puntaje numRetosCada1="6" puntajeCadaPregunta="20"/>
+	
+	<preguntaNumTxt><![CDATA[Pregunta {num} de {total}]]></preguntaNumTxt>
+	
+	<situacion><![CDATA[Bienvenido a saber y sumar, donde tendrás la oportunidad de probar tus conocimientos y acumular más puntos.]]></situacion>
+	
+	<!-- saber_1 -->
+    <reto>
+    	<titulo><![CDATA[Saber y Sumar]]></titulo>
+		<pregunta>
+			<texto><![CDATA[El producto que te permite acumular puntos Helm por el saldo promedio de tu cuenta, es:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Préstamo para viajes.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Autoflex.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[c.	CrediCash. ]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[El producto que te da asistencia para el hogar por $3.400 mensuales, es:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Leasing Hogar.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta  correcta="si">
+				<texto><![CDATA[b.	Préstamo para remodelación.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Tarjeta de crédito]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			
+			<texto><![CDATA[Uno de los beneficios de la tarjeta ISIC es:]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[a.	No tiene cuota de manejo y tienes derecho a dos retiros gratis en cajeros Servibanca en Colombia.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Devolución del 2% del IVA]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Tienes acceso al casillero internacional Helm Box.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones, ahora puedes reclamar tu premio!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- saber_2 -->
+    <reto>
+    	<titulo><![CDATA[Saber y Sumar]]></titulo>
+		<pregunta>
+			<texto><![CDATA[El Autoflex es un crédito para:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Compra de vehículo usado.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Compra de vehículo nuevo.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[c.	Compra de vehículo nuevo y usado.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[Con Leasing Hogar, tú puedes:]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[a.	Adquirir vivienda sin incurrir en costos de constitución de hipoteca.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Financiar la deuda a 72 meses]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Mejorar tu flujo de caja.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[El producto que te permite obtener cupo de crédito a corto plazo es:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Tarjeta ISIC.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[b.	Cuenta corriente 7/0.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Cuenta de ahorros.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones, ahora puedes reclamar tu premio!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- saber_3 -->
+    <reto>
+    	<titulo><![CDATA[Saber y Sumar]]></titulo>
+		<pregunta>
+			<texto><![CDATA[El producto que puedes usar como respaldo para obligaciones financieras es:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Cuenta corriente 7/0.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Cuenta de ahorros.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[c.	CDT.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Cuál es el producto que presta hasta 12 veces el salario del empleado?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[a.	Convenio de libranzas.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Crédito educativo.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Préstamo para viajes.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[Uno de los beneficios del crédito educativo es:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a. Que requiere un mínimo de papeles.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[b. Que no requiere codeudor.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c. Que tiene cobertura nacional.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones, ahora puedes reclamar tu premio!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- saber_4 -->
+    <reto>
+    	<titulo><![CDATA[Saber y Sumar]]></titulo>
+		<pregunta>
+			<texto><![CDATA[El préstamo para viajes te permite:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Financiar las cuotas que se ajusten a lo que puedas pagar mensualmente.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Unificar tus deudas en una sola.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[c.	Mejorar tu flujo de caja, porque los dos primeros meses solo abonas a intereses.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[El producto que no requiere monto mínimo de apertura es:]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[a.	Cuenta de ahorros.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Cuenta corriente 7/0.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Tarjeta de crédito.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[Debes ser estudiante de colegio o universidad para tener este producto:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Autoflex.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[b.	Tarjeta ISIC.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Cuenta de ahorros.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones, ahora puedes reclamar tu premio!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- saber_5 -->
+    <reto>
+    	<titulo><![CDATA[Saber y Sumar]]></titulo>
+		<pregunta>
+			<texto><![CDATA[Los productos que cuentan con seguro de depósitos de Fogafin son:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	Cuenta de ahorros y CDT.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Cuenta de ahorros y Leasing Hogar.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[c.	Cuenta de ahorros y cuenta corriente 7/0.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[El préstamo con el que siempre pagas la misma cuota es:]]></texto>
+			<respuesta>
+				<texto><![CDATA[a.	CrediCash.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Tarjeta de crédito.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[c.	Préstamo para remodelación.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[La liquidación y capitalización diaria de intereses es un beneficio de este producto:]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[a.	Cuenta de ahorros.]]></texto>
+				<realimentacion><![CDATA[¡Correcto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[b.	Crédito educativo.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Préstamo para viajes.]]></texto>
+				<realimentacion><![CDATA[¡Incorrecto!]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones, ahora puedes reclamar tu premio!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+</saber>

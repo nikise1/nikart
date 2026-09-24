@@ -5,6 +5,7 @@
   "packageManager": "npm@10",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -13,6 +14,7 @@
     "test:e2e": "playwright test",
     "postinstall": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs",
     "sync:images": "node scripts/sync-content-images.mjs",
+    "swf-compare:sync": "node scripts/sync-swf-compare.mjs",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod"
   },

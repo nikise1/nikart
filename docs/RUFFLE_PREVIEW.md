@@ -311,7 +311,10 @@ sequenceDiagram
 - Wrapper HTML with no embed (Away3D heart splash) still tries sibling `Main.swf`. `AC_FL_RunContent` (Papervision Spaceship) is parsed the same way as SWFObject.
 - First-run notes: Claro’s SWF executes (client XML traces) but the stage stays white because AwayFL `TextField` / `LoaderInfo.parameters` are stubbed. Whiplash’s menu renders. Heart splash has no embed; the player then loads `Main.swf` beside it.
 
-If a wrapper has no SWF embed, the page shows an error instead of a blank plugin fallback.
+### Option F — side-by-side compare kit (temporary)
+
+`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Both players load the movie from the committed copy at `/swf-compare/pieces/{id}/{path}` (switched back from the `/static` origin proxy after the Vercel preview could not play those URLs). Child SWF/XML/JPEG URLs resolve from that movie directory. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
+
 
 ---
 

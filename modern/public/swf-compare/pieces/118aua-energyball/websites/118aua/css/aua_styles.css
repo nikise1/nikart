@@ -1,0 +1,236 @@
+body
+{
+	margin-top: 0px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+h1
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+}
+a
+{
+	color: #cc0001;
+}
+#wrap
+{
+	width: 982px;
+	margin: 0 auto;
+}
+#menu
+{
+	position: relative;
+	width: 982px;
+	height: 76px;
+	background: url(../images/menu_bg.png) no-repeat 0 0;
+}
+#menu_118_com
+{
+	position: relative;
+	left: 12px;
+	top: 8px;
+	float: left;
+}
+#menu_buts li
+{
+	list-style: none;
+	float: left;
+}
+ul#menu_buts
+{
+	float: right;
+	margin-top: 4px;
+	margin-right: 8px;
+}
+.centre_content
+{
+	width: 500px;
+	padding-top: 40px;
+	padding-left: 250px;
+	/*border: 1px solid #999999;*/
+}
+#home_buts
+{
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#home_buts li
+{
+	margin-bottom: 10px;
+}
+.small_red
+{
+	font-size: 11px;
+	color: #cc0001;
+	font-style: italic;
+	font-weight: bold;
+}
+#home_content
+{
+	width: 982px;
+	height: 493px;
+	background: url(../images/centred_bg.jpg) no-repeat 0 0;
+}
+#flash_content
+{
+	width: 982px;
+	height: 494px;
+}
+#footer
+{
+	width: 982px;
+	font-size: 10px;
+	color: #868686;
+	/*border:	1px solid #000000;*/
+}
+#footer a
+{
+	color: #868686;
+}
+.footer_left
+{
+	float: left;
+	padding-left: 25px;
+}
+.footer_right
+{
+	float: right;
+	padding-right: 25px;
+}
+#try_content
+{
+	width: 982px;
+	height: 493px;
+	background: url(../images/try_bg.jpg) no-repeat 0 0;
+}
+.right_content
+{
+	width: 400px;
+	padding-top: 170px;
+	padding-left: 470px;
+	font-size: 10px;
+	text-align: center;
+	/*border: 1px solid #999999;*/
+}
+#try_form
+{
+	width: 400px;
+	height: 208px;
+	padding-top: 20px;
+	background: url(../images/try_form_bg.png) no-repeat 0 0;
+	/*border: 1px solid #999999;*/
+}
+.try_input_box
+{
+	width: 260px;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+}
+.try_input_box_selected
+{
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #000000;
+}
+
+#txtAUAMobile
+{
+	width: 250px;
+}
+#txtAUAQuestion
+{
+	width: 250px;
+	height: 50px;
+}
+
+.tell_input_sender_box
+{
+	width: 210px;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #000000;
+	background-color: #eeeeee;
+}
+.tell_input_box
+{
+	width: 210px;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #000000;
+}
+.submit_but
+{
+	position: relative;
+	top: 15px;
+}
+.tell_form_sender_row
+{
+	width: 460px;
+	font-weight: bold;
+	height: 60px;
+	/*border: 1px solid #999999;*/
+}
+.tell_form_row
+{
+	width: 460px;
+	font-weight: bold;
+	/*border: 1px solid #999999;*/
+}
+.tell_form_left
+{
+	float: left;
+	width: 220px;
+	line-height: 28px;
+	/*border: 1px solid #999999;*/
+}
+.tell_form_right
+{
+	float: right;
+	width: 220px;
+	line-height: 28px;
+	/*border: 1px solid #999999;*/
+}
+#tell_form_cb
+{
+	float: left;
+	width: 30px;
+	padding-top: 40px;
+	font-size: 16px;
+	/*border: 1px solid #999999;*/
+}
+#tell_form_cb_txt
+{
+	float: left;
+	width: 280px;
+	padding-top: 40px;
+	font-size: 10px;
+	font-weight: normal;
+	white-space: nowrap;
+	/*border: 1px solid #999999;*/
+}
+#tell_form_submit
+{
+	float: right;
+	font-size: 16px;
+	padding-top: 35px;
+	padding-left: 10px;
+	/*border: 1px solid #999999;*/
+}
+#no_menu_footer
+{
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}

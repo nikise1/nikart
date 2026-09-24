@@ -1,0 +1,145 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #111;
+  color: #eee;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #95cf89;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 2rem;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.6rem;
+}
+
+.meta,
+.note {
+  margin: 0 0 1rem;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pane {
+  background: #000;
+  border: 1px solid #333;
+  min-height: 280px;
+}
+
+.pane h2 {
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: #95cf89;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: var(--swf-aspect, 4 / 3);
+  background: #000;
+}
+
+.stage ruffle-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.stage canvas {
+  display: block;
+}
+
+.status {
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.status.error {
+  color: #f0a0a0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  display: block;
+  padding: 0.9rem 1rem;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: #eee;
+  font-size: 15px;
+}
+
+.card:hover {
+  border-color: #95cf89;
+  text-decoration: none;
+  background: #242424;
+}
+
+.card small {
+  display: block;
+  margin-top: 0.35rem;
+  color: #888;
+  font-size: 12px;
+}
+
+.group {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #95cf89;
+}
+
+.siblings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-size: 13px;
+}

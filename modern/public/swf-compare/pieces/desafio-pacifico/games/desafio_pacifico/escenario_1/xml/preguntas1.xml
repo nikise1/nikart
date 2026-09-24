@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[¿Quiénes conforman Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Pacifico Vida, Pacifico Salud y Pacifico Seguros Generales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pacifico Seguros de Vida y Pacífico Seguros Generales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pacífico Vida y Pacífico EPS]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[¿Nuestra filosofía nace como producto de?]]></texto>
+<respuesta>
+<texto><![CDATA[Nuestra filosofía es el producto de entender lo que el cliente busca y respaldarlo en todo momento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Nuestra filosofía es el producto de ponernos en el lugar del cliente y darle la tranquilidad que necesita.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Nuestra filosofía es el producto de ponernos en el lugar del cliente y entender qué es lo que busca.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[¿Cuál es nuestro lema?]]></texto>
+<respuesta>
+<texto><![CDATA[Comprometidos de verdad]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Vive Pacífico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Vive comprometido Pacífico]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[¿Qué es vivir Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Vivir Pacífico es encarar la vida con confianza, saber que estás respaldado en cualquier momento, saber que cuentas con alguien.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Vivir Pacífico es encarar la vida con tranquilidad y saber que estás respaldado y tienes a alguien que comparta tus objetivos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Vivir Pacífico es encarar la vida con excelencia y saber que estas respaldado en cualquier momento y que cumplimos justa y oportunamente]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[¿Cuál es nuestra visión?]]></texto>
+<respuesta>
+<texto><![CDATA[Ayudar a los clientes a proteger su estabilidad económica, ofreciéndoles soluciones que protejan aquello que valoran y aseguren el cumplimiento de sus objetivos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Ser una de las cinco mejores aseguradoras de Latinoamérica: simple, transparente, accesible, rentable y con colaboradores altamente competentes y motivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ser una de las cuatro mejores aseguradoras de Latinoamérica: simple, transparente, rentable y con colaboradores altamente competentes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[¿Cuál es nuestra misión?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Ayudar a los clientes a proteger su estabilidad económica, ofreciéndoles soluciones que protejan aquello que valoran y aseguren el cumplimiento de sus objetivos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ser una de las cinco mejores aseguradoras de Latinoamérica: simple, transparente, accesible, rentable y con colaboradores altamente competentes y motivados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ayudar a los clientes a que cumplan sus objetivos, ofreciéndoles soluciones oportunas que protejan aquello que los motiva y aseguren su estabilidad economica.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[¿Cuántos principios tenemos?]]></texto>
+<respuesta>
+<texto><![CDATA[Siete]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cinco]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuatro]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_8 -->
+<pregunta> <texto><![CDATA[¿Cuáles son nuestros principios?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Buscamos construir relaciones a largo plazo
+• Somos especialistas en la gestión de riesgos.
+• Cumplimos nuestras obligaciones de forma justa y oportuna.
+• Buscamos la excelencia en el servicio al cliente.
+• Somos una compañía sólida y confiable.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Buscamos construir relaciones a largo plazo
+• Somos expertos en la gestión de los riesgos.
+• Cumplimos nuestras obligaciones de forma oportuna.
+• Buscamos la excelencia en el servicio al cliente.
+• Somos una compañía confiable y justa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Buscamos construir relaciones a largo plazo
+• Buscamos excelencia en la atención de riesgos.
+• Cumplimos nuestras obligaciones de forma confiable y oportuna.
+• Buscamos la excelencia en el servicio al cliente.
+• Somos una compañía sólida y confiable.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[¿Qué indicadores componen la planilla de desempeño?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Indicadores Corporativos
+• Indicadores de Área
+• Indicadores Individuales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Indicadores de la División
+• Indicadores de Área
+• Indicadores Individuales]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Indicadores Corporativos
+• Indicadores de la Divisón
+• Indicadores del Área]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[¿Qué cantidad de indicadores no se deben exceder para un colaborador?]]></texto>
+<respuesta>
+<texto><![CDATA[Seis]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Siete]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cinco]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[¿Qué cantidad de indicadores no se deben exceder para un gerente?]]></texto>
+<respuesta>
+<texto><![CDATA[Ocho]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Diez]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Siete]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[¿Cuánto tiempo debe estar un colaborador en una posición para ser evaluado?]]></texto>
+<respuesta>
+<texto><![CDATA[Cinco meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuatro meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Tres meses]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[¿Cuántas etapas tiene el proceso de evaluación de desempeño?]]></texto>
+<respuesta>
+<texto><![CDATA[Dos etapas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Tres etapas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuatro etapas]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[¿Cuáles son las etapas del proceso de evaluación de desempeño?]]></texto>
+<respuesta>
+<texto><![CDATA[• Hacer la evaluación anual de desempeño. (Marzo)
+• Definir los indicadores de la planilla de desempeño. (Abril)
+• Hacer la evaluación semestral de desempeño. (Julio)
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[• Definir los indicadores de la planilla de desempeño. (Marzo)
+• Hacer la evaluación semestral de desempeño. (Agosto)
+• Hacer la evaluación anual de desempeño. (Enero)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Definir los indicadores de la planilla de desempeño. (Diciembre)
+• Hacer la evaluación trimestral de desempeño. (Abril y Agosto)
+• Hacer la evaluación anual de desempeño. (Febrero)]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[¿Qué se necesita para poder solicitar personal?]]></texto>
+<respuesta>
+<texto><![CDATA[• Solo que exista la vacante (ya sea por reemplazo o por aprobación de nueva vacante).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[• Que exista la vacante (ya sea por reemplazo o por aprobación de nueva vacante).
+• La ficha de requerimiento completa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Solo la ficha de requerimiento completa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[¿Hasta qué fecha puedo coordinar el ingreso de un nuevo colaborador o el cambio de área de un colaborador?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Hasta la quincena de cada mes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Hasta el dia trece de cada mes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Hasta la última semana de cada mes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[¿Quién determina la fecha de inicio de un nuevo colaborador?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Selección, tomando en cuenta la disponibilidad del candidato y la fecha del procesamiento de las planillas, así como la necesidad del área solicitante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Selección, tomando en cuenta la fecha de corte de planilla y la disponibilidad del candidato.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Selección tomando en cuenta la disponibilidad del candidato y la necesidad del área solicitante.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[¿Qué sucede si desapruebo el examen de una certificación financiada por la compañía?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[En caso de que un colaborador desapruebe el examen deberá cubrir los derechos de una segunda oportunidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En caso de que un colaborador desapruebe el examen Pacífico le otorgará una segunda oportunidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En caso de que un colaborador desapruebe el examen, Pacífico lo volverá a inscribir pero se lo descontará por planilla.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[¿Cuál es la finalidad del programa de inducción?]]></texto>
+<respuesta>
+<texto><![CDATA[El programa de inducción tiene la finalidad de que los colaboradores aprendan sobre seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El programa de inducción tiene la finalidad de explicar el giro del negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El programa de inducción tiene la finalidad de facilitar la adaptación del mismo a la organización a través de un curso virtual ágil, práctico y sencillo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[¿El programa de Escuela de Seguros a quién está dirigido?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Corredores de seguros
+• Colaboradores cuyas funciones requieran del conocimiento de nuestro negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Corredores de seguros
+]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[
+• Colaboradores cuyas funciones requieran del conocimiento de nuestro negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[¿Qué canales tiene la empresa para apoyar la obtención de grados académicos?]]></texto>
+<respuesta>
+<texto><![CDATA[• Convenios corporativos con instituciones educativas
+• Acceso a costos especiales de la maestría que Centrum y la Universidad del Pacífico ofrece a los colaboradores de Credicorp.
+• Acceso al FAE (Fondo de Alta Especialización) dirigido a postulantes a universidades Top en el extranjero, previa evaluación de GDH.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[• Convenios corporativos con instituciones educativas
+• Financiamiento a tasas especiales, de acuerdo a políticas del grupo crédito.
+• Acceso a costos especiales de la maestría que Centrum y la Universidad del Pacífico ofrece a los colaboradores de Credicorp.
+• Acceso al FAE (Fondo de Alta Especialización) dirigido a postulantes a universidades Top en el extranjero, previa evaluación de GDH.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Convenios corporativos con instituciones educativas
+• Financiamiento a tasas especiales, de acuerdo a políticas del grupo crédito
+• Acceso a costos especiales de la maestría que Centrum y la Universidad del Pacífico ofrece a los colaboradores de Credicorp.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[Los reconocimientos por años de servicio ¿se otorgan cuando se cumplen cuántos años en la empresa?]]></texto>
+<respuesta>
+<texto><![CDATA[15, 20 y 30 años de servicio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[10, 15, 20 y 30 años de servicio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[10, 20, 25 y 30 años de servicio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[¿Con qué tipo de permisos con goce de haber contamos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Permiso por duelo
+• Permiso por cumpleaños
+• Permiso por trámites
+• Permiso por matrimonio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Permiso por duelo
+• Permiso por cumpleaños
+• Permiso por matrimonio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Permiso por duelo
+• Permiso por trámites
+• Permiso por matrimonio]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[¿Cuál es la política de vestimenta de la empresa?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Los colaboradores podrán asistir a trabajar en ropa casual que mantenga una adecuada presentación tanto personal como para la imagen de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los colaboradores podrán asistir a trabajar en ropa casual que mantenga una adecuada presentación tanto personal y el viernes tenemos vestimenta informal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los colaboradores deben asistir a trabajar en ropa formal que mantenga una adecuada presentacion como imagen de la compañía.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[¿Cuál es la política de uso del fotocheck?]]></texto>
+<respuesta>
+<texto><![CDATA[El colaborador debe portar obligatoriamente su fotocheck en el cuello]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El colaborador debe portar obligatoriamente su fotocheck en un lugar visible.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El colaborador debe portar su fotocheck solo dentro de las instalaciones de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[¿De quién es la responsabilidad de la confidencialidad de la contraseña o password de acceso?]]></texto>
+<respuesta>
+<texto><![CDATA[Es responsabilidad del usuario y del área de sistemas la confidencialidad de la contraseña o password de acceso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es responsabilidad del área de sistemas la confidencialidad de la contraseña o password de acceso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es responsabilidad del usuario la confidencialidad de la contraseña o password de acceso.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[¿En qué frentes trabaja la responsabilidad social?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[En tres frentes fundamentales: económico, social y ambiental.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En cuatro frentes fundamentales: económico, politico, social y cultural.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En cuatro frentes fundamentales: económico, ambiental, social y cultural.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[¿A qué asociación apoyamos en Arequipa?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Asociación Unámonos de Arequipa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Semilla para el Cambio de Arequipa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ayúdanos a Construir de Arequipa.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[¿Cuáles son los procesos básicos para ser una empresa carbono neutral?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[• Medir nuestra huella de carbono 
+• Gestionar el correcto uso de dichos recursos para reducir nuestro impacto
+• Compensar las emisiones de gases efecto invernadero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Gestionar el correcto uso de dichos recursos para reducir nuestro impacto
+• Compensar las emisiones de gases efecto invernadero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[• Medir nuestra huella de carbono 
+• Gestionar el correcto uso del carbono neutral 
+• Compensar las emisiones de gases efecto invernadero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[¿Qué reservas protegemos?]]></texto>
+<respuesta>
+<texto><![CDATA[La Reserva Nacional Tambopata y el Parque Nacional del Manu en el ámbito de Madre de Dios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La Reserva Nacional Tambopata y el Parque Nacional Bahuaja Sonene en el ámbito de Madre de Dios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La Reserva Nacional Tambopata y el Reserva Comunal Amarakaeri en el ámbito de Madre de Dios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[¿Qué significa GEI?]]></texto>
+<respuesta>
+<texto><![CDATA[Gestion del Efecto Invernadero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Gestion Efectiva del Impacto]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Gases efecto invernadero]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[¿Qué significa Impacto Ambiental?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El daño que se hace al medio ambiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La contaminacion ambiental.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El efecto que produce una determinada acción sobre el medio ambiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[¿Qué significa Huella de Carbono?]]></texto>
+<respuesta>
+<texto><![CDATA[Es la medición del daño ambiental. Todas las medidas (kWh, m3, tons. de papel, lts. de combustible) se convierten en un solo indicador de medición llamado kwh de Carbono Equivalente (CO2eq).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es la medición del daño ambiental. Todas las medidas (kWh, m3, tons. de papel, lts. de combustible) se convierten en un solo indicador de medición llamado Toneladas de Carbono Equivalente (CO2eq).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la medición del daño ambiental. Todas las medidas (kWh, m3, tons. de papel, lts. de combustible) se convierten en un solo indicador de medición llamado Litros de Carbono Equivalente (CO2eq).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[¿Qué significa REDD?]]></texto>
+<respuesta>
+<texto><![CDATA[Reducción de Desperdicios toxicos que contaminan la flora y fauna.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reducción de emisiones producidas por la devastación y la degradación ambiental.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Reducción de emisiones generadas por la deforestación y devastación de bosques]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[¿Qué significa Bonos de Carbono?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Documentos comerciales que respaldan proyectos REDD y/o MDL, y con los cuales se financian los mismos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Documentos comerciales que respaldan proyectos REDD y/o MFV.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Documentos comerciales que respaldan proyectos REB y/o DVDL, y con los cuales se financian los mismos]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[¿Qué significa Carbono Neutral?]]></texto>
+<respuesta>
+<texto><![CDATA[Es un término que refleja que cierta operación, empresa o individuo se encarga responsablemente de reducir sus emisiones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un término que refleja que cierta operación, empresa o individuo se encarga responsablemente de disminuir su consumo de energia y se compromete a cuidar el ambiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es un término que refleja que cierta operación, empresa o individuo se encarga responsablemente de convertir sus emisiones en “CERO”, es decir, una operación neutra respecto al impacto ambiental.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+</data>

@@ -9,6 +9,21 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  async headers() {
+    return [
+      {
+        source: "/ruffle/:path*.wasm",
+        headers: [{ key: "Content-Type", value: "application/wasm" }],
+      },
+      {
+        source: "/swf-compare/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
@@ -27,10 +42,9 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
-      {
-        source: "/static/:path*",
-        destination: `${STATIC_HOST}/:path*`,
-      },
+      // /static is handled by app/static/[...path]/route.ts (Node fetch of the
+      // HTTP origin). An afterFiles rewrite to that host wins on Vercel and
+      // never reaches the route, so HTTPS previews fail to load SWFs.
     ];
   },
 };

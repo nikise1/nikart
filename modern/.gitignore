@@ -19,11 +19,12 @@
 /.next/
 /out/
 
-# ruffle runtime (copied from node_modules via postinstall)
-/public/ruffle/
+# ruffle/awayfl source maps (runtimes themselves are committed for Vercel preview)
+/public/ruffle/*.map
+/public/awayfl/*.map
 
-# awayfl runtime (copied from node_modules via postinstall)
-/public/awayfl/
+# generated catalog from swf-compare:sync (HTML/SWF copies are committed for Vercel preview)
+/public/swf-compare/generated-catalog.json
 
 # generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
 /public/_generated/
