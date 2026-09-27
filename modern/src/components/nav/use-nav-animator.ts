@@ -138,6 +138,7 @@ export function useNavAnimator({
               left: 0,
               top: 0,
               duration: NAV_TIMING.growIn,
+              ease: "power1.out",
               onComplete: () => {
                 useNavStore.getState().onCanvasCloseComplete();
               },
