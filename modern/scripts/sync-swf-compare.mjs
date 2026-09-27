@@ -412,6 +412,32 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function movieHref(piece) {
+  if (piece.movieUrl) {
+    return piece.movieUrl;
+  }
+  return `/swf-compare/pieces/${piece.id}/${piece.swfPath}`;
+}
+
+function extraStageAttrs(piece) {
+  const attrs = [];
+  if (piece.base) {
+    attrs.push(`data-base="${escapeHtml(piece.base)}"`);
+  }
+  if (piece.playerVersion) {
+    attrs.push(`data-player-version="${escapeHtml(String(piece.playerVersion))}"`);
+  }
+  if (piece.background) {
+    attrs.push(`data-background="${escapeHtml(piece.background)}"`);
+  }
+  if (piece.parameters) {
+    attrs.push(
+      `data-parameters="${escapeHtml(JSON.stringify(piece.parameters))}"`,
+    );
+  }
+  return attrs.length ? ` ${attrs.join(" ")}` : "";
+}
+
 function renderPieceHtml(piece, siblings, prev, next) {
   const siblingLinks = siblings
     .filter((item) => item.id !== piece.id)
@@ -420,33 +446,52 @@ function renderPieceHtml(piece, siblings, prev, next) {
         `<a href="../${item.id}/index.html">${escapeHtml(item.title)}</a>`,
     )
     .join(" · ");
+  const href = movieHref(piece);
+  const extra = extraStageAttrs(piece);
+  const note =
+    piece.note ??
+    "Both players load the committed copy under <code>/swf-compare/pieces/</code>. Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.";
+  const baseTag = piece.base
+    ? `  <base href="${escapeHtml(piece.base)}">\n`
+    : "";
+  const allHref = piece.base ? "/swf-compare/index.html" : "/swf-compare/index.html";
+  const prevHref = prev
+    ? piece.base
+      ? `/swf-compare/pieces/${prev.id}/index.html`
+      : `../${prev.id}/index.html`
+    : "";
+  const nextHref = next
+    ? piece.base
+      ? `/swf-compare/pieces/${next.id}/index.html`
+      : `../${next.id}/index.html`
+    : "";
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(piece.title)} — Ruffle vs AwayFL</title>
+${baseTag}  <title>${escapeHtml(piece.title)} — Ruffle vs AwayFL</title>
   <link rel="stylesheet" href="/swf-compare/players.css">
 </head>
 <body>
   <div class="wrap">
     <nav class="topnav">
-      <a href="/swf-compare/index.html">All SWFs</a>
-      ${prev ? `<a href="../${prev.id}/index.html">← ${escapeHtml(prev.title)}</a>` : ""}
-      ${next ? `<a href="../${next.id}/index.html">${escapeHtml(next.title)} →</a>` : ""}
+      <a href="${allHref}">All SWFs</a>
+      ${prev ? `<a href="${prevHref}">← ${escapeHtml(prev.title)}</a>` : ""}
+      ${next ? `<a href="${nextHref}">${escapeHtml(next.title)} →</a>` : ""}
     </nav>
     <h1>${escapeHtml(piece.title)}</h1>
-    <p class="meta">/swf-compare/pieces/${escapeHtml(piece.id)}/${escapeHtml(piece.swfPath)} · ${piece.width}×${piece.height}</p>
+    <p class="meta">${escapeHtml(href)} · ${piece.width}×${piece.height}</p>
     ${siblingLinks ? `<p class="siblings">Same item: ${siblingLinks}</p>` : ""}
-    <p class="note">Both players load the committed copy under <code>/swf-compare/pieces/</code>. Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.</p>
+    <p class="note">${note}</p>
     <div class="split">
       <section class="pane">
         <h2>Ruffle</h2>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="/swf-compare/pieces/${escapeHtml(piece.id)}/${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
+        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
       <section class="pane">
         <h2>AwayFL</h2>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="/swf-compare/pieces/${escapeHtml(piece.id)}/${escapeHtml(piece.swfPath)}" data-width="${piece.width}" data-height="${piece.height}"></div>
+        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
     </div>
   </div>
@@ -463,7 +508,13 @@ function renderIndex(pieces) {
     list.push(piece);
     groups.set(piece.group, list);
   }
+  const groupOrder = ["site", "websites", "games", "3d", "banners"];
   const sections = [...groups.entries()]
+    .sort(
+      (a, b) =>
+        groupOrder.indexOf(a[0]) - groupOrder.indexOf(b[0]) ||
+        a[0].localeCompare(b[0]),
+    )
     .map(([group, list]) => {
       const cards = list
         .map(
@@ -489,7 +540,7 @@ function renderIndex(pieces) {
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The legacy lizard Flash site loads <code>/fl/main.swf</code>.</p>
     ${sections}
   </div>
 </body>
@@ -521,6 +572,29 @@ function pieceIdFor(source, swfPath, index) {
 }
 
 async function syncSource(source, produced) {
+  if (source.localSwf) {
+    mkdirSync(join(piecesRoot, source.id), { recursive: true });
+    produced.push({
+      id: source.id,
+      title: source.title,
+      group: source.group,
+      itemId: source.itemId,
+      wrapper: source.wrapper,
+      swfPath: source.localSwf,
+      movieUrl: source.localSwf,
+      base: source.base,
+      playerVersion: source.playerVersion,
+      background: source.background,
+      parameters: source.parameters,
+      note: source.note,
+      width: source.width,
+      height: source.height,
+      primary: Boolean(source.primary),
+    });
+    console.log(`  ${source.id}: ${source.localSwf} (local)`);
+    return;
+  }
+
   const pageUrl = `${ORIGIN}/${source.wrapper}`;
   const wrapperBuf = await fetchBuffer(source.wrapper);
   if (!wrapperBuf) {

@@ -4,6 +4,7 @@ import {
   compareHrefForSource,
   pieceMovieUrl,
   piecePageHref,
+  swfCompareSources,
 } from "./swf-compare";
 
 describe("swf-compare", () => {
@@ -28,6 +29,15 @@ describe("swf-compare", () => {
 
   it("ignores off-site URLs", () => {
     expect(compareHrefForSource("http://onedayinmay.co.uk")).toBeNull();
+  });
+
+  it("has a compare page for the legacy lizard Flash site", () => {
+    expect(swfCompareSources.some((piece) => piece.id === "lizard-site")).toBe(
+      true,
+    );
+    expect(piecePageHref("lizard-site")).toBe(
+      "/swf-compare/pieces/lizard-site/index.html",
+    );
   });
 
   it("maps movie paths onto the local /swf-compare/pieces/ copies", () => {

@@ -1,5 +1,25 @@
 [
   {
+    "id": "lizard-site",
+    "title": "Legacy Flash site",
+    "group": "site",
+    "itemId": "lizard-site",
+    "wrapper": "fl/main.swf",
+    "localSwf": "/fl/main.swf",
+    "base": "/fl/",
+    "playerVersion": 8,
+    "background": "#000000",
+    "parameters": {
+      "dotracking": "yes",
+      "embedlang": "en",
+      "staticfilesstr": "http://static.nikart.co.uk"
+    },
+    "note": "Same movie as /fl: AS2 lizard UI with flashVars and base /fl/ so content JSON and images load. Child launches use window.nikart.popWin.",
+    "primary": true,
+    "width": 750,
+    "height": 500
+  },
+  {
     "id": "claro",
     "title": "Claro",
     "group": "websites",
