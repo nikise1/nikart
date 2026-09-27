@@ -64,8 +64,133 @@
     return { width, height };
   }
 
+  const LAUNCH_PAGES = {
+    "websites/claro/index.html": "claro",
+    "websites/118aua/energyball.html": "118aua-energyball",
+    "websites/118aua/livefeed.html": "118aua-livefeed",
+    "games/rockstars_divas/index.html": "rockstars-divas",
+    "games/ciudad_helm/index.html": "ciudad",
+    "games/avis_donde/index.html": "avis-donde",
+    "games/whiplash/index.html": "whiplash",
+    "games/desafio_pacifico/index.html": "desafio-pacifico",
+    "games/reading_leeds/index.html": "reading-leeds",
+    "games/escalera/index.html": "escalera",
+    "games/slate20/index.html": "slate20",
+    "games/weeds/index.html": "weeds",
+    "3d/away3d/ar_heart/index.html": "ar-heart",
+    "3d/away3d/flar_lizard/pub/index.html": "ar-lizard",
+    "3d/papervision3d/spaceship/index.html": "spaceship",
+    "banners/standardlife/index.html": "banner-standardlife",
+    "banners/standardlife/index_lite.html": "banner-standardlife-lite",
+    "banners/johnfrieda/index.html": "banner-johnfrieda",
+    "banners/hellboy/index.html": "banner-hellboy",
+    "banners/nintendo/index.html": "banner-nintendo",
+    "banners/shell/index.html": "banner-shell",
+    "banners/trunk/index.html": "banner-trunk__mpu_2",
+  };
+
+  function installFlashBridge() {
+    if (window.nikart) {
+      return;
+    }
+    window.nikart = {
+      popWin(filename, winname) {
+        const href = compareHrefForLaunch(filename) ?? filename;
+        const tab = window.open(href, winname || "_blank");
+        tab?.focus();
+        window.nikart.doTracker(`${winname || "launch"}_launch`);
+      },
+      doTracker(event) {
+        console.log(`nikart.doTracker: fl_${event}`);
+      },
+    };
+  }
+
+  function compareHrefForLaunch(filename) {
+    const path = launchPath(filename);
+    const id = LAUNCH_PAGES[path];
+    return id ? `/swf-compare/pieces/${id}/index.html` : null;
+  }
+
+  function launchPath(filename) {
+    const raw = String(filename ?? "").trim();
+    try {
+      const url = new URL(raw, window.location.origin);
+      if (url.hostname === "static.nikart.co.uk") {
+        return url.pathname.replace(/^\//, "");
+      }
+      return url.pathname.replace(/^\/static\//, "").replace(/^\//, "");
+    } catch {
+      return raw
+        .replace(/^\.\.\//, "")
+        .replace(/^static\//, "")
+        .replace(/^\//, "");
+    }
+  }
+
   function swfHref(el) {
     return new URL(el.dataset.swf ?? "", window.location.href);
+  }
+
+  function parseParameters(el) {
+    const raw = el.dataset.parameters;
+    if (!raw) {
+      return undefined;
+    }
+    try {
+      const value = JSON.parse(raw);
+      if (value && typeof value === "object") {
+        return value;
+      }
+    } catch {
+      return undefined;
+    }
+    return undefined;
+  }
+
+  function movieBase(el, url) {
+    if (el.dataset.base) {
+      return new URL(el.dataset.base, window.location.href).href;
+    }
+    return url.href.replace(/[^/]+$/, "");
+  }
+
+  function ruffleLoadOptions(el, url) {
+    const options = {
+      url: url.href,
+      base: movieBase(el, url),
+      publicPath: "/ruffle/",
+      allowScriptAccess: true,
+      allowNetworking: "all",
+      autoplay: "on",
+      unmuteOverlay: "hidden",
+      compatibilityRules: true,
+      warnOnUnsupportedContent: true,
+      logLevel: "warn",
+    };
+    const parameters = parseParameters(el);
+    if (parameters) {
+      options.parameters = parameters;
+    }
+    const version = Number.parseInt(el.dataset.playerVersion ?? "", 10);
+    if (Number.isFinite(version)) {
+      options.playerVersion = version;
+    }
+    if (el.dataset.background) {
+      options.backgroundColor = el.dataset.background;
+    }
+    return options;
+  }
+
+  function playHref(el) {
+    const url = swfHref(el);
+    const parameters = parseParameters(el);
+    if (parameters) {
+      Object.entries(parameters).forEach(([key, value]) => {
+        url.searchParams.set(key, String(value));
+      });
+    }
+    return url;
   }
 
   async function startRuffle(el) {
@@ -85,18 +210,7 @@
     player.style.width = "100%";
     player.style.height = "100%";
     el.replaceChildren(player);
-    await player.load({
-      url: url.href,
-      base: url.href.replace(/[^/]+$/, ""),
-      publicPath: "/ruffle/",
-      allowScriptAccess: true,
-      allowNetworking: "all",
-      autoplay: "on",
-      unmuteOverlay: "hidden",
-      compatibilityRules: true,
-      warnOnUnsupportedContent: true,
-      logLevel: "warn",
-    });
+    await player.load(ruffleLoadOptions(el, url));
     setStatus(el, "");
   }
 
@@ -150,7 +264,7 @@
       refit();
       setStatus(el, "");
     });
-    player.playSWF(buffer, url.href);
+    player.playSWF(buffer, playHref(el).href);
     setStatus(el, "Starting AwayFL…");
   }
 
@@ -160,6 +274,7 @@
   };
 
   window.SwfCompare = { startRuffle, startAwayFl };
+  installFlashBridge();
 
   document.querySelectorAll("[data-player]").forEach((el) => {
     applyStageBox(el);
