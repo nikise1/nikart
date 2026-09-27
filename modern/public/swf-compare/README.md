@@ -2,7 +2,7 @@
 
 Local copies of portfolio Flash files, each on its own HTML page with **Ruffle** and **AwayFL** side by side.
 
-Players load movies from `/swf-compare/pieces/{id}/…` (the committed copies). Ruffle `base` and AwayFL’s play URL are that movie directory, so child SWF/XML/JPEG requests stay next to the SWF.
+Players load movies from `/swf-compare/pieces/{id}/…` (the committed copies), except the **legacy lizard Flash site**, which loads `/fl/main.swf` with Flash 8 flashVars and `base=/fl/` so the AS2 UI can fetch content JSON and images. Ruffle `base` and AwayFL’s play URL are that movie directory, so child SWF/XML/JPEG requests stay next to the SWF.
 
 ```bash
 npm run swf-compare:sync --prefix modern
