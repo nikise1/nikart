@@ -451,20 +451,34 @@ function renderPieceHtml(piece, siblings, prev, next) {
   const note =
     piece.note ??
     "Both players load the committed copy under <code>/swf-compare/pieces/</code>. Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.";
+  const baseTag = piece.base
+    ? `  <base href="${escapeHtml(piece.base)}">\n`
+    : "";
+  const allHref = piece.base ? "/swf-compare/index.html" : "/swf-compare/index.html";
+  const prevHref = prev
+    ? piece.base
+      ? `/swf-compare/pieces/${prev.id}/index.html`
+      : `../${prev.id}/index.html`
+    : "";
+  const nextHref = next
+    ? piece.base
+      ? `/swf-compare/pieces/${next.id}/index.html`
+      : `../${next.id}/index.html`
+    : "";
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(piece.title)} — Ruffle vs AwayFL</title>
+${baseTag}  <title>${escapeHtml(piece.title)} — Ruffle vs AwayFL</title>
   <link rel="stylesheet" href="/swf-compare/players.css">
 </head>
 <body>
   <div class="wrap">
     <nav class="topnav">
-      <a href="/swf-compare/index.html">All SWFs</a>
-      ${prev ? `<a href="../${prev.id}/index.html">← ${escapeHtml(prev.title)}</a>` : ""}
-      ${next ? `<a href="../${next.id}/index.html">${escapeHtml(next.title)} →</a>` : ""}
+      <a href="${allHref}">All SWFs</a>
+      ${prev ? `<a href="${prevHref}">← ${escapeHtml(prev.title)}</a>` : ""}
+      ${next ? `<a href="${nextHref}">${escapeHtml(next.title)} →</a>` : ""}
     </nav>
     <h1>${escapeHtml(piece.title)}</h1>
     <p class="meta">${escapeHtml(href)} · ${piece.width}×${piece.height}</p>
