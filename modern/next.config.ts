@@ -49,6 +49,13 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
+      // AwayFL resolves ../content from the lizard pieces SWF path; Ruffle uses
+      // base=/fl/ and hits /content/ directly. Keep this rewrite so both work
+      // without a document <base href="/fl/"> (Safari was aborting Ruffle WASM).
+      {
+        source: "/swf-compare/pieces/content/:path*",
+        destination: "/content/:path*",
+      },
       // /static is handled by app/static/[...path]/route.ts (Node fetch of the
       // HTTP origin). An afterFiles rewrite to that host wins on Vercel and
       // never reaches the route, so HTTPS previews fail to load SWFs.
