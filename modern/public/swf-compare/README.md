@@ -2,7 +2,7 @@
 
 Local copies of portfolio Flash files, each on its own HTML page with **Ruffle** and **AwayFL** side by side.
 
-Players load movies from `/swf-compare/pieces/{id}/…` (the committed copies). The **legacy lizard Flash site** uses the copy at `/swf-compare/pieces/lizard-site/main.swf` with Flash 8 flashVars and Ruffle `base=/fl/` so the AS2 UI can fetch content JSON and images; AwayFL’s loader URL stays `/fl/main.swf`. The compare page must not set `<base href="/fl/">` — that makes Safari resolve Ruffle WASM/workers under `/fl/` and abort `main.swf`. Ruffle `base` and AwayFL’s play URL are that movie directory, so child SWF/XML/JPEG requests stay next to the SWF. Both players share one SWF fetch; AwayFL starts after Ruffle so Safari is not asked to allocate two WASM heaps at once. Next rewrites `/swf-compare/pieces/content/` to `/content/` for AwayFL’s `../content` loads.
+Players load movies from `/swf-compare/pieces/{id}/…` (the committed copies). The **legacy lizard Flash site** uses the copy at `/swf-compare/pieces/lizard-site/main.swf` with Flash 8 flashVars and Ruffle `base=/fl/` so the AS2 UI can fetch content JSON and images; AwayFL’s loader URL stays `/fl/main.swf`. The compare page must not set `<base href="/fl/">` — that makes Safari resolve Ruffle WASM/workers under `/fl/` and abort `main.swf`. Both players share one SWF fetch; AwayFL starts after Ruffle. AwayFL LoadVars still asks for `../content/json/data.json` against the HTML page; compare `players.js` rewrites that to `/content/`.
 
 ```bash
 npm run swf-compare:sync --prefix modern

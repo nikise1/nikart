@@ -216,6 +216,57 @@
     return url;
   }
 
+  function rewriteContentLoaderUrl(url) {
+    if (typeof url !== "string" || !url) {
+      return url;
+    }
+    const marker = "../content/";
+    const relative = url.indexOf(marker);
+    if (relative !== -1) {
+      return `/content/${url.slice(relative + marker.length)}`;
+    }
+    try {
+      const resolved = new URL(url, window.location.href);
+      const alias = "/swf-compare/pieces/content/";
+      if (resolved.pathname.startsWith(alias)) {
+        return `/content/${resolved.pathname.slice(alias.length)}${resolved.search}`;
+      }
+    } catch {
+      return url;
+    }
+    return url;
+  }
+
+  function awayFlRedirects(el) {
+    if (!el.dataset.base) {
+      return [];
+    }
+    const loader = loaderHref(el);
+    return [
+      {
+        test: (url) =>
+          typeof url === "string" && url.includes("../content/"),
+        resolve: (url) => {
+          const marker = "../content/";
+          const rel = url.slice(url.indexOf(marker));
+          return new URL(rel, loader).pathname;
+        },
+      },
+    ];
+  }
+
+  function installContentLoaderAlias() {
+    const proto = XMLHttpRequest.prototype;
+    if (proto.__nikartContentAlias) {
+      return;
+    }
+    proto.__nikartContentAlias = true;
+    const open = proto.open;
+    proto.open = function (method, url, ...rest) {
+      return open.call(this, method, rewriteContentLoaderUrl(url), ...rest);
+    };
+  }
+
   async function startRuffle(el) {
     applyStageBox(el);
     setStatus(el, "Loading Ruffle…");
@@ -261,8 +312,11 @@
     const size = paneBox(el);
     window.awayflplayer.StageManager.htmlCanvas = canvas;
     window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS;
+    const loaderUrl = playHref(el).href;
+    installContentLoaderAlias();
     const player = new window.awayflplayer.AVMPlayer({
-      files: [],
+      files: [{ data: buffer, path: loaderUrl, resourceType: "GAME" }],
+      redirects: awayFlRedirects(el),
       x: 0,
       y: 0,
       w: size.width,
@@ -285,9 +339,14 @@
     }
     player.addEventListener("loaderComplete", () => {
       refit();
+      player.play?.();
       setStatus(el, "");
     });
-    player.playSWF(buffer, playHref(el).href);
+    if (typeof player.load === "function") {
+      player.load();
+    } else {
+      player.playSWF(buffer, loaderUrl);
+    }
     setStatus(el, "Starting AwayFL…");
   }
 
