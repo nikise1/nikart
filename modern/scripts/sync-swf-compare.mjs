@@ -1,5 +1,6 @@
 import { inflateSync } from "node:zlib";
 import {
+  copyFileSync,
   existsSync,
   mkdirSync,
   readdirSync,
@@ -424,6 +425,9 @@ function extraStageAttrs(piece) {
   if (piece.base) {
     attrs.push(`data-base="${escapeHtml(piece.base)}"`);
   }
+  if (piece.loaderUrl) {
+    attrs.push(`data-loader-url="${escapeHtml(piece.loaderUrl)}"`);
+  }
   if (piece.playerVersion) {
     attrs.push(`data-player-version="${escapeHtml(String(piece.playerVersion))}"`);
   }
@@ -451,32 +455,20 @@ function renderPieceHtml(piece, siblings, prev, next) {
   const note =
     piece.note ??
     "Both players load the committed copy under <code>/swf-compare/pieces/</code>. Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.";
-  const baseTag = piece.base
-    ? `  <base href="${escapeHtml(piece.base)}">\n`
-    : "";
-  const allHref = piece.base ? "/swf-compare/index.html" : "/swf-compare/index.html";
-  const prevHref = prev
-    ? piece.base
-      ? `/swf-compare/pieces/${prev.id}/index.html`
-      : `../${prev.id}/index.html`
-    : "";
-  const nextHref = next
-    ? piece.base
-      ? `/swf-compare/pieces/${next.id}/index.html`
-      : `../${next.id}/index.html`
-    : "";
+  const prevHref = prev ? `../${prev.id}/index.html` : "";
+  const nextHref = next ? `../${next.id}/index.html` : "";
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-${baseTag}  <title>${escapeHtml(piece.title)} — Ruffle vs AwayFL</title>
+  <title>${escapeHtml(piece.title)} — Ruffle vs AwayFL</title>
   <link rel="stylesheet" href="/swf-compare/players.css">
 </head>
 <body>
   <div class="wrap">
     <nav class="topnav">
-      <a href="${allHref}">All SWFs</a>
+      <a href="/swf-compare/index.html">All SWFs</a>
       ${prev ? `<a href="${prevHref}">← ${escapeHtml(prev.title)}</a>` : ""}
       ${next ? `<a href="${nextHref}">${escapeHtml(next.title)} →</a>` : ""}
     </nav>
@@ -541,7 +533,7 @@ function renderIndex(pieces) {
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads <code>/fl/main.swf</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads the copy of <code>main.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
 </body>
@@ -574,15 +566,26 @@ function pieceIdFor(source, swfPath, index) {
 
 async function syncSource(source, produced) {
   if (source.localSwf) {
-    mkdirSync(join(piecesRoot, source.id), { recursive: true });
+    const destName =
+      (source.localSwf.split("/").pop() ?? "movie.swf").split("?")[0] ??
+      "movie.swf";
+    const srcPath = join(root, "public", source.localSwf.replace(/^\//, ""));
+    const pieceDir = join(piecesRoot, source.id);
+    mkdirSync(pieceDir, { recursive: true });
+    if (existsSync(srcPath)) {
+      copyFileSync(srcPath, join(pieceDir, destName));
+    } else {
+      console.warn(`missing local SWF ${srcPath}`);
+    }
     produced.push({
       id: source.id,
       title: source.title,
       group: source.group,
       itemId: source.itemId,
       wrapper: source.wrapper,
-      swfPath: source.localSwf,
-      movieUrl: source.localSwf,
+      swfPath: destName,
+      movieUrl: `/swf-compare/pieces/${source.id}/${destName}`,
+      loaderUrl: source.loaderUrl ?? source.localSwf,
       base: source.base,
       playerVersion: source.playerVersion,
       background: source.background,
@@ -592,7 +595,7 @@ async function syncSource(source, produced) {
       height: source.height,
       primary: Boolean(source.primary),
     });
-    console.log(`  ${source.id}: ${source.localSwf} (local)`);
+    console.log(`  ${source.id}: ${source.localSwf} → pieces/${source.id}/${destName}`);
     return;
   }
 

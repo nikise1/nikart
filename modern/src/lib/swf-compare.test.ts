@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, it, expect } from "vitest";
 import {
   compareHrefForItem,
@@ -6,6 +8,13 @@ import {
   piecePageHref,
   swfCompareSources,
 } from "./swf-compare";
+
+const publicRoot = join(__dirname, "../../public");
+const lizardHtml = readFileSync(
+  join(publicRoot, "swf-compare/pieces/lizard-site/index.html"),
+  "utf8",
+);
+const playersJs = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
 
 describe("swf-compare", () => {
   it("sends a single-SWF menu item to its compare page", () => {
@@ -32,12 +41,33 @@ describe("swf-compare", () => {
   });
 
   it("has a compare page for the legacy lizard Flash site", () => {
-    expect(swfCompareSources.some((piece) => piece.id === "lizard-site")).toBe(
-      true,
-    );
+    const lizard = swfCompareSources.find((piece) => piece.id === "lizard-site");
+    expect(lizard).toMatchObject({
+      localSwf: "/fl/main.swf",
+      loaderUrl: "/fl/main.swf",
+      base: "/fl/",
+    });
     expect(piecePageHref("lizard-site")).toBe(
       "/swf-compare/pieces/lizard-site/index.html",
     );
+    expect(pieceMovieUrl("lizard-site", "main.swf")).toBe(
+      "/swf-compare/pieces/lizard-site/main.swf",
+    );
+  });
+
+  it("loads the lizard movie from the pieces copy without a document base", () => {
+    expect(lizardHtml).not.toMatch(/<base\b/i);
+    expect(lizardHtml).toContain(
+      'data-swf="/swf-compare/pieces/lizard-site/main.swf"',
+    );
+    expect(lizardHtml).toContain('data-base="/fl/"');
+    expect(lizardHtml).toContain('data-loader-url="/fl/main.swf"');
+  });
+
+  it("fetches each SWF once and starts AwayFL after Ruffle", () => {
+    expect(playersJs).toContain("function movieBuffer(el)");
+    expect(playersJs).toContain('el.dataset.player !== "ruffle"');
+    expect(playersJs).toContain("data: new Uint8Array(buffer.slice(0))");
   });
 
   it("maps movie paths onto the local /swf-compare/pieces/ copies", () => {

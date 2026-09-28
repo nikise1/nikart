@@ -10,6 +10,9 @@ export interface SwfCompareSource {
   primary?: boolean;
   width: number;
   height: number;
+  localSwf?: string;
+  loaderUrl?: string;
+  base?: string;
 }
 
 export const swfCompareSources = catalogJson as SwfCompareSource[];

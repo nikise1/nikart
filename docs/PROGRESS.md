@@ -191,7 +191,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 #### 9f: Flash archival route (`/fl`) ✅ (2026-08-04)
 - [x] Ruffle-based `/fl` page in `modern/` (legacy SWF + flashVars)
-- [x] `/fl/:lang` redirect sets locale cookie (legacy parity)
+- [x] `/fl/en` and `/fl/es` redirects set locale cookie (legacy parity; explicit paths so they cannot steal `/fl/main.swf`)
 - [x] Unit tests for `flash-config` helpers
 - [x] Fix blank SWF: serve `data.json`, Ruffle `base` URL, `window.nikart` bridge, AS2 player settings
 - [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
@@ -212,6 +212,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Switch compare-kit movies back to `/swf-compare/pieces/{id}/` copies after the origin `/static` proxy still failed on Vercel (2026-09-24)
 - [x] Add the legacy lizard Flash site (`/fl/main.swf`) to the compare kit in both Ruffle and AwayFL (2026-09-27)
 - [x] Link the compare index topnav and intro note to `/swf-compare/pieces/lizard-site/` (2026-09-28)
+- [x] Stop Safari aborting lizard `main.swf` on the compare page: drop document `<base href="/fl/">`, load the pieces copy, share one SWF fetch, start AwayFL after Ruffle, pin `/fl/en` and `/fl/es` so they cannot capture `/fl/main.swf` (2026-09-28)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

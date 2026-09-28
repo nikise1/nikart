@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=3600" },
         ],
       },
+      {
+        source: "/fl/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
     ];
   },
   async rewrites() {
