@@ -70,6 +70,12 @@ describe("swf-compare", () => {
     expect(playersJs).toContain("data: new Uint8Array(buffer.slice(0))");
   });
 
+  it("rewrites AwayFL ../content LoadVars onto /content/", () => {
+    expect(playersJs).toContain("function rewriteContentLoaderUrl(url)");
+    expect(playersJs).toContain('url.includes("../content/")');
+    expect(playersJs).toContain("redirects: awayFlRedirects(el)");
+  });
+
   it("maps movie paths onto the local /swf-compare/pieces/ copies", () => {
     expect(pieceMovieUrl("ciudad", "games/ciudad_helm/Main.swf")).toBe(
       "/swf-compare/pieces/ciudad/games/ciudad_helm/Main.swf",

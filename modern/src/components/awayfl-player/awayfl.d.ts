@@ -1,6 +1,7 @@
 interface AwayFlPlayerGlobal {
   AVMPlayer: new (gameConfig: {
     files: unknown[];
+    redirects?: unknown[];
     x?: number | string;
     y?: number | string;
     w?: number | string;
@@ -13,6 +14,7 @@ interface AwayFlPlayerGlobal {
 
 interface AwayFlPlayerInstance {
   playSWF(buffer: ArrayBuffer, url: string): void;
+  load?(): void;
   play(offset?: number): void;
   dispose(): void;
   addEventListener(type: string, listener: (event: unknown) => void): void;
