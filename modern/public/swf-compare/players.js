@@ -2,6 +2,7 @@
   const RUFFLE_SRC = "/ruffle/ruffle.js";
   const AWAYFL_SRC = "/awayfl/awayfl-player.umd.js";
   const BUILTINS = "/awayfl/builtins";
+  const movieBuffers = new Map();
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
@@ -132,6 +133,13 @@
     return new URL(el.dataset.swf ?? "", window.location.href);
   }
 
+  function loaderHref(el) {
+    if (el.dataset.loaderUrl) {
+      return new URL(el.dataset.loaderUrl, window.location.href);
+    }
+    return swfHref(el);
+  }
+
   function parseParameters(el) {
     const raw = el.dataset.parameters;
     if (!raw) {
@@ -155,9 +163,24 @@
     return url.href.replace(/[^/]+$/, "");
   }
 
+  async function movieBuffer(el) {
+    const href = swfHref(el).href;
+    let pending = movieBuffers.get(href);
+    if (!pending) {
+      pending = (async () => {
+        const response = await fetch(href);
+        if (!response.ok) {
+          throw new Error(`SWF request failed (${response.status})`);
+        }
+        return response.arrayBuffer();
+      })();
+      movieBuffers.set(href, pending);
+    }
+    return pending;
+  }
+
   function ruffleLoadOptions(el, url) {
     const options = {
-      url: url.href,
       base: movieBase(el, url),
       publicPath: "/ruffle/",
       allowScriptAccess: true,
@@ -183,7 +206,7 @@
   }
 
   function playHref(el) {
-    const url = swfHref(el);
+    const url = loaderHref(el);
     const parameters = parseParameters(el);
     if (parameters) {
       Object.entries(parameters).forEach(([key, value]) => {
@@ -205,12 +228,17 @@
       throw new Error("Ruffle player failed to load.");
     }
     const url = swfHref(el);
+    const buffer = await movieBuffer(el);
     const ruffle = window.RufflePlayer.newest();
     const player = ruffle.createPlayer();
     player.style.width = "100%";
     player.style.height = "100%";
     el.replaceChildren(player);
-    await player.load(ruffleLoadOptions(el, url));
+    await player.load({
+      ...ruffleLoadOptions(el, url),
+      data: new Uint8Array(buffer.slice(0)),
+      swfFileName: url.pathname.split("/").pop() ?? "movie.swf",
+    });
     setStatus(el, "");
   }
 
@@ -225,12 +253,7 @@
     if (!window.awayflplayer) {
       throw new Error("AwayFL player failed to load.");
     }
-    const url = swfHref(el);
-    const response = await fetch(url.href);
-    if (!response.ok) {
-      throw new Error(`SWF request failed (${response.status})`);
-    }
-    const buffer = await response.arrayBuffer();
+    const buffer = await movieBuffer(el);
     const canvas = document.createElement("canvas");
     canvas.id = `awayfl_stage_${el.dataset.swf?.replace(/\W+/g, "_") ?? "swf"}`;
     canvas.style.display = "block";
@@ -276,16 +299,32 @@
   window.SwfCompare = { startRuffle, startAwayFl };
   installFlashBridge();
 
-  document.querySelectorAll("[data-player]").forEach((el) => {
-    applyStageBox(el);
+  async function runStarter(el) {
     const kind = el.dataset.player;
     const start = starters[kind];
     if (!start) {
       return;
     }
-    start(el).catch((error) => {
+    try {
+      await start(el);
+    } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       setStatus(el, message, true);
-    });
-  });
+    }
+  }
+
+  async function boot() {
+    const stages = [...document.querySelectorAll("[data-player]")];
+    stages.forEach(applyStageBox);
+    const ruffle = stages.filter((el) => el.dataset.player === "ruffle");
+    const rest = stages.filter((el) => el.dataset.player !== "ruffle");
+    for (const el of ruffle) {
+      await runStarter(el);
+    }
+    for (const el of rest) {
+      await runStarter(el);
+    }
+  }
+
+  boot();
 })();

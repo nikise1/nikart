@@ -6,6 +6,7 @@
     "itemId": "lizard-site",
     "wrapper": "fl/main.swf",
     "localSwf": "/fl/main.swf",
+    "loaderUrl": "/fl/main.swf",
     "base": "/fl/",
     "playerVersion": 8,
     "background": "#000000",
@@ -14,7 +15,7 @@
       "embedlang": "en",
       "staticfilesstr": "http://static.nikart.co.uk"
     },
-    "note": "Same movie as /fl: AS2 lizard UI with flashVars and base /fl/ so content JSON and images load. Child launches use window.nikart.popWin.",
+    "note": "Same movie as <a href=\"/fl\">/fl</a>: the AS2 lizard UI. Players load the copy at <code>/swf-compare/pieces/lizard-site/main.swf</code> with Flash 8 flashVars and <code>base=/fl/</code> so content JSON and images resolve. AwayFL’s loader URL stays <code>/fl/main.swf</code>. Child launches use <code>window.nikart.popWin</code>.",
     "primary": true,
     "width": 750,
     "height": 500
