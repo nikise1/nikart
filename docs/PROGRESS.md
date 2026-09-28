@@ -211,6 +211,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Drop the `next.config` `/static` rewrite so Vercel cannot bypass the Node proxy (HTTPS preview was still blank) (2026-09-24)
 - [x] Switch compare-kit movies back to `/swf-compare/pieces/{id}/` copies after the origin `/static` proxy still failed on Vercel (2026-09-24)
 - [x] Add the legacy lizard Flash site (`/fl/main.swf`) to the compare kit in both Ruffle and AwayFL (2026-09-27)
+- [x] Link the compare index topnav and intro note to `/swf-compare/pieces/lizard-site/` (2026-09-28)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
