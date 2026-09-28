@@ -537,10 +537,11 @@ function renderIndex(pieces) {
   <div class="wrap">
     <nav class="topnav">
       <a href="/fl">Flash site</a>
+      <a href="pieces/lizard-site/index.html">Legacy Flash site</a>
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The legacy lizard Flash site loads <code>/fl/main.swf</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads <code>/fl/main.swf</code>.</p>
     ${sections}
   </div>
 </body>
