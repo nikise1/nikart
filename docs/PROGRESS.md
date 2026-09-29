@@ -217,7 +217,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Rebase the compare kit onto master and load the lizard movie from `main.ruffle.swf` (same Ruffle tongue-chord copy as `/fl`) instead of the Animate `main.swf` export (2026-09-29)
 - [x] Host-side AwayFL LoadVars `onData` patch in `modern/public/awayfl/loadvars-ondata-patch.js` (prototype slot was READ_ONLY so the lizard’s JSON `onData` override was dropped); notes for an upstream `awayfl/avm1` PR in `docs/AWAYFL_LOADVARS.md` (2026-09-29)
 - [x] Compare-kit index cards and piece topnav prev/next follow `swf-compare-catalog.json` order (they used two different A–Z sorts) (2026-09-29)
-- [x] Compare-kit per-page Ruffle/AwayFL visibility in `localStorage` (`swf-compare-pages`); Hide/Show next to each player; index cards show both flags and those flags are clickable (2026-09-29)
+- [x] Compare-kit per-page Ruffle/AwayFL visibility in `localStorage` (`swf-compare-pages`); committed defaults in `visibility-defaults.json`; Hide/Show next to each player; index card flags are clickable (2026-09-29)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

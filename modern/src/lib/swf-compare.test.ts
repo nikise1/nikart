@@ -75,6 +75,7 @@ describe("swf-compare", () => {
     expect(playersJs).toContain('const STORAGE_KEY = "swf-compare-pages"');
     expect(playersJs).toContain("function setPageVisible(id, player, visible)");
     expect(playersJs).toContain("function paintIndexCards()");
+    expect(playersJs).toContain("/swf-compare/visibility-defaults.json");
   });
 
   it("rewrites AwayFL ../content LoadVars onto /content/", () => {

@@ -5,7 +5,9 @@
   const BUILTINS = "/awayfl/builtins";
   const movieBuffers = new Map();
   const STORAGE_KEY = "swf-compare-pages";
+  const DEFAULTS_SRC = "/swf-compare/visibility-defaults.json";
   const started = new WeakSet();
+  let defaultPages = {};
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
@@ -367,8 +369,27 @@
     awayfl: startAwayFl,
   };
 
-  function emptyPage() {
-    return { ruffle: true, awayfl: true };
+  function defaultPage(id) {
+    const d = defaultPages[id];
+    return {
+      ruffle: d?.ruffle ?? true,
+      awayfl: d?.awayfl ?? true,
+    };
+  }
+
+  async function loadDefaults() {
+    try {
+      const response = await fetch(DEFAULTS_SRC);
+      if (!response.ok) {
+        return;
+      }
+      const parsed = await response.json();
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+        defaultPages = parsed;
+      }
+    } catch {
+      defaultPages = {};
+    }
   }
 
   function pieceIdFromPath(pathname) {
@@ -399,17 +420,17 @@
 
   function pageState(id) {
     const stored = readStore()[id];
+    const defaults = defaultPage(id);
     return {
-      ruffle: stored?.ruffle !== false,
-      awayfl: stored?.awayfl !== false,
+      ruffle: stored?.ruffle ?? defaults.ruffle,
+      awayfl: stored?.awayfl ?? defaults.awayfl,
     };
   }
 
   function setPageVisible(id, player, visible) {
     const store = readStore();
     store[id] = {
-      ...emptyPage(),
-      ...store[id],
+      ...pageState(id),
       [player]: Boolean(visible),
     };
     writeStore(store);
@@ -470,6 +491,7 @@
     paintIndexCards,
     applyPiece,
     toggleVisible,
+    defaultPage,
   };
   installFlashBridge();
 
@@ -547,7 +569,8 @@
     }
   }
 
-  function boot() {
+  async function boot() {
+    await loadDefaults();
     const id = pieceIdFromPath(window.location.pathname);
     paintIndexCards();
     bindIndexToggles();
@@ -560,9 +583,9 @@
       }
     });
     if (id) {
-      bootPiece(id);
+      await bootPiece(id);
     }
   }
 
-  boot();
+  window.SwfCompare.ready = boot();
 })();
