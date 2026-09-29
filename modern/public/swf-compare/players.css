@@ -144,7 +144,8 @@ h1 {
 }
 
 .card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: 0.9rem 1rem;
   background: #1c1c1c;
   border: 1px solid #333;
@@ -152,9 +153,17 @@ h1 {
   font-size: 15px;
 }
 
+.card > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card > a:hover {
+  text-decoration: none;
+}
+
 .card:hover {
   border-color: #95cf89;
-  text-decoration: none;
   background: #242424;
 }
 
@@ -173,10 +182,19 @@ h1 {
 }
 
 .card-vis .vis {
+  appearance: none;
+  font: inherit;
   font-size: 11px;
   padding: 0.1rem 0.4rem;
   border: 1px solid #444;
+  background: transparent;
   color: #888;
+  cursor: pointer;
+}
+
+.card-vis .vis:hover {
+  border-color: #95cf89;
+  color: #95cf89;
 }
 
 .card-vis .vis.is-on {

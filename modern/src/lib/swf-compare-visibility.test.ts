@@ -46,13 +46,13 @@ describe("swf-compare player visibility", () => {
 
   it("paints index card visibilities from that store", () => {
     document.body.innerHTML = `
-      <a class="card" data-piece="claro" href="pieces/claro/index.html">
-        Claro
+      <div class="card" data-piece="claro">
+        <a href="pieces/claro/index.html">Claro</a>
         <span class="card-vis">
-          <span class="vis is-on" data-vis="ruffle">Ruffle</span>
-          <span class="vis is-on" data-vis="awayfl">AwayFL</span>
+          <button type="button" class="vis is-on" data-vis="ruffle">Ruffle</button>
+          <button type="button" class="vis is-on" data-vis="awayfl">AwayFL</button>
         </span>
-      </a>`;
+      </div>`;
     loadPlayers();
     window.SwfCompare.setPageVisible("claro", "ruffle", false);
     window.SwfCompare.paintIndexCards();
@@ -62,6 +62,31 @@ describe("swf-compare player visibility", () => {
     expect(document.querySelector('[data-vis="awayfl"]')?.className).toContain(
       "is-on",
     );
+  });
+
+  it("toggles index card flags without following the title link", () => {
+    document.body.innerHTML = `
+      <div class="card" data-piece="claro">
+        <a href="pieces/claro/index.html">Claro</a>
+        <span class="card-vis">
+          <button type="button" class="vis is-on" data-vis="ruffle">Ruffle</button>
+          <button type="button" class="vis is-on" data-vis="awayfl">AwayFL</button>
+        </span>
+      </div>`;
+    let followed = false;
+    document.querySelector("a")?.addEventListener("click", () => {
+      followed = true;
+    });
+    loadPlayers();
+    const away = document.querySelector('[data-vis="awayfl"]');
+    away?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    expect(followed).toBe(false);
+    expect(window.SwfCompare.pageState("claro")).toEqual({
+      ruffle: true,
+      awayfl: false,
+    });
+    expect(away?.classList.contains("is-off")).toBe(true);
+    expect(away?.getAttribute("aria-pressed")).toBe("false");
   });
 
   it("toggles a pane with the Hide/Show button and skips loading hidden players", () => {
@@ -101,6 +126,7 @@ describe("swf-compare player visibility", () => {
     expect(indexHtml).toContain('data-piece="claro"');
     expect(indexHtml).toContain('data-vis="ruffle"');
     expect(indexHtml).toContain('data-vis="awayfl"');
+    expect(indexHtml).toContain('type="button" class="vis is-on" data-vis="ruffle"');
     expect(claroHtml).toContain('class="vis-toggle" data-vis="ruffle"');
     expect(claroHtml).toContain('class="vis-toggle" data-vis="awayfl"');
     expect(playersSrc).toContain('el.dataset.player !== "ruffle"');

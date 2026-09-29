@@ -436,6 +436,7 @@
         const on = state[vis.getAttribute("data-vis")] !== false;
         vis.classList.toggle("is-on", on);
         vis.classList.toggle("is-off", !on);
+        vis.setAttribute("aria-pressed", on ? "true" : "false");
       }
     }
   }
@@ -448,6 +449,16 @@
     paintIndexCards();
   }
 
+  function toggleVisible(id, player) {
+    if (player !== "ruffle" && player !== "awayfl") {
+      return false;
+    }
+    const next = pageState(id)[player] === false;
+    setPageVisible(id, player, next);
+    applyPiece(id);
+    return next;
+  }
+
   window.SwfCompare = {
     startRuffle,
     startAwayFl,
@@ -458,6 +469,7 @@
     setPageVisible,
     paintIndexCards,
     applyPiece,
+    toggleVisible,
   };
   installFlashBridge();
 
@@ -485,18 +497,32 @@
       btn.addEventListener("click", async (event) => {
         event.preventDefault();
         const player = btn.getAttribute("data-vis");
-        if (player !== "ruffle" && player !== "awayfl") {
-          return;
-        }
-        const next = pageState(id)[player] === false;
-        setPageVisible(id, player, next);
-        applyPiece(id);
+        const next = toggleVisible(id, player);
         if (next) {
           const el = document.querySelector(`[data-player="${player}"]`);
           if (el) {
             await runStarter(el);
           }
         }
+      });
+    }
+  }
+
+  function bindIndexToggles() {
+    for (const btn of document.querySelectorAll(".card-vis [data-vis]")) {
+      if (btn.dataset.bound === "1") {
+        continue;
+      }
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const card = btn.closest("[data-piece]");
+        const id = card?.getAttribute("data-piece");
+        if (!id) {
+          return;
+        }
+        toggleVisible(id, btn.getAttribute("data-vis"));
       });
     }
   }
@@ -524,6 +550,7 @@
   function boot() {
     const id = pieceIdFromPath(window.location.pathname);
     paintIndexCards();
+    bindIndexToggles();
     window.addEventListener("storage", (event) => {
       if (event.key === STORAGE_KEY) {
         if (id) {
