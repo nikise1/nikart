@@ -9,9 +9,13 @@ const claroHtml = readFileSync(
   join(publicRoot, "swf-compare/pieces/claro/index.html"),
   "utf8",
 );
+const visibilityDefaults = JSON.parse(
+  readFileSync(join(publicRoot, "swf-compare/visibility-defaults.json"), "utf8"),
+);
 
-function loadPlayers() {
+async function loadPlayers() {
   new Function(playersSrc)();
+  await window.SwfCompare.ready;
 }
 
 describe("swf-compare player visibility", () => {
@@ -19,6 +23,15 @@ describe("swf-compare player visibility", () => {
     localStorage.clear();
     document.body.innerHTML = "";
     window.history.pushState({}, "", "/swf-compare/index.html");
+    globalThis.fetch = async (url) => {
+      if (String(url).includes("visibility-defaults.json")) {
+        return {
+          ok: true,
+          json: async () => structuredClone(visibilityDefaults),
+        };
+      }
+      throw new Error(`unexpected fetch ${url}`);
+    };
   });
 
   afterEach(() => {
@@ -26,25 +39,29 @@ describe("swf-compare player visibility", () => {
     document.body.innerHTML = "";
   });
 
-  it("stores one object keyed by page id in localStorage", () => {
-    loadPlayers();
+  it("uses committed defaults until localStorage overrides a page", async () => {
+    await loadPlayers();
     const api = window.SwfCompare;
     expect(api.STORAGE_KEY).toBe("swf-compare-pages");
     expect(api.pieceIdFromPath("/swf-compare/pieces/claro/index.html")).toBe(
       "claro",
     );
-    expect(api.pageState("claro")).toEqual({ ruffle: true, awayfl: true });
-    api.setPageVisible("claro", "awayfl", false);
+    expect(api.pageState("claro")).toEqual({ ruffle: true, awayfl: false });
+    expect(api.pageState("whiplash")).toEqual({ ruffle: false, awayfl: true });
+    expect(api.pageState("ar-heart")).toEqual({ ruffle: false, awayfl: false });
+    expect(api.pageState("banner-shell__matchstick")).toEqual({
+      ruffle: true,
+      awayfl: true,
+    });
     api.setPageVisible("lizard-site", "ruffle", false);
     expect(JSON.parse(localStorage.getItem("swf-compare-pages") ?? "{}")).toEqual(
       {
-        claro: { ruffle: true, awayfl: false },
-        "lizard-site": { ruffle: false, awayfl: true },
+        "lizard-site": { ruffle: false, awayfl: false },
       },
     );
   });
 
-  it("paints index card visibilities from that store", () => {
+  it("paints index card visibilities from defaults", async () => {
     document.body.innerHTML = `
       <div class="card" data-piece="claro">
         <a href="pieces/claro/index.html">Claro</a>
@@ -53,43 +70,41 @@ describe("swf-compare player visibility", () => {
           <button type="button" class="vis is-on" data-vis="awayfl">AwayFL</button>
         </span>
       </div>`;
-    loadPlayers();
-    window.SwfCompare.setPageVisible("claro", "ruffle", false);
-    window.SwfCompare.paintIndexCards();
+    await loadPlayers();
     expect(document.querySelector('[data-vis="ruffle"]')?.className).toContain(
-      "is-off",
+      "is-on",
     );
     expect(document.querySelector('[data-vis="awayfl"]')?.className).toContain(
-      "is-on",
+      "is-off",
     );
   });
 
-  it("toggles index card flags without following the title link", () => {
+  it("toggles index card flags without following the title link", async () => {
     document.body.innerHTML = `
       <div class="card" data-piece="claro">
         <a href="pieces/claro/index.html">Claro</a>
         <span class="card-vis">
           <button type="button" class="vis is-on" data-vis="ruffle">Ruffle</button>
-          <button type="button" class="vis is-on" data-vis="awayfl">AwayFL</button>
+          <button type="button" class="vis is-off" data-vis="awayfl">AwayFL</button>
         </span>
       </div>`;
     let followed = false;
     document.querySelector("a")?.addEventListener("click", () => {
       followed = true;
     });
-    loadPlayers();
-    const away = document.querySelector('[data-vis="awayfl"]');
-    away?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    await loadPlayers();
+    const ruffle = document.querySelector('[data-vis="ruffle"]');
+    ruffle?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     expect(followed).toBe(false);
     expect(window.SwfCompare.pageState("claro")).toEqual({
-      ruffle: true,
+      ruffle: false,
       awayfl: false,
     });
-    expect(away?.classList.contains("is-off")).toBe(true);
-    expect(away?.getAttribute("aria-pressed")).toBe("false");
+    expect(ruffle?.classList.contains("is-off")).toBe(true);
+    expect(ruffle?.getAttribute("aria-pressed")).toBe("false");
   });
 
-  it("toggles a pane with the Hide/Show button and skips loading hidden players", () => {
+  it("toggles a pane with the Hide/Show button and skips loading hidden players", async () => {
     window.history.pushState({}, "", "/swf-compare/pieces/claro/index.html");
     document.body.innerHTML = `
       <section class="pane">
@@ -102,34 +117,38 @@ describe("swf-compare player visibility", () => {
       <section class="pane">
         <div class="pane-head">
           <h2>AwayFL</h2>
-          <button type="button" class="vis-toggle" data-vis="awayfl">Hide</button>
+          <button type="button" class="vis-toggle" data-vis="awayfl">Show</button>
         </div>
         <div class="stage" data-player="awayfl"></div>
       </section>`;
-    loadPlayers();
+    await loadPlayers();
     const awayBtn = document.querySelector('[data-vis="awayfl"]');
-    expect(awayBtn).toBeTruthy();
-    awayBtn?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    expect(window.SwfCompare.pageState("claro")).toEqual({
-      ruffle: true,
-      awayfl: false,
-    });
     expect(
       document.querySelector('[data-player="awayfl"]')?.closest(".pane")
         ?.classList.contains("is-off"),
     ).toBe(true);
     expect(awayBtn?.textContent).toBe("Show");
+    awayBtn?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    expect(window.SwfCompare.pageState("claro")).toEqual({
+      ruffle: true,
+      awayfl: true,
+    });
+    expect(
+      document.querySelector('[data-player="awayfl"]')?.closest(".pane")
+        ?.classList.contains("is-off"),
+    ).toBe(false);
+    expect(awayBtn?.textContent).toBe("Hide");
   });
 
   it("ships Hide buttons on piece pages and visibility marks on index cards", () => {
     expect(indexHtml).toContain('src="/swf-compare/players.js"');
     expect(indexHtml).toContain('data-piece="claro"');
-    expect(indexHtml).toContain('data-vis="ruffle"');
-    expect(indexHtml).toContain('data-vis="awayfl"');
-    expect(indexHtml).toContain('type="button" class="vis is-on" data-vis="ruffle"');
+    expect(indexHtml).toContain('class="vis is-on" data-vis="ruffle"');
+    expect(indexHtml).toContain('class="vis is-off" data-vis="awayfl"');
+    expect(indexHtml).toContain('data-piece="whiplash"');
     expect(claroHtml).toContain('class="vis-toggle" data-vis="ruffle"');
-    expect(claroHtml).toContain('class="vis-toggle" data-vis="awayfl"');
-    expect(playersSrc).toContain('el.dataset.player !== "ruffle"');
+    expect(claroHtml).toContain(">Show</button>");
+    expect(playersSrc).toContain("/swf-compare/visibility-defaults.json");
   });
 });
 
@@ -141,6 +160,7 @@ declare global {
       pageState: (id: string) => { ruffle: boolean; awayfl: boolean };
       setPageVisible: (id: string, player: string, visible: boolean) => void;
       paintIndexCards: () => void;
+      ready: Promise<void>;
     };
   }
 }

@@ -18,6 +18,25 @@ const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "http://static.nikart.co.uk";
 const MAX_BYTES = 80 * 1024 * 1024;
 
 const sources = JSON.parse(readFileSync(catalogPath, "utf8"));
+const visibilityDefaultsPath = join(outRoot, "visibility-defaults.json");
+const visibilityDefaults = existsSync(visibilityDefaultsPath)
+  ? JSON.parse(readFileSync(visibilityDefaultsPath, "utf8"))
+  : {};
+
+function defaultVisible(id, player) {
+  const page = visibilityDefaults[id];
+  return page?.[player] ?? true;
+}
+
+function visFlagButton(id, player, label) {
+  const on = defaultVisible(id, player);
+  return `<button type="button" class="vis ${on ? "is-on" : "is-off"}" data-vis="${player}" aria-pressed="${on}">${label}</button>`;
+}
+
+function visPaneToggle(id, player) {
+  const on = defaultVisible(id, player);
+  return `<button type="button" class="vis-toggle" data-vis="${player}" aria-pressed="${on}">${on ? "Hide" : "Show"}</button>`;
+}
 
 const ASSET_EXT =
   /\.(?:swf|xml|jpg|jpeg|png|gif|dae|mp3|wav|flv|json|css|js|html|txt|obj|mtl|atf|csv|pdf|pat|dat)(?:$|[?#])/i;
@@ -597,17 +616,17 @@ function renderPieceHtml(piece, siblings, prev, next) {
     <p class="meta">${escapeHtml(href)} · ${piece.width}×${piece.height}</p>
     ${siblingLinks ? `<p class="siblings">Same item: ${siblingLinks}</p>\n    ` : ""}<p class="note">${note}</p>
     <div class="split">
-      <section class="pane" data-pane="ruffle">
+      <section class="pane${defaultVisible(piece.id, "ruffle") ? "" : " is-off"}" data-pane="ruffle">
         <div class="pane-head">
           <h2>Ruffle</h2>
-          <button type="button" class="vis-toggle" data-vis="ruffle" aria-pressed="true">Hide</button>
+          ${visPaneToggle(piece.id, "ruffle")}
         </div>
         <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
-      <section class="pane" data-pane="awayfl">
+      <section class="pane${defaultVisible(piece.id, "awayfl") ? "" : " is-off"}" data-pane="awayfl">
         <div class="pane-head">
           <h2>AwayFL</h2>
-          <button type="button" class="vis-toggle" data-vis="awayfl" aria-pressed="true">Hide</button>
+          ${visPaneToggle(piece.id, "awayfl")}
         </div>
         <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
@@ -638,7 +657,7 @@ function renderIndex(pieces) {
       const cards = list
         .map(
           (piece) =>
-            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="pieces/${piece.id}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis"><button type="button" class="vis is-on" data-vis="ruffle" aria-pressed="true">Ruffle</button><button type="button" class="vis is-on" data-vis="awayfl" aria-pressed="true">AwayFL</button></span></div>`,
+            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="pieces/${piece.id}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
