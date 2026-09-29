@@ -533,7 +533,7 @@ function renderIndex(pieces) {
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads the copy of <code>main.swf</code> with <code>base=/fl/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads the copy of <code>main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
 </body>
