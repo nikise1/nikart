@@ -10,6 +10,7 @@ import {
 } from "@/lib/awayfl-static";
 
 const AWAYFL_SRC = "/awayfl/awayfl-player.umd.js";
+const AWAYFL_LOADVARS_PATCH_SRC = "/awayfl/loadvars-ondata-patch.js";
 const BUILTINS_BASE = "/awayfl/builtins";
 
 export interface AwayFlPlayerProps {
@@ -162,7 +163,16 @@ export function AwayFlPlayer({ source }: AwayFlPlayerProps) {
       <Script
         src={AWAYFL_SRC}
         strategy="afterInteractive"
-        onLoad={() => setReady(true)}
+        onLoad={() => {
+          const script = document.createElement("script");
+          script.src = AWAYFL_LOADVARS_PATCH_SRC;
+          script.onload = () => {
+            window.NikartAwayFlLoadVarsPatch?.install?.();
+            setReady(true);
+          };
+          script.onerror = () => setReady(true);
+          document.head.appendChild(script);
+        }}
         onError={() => setLoadError("AwayFL script failed to load.")}
       />
       <div
