@@ -1,6 +1,7 @@
 (() => {
   const RUFFLE_SRC = "/ruffle/ruffle.js";
   const AWAYFL_SRC = "/awayfl/awayfl-player.umd.js";
+  const AWAYFL_LOADVARS_PATCH_SRC = "/awayfl/loadvars-ondata-patch.js";
   const BUILTINS = "/awayfl/builtins";
   const movieBuffers = new Map();
 
@@ -13,7 +14,14 @@
           resolve();
           return;
         }
-        if (src.includes("awayfl") && window.awayflplayer) {
+        if (src.endsWith("awayfl-player.umd.js") && window.awayflplayer) {
+          resolve();
+          return;
+        }
+        if (
+          src.endsWith("loadvars-ondata-patch.js") &&
+          window.NikartAwayFlLoadVarsPatch
+        ) {
           resolve();
           return;
         }
@@ -297,6 +305,7 @@
     applyStageBox(el);
     setStatus(el, "Loading AwayFL…");
     await loadScript(AWAYFL_SRC);
+    await loadScript(AWAYFL_LOADVARS_PATCH_SRC);
     const started = Date.now();
     while (!window.awayflplayer && Date.now() - started < 20000) {
       await new Promise((resolve) => setTimeout(resolve, 50));
@@ -304,6 +313,7 @@
     if (!window.awayflplayer) {
       throw new Error("AwayFL player failed to load.");
     }
+    window.NikartAwayFlLoadVarsPatch?.install?.();
     const buffer = await movieBuffer(el);
     const canvas = document.createElement("canvas");
     canvas.id = `awayfl_stage_${el.dataset.swf?.replace(/\W+/g, "_") ?? "swf"}`;
