@@ -597,12 +597,18 @@ function renderPieceHtml(piece, siblings, prev, next) {
     <p class="meta">${escapeHtml(href)} · ${piece.width}×${piece.height}</p>
     ${siblingLinks ? `<p class="siblings">Same item: ${siblingLinks}</p>\n    ` : ""}<p class="note">${note}</p>
     <div class="split">
-      <section class="pane">
-        <h2>Ruffle</h2>
+      <section class="pane" data-pane="ruffle">
+        <div class="pane-head">
+          <h2>Ruffle</h2>
+          <button type="button" class="vis-toggle" data-vis="ruffle" aria-pressed="true">Hide</button>
+        </div>
         <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
-      <section class="pane">
-        <h2>AwayFL</h2>
+      <section class="pane" data-pane="awayfl">
+        <div class="pane-head">
+          <h2>AwayFL</h2>
+          <button type="button" class="vis-toggle" data-vis="awayfl" aria-pressed="true">Hide</button>
+        </div>
         <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
     </div>
@@ -632,7 +638,7 @@ function renderIndex(pieces) {
       const cards = list
         .map(
           (piece) =>
-            `<a class="card" href="pieces/${piece.id}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a>`,
+            `<a class="card" href="pieces/${piece.id}/index.html" data-piece="${escapeHtml(piece.id)}">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small><span class="card-vis"><span class="vis is-on" data-vis="ruffle">Ruffle</span><span class="vis is-on" data-vis="awayfl">AwayFL</span></span></a>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
@@ -657,6 +663,7 @@ function renderIndex(pieces) {
     <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads the copy of <code>main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
+  <script src="/swf-compare/players.js"></script>
 </body>
 </html>
 `;
