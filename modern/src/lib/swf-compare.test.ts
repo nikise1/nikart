@@ -127,7 +127,7 @@ describe("swf-compare", () => {
       "utf8",
     );
     const cardIds = [
-      ...indexHtml.matchAll(/class="card" href="pieces\/([^/]+)\/index.html"/g),
+      ...indexHtml.matchAll(/data-piece="([^"]+)"/g),
     ].map((match) => match[1]);
     const pieceRoot = join(publicRoot, "swf-compare/pieces");
     const existingIds = readdirSync(pieceRoot).filter((id) =>

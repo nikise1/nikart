@@ -638,7 +638,7 @@ function renderIndex(pieces) {
       const cards = list
         .map(
           (piece) =>
-            `<a class="card" href="pieces/${piece.id}/index.html" data-piece="${escapeHtml(piece.id)}">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small><span class="card-vis"><span class="vis is-on" data-vis="ruffle">Ruffle</span><span class="vis is-on" data-vis="awayfl">AwayFL</span></span></a>`,
+            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="pieces/${piece.id}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis"><button type="button" class="vis is-on" data-vis="ruffle" aria-pressed="true">Ruffle</button><button type="button" class="vis is-on" data-vis="awayfl" aria-pressed="true">AwayFL</button></span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
