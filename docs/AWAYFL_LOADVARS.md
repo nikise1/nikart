@@ -46,7 +46,7 @@ Loaded by:
 - compare kit `players.js` after `awayfl-player.umd.js`
 - `/fl/away` via `AwayFlPlayer`
 
-It wraps `AVMPlayer` so that on `avmComplete` (AVM1 globals exist, first frame has not run yet) it:
+It wraps `AVMPlayer` construction (Proxy, not a UMD edit) so that on `avmComplete` (AVM1 globals exist, first frame has not run yet) it:
 
 1. Wraps `alCanPut` so `onData` / `onLoad` / `onHTTPStatus` can be assigned on the instance.
 2. Clears the `READ_ONLY` bit on those prototype descriptors if `LoadVars` is found.
