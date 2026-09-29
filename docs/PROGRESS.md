@@ -215,6 +215,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Stop Safari aborting lizard `main.swf` on the compare page: drop document `<base href="/fl/">`, load the pieces copy, share one SWF fetch, start AwayFL after Ruffle, pin `/fl/en` and `/fl/es` so they cannot capture `/fl/main.swf`, rewrite `/swf-compare/pieces/content/` to `/content/` for AwayFL (2026-09-28)
 - [x] Point AwayFL lizard LoadVars `../content/json/data.json` at `/content/` (AwayFL logs that relative URL against the compare HTML page, so `_root.dataLoaded` stayed false) (2026-09-28)
 - [x] Rebase the compare kit onto master and load the lizard movie from `main.ruffle.swf` (same Ruffle tongue-chord copy as `/fl`) instead of the Animate `main.swf` export (2026-09-29)
+- [x] Host-side AwayFL LoadVars `onData` patch in `modern/public/awayfl/loadvars-ondata-patch.js` (prototype slot was READ_ONLY so the lizard’s JSON `onData` override was dropped); notes for an upstream `awayfl/avm1` PR in `docs/AWAYFL_LOADVARS.md` (2026-09-29)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
