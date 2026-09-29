@@ -144,6 +144,14 @@
     return true;
   }
 
+  function tryProp(obj, key) {
+    try {
+      return obj[key];
+    } catch {
+      return undefined;
+    }
+  }
+
   function visit(root) {
     const seen = new Set();
     const stack = [root];
@@ -160,37 +168,41 @@
         break;
       }
 
-      if (typeof cur.alCanPut === "function" && typeof cur.alPut === "function") {
-        wrapAlCanPut(cur);
+      try {
+        if (typeof cur.alCanPut === "function" && typeof cur.alPut === "function") {
+          wrapAlCanPut(cur);
+        }
+      } catch {
+        // Half-init AVM1 objects can throw from getters.
       }
-      if (typeof cur.alGetPrototypeProperty === "function") {
-        try {
+      try {
+        if (typeof cur.alGetPrototypeProperty === "function") {
           const proto = cur.alGetPrototypeProperty();
           unlockPrototypeHandlers(proto);
           wrapDefaultOnData(proto);
-        } catch {
-          // AVM1 getters can throw on half-init objects.
         }
+      } catch {
+        // AVM1 getters can throw on half-init objects.
       }
-      wrapDefaultOnData(cur);
+      try {
+        wrapDefaultOnData(cur);
+      } catch {
+        // Ignore non-AVM1 prototypes.
+      }
 
-      if (cur.LoadVars) {
-        stack.push(cur.LoadVars);
-      }
-      if (cur.globals) {
-        stack.push(cur.globals);
-      }
-      if (cur._avmHandler) {
-        stack.push(cur._avmHandler);
-      }
-      if (cur.factory) {
-        stack.push(cur.factory);
-      }
-      if (cur.avm1Context) {
-        stack.push(cur.avm1Context);
-      }
-      if (cur.context) {
-        stack.push(cur.context);
+      for (const key of [
+        "LoadVars",
+        "globals",
+        "_avmHandler",
+        "_factory",
+        "factory",
+        "avm1Context",
+        "context",
+      ]) {
+        const next = tryProp(cur, key);
+        if (next) {
+          stack.push(next);
+        }
       }
     }
   }
@@ -200,39 +212,33 @@
       return;
     }
     player.__nikartLoadVarsHooked = true;
-    const run = () => visit(player);
+    const run = (why) => {
+      visit(player);
+      if (state.canPutWrapped || state.unlocked) {
+        log("applied on", why, {
+          canPutWrapped: state.canPutWrapped,
+          unlocked: state.unlocked,
+          defaultWrapped: state.defaultWrapped,
+        });
+      }
+    };
     if (typeof player.addEventListener === "function") {
-      player.addEventListener("avmComplete", run);
+      player.addEventListener("avmComplete", () => run("avmComplete"));
+      player.addEventListener("loaderComplete", () => run("loaderComplete"));
     }
-    run();
   }
 
   function wrapPlayerCtor(Orig) {
     if (!Orig || Orig.__nikartLoadVarsWrapped) {
       return Orig;
     }
-    const proto = Orig.prototype;
-    if (proto) {
-      for (const method of ["playSWF", "load"]) {
-        const inner = proto[method];
-        if (typeof inner !== "function" || inner.__nikartLoadVarsWrapped) {
-          continue;
-        }
-        const wrapped = function (...args) {
-          attachPlayer(this);
-          return inner.apply(this, args);
-        };
-        wrapped.__nikartLoadVarsWrapped = true;
-        proto[method] = wrapped;
-      }
-    }
-    const Wrapped = function (...args) {
-      const player = new Orig(...args);
-      attachPlayer(player);
-      return player;
-    };
-    Wrapped.prototype = Orig.prototype;
-    Object.setPrototypeOf(Wrapped, Orig);
+    const Wrapped = new Proxy(Orig, {
+      construct(target, args, newTarget) {
+        const player = Reflect.construct(target, args, newTarget);
+        attachPlayer(player);
+        return player;
+      },
+    });
     Wrapped.__nikartLoadVarsWrapped = true;
     return Wrapped;
   }
