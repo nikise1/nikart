@@ -43,25 +43,25 @@ describe("swf-compare", () => {
   it("has a compare page for the legacy lizard Flash site", () => {
     const lizard = swfCompareSources.find((piece) => piece.id === "lizard-site");
     expect(lizard).toMatchObject({
-      localSwf: "/fl/main.swf",
-      loaderUrl: "/fl/main.swf",
+      localSwf: "/fl/main.ruffle.swf",
+      loaderUrl: "/fl/main.ruffle.swf",
       base: "/fl/",
     });
     expect(piecePageHref("lizard-site")).toBe(
       "/swf-compare/pieces/lizard-site/index.html",
     );
-    expect(pieceMovieUrl("lizard-site", "main.swf")).toBe(
-      "/swf-compare/pieces/lizard-site/main.swf",
+    expect(pieceMovieUrl("lizard-site", "main.ruffle.swf")).toBe(
+      "/swf-compare/pieces/lizard-site/main.ruffle.swf",
     );
   });
 
   it("loads the lizard movie from the pieces copy without a document base", () => {
     expect(lizardHtml).not.toMatch(/<base\b/i);
     expect(lizardHtml).toContain(
-      'data-swf="/swf-compare/pieces/lizard-site/main.swf"',
+      'data-swf="/swf-compare/pieces/lizard-site/main.ruffle.swf"',
     );
     expect(lizardHtml).toContain('data-base="/fl/"');
-    expect(lizardHtml).toContain('data-loader-url="/fl/main.swf"');
+    expect(lizardHtml).toContain('data-loader-url="/fl/main.ruffle.swf"');
   });
 
   it("fetches each SWF once and starts AwayFL after Ruffle", () => {
