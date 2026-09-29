@@ -71,6 +71,12 @@ describe("swf-compare", () => {
     expect(playersJs).toContain("data: new Uint8Array(buffer.slice(0))");
   });
 
+  it("keeps per-page Ruffle/AwayFL visibility in localStorage", () => {
+    expect(playersJs).toContain('const STORAGE_KEY = "swf-compare-pages"');
+    expect(playersJs).toContain("function setPageVisible(id, player, visible)");
+    expect(playersJs).toContain("function paintIndexCards()");
+  });
+
   it("rewrites AwayFL ../content LoadVars onto /content/", () => {
     expect(playersJs).toContain("function rewriteContentLoaderUrl(url)");
     expect(playersJs).toContain('url.includes("../content/")');

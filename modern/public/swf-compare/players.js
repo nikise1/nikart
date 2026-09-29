@@ -4,6 +4,8 @@
   const AWAYFL_LOADVARS_PATCH_SRC = "/awayfl/loadvars-ondata-patch.js";
   const BUILTINS = "/awayfl/builtins";
   const movieBuffers = new Map();
+  const STORAGE_KEY = "swf-compare-pages";
+  const started = new WeakSet();
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
@@ -365,15 +367,107 @@
     awayfl: startAwayFl,
   };
 
-  window.SwfCompare = { startRuffle, startAwayFl };
+  function emptyPage() {
+    return { ruffle: true, awayfl: true };
+  }
+
+  function pieceIdFromPath(pathname) {
+    const match = String(pathname ?? "").match(
+      /\/swf-compare\/pieces\/([^/]+)\//,
+    );
+    return match?.[1] ?? null;
+  }
+
+  function readStore() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        return {};
+      }
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" && !Array.isArray(parsed)
+        ? parsed
+        : {};
+    } catch {
+      return {};
+    }
+  }
+
+  function writeStore(store) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+  }
+
+  function pageState(id) {
+    const stored = readStore()[id];
+    return {
+      ruffle: stored?.ruffle !== false,
+      awayfl: stored?.awayfl !== false,
+    };
+  }
+
+  function setPageVisible(id, player, visible) {
+    const store = readStore();
+    store[id] = {
+      ...emptyPage(),
+      ...store[id],
+      [player]: Boolean(visible),
+    };
+    writeStore(store);
+    return pageState(id);
+  }
+
+  function applyPane(el, visible) {
+    const pane = el.closest(".pane");
+    if (!pane) {
+      return;
+    }
+    pane.classList.toggle("is-off", !visible);
+    const btn = pane.querySelector(".vis-toggle");
+    if (btn) {
+      btn.textContent = visible ? "Hide" : "Show";
+      btn.setAttribute("aria-pressed", visible ? "true" : "false");
+    }
+  }
+
+  function paintIndexCards() {
+    for (const card of document.querySelectorAll("[data-piece]")) {
+      const state = pageState(card.getAttribute("data-piece"));
+      for (const vis of card.querySelectorAll("[data-vis]")) {
+        const on = state[vis.getAttribute("data-vis")] !== false;
+        vis.classList.toggle("is-on", on);
+        vis.classList.toggle("is-off", !on);
+      }
+    }
+  }
+
+  function applyPiece(id) {
+    const state = pageState(id);
+    for (const el of document.querySelectorAll("[data-player]")) {
+      applyPane(el, state[el.dataset.player] !== false);
+    }
+    paintIndexCards();
+  }
+
+  window.SwfCompare = {
+    startRuffle,
+    startAwayFl,
+    STORAGE_KEY,
+    pieceIdFromPath,
+    readStore,
+    pageState,
+    setPageVisible,
+    paintIndexCards,
+    applyPiece,
+  };
   installFlashBridge();
 
   async function runStarter(el) {
     const kind = el.dataset.player;
     const start = starters[kind];
-    if (!start) {
+    if (!start || !el.dataset.swf || started.has(el)) {
       return;
     }
+    started.add(el);
     try {
       await start(el);
     } catch (error) {
@@ -382,16 +476,64 @@
     }
   }
 
-  async function boot() {
+  function bindToggles(id) {
+    for (const btn of document.querySelectorAll(".vis-toggle[data-vis]")) {
+      if (btn.dataset.bound === "1") {
+        continue;
+      }
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", async (event) => {
+        event.preventDefault();
+        const player = btn.getAttribute("data-vis");
+        if (player !== "ruffle" && player !== "awayfl") {
+          return;
+        }
+        const next = pageState(id)[player] === false;
+        setPageVisible(id, player, next);
+        applyPiece(id);
+        if (next) {
+          const el = document.querySelector(`[data-player="${player}"]`);
+          if (el) {
+            await runStarter(el);
+          }
+        }
+      });
+    }
+  }
+
+  async function bootPiece(id) {
+    const state = pageState(id);
     const stages = [...document.querySelectorAll("[data-player]")];
     stages.forEach(applyStageBox);
+    applyPiece(id);
+    bindToggles(id);
     const ruffle = stages.filter((el) => el.dataset.player === "ruffle");
     const rest = stages.filter((el) => el.dataset.player !== "ruffle");
     for (const el of ruffle) {
-      await runStarter(el);
+      if (state.ruffle !== false) {
+        await runStarter(el);
+      }
     }
     for (const el of rest) {
-      await runStarter(el);
+      if (state[el.dataset.player] !== false) {
+        await runStarter(el);
+      }
+    }
+  }
+
+  function boot() {
+    const id = pieceIdFromPath(window.location.pathname);
+    paintIndexCards();
+    window.addEventListener("storage", (event) => {
+      if (event.key === STORAGE_KEY) {
+        if (id) {
+          applyPiece(id);
+        }
+        paintIndexCards();
+      }
+    });
+    if (id) {
+      bootPiece(id);
     }
   }
 

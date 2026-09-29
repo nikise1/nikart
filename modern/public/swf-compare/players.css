@@ -61,14 +61,51 @@ h1 {
   min-height: 280px;
 }
 
+.pane-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
 .pane h2 {
   margin: 0;
   padding: 0.45rem 0.7rem;
   font-size: 13px;
   font-weight: 600;
   color: #95cf89;
-  background: #1a1a1a;
-  border-bottom: 1px solid #333;
+  flex: 1;
+}
+
+.vis-toggle {
+  appearance: none;
+  margin: 0 0.45rem 0 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #555;
+  background: #222;
+  color: #eee;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.vis-toggle:hover {
+  border-color: #95cf89;
+  color: #95cf89;
+}
+
+.pane.is-off {
+  min-height: 0;
+}
+
+.pane.is-off .stage,
+.pane.is-off .status {
+  display: none;
+}
+
+.split:has(> .pane.is-off):has(> .pane:not(.is-off)) {
+  grid-template-columns: 1fr;
 }
 
 .stage {
@@ -126,6 +163,30 @@ h1 {
   margin-top: 0.35rem;
   color: #888;
   font-size: 12px;
+}
+
+.card-vis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.55rem;
+}
+
+.card-vis .vis {
+  font-size: 11px;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid #444;
+  color: #888;
+}
+
+.card-vis .vis.is-on {
+  border-color: #95cf89;
+  color: #95cf89;
+}
+
+.card-vis .vis.is-off {
+  color: #666;
+  text-decoration: line-through;
 }
 
 .group {
