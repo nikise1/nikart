@@ -24,6 +24,15 @@ interface AwayFlPlayerInstance {
 declare global {
   interface Window {
     awayflplayer?: AwayFlPlayerGlobal;
+    NikartAwayFlLoadVarsPatch?: {
+      install: () => boolean;
+      getState: () => {
+        installed: boolean;
+        canPutWrapped: boolean;
+        unlocked: boolean;
+        defaultWrapped: boolean;
+      };
+    };
   }
 }
 

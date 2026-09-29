@@ -76,6 +76,11 @@ describe("swf-compare", () => {
     expect(playersJs).toContain("redirects: awayFlRedirects(el)");
   });
 
+  it("loads the LoadVars onData host patch after the AwayFL UMD", () => {
+    expect(playersJs).toContain("/awayfl/loadvars-ondata-patch.js");
+    expect(playersJs).toContain("NikartAwayFlLoadVarsPatch?.install");
+  });
+
   it("maps movie paths onto the local /swf-compare/pieces/ copies", () => {
     expect(pieceMovieUrl("ciudad", "games/ciudad_helm/Main.swf")).toBe(
       "/swf-compare/pieces/ciudad/games/ciudad_helm/Main.swf",
