@@ -1,5 +1,5 @@
 /**
- * Host-side AwayFL LoadVars onData patch (does not edit awayfl-player.umd.js).
+ * Host-side AwayFL LoadVars onData patch (does not edit the AwayFL UMD).
  *
  * Flash Player lets a movie replace LoadVars.onData so it can parse a raw body
  * (the lizard site does that, then classes.JSON.parse). AwayFL’s
