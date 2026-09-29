@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	
+	<debug active="no"/>
+	
+	<errorNoDebugTxt><![CDATA[SORRY, THERE HAS BEEN A PROBLEM.<br />WE WILL BE ROCKING AGAIN SOON.]]></errorNoDebugTxt>
+	
+	<errorSessionTxt><![CDATA[SORRY, YOU CAN ONLY BE LOGGED IN ONCE.]]></errorSessionTxt>
+	
+	<!--<meter timeBetweenRequests="15" numWibbles="5" timeWibbleAnimation="3"/>-->
+	<meter timeBetweenRequests="120" numWibbles="40" timeWibbleAnimation="3"/>
+	
+</data>

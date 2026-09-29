@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<casos>
+	<puntaje errorPorcentaje1="50" errorPorcentaje2="10"/>
+	
+	<!-- reto_1 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Camilo.]]></titulo>
+    	<situacion><![CDATA[En la reunión de exalumnos del  colegio, te encuentras con tu gran amigo Camilo Bernal que es un Administrador de Empresas y trabaja en una empresa de telecomunicaciones de Bogotá.]]></situacion>
+    	<dialogo><![CDATA[Casi no puedo venir, hoy perdí toda la tarde haciendo diligencias en los bancos, pagando el préstamo y las tarjetas de crédito. Esto retrasa mi trabajo y debo estar libre para las vacaciones, porque me voy para el Caribe con mi familia.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué le preguntarías a Camilo para poder ofrecerle una solución?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Qué tasa de interés te ofrecen en tu banco?]]></texto>
+				<realimentacion><![CDATA[Los créditos y tarjetas no ofrecen intereses, así es que esta información no te servirá de mucho.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[ B. ¿Te gustaría unificar todos tus créditos en un solo lugar y además evitar gastos de manejo e intereses?]]></texto>
+				<realimentacion><![CDATA[¡Exacto! Con esta información, tú puedes pensar en una solución para que Camilo se anime a tramitar los productos de Helm. Veamos cómo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿A qué parte del Caribe quieres viajar?]]></texto>
+				<realimentacion><![CDATA[Esta información no te aporta para pensar en una solución.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto sería el mejor para ayudar a Camilo?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Yo te propongo que sigas con esas tarjetas de crédito y el préstamo, y tomes con nosotros un préstamo para viajes, con el que puedes contar con el efectivo suficiente para ir de compras en otro país. ]]></texto>
+				<realimentacion><![CDATA[Aunque Camilo quiere viajar con su familia al Caribe, lo más importante es que ya no pierda tiempo en diferentes entidades, realizando pagos. ]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Lo mejor para ti es un CrediCash; este es un crédito rotativo de libre inversión que se financia a 84 meses y te permite acumular puntos, pero lo más importante es que dispones de él, inmediatamente. ]]></texto>
+				<realimentacion><![CDATA[¡Perfecto! Recuerda que con un CrediCash, Camilo podrá unificar sus deudas en una sola utilización diferida a 84 meses y no tendrá que perder el tiempo en vueltas de bancos. ]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Yo te aconsejo, Camilo, que abras una cuenta de ahorros en Helm, donde mensualmente depositas el dinero para pagar las tarjetas y el préstamo y te hacen el descuento automático. ]]></texto>
+				<realimentacion><![CDATA[Nuestros clientes esperan la mejor asesoría y en este caso, una cuenta de ahorros no es la mejor opción. ]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Has hecho muy feliz a Camilo, ya que con el CrediCash, pudo ahorrar dinero y viajar al Caribe con su familia.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- reto_2 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Luis Carlos.]]></titulo>
+    	<situacion><![CDATA[María, funcionaria de Helm, se encuentra con su gran amigo Luis Carlos, luego del viaje que realizó al Eje Cafetero.]]></situacion>
+    	<dialogo><![CDATA[María: Hola, Luis Carlos, veo que sigues trabajando en esta cadena hotelera desde que estabas en la universidad.         
+		
+Luis Carlos: Si, ahora estoy como gerente con buen sueldo y bonificaciones. Que opinas: me voy a ir a vivir solo y necesito comprar las cosas para mi nueva casa, me preocupa que las cuotas queden muy altas, además con las bonificaciones puedo hacer abonos a la deuda, pero entiendo que me cobran sanciones por prepago.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas crees que debería hacerle María a Luis Carlos, para ofrecerle la solución adecuada?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. ¿Qué productos bancarios tienes actualmente?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Con esta información, María ya puede pensar en un producto que beneficie a Luis Carlos. ]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Estás seguro de irte a vivir solo?]]></texto>
+				<realimentacion><![CDATA[Esta pregunta no te aporta para lo que necesitas saber.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[D. ¿A dónde has pensado irte a vivir?]]></texto>
+				<realimentacion><![CDATA[El lugar donde viva Luis Carlos no es importante para ofrecerle una solución, ya que Helm tiene sucursales en diferentes lugares]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Cuál producto crees que María debe ofrecerle a su amigo Luis Carlos?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Leasing Hogar es lo que necesita Luis Carlos, para que no pague arriendo, sino que compre casa nueva.]]></texto>
+				<realimentacion><![CDATA[Recuerda que la necesidad de Luis Carlos no es adquirir vivienda. Lo que necesita es tener un flujo de caja que le permita tener efectivo para pagar sus gastos a tiempo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. María debería recomendarle que abra una cuenta de ahorro programado con la que tendrá una tasa preferencial durante la vigencia del ahorro.]]></texto>
+				<realimentacion><![CDATA[Esta cuenta de ahorro no le permite sacar dinero antes de tiempo. No soluciona la situación de Luis Carlos. ]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. La mejor opción para Luis Carlos es un CrediCash, porque podrá disponer inmediatamente de efectivo y diferir la utilización a 84 meses, lo que le permite tener cuotas mensuales bajas que no afectan su flujo de caja. Además, puede hacer abonos desde el primer mes, sin sanciones.]]></texto>
+				<realimentacion><![CDATA[¡Excelente! Con este crédito, Luis Carlos ya no tendrá el temor de no pagar sus obligaciones a tiempo.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones! Ahora Luis Carlos vive muy bien, en un lindo apartamento, porque tú le brindaste la asesoría adecuada.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- reto_3 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Carolina Giraldo]]></titulo>
+    	<situacion><![CDATA[En una reunión familiar, te encuentras con tu prima Carolina Giraldo, quien es profesora de un colegio en Cajicá y hace poco compró una casa en Chía para estar más cerca del trabajo.]]></situacion>
+    	<dialogo><![CDATA[Imagínate que la ola invernal afectó el conjunto residencial donde vivo y se inundaron las casas. Perdí todos los muebles y electrodomésticos que estaban en el primer piso y no sé que hacer para reponerlos.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué le preguntarías a Carolina para poder ofrecerle una solución?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. ¿A cuánto ascienden tus ingresos mensuales?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Ella gana $ 2.000.000 y con este dato tú podrás ayudarla a gestionar el producto que más le convenga en esta situación.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿El seguro no te responde?]]></texto>
+				<realimentacion><![CDATA[Carolina necesita una solución urgente y el seguro -si lo tiene- se demora más tiempo en resolver su situación.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¡Qué horror! ¿Y dónde estás viviendo ahora?]]></texto>
+				<realimentacion><![CDATA[Aunque es importante que te preocupes por tu prima, es más importante que la ayudes a tener una pronta solución a su situación de emergencia.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto se ajusta más a la situación de Carolina?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Mira Caro, yo te puedo ayudar a gestionar, con Helm, una tarjeta de crédito MasterCard, para que puedas comprar los muebles y los electrodomésticos que perdiste.]]></texto>
+				<realimentacion><![CDATA[Con la tarjeta de crédito MasterCard, Carolina podrá comprar los electrodomésticos, pero no soluciona los daños en la casa. Recuerda que en Helm tenemos una solución para este caso especial.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Lo mejor para ti es un crédito Autoflex, porque te financia la deuda hasta por 72 meses de plazo y así puedes comprar nuevamente tus muebles y electrodomésticos.]]></texto>
+				<realimentacion><![CDATA[Autoflex es un crédito diseñado para adquirir vehículo y no funciona para otros temas.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Te sugiero que tomes con nosotros un préstamo de remodelaciones, con el que tendrás siempre la misma cuota y además, el beneficio de tener una asistencia al hogar, que te presta servicios de plomería, cerrajería, desinundación de alfombras, entre otros.]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Con este crédito, Carolina cuenta con asistencia durante la vigencia del préstamo, por solo $ 3400 pesos al mes y financiación hasta por 60 meses.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Carolina está muy agradecida contigo porque la apoyaste en este momento de dificultad.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- reto_4 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Helena Becerra]]></titulo>
+    	<situacion><![CDATA[Helena Becerra es tu mejor amiga del colegio. Es publicista, próximamente cumplirá 30 años, para lo cual ha planeado viajar a Londres con sus amigas del trabajo.]]></situacion>
+    	<dialogo><![CDATA[Tengo el dinero para cubrir el viaje: tiquetes, hotel, alimentación; pero no me alcanza para irme de compras y traer regalos a mi familia. Sin embargo, no quiero sacar un préstamo porque eso implica llegar de vacaciones y tener la preocupación de pagar cuotas e intereses.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Helena para poderle brindar la solución correcta?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Con cuántas amigas vas a viajar?]]></texto>
+				<realimentacion><![CDATA[Con esta información no podrás saber lo que necesita realmente Helena.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Lo que tú no quieres es llegar de vacaciones y encontrarte con la presión que genera una deuda, ¿verdad?]]></texto>
+				<realimentacion><![CDATA[¡Excelente pregunta! Con la respuesta de Helena, ya sabrás qué ofrecerle.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[D. ¿Por qué mejor no compras carro?]]></texto>
+				<realimentacion><![CDATA[La ilusión de Helena en este momento es viajar a Londres, no comprar carro.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Con qué producto podría viajar Helena y quedar muy tranquila después de sus vacaciones?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Una buena opción para Helena sería que comenzara a hacer un ahorro programado de libre inversión y aplazara sus vacaciones hasta cuando tenga lo suficiente, de esta manera, se sentirá más tranquila y no tendrá que pensar en pagos ni cuotas.]]></texto>
+				<realimentacion><![CDATA[Lo que buscamos en Helm es solucionar situaciones de las personas. Helena no tiene que aplazar sus vacaciones hasta que tenga ahorrado el dinero necesario, pues en Helm contamos con mejores opciones para ayudarle.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Si Helena tramita un CrediCash con Helm, este crédito le daría solución a su problema sin aplazar sus vacaciones, pues le financia la deuda hasta por 84 meses y puede disponer de él en el momento que lo desee.]]></texto>
+				<realimentacion><![CDATA[El CrediCash no le da solución a su problema, este crédito es más funcional para alguien que necesita unificar deudas.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Helm le puede ayudar con un préstamo para viajes, que le permite mejorar el flujo de caja al llegar de vacaciones, porque durante los primeros dos meses solo abona a intereses, lo que hace que la cuota sea más baja.]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Con esta solución, Helena podrá viajar con sus amigas y regresar a casa sin la preocupación de comenzar a pagar deudas altas.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Qué bien se siente ayudar a nuestros amigos! Helena viajó a Londres con sus amigas y trajo muchos regalos.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- reto_5 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Catalina Escobar.]]></titulo>
+    	<situacion><![CDATA[En el centro comercial te encuentras con Catalina Escobar, tu cuñada, quien acaba de ingresar a trabajar en un laboratorio farmacéutico, como visitadora médica.]]></situacion>
+    	<dialogo><![CDATA[Estoy muy feliz, porque es el trabajo que estaba esperando desde hace tiempo, pero me preocupa mucho el cumplimiento de metas, ya que tendría que visitar muchas clínicas y hospitales en diferentes partes de la ciudad y no tengo vehículo para desplazarme.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Catalina?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Ahora que te veo, ¿tú me podrías recomendar algo para subir las defensas?]]></texto>
+				<realimentacion><![CDATA[Recuerda que en Helm también ayudamos a nuestros amigos y familiares. Con esta pregunta, no le puedes ayudar a tu cuñada.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Desde hace cuánto estás trabajando en el laboratorio?]]></texto>
+				<realimentacion><![CDATA[Aunque esta información es importante, no te ayuda mucho para proponer una solución.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Estás pensando en adquirir vehículo nuevo o usado?]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Con la respuesta de Catalina, ya sabrás cómo le puedes ayudar.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías para adquirir vehículo?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. La mejor solución para Catalina es tener un crédito Autoflex, el cual aplica para vehículos nuevos y usados, con planes de financiación que se ajustan a las cuotas que ella puede pagar mensualmente y plazo hasta de 72 meses.]]></texto>
+				<realimentacion><![CDATA[¡Exacto! El crédito Autoflex está diseñado para adquirir vehículo con amplia financiación. Catalina estará muy feliz de estrenar carro y lograr las metas propuestas en su empresa.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Si Catalina saca una cuenta corriente 7/0, podrá comprar su carro y pagarlo con cheques posfechados, que serán descontados de la cuenta.]]></texto>
+				<realimentacion><![CDATA[No es la solución más adecuada para adquirir vehículo, existen mejores opciones.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Con la tarjeta ISIC, Catalina podrá adquirir su vehículo en un concesionario y las cuotas le llegarán mensualmente.]]></texto>
+				<realimentacion><![CDATA[La tarjeta ISIC se utiliza exclusivamente para estudiantes, a nivel mundial.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Mira que bien se ve Catalina en su nuevo carro! Con tu asesoría, una persona más de Ciudad Helm ha logrado una meta.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- reto_6 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Felipe Forero.]]></titulo>
+    	<situacion><![CDATA[En el restaurante te encuentras con Felipe Forero, un amigo de la infancia que no veías hace muchos años. Te da mucha alegría y le preguntas qué está haciendo.]]></situacion>
+    	<dialogo><![CDATA[Estudié Diseño Industrial y he trabajado como freelance en varias agencias. Hace unos días me ofrecieron ser el director de arte de una revista y acepté. Ahora, mi propósito es comprar carro para facilitar mi desplazamiento.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué pregunta le harías a Felipe para ayudarlo a comprar su carro?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Qué marca de carro te gustaría comprar?]]></texto>
+				<realimentacion><![CDATA[La marca del carro no es importante para desembolsar un crédito.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. ¿Conoces líneas de financiación para vehículo?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Así vas a descubrir lo que más le conviene a Felipe.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿Por qué no habías comprado vehículo antes?]]></texto>
+				<realimentacion><![CDATA[Esta pregunta no aporta al objetivo final.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto crees que es el que más le conviene a Felipe?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Yo creo, Felipe, que tú deberías sacar un CDT, puesto que es una inversión a término fijo y con una tasa de remuneración interesante. Así, aseguras un dinero para invertir en seis meses en la compra de un vehículo.]]></texto>
+				<realimentacion><![CDATA[Felipe necesita el vehículo ahora mismo y con el CDT, tendría que esperar mucho tiempo.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Te voy a ayudar a gestionar en Helm un préstamo que se denomina Autoflex, con el cual tú puedes adquirir vehículo nuevo o usado. Solo necesito algunos documentos.]]></texto>
+				<realimentacion><![CDATA[¡Perfecto! Con Autoflex, Felipe podrá comprar su vehículo y tendrá un plan de financiación que se ajuste a sus ingresos.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Lo mejor para Felipe es un préstamo de libre inversión y podrá comprar el carro que más le convenga.]]></texto>
+				<realimentacion><![CDATA[Un préstamo de libre inversión no le daría el dinero suficiente para comprar vehículo nuevo. No es una buena opción.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¿Ves la felicidad reflejada en el rostro de Felipe? Es por la excelente asesoría que le has brindado. ¡Felicitaciones!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	<!-- reto_7 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Diana Vargas.]]></titulo>
+    	<situacion><![CDATA[Diana Vargas, la hermana de tu médico, está interesada en comprar casa y se comunica contigo para que la asesores.]]></situacion>
+    	<dialogo><![CDATA[Yo soy ingeniera industrial y tengo diez años de experiencia. Hace tres años me casé y estamos esperando nuestro primer hijo. Sueño con comprar un apartamento y decorar la habitación de mi bebé.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Diana?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Ya sabes qué nombre le vas a poner al bebé?]]></texto>
+				<realimentacion><![CDATA[La respuesta de Diana no te dará muchos datos para elegir un producto que le ayude a realizar su sueño.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿En qué sector te gustaría comprar?]]></texto>
+				<realimentacion><![CDATA[Es una buena pregunta para afianzar la relación, pero no para el propósito de asesorarla.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Cuánto suman tus ahorros y a cuánto ascienden tus ingresos en este momento?]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Estos datos te servirán para saber el producto que mejor se acomode a la situación de Diana.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías a Diana?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Ella debe cambiar sus ahorros a una cuenta AFC y así obtendrá beneficios tributarios.]]></texto>
+				<realimentacion><![CDATA[Recuerda que con esta cuenta no es posible retirar el dinero antes de cinco años y Diana ya tiene una gran cantidad ahorrada para comprar su apartamento ahora.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Leasing Hogar es la mejor opción para Diana, pues le permite adquirir vivienda nueva o usada, no incurre en costos de constitución de hipoteca y además, disminuye la base de retención en la fuente.]]></texto>
+				<realimentacion><![CDATA[¡Excelente! Con Leasing Hogar, Diana podrá tener un embarazo tranquilo y disfrutarlo en su apartamento nuevo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Es mejor que con ese dinero constituya un CDT, que le genera intereses y así completa el dinero para comprar el apartamento, sin tener que endeudarse y estar tranquila durante su embarazo.]]></texto>
+				<realimentacion><![CDATA[Un CDT no haría feliz a Diana, que tiene la ilusión de decorar la habitación de su bebé en su apartamento nuevo; esto solo retrasaría el proceso de adquirir vivienda.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Qué bonita le quedó la habitación a Diana! Nuevamente lograste hacer muy feliz a una persona de Ciudad Helm.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	<!-- reto_8 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Juan Manuel Romero.]]></titulo>
+    	<situacion><![CDATA[En el club te encuentras con Juan Manuel Romero, ese familiar lejano con el que casi nunca te ves y él te cuenta sus planes.]]></situacion>
+    	<dialogo><![CDATA[Estoy trabajando como director de producción en una empresa de empaques plásticos y estoy pensando en la posibilidad de irme a vivir solo, creo que ya es hora de hacerlo.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué pregunta le harías para colaborarle en su situación?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. ¿Piensas comprar apartamento o irte a vivir en arriendo?]]></texto>
+				<realimentacion><![CDATA[¡Perfecto! Si indagas sobre lo que él quiere, podrás ofrecerle una solución. Has averiguado que desea comprar vivienda.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Qué piensan tus papás sobre esto?]]></texto>
+				<realimentacion><![CDATA[Esta pregunta es muy personal y no te ayuda a conocer lo que le conviene a Juan Manuel.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C.¿Por qué no esperas un poco más para tomar la decisión?]]></texto>
+				<realimentacion><![CDATA[Lo importante es asesorar a Juan Manuel para que logre su objetivo.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto sería el más acertado para la situación de Juan Manuel?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Juan Manuel debería solicitar un préstamo de libre inversión y darlo como cuota inicial.]]></texto>
+				<realimentacion><![CDATA[Existen mejores opciones para él.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Si adquiere una tarjeta de crédito, podrá comprar los muebles de la casa.]]></texto>
+				<realimentacion><![CDATA[Recuerda que la situación de Juan Manuel es diferente a tener que comprar muebles.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Lo mejor para Juan Manuel es un Leasing Hogar.]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Con este leasing, Juan Manuel podrá comprar la vivienda que quiere (nueva o usada), realizando abonos extraordinarios sin ninguna sanción y con un plan de financiación que se adapta a su flujo de caja.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Ahora Juan Manuel te llama más seguido, está muy agradecido con el producto que le ayudaste a gestionar en Helm.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_9 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Juan Carlos.]]></titulo>
+    	<situacion><![CDATA[Vas de visita a donde tus padres y te encuentras con el tío Juan Carlos, abogado, de 59 años de edad y aprovechas la oportunidad para averiguar por los primos.]]></situacion>
+    	<dialogo><![CDATA[Te cuento que mi hijo Sebastián ya se graduó y pronto entrará a la universidad. Obtuvo uno de los mejores puntajes de la prueba Icfes y quiero premiarlo, le voy a regalar un carro, pero usado.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías al tío Juan Carlos para ayudarlo?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Qué carrera va a estudiar mi primo?]]></texto>
+				<realimentacion><![CDATA[No es importante para ofrecer los productos del banco.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. ¿En qué modelo de carro estás pensando?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Esta pregunta te ayuda a saber qué producto es el que le sirve al tío Juan Carlos, quien te responde que ya vio uno, modelo 98.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿En que universidad va a estudiar Sebastián?]]></texto>
+				<realimentacion><![CDATA[No es relevante para la asesoría que le puedes brindar a tu tío.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le aconsejarías a tu tío Juan Carlos?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Un crédito Autoflex es lo que ayudará al tío Juan Carlos para comprar el carro de su hijo Sebastián.]]></texto>
+				<realimentacion><![CDATA[Recuerda que este crédito es para adquirir vehículo nuevo o con menos de diez años de antigüedad.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Lo mejor para el tío Juan Carlos es sacar una tarjeta de crédito con un amplio cupo, que le permita pagar mensualmente.]]></texto>
+				<realimentacion><![CDATA[Una tarjeta de crédito no es la solución para comprar vehículo.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Un préstamo de libre inversión es la solución para que el tío pueda regalarle el carro a su hijo y así reconocer su esfuerzo en el colegio.]]></texto>
+				<realimentacion><![CDATA[¡Excelente! Este préstamo le permite comprar un vehículo económico, sin importar el modelo.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Hoy, el tío Juan Carlos y tu primo Sebastián pasarán a recogerte. Están muy felices con el carro que les ayudaste a conseguir.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_10 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Marcela Arias.]]></titulo>
+    	<situacion><![CDATA[Marcela Arias, tu madrina de matrimonio, te invita a la finca en Chinauta, que compró hace seis meses en compañía de su esposo.]]></situacion>
+    	<dialogo><![CDATA[Estamos muy felices con esta finca, venimos cada ocho días, pero aún le faltan muchos arreglos. Yo quisiera dotarla con todos los electrodomésticos y sembrar muchas plantas en el jardín.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué pregunta le harías a Marcela?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. ¿Ya has hecho cuentas de cuánto necesitas para los electrodomésticos y las plantas? Yo creería que serían cerca de $12.000.000.]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Si tienes claro cuánto necesita Marcela, podrás pensar en una solución para ofrecerle a tu madrina de matrimonio.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Cuánto te costó la finca, Marcela?]]></texto>
+				<realimentacion><![CDATA[Muy interesante saber el valor, pero no te sirve para pensar en una solución para Marcela.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿Qué plantas quieres sembrar?]]></texto>
+				<realimentacion><![CDATA[No es relevante para pensar en un producto que le sirva a Marcela.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto crees que le solucionaría la situación a Marcela?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Una cuenta de ahorro es lo mejor, porque no se endeuda más y poco a poco va adquiriendo lo que necesita.]]></texto>
+				<realimentacion><![CDATA[Marcela quedaría muy triste si no puede comprar los electrodomésticos y sembrar sus plantas ahora mismo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Lo mejor es una cuenta corriente con la que puede pagar todo con cheques posfechados.]]></texto>
+				<realimentacion><![CDATA[Los cheques no son la solución, pues no en todos los lugares los reciben y Marcela se quedaría nuevamente con las ganas de ver su finca bien arreglada.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Si Marcela toma un crédito de libre inversión, podría comprar todo de una sola vez y arreglar su finca en Chinauta.]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Además, recuerda que tiene plazo hasta de 60 meses y débito automático de la cuota mensual, de la cuenta corriente o de ahorros.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Marcela no se cansa de agradecerte, está muy feliz en su finca llena de árboles, plantas y dotada con todos los electrodomésticos. Tanta felicidad, te la debe a ti.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_11 -->
+    <reto maxPuntaje="30">
+    	<titulo><![CDATA[El caso de Diego Torres]]></titulo>
+    	<situacion><![CDATA[ Visitando la feria te encuentras a tu prima, que está acompañada de Diego Torres, un arquitecto muy reconocido que realiza conferencias de diseño; tú le cuentas que estás trabajando con Helm. Diego aprovecha para contarte su experiencia con su banco.]]></situacion>
+    	<dialogo><![CDATA[Estoy vinculado al banco ABC, con portafolio completo. Siempre tengo que ir hasta una de sus sucursales, a realizar filas que me quitan mucho tiempo que no tengo, por mis ocupaciones.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué pregunta le realizarías a Diego, para poderlo ayudar a solucionar su situación?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. ¿Esa cuenta de ahorros te permite programar pagos a través del portal de Internet?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Con este dato, tú ya sabrás que producto ofrecerle a Diego, pues su respuesta fue: «No sé, nunca me han ofrecido este servicio en el banco en el que estoy.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿A cuánto ascienden tus gastos mensuales?]]></texto>
+				<realimentacion><![CDATA[Este dato no es importante en este caso, ya que lo que necesita Diego es bajar las comisiones y no perder tiempo en bancos.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿Qué tal es el servicio en tu banco actual?]]></texto>
+				<realimentacion><![CDATA[Su respuesta no ayudará para decidir qué producto ofrecerle.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías a Diego?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Una cuenta corriente 7/0 será lo mejor para Diego, puesto que le permite obtener un cupo de crédito a corto plazo.]]></texto>
+				<realimentacion><![CDATA[Diego no necesita una cuenta corriente, ni créditos.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Yo le ofrecería a Diego un CrediCash, para que todo el tiempo tenga la tranquilidad de tener dinero a un interés muy bajo.]]></texto>
+				<realimentacion><![CDATA[El CrediCash no se ajusta a los intereses de Diego, pero en Helm tenemos otras soluciones.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. El producto que más beneficia a Diego, de acuerdo con su situación, es una cuenta de ahorros, con cobertura nacional, liquidación y capitalización diaria de intereses y con posibilidad de exoneración del gravamen del 4x1000.]]></texto>
+				<realimentacion><![CDATA[¡Excelente asesoría! Además él podrá disponer de los canales electrónicos las 24 horas del día, los siete días de la semana, a través de los cuales podrá programar pagos, transferencias, el pago automático de sus servicios públicos, para no hacer filas y despreocuparse de ir a la oficina del banco.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Ahora, Diego Torres es tu gran amigo y quiere asesorarte en el diseño de tu apartamento. Con tu ayuda, él viaja por el país dictando conferencias, con la tranquilidad y respaldo que le da Helm.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_12 -->
+    <reto maxPuntaje="30">
+    	<titulo><![CDATA[El caso de Héctor Pérez]]></titulo>
+    	<situacion><![CDATA[En el cumpleaños de tu amigo conoces a Héctor Pérez, corredor de bolsa, de 30 años de edad, quien trabaja en el sector financiero hace seis.]]></situacion>
+    	<dialogo><![CDATA[Hace poco compré un espectacular penthouse, al norte de la ciudad y estoy pagando las cuotas, pero no calculé bien mis gastos y no tuve en cuenta el crédito del carro. Al final del mes estoy completamente ilíquido y he tenido problemas con mis otros compromisos.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Cuál sería la pregunta para Héctor, que te ayudará a asesorarlo?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Con qué banco tienes el crédito del penthouse?]]></texto>
+				<realimentacion><![CDATA[Este dato no es importante para dar solución a la situación de Héctor.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Al momento de comprar, ¿no recibiste asesoría?]]></texto>
+				<realimentacion><![CDATA[Su respuesta no te ayuda a descubrir lo que necesita este corredor de bolsa.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Has pensado en una cuenta corriente?]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Con esta respuesta tendrás una guía para asesorar a Héctor.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías a Héctor Pérez?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Yo diría que con una tarjeta de crédito MasterCard, Héctor daría solución a su situación de iliquidez al final del mes.]]></texto>
+				<realimentacion><![CDATA[Con la tarjeta podrá pagar algunas cosas, pero no todas y seguiría en la misma situación.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Si Héctor gestiona una cuenta corriente con Helm, tendrá un cupo de sobregiro que le permite financiarse hasta 45 días y puede usarlo a través de chequera y/o tarjeta débito.]]></texto>
+				<realimentacion><![CDATA[¡Excelente respuesta! Además, esta cuenta corriente no tiene costo alguno por utilización, durante siete días continuos o discontinuos al mes.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Héctor debería tomar un crédito de libre inversión y guardar el dinero en una cuenta de ahorros para utilizarlo cada vez que lo necesite.]]></texto>
+				<realimentacion><![CDATA[Este producto no es el adecuado para la situación de Héctor.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Congratulaciones! Con tu aporte, Héctor ahora está muy tranquilo, disfrutando de su penthouse, sin la angustia de no poder cumplir con sus compromisos adquiridos.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_13 -->
+    <reto maxPuntaje="30">
+    	<titulo><![CDATA[El caso de Margarita de la Vega.]]></titulo>
+    	<situacion><![CDATA[Llegas a la finca de tus papás y te encuentras con la tía abuela, Margarita de la Vega, que tiene 78 años de edad y es viuda hace cinco.]]></situacion>
+    	<dialogo><![CDATA[Yo todavía estoy muy saludable, me reúno todos los martes con mis amigas en el club, para ir a jugar cartas. Tengo mis ahorros de toda la vida, guardados en una cuenta de ahorros porque me da la tranquilidad de tenerlo bien asegurado.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Margarita?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿No te gustaría invertir en finca raíz, tía?]]></texto>
+				<realimentacion><![CDATA[A Margarita le gusta tener una vida tranquila, invertir en finca raíz le quitaría esa tranquilidad.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Has pensado en tener una cuenta corriente para pagar tus gastos con cheques?]]></texto>
+				<realimentacion><![CDATA[Una cuenta corriente solo le complicaría la vida a Margarita de la Vega.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Estarías más tranquila si tienes tus ahorros en un lugar más seguro?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! En este caso lo importante es que Margarita pueda disfrutar de la vida, sin complicaciones de nada.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto es el mejor para Margarita de la Vega?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A.	Una cuenta de ahorros, con tarjeta débito que le permita hacer todos sus pagos, sin tener dinero en efectivo.]]></texto>
+				<realimentacion><![CDATA[Recuerda que Margarita ya tiene su dinero en una cuenta de ahorros.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Para la situación de Margarita, sería perfecto que tomara un CDT, donde no tiene que realizar mayores trámites y recibe asesoría personalizada por un gerente experto.]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Además de los anteriores beneficios, el CDT se puede tomar con plazo desde 90 días y con atractivas tasas de interés.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Margarita debería sacar una tarjeta de crédito para invitar a sus amigas al club y no tener que llevar efectivo.]]></texto>
+				<realimentacion><![CDATA[La vida social de Margarita ya está solucionada y no necesita una tarjeta de crédito; en Helm, tenemos mejores opciones para ella.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Muy bien! Margarita quedó muy contenta con tu asesoría y ahora está muy tranquila con el CDT que adquirió gracias a tu valiosa colaboración.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_14 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de María Fernanda Garcés.]]></titulo>
+    	<situacion><![CDATA[En una reunión del colegio de tu hijo, conoces a María Fernanda Garcés, quien trabaja como gerente de una importante agencia de publicidad.]]></situacion>
+    	<dialogo><![CDATA[Casi no vengo a estas reuniones, porque siempre estoy viajando, atendiendo clientes en diferentes países y asistiendo a capacitaciones. Me gustaría enviar a mi hijo a estudiar inglés a Canadá en las próximas vacaciones, pero me preocupa que se quede sin dinero mientras se realizan los trámites de los giros.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a María Fernada para ayudarle a solucionar su situación?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Ya has pensado en una universidad en el exterior para tu hijo?]]></texto>
+				<realimentacion><![CDATA[María Fernanda solo quiere enviarlo a estudiar inglés por el momento. La universidad, puede dar espera.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B.	¿Ya sabes cuántos son los costos del viaje y del curso de inglés para tu hijo?]]></texto>
+				<realimentacion><![CDATA[El saber este dato no es importante para el producto que le puedes ofrecer.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Qué tarjeta de crédito tienes?]]></texto>
+				<realimentacion><![CDATA[¡Exacto! Esta pregunta sí te dará una información importante para asesorar correctamente a María Fernanda.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Cuál sería el producto que le ayudaría a solucionar la situación a María Fernanda?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. A María Fernanda se le puede ofrecer una tarjeta de crédito MasterCard Black con una tarjeta de crédito amparada para su hijo, que tiene seguros y asistencia fuera del país.]]></texto>
+				<realimentacion><![CDATA[¡Excelente asesoría! Además, con esta tarjeta, María Fernanda podrá tener acceso a la tarjeta Priority Pass, para acceder a las salas de espera VIP de los aeropuertos del mundo y acumular puntos Helm para redimirlos por millas en Avianca.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Lo mejor para María Fernanda es tomar un crédito educativo y con él, pagar los estudios de su hijo en el exterior.]]></texto>
+				<realimentacion><![CDATA[María Fernanda no necesita un crédito, puesto que con sus ingresos puede pagar los estudios de su hijo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Yo le aconsejaría a María Fernanda que gestionara un Autoflex, para solucionar la situación de su hijo.]]></texto>
+				<realimentacion><![CDATA[Recuerda que este producto solo aplica para crédito de vehículo.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Felicitaciones! María Fernanda y su hijo quedaron muy felices con la asesoría que les brindaste. Ahora, María Fernanda está acumulando puntos y millas, recibiendo atención VIP y con la tranquilidad de que su hijo no tendrá problemas económicos mientras estudia en Canadá.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_15 -->
+    <reto maxPuntaje="30">
+    	<titulo><![CDATA[Juan Fernando Castro]]></titulo>
+    	<situacion><![CDATA[Tu hijo ha invitado a su mejor amigo, Juan Fernando Castro, a cenar en la casa; ellos son estudiantes de ingeniería de la Universidad de Los Andes y tienen 19 años.]]></situacion>
+    	<dialogo><![CDATA[El próximo semestre voy a aplazar mis estudios, porque viajo a Brasil a aprender portugués y a conocer los sitios turísticos. ¡Me encanta esa cultura!]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Juan Fernando para asesorarlo correctamente?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿En qué trabajan tus padres?]]></texto>
+				<realimentacion><![CDATA[No es importante para lo que necesitas saber.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. ¿Tus padres ya saben por qué medio te harán llegar el dinero de tus gastos?]]></texto>
+				<realimentacion><![CDATA[¡Perfecto! Con la respuesta, tú podrás tener claro cómo le puedes ayudar al amigo de tu hijo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿Qué piensas hacer con tus estudios?]]></texto>
+				<realimentacion><![CDATA[La respuesta a esta pregunta no te ayuda para pensar en el mejor producto para su situación.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le conviene más a Juan Fernando?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Un crédito educativo sería perfecto, pues le permite financiar hasta el 100 % de la matrícula.]]></texto>
+				<realimentacion><![CDATA[Juan Fernando tiene los recursos para estudiar, no necesita un crédito educativo.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. Yo le aconsejo una Tarjeta ISIC, pues le sirve para recibir todos los meses el dinero de sus padres y además le sirve para acreditarse como estudiante a nivel mundial, con acceso a descuentos y beneficios.]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Este es el producto que más se acomoda a la situación de Juan Fernando. Además, los beneficios también los tiene en Colombia, cuando regrese.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. Una cuenta corriente es lo mejor para Juan Fernando, pues con los cheques puede cancelar los tiquetes y el hotel desde aquí.]]></texto>
+				<realimentacion><![CDATA[No es la solución más acertada, recuerda que lo que necesita Juan Fernando es recibir el dinero que sus papás le girarán cada mes. ]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¿Has visto las fotos de Juan Fernando en Río de Janeiro? Está muy feliz y sus padres, tranquilos porque no tienen problemas con los giros cada mes. Otra vez, eres el protagonista de la felicidad de una familia.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_16 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Alfonso Oviedo.]]></titulo>
+    	<situacion><![CDATA[Tu vecino, Alfonso Oviedo, es contador y trabaja en una firma de construcción. Al salir de tu casa te lo encuentras y él aprovecha para solicitarte asesoría sobre una situación.]]></situacion>
+    	<dialogo><![CDATA[Mi hijo mayor acaba de cumplir 18 años y el próximo semestre entrará a la universidad a estudiar Medicina. He estado haciendo cuentas y aunque tengo algún dinero, no me alcanza para la matrícula. ¿Tú me puedes ayudar?]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Alonso, para poderlo asesorar?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Tienes cuenta de ahorros?]]></texto>
+				<realimentacion><![CDATA[Tener cuenta de ahorros no es importante para lo que Alfonso necesita solucionar.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. ¿Quisieras financiar la matrícula a largo o a corto plazo?]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Esta información te ayudará a decidirte por el producto que le conviene a Alfonso, quien te respondió que lo prefiere a corto plazo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿Has pensado en comprarle carro a tu hijo para que se desplace?]]></texto>
+				<realimentacion><![CDATA[Lo primero que debe solucionar Alfonso es el tema de la matrícula.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías a tu vecino?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Un crédito de libre inversión con el que podrá pagar la totalidad de la matrícula y se financia a largo plazo.]]></texto>
+				<realimentacion><![CDATA[Recuerda que Alfonso necesita un crédito, pero a corto plazo, porque está en capacidad de pagarlo.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Alfonso debería abrir una cuenta de ahorros, donde mensualmente ahorrará una suma para completar lo de la matrícula. ]]></texto>
+				<realimentacion><![CDATA[Esta no es la mejor solución, pues Alfonso necesita matricular a su hijo lo antes posible.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Un crédito educativo es perfecto para Alfonso, ya que financia hasta el 100 % de la matrícula, no requiere codeudor y los resultados del estudio son inmediatos. ]]></texto>
+				<realimentacion><![CDATA[¡Excelente! El crédito educativo es la mejor opción para Alfonso y además, puede hacerlo con cheques posfechados o pagaré avalado. ]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Un habitante más de Ciudad Helm está muy agradecido contigo por la solución que le brindaste.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_17 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Andrés Jaramillo.]]></titulo>
+    	<situacion><![CDATA[En la empresa 123 Ltda., donde siempre compras los repuestos del carro, el director de Recursos Humanos, Andrés Jaramillo, se entera de que tú trabajas en Helm y te expone la siguiente situación:]]></situacion>
+    	<dialogo><![CDATA[En nuestra empresa tenemos 100 funcionarios vinculados y 130 temporales. Tenemos un fondo de empleados, pero para solicitar un préstamo exigen un codeudor y eso hace que los empleados no se animen. Me gustaría mirar otras opciones para colaborarle a los funcionarios.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué pregunta le harías a Andrés Jaramillo?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Cuáles son las utilidades del fondo de empleados?]]></texto>
+				<realimentacion><![CDATA[Esta información no es importante para lo que busca el director de recursos humanos.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Cuáles serían los montos de los préstamos de los funcionarios?]]></texto>
+				<realimentacion><![CDATA[Este es un dato muy difícil de obtener y además no es importante para este caso.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Cuáles son los requisitos que tienen actualmente para solicitar un crédito en el fondo de empleados?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Averiguando esto, tú podrás mostrar los beneficios que ofrece Helm, en este tema. Te diste cuenta de que necesitan estar afiliados mínimo hace tres años, tener un codeudor y que presta hasta cinco veces el salario.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le aconsejarías a Andrés?]]></texto>
+			<respuesta correcta="si">
+				<texto><![CDATA[A. Yo creo que un convenio de libranzas es lo mejor, pues no requiere codeudor, se financia hasta por 72 meses y maneja una cuota fija mensual, descontable por nómina.]]></texto>
+				<realimentacion><![CDATA[¡Excelente! Esta es la mejor opción para todos los empleados de la empresa 123. Además, les prestan hasta 12 veces el salario.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Una buena opción es ofrecer crédito para vivienda a todos los empleados.]]></texto>
+				<realimentacion><![CDATA[Esto no solucionaría el tema de la facilidad en los créditos para los empleados de la empresa 123.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[c.	Una cuenta corriente para todos los que se afilien al fondo.]]></texto>
+				<realimentacion><![CDATA[No es una buena opción, pues lo que se debe solucionar es el tema del fondo de empleados y no la situación de las personas en particular.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Congratulaciones! Con tu asesoría, muchas personas están felices solicitando créditos y Andrés Jaramillo está muy agradecido por la labor que hiciste para lograrlo.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_18 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[Juan Pablo Urrea.]]></titulo>
+    	<situacion><![CDATA[En un almuerzo familiar, te encuentras con Juan Pablo Urrea, esposo de tu prima, cardiólogo de 49 años.]]></situacion>
+    	<dialogo><![CDATA[Estoy trabajando en varias clínicas de Bogotá y estoy viajando constantemente por muchos países, dictando charlas y conferencias. Vivo en los aeropuertos, realmente creo que estoy más en esos lugares, que en mi propia casa.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué preguntas le harías a Juan Pablo?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Qué países del mundo conoces?]]></texto>
+				<realimentacion><![CDATA[Juan Pablo prefiere que tú lo asesores con el tema del dinero y después sí contarte las historias de los países que ha visitado.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Quieres saber en qué países del mundo está Helm?]]></texto>
+				<realimentacion><![CDATA[Esta información no es importante para este caso.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Qué beneficios tienes con tu tarjeta de crédito actual?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Así podrás saber de qué forma lo ayudas.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías a Juan Pablo?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Con una tarjeta Visa Clásica, él podrá hacer compras en muchas partes del mundo y tiene un cupo hasta de $ 1.999.999.]]></texto>
+				<realimentacion><![CDATA[Los gastos de este cardiólogo pueden ser mayores a $2.000.000; esta tarjeta no sería una buena opción.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B.	Yo le aconsejaría que tomara con nosotros un préstamo para viajes, lo cual le ayudaría a tener unas cuotas más bajas, después de los dos meses de haber llegado del viaje.]]></texto>
+				<realimentacion><![CDATA[Aunque Juan Pablo viaja constantemente, no necesita un préstamo para viajes.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Con una tarjeta de crédito MasterCard Black, Juan Pablo tendría además la tarjeta Priority Pass, que le abre las puertas a más de 500 salas VIP de los aeropuertos del mundo. Pero además, podría pagar sus gastos en diferentes lugares, sin necesidad de tener efectivo.]]></texto>
+				<realimentacion><![CDATA[¡Correcto! Ahora, cuando Juan Pablo viaje, tendrá atención preferencial en las salas VIP de los aeropuertos y su estadía allí será más placentera.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¡Qué alegre está Juan Pablo! Ahora disfruta más de sus viajes, porque tiene la atención preferencial que le brinda su tarjeta MasterCard Black, producto que tú le aconsejaste.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_19 -->
+    <reto maxPuntaje="50">
+    	<titulo><![CDATA[El caso de Santiago.]]></titulo>
+    	<situacion><![CDATA[En el club, te encuentras con tu tío Santiago, prestigioso abogado de una firma y aficionado al golf.]]></situacion>
+    	<dialogo><![CDATA[Me encanta el golf, estoy jugando mucho más seguido y me quiero comprar todo el equipo nuevo que salió al mercado y que vi por Internet.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué le preguntarías a tu tío Santiago?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿Por qué no viajas a Estados Unidos a comprar el equipo y de una vez paseas?]]></texto>
+				<realimentacion><![CDATA[Santiago está apasionado con el golf y quiere tener todos los implementos de forma rápida y fácil.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[B. ¿Has pensado en la seguridad del transporte hacia Colombia, de los artículos de golf?]]></texto>
+				<realimentacion><![CDATA[¡Perfecto! De esta forma podrás saber cuál es el producto que más le conviene a tu tío.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[C. ¿Por qué no aprovechas y le dices a algún familiar que viva allá, que te haga la compra y te lo envíe a Colombia?]]></texto>
+				<realimentacion><![CDATA[Esta no es la solución adecuada.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Cuál es el producto que más le conviene a Santiago?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Santiago debería abrir una cuenta corriente, con la que pueda hacer pagos en línea y así comprar los artículos de golf.]]></texto>
+				<realimentacion><![CDATA[De esta forma Santiago podría pagar los artículos, pero no tendría solucionado el transporte hacia Colombia.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Lo mejor para Santiago es una tarjeta ISIC, con la que puede comprar en diferentes establecimientos en el mundo.]]></texto>
+				<realimentacion><![CDATA[Recuerda que la tarjeta ISIC es para estudiantes.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Yo le propongo a Santiago que saque una tarjeta de crédito Visa Gold o MasterCard Gold, con cupo desde $2.000.000 y acceso al casillero internacional.]]></texto>
+				<realimentacion><![CDATA[¡Excelente! Así, Santiago podrá comprar por Internet y aprovechar el casillero internacional Helm Box en Madrid y Miami y recibir las compras en la dirección de su residencia.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[¿Ves cómo has aportado a la felicidad del tío Santiago? ¡Ya estás invitado al campeonato!]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+	
+	
+	<!-- reto_20 -->
+    <reto maxPuntaje="30">
+    	<titulo><![CDATA[El caso de Patricia.]]></titulo>
+    	<situacion><![CDATA[Te encuentras en el centro comercial con tu amiga Patricia, de la universidad, quien te habla del negocio alterno que tiene ahora.]]></situacion>
+    	<dialogo><![CDATA[Compré una finca en Villavicencio y la estoy arrendando para vacaciones, entonces, las personas desde allá me hacen una consignación para pagar el arriendo y yo debo enviar dinero para pagar la administración y los servicios, pero cuando no la arriendo, me quedo atrasada en la cuota.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué pregunta le harías a Patricia?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. ¿La finca tiene todos los servicios?]]></texto>
+				<realimentacion><![CDATA[No es importante saber esto]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. ¿Ya tienes cuenta de ahorros?]]></texto>
+				<realimentacion><![CDATA[Esta pregunta no te informa mucho sobre lo que ella necesita en Villavicencio.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. ¿Cómo haces para recaudar el dinero y enviar el que necesitan allá?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Esta respuesta te dará un dato interesante para saber lo que debes ofrecerle a Patricia.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[¿Qué producto le ofrecerías a Patricia?]]></texto>
+			<respuesta>
+				<texto><![CDATA[A. Una cuenta de ahorros para que le consignen allí el dinero.]]></texto>
+				<realimentacion><![CDATA[Con una cuenta de ahorros le podrían consignar, pero, ¿cómo soluciona el pago de la administración cuando no tiene los fondos suficientes?]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[B. Una tarjeta de crédito sería ideal para Patricia, pues cuando no tenga el dinero para pagar la administración, podrá hacer un avance y pagarlo.]]></texto>
+				<realimentacion><![CDATA[Helm tiene mejores opciones para la situación de Patricia, no olvides que una tarjeta de crédito genera intereses.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[C. Una cuenta corriente 7/0 es lo mejor para Patricia, pues le permite realizar pagos y recaudos, recibir cheques y efectivo, así como obtener cupo de sobregiro a corto plazo.]]></texto>
+				<realimentacion><![CDATA[¡Perfecto! Esta es la solución para Patricia, pues además de los anteriores beneficios, esta cuenta tiene cobertura nacional y no tiene costo por utilización durante siete días continuos o discontinuos al mes.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Patricia te quiere invitar un fin de semana, gratis, a la finca de Villavicencio, porque gracias a ti, ahora tiene su finca al día en pagos.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+    
+	<!-- reto_21 -->
+    <reto maxPuntaje="30">
+    	<titulo><![CDATA[El caso de Natalia.]]></titulo>
+    	<situacion><![CDATA[Es la fiesta de aniversario de tus padres y en la reunión te encuentras con Natalia Martín, tu amiga de la infancia y quien tiene un almacén de ropa importada.]]></situacion>
+    	<dialogo><![CDATA[Invertí todos mis ahorros en el almacén porque sé que es un buen negocio. Ahora quiero volver a comenzar a ahorrar, pero las cuentas de ahorro no ofrecen una gran rentabilidad y además me cobran cuota de manejo.]]></dialogo>
+		<pregunta>
+			<texto><![CDATA[¿Qué le preguntarías a Natalia para poderle ofrecer una solución?]]></texto>
+			<respuesta>
+				<texto><![CDATA[¿Cuánto vendes mensualmente en el almacén?]]></texto>
+				<realimentacion><![CDATA[Esta información no es importante si lo que quieres es asesorarla.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[¿Te gustaría tener con Helm un Credicash?]]></texto>
+				<realimentacion><![CDATA[Ya es claro que lo que necesita Natalia es una cuenta de ahorros.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[¿Ya tienes alguna cuenta de ahorros?]]></texto>
+				<realimentacion><![CDATA[¡Muy bien! Con esta información tu podrás ofrecerle un producto que sea útil para ella.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<pregunta>
+			<texto><![CDATA[De los productos que ofrece Helm, ¿cuál crees tú que sea el apropiado para Natalia?]]></texto>
+			<respuesta>
+				<texto><![CDATA[Yo creo que lo mejor para ti, Natalia, es que tengas una cuenta corriente y así tener la opción de pagar a tus proveedores con cheque.]]></texto>
+				<realimentacion><![CDATA[Hum, recuerda que Natalia expresó que necesita comenzar a ahorrar y no tener una forma fácil de pagar a sus proveedores.]]></realimentacion>
+			</respuesta>
+			<respuesta>
+				<texto><![CDATA[Lo mejor es que abras una cuenta de ahorros tradicional y comiences a ahorrar; por la cuota de manejo no te preocupes porque es pequeña.]]></texto>
+				<realimentacion><![CDATA[Una cuenta de ahorros tradicional siempre le va a cobrar cuota de manejo, existe una mejor opción.]]></realimentacion>
+			</respuesta>
+			<respuesta correcta="si">
+				<texto><![CDATA[Si lo que quieres es ahorrar y ver crecer tu dinero, la mejor opción es abrir una cuenta Renta Helm Virtual, con la que podrás ver crecer tus ahorros sin que asumas una cuota de manejo, con una rentabilidad asegurada que no varía durante la vigencia de tu ahorro.]]></texto>
+				<realimentacion><![CDATA[¡Excelente! La cuenta Renta Helm Virtual no le cobrará a Natalia cuota de manejo, le dará una excelente rentabilidad y le garantizará la tasa convenida a pesar de las fluctuaciones del mercado.]]></realimentacion>
+			</respuesta>
+		</pregunta>
+		<ganado><![CDATA[Natalia abrió su cuenta Renta Helm Virtual y está muy feliz. Con tu ayuda ella podrá ahorrar nuevamente, con una rentabilidad cierta y sin riesgo.]]></ganado>
+		<ganadoPuntos><![CDATA[Has ganado {puntos} puntos]]></ganadoPuntos>
+    </reto>
+</casos>

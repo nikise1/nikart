@@ -1,0 +1,1065 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preguntas.xsd">
+  <!-- pregunta_1 -->
+  <pregunta>
+    <texto><![CDATA[¿La información de una empresa es considerada uno de los activos más valiosos?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Verdadero.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Falso.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[A veces]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Casi siempre]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_2 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son los 3 pilares de seguridad de información?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Confiabilidad, integración y disponibilidad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Confidencialidad, integridad y disponibilidad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Seguridad, auditoría y disponibilidad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_3 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo puede ser clasificada la información?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Pública, de uso interno y confidencial o restringido]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Pública, general y de uso interno]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Pública, legal y confidencial o restringida]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_4 -->
+  <pregunta>
+    <texto><![CDATA[Completa la siguiente oración: 
+	Activar el bloqueo de tu PC cuando no la estás utilizando ayuda a mantener la ____________ de la información de la compañía]]></texto>
+    <respuesta>
+      <texto><![CDATA[Disponibilidad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Integridad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Confidencialidad]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_5 -->
+  <pregunta>
+    <texto><![CDATA[Si contamos con una laptop, ¿qué consideraciones básicas debemos de tener en cuanto a seguridad de información con el equipo? (Las más importantes)]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[No dejar desatendido el equipo; utilizar un candado de seguridad o guardarlo bajo llave; no exponer las credenciales físicamente en el equipo o cerca de él (Post-It).]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Evitar que el equipo sufra golpes; utilizar una mochila o maleta especial; ingerir alimentos o beber líquidos sobre el equipo.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[No navegar por páginas de dudosa reputación.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_6 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es el procedimiento adecuado cuando un usuario sale de vacaciones, descanso médico o prepost y sus obligaciones se deben seguir ejecutando?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Brindar las credenciales de acceso a otra persona.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Solicitar la conformidad al gerente del área implicada para que otra persona use las credenciales.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Generar las solicitudes respectivas, con la debida anticipación, para brindarle los accesos a un usuario backup.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_7 -->
+  <pregunta>
+    <texto><![CDATA[¿En cuál de los siguientes escenarios no se ha implementado una adecuada segregación de funciones?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Cuando un usuario, que posee mucha carga laboral, le designó algunas funciones a otra persona.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cuando un usuario posee todos los accesos y privilegios para poder realizar transacciones enteras (aprobación, autorización, ejecución y registro).]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cuando dos o más usuarios confabulados (con distintos privilegios) se ponen de acuerdo para poder realizar una acción fraudulenta.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_8 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué información es considerada sensible?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Datos personales, datos bancarios (tarjetas de crédito), contraseñas, domicilio y teléfonos de contacto]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cuenta de red, nombres completos y DNI]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_9 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál de los siguientes enunciados es el correcto?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Los escritorios son espacios personales los cuales pueden mantenerse como el usuario lo desee.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Los documentos impresos de los usuarios deben encontrarse bajo llave; no dejar información sensible expuesta; bloquear el equipo y retirar todo dispositivo de almacenamiento externo de ser necesario.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El estado de los escritorios no influyen sobre las políticas de la compañía.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_10 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál de los siguientes casos es considerado un incidente de seguridad de la información y debe ser reportado?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Si recibes correos con archivos ppt adjuntos de gran tamaño.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Si te percatas de personal extraño merodeando en la oficina.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Si bloqueaste tu cuenta porque excediste el máximo de intentos fallidos de logueo.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_12 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la visión del Área Legal?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Ser la mejor División Legal de todas las compañías aseguradoras en Latinoamérica, con personal altamente competente y motivado, logrando la satisfacción del cliente interno y externo y contribuyendo a mejorar la rentabilidad de la empresa.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Atender el mayor número posible de consultas y casos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Responder la mayor cantidad de correos electrónicos al día.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_13 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál es la función del Área Legal?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Asesorar a terceros en los asuntos legales que pudieran tener.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Atender todos los aspectos legales de la Empresa, buscando prevenir contingencias legales y solucionando los problemas ya generados, en todos los ámbitos del derecho.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Encargarse de revisar y atender los sineistros de la Empresa.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_14 -->
+  <pregunta>
+    <texto><![CDATA[¿A quién le reporta el Área Legal?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[A la Gerencia General de la Empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Al Ministerio de Justicia]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Al Directorio de la Empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_15 -->
+  <pregunta>
+    <texto><![CDATA[El Área Legal es un área de:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Gestión]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Soporte]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Auditoría]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_16 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuál de los siguientes enunciados corresponde a la definición del “Fraude a los seguros”?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cualquier engaño deliberado cometido contra una aseguradora o un productor de seguros con el fin de obtener un beneficio ilícito.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Toda acción dolosa que busque el resarcimiento económico por un acontecimiento no contemplado en el contrato del seguro.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Situación en la cual un asegurado simula un siniestro con la finalidad de obtener una indemnización indebida por parte de la compañía aseguradora.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_17 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son los cuatro componentes del fraude?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Colaboración, delincuencia, mala fe, robo.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Premeditación, mentira, perjuicio y beneficio ilícito]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Corrupción, mentira, indiferencia y dolo.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_18 -->
+  <pregunta>
+    <texto><![CDATA[Para minimizar las acciones de fraude se debe:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Revisar la hoja de vida de nuestros clientes y proveedores.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Realizar auditorías constantes.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Revisar nuestros procesos internos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_19 -->
+  <pregunta>
+    <texto><![CDATA[En Pacífico, la prevención del fraude es una tarea de:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[De todos los colaboradores de la empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Del Oficial de Cumplimiento]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[De la División de Prevención de Fraudes]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_20 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué tipos de beneficios genera a Pacífico la lucha contra el fraude?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Beneficios directos y medibles (Fraudes probados y rechazados)]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Beneficios indirectos (Dados por el efecto disuasivo y de difícil medición)]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Beneficios directos e indirectos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_21 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo afecta el fraude a Pacífico?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Por incremento de siniestros]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Por indemnizaciones indebidas]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Por pérdida de clientes]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_22 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo afecta el fraude a los clientes de Pacífico?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Por aumento de siniestralidad y restricción de coberturas de ciertos riesgos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Por aumento de primas e indemnizaciones indebidas.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Por aumento de primas y restricción de coberturas de ciertos riesgos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_23 -->
+  <pregunta>
+    <texto><![CDATA[Una de las medidas para prevenir el fraude es:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Interacción dinámica entre todas las áreas de Pacífico]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Interacción dinámica entre Auditoría y Prevención de Fraudes]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Interacción dinámica entre los gerentes de Pacífico.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_24 -->
+  <pregunta>
+    <texto><![CDATA[¿Con qué documento se sustenta un fraude válidamente?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Solo con el reporte del Asesor en Accidentes de Tránsito]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Con el Informe de la División de Prevención de Fraudes]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Con los documentos oficiales de las autoridades policiales o judiciales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_25 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué unidad de Pacífico tiene como función la prevención del fraude externo?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Auditoría Externa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[División de Prevención de Fraudes]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Prevención de Lavado de Activos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_26 -->
+  <pregunta>
+    <texto><![CDATA[De acuerdo al Código de Ética de Credicorp, la lucha contra el fraude es compromiso de:]]></texto>
+    <respuesta>
+      <texto><![CDATA[BCP y Pacífico]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[BCP, Pacífico y Prima AFP]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Colaboradores de Credicorp y sus subsidiarias]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_27 -->
+  <pregunta>
+    <texto><![CDATA[Manejar en estado de ebriedad es considerado como:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Fraude]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Delito]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Las dos anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_30 -->
+  <pregunta>
+    <texto><![CDATA[Ocultar preexistencias en la oportunidad de la contratación de un seguro de salud se considera como:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Fraude]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Declaración engañosa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ocultamiento de información]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_31 -->
+  <pregunta>
+    <texto><![CDATA[¿Para quiénes rige el Código de Ética de Credicorp?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Para los funcionarios y colaboradores de Credicorp]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Para los directores, funcionarios y colaboradores de Credicorp y sus subsidiarias]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Para los directores, funcionarios y colaboradores de Pacifico]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_32 -->
+  <pregunta>
+    <texto><![CDATA[La conducta ética que promueve nuestra organización está basada en:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Integridad, respeto y transparencia]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Integridad, trato justo y saludable]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Respeto, transparencia y no discriminacion.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_33 -->
+  <pregunta>
+    <texto><![CDATA[¿Quiénes son representantes de nuestra organización?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Todos los colaboradores y los funcionarios]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Todo colaborador y miembro del Directorio]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Los miembros del directorio y los funcionarios.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_34 -->
+  <pregunta>
+    <texto><![CDATA[El compromiso de conducirse dentro de los límites establecidos por las leyes, regulaciones, estatutos, códigos, políticas y procedimientos pertinentes de nuestra corporación aplica:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Dentro de la empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Dentro y fuera de la empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Solo en el horario laboral, sea dentro o fuera de la empresa]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_35 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué son los lineamientos de conducta?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Son las normas de conducta e integridad profesional.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Son leyes que rigen nuestro comportamiento.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Son reglas establecidas para el desarrollo de nuestras actividades.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_36 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son los 3 grupos en que se dividen los lineamientos de conducta?]]></texto>
+    <respuesta>
+      <texto><![CDATA[- Normas y conductas legales
+- Conflictos de interés en las operaciones comerciales
+- Normas relacionadas con la conducta personal]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[- Normas y conductas en las operaciones comerciales
+- Conflictos de interés
+- Normas relacionadas con la conducta personal]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[- Normas y conductas en las operaciones de crédito
+- Conflictos de interés
+- Normas relacionadas con las operaciones comerciales]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_37 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son los puntos a tratar en las normas relacionadas con la conducta personal?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Alcohol, drogas ilícitas, prácticas laborales y conducta en el centro de trabajo, acoso e intimidación y  conducta en la vida privada.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Discriminacion racial, drogas ilícitas, prácticas laborales y conducta en el centro de trabajo, acoso e intimidación y conducta en la vida privada.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Alcohol, drogas lícitas, prácticas laborales y conducta en el centro de trabajo, acoso sexual y  conducta en la vida privada.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_38 -->
+  <pregunta>
+    <texto><![CDATA[¿A qué se refieren los lineamientos en los puntos de alcohol y drogas ilícitas?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Que está prohibido su consumo en exceso dentro y fuera del trabajo.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Ningún empleado podrá presentarse al trabajo encontrándose bajo la influencia del alcohol o de drogas ilícitas.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[La Empresa no prohibe la posesión, distribución, venta y consumo de alcohol y drogas fuera del centro de trabajo.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_39 -->
+  <pregunta>
+    <texto><![CDATA[¿A que se refiere la norma con "una conducta de acoso"?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Cualquier conducta física o verbal reiterada de naturaleza sexual realizada por personal que se aprovecha de una situación ventajosa.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cualquier conducta física o verbal reiterada de naturaleza sexual o de cualquier otro tipo realizada por personal que se aprovecha de una posición de autoridad.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cualquier conducta física o verbal reiterada de naturaleza sexual o de cualquier otro tipo, realizada solamente por un superior en jerarquía.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_40 -->
+  <pregunta>
+    <texto><![CDATA[¿A qué se refiere la norma de conducta en la vida privada?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Cada empleado debe estar consciente que su condición de tal no se interrumpe al concluir su jornada de trabajo; sino que se proyecta y extiende hacia su vida social.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cada empleado debe estar consciente que su condición de tal se interrumpe al concluir su jornada laboral.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Cada empleado debe estar consciente que su condición de tal se extiende cuando representa a la organización en eventos sociales internos o externos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_45 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué tipo de servicio provee la división de Auditoría Interna?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Servicios de evaluación de riesgos y control interno]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Servicios de consultoría en procesos]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Servicio de aseguramiento y consulta]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_46 -->
+  <pregunta>
+    <texto><![CDATA[¿La actividad de auditoría interna ayuda a la organización a cumplir sus objetivos aportando un enfoque sistemático y disciplinado para:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Lograr que el Gerente General llegue a sus metas.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Evaluar y mejorar la eficacia de los procesos de gestión de riesgo, control y gobierno.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Conseguir mejores utilidades en El Pacífico Seguros]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_47 -->
+  <pregunta>
+    <texto><![CDATA[La División de Auditoría Interna se adhiere al Marco Internacional para la Práctica Profesional de Auditoría Interna (MIPP), los siguientes documentos forman parte del MIPP:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Código de Ética y Normas sobre atributos, desempeño e implementación]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El Código de Ética de Credicorp y el Reglamento de Trabajo]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Declaración de principios del Auditor y el Código de Ética de Credicorp]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_48 -->
+  <pregunta>
+    <texto><![CDATA[No es una responsabilidad de auditoría interna:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Que los riesgos se identifiquen y gestionen adecuadamente.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Ejecutar tareas operativas dentro de un proceso determinado]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Fomentar la calidad y la mejora continua en los procesos de control]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Todas las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_49 -->
+  <pregunta>
+    <texto><![CDATA[La división de Auditoría Interna tiene autorización para:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Comprar y vender acciones de Credicorp]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Tener acceso sin restricciones al Comité de Auditoría y directorio; acceso irrestricto a todas las funciones y procesos; obtener el apoyo necesario del personal auditado.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Sancionar a los colaboradores que incumplan el Reglamento Interno de Trabajo]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_50 -->
+  <pregunta>
+    <texto><![CDATA[¿A quién reporta la División de Auditoría Interna?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Al Directorio]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[A la Gerencia General]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Al Comité de Auditoría]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_51 -->
+  <pregunta>
+    <texto><![CDATA[El resultado de las auditorías practicadas se muestra en un documento denominado:]]></texto>
+    <respuesta>
+      <texto><![CDATA[Proyecto de Auditoría]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Informe de auditoría]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Reporte de auditoría]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_52 -->
+  <pregunta>
+    <texto><![CDATA[El informe de auditoría será entregado a las gerencias y unidades que tengan interés directo en el trabajo realizado; los siguientes son los destinatarios:
+]]></texto>
+    <respuesta>
+      <texto><![CDATA[El Gerente General Adjunto, El Auditor Corporativo y la Superintendencia de Banca, Seguros y AFPs.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[El Directorio, el Comité de Auditoría Corporativo, el Gerente General.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[El Gerente General, El Auditor Interno y el Gerente Central de Finanzas.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_53 -->
+  <pregunta>
+    <texto><![CDATA[El seguimiento de observaciones es un proceso por el cual:]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[Los auditores internos determinan la implementación, eficacia y oportunidad de las medidas tomadas por la Gerencia con relación a las observaciones del informe de Auditoría Interna, incluso aquellas efectuadas por los auditores externos, Superintendencia de Banca, Seguros y AFPs y Superintendencia Nacional de Aseguramiento en Salud.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Los auditores internos determinan la implementación, eficacia y oportunidad de las medidas tomadas por la Gerencia con relación a las observaciones del informe de auditoría interna.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Los auditores evalúan a las gerencias de la compañía para determinar si cumplen o no cumplen.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_54 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué es Seguridad y Salud en el Trabajo?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Es una estrategia para promover la salud de los colaboradores dentro de la organización.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es una estrategia para promover la seguridad de los colaboradores dentro de la organización.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Es una estrategia para promover el bienestar de los colaboradores dentro de la organización.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_55 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son los órganos representativos de la Seguridad y Salud en el Trabajo?]]></texto>
+    <respuesta>
+      <texto><![CDATA[• Brigada de Seguridad y Salud en el Trabajo
+• Comité de Emergencia.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[• Comité de Seguridad y Salud en el Trabajo
+• Brigada de Emergencia.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[• Comité de Primeros Auxilios
+• Brigada de Emergencia.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_56 -->
+  <pregunta>
+    <texto><![CDATA[¿Que es un  Comité de Seguridad y Salud en el Trabajo y quienes lo conforman?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Es un órgano representativo de los trabajadores de la empresa para tratar intereses comunes. Esta conformado por un numero mayor de representantes de los empreados y un porcentaje menor de representates del empleador.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es un órgano representativo de los trabajadores de la empresa para tratar sus intereses. Esta conformado unicamente por trabajadores representantes de los colaboradores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Es un órgano representativo de los trabajadores de la empresa para tratar intereses comunes. Esta conformado de forma paritaria (igual número de representantes) del Empleador y del Trabajador.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_57 -->
+  <pregunta>
+    <texto><![CDATA[¿Cuáles son las funciones del Comité de Seguridad y Salud en el Trabajo?]]></texto>
+    <respuesta correcta="si">
+      <texto><![CDATA[• Promover la salud y seguridad en el trabajo.
+• Asesorar y vigilar el cumplimiento de lo dispuesto por el Reglamento Interno de Seguridad y Salud en el Trabajo y la normativa nacional]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Asesorar y vigilar el cumplimiento de lo dispuesto por el Reglamento Interno de Seguridad y Salud en el Trabajo y la normativa nacional]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[• Promover la salud y seguridad en el trabajo.
+• Capacitar en primeros auxilios y en evacuaciones]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_58 -->
+  <pregunta>
+    <texto><![CDATA[¿Qué es una Brigada de Emergencia?]]></texto>
+    <respuesta>
+      <texto><![CDATA[Es el grupo de trabajadores organizados que se encargan de identificar las condiciones de riesgo que puedan generar emergencias.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Es el grupo de trabajadores organizados, entrenados y equipados para identificar las condiciones de riesgo que puedan generar emergencias y actuar adecuadamente controlando o  minimizando sus consecuencias.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Es el grupo de trabajadores organizados, entrenados y equipados para minimizar los riesgos en caso de sismos.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+  <!-- pregunta_59 -->
+  <pregunta>
+    <texto><![CDATA[¿Cómo se compone la brigada de emergencia?]]></texto>
+    <respuesta>
+      <texto><![CDATA[ Se compone de dos grupos  básicos de apoyo:
+
+· Grupo de evacuaciones
+· Grupo de rescate.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[ Se compone de dos grupos  básicos de apoyo:
+· Grupo de primeros auxilios
+· Grupo de evacuaciones
+.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta correcta="si">
+      <texto><![CDATA[Se compone de tres grupos  básicos de apoyo:
+· Grupo de primeros auxilios
+· Grupo de evacuaciones
+· Grupo de rescate.]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+    <respuesta>
+      <texto><![CDATA[Ninguna de las anteriores]]></texto>
+      <realimentacion><![CDATA[]]></realimentacion>
+    </respuesta>
+  </pregunta>
+</data>

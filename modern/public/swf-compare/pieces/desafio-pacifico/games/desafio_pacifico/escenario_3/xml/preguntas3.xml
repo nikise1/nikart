@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="validador.xsd">
+
+<!-- pregunta_1 -->
+<pregunta> <texto><![CDATA[El seguro de incendio]]></texto>
+<respuesta>
+<texto><![CDATA[Cubre daños personales a consecuencia del fuego.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre daños personales por daños a terceros ante un incendio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre daños patrimoniales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_2 -->
+<pregunta> <texto><![CDATA[Se conoce como líneas aliadas]]></texto>
+<respuesta>
+<texto><![CDATA[Las líneas aéreas de transmisión cubiertas por una póliza de incendio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Las coberturas adicionales a incendio, como terremoto, caída de aeronaves y lluvias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las líneas de negocio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_3 -->
+<pregunta> <texto><![CDATA[Las modalidades de contratación de una póliza de incendio son:]]></texto>
+<respuesta>
+<texto><![CDATA[Todo riesgo y a primer riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Todo riesgo y riesgos nombrados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Primer riesgo a valor total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_4 -->
+<pregunta> <texto><![CDATA[Un seguro que cubre daños por incendio, terremoto y lluvias es un seguro:]]></texto>
+<respuesta>
+<texto><![CDATA[Todo riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Riesgos nombrados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro a valor total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_5 -->
+<pregunta> <texto><![CDATA[Seguro que cubre todo lo que sucede excepto lo que está expresamente excluido:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Seguro a todo riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro a valor total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Seguro de incendio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_6 -->
+<pregunta> <texto><![CDATA[La siguiente es una exclusión del seguro a todo riesgo:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Huelga, conmoción civil, daño malicioso, asonada, vandalismo, sabotaje y terrorismo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Daños por agua e inundaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lluvias.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_7 -->
+<pregunta> <texto><![CDATA[La siguiente es una exclusión del seguro a todo riesgo:]]></texto>
+<respuesta>
+<texto><![CDATA[Daños por agua e inundaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Robo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Combustión espontánea.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_8 -->
+<pregunta> <texto><![CDATA[La siguiente es una exclusión del seguro a todo riesgo:]]></texto>
+<respuesta>
+<texto><![CDATA[Huaicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[  Pérdidas derivadas o a consecuencia de hurto simple, hurto agravado, extorsión, chantaje y/o secuestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Animales vivos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_9 -->
+<pregunta> <texto><![CDATA[La siguiente es una exclusión del seguro a todo riesgo:]]></texto>
+<respuesta>
+<texto><![CDATA[Impacto de aeronaves.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Rotura, fatiga de material, falla mecánica y desacoplamiento de maquinaria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Maremoto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_10 -->
+<pregunta> <texto><![CDATA[La siguiente es una exclusión del seguro a todo riesgo:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Pérdida o daño ocasionado a los terrenos de propiedad del asegurado sobre los cuales estén instalados o ubicados los bienes asegurados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Daños por agua e inundaciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Impacto de aeronaves.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_11 -->
+<pregunta> <texto><![CDATA[De acuerdo a la modalidad de contratación, el seguro de incendio puede ser:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[A valor total o a primer riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todo riesgo y riesgos nombrados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Primer riesgo a valor total.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_12 -->
+<pregunta> <texto><![CDATA[En el caso de los seguros a valor total:]]></texto>
+<respuesta>
+<texto><![CDATA[El cliente decide no contratar el 100% del valor de sus bienes como suma asegurada, sino que opta por una suma menor.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La suma asegurada es superior al valor de los activos del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[En este caso la suma asegurada o límite de indemnización es igual al valor de los activos del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_13 -->
+<pregunta> <texto><![CDATA[En el caso de los seguros a primer riesgo:]]></texto>
+<respuesta>
+<texto><![CDATA[En este caso la suma asegurada o límite de indemnización es igual al valor de los activos del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La suma asegurada es superior al valor de los activos del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El cliente decide no contratar el 100% del valor de sus bienes como suma asegurada, sino que opta por una suma menor.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_14 -->
+<pregunta> <texto><![CDATA[Cuando el valor declarado por el cliente no coincide con el valor real de los bienes al momento del siniestro:]]></texto>
+<respuesta>
+<texto><![CDATA[Póliza a primer riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Coaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Infraseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_15 -->
+<pregunta> <texto><![CDATA[La regla proporcional se aplica en caso de:]]></texto>
+<respuesta>
+<texto><![CDATA[Póliza a primer riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Coaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Infraseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_16 -->
+<pregunta> <texto><![CDATA[El cliente declara bienes por US $ 600 000. Al momento del siniestro el valor real son US $ 800 000 y el monto del siniestro es US $ 400 000. La indemnización es:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[US $ 300 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US $ 400 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US $ 600 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_17 -->
+<pregunta> <texto><![CDATA[El cliente declara bienes por US $ 200 000. Al momento del siniestro el valor real son US $ 500 000 y el monto del siniestro es US $ 100 000. La indemnización es:]]></texto>
+<respuesta>
+<texto><![CDATA[US $ 200 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[US $ 40 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US $ 500 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_18 -->
+<pregunta> <texto><![CDATA[El cliente declara bienes por US $ 300 000. Al momento del siniestro el valor real son US $ 400 000 y el monto del siniestro es US $ 200 000. La indemnización es:]]></texto>
+<respuesta>
+<texto><![CDATA[US $ 300 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[US $ 150 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US $ 200 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_19 -->
+<pregunta> <texto><![CDATA[El cliente declara bienes por US $ 100 000. Al momento del siniestro el valor real son US $ 100 000 y el monto del siniestro es US $ 50 000. La indemnización es:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[US $ 50 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US $ 100 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[US $ 200 000]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_20 -->
+<pregunta> <texto><![CDATA[Bajo la cobertura de deshonestidad se cubre:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El acto deshonesto cometido por cualquier trabajador al servicio del asegurado, sea que actúe por sí solo o en colusión con otras personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El acto deshonesto cometido por cualquier cliente del asegurado, sea que actúe por sí solo o en colusión con otras personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El acto deshonesto cometido por cualquier trabajador al servicio del asegurado en contra de un cliente del asegurado, sea que actúe por sí solo o en colusión con otras personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_21 -->
+<pregunta> <texto><![CDATA[Es una exclusión del seguro de deshonestidad:]]></texto>
+<respuesta>
+<texto><![CDATA[Actos cometidos por un trabajador sin antecedentes policiales o penales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Actos cometidos por un trabajador con antecedentes policiales o penales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La pérdida ocurrida durante la vigencia de la póliza, pero descubierta durante la vigencia de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_22 -->
+<pregunta> <texto><![CDATA[Es una exclusión del seguro de deshonestidad:]]></texto>
+<respuesta>
+<texto><![CDATA[El acto deshonesto cometido por cualquier trabajador al servicio del asegurado, sea que actúe por sí solo o en colusión con otras personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La pérdida ocurrida durante la vigencia de la póliza, pero descubierta durante la vigencia de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Errores o faltantes, resultantes de inventarios.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_23 -->
+<pregunta> <texto><![CDATA[Es una exclusión del seguro de deshonestidad:]]></texto>
+<respuesta>
+<texto><![CDATA[La pérdida ocurrida durante la vigencia de la póliza, pero descubierta durante la vigencia de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hurto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El acto deshonesto cometido por cualquier trabajador al servicio del asegurado, sea que actúe por sí solo o en colusión con otras personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_24 -->
+<pregunta> <texto><![CDATA[La cobertura de robo:]]></texto>
+<respuesta>
+<texto><![CDATA[Cubre el robo de bienes del asegurado incluyendo dinero y/o valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre hurto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre el robo de bienes del asegurado excepto dinero y/o valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_25 -->
+<pregunta> <texto><![CDATA[La cobertura de robo:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre únicamente los locales declarados del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre robo en cualquier parte de la República del Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre cuando un trabajador deshonestamente sustrae bienes del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_26 -->
+<pregunta> <texto><![CDATA[El empleo de fuerza en las cosas o violencia o intimidación en las personas:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es requisito para la configuración de robo y/o asalto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No es necesario para activar la cobertura.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es un requisito de la cobertura de deshonestidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_27 -->
+<pregunta> <texto><![CDATA[Es una exclusión del seguro de robo:]]></texto>
+<respuesta>
+<texto><![CDATA[El robo con intimidación a las personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La extorsión y el secuestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El robo de bienes del asegurado que no sea dinero ni valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_28 -->
+<pregunta> <texto><![CDATA[Es una exclusión del seguro de robo:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Desfalco y malversación de fondos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El robo de bienes del asegurado que no sea dinero ni valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El robo con intimidación a las personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_29 -->
+<pregunta> <texto><![CDATA[Son bienes excluidos del seguro de robo:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Dinero en efectivo y/o valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El robo de bienes del asegurado que no sea dinero ni valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Celulares.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_30 -->
+<pregunta> <texto><![CDATA[Son bienes excluidos del seguro de robo:]]></texto>
+<respuesta>
+<texto><![CDATA[Computadoras.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Motocicletas y vehículos automotores menores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Relojes de uso personal, piedras preciosas y joyas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_31 -->
+<pregunta> <texto><![CDATA[Son bienes excluidos del seguro de robo:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Los bienes en circulación y/o exhibición fuera de los locales designados en la póliza como lugar del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El robo de bienes del asegurado que no sea dinero ni valores.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Computadoras.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_32 -->
+<pregunta> <texto><![CDATA[Las normas mínimas de control pertenecen al ramo de:]]></texto>
+<respuesta>
+<texto><![CDATA[Responsabilidad civil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Deshonestidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Incendio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_33 -->
+<pregunta> <texto><![CDATA[La cobertura de responsabilidad civil:]]></texto>
+<respuesta>
+<texto><![CDATA[Cubre daños personales y daños materiales sufridos causados por terceros en perjuicio del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre daños intencionales sean causados por el asegurado o por un tercero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre daños materiales y lesiones personales a terceros causados por el asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_34 -->
+<pregunta> <texto><![CDATA[La ley peruana que regula la responsabilidad por daños a terceros es:]]></texto>
+<respuesta>
+<texto><![CDATA[El Código de Ética.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El Código Penal.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El Código Civil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_35 -->
+<pregunta> <texto><![CDATA[La cobertura de responsabilidad civil:]]></texto>
+<respuesta>
+<texto><![CDATA[Solo cubre daños materiales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo cubre daños personales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre daños materiales y daños personales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_36 -->
+<pregunta> <texto><![CDATA[La cobertura de responsabilidad civil:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Cubre al asegurado reparando la disminución en su patrimonio por tener la obligación de indemnizar a un tercero.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre a un tercero por daños causados por el asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cubre el incumplimiento de deberes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_37 -->
+<pregunta> <texto><![CDATA[¿Cuántos años tiene la víctima para realizar un reclamo a los tribunales, por daños causados por el asegurado?]]></texto>
+<respuesta>
+<texto><![CDATA[5 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo durante la vigencia de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[2 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_38 -->
+<pregunta> <texto><![CDATA[Para activar la cobertura, el daño debe ocurrir en:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El territorio nacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En cualquier parte del mundo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[En cualquier parte del mundo excluyendo EE. UU., Canadá y Argentina.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_39 -->
+<pregunta> <texto><![CDATA[En la cobertura de responsabilidad civil, ¿qué debe suceder durante la vigencia de la póliza?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La ocurrencia del daño.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El reclamo del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La ocurrencia y el reclamo del asegurado, ambos deben darse durante la vigencia de la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_40 -->
+<pregunta> <texto><![CDATA[El monto de la indemnización:]]></texto>
+<respuesta>
+<texto><![CDATA[Se acuerda entre el asegurado y la víctima.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es de acuerdo a la decisión de los jueces y según acuerdo en transacción extrajudicial.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es definido por la Empresa en todos los casos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_41 -->
+<pregunta> <texto><![CDATA[No es una exclusión de responsabilidad civil:]]></texto>
+<respuesta>
+<texto><![CDATA[Daños por fenómenos de la naturaleza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Daño por la exposición a asbestos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Daños a consecuencia de la propagación de fuego]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_42 -->
+<pregunta> <texto><![CDATA[No es una exclusión de responsabilidad civil:]]></texto>
+<respuesta>
+<texto><![CDATA[Responsabillidad de productos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Daños ocasionados a terceros dentro del territorio del Perú.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Daños por contaminación paulatina.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_43 -->
+<pregunta> <texto><![CDATA[Documento donde se establecen los criterios mínimos de aseguramiento:]]></texto>
+<respuesta>
+<texto><![CDATA[Contrato de reaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Condicionado general común.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Políticas de suscripción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_44 -->
+<pregunta> <texto><![CDATA[Es información mínima para suscripción de riesgos generales:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Inspección, siniestros y slip de condiciones.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Inspección, slip de condiciones y capacidad de endeudamiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Siniestros, lista de reaseguradores e inspección.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_45 -->
+<pregunta> <texto><![CDATA[El material de construcción es un factor a analizar en el riesgo de:]]></texto>
+<respuesta>
+<texto><![CDATA[Responsabilidad civil.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Rotura de maquinaria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Robo y/o asalto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_46 -->
+<pregunta> <texto><![CDATA[El cronograma valorizado es para analizar el seguro de:]]></texto>
+<respuesta>
+<texto><![CDATA[Transporte individual (TRIN).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Todo riesgo construcción (CAR).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Rotura de maquinaria (RM).]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_47 -->
+<pregunta> <texto><![CDATA[En el seguro de responsabilidad civil se analiza:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La actividad del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Las existencias almacenadas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La experiencia del contratista.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_48 -->
+<pregunta> <texto><![CDATA[En rotura de maquinaria se analiza:]]></texto>
+<respuesta>
+<texto><![CDATA[La experiencia del contratista.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[El tipo de mantenimiento.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La facturación del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_49 -->
+<pregunta> <texto><![CDATA[El reaseguro es un contrato entre:]]></texto>
+<respuesta>
+<texto><![CDATA[Una compañía de reaseguros y un asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Una compañía de reaseguros y una compañía de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Una compañía de reaseguros y un corredor de reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_50 -->
+<pregunta> <texto><![CDATA[Establece qué riesgos no deben ser asegurados por Pacífico]]></texto>
+<respuesta>
+<texto><![CDATA[Esquema de reaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Política de suscripción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Condicionado general común.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_51 -->
+<pregunta> <texto><![CDATA[El suscriptor:]]></texto>
+<respuesta>
+<texto><![CDATA[Determina el precio y el deducible, así como si corresponde pagar el siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Determina el precio y el deducible, así como las condiciones de póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Determina solo el precio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_52 -->
+<pregunta> <texto><![CDATA[El objetivo del Área de Suscripción es:]]></texto>
+<respuesta>
+<texto><![CDATA[Determinar el precio del seguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Garantizar un negocio rentable para Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Emitir la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_53 -->
+<pregunta> <texto><![CDATA[En caso de siniestro, la indemnización del reasegurador es para:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[La compañía de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La Superintendencia de Banca y Seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_54 -->
+<pregunta> <texto><![CDATA[El reaseguro indemniza ante:]]></texto>
+<respuesta>
+<texto><![CDATA[Un terremoto.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Pérdidas que sufra la aseguradora.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un accidente de tránsito.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_55 -->
+<pregunta> <texto><![CDATA[Es un propósito para comprar reaseguro:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Falta de capacidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Falta de cobertura.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Exigencia del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_56 -->
+<pregunta> <texto><![CDATA[Es un propósito para comprar reaseguro:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Diversificación del riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Exigencia del cliente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Emitir la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_57 -->
+<pregunta> <texto><![CDATA[Monto financiero de pérdidas que la aseguradora puede retener por sí misma para hacer frente a los riesgos que asegura:]]></texto>
+<respuesta>
+<texto><![CDATA[Estabilidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Capacidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Deducible.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_58 -->
+<pregunta> <texto><![CDATA[Es una empresa de reaseguro:]]></texto>
+<respuesta>
+<texto><![CDATA[Berlin Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[London Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Hannover Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_59 -->
+<pregunta> <texto><![CDATA[Es una empresa de reaseguro:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Gen Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Lloyd's Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[ING.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_60 -->
+<pregunta> <texto><![CDATA[Nombre tres de las reaseguradoras más conocidas:]]></texto>
+<respuesta>
+<texto><![CDATA[Münchener Re, Pacífico y Lloyd's.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Swiss Re, Hannover Re, Partner Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Münchener Re, Swiss Re y Hannover Re.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_61 -->
+<pregunta> <texto><![CDATA[Pacífico también vende reaseguro:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Sí.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo en automóviles.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[A veces]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_62 -->
+<pregunta> <texto><![CDATA[R + V es:]]></texto>
+<respuesta>
+<texto><![CDATA[Un bróker de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Una compañía de seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Una compañía de reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_63 -->
+<pregunta> <texto><![CDATA[Lloyd's es:]]></texto>
+<respuesta>
+<texto><![CDATA[Una compañía de reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Un mercado de reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un bróker de reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_64 -->
+<pregunta> <texto><![CDATA[Para negociar con Lloyd's, se debe hacer:]]></texto>
+<respuesta>
+<texto><![CDATA[Directamente vía el Área de Reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Solo con un bróker de reaseguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Directamente vía el Área de Seguros.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_65 -->
+<pregunta> <texto><![CDATA[Por la forma de contratación, el reaseguro puede ser:]]></texto>
+<respuesta>
+<texto><![CDATA[Proporcional o no proporcional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Automático o facultativo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Con bróker o sin bróker.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_66 -->
+<pregunta> <texto><![CDATA[Por la estructura, el reaseguro puede ser:]]></texto>
+<respuesta>
+<texto><![CDATA[Proporcional o no proporcional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Automático o facultativo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Con bróker o sin bróker.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_67 -->
+<pregunta> <texto><![CDATA[Determina la estructura final del reaseguro:]]></texto>
+<respuesta>
+<texto><![CDATA[Política de suscripción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Corredor de reaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Esquema de reaseguro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_68 -->
+<pregunta> <texto><![CDATA[El tratado es:]]></texto>
+<respuesta>
+<texto><![CDATA[Acuerdo entre dos países.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reaseguro facultativo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Reaseguro automático.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_69 -->
+<pregunta> <texto><![CDATA[En el contrato de reaseguro automático:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Los reaseguradores aceptan los riesgos sin objeciones ni rechazos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los reaseguradores automáticamente pueden elegir si aceptan o no el riesgo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El contrato automáticamente da cobertura ilimitada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_70 -->
+<pregunta> <texto><![CDATA[Se analiza cada riesgo individualmente:]]></texto>
+<respuesta>
+<texto><![CDATA[Reaseguro cuota parte.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Reaseguro facultativo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Reaseguro automático.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_71 -->
+<pregunta> <texto><![CDATA[En el contrato de reaseguro facultativo:]]></texto>
+<respuesta>
+<texto><![CDATA[Contrato entre un reasegurador y un asegurado de Pacífico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los reaseguradores aceptan los riesgos sin objeciones ni rechazos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Los reaseguradores tienen la facultad de aceptar o rechazar el riesgo. No están obligados a aceptarlo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_72 -->
+<pregunta> <texto><![CDATA[En el reaseguro facultativo cuota parte:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El respaldo del reasegurador es en base a un porcentaje.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El respaldo del reasegurador es en exceso de un monto a proporcionar por la aseguradora.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Solo existe en contrato automático.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_73 -->
+<pregunta> <texto><![CDATA[En un reaseguro de 40 MM XS de US $ 100 MM:]]></texto>
+<respuesta>
+<texto><![CDATA[La suma asegurada al cliente es US $ 40 MM.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[La suma asegurada al cliente es US $ 60 MM.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La suma asegurada al cliente es US $ 140 MM.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_74 -->
+<pregunta> <texto><![CDATA[Un reaseguro bajo la siguiente estructura: US $ 40 MM XS US $ 100 MM, es:]]></texto>
+<respuesta>
+<texto><![CDATA[Un reaseguro cuota parte.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Un reaseguro en exceso de pérdida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un reaseguro catastrófico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_75 -->
+<pregunta> <texto><![CDATA[Un reaseguro bajo la siguiente estructura: US $ 40 MM p/d US $ 100 MM, es:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Un reaseguro cuota parte.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un reaseguro en exceso de pérdida.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Un reaseguro catastrófico.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_76 -->
+<pregunta> <texto><![CDATA[¿Cuál es el plazo previsto en la ley para indemnizar un siniestro en condiciones normales?]]></texto>
+<respuesta>
+<texto><![CDATA[10 días desde la ocurrencia del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[30 días contados a partir del suministro de los soportes por parte del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[30 días desde la ocurrencia del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_77 -->
+<pregunta> <texto><![CDATA[¿Las aseguradoras peruanas pueden contratar ajustadores extranjeros para realizar labores de ajuste en nuestro territorio?]]></texto>
+<respuesta>
+<texto><![CDATA[No y los reaseguradores deben someterse a los ajustadores disponibles en la plaza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Sí, cuando no se cuente con recursos idóneos en el territorio nacional.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Sí, siempre que estos cuenten con un representante local, debidamente registrado ante la SBS, y en tal caso operarán bajo su registro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_78 -->
+<pregunta> <texto><![CDATA[¿Cuál es la promesa de valor del servicio express de liquidaciones de Pacífico?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Atender su siniestro dentro de las 48 horas de suministrados los soportes.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Pagar su siniestro dentro de las 48 horas de ocurrido.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Atender su siniestro dentro de los 30 días que permite la ley.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_79 -->
+<pregunta> <texto><![CDATA[¿Todas las pólizas de seguro de incendio son todo riesgo?]]></texto>
+<respuesta>
+<texto><![CDATA[Sí, todos los riesgos no excluidos explícitamente están amparados.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[No, también hay las llamadas de riesgos nombrados, en las que todo lo que no esté explícitamente amparado se encuentra excluído.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No, también hay todo riesgo para ingeniería y otras líneas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_80 -->
+<pregunta> <texto><![CDATA[La siguiente afirmación es cierta o falsa y por qué: "El informe de Ingeniería es muy importante para la suscripción del riesgo, pero al momento del siniestro ya no."]]></texto>
+<respuesta>
+<texto><![CDATA[Cierto porque ya estará desactualizado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Falso porque el informe contiene datos valiosos sobre las condiciones que tenía el riesgo antes de la ocurrencia del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cierto, porque el Área de Siniestros no se habla con las áreas de Ingeniería ni Suscripción.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_81 -->
+<pregunta> <texto><![CDATA[¿Qué ampara la cobertura ALOP y a qué pólizas se aplica?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Ampara las utilidades esperadas de un negocio que apenas está iniciando. Usualmente se asocia a coberturas de construcción y montaje.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se asocia a pólizas bancarias y ampara los gastos legales.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Se asocia a coberturas de RC y ampara gastos de limpieza por vertimiento de hidrocarburos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_82 -->
+<pregunta> <texto><![CDATA[¿Qué amparan las coberturas E y F de una póliza TRC forma MRe?]]></texto>
+<respuesta>
+<texto><![CDATA[Los daños a la maquinaria propia de la obra.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Los gastos de extinción del fuego.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[La responsabilidad civil del asegurado por daños a terceros en sus bienes o en sus personas.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_83 -->
+<pregunta> <texto><![CDATA[Los daños a la maquinaria por causas inherentes a su naturaleza, tales como defectos eléctricos o mecánicos internos, son materia de la cobertura de:]]></texto>
+<respuesta>
+<texto><![CDATA[Incendio.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Rotura de maquinaria.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No hay cobertura para ese tipo de daños.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_84 -->
+<pregunta> <texto><![CDATA[El porcentaje de infraseguro se calcula como:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[(1-Valor asegurado / Valor asegurable) * 100%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Valor asegurado/ Valor asegurable* 100%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Valor asegurable/ Valor asegurado* 100%]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_85 -->
+<pregunta> <texto><![CDATA[El servicio express atiende siniestros hasta USD 5 000 en los ramos de:]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Incendio, transportes, Eq El, hogar, convenios II, III y VI de 3D y VTAR.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[3D, incendio, Eq El, transporte terrestre.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Incendio, transportes, Eq El, hogar, convenios II y III de 3D, pequeñas embarcaciones y VTAR.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_86 -->
+<pregunta> <texto><![CDATA[Se constituye avería gruesa cuando:]]></texto>
+<respuesta>
+<texto><![CDATA[Cuando se dañan las máquinas más gruesas del barco.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Cuando se presenta sacrificio de algún componente de la aventura marítima, por decisión del capitán, en salvaguarda del resto de intereses.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Cuando por decisión del capitán se sacrifica a la tripulación con la finalidad de salvar los intereses de la aventura marítima.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_87 -->
+<pregunta> <texto><![CDATA[¿De qué aspectos depende la depreciación aplicable a un equipo?]]></texto>
+<respuesta>
+<texto><![CDATA[De su edad y la vida útil esperada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[De quien lo opera, de su valor original y de su valor de reposición.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Del uso que haya tenido el equipo, de su obsolescencia tecnológica, del nivel de mantenimiento que recibe, del medio ambiente en el cual se encuentre instalado y de la vida útil esperada del mismo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_88 -->
+<pregunta> <texto><![CDATA[¿Qué se debe entender cuando una póliza TRC incluye una cláusula/condición o endoso que indica "periodo de retorno 20 años"?]]></texto>
+<respuesta>
+<texto><![CDATA[Que se ampara el proyecto durante 20 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Que para el diseño del proyecto se debió haber considerado la historia de las precipitaciones pluviales y haber tomado aquella máxima en un periodo de 20 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Que la vida útil esperada del proyecto son 20 años.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_89 -->
+<pregunta> <texto><![CDATA[¿Qué ampara la cobertura de ICO (ICoW por sus iniciales en inglés)?]]></texto>
+<respuesta>
+<texto><![CDATA[Bajo la cobertura de incendio, ampara el stock de productos químicos.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Bajo la cobertura de lucro cesante es el costo en exceso de los costos normales de operación, en que se incurre por parte del asegurado, para lograr mantener su operación, aún después del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Bajo la cobertura de lucro cesante es el costo en exceso de los costos normales de operación, en que se incurre por parte del asegurado, para lograr mantener su operación, aún después del siniestro, y se reconocen por la póliza, limitados al monto de la pérdida neta evitada a la póliza.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_90 -->
+<pregunta> <texto><![CDATA[¿Cómo se define el valor de reposición a nuevo de un equipo?]]></texto>
+<respuesta>
+<texto><![CDATA[Lo que cuesta adquirir un equipo equivalente en las mismas condiciones de uso que tiene actualmente el equipo en cuestión.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el valor que se pagó por este equipo, de acuerdo a las facturas registradas en contabilidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el valor de adquirir un equipo nuevo, de las mismas características, incluyendo costos de importación, transportes, montaje y puesta en servicio, si fueren aplicables.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_91 -->
+<pregunta> <texto><![CDATA[En el caso del incendio del almacén de producto terminado de una fábrica, ¿cuál es la parte de los costos del producto que está cubierta tanto por la cobertura de daños como por la cobertura de lucro cesante y por tanto debe tenerse cuidado de no indemnizar doble?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[El costo fijo de la mercancía quemada, pues claramente es parte del valor del producto que se quemó y también parte de la utilidad bruta del producto no vendido a causa del siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[No hay traslapo de coberturas, dado que por daño material se indemniza al costo, excluyendo la utilidad.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[El costo variable.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_92 -->
+<pregunta> <texto><![CDATA[Qué es el salvamento y cómo se reparte?]]></texto>
+<respuesta>
+<texto><![CDATA[Es el monto que se logra recuperar por la venta de los bienes averiados. Debe repartirse entre las compañías de seguros que aseguraron el bien afectado, en la misma proporción en la que pagaron la indemnización]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Es el monto que se logra recuperar por la venta de los bienes averiados, neto de los costos de la comercialización. Debe repartirse de la misma manera en que se repartió la pérdida, incluyendo al asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el monto que se logra recuperar por la venta de los bienes averiados. Debe repartirse de la misma manera en que se repartió la pérdida, incluyendo al asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_93 -->
+<pregunta> <texto><![CDATA[Qué se entiende por subrogación de derechos en el ámbito de seguros?]]></texto>
+<respuesta>
+<texto><![CDATA[El endoso mediante el cual la aseguradora se compromete a no demandar a los empleados del asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta correcta="si">
+<texto><![CDATA[Al derecho que asume la aseguradora, mediante el pago de la indemnización al asegurado, para tomar su lugar y buscar la indemnización por parte del causante de los daños, hasta por el monto de la indemnización pagada.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Al derecho que asume la aseguradora, mediante el pago de la indemnización al asegurado, para tomar su lugar y buscar la indemnización por parte del causante de los daños, hasta por el monto de la pérdida sufrida por el asegurado.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_94 -->
+<pregunta> <texto><![CDATA[¿Qué es la cláusula de control de reclamos?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es la condición que impone el reasegurador al asegurador, mediante la cual el reasegurador controlará el proceso de ajuste del siniestro y la toma de decisiones en el mismo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la condición mediante la cual el asegurado se reserva el derecho de escoger al ajustador que atenderá el ajuste de su reclamo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la condición mediante la cual el asegurador se reserva el derecho de escoger al ajustador que atenderá el ajuste de un reclamo.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Ninguna de las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+<!-- pregunta_95 -->
+<pregunta> <texto><![CDATA[¿Qué es una reserva de derechos en seguros?]]></texto>
+<respuesta correcta="si">
+<texto><![CDATA[Es la manifestación del asegurador o del reasegurador, según sea el caso, mediante la cual indica que aún está pendiente de recibir la información soporte de un reclamo y por tanto no puede tomar una decisión respecto de la procedencia o cuantía del mismo, dejando a salvo sus derechos de oponer cualquier tipo de defensa, una vez recibida la información pendiente.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es el derecho del asegurador de mantener confidencial el monto de la reserva.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Es la manifestación del asegurador o del reasegurador, según sea el caso, mediante la cual indica que está pendiente de recibir la información soporte de un reclamo y por tanto rechaza el siniestro.]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta>
+<respuesta>
+<texto><![CDATA[Todas las anteriores]]></texto><realimentacion><![CDATA[]]></realimentacion></respuesta></pregunta>
+
+
+</data>

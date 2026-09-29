@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pregunta id="1">
+  <!-- Enunciado de la pregunta -->
+  <enunciado>¿Pregunta ejemplo?</enunciado>
+  <!-- Opciones posibles de respuesta -->
+  <opciones>
+    <opcion>Prueba</opcion>
+    <opcion correcta="true">Correcta</opcion>
+    <opcion>Prueba</opcion>
+    <opcion>Prueba</opcion>
+  </opciones>
+  <!-- Retroalimentacion de acuerdo a respuesta -->
+  <retroalimentacion-correcta>bien</retroalimentacion-correcta>
+  <retroalimentacion-incorrecta>mal</retroalimentacion-incorrecta>
+</pregunta>

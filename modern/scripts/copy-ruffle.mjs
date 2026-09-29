@@ -9,6 +9,9 @@ const target = join(root, "public", "ruffle");
 mkdirSync(target, { recursive: true });
 
 for (const file of readdirSync(source)) {
+  if (file.endsWith(".map")) {
+    continue;
+  }
   if (
     file === "ruffle.js" ||
     file.endsWith(".wasm") ||

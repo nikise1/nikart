@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<!-- Textos que el programa llama el <copyno>. Muy útil para una programa multilingüe -->
+    <text>
+        <copyno><![CDATA[ganado_puntos]]></copyno>
+        <copy><![CDATA[Puntaje (Points):]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[num_jugadores]]></copyno>
+        <copy><![CDATA[Jugadores: {numero} (Players: {numero})]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[entrar_defecto]]></copyno>
+        <copy><![CDATA[nombre aquí (name here)]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[click_en_dado]]></copyno>
+        <copy><![CDATA[Haga clic sobre el dado (Click on the die)]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[nombre_defecto]]></copyno>
+        <copy><![CDATA[Jugador {mum} (Player {mum})]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[jugador]]></copyno>
+        <copy><![CDATA[Jugador (Player)]]></copy>
+    </text>
+	
+	<!-- Genericos -->
+    <text>
+        <copyno><![CDATA[correcta]]></copyno>
+        <copy><![CDATA[¡Correcta! (Correct!)]]></copy>
+    </text>
+    <text>
+        <copyno><![CDATA[respuesta_mal]]></copyno>
+        <copy><![CDATA[¡Incorrecto! (False!)]]></copy>
+    </text>
+	
+    <text>
+        <copyno><![CDATA[la_respuesta_corredcta_es]]></copyno>
+        <copy><![CDATA[<br />La respuesta correcta es (The right answer is):<br />]]></copy>
+    </text>
+	
+</data>

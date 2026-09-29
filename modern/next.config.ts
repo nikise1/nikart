@@ -9,6 +9,28 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
   },
+  async headers() {
+    return [
+      {
+        source: "/ruffle/:path*.wasm",
+        headers: [{ key: "Content-Type", value: "application/wasm" }],
+      },
+      {
+        source: "/swf-compare/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+      {
+        source: "/fl/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
@@ -27,6 +49,16 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
+      // AwayFL resolves ../content from the lizard pieces SWF path; Ruffle uses
+      // base=/fl/ and hits /content/ directly. Keep this rewrite so both work
+      // without a document <base href="/fl/"> (Safari was aborting Ruffle WASM).
+      {
+        source: "/swf-compare/pieces/content/:path*",
+        destination: "/content/:path*",
+      },
+      // /static is handled by app/static/[...path]/route.ts (Node fetch of the
+      // HTTP origin). An afterFiles rewrite to that host wins on Vercel and
+      // never reaches the route, so HTTPS previews fail to load SWFs.
     ];
   },
 };

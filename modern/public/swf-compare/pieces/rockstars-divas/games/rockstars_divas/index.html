@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+
+	<head>	 	
+		<!-- Include support librarys first -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<META HTTP-EQUIV="Expires" CONTENT="Tue, 01 Jan 1980 1:00:00 GMT">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<title>Bestival</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="centered">
+				<div id="flashContent">
+					<h1>You need at least Flash Player 10 to view this page.</h1>
+					<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+				</div>  
+				<script type="text/javascript">
+					//This example uses dynamic publishing with swfObject. Login is handled in the swf
+								
+					//Note we are passing in attribute object with a 'name' property that is same value as the 'id'. This is REQUIRED for Chrome/Mozilla browsers
+					
+					var flashvars = {};
+					//flashvars.baseurl = "http://www.gaymersfestivals.com/fb-bestival-v2";
+					//flashvars.appid = "256720197680985";
+					//flashvars.usefacebookapi = "no";
+					
+					swfobject.embedSWF("Main.swf", "flashContent", "520", "620", "10", null, flashvars, null, {name:"flashContent"}); 			
+				</script>
+				
+				<div class="footer">
+		        	<a href="http://gaymersfestivals.com/fb-bestival-v2/bestival_terms_and_conditions.html" target="_blank" class="terms"></a>
+		        	<!--<a href="http://www.gaymersfestivals.com/privacy.html" target="_blank">Privacy Policy</a>-->
+		        	<a href="http://www.drinkaware.co.uk" target="_blank" class="drink-aware"></a>
+		        </div>
+		        <div class="clear"></div>
+ 	       </div>
+        </div>
+        
+	</body>
+</html>	
