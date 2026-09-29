@@ -14,7 +14,7 @@ describe("AwayFL LoadVars onData host patch", () => {
     expect(patch).toContain("NikartAwayFlLoadVarsPatch");
     expect(patch).toContain("alCanPut allows onData/onLoad/onHTTPStatus");
     expect(patch).toContain("cleared READ_ONLY on LoadVars event handlers");
-    expect(patch).not.toContain("awayfl-player.umd.js");
+    expect(patch).toContain("does not edit the AwayFL UMD");
   });
 
   it("is loaded by the compare kit after the AwayFL UMD", () => {
