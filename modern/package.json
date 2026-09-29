@@ -15,6 +15,7 @@
     "postinstall": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs",
     "sync:images": "node scripts/sync-content-images.mjs",
     "swf-compare:sync": "node scripts/sync-swf-compare.mjs",
+    "swf-compare:html": "node scripts/sync-swf-compare.mjs --html-only",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod"
   },

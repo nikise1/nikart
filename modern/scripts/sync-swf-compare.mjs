@@ -405,6 +405,14 @@ function localRefsFromText(text, pageUrl) {
   return [...found];
 }
 
+function unescapeHtml(value) {
+  return value
+    .replaceAll("&quot;", '"')
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&amp;", "&");
+}
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -418,6 +426,117 @@ function movieHref(piece) {
     return piece.movieUrl;
   }
   return `/swf-compare/pieces/${piece.id}/${piece.swfPath}`;
+}
+
+function sourceForPieceId(id) {
+  return (
+    sources.find((source) => source.id === id) ??
+    sources.find((source) => id.startsWith(`${source.id}__`))
+  );
+}
+
+/** Catalog JSON order, with extra movies from one wrapper kept after that source. */
+function orderPiecesByCatalog(produced) {
+  const remaining = new Map(produced.map((piece) => [piece.id, piece]));
+  const ordered = [];
+  for (const source of sources) {
+    const main = remaining.get(source.id);
+    if (main) {
+      ordered.push(main);
+      remaining.delete(source.id);
+    }
+    const extraIds = [...remaining.keys()]
+      .filter((id) => id.startsWith(`${source.id}__`))
+      .sort((a, b) => a.localeCompare(b));
+    for (const id of extraIds) {
+      ordered.push(remaining.get(id));
+      remaining.delete(id);
+    }
+  }
+  const leftovers = [...remaining.values()].sort((a, b) =>
+    a.id.localeCompare(b.id),
+  );
+  ordered.push(...leftovers);
+  return ordered;
+}
+
+function writeCompareHtml(produced) {
+  const ordered = orderPiecesByCatalog(produced);
+  for (const [index, piece] of ordered.entries()) {
+    const siblings = ordered.filter((item) => item.itemId === piece.itemId);
+    const html = renderPieceHtml(
+      piece,
+      siblings,
+      ordered[index - 1],
+      ordered[index + 1],
+    );
+    mkdirSync(join(piecesRoot, piece.id), { recursive: true });
+    writeFileSync(join(piecesRoot, piece.id, "index.html"), html);
+  }
+  writeFileSync(join(outRoot, "index.html"), renderIndex(ordered));
+  writeFileSync(
+    join(outRoot, "generated-catalog.json"),
+    `${JSON.stringify(ordered, null, 2)}\n`,
+  );
+  return ordered;
+}
+
+function parseExistingPiece(id) {
+  const htmlPath = join(piecesRoot, id, "index.html");
+  if (!existsSync(htmlPath)) {
+    return null;
+  }
+  const html = readFileSync(htmlPath, "utf8");
+  const source = sourceForPieceId(id);
+  if (!source) {
+    return null;
+  }
+  const title = unescapeHtml(html.match(/<h1>(.*?)<\/h1>/s)?.[1] ?? source.title);
+  const swf = unescapeHtml(
+    html.match(/data-swf="([^"]+)"/)?.[1] ?? movieHref({ id, swfPath: "" }),
+  );
+  const swfPath = swf.replace(`/swf-compare/pieces/${id}/`, "");
+  const width = Number.parseInt(html.match(/data-width="(\d+)"/)?.[1] ?? "", 10);
+  const height = Number.parseInt(html.match(/data-height="(\d+)"/)?.[1] ?? "", 10);
+  const note = html.match(/<p class="note">(.*?)<\/p>/s)?.[1];
+  const parametersRaw = html.match(/data-parameters="([^"]*)"/)?.[1];
+  let parameters;
+  if (parametersRaw) {
+    try {
+      parameters = JSON.parse(unescapeHtml(parametersRaw));
+    } catch {
+      parameters = undefined;
+    }
+  }
+  const baseAttr = unescapeHtml(html.match(/data-base="([^"]*)"/)?.[1] ?? "");
+  return {
+    id,
+    title,
+    group: source.group,
+    itemId: source.itemId,
+    wrapper: source.wrapper,
+    swfPath,
+    movieUrl: swf,
+    loaderUrl: source.loaderUrl,
+    base: source.base ?? (baseAttr || undefined),
+    playerVersion: source.playerVersion,
+    background: source.background,
+    parameters: parameters ?? source.parameters,
+    note: note || source.note,
+    width: Number.isFinite(width) ? width : source.width,
+    height: Number.isFinite(height) ? height : source.height,
+    primary: Boolean(source.primary),
+  };
+}
+
+function rebuildHtmlFromPieces() {
+  const produced = readdirSync(piecesRoot)
+    .map((id) => parseExistingPiece(id))
+    .filter(Boolean);
+  const ordered = writeCompareHtml(produced);
+  console.log(
+    `Rewrote ${ordered.length} compare pages in catalog order (no SWF download).`,
+  );
 }
 
 function extraStageAttrs(piece) {
@@ -455,8 +574,12 @@ function renderPieceHtml(piece, siblings, prev, next) {
   const note =
     piece.note ??
     "Both players load the committed copy under <code>/swf-compare/pieces/</code>. Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.";
-  const prevHref = prev ? `../${prev.id}/index.html` : "";
-  const nextHref = next ? `../${next.id}/index.html` : "";
+  const navLinks = [
+    `<a href="/swf-compare/index.html">All SWFs</a>`,
+    piece.id === "lizard-site" ? `<a href="/fl">Flash view</a>` : "",
+    prev ? `<a href="../${prev.id}/index.html">← ${escapeHtml(prev.title)}</a>` : "",
+    next ? `<a href="../${next.id}/index.html">${escapeHtml(next.title)} →</a>` : "",
+  ].filter(Boolean);
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -468,14 +591,11 @@ function renderPieceHtml(piece, siblings, prev, next) {
 <body>
   <div class="wrap">
     <nav class="topnav">
-      <a href="/swf-compare/index.html">All SWFs</a>
-      ${prev ? `<a href="${prevHref}">← ${escapeHtml(prev.title)}</a>` : ""}
-      ${next ? `<a href="${nextHref}">${escapeHtml(next.title)} →</a>` : ""}
+      ${navLinks.join("\n      ")}
     </nav>
     <h1>${escapeHtml(piece.title)}</h1>
     <p class="meta">${escapeHtml(href)} · ${piece.width}×${piece.height}</p>
-    ${siblingLinks ? `<p class="siblings">Same item: ${siblingLinks}</p>` : ""}
-    <p class="note">${note}</p>
+    ${siblingLinks ? `<p class="siblings">Same item: ${siblingLinks}</p>\n    ` : ""}<p class="note">${note}</p>
     <div class="split">
       <section class="pane">
         <h2>Ruffle</h2>
@@ -508,6 +628,7 @@ function renderIndex(pieces) {
         a[0].localeCompare(b[0]),
     )
     .map(([group, list]) => {
+      // Cards stay in catalog JSON order (the order `list` was filled).
       const cards = list
         .map(
           (piece) =>
@@ -688,32 +809,22 @@ async function syncSource(source, produced) {
   }
 }
 
-mkdirSync(piecesRoot, { recursive: true });
-const produced = [];
-console.log(`Mirroring SWFs from ${ORIGIN}`);
-for (const source of sources) {
-  try {
-    await syncSource(source, produced);
-  } catch (error) {
-    console.warn(`failed ${source.id}:`, error);
+if (process.argv.includes("--html-only")) {
+  rebuildHtmlFromPieces();
+} else {
+  mkdirSync(piecesRoot, { recursive: true });
+  const produced = [];
+  console.log(`Mirroring SWFs from ${ORIGIN}`);
+  for (const source of sources) {
+    try {
+      await syncSource(source, produced);
+    } catch (error) {
+      console.warn(`failed ${source.id}:`, error);
+    }
   }
-}
 
-produced.sort((a, b) => a.title.localeCompare(b.title));
-for (const [index, piece] of produced.entries()) {
-  const siblings = produced.filter((item) => item.itemId === piece.itemId);
-  const html = renderPieceHtml(
-    piece,
-    siblings,
-    produced[index - 1],
-    produced[index + 1],
+  const ordered = writeCompareHtml(produced);
+  console.log(
+    `Wrote ${ordered.length} compare pages to public/swf-compare/pieces/`,
   );
-  writeFileSync(join(piecesRoot, piece.id, "index.html"), html);
 }
-
-writeFileSync(join(outRoot, "index.html"), renderIndex(produced));
-writeFileSync(
-  join(outRoot, "generated-catalog.json"),
-  `${JSON.stringify(produced, null, 2)}\n`,
-);
-console.log(`Wrote ${produced.length} compare pages to public/swf-compare/pieces/`);

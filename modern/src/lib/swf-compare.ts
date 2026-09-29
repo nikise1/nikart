@@ -17,6 +17,27 @@ export interface SwfCompareSource {
 
 export const swfCompareSources = catalogJson as SwfCompareSource[];
 
+/** Catalog JSON order. Extra movies from one wrapper (`id__name`) follow that source. */
+export function orderComparePieceIds(existingIds: readonly string[]): string[] {
+  const remaining = new Set(existingIds);
+  const ordered: string[] = [];
+  for (const source of swfCompareSources) {
+    if (remaining.has(source.id)) {
+      ordered.push(source.id);
+      remaining.delete(source.id);
+    }
+    const extras = [...remaining]
+      .filter((id) => id.startsWith(`${source.id}__`))
+      .sort((a, b) => a.localeCompare(b));
+    for (const id of extras) {
+      ordered.push(id);
+      remaining.delete(id);
+    }
+  }
+  ordered.push(...[...remaining].sort((a, b) => a.localeCompare(b)));
+  return ordered;
+}
+
 export function piecePageHref(id: string): string {
   return `/swf-compare/pieces/${id}/index.html`;
 }
