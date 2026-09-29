@@ -1,9 +1,10 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { describe, it, expect } from "vitest";
 import {
   compareHrefForItem,
   compareHrefForSource,
+  orderComparePieceIds,
   pieceMovieUrl,
   piecePageHref,
   swfCompareSources,
@@ -94,5 +95,72 @@ describe("swf-compare", () => {
         "http://static.nikart.co.uk/websites/claro/swf/claro.swf",
       ),
     ).toBe("/swf-compare/pieces/claro/websites/claro/swf/claro.swf");
+  });
+
+  it("keeps catalog JSON order, with extra wrapper movies after that source", () => {
+    expect(
+      orderComparePieceIds([
+        "banner-shell__matchstick",
+        "claro",
+        "lizard-site",
+        "banner-shell",
+        "118aua-energyball",
+      ]),
+    ).toEqual([
+      "lizard-site",
+      "claro",
+      "118aua-energyball",
+      "banner-shell",
+      "banner-shell__matchstick",
+    ]);
+  });
+
+  it("lists index cards and piece prev/next in catalog JSON order", () => {
+    const indexHtml = readFileSync(
+      join(publicRoot, "swf-compare/index.html"),
+      "utf8",
+    );
+    const cardIds = [
+      ...indexHtml.matchAll(/class="card" href="pieces\/([^/]+)\/index.html"/g),
+    ].map((match) => match[1]);
+    const pieceRoot = join(publicRoot, "swf-compare/pieces");
+    const existingIds = readdirSync(pieceRoot).filter((id) =>
+      existsSync(join(pieceRoot, id, "index.html")),
+    );
+    const expected = orderComparePieceIds(existingIds);
+    const groupOrder = ["site", "websites", "games", "3d", "banners"];
+    const grouped: string[] = [];
+    for (const group of groupOrder) {
+      grouped.push(
+        ...expected.filter((id) => {
+          const source =
+            swfCompareSources.find((item) => item.id === id) ??
+            swfCompareSources.find((item) => id.startsWith(`${item.id}__`));
+          return source?.group === group;
+        }),
+      );
+    }
+    expect(cardIds).toEqual(grouped);
+    expect(cardIds.slice(0, 4)).toEqual([
+      "lizard-site",
+      "claro",
+      "118aua-energyball",
+      "118aua-livefeed",
+    ]);
+
+    expect(lizardHtml).toContain('href="../claro/index.html">Claro →');
+    expect(lizardHtml).not.toContain("118aua-energyball");
+
+    for (const [index, id] of expected.entries()) {
+      const html = readFileSync(join(pieceRoot, id, "index.html"), "utf8");
+      const prev = expected[index - 1];
+      const next = expected[index + 1];
+      if (prev) {
+        expect(html).toContain(`href="../${prev}/index.html"`);
+      }
+      if (next) {
+        expect(html).toContain(`href="../${next}/index.html"`);
+      }
+    }
   });
 });
