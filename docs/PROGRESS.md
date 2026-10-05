@@ -220,6 +220,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Compare-kit per-page Ruffle/AwayFL visibility in `localStorage` (`swf-compare-pages`); committed defaults in `visibility-defaults.json`; Hide/Show next to each player; index card flags are clickable (2026-09-29)
 - [x] Compare-kit movies load from `https://static.nikart.co.uk` (CloudFront HTTPS + CORS); lizard stays on `/fl/main.ruffle.swf`; piece binaries are gitignored (2026-10-05)
 - [x] Fix Vercel `noUnusedLocals` on `originMoviePath(id)` so the HTTPS-origin compare-kit build can deploy (2026-10-05)
+- [x] Move compare pages to `/swf-compare/{id}/` and delete `public/swf-compare/pieces/` (2026-10-05)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

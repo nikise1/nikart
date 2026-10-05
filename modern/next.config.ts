@@ -53,6 +53,10 @@ const nextConfig: NextConfig = {
       // base=/fl/ and hits /content/ directly. Keep this rewrite so both work
       // without a document <base href="/fl/"> (Safari was aborting Ruffle WASM).
       {
+        source: "/swf-compare/content/:path*",
+        destination: "/content/:path*",
+      },
+      {
         source: "/swf-compare/pieces/content/:path*",
         destination: "/content/:path*",
       },

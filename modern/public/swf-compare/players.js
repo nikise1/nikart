@@ -122,7 +122,7 @@
   function compareHrefForLaunch(filename) {
     const path = launchPath(filename);
     const id = LAUNCH_PAGES[path];
-    return id ? `/swf-compare/pieces/${id}/index.html` : null;
+    return id ? `/swf-compare/${id}/index.html` : null;
   }
 
   function launchPath(filename) {
@@ -239,9 +239,13 @@
     }
     try {
       const resolved = new URL(url, window.location.href);
-      const alias = "/swf-compare/pieces/content/";
+      const alias = "/swf-compare/content/";
+      const leftoverAlias = "/swf-compare/pieces/content/";
       if (resolved.pathname.startsWith(alias)) {
         return `/content/${resolved.pathname.slice(alias.length)}${resolved.search}`;
+      }
+      if (resolved.pathname.startsWith(leftoverAlias)) {
+        return `/content/${resolved.pathname.slice(leftoverAlias.length)}${resolved.search}`;
       }
     } catch {
       return url;
@@ -393,10 +397,17 @@
   }
 
   function pieceIdFromPath(pathname) {
-    const match = String(pathname ?? "").match(
-      /\/swf-compare\/pieces\/([^/]+)\//,
-    );
-    return match?.[1] ?? null;
+    const raw = String(pathname ?? "");
+    const leftover = raw.match(/\/swf-compare\/pieces\/([^/]+)\//);
+    if (leftover?.[1]) {
+      return leftover[1];
+    }
+    const match = raw.match(/\/swf-compare\/([^/]+)\//);
+    const id = match?.[1];
+    if (!id || id === "pieces") {
+      return null;
+    }
+    return id;
   }
 
   function readStore() {

@@ -4,6 +4,7 @@ import {
   mkdirSync,
   readdirSync,
   readFileSync,
+  rmSync,
   writeFileSync,
 } from "node:fs";
 import { dirname, join } from "node:path";
@@ -12,7 +13,16 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "src/lib/swf-compare-catalog.json");
 const outRoot = join(root, "public/swf-compare");
-const piecesRoot = join(outRoot, "pieces");
+const leftoverPiecesRoot = join(outRoot, "pieces");
+const KIT_NAMES = new Set([
+  "pieces",
+  "index.html",
+  "players.js",
+  "players.css",
+  "README.md",
+  "visibility-defaults.json",
+  "generated-catalog.json",
+]);
 const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "https://static.nikart.co.uk";
 const MAX_BYTES = 80 * 1024 * 1024;
 
@@ -508,8 +518,8 @@ function writeCompareHtml(produced) {
       ordered[index - 1],
       ordered[index + 1],
     );
-    mkdirSync(join(piecesRoot, piece.id), { recursive: true });
-    writeFileSync(join(piecesRoot, piece.id, "index.html"), html);
+    mkdirSync(join(outRoot, piece.id), { recursive: true });
+    writeFileSync(join(outRoot, piece.id, "index.html"), html);
   }
   writeFileSync(join(outRoot, "index.html"), renderIndex(ordered));
   writeFileSync(
@@ -519,8 +529,38 @@ function writeCompareHtml(produced) {
   return ordered;
 }
 
+function pieceHtmlPath(id) {
+  const next = join(outRoot, id, "index.html");
+  if (existsSync(next)) {
+    return next;
+  }
+  const leftover = join(leftoverPiecesRoot, id, "index.html");
+  if (existsSync(leftover)) {
+    return leftover;
+  }
+  return next;
+}
+
+function existingPieceIds() {
+  const ids = new Set();
+  for (const dir of [outRoot, leftoverPiecesRoot]) {
+    if (!existsSync(dir)) {
+      continue;
+    }
+    for (const name of readdirSync(dir)) {
+      if (KIT_NAMES.has(name)) {
+        continue;
+      }
+      if (existsSync(join(dir, name, "index.html"))) {
+        ids.add(name);
+      }
+    }
+  }
+  return [...ids];
+}
+
 function parseExistingPiece(id) {
-  const htmlPath = join(piecesRoot, id, "index.html");
+  const htmlPath = pieceHtmlPath(id);
   if (!existsSync(htmlPath)) {
     return null;
   }
@@ -570,10 +610,13 @@ function parseExistingPiece(id) {
 }
 
 function rebuildHtmlFromPieces() {
-  const produced = readdirSync(piecesRoot)
+  const produced = existingPieceIds()
     .map((id) => parseExistingPiece(id))
     .filter(Boolean);
   const ordered = writeCompareHtml(produced);
+  if (existsSync(leftoverPiecesRoot)) {
+    rmSync(leftoverPiecesRoot, { recursive: true, force: true });
+  }
   console.log(
     `Rewrote ${ordered.length} compare pages in catalog order (no SWF download).`,
   );
@@ -678,7 +721,7 @@ function renderIndex(pieces) {
       const cards = list
         .map(
           (piece) =>
-            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="pieces/${piece.id}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
+            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="${escapeHtml(piece.id)}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
@@ -696,11 +739,11 @@ function renderIndex(pieces) {
   <div class="wrap">
     <nav class="topnav">
       <a href="/fl">Flash site</a>
-      <a href="pieces/lizard-site/index.html">Legacy Flash site</a>
+      <a href="lizard-site/index.html">Legacy Flash site</a>
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="lizard-site/index.html">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
   <script src="/swf-compare/players.js"></script>
@@ -805,7 +848,7 @@ async function syncSource(source, produced) {
 if (process.argv.includes("--html-only")) {
   rebuildHtmlFromPieces();
 } else {
-  mkdirSync(piecesRoot, { recursive: true });
+  mkdirSync(outRoot, { recursive: true });
   const produced = [];
   console.log(`Writing compare pages for ${ORIGIN}`);
   for (const source of sources) {
@@ -817,6 +860,9 @@ if (process.argv.includes("--html-only")) {
   }
 
   const ordered = writeCompareHtml(produced);
+  if (existsSync(leftoverPiecesRoot)) {
+    rmSync(leftoverPiecesRoot, { recursive: true, force: true });
+  }
   console.log(
     `Wrote ${ordered.length} compare pages (movies load from ${ORIGIN})`,
   );

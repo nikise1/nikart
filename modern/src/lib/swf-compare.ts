@@ -40,7 +40,7 @@ export function orderComparePieceIds(existingIds: readonly string[]): string[] {
 }
 
 export function piecePageHref(id: string): string {
-  return `/swf-compare/pieces/${id}/index.html`;
+  return `/swf-compare/${id}/index.html`;
 }
 
 function compareSourceForId(id: string): SwfCompareSource | undefined {

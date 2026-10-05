@@ -13,7 +13,7 @@ import {
 
 const publicRoot = join(__dirname, "../../public");
 const lizardHtml = readFileSync(
-  join(publicRoot, "swf-compare/pieces/lizard-site/index.html"),
+  join(publicRoot, "swf-compare/lizard-site/index.html"),
   "utf8",
 );
 const playersJs = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
@@ -50,7 +50,7 @@ describe("swf-compare", () => {
       base: "/fl/",
     });
     expect(piecePageHref("lizard-site")).toBe(
-      "/swf-compare/pieces/lizard-site/index.html",
+      "/swf-compare/lizard-site/index.html",
     );
     expect(pieceMovieUrl("lizard-site", "main.ruffle.swf")).toBe(
       "/fl/main.ruffle.swf",
@@ -58,7 +58,7 @@ describe("swf-compare", () => {
     expect(pieceMovieBase("lizard-site", "main.ruffle.swf")).toBe("/fl/");
   });
 
-  it("loads the lizard movie from the pieces copy without a document base", () => {
+  it("loads the lizard movie from /fl without a document base", () => {
     expect(lizardHtml).not.toMatch(/<base\b/i);
     expect(lizardHtml).toContain('data-swf="/fl/main.ruffle.swf"');
     expect(lizardHtml).toContain('data-base="/fl/"');
@@ -133,9 +133,10 @@ describe("swf-compare", () => {
     const cardIds = [
       ...indexHtml.matchAll(/data-piece="([^"]+)"/g),
     ].map((match) => match[1]);
-    const pieceRoot = join(publicRoot, "swf-compare/pieces");
+    const pieceRoot = join(publicRoot, "swf-compare");
     const existingIds = readdirSync(pieceRoot).filter((id) =>
-      existsSync(join(pieceRoot, id, "index.html")),
+      existsSync(join(pieceRoot, id, "index.html")) &&
+      id !== "pieces",
     );
     const expected = orderComparePieceIds(existingIds);
     const groupOrder = ["site", "websites", "games", "3d", "banners"];
@@ -159,7 +160,7 @@ describe("swf-compare", () => {
     ]);
 
     const claroHtml = readFileSync(
-      join(publicRoot, "swf-compare/pieces/claro/index.html"),
+      join(publicRoot, "swf-compare/claro/index.html"),
       "utf8",
     );
     expect(claroHtml).toContain(

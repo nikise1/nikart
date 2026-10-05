@@ -30,7 +30,7 @@ describe("flash-bridge", () => {
     );
 
     expect(open).toHaveBeenCalledWith(
-      "/swf-compare/pieces/claro/index.html",
+      "/swf-compare/claro/index.html",
       "claro",
     );
   });
