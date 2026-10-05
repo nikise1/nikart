@@ -39,7 +39,7 @@ FP8 (this SWF is `playerVersion: 8`) is case-insensitive; the name to unlock is 
 
 ## Local patch (this repo)
 
-File: `modern/public/awayfl/loadvars-ondata-patch.js` (sibling of the UMD, not a UMD edit).
+File: `modern/public/awayfl/loadvars-ondata-patch.js` (sibling of the UMD, not a UMD edit). The UMD and ABC copies under `public/awayfl/` are gitignored; this patch file stays in git.
 
 Loaded by:
 

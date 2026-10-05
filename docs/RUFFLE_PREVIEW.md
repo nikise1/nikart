@@ -309,7 +309,7 @@ sequenceDiagram
 - `nikart.popWin` on `/fl` now opens that page instead of the raw S3 HTML for `games/`, `banners/`, `websites/`, and `3d/` (Shockwave `.dcr` is skipped).
 - HTML5 article launch buttons for those URLs go to the same popup page.
 - Default / Claro shortcut: `/fl/away?src=websites/claro/index.html&w=960&h=700`.
-- Runtime is copied from `@awayfl/awayfl-player` to `public/awayfl/` in `postinstall` (gitignored). AVM2 ABC catalogs that npm omits are vendored in `modern/vendor/awayfl-builtins/`.
+- Runtime is copied from `@awayfl/awayfl-player` to `public/awayfl/` in `postinstall` (gitignored except `loadvars-ondata-patch.js`). AVM2 ABC catalogs that npm omits are vendored in `modern/vendor/awayfl-builtins/`.
 - Wrapper HTML with no embed (Away3D heart splash) still tries sibling `Main.swf`. `AC_FL_RunContent` (Papervision Spaceship) is parsed the same way as SWFObject.
 - First-run notes: Claro’s SWF executes (client XML traces) but the stage stays white because AwayFL `TextField` / `LoaderInfo.parameters` are stubbed. Whiplash’s menu renders. Heart splash has no embed; the player then loads `Main.swf` beside it.
 

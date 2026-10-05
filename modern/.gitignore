@@ -19,9 +19,10 @@
 /.next/
 /out/
 
-# ruffle/awayfl source maps (runtimes themselves are committed for Vercel preview)
-/public/ruffle/*.map
-/public/awayfl/*.map
+# ruffle/awayfl runtimes (copied from node_modules via postinstall/prebuild)
+/public/ruffle/
+/public/awayfl/*
+!/public/awayfl/loadvars-ondata-patch.js
 
 # generated catalog from swf-compare:sync
 /public/swf-compare/generated-catalog.json
