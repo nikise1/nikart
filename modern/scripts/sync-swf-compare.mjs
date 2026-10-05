@@ -441,9 +441,8 @@ function originDirUrl(path) {
   return originUrl(path).replace(/[^/]+$/, "");
 }
 
-function stripMoviePath(id, swf) {
+function stripMoviePath(swf) {
   let path = String(swf ?? "");
-  path = path.replace(`/swf-compare/pieces/${id}/`, "");
   path = path.replace(/^https?:\/\/static\.nikart\.co\.uk\//, "");
   path = path.replace(/^\/static\//, "");
   path = path.replace(/^\//, "");
@@ -530,30 +529,20 @@ function writeCompareHtml(produced) {
 }
 
 function pieceHtmlPath(id) {
-  const next = join(outRoot, id, "index.html");
-  if (existsSync(next)) {
-    return next;
-  }
-  const leftover = join(leftoverPiecesRoot, id, "index.html");
-  if (existsSync(leftover)) {
-    return leftover;
-  }
-  return next;
+  return join(outRoot, id, "index.html");
 }
 
 function existingPieceIds() {
   const ids = new Set();
-  for (const dir of [outRoot, leftoverPiecesRoot]) {
-    if (!existsSync(dir)) {
+  if (!existsSync(outRoot)) {
+    return [];
+  }
+  for (const name of readdirSync(outRoot)) {
+    if (KIT_NAMES.has(name)) {
       continue;
     }
-    for (const name of readdirSync(dir)) {
-      if (KIT_NAMES.has(name)) {
-        continue;
-      }
-      if (existsSync(join(dir, name, "index.html"))) {
-        ids.add(name);
-      }
+    if (existsSync(join(outRoot, name, "index.html"))) {
+      ids.add(name);
     }
   }
   return [...ids];
@@ -575,7 +564,7 @@ function parseExistingPiece(id) {
   );
   const swfPath = source.localSwf
     ? (source.localSwf.split("/").pop() ?? "movie.swf")
-    : stripMoviePath(id, swf);
+    : stripMoviePath(swf);
   const width = Number.parseInt(html.match(/data-width="(\d+)"/)?.[1] ?? "", 10);
   const height = Number.parseInt(html.match(/data-height="(\d+)"/)?.[1] ?? "", 10);
   const parametersRaw = html.match(/data-parameters="([^"]*)"/)?.[1];

@@ -44,9 +44,7 @@ describe("swf-compare player visibility", () => {
     const api = window.SwfCompare;
     expect(api.STORAGE_KEY).toBe("swf-compare-pages");
     expect(api.pieceIdFromPath("/swf-compare/claro/index.html")).toBe("claro");
-    expect(api.pieceIdFromPath("/swf-compare/pieces/claro/index.html")).toBe(
-      "claro",
-    );
+    expect(api.pieceIdFromPath("/swf-compare/pieces/claro/index.html")).toBeNull();
     expect(api.pageState("claro")).toEqual({ ruffle: true, awayfl: false });
     expect(api.pageState("whiplash")).toEqual({ ruffle: false, awayfl: true });
     expect(api.pageState("ar-heart")).toEqual({ ruffle: false, awayfl: false });

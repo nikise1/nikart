@@ -50,14 +50,8 @@ function compareSourceForId(id: string): SwfCompareSource | undefined {
   );
 }
 
-function originMoviePath(id: string, swfPath: string): string {
+function originMoviePath(swfPath: string): string {
   let path = swfPath.trim();
-  const localPrefix = `/swf-compare/pieces/${id}/`;
-  if (path.startsWith(localPrefix)) {
-    path = path.slice(localPrefix.length);
-  } else if (path.startsWith("/swf-compare/pieces/")) {
-    path = path.replace(/^\/swf-compare\/pieces\/[^/]+\//, "");
-  }
   if (path.startsWith("http://") || path.startsWith("https://")) {
     try {
       const url = new URL(path);
@@ -83,7 +77,7 @@ export function pieceMovieUrl(id: string, swfPath: string): string {
   if (!trimmed) {
     return `${STATIC_ORIGIN}/`;
   }
-  return `${STATIC_ORIGIN}/${originMoviePath(id, trimmed)}`;
+  return `${STATIC_ORIGIN}/${originMoviePath(trimmed)}`;
 }
 
 /** Ruffle/AwayFL Loader base: `/fl/` for lizard, otherwise the origin movie directory. */

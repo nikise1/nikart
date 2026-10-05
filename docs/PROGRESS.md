@@ -223,6 +223,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Move compare pages to `/swf-compare/{id}/` and delete `public/swf-compare/pieces/` (2026-10-05)
 - [x] Gitignore generated `public/ruffle/` and `public/awayfl/` copies (keep `loadvars-ondata-patch.js`; `postinstall`/`prebuild` restore the runtimes) (2026-10-05)
 - [x] Fix `docs/diagrams/*.svg` encoding (invalid XML control chars / bare `&`) and HTTPS+CORS labels (2026-10-05)
+- [x] Drop leftover `/swf-compare/pieces/` aliases (rewrite, LoadVars remap, movie-path strip, visibility id parser) (2026-10-05)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

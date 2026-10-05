@@ -49,15 +49,10 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
-      // AwayFL resolves ../content from the lizard pieces SWF path; Ruffle uses
-      // base=/fl/ and hits /content/ directly. Keep this rewrite so both work
-      // without a document <base href="/fl/"> (Safari was aborting Ruffle WASM).
+      // AwayFL on /swf-compare/lizard-site/ resolves ../content against the
+      // HTML path. Ruffle uses base=/fl/ and hits /content/ directly.
       {
         source: "/swf-compare/content/:path*",
-        destination: "/content/:path*",
-      },
-      {
-        source: "/swf-compare/pieces/content/:path*",
         destination: "/content/:path*",
       },
       // /static is handled by app/static/[...path]/route.ts (Node fetch of the

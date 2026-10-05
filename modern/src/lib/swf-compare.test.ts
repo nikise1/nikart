@@ -169,7 +169,14 @@ describe("swf-compare", () => {
     expect(claroHtml).toContain(
       'data-base="https://static.nikart.co.uk/websites/claro/swf/"',
     );
-    expect(claroHtml).not.toContain("/swf-compare/pieces/claro/websites/");
+    expect(claroHtml).not.toContain("/swf-compare/pieces/");
+    expect(playersJs).not.toContain("/swf-compare/pieces/");
+    const nextConfig = readFileSync(
+      join(__dirname, "../../next.config.ts"),
+      "utf8",
+    );
+    expect(nextConfig).toContain('source: "/swf-compare/content/:path*"');
+    expect(nextConfig).not.toContain("/swf-compare/pieces/");
 
     expect(lizardHtml).toContain('href="../claro/index.html">Claro →');
     expect(lizardHtml).not.toContain("118aua-energyball");

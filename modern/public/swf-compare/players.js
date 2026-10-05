@@ -240,12 +240,8 @@
     try {
       const resolved = new URL(url, window.location.href);
       const alias = "/swf-compare/content/";
-      const leftoverAlias = "/swf-compare/pieces/content/";
       if (resolved.pathname.startsWith(alias)) {
         return `/content/${resolved.pathname.slice(alias.length)}${resolved.search}`;
-      }
-      if (resolved.pathname.startsWith(leftoverAlias)) {
-        return `/content/${resolved.pathname.slice(leftoverAlias.length)}${resolved.search}`;
       }
     } catch {
       return url;
@@ -398,10 +394,6 @@
 
   function pieceIdFromPath(pathname) {
     const raw = String(pathname ?? "");
-    const leftover = raw.match(/\/swf-compare\/pieces\/([^/]+)\//);
-    if (leftover?.[1]) {
-      return leftover[1];
-    }
     const match = raw.match(/\/swf-compare\/([^/]+)\//);
     const id = match?.[1];
     if (!id || id === "pieces") {
