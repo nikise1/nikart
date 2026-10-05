@@ -64,6 +64,7 @@ export function useNavAnimator({
           top: -NAV_POS.btnHeight,
           duration: NAV_TIMING.growIn,
         });
+        button.style.pointerEvents = "none";
 
         itemEls.forEach((el, i) => {
           const itemId = items[i]?.id ?? String(i);
@@ -131,6 +132,7 @@ export function useNavAnimator({
 
         if (revealButton) {
           button.style.display = "block";
+          button.style.pointerEvents = "auto";
           gsap.fromTo(
             button,
             { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight },
@@ -138,6 +140,7 @@ export function useNavAnimator({
               left: 0,
               top: 0,
               duration: NAV_TIMING.growIn,
+              ease: "power1.out",
               onComplete: () => {
                 useNavStore.getState().onCanvasCloseComplete();
               },
@@ -145,6 +148,8 @@ export function useNavAnimator({
           );
         } else {
           gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
+          button.style.display = "none";
+          button.style.pointerEvents = "none";
           gsap.delayedCall(NAV_TIMING.growOut, () => {
             if (useNavStore.getState().navPhase === "closing-canvas") {
               onCanvasCloseComplete();
@@ -159,9 +164,11 @@ export function useNavAnimator({
 
         if (revealButton) {
           button.style.display = "block";
+          button.style.pointerEvents = "auto";
           gsap.set(button, { left: 0, top: 0 });
         } else {
           button.style.display = "none";
+          button.style.pointerEvents = "none";
           gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
         }
       }
