@@ -52,7 +52,10 @@ function compareSourceForId(id: string): SwfCompareSource | undefined {
 
 function originMoviePath(id: string, swfPath: string): string {
   let path = swfPath.trim();
-  if (path.startsWith("/swf-compare/pieces/")) {
+  const localPrefix = `/swf-compare/pieces/${id}/`;
+  if (path.startsWith(localPrefix)) {
+    path = path.slice(localPrefix.length);
+  } else if (path.startsWith("/swf-compare/pieces/")) {
     path = path.replace(/^\/swf-compare\/pieces\/[^/]+\//, "");
   }
   if (path.startsWith("http://") || path.startsWith("https://")) {
