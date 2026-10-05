@@ -1,5 +1,6 @@
 import catalogJson from "./swf-compare-catalog.json";
 import { toProxiedStaticUrl } from "./awayfl-static";
+import { STATIC_ORIGIN } from "./static-origin";
 
 export interface SwfCompareSource {
   id: string;
@@ -42,21 +43,53 @@ export function piecePageHref(id: string): string {
   return `/swf-compare/pieces/${id}/index.html`;
 }
 
-/** Local movie URL under the committed compare-kit copy. */
+function compareSourceForId(id: string): SwfCompareSource | undefined {
+  return (
+    swfCompareSources.find((source) => source.id === id) ??
+    swfCompareSources.find((source) => id.startsWith(`${source.id}__`))
+  );
+}
+
+function originMoviePath(id: string, swfPath: string): string {
+  let path = swfPath.trim();
+  if (path.startsWith("/swf-compare/pieces/")) {
+    path = path.replace(/^\/swf-compare\/pieces\/[^/]+\//, "");
+  }
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    try {
+      const url = new URL(path);
+      if (url.hostname === "static.nikart.co.uk") {
+        path = url.pathname.replace(/^\//, "");
+      } else {
+        path = toProxiedStaticUrl(path) ?? path;
+      }
+    } catch {
+      path = toProxiedStaticUrl(path) ?? path;
+    }
+  }
+  return path.replace(/^\/static\//, "").replace(/^\.\//, "").replace(/^\//, "");
+}
+
+/** Movie URL: local `/fl` for lizard, otherwise HTTPS origin. */
 export function pieceMovieUrl(id: string, swfPath: string): string {
+  const source = compareSourceForId(id);
+  if (source?.localSwf) {
+    return source.localSwf;
+  }
   const trimmed = swfPath.trim();
   if (!trimmed) {
-    return `/swf-compare/pieces/${id}/`;
+    return `${STATIC_ORIGIN}/`;
   }
-  if (trimmed.startsWith("/swf-compare/pieces/")) {
-    return trimmed;
+  return `${STATIC_ORIGIN}/${originMoviePath(id, trimmed)}`;
+}
+
+/** Ruffle/AwayFL Loader base: `/fl/` for lizard, otherwise the origin movie directory. */
+export function pieceMovieBase(id: string, swfPath: string): string {
+  const source = compareSourceForId(id);
+  if (source?.base) {
+    return source.base;
   }
-  let path = trimmed;
-  if (path.startsWith("http://") || path.startsWith("https://")) {
-    path = toProxiedStaticUrl(path) ?? path;
-  }
-  path = path.replace(/^\/static\//, "").replace(/^\.\//, "").replace(/^\//, "");
-  return `/swf-compare/pieces/${id}/${path}`;
+  return pieceMovieUrl(id, swfPath).replace(/[^/]+$/, "");
 }
 
 export function compareIndexHref(hash?: string): string {

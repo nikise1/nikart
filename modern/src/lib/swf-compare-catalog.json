@@ -13,9 +13,9 @@
     "parameters": {
       "dotracking": "yes",
       "embedlang": "en",
-      "staticfilesstr": "http://static.nikart.co.uk"
+      "staticfilesstr": "https://static.nikart.co.uk"
     },
-    "note": "Same movie as <a href=\"/fl\">/fl</a>: the AS2 lizard UI with the Ruffle tongue-chord patch. Players load the copy at <code>/swf-compare/pieces/lizard-site/main.ruffle.swf</code> with Flash 8 flashVars and <code>base=/fl/</code> so content JSON and images resolve. AwayFL’s loader URL stays <code>/fl/main.ruffle.swf</code>. Child launches use <code>window.nikart.popWin</code>.",
+    "note": "Same movie as <a href=\"/fl\">/fl</a>: the AS2 lizard UI with the Ruffle tongue-chord patch. Players load <code>/fl/main.ruffle.swf</code> with Flash 8 flashVars and <code>base=/fl/</code> so content JSON and images resolve. AwayFL’s loader URL stays <code>/fl/main.ruffle.swf</code>. Portfolio launches use <code>window.nikart.popWin</code>. <code>staticfilesstr</code> is the HTTPS origin.",
     "primary": true,
     "width": 750,
     "height": 500

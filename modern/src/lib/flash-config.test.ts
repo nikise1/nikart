@@ -14,7 +14,7 @@ describe("flash-config", () => {
 
   describe("getStaticFilesBase", () => {
     it("uses production static host outside development", () => {
-      expect(getStaticFilesBase()).toBe("http://static.nikart.co.uk");
+      expect(getStaticFilesBase()).toBe("https://static.nikart.co.uk");
     });
 
     it("uses legacy relative static path in development", () => {
@@ -28,7 +28,7 @@ describe("flash-config", () => {
       expect(buildFlashVars("en")).toEqual({
         dotracking: "yes",
         embedlang: "en",
-        staticfilesstr: "http://static.nikart.co.uk",
+        staticfilesstr: "https://static.nikart.co.uk",
       });
     });
   });

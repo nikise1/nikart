@@ -104,7 +104,7 @@ flowchart LR
 | SWF | `modern/public/fl/main.swf` | AS2 (AVM1), zlib `CWS`, Flash 8 |
 | Data | `modern/public/content/json/data.json` | SWF path `../content/json/data.json` via Ruffle `base` |
 | Images | `/content/img` rewrite | Same tree the HTML5 site uses |
-| Static host | `http://static.nikart.co.uk` | S3 website; **no CORS headers**; **HTTP only** |
+| Static host | `https://static.nikart.co.uk` | CloudFront TLS + CORS (`Access-Control-Allow-Origin: *`); HTTP still redirects to HTTPS |
 
 Inside `main.swf` (decompressed strings): `pathContent = ../content`, `pathStatic = _root.staticfilesstr \|\| ../static`, `pathJSON = /json/data.json`, `pathImg`, `pathVideo = /video_flv`, plus `javascript:nikart.popWin(` and `javascript:nikart.doTracker(`.
 
@@ -115,7 +115,9 @@ HTML5 already proxies some of that host through Next (`/video_h264`, `/video_web
 - **Works (same-origin):** lizard UI, menus, thumbs, article/image slideshows, language toggle, HTML5/Flash view links that stay on this origin (`_self/`).
 - **Pop-ups to S3:** games, banners, 3D, some websites. Those HTML wrappers still call `swfobject.embedSWF(...)`. Without Ruffle on that page (and without HTTPS), they show “You need Flash Player”.
 - **Flash video:** SWF asks for `{staticfilesstr}/video_flv/{id}`. Those keys 404. H.264/WebM files **do** exist on the same bucket (`/video_h264/spark.mp4`, `/video_webm/spark.webm`) and are what the HTML5 `VideoView` uses.
-- **HTTPS mixed content:** a Vercel preview is HTTPS. A flashVar of `http://static.nikart.co.uk` is blocked as mixed content for XHR/NetStream, and pop-ups land on an HTTP S3 site.
+- **HTTPS mixed content:** a Vercel preview is HTTPS. `staticfilesstr` is now `https://static.nikart.co.uk` (CloudFront). Compare-kit pages fetch SWFs cross-origin from that host.
+
+**Option D is live for the compare kit (2026-10-05):** piece pages use `data-swf` / `data-base` on `https://static.nikart.co.uk/…`. Lizard stays on `/fl/main.ruffle.swf`.
 
 ---
 
@@ -313,22 +315,20 @@ sequenceDiagram
 
 ### Option F — side-by-side compare kit (temporary)
 
-`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Both players load the movie from the committed copy at `/swf-compare/pieces/{id}/{path}` (switched back from the `/static` origin proxy after the Vercel preview could not play those URLs). The legacy lizard Flash site is `/swf-compare/pieces/lizard-site/`: both players load the pieces copy of `main.ruffle.swf` (same Ruffle tongue-chord patch as `/fl`) with Flash 8 flashVars, Ruffle `base=/fl/`, and AwayFL loader URL `/fl/main.ruffle.swf`. Do not set `<base href="/fl/">` on that page — Safari then resolves Ruffle WASM/workers under `/fl/`, destroys the instance, and aborts the movie (`Could not allocate array buffer for response`). Players share one SWF fetch; AwayFL starts after Ruffle. AwayFL LoadVars still logs `../content/json/data.json`; compare `players.js` remaps that onto `/content/` (against the compare HTML page it never sets `_root.dataLoaded`). Next also rewrites `/swf-compare/pieces/content/` to `/content/`. A separate host file `public/awayfl/loadvars-ondata-patch.js` makes LoadVars `onData` writable so the movie’s JSON parse can run (AwayFL prototype slot is READ_ONLY; see [`docs/AWAYFL_LOADVARS.md`](AWAYFL_LOADVARS.md)). Child SWF/XML/JPEG URLs resolve from that movie directory. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Index cards (within each group) and piece topnav prev/next follow `modern/src/lib/swf-compare-catalog.json` order. Hide/Show next to each player writes `{ ruffle, awayfl }` into `localStorage` `swf-compare-pages` keyed by piece id, falling back to `visibility-defaults.json`; the index cards show those two visibilities as clickable toggles. Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
+`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Portfolio movies load from `https://static.nikart.co.uk` (CloudFront HTTPS + CORS). The legacy lizard Flash site is `/swf-compare/pieces/lizard-site/`: both players load `/fl/main.ruffle.swf` (same Ruffle tongue-chord patch as `/fl`) with Flash 8 flashVars, Ruffle `base=/fl/`, and AwayFL loader URL `/fl/main.ruffle.swf`. Do not set `<base href="/fl/">` on that page — Safari then resolves Ruffle WASM/workers under `/fl/`, destroys the instance, and aborts the movie (`Could not allocate array buffer for response`). Players share one SWF fetch; AwayFL starts after Ruffle. AwayFL LoadVars still logs `../content/json/data.json`; compare `players.js` remaps that onto `/content/` (against the compare HTML page it never sets `_root.dataLoaded`). Next also rewrites `/swf-compare/pieces/content/` to `/content/`. A separate host file `public/awayfl/loadvars-ondata-patch.js` makes LoadVars `onData` writable so the movie’s JSON parse can run (AwayFL prototype slot is READ_ONLY; see [`docs/AWAYFL_LOADVARS.md`](AWAYFL_LOADVARS.md)). Child SWF/XML/JPEG URLs resolve from the origin movie directory. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Index cards (within each group) and piece topnav prev/next follow `modern/src/lib/swf-compare-catalog.json` order. Hide/Show next to each player writes `{ ruffle, awayfl }` into `localStorage` `swf-compare-pages` keyed by piece id, falling back to `visibility-defaults.json`; the index cards show those two visibilities as clickable toggles. Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
 
 
 ---
 
 ## Recommendation
 
-The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S3 Flash wrappers open that page through the `/static` rewrite. Remaining work to preview S3 Flash from `/fl` without mixed content:
+The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S3 Flash wrappers open that page through the `/static` rewrite. Compare-kit pages already load SWFs from `https://static.nikart.co.uk` (Option D). Remaining work to preview S3 Flash from `/fl` without mixed content:
 
-1. **Option A** so `staticfilesstr` (and AwayFL fetches) are same-origin.
+1. Point `/fl/away` and `staticfilesstr` at the HTTPS origin (or keep Option A `/static` as a same-origin fallback).
 2. **Split players:** Ruffle for `main.swf` + AVM1; **Option F (AwayFL)** for Away3D / Papervision / stubborn AS3; Ruffle Option B/C for the rest.
 3. Treat FLAR webcam as a stretch goal (Camera API). Aim first at the 3D models, using `FLARProxy` on the lizard if present.
 4. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today.
 5. Leave Shockwave 3D as an HTML/screenshot fallback.
-
-Option D is complementary if you want a public HTTPS static CDN later.
 
 ---
 

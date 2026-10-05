@@ -1,6 +1,5 @@
 import { inflateSync } from "node:zlib";
 import {
-  copyFileSync,
   existsSync,
   mkdirSync,
   readdirSync,
@@ -14,7 +13,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "src/lib/swf-compare-catalog.json");
 const outRoot = join(root, "public/swf-compare");
 const piecesRoot = join(outRoot, "pieces");
-const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "http://static.nikart.co.uk";
+const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "https://static.nikart.co.uk";
 const MAX_BYTES = 80 * 1024 * 1024;
 
 const sources = JSON.parse(readFileSync(catalogPath, "utf8"));
@@ -424,6 +423,23 @@ function localRefsFromText(text, pageUrl) {
   return [...found];
 }
 
+function originUrl(path) {
+  return `${ORIGIN}/${String(path ?? "").replace(/^\//, "")}`;
+}
+
+function originDirUrl(path) {
+  return originUrl(path).replace(/[^/]+$/, "");
+}
+
+function stripMoviePath(id, swf) {
+  let path = String(swf ?? "");
+  path = path.replace(`/swf-compare/pieces/${id}/`, "");
+  path = path.replace(/^https?:\/\/static\.nikart\.co\.uk\//, "");
+  path = path.replace(/^\/static\//, "");
+  path = path.replace(/^\//, "");
+  return path;
+}
+
 function unescapeHtml(value) {
   return value
     .replaceAll("&quot;", '"')
@@ -441,10 +457,13 @@ function escapeHtml(value) {
 }
 
 function movieHref(piece) {
+  if (piece.localSwf) {
+    return piece.movieUrl ?? piece.localSwf;
+  }
   if (piece.movieUrl) {
     return piece.movieUrl;
   }
-  return `/swf-compare/pieces/${piece.id}/${piece.swfPath}`;
+  return originUrl(piece.swfPath);
 }
 
 function sourceForPieceId(id) {
@@ -512,12 +531,13 @@ function parseExistingPiece(id) {
   }
   const title = unescapeHtml(html.match(/<h1>(.*?)<\/h1>/s)?.[1] ?? source.title);
   const swf = unescapeHtml(
-    html.match(/data-swf="([^"]+)"/)?.[1] ?? movieHref({ id, swfPath: "" }),
+    html.match(/data-swf="([^"]+)"/)?.[1] ?? "",
   );
-  const swfPath = swf.replace(`/swf-compare/pieces/${id}/`, "");
+  const swfPath = source.localSwf
+    ? (source.localSwf.split("/").pop() ?? "movie.swf")
+    : stripMoviePath(id, swf);
   const width = Number.parseInt(html.match(/data-width="(\d+)"/)?.[1] ?? "", 10);
   const height = Number.parseInt(html.match(/data-height="(\d+)"/)?.[1] ?? "", 10);
-  const note = html.match(/<p class="note">(.*?)<\/p>/s)?.[1];
   const parametersRaw = html.match(/data-parameters="([^"]*)"/)?.[1];
   let parameters;
   if (parametersRaw) {
@@ -534,14 +554,15 @@ function parseExistingPiece(id) {
     group: source.group,
     itemId: source.itemId,
     wrapper: source.wrapper,
+    localSwf: source.localSwf,
     swfPath,
-    movieUrl: swf,
+    movieUrl: source.localSwf ?? originUrl(swfPath),
     loaderUrl: source.loaderUrl,
-    base: source.base ?? (baseAttr || undefined),
+    base: source.base ?? originDirUrl(swfPath) ?? (baseAttr || undefined),
     playerVersion: source.playerVersion,
     background: source.background,
-    parameters: parameters ?? source.parameters,
-    note: note || source.note,
+    parameters: source.parameters ?? parameters,
+    note: source.note,
     width: Number.isFinite(width) ? width : source.width,
     height: Number.isFinite(height) ? height : source.height,
     primary: Boolean(source.primary),
@@ -592,7 +613,7 @@ function renderPieceHtml(piece, siblings, prev, next) {
   const extra = extraStageAttrs(piece);
   const note =
     piece.note ??
-    "Both players load the committed copy under <code>/swf-compare/pieces/</code>. Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.";
+    "Both players fetch the movie from <code>https://static.nikart.co.uk</code> (HTTPS + CORS). Child SWF/XML/JPEG URLs resolve from that movie directory. Some files work in Ruffle, some in AwayFL, some in neither.";
   const navLinks = [
     `<a href="/swf-compare/index.html">All SWFs</a>`,
     piece.id === "lizard-site" ? `<a href="/fl">Flash view</a>` : "",
@@ -679,7 +700,7 @@ function renderIndex(pieces) {
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies and sidecars are the copies under <code>/swf-compare/pieces/</code>. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> loads the copy of <code>main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="pieces/lizard-site/index.html">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
   <script src="/swf-compare/players.js"></script>
@@ -716,22 +737,15 @@ async function syncSource(source, produced) {
     const destName =
       (source.localSwf.split("/").pop() ?? "movie.swf").split("?")[0] ??
       "movie.swf";
-    const srcPath = join(root, "public", source.localSwf.replace(/^\//, ""));
-    const pieceDir = join(piecesRoot, source.id);
-    mkdirSync(pieceDir, { recursive: true });
-    if (existsSync(srcPath)) {
-      copyFileSync(srcPath, join(pieceDir, destName));
-    } else {
-      console.warn(`missing local SWF ${srcPath}`);
-    }
     produced.push({
       id: source.id,
       title: source.title,
       group: source.group,
       itemId: source.itemId,
       wrapper: source.wrapper,
+      localSwf: source.localSwf,
       swfPath: destName,
-      movieUrl: `/swf-compare/pieces/${source.id}/${destName}`,
+      movieUrl: source.localSwf,
       loaderUrl: source.loaderUrl ?? source.localSwf,
       base: source.base,
       playerVersion: source.playerVersion,
@@ -742,7 +756,7 @@ async function syncSource(source, produced) {
       height: source.height,
       primary: Boolean(source.primary),
     });
-    console.log(`  ${source.id}: ${source.localSwf} → pieces/${source.id}/${destName}`);
+    console.log(`  ${source.id}: ${source.localSwf} (local, not mirrored)`);
     return;
   }
 
@@ -771,56 +785,6 @@ async function syncSource(source, produced) {
       movies.length === 1
         ? source.title
         : `${source.title} (${movie.path.split("/").pop()})`;
-    const pieceDir = join(piecesRoot, id);
-    const swfDest = join(pieceDir, movie.path);
-    const swfBuffer = existsSync(swfDest)
-      ? readFileSync(swfDest)
-      : await fetchBuffer(movie.path);
-    if (!swfBuffer) {
-      console.warn(`missing SWF ${movie.path}`);
-      continue;
-    }
-    mkdirSync(pieceDir, { recursive: true });
-    await savePath(pieceDir, source.wrapper, wrapperBuf);
-    if (!existsSync(swfDest)) {
-      await savePath(pieceDir, movie.path, swfBuffer);
-    }
-
-    const seen = new Set();
-    const queue = [];
-    const fetched = [];
-    enqueue(queue, seen, source.wrapper);
-    enqueue(queue, seen, movie.path);
-    for (const href of refsFromText(html)) {
-      enqueueRef(queue, seen, href, source.wrapper, movie.path);
-    }
-    for (const extra of localRefsFromText(html, pageUrl)) {
-      enqueue(queue, seen, extra);
-    }
-    for (const ref of swfRawRefs(swfBuffer)) {
-      enqueueRef(queue, seen, ref, movie.path, movie.path);
-    }
-    const swfDir = movie.path.replace(/[^/]+$/, "");
-    const wrapperDir = source.wrapper.replace(/[^/]+$/, "");
-    for (const seed of SWF_DIR_SEEDS) {
-      enqueue(queue, seen, `${swfDir}${seed}`);
-      enqueue(queue, seen, `${wrapperDir}${seed}`);
-    }
-
-    while (queue.length > 0) {
-      const path = queue.shift();
-      if (path === movie.path || path === source.wrapper) {
-        await ingestPath(pieceDir, path, movie.path, queue, seen, fetched);
-        continue;
-      }
-      await ingestPath(pieceDir, path, movie.path, queue, seen, fetched);
-    }
-
-    aliasDaeTextures(pieceDir);
-
-    console.log(
-      `  ${id}: ${movie.path} (${seen.size} candidates, +${fetched.length} new)`,
-    );
     produced.push({
       id,
       title,
@@ -828,10 +792,13 @@ async function syncSource(source, produced) {
       itemId: source.itemId,
       wrapper: source.wrapper,
       swfPath: movie.path,
+      movieUrl: originUrl(movie.path),
+      base: originDirUrl(movie.path),
       width: source.width,
       height: source.height,
       primary: Boolean(source.primary) && index === 0,
     });
+    console.log(`  ${id}: ${originUrl(movie.path)}`);
   }
 }
 
@@ -840,7 +807,7 @@ if (process.argv.includes("--html-only")) {
 } else {
   mkdirSync(piecesRoot, { recursive: true });
   const produced = [];
-  console.log(`Mirroring SWFs from ${ORIGIN}`);
+  console.log(`Writing compare pages for ${ORIGIN}`);
   for (const source of sources) {
     try {
       await syncSource(source, produced);
@@ -851,6 +818,6 @@ if (process.argv.includes("--html-only")) {
 
   const ordered = writeCompareHtml(produced);
   console.log(
-    `Wrote ${ordered.length} compare pages to public/swf-compare/pieces/`,
+    `Wrote ${ordered.length} compare pages (movies load from ${ORIGIN})`,
   );
 }

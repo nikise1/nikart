@@ -1,4 +1,5 @@
-const ORIGIN = "http://static.nikart.co.uk";
+export const STATIC_ORIGIN_HOST = "static.nikart.co.uk";
+export const STATIC_ORIGIN = `https://${STATIC_ORIGIN_HOST}`;
 
 export function originStaticUrl(segments: string[]): string | null {
   if (segments.length === 0) {
@@ -12,5 +13,5 @@ export function originStaticUrl(segments: string[]): string | null {
       return null;
     }
   }
-  return `${ORIGIN}/${segments.map(encodeURIComponent).join("/")}`;
+  return `${STATIC_ORIGIN}/${segments.map(encodeURIComponent).join("/")}`;
 }

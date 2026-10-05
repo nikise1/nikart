@@ -4,7 +4,7 @@ import { originStaticUrl } from "./static-origin";
 describe("originStaticUrl", () => {
   it("builds an origin URL for a movie path", () => {
     expect(originStaticUrl(["games", "weeds", "weeds.swf"])).toBe(
-      "http://static.nikart.co.uk/games/weeds/weeds.swf",
+      "https://static.nikart.co.uk/games/weeds/weeds.swf",
     );
   });
 

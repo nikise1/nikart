@@ -6,6 +6,7 @@ import {
   compareHrefForSource,
   orderComparePieceIds,
   pieceMovieUrl,
+  pieceMovieBase,
   piecePageHref,
   swfCompareSources,
 } from "./swf-compare";
@@ -32,7 +33,7 @@ describe("swf-compare", () => {
   it("maps an S3 wrapper URL to the compare page", () => {
     expect(
       compareHrefForSource(
-        "http://static.nikart.co.uk/websites/claro/index.html",
+        "https://static.nikart.co.uk/websites/claro/index.html",
       ),
     ).toBe(piecePageHref("claro"));
   });
@@ -52,15 +53,14 @@ describe("swf-compare", () => {
       "/swf-compare/pieces/lizard-site/index.html",
     );
     expect(pieceMovieUrl("lizard-site", "main.ruffle.swf")).toBe(
-      "/swf-compare/pieces/lizard-site/main.ruffle.swf",
+      "/fl/main.ruffle.swf",
     );
+    expect(pieceMovieBase("lizard-site", "main.ruffle.swf")).toBe("/fl/");
   });
 
   it("loads the lizard movie from the pieces copy without a document base", () => {
     expect(lizardHtml).not.toMatch(/<base\b/i);
-    expect(lizardHtml).toContain(
-      'data-swf="/swf-compare/pieces/lizard-site/main.ruffle.swf"',
-    );
+    expect(lizardHtml).toContain('data-swf="/fl/main.ruffle.swf"');
     expect(lizardHtml).toContain('data-base="/fl/"');
     expect(lizardHtml).toContain('data-loader-url="/fl/main.ruffle.swf"');
   });
@@ -89,19 +89,22 @@ describe("swf-compare", () => {
     expect(playersJs).toContain("NikartAwayFlLoadVarsPatch?.install");
   });
 
-  it("maps movie paths onto the local /swf-compare/pieces/ copies", () => {
+  it("maps movie paths onto https://static.nikart.co.uk", () => {
     expect(pieceMovieUrl("ciudad", "games/ciudad_helm/Main.swf")).toBe(
-      "/swf-compare/pieces/ciudad/games/ciudad_helm/Main.swf",
+      "https://static.nikart.co.uk/games/ciudad_helm/Main.swf",
     );
     expect(pieceMovieUrl("weeds", "/static/games/weeds/weeds.swf")).toBe(
-      "/swf-compare/pieces/weeds/games/weeds/weeds.swf",
+      "https://static.nikart.co.uk/games/weeds/weeds.swf",
     );
     expect(
       pieceMovieUrl(
         "claro",
         "http://static.nikart.co.uk/websites/claro/swf/claro.swf",
       ),
-    ).toBe("/swf-compare/pieces/claro/websites/claro/swf/claro.swf");
+    ).toBe("https://static.nikart.co.uk/websites/claro/swf/claro.swf");
+    expect(pieceMovieBase("whiplash", "games/whiplash/whiplash_cmb.swf")).toBe(
+      "https://static.nikart.co.uk/games/whiplash/",
+    );
   });
 
   it("keeps catalog JSON order, with extra wrapper movies after that source", () => {
@@ -154,6 +157,18 @@ describe("swf-compare", () => {
       "118aua-energyball",
       "118aua-livefeed",
     ]);
+
+    const claroHtml = readFileSync(
+      join(publicRoot, "swf-compare/pieces/claro/index.html"),
+      "utf8",
+    );
+    expect(claroHtml).toContain(
+      'data-swf="https://static.nikart.co.uk/websites/claro/swf/claro.swf"',
+    );
+    expect(claroHtml).toContain(
+      'data-base="https://static.nikart.co.uk/websites/claro/swf/"',
+    );
+    expect(claroHtml).not.toContain("/swf-compare/pieces/claro/websites/");
 
     expect(lizardHtml).toContain('href="../claro/index.html">Claro →');
     expect(lizardHtml).not.toContain("118aua-energyball");

@@ -23,8 +23,13 @@
 /public/ruffle/*.map
 /public/awayfl/*.map
 
-# generated catalog from swf-compare:sync (HTML/SWF copies are committed for Vercel preview)
+# generated catalog from swf-compare:sync
 /public/swf-compare/generated-catalog.json
+
+# Origin-hosted compare-kit binaries (pages load https://static.nikart.co.uk)
+/public/swf-compare/pieces/**
+!/public/swf-compare/pieces/*/
+!/public/swf-compare/pieces/*/index.html
 
 # generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
 /public/_generated/

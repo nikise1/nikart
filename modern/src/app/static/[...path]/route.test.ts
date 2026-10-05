@@ -37,7 +37,7 @@ describe("GET /static/[...path]", () => {
     });
 
     expect(fetchMock).toHaveBeenCalledWith(
-      "http://static.nikart.co.uk/games/weeds/weeds.swf",
+      "https://static.nikart.co.uk/games/weeds/weeds.swf",
       expect.objectContaining({ method: "GET", cache: "no-store" }),
     );
     expect(response.status).toBe(200);
@@ -79,7 +79,7 @@ describe("HEAD /static/[...path]", () => {
     });
 
     expect(fetchMock).toHaveBeenCalledWith(
-      "http://static.nikart.co.uk/games/weeds/weeds.swf",
+      "https://static.nikart.co.uk/games/weeds/weeds.swf",
       expect.objectContaining({ method: "HEAD" }),
     );
     expect(response.status).toBe(200);
