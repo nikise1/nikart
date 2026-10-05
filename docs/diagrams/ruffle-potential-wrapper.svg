@@ -58,6 +58,7 @@
   </g>
 
   <rect x="40" y="440" width="1020" height="90" rx="10" fill="#141414" stroke="#333"/>
-  <text x="60" y="474" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Pair with Option A</text>
-  <text x="60" y="504" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="14">Proxy the HTML and the SWF on the same origin. Injecting Ruffle into a raw http://static.nikart.co.uk page from an HTTPS app will still hit mixed content.</text>
+  <text x="60" y="470" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Pair with Option A</text>
+  <text x="60" y="496" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Proxy the HTML and the SWF on the same origin.</text>
+  <text x="60" y="516" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Injecting Ruffle into a raw http://static.nikart.co.uk page from HTTPS still hits mixed content.</text>
 </svg>

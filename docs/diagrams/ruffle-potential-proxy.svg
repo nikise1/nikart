@@ -3,7 +3,7 @@
   <desc id="desc">Keep local main.swf in Ruffle. Point staticfilesstr at /static and rewrite that prefix to the S3 bucket so the browser never talks HTTP to static.nikart.co.uk.</desc>
   <rect width="1100" height="560" fill="#0b0b0b"/>
   <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option A — Same-origin reverse proxy</text>
-  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Keep local main.swf. staticfilesstr becomes /static. Next.js fetches the origin server-side (same pattern as /games and /video_h264 today).</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Keep local main.swf. staticfilesstr becomes /static. Next fetches S3 server-side (same as /games, /video_h264).</text>
 
   <defs>
     <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">

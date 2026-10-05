@@ -87,7 +87,7 @@
     <text x="810" y="406" text-anchor="middle" fill="#e07a7a">/video_flv/{id} — SWF NetStream path, 404</text>
     <text x="810" y="424" text-anchor="middle" fill="#888888" font-size="11">CORS * · HTTP redirects to HTTPS</text>
 
-    <text x="580" y="468" fill="#888888" font-size="12">Dev uses staticfilesstr = ../static (not served; public/static gitignored)</text>
+    <text x="580" y="468" fill="#888888" font-size="12">Dev: staticfilesstr = ../static (public/static gitignored)</text>
   </g>
 
   <!-- bottom legend -->
@@ -96,7 +96,7 @@
   <g font-family="Helvetica, Arial, sans-serif" font-size="13">
     <text x="60" y="590" fill="#95cf89">Plays in Ruffle:</text>
     <text x="200" y="590" fill="#c8c8c8">lizard UI, menus, thumbs, slideshows, language, same-origin _self/ links</text>
-    <text x="60" y="618" fill="#e0b060">Pop-ups to origin:</text>
+    <text x="60" y="618" fill="#e0b060">Pop-ups:</text>
     <text x="200" y="618" fill="#c8c8c8">games / banners / 3d HTML still call swfobject — “You need Flash Player” unless a player is on that page</text>
     <text x="60" y="646" fill="#e07a7a">Still broken:</text>
     <text x="200" y="646" fill="#c8c8c8">FLV video keys missing; compare kit loads SWFs from the HTTPS origin (Option D)</text>
