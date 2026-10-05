@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
-  <title id="title">Option A  same-origin reverse proxy</title>
+  <title id="title">Option A — same-origin reverse proxy</title>
   <desc id="desc">Keep local main.swf in Ruffle. Point staticfilesstr at /static and rewrite that prefix to the S3 bucket so the browser never talks HTTP to static.nikart.co.uk.</desc>
   <rect width="1100" height="560" fill="#0b0b0b"/>
-  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option A  Same-origin reverse proxy</text>
-  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Keep local main.swf. staticfilesstr becomes /static. Next.js fetches S3 server-side (same pattern as /games and /video_h264 today).</text>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option A — Same-origin reverse proxy</text>
+  <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Keep local main.swf. staticfilesstr becomes /static. Next.js fetches the origin server-side (same pattern as /games and /video_h264 today).</text>
 
   <defs>
     <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
@@ -40,13 +40,13 @@
   <rect x="40" y="240" width="1020" height="180" rx="10" fill="#121812" stroke="#3d6b3d"/>
   <text x="60" y="274" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Fixes</text>
   <g font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#c8c8c8">
-    <text x="60" y="308">HTTPS page never talks to http://static.nikart.co.uk from the browser (no mixed content).</text>
+    <text x="60" y="308">HTTPS page never talks to the origin from the browser (no mixed content, no CORS).</text>
     <text x="60" y="336">SWF NetStream / popWin URLs stay on nikart origin: /static/games/whiplash/index.html</text>
     <text x="60" y="364">Matches existing HTML5 rewrites for /video_h264, /video_webm, /games.</text>
-    <text x="60" y="392">flashVars shape unchanged  only the base string changes.</text>
+    <text x="60" y="392">flashVars shape unchanged — only the base string changes.</text>
   </g>
 
   <rect x="40" y="440" width="1020" height="90" rx="10" fill="#1a1212" stroke="#6b3d3d"/>
   <text x="60" y="474" fill="#e07a7a" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Not enough alone</text>
-  <text x="60" y="504" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="14">Proxied index.html pages still call swfobject.embedSWF. Without Option B or C they still say You need Flash Player.</text>
+  <text x="60" y="504" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="14">Proxied index.html pages still call swfobject.embedSWF. Without Option B or C they still say “You need Flash Player”.</text>
 </svg>

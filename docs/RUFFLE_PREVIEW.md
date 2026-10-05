@@ -1,12 +1,12 @@
 # Ruffle preview architecture
 
-How the modern app currently plays the archival Flash site at `/fl`, and options for playing the Flash pieces that still live on `http://static.nikart.co.uk`.
+How the modern app currently plays the archival Flash site at `/fl`, and options for playing the Flash pieces that still live on `https://static.nikart.co.uk`.
 
 ---
 
 ## Current preview (`/fl`)
 
-The modern app does **not** load the portfolio SWF from the static host. Ruffle runs **same-origin**: Next.js serves `ruffle.js`, `main.swf`, JSON, and images. The static host is only the `staticfilesstr` flashVar (production) used by the SWF for pop-up launches and FLV video.
+The modern app does **not** load the lizard SWF from the static host. Ruffle runs **same-origin**: Next.js serves `ruffle.js`, `main.ruffle.swf`, JSON, and images. The static host is the `staticfilesstr` flashVar (production: `https://static.nikart.co.uk`) used by the SWF for pop-up launches and FLV video. Compare-kit pages load other movies from that origin (Option D).
 
 ![Current Ruffle preview at /fl](diagrams/ruffle-current.svg)
 
@@ -38,7 +38,7 @@ sequenceDiagram
   participant FP as FlashPlayer
   participant Ruffle as Ruffle WASM
   participant Origin as Next.js same-origin
-  participant S3 as static.nikart.co.uk HTTP S3
+  participant S3 as static.nikart.co.uk HTTPS
 
   User->>Page: GET /fl?lang=en|es
   Page->>Page: resolveFlashLangCode (query or NEXT_LOCALE cookie)
@@ -57,7 +57,7 @@ sequenceDiagram
   Origin-->>Ruffle: JPEG thumbs / slides
 
   alt production NODE_ENV
-    Note over Ruffle,S3: staticfilesstr = http://static.nikart.co.uk
+    Note over Ruffle,S3: staticfilesstr = https://static.nikart.co.uk
     Ruffle->>S3: NetStream pathStatic/video_flv/{id}
     Note over S3: video_flv keys are 404 today; H.264/WebM still exist
     Ruffle->>FP: javascript:nikart.popWin(pathStatic + relative url)
@@ -78,7 +78,7 @@ flowchart LR
     i["/content/img/*.jpg → /_generated/img"]
   end
 
-  subgraph s3["http://static.nikart.co.uk (Amazon S3 website, HTTP only)"]
+  subgraph s3["https://static.nikart.co.uk (CloudFront TLS + CORS)"]
     g["/games/*/index.html + .swf"]
     b["/banners/*/index.html + .swf"]
     d["/3d/... HTML + Away3D / Papervision SWFs"]
@@ -96,12 +96,12 @@ flowchart LR
 | Piece | Where | Role |
 |-------|--------|------|
 | Route | `modern/src/app/fl/page.tsx` | 750×500 black stage, outside locale middleware |
-| Lang | `?lang=` or `NEXT_LOCALE`; `/fl/[lang]` sets cookie and redirects | Same flashVar `embedlang` as legacy |
+| Lang | `?lang=` or `NEXT_LOCALE`; `/fl/en` and `/fl/es` set cookie and redirect | Same flashVar `embedlang` as legacy |
 | Player | `modern/src/components/flash-player/flash-player.tsx` | Loads self-hosted Ruffle, `base` = directory of the SWF |
 | flashVars | `modern/src/lib/flash-config.ts` | `dotracking=yes`, `embedlang`, `staticfilesstr` |
 | JS bridge | `modern/src/lib/flash-bridge.ts` | `javascript:nikart.popWin` / `doTracker` from the SWF |
 | Runtime | `modern/public/ruffle/` (gitignored) | Copied from `@ruffle-rs/ruffle` in `postinstall` |
-| SWF | `modern/public/fl/main.swf` | AS2 (AVM1), zlib `CWS`, Flash 8 |
+| SWF | `modern/public/fl/main.ruffle.swf` | AS2 (AVM1), zlib `CWS`, Flash 8; Animate export stays at `main.swf` |
 | Data | `modern/public/content/json/data.json` | SWF path `../content/json/data.json` via Ruffle `base` |
 | Images | `/content/img` rewrite | Same tree the HTML5 site uses |
 | Static host | `https://static.nikart.co.uk` | CloudFront TLS + CORS (`Access-Control-Allow-Origin: *`); HTTP still redirects to HTTPS |
@@ -138,7 +138,7 @@ The bucket still has playable SWFs (probed 2026-09-15). Examples:
 | 3D | `/3d/shockwave3d/index.html` | `japanese.dcr` — **Director, not Flash** (neither Ruffle nor AwayFL) |
 | Video (HTML5) | — | `/video_h264/*.mp4` (not FLV) |
 
-Ruffle cannot load those files **directly from HTTP S3** on an HTTPS page: mixed content, and S3 sends no `Access-Control-Allow-Origin`.
+Ruffle cannot load those files **directly from HTTP** on an HTTPS page (mixed content). `https://static.nikart.co.uk` is live with CORS (`Access-Control-Allow-Origin: *`); the compare kit uses that path. `/fl` pop-up HTML still needs a player on the page.
 
 ### Option A — Same-origin reverse proxy (keep `main.swf` local)
 
@@ -222,7 +222,7 @@ flowchart LR
 ```
 
 **Good for:** keeping binaries off the Next app, sharing files with HTML5.  
-**Requires:** DNS/TLS/CORS on infrastructure you do not currently configure in this repo. Ruffle still needs a page that constructs the player (Options B or C).
+**Status (2026-10-05):** CloudFront TLS + CORS is live. Compare-kit pages load SWFs from that host. Ruffle/AwayFL still need a page that constructs the player (Options B, C, F, or `/swf-compare/`).
 
 ### Option E — Mirror selected SWFs into `public/static`
 

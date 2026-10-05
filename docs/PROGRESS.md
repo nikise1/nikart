@@ -222,6 +222,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Fix Vercel `noUnusedLocals` on `originMoviePath(id)` so the HTTPS-origin compare-kit build can deploy (2026-10-05)
 - [x] Move compare pages to `/swf-compare/{id}/` and delete `public/swf-compare/pieces/` (2026-10-05)
 - [x] Gitignore generated `public/ruffle/` and `public/awayfl/` copies (keep `loadvars-ondata-patch.js`; `postinstall`/`prebuild` restore the runtimes) (2026-10-05)
+- [x] Fix `docs/diagrams/*.svg` encoding (invalid XML control chars / bare `&`) and HTTPS+CORS labels (2026-10-05)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
@@ -291,3 +292,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-09-07 | Keep a single git copy of images at repo-root `public/content/img` | Avoid duplicates and leave the legacy app untouched; modern copies at install/build |
 | 2026-09-07 | Generated images live at `modern/public/_generated/img` | Distinct from legacy `public/content/img` so gitignore cannot collide; app still uses `/content/img/` via rewrite |
 | 2026-10-05 | Gitignore generated Ruffle/AwayFL copies | `postinstall`/`prebuild` already copy them; keep the LoadVars patch and vendored ABC catalogs |
+| 2026-10-05 | Restore `docs/diagrams/*.svg` to UTF-8 | Files were invalid XML (C0 control chars, bare `&`) and still said HTTP S3 / no CORS |

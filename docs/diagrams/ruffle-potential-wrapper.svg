@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
-  <title id="title">Option C  proxy HTML wrappers and inject Ruffle</title>
+  <title id="title">Option C — proxy HTML wrappers and inject Ruffle</title>
   <desc id="desc">Serve original swfobject pages through Next, inject ruffle.js, and let the polyfill upgrade embed/object tags so relative SWFs load via the /static proxy.</desc>
   <rect width="1100" height="560" fill="#0b0b0b"/>
-  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option C  Proxy HTML wrappers, inject Ruffle</text>
+  <text x="40" y="48" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Option C — Proxy HTML wrappers, inject Ruffle</text>
   <text x="40" y="74" fill="#c8c8c8" font-family="Helvetica, Arial, sans-serif" font-size="13">Keep the original index.html shells. Inject /ruffle/ruffle.js so swfobject embeds become Ruffle players.</text>
 
   <defs>
@@ -14,7 +14,7 @@
   <g font-family="Helvetica, Arial, sans-serif" font-size="13">
     <rect x="40" y="120" width="190" height="88" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
     <text x="135" y="152" text-anchor="middle" fill="#ffffff">popWin</text>
-    <text x="135" y="174" text-anchor="middle" fill="#c8c8c8" font-size="12">/static/games/&/index.html</text>
+    <text x="135" y="174" text-anchor="middle" fill="#c8c8c8" font-size="12">/static/games/*/index.html</text>
 
     <rect x="280" y="120" width="190" height="88" rx="8" fill="#1a1a1a" stroke="#95cf89" stroke-width="2"/>
     <text x="375" y="152" text-anchor="middle" fill="#ffffff">Next rewrite</text>
@@ -41,7 +41,7 @@
   <text x="60" y="274" fill="#95cf89" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Best fit</text>
   <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
     <text x="60" y="308">Whiplash, Standard Life, Hellboy,</text>
-    <text x="60" y="330">Nintendo, Shell, Claro  pages that</text>
+    <text x="60" y="330">Nintendo, Shell, Claro — pages that</text>
     <text x="60" y="352">already call swfobject.embedSWF</text>
     <text x="60" y="374">with a relative .swf next to the HTML.</text>
     <text x="60" y="396">Preserves original stage size / bgcolor.</text>
@@ -50,10 +50,10 @@
   <rect x="560" y="240" width="500" height="180" rx="10" fill="#1a1610" stroke="#6b5a3d"/>
   <text x="580" y="274" fill="#e0b060" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700">Harder cases</text>
   <g font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#c8c8c8">
-    <text x="580" y="308">Ciudad Helm / Escalera  SCORM JS</text>
+    <text x="580" y="308">Ciudad Helm / Escalera — SCORM JS</text>
     <text x="580" y="330">talks to the SWF (ExternalInterface).</text>
     <text x="580" y="352">Away3D AR heart, Papervision, Shockwave</text>
-    <text x="580" y="374">3D  not a Ruffle polyfill job.</text>
+    <text x="580" y="374">3D — not a Ruffle polyfill job.</text>
     <text x="580" y="396">HTML may still pull http:// third parties.</text>
   </g>
 
