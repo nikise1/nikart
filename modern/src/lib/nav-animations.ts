@@ -14,8 +14,14 @@ export const NAV_POS = {
 } as const;
 
 /** Reverse of the closeCanvas enter: from (0,0) back to off-screen. */
-export function tweenNavButtonExit(button: HTMLElement, onComplete?: () => void): void {
-  gsap.killTweensOf(button);
+export function isNavButtonBusy(button: HTMLElement): boolean {
+  return gsap.isTweening(button);
+}
+
+export function tweenNavButtonExit(button: HTMLElement, onComplete?: () => void): boolean {
+  if (isNavButtonBusy(button)) return false;
+
+  button.style.pointerEvents = "none";
   gsap.fromTo(
     button,
     { left: 0, top: 0 },
@@ -30,6 +36,7 @@ export function tweenNavButtonExit(button: HTMLElement, onComplete?: () => void)
       },
     },
   );
+  return true;
 }
 
 /** Kill all active nav tweens within the given scope element (legacy doAni preamble). */

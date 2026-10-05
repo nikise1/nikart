@@ -1,14 +1,14 @@
 import { describe, expect, it, vi } from "vitest";
-import { NAV_POS, tweenNavButtonExit } from "./nav-animations";
+import { isNavButtonBusy, NAV_POS, tweenNavButtonExit } from "./nav-animations";
 import { NAV_TIMING } from "./nav-timing";
 
 const gsapFromTo = vi.hoisted(() => vi.fn());
-const gsapKill = vi.hoisted(() => vi.fn());
+const gsapIsTweening = vi.hoisted(() => vi.fn(() => false));
 
 vi.mock("@/lib/gsap", () => ({
   gsap: {
     fromTo: gsapFromTo,
-    killTweensOf: gsapKill,
+    isTweening: gsapIsTweening,
   },
 }));
 
@@ -17,9 +17,8 @@ describe("tweenNavButtonExit", () => {
     const button = document.createElement("button");
     const onComplete = vi.fn();
 
-    tweenNavButtonExit(button, onComplete);
-
-    expect(gsapKill).toHaveBeenCalledWith(button);
+    expect(tweenNavButtonExit(button, onComplete)).toBe(true);
+    expect(button.style.pointerEvents).toBe("none");
     expect(gsapFromTo).toHaveBeenCalledWith(
       button,
       { left: 0, top: 0 },
@@ -35,5 +34,24 @@ describe("tweenNavButtonExit", () => {
     vars.onComplete?.();
     expect(button.style.display).toBe("none");
     expect(onComplete).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not start a second exit while the reverse tween is running", () => {
+    gsapFromTo.mockClear();
+    gsapIsTweening.mockReturnValue(true);
+    const button = document.createElement("button");
+
+    expect(isNavButtonBusy(button)).toBe(true);
+    expect(tweenNavButtonExit(button)).toBe(false);
+    expect(gsapFromTo).not.toHaveBeenCalled();
+  });
+
+  it("allows another exit after the previous tween has finished", () => {
+    gsapFromTo.mockClear();
+    gsapIsTweening.mockReturnValue(false);
+    const button = document.createElement("button");
+
+    expect(tweenNavButtonExit(button)).toBe(true);
+    expect(gsapFromTo).toHaveBeenCalledTimes(1);
   });
 });
