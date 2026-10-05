@@ -3,11 +3,33 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
-const STATIC_HOST = "http://static.nikart.co.uk";
+const STATIC_HOST = "https://static.nikart.co.uk";
 
 const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
+  },
+  async headers() {
+    return [
+      {
+        source: "/ruffle/:path*.wasm",
+        headers: [{ key: "Content-Type", value: "application/wasm" }],
+      },
+      {
+        source: "/swf-compare/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+      {
+        source: "/fl/:path*.swf",
+        headers: [
+          { key: "Content-Type", value: "application/octet-stream" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+    ];
   },
   async rewrites() {
     return [
@@ -27,6 +49,15 @@ const nextConfig: NextConfig = {
         source: "/games/:path*",
         destination: `${STATIC_HOST}/games/:path*`,
       },
+      // AwayFL on /swf-compare/lizard-site/ resolves ../content against the
+      // HTML path. Ruffle uses base=/fl/ and hits /content/ directly.
+      {
+        source: "/swf-compare/content/:path*",
+        destination: "/content/:path*",
+      },
+      // /static is handled by app/static/[...path]/route.ts (Node fetch of the
+      // HTTP origin). An afterFiles rewrite to that host wins on Vercel and
+      // never reaches the route, so HTTPS previews fail to load SWFs.
     ];
   },
 };

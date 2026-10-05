@@ -191,11 +191,39 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 #### 9f: Flash archival route (`/fl`) ✅ (2026-08-04)
 - [x] Ruffle-based `/fl` page in `modern/` (legacy SWF + flashVars)
-- [x] `/fl/:lang` redirect sets locale cookie (legacy parity)
+- [x] `/fl/en` and `/fl/es` redirects set locale cookie (legacy parity; explicit paths so they cannot steal `/fl/main.swf`)
 - [x] Unit tests for `flash-config` helpers
 - [x] Fix blank SWF: serve `data.json`, Ruffle `base` URL, `window.nikart` bridge, AS2 player settings
 - [x] Fix empty `#swf_container`: self-host Ruffle at `/ruffle/ruffle.js` (CDN path `/dist/ruffle.js` was 404)
 - [x] Remove lizard tongue chord in Ruffle: copy `modern/public/fl/main.swf` to `main.ruffle.swf` and edit only that copy (two open `curveTo` strokes with `moveTo(0,0)` before each); `/fl` loads the copy so the Animate export stays untouched
+- [x] Document current Ruffle preview + options for Flash on `static.nikart.co.uk` (`docs/RUFFLE_PREVIEW.md`, 2026-09-15)
+- [x] Add AwayFL as a dual-player option for S3 Away3D / AS3 (keep Ruffle on `/fl`)
+- [x] Mock AwayFL popup for static Flash (`/fl/away`, `/static` proxy, Claro first; same HTML→SWF path for games/banners/websites/3d). Vendored AVM2 ABC catalogs that npm omits.
+- [x] Temporary local SWF compare kit: one HTML page per SWF with generic Ruffle + AwayFL players (Ruffle autoplay on); menu/popWin open `/swf-compare/` (2026-09-15)
+- [x] Commit `/swf-compare/pieces/` SWFs and sidecars so the Vercel preview can live-play them (2026-09-22)
+- [x] Commit Ruffle + AwayFL runtimes (`public/ruffle`, `public/awayfl`) so compare pages work on Vercel, not just locally (2026-09-22)
+- [x] Fit AwayFL to the pane (viewport = column size, not SWF pixels / `100%` of the window) so compare stages match Ruffle (2026-09-22)
+- [x] Keep compare `.stage` height with SWF `aspect-ratio` so AwayFL `position:absolute` canvas is not clipped; pass pane CSS pixels as `w`/`h` (2026-09-22)
+- [x] Copy child SWFs/XML sidecars for compare pages (resolve Loader URLs from the SWF directory, not the XML file) (2026-09-24)
+- [x] Copy JPEG sidecars the SWFs load at runtime (`img/fin_del_juego.jpg`, Escalera `img/p_{n}/{i}.jpg`, DAE textures) (2026-09-24)
+- [x] Load compare-kit movies from `static.nikart.co.uk` through `/static` so child files come from the origin (2026-09-24)
+- [x] Proxy `/static` with a Node route handler so Vercel preview can fetch the HTTP origin (2026-09-24)
+- [x] Drop the `next.config` `/static` rewrite so Vercel cannot bypass the Node proxy (HTTPS preview was still blank) (2026-09-24)
+- [x] Switch compare-kit movies back to `/swf-compare/pieces/{id}/` copies after the origin `/static` proxy still failed on Vercel (2026-09-24)
+- [x] Add the legacy lizard Flash site (`/fl/main.swf`) to the compare kit in both Ruffle and AwayFL (2026-09-27)
+- [x] Link the compare index topnav and intro note to `/swf-compare/pieces/lizard-site/` (2026-09-28)
+- [x] Stop Safari aborting lizard `main.swf` on the compare page: drop document `<base href="/fl/">`, load the pieces copy, share one SWF fetch, start AwayFL after Ruffle, pin `/fl/en` and `/fl/es` so they cannot capture `/fl/main.swf`, rewrite `/swf-compare/pieces/content/` to `/content/` for AwayFL (2026-09-28)
+- [x] Point AwayFL lizard LoadVars `../content/json/data.json` at `/content/` (AwayFL logs that relative URL against the compare HTML page, so `_root.dataLoaded` stayed false) (2026-09-28)
+- [x] Rebase the compare kit onto master and load the lizard movie from `main.ruffle.swf` (same Ruffle tongue-chord copy as `/fl`) instead of the Animate `main.swf` export (2026-09-29)
+- [x] Host-side AwayFL LoadVars `onData` patch in `modern/public/awayfl/loadvars-ondata-patch.js` (prototype slot was READ_ONLY so the lizard’s JSON `onData` override was dropped); notes for an upstream `awayfl/avm1` PR in `docs/AWAYFL_LOADVARS.md` (2026-09-29)
+- [x] Compare-kit index cards and piece topnav prev/next follow `swf-compare-catalog.json` order (they used two different A–Z sorts) (2026-09-29)
+- [x] Compare-kit per-page Ruffle/AwayFL visibility in `localStorage` (`swf-compare-pages`); committed defaults in `visibility-defaults.json`; Hide/Show next to each player; index card flags are clickable (2026-09-29)
+- [x] Compare-kit movies load from `https://static.nikart.co.uk` (CloudFront HTTPS + CORS); lizard stays on `/fl/main.ruffle.swf`; piece binaries are gitignored (2026-10-05)
+- [x] Fix Vercel `noUnusedLocals` on `originMoviePath(id)` so the HTTPS-origin compare-kit build can deploy (2026-10-05)
+- [x] Move compare pages to `/swf-compare/{id}/` and delete `public/swf-compare/pieces/` (2026-10-05)
+- [x] Gitignore generated `public/ruffle/` and `public/awayfl/` copies (keep `loadvars-ondata-patch.js`; `postinstall`/`prebuild` restore the runtimes) (2026-10-05)
+- [x] Fix `docs/diagrams/*.svg` encoding (invalid XML control chars / bare `&`) and HTTPS+CORS labels (2026-10-05)
+- [x] Drop leftover `/swf-compare/pieces/` aliases (rewrite, LoadVars remap, movie-path strip, visibility id parser) (2026-10-05)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
@@ -264,3 +292,5 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-09-07 | `sync:images` never copies onto the legacy symlink | `cp` errors when dest is `../../../public/content/img` (same dir as source) |
 | 2026-09-07 | Keep a single git copy of images at repo-root `public/content/img` | Avoid duplicates and leave the legacy app untouched; modern copies at install/build |
 | 2026-09-07 | Generated images live at `modern/public/_generated/img` | Distinct from legacy `public/content/img` so gitignore cannot collide; app still uses `/content/img/` via rewrite |
+| 2026-10-05 | Gitignore generated Ruffle/AwayFL copies | `postinstall`/`prebuild` already copy them; keep the LoadVars patch and vendored ABC catalogs |
+| 2026-10-05 | Restore `docs/diagrams/*.svg` to UTF-8 | Files were invalid XML (C0 control chars, bare `&`) and still said HTTP S3 / no CORS |

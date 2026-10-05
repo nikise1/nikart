@@ -19,8 +19,13 @@
 /.next/
 /out/
 
-# ruffle runtime (copied from node_modules via postinstall)
+# ruffle/awayfl runtimes (copied from node_modules via postinstall/prebuild)
 /public/ruffle/
+/public/awayfl/*
+!/public/awayfl/loadvars-ondata-patch.js
+
+# generated catalog from swf-compare:sync
+/public/swf-compare/generated-catalog.json
 
 # generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
 /public/_generated/

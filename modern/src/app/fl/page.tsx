@@ -28,6 +28,11 @@ export default async function FlPage({ searchParams }: FlPageProps) {
           {" · "}
           <Link href="/es">HTML5 view (Spanish)</Link>
         </p>
+        <p>
+          <Link href="/swf-compare/index.html" target="_blank">
+            Ruffle vs AwayFL
+          </Link>
+        </p>
       </div>
     </div>
   );

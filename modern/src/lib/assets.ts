@@ -1,5 +1,6 @@
-const STATIC_BASE =
-  process.env.NEXT_PUBLIC_STATIC_BASE ?? "http://static.nikart.co.uk";
+import { STATIC_ORIGIN } from "./static-origin";
+
+const STATIC_BASE = process.env.NEXT_PUBLIC_STATIC_BASE ?? STATIC_ORIGIN;
 const CONTENT_BASE = "/content";
 
 export function imgUrl(id: string): string {

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { compareHrefForItem, compareHrefForSource } from "@/lib/swf-compare";
 import { processUrl } from "@/lib/assets";
 import { localize, localizeUrl } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
@@ -21,7 +22,15 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
   const imgCount = item.imgs ?? 0;
 
-  const link = rawUrl ? processUrl(rawUrl) : undefined;
+  const processed = rawUrl ? processUrl(rawUrl) : undefined;
+  const compareHref =
+    compareHrefForItem(item.id) ??
+    (processed ? compareHrefForSource(processed.href) : null);
+  const link = processed
+    ? compareHref
+      ? { href: compareHref, isSelf: false }
+      : processed
+    : undefined;
 
   useGSAP(
     () => {
