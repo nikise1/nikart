@@ -99,6 +99,7 @@ Legacy `thumb-view.js` / `thumb-item-view.js` differences from modern `Thumbnail
 | Container entrance | `right: -300 → 0` after `timeDelayThumbIn` delay | `gsap.from({ x: 300 })` immediately | Add delay |
 | Container exit | Slides to `right: -300`, clears items | View Transitions | Acceptable (React handles unmount) |
 | Stagger timing | Per-item delay in `aniIn()` | `index * 0.08` | Verify against legacy constants |
+| Mobile heading width (2026-10-06) | Full-width `text-2xl` title | Below `md`, article and video `h1` width is `calc(100% - 5.5rem)` and aligned to the end. The closed menu curl sits at `left: 0` and is 90px wide; this inset starts the line about 14px past it. `md` (768px) and up stay full width and centered, which clears the longest title | Applied |
 
 #### 6b: Background image
 
