@@ -71,6 +71,12 @@ async function flushAnimation() {
   });
 }
 
+function crumbByTitle(container: HTMLElement, title: string): HTMLElement | undefined {
+  return [...container.querySelectorAll<HTMLElement>(".breadcrumb-container")].find(
+    (el) => el.querySelector(".breadcrumb-link")?.textContent === title,
+  );
+}
+
 async function renderBreadcrumbs() {
   const view = render(<Breadcrumbs locale="en" />);
   await flushAnimation();
@@ -98,6 +104,44 @@ describe("Breadcrumbs", () => {
     navPhase = "open";
     await renderBreadcrumbs();
     expect(screen.queryByLabelText("Breadcrumb")).not.toBeInTheDocument();
+  });
+
+  it("caps earlier crumbs on small screens and keeps the current title flexible", async () => {
+    const { container } = await renderBreadcrumbs();
+    const nav = screen.getByRole("navigation", { name: "Breadcrumb" });
+    expect(nav).toHaveClass("max-sm:right-2");
+
+    const art = crumbByTitle(container, "Art");
+    const installations = crumbByTitle(container, "Installations");
+    const spark = crumbByTitle(container, "Spark");
+
+    for (const ancestor of [art, installations]) {
+      expect(ancestor).toHaveClass("max-sm:shrink-0", "max-sm:max-w-[calc(8rem+15px)]");
+      expect(ancestor?.querySelector(".breadcrumb-text-mask")).toHaveClass(
+        "max-sm:max-w-[8rem]",
+        "max-sm:truncate",
+      );
+    }
+
+    expect(spark).toHaveClass("max-sm:min-w-0", "max-sm:shrink");
+    expect(spark).not.toHaveClass("max-sm:shrink-0", "max-sm:max-w-[calc(8rem+15px)]");
+    expect(spark?.querySelector(".breadcrumb-text-mask")).not.toHaveClass("max-sm:max-w-[8rem]");
+    expect(spark?.querySelector(".breadcrumb-text-mask")).toHaveClass("max-sm:truncate");
+  });
+
+  it("shrinks an exiting crumb before the current title on small screens", async () => {
+    const { container, rerender } = await renderBreadcrumbs();
+    pathname = "/en/art/install";
+    rerender(<Breadcrumbs locale="en" />);
+    await flushAnimation();
+
+    const spark = crumbByTitle(container, "Spark");
+    const installations = crumbByTitle(container, "Installations");
+
+    expect(spark).toHaveAttribute("data-breadcrumb-phase", "exiting");
+    expect(spark).toHaveClass("max-sm:shrink-[100]", "max-sm:max-w-[calc(8rem+15px)]");
+    expect(installations).toHaveClass("max-sm:shrink");
+    expect(installations).not.toHaveClass("max-sm:max-w-[calc(8rem+15px)]");
   });
 
   it("renders localized crumb links for the current path", async () => {

@@ -158,6 +158,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Matches legacy positioning and styling
 - [x] Staggered notch drop from the page top (rest at `-0.3em`); only new crumbs enter; removed crumbs reverse-exit (`use-breadcrumb-animator.ts`)
 - [x] One click navigates — current crumb is not a link, exiting crumbs stay clickable, view-transition snapshots ignore pointer events
+- [x] Small screens: ellipsis on ancestor labels (8rem cap); current title uses the leftover width and ellipsizes only if the strip is still too narrow (2026-10-06)
 
 #### 9b3: Language switcher
 - [x] Fixed bottom-left, `{{otherversions}}` interpolation

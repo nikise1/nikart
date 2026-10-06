@@ -37,6 +37,30 @@ function crumbStartStyles(phase: VisualBreadcrumb["phase"]): {
   };
 }
 
+/**
+ * Below `sm`, the bar is the strip to the right of the nav inset.
+ * Ancestors cap at 8rem. Exiting crumbs give that width back before the
+ * current title does, so a long leaf stays readable while it leaves.
+ * At `sm` and up the trail is unconstrained.
+ */
+function crumbLayoutClass(phase: VisualBreadcrumb["phase"], isCurrent: boolean): string {
+  if (isCurrent) return "max-sm:min-w-0 max-sm:shrink";
+  if (phase === "exiting") {
+    return "max-sm:min-w-0 max-sm:max-w-[calc(8rem+15px)] max-sm:shrink-[100]";
+  }
+  return "max-sm:min-w-0 max-sm:max-w-[calc(8rem+15px)] max-sm:shrink-0";
+}
+
+function labelClass(isCurrent: boolean): string {
+  const cap = isCurrent ? "max-sm:shrink" : "max-sm:max-w-[8rem]";
+  const hover = isCurrent ? "" : " transition-colors group-hover:text-[#A8682B]";
+  return [
+    "breadcrumb-text-mask breadcrumb-link inline-block overflow-hidden whitespace-nowrap",
+    "pt-[0.3em] text-[#1C6B00] max-sm:min-w-0 max-sm:truncate",
+    cap,
+  ].join(" ") + hover;
+}
+
 export function Breadcrumbs({ locale }: BreadcrumbsProps) {
   const pathname = usePathname();
   const navPhase = useNavStore((s) => s.navPhase);
@@ -68,7 +92,7 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
       ref={containerRef}
       aria-label="Breadcrumb"
       data-component="Breadcrumbs"
-      className="fixed top-[-0.3em] left-[6em] z-50 flex flex-nowrap text-sm"
+      className="fixed top-[-0.3em] left-[6em] z-50 flex flex-nowrap text-sm max-sm:right-2"
     >
       {visualCrumbs.map((crumb) => {
         const start = crumbStartStyles(crumb.phase);
@@ -84,25 +108,20 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
                 className="breadcrumb-connector inline-block h-[12px] w-[15px] rotate-[75deg] bg-[url('/content/img/stump.png')] bg-no-repeat"
               />
             </span>
-            <span
-              className="breadcrumb-text-mask inline-block overflow-hidden whitespace-nowrap"
-              style={{ clipPath: start.clipPath }}
-            >
-              <span
-                className={`breadcrumb-link inline-block pt-[0.3em] text-[#1C6B00]${isCurrent ? "" : " transition-colors group-hover:text-[#A8682B]"}`}
-              >
-                {crumb.title}
-              </span>
+            <span className={labelClass(isCurrent)} style={{ clipPath: start.clipPath }}>
+              {crumb.title}
             </span>
           </>
         );
+
+        const layoutClass = `breadcrumb-container mr-[0.3em] flex ${crumbLayoutClass(crumb.phase, isCurrent)}`;
 
         if (isCurrent) {
           return (
             <span
               key={crumb.id}
               data-breadcrumb-phase={crumb.phase}
-              className="breadcrumb-container mr-[0.3em] flex"
+              className={layoutClass}
               aria-current="page"
             >
               {body}
@@ -115,7 +134,7 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
             key={crumb.id}
             href={`/${crumb.path}`}
             data-breadcrumb-phase={crumb.phase}
-            className="breadcrumb-container group mr-[0.3em] flex"
+            className={`group ${layoutClass}`}
             transitionTypes={["nav-back"]}
           >
             {body}
