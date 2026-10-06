@@ -2,6 +2,7 @@ import { spawnSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import bundledContentJson from "../../../public/content/json/data.json";
 import { DataSchema } from "./data/schema";
 
 const libDir = dirname(fileURLToPath(import.meta.url));
@@ -10,12 +11,25 @@ export function contentJsonSourcePath(): string {
   return join(libDir, "../../..", "public", "content", "json", "data.json");
 }
 
-export function isContentEditorEnabled(): boolean {
-  return process.env.NODE_ENV === "development";
+function contentJsonPublicPath(): string {
+  return join(libDir, "../..", "public", "content", "json", "data.json");
 }
 
 export function readContentJson(filePath = contentJsonSourcePath()): unknown {
   return JSON.parse(readFileSync(filePath, "utf8"));
+}
+
+/** Disk copy when the repo is present, otherwise the JSON bundled at build time. */
+export function readContentJsonForEditor(): unknown {
+  try {
+    return readContentJson();
+  } catch {
+    try {
+      return readContentJson(contentJsonPublicPath());
+    } catch {
+      return bundledContentJson;
+    }
+  }
 }
 
 export type ContentJsonSaveResult =
@@ -36,7 +50,22 @@ export function saveContentJson(
   }
 
   const filePath = options?.filePath ?? contentJsonSourcePath();
-  writeFileSync(filePath, `${JSON.stringify(value, null, 4)}\n`);
+  try {
+    writeFileSync(filePath, `${JSON.stringify(value, null, 4)}\n`);
+  } catch (error) {
+    const code =
+      error instanceof Error && "code" in error
+        ? String((error as NodeJS.ErrnoException).code)
+        : "";
+    if (code === "EROFS" || code === "EACCES" || code === "EPERM" || code === "ENOENT") {
+      return {
+        ok: false,
+        error:
+          "This deployment can view the tree. Save writes public/content/json/data.json only where the repo file is writable.",
+      };
+    }
+    throw error;
+  }
 
   if (options?.sync !== false) {
     const modernRoot = join(libDir, "../..");

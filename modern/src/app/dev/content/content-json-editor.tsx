@@ -18,8 +18,8 @@ type JsonEditorConstructor = new (
   },
 ) => JsonEditor;
 
-const editorScript = "/dev/vendor/jsoneditor/jsoneditor.min.js";
-const editorStyle = "/dev/vendor/jsoneditor/jsoneditor.min.css";
+const editorScript = "/dev/jsoneditor/jsoneditor.min.js";
+const editorStyle = "/dev/jsoneditor/jsoneditor.min.css";
 
 function loadEditorConstructor(): Promise<JsonEditorConstructor> {
   const existing = document.querySelector(`link[href="${editorStyle}"]`);
@@ -58,13 +58,7 @@ declare global {
   }
 }
 
-interface ContentJsonEditorProps {
-  loadEditor?: () => Promise<JsonEditorConstructor>;
-}
-
-export function ContentJsonEditor({
-  loadEditor = loadEditorConstructor,
-}: ContentJsonEditorProps) {
+export function ContentJsonEditor() {
   const containerRef = useRef<HTMLDivElement>(null);
   const editorRef = useRef<JsonEditor | null>(null);
   const [status, setStatus] = useState("Loading…");
@@ -80,7 +74,7 @@ export function ContentJsonEditor({
 
     void (async () => {
       try {
-        const Editor = await loadEditor();
+        const Editor = await loadEditorConstructor();
         if (cancelled) {
           return;
         }
@@ -114,7 +108,7 @@ export function ContentJsonEditor({
       editor?.destroy();
       editorRef.current = null;
     };
-  }, [loadEditor]);
+  }, []);
 
   async function save() {
     const editor = editorRef.current;

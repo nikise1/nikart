@@ -57,7 +57,7 @@ Do not symlink `modern/public/content/img` to the legacy folder — Vercel copie
 
 One copy in git: repo-root `public/content/json/data.json`, pretty printed (legacy Backbone and the Next data import). Install and the Vercel build minify it into `modern/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
 
-While `npm run dev` is running, open `/dev/content`. That page folds and drag-and-drops the tree. Save writes the pretty source and refreshes the minified copy. The page does not save in production.
+Open `/dev/content` on the dev server or on a deployment. The tree folds and drag-and-drops. Save writes the pretty source and refreshes the minified copy when the repo file is writable.
 
 ### Post-deploy smoke test
 

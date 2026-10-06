@@ -1,30 +1,13 @@
 import { NextResponse } from "next/server";
-import {
-  isContentEditorEnabled,
-  readContentJson,
-  saveContentJson,
-} from "@/lib/content-json-file";
+import { readContentJsonForEditor, saveContentJson } from "@/lib/content-json-file";
 
 export const dynamic = "force-dynamic";
 
-function unavailable() {
-  return NextResponse.json(
-    { error: "The content editor is only available in next dev." },
-    { status: 404 },
-  );
-}
-
 export function GET() {
-  if (!isContentEditorEnabled()) {
-    return unavailable();
-  }
-  return NextResponse.json(readContentJson());
+  return NextResponse.json(readContentJsonForEditor());
 }
 
 export async function PUT(request: Request) {
-  if (!isContentEditorEnabled()) {
-    return unavailable();
-  }
   let value: unknown;
   try {
     value = await request.json();
