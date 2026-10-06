@@ -1,6 +1,34 @@
-import { copyFileSync, existsSync, mkdirSync, rmSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+/** Drop insignificant whitespace. Keeps escapes inside strings. */
+function minifyJson(json) {
+  let out = "";
+  let inStr = false;
+  for (let i = 0; i < json.length; i++) {
+    const ch = json[i];
+    if (inStr) {
+      out += ch;
+      if (ch === "\\") {
+        out += json[++i] ?? "";
+      } else if (ch === '"') {
+        inStr = false;
+      }
+      continue;
+    }
+    if (ch === '"') {
+      inStr = true;
+      out += ch;
+      continue;
+    }
+    if (ch === " " || ch === "\n" || ch === "\r" || ch === "\t") {
+      continue;
+    }
+    out += ch;
+  }
+  return out;
+}
 
 const modernRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const source = join(modernRoot, "..", "public", "content", "json", "data.json");
@@ -16,7 +44,7 @@ if (!existsSync(source)) {
 }
 
 mkdirSync(destDir, { recursive: true });
-copyFileSync(source, dest);
+writeFileSync(dest, minifyJson(readFileSync(source, "utf8")));
 if (existsSync(leftoverPretty)) {
   rmSync(leftoverPretty);
 }

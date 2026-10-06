@@ -16,8 +16,15 @@ describe("DataSchema", () => {
   });
 
   it("matches the copied public data.json Flash loads", () => {
-    const copied = JSON.parse(readFileSync(copiedDataPath, "utf8"));
-    expect(copied).toEqual(rawData);
+    const sourceText = readFileSync(
+      join(__dirname, "../../../../public/content/json/data.json"),
+      "utf8",
+    );
+    const copiedText = readFileSync(copiedDataPath, "utf8");
+    expect(sourceText).toContain("\n    ");
+    expect(copiedText).not.toContain("\n");
+    expect(copiedText.length).toBeLessThan(sourceText.length);
+    expect(JSON.parse(copiedText)).toEqual(rawData);
   });
 
   it("rejects invalid data", () => {
