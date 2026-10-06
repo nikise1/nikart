@@ -7,6 +7,7 @@ import {
   orderComparePieceIds,
   pieceMovieUrl,
   pieceMovieBase,
+  pieceFillHref,
   piecePageHref,
   swfCompareSources,
 } from "./swf-compare";
@@ -48,9 +49,10 @@ const lizardHtml = readFileSync(
 const playersJs = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
 
 describe("swf-compare", () => {
-  it("sends a single-SWF menu item to its compare page", () => {
-    expect(compareHrefForItem("claro")).toBe(piecePageHref("claro"));
-    expect(compareHrefForItem("whiplash")).toBe(piecePageHref("whiplash"));
+  it("sends a single-SWF menu item to its fill page", () => {
+    expect(compareHrefForItem("claro")).toBe(pieceFillHref("claro"));
+    expect(compareHrefForItem("whiplash")).toBe(pieceFillHref("whiplash"));
+    expect(pieceFillHref("claro")).toBe("/swf-compare/claro/fill.html");
   });
 
   it("sends banner launches to the compare index", () => {
@@ -59,12 +61,17 @@ describe("swf-compare", () => {
     );
   });
 
-  it("maps an S3 wrapper URL to the compare page", () => {
+  it("maps an S3 wrapper URL to the fill page", () => {
     expect(
       compareHrefForSource(
         "https://static.nikart.co.uk/websites/claro/index.html",
       ),
-    ).toBe(piecePageHref("claro"));
+    ).toBe(pieceFillHref("claro"));
+    expect(
+      compareHrefForSource(
+        "https://static.nikart.co.uk/banners/hellboy/index.html",
+      ),
+    ).toBe(pieceFillHref("banner-hellboy"));
   });
 
   it("ignores off-site URLs", () => {

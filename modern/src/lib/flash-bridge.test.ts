@@ -15,7 +15,7 @@ describe("flash-bridge", () => {
     expect(typeof window.nikart?.doTracker).toBe("function");
   });
 
-  it("opens static Flash wrappers on the Ruffle vs AwayFL compare page", () => {
+  it("opens static Flash wrappers on the fill page", () => {
     const open = vi.spyOn(window, "open").mockReturnValue(null);
     installFlashBridge();
 
@@ -30,7 +30,7 @@ describe("flash-bridge", () => {
     );
 
     expect(open).toHaveBeenCalledWith(
-      "/swf-compare/claro/index.html",
+      "/swf-compare/claro/fill.html",
       "claro",
     );
   });

@@ -226,6 +226,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Drop leftover `/swf-compare/pieces/` aliases (rewrite, LoadVars remap, movie-path strip, visibility id parser) (2026-10-05)
 - [x] Size compare stages from each SWF header, not the `data.json` popup window or the stretched column. Avis is 500×500 (window was 600×600); banners use their own stage (300×250, 728×90, and so on) (2026-10-06)
 - [x] Compile compare HTML and a full-window fill page per movie from `modern/public/swf-compare/pages.json` (gitignored outputs; fill background is the legacy embed color) (2026-10-06)
+- [x] Portfolio launch buttons and `popWin` open `/swf-compare/{id}/fill.html` (2026-10-06)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
