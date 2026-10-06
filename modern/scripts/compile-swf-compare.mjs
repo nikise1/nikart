@@ -95,12 +95,20 @@ function stageStyle(page) {
   return `style="--swf-w: ${page.width}; --swf-h: ${page.height}; --swf-aspect: ${page.width} / ${page.height}"`;
 }
 
+function pieceHref(id) {
+  return `/swf-compare/${id}/index.html`;
+}
+
+function fillHref(id) {
+  return `/swf-compare/${id}/fill.html`;
+}
+
 function renderPieceHtml(page, siblings, prev, next) {
   const siblingLinks = siblings
     .filter((item) => item.id !== page.id)
     .map(
       (item) =>
-        `<a href="../${item.id}/index.html">${escapeHtml(item.title)}</a>`,
+        `<a href="${pieceHref(item.id)}">${escapeHtml(item.title)}</a>`,
     )
     .join(" · ");
   const extra = extraStageAttrs(page, {
@@ -109,10 +117,10 @@ function renderPieceHtml(page, siblings, prev, next) {
   const note = page.note ?? DEFAULT_NOTE;
   const navLinks = [
     `<a href="/swf-compare/index.html">All SWFs</a>`,
-    `<a href="fill.html">Fill</a>`,
+    `<a href="${fillHref(page.id)}">Fill</a>`,
     page.id === "lizard-site" ? `<a href="/fl">Flash view</a>` : "",
-    prev ? `<a href="../${prev.id}/index.html">← ${escapeHtml(prev.title)}</a>` : "",
-    next ? `<a href="../${next.id}/index.html">${escapeHtml(next.title)} →</a>` : "",
+    prev ? `<a href="${pieceHref(prev.id)}">← ${escapeHtml(prev.title)}</a>` : "",
+    next ? `<a href="${pieceHref(next.id)}">${escapeHtml(next.title)} →</a>` : "",
   ].filter(Boolean);
   return `<!doctype html>
 <html lang="en">
@@ -176,7 +184,7 @@ function renderFillHtml(page) {
   <link rel="stylesheet" href="/swf-compare/players.css">
 </head>
 <body style="background:${background}">
-  <div class="stage stage-fill" style="background:${background}" data-fill="1" data-player="${player}" data-swf="${escapeHtml(page.swf)}" data-width="${page.width}" data-height="${page.height}"${extra}></div>
+  <div class="stage stage-fill" style="--swf-w: ${page.width}; --swf-h: ${page.height}; --swf-aspect: ${page.width} / ${page.height}; background:${background}" data-fill="1" data-player="${player}" data-swf="${escapeHtml(page.swf)}" data-width="${page.width}" data-height="${page.height}"${extra}></div>
   <script src="/swf-compare/players.js"></script>
 </body>
 </html>
@@ -205,7 +213,7 @@ function renderIndex(pages) {
       const cards = list
         .map(
           (page) =>
-            `<div class="card" data-piece="${escapeHtml(page.id)}"><a href="${escapeHtml(page.id)}/index.html">${escapeHtml(page.title)}<small>${escapeHtml(swfFileName(page))}</small></a><span class="card-vis">${visFlagButton(page, "ruffle", "Ruffle")}${visFlagButton(page, "awayfl", "AwayFL")}</span></div>`,
+            `<div class="card" data-piece="${escapeHtml(page.id)}"><a href="${pieceHref(page.id)}">${escapeHtml(page.title)}<small>${escapeHtml(swfFileName(page))}</small></a><span class="card-vis">${visFlagButton(page, "ruffle", "Ruffle")}${visFlagButton(page, "awayfl", "AwayFL")}</span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
@@ -223,11 +231,11 @@ function renderIndex(pages) {
   <div class="wrap">
     <nav class="topnav">
       <a href="/fl">Flash site</a>
-      <a href="lizard-site/index.html">Legacy Flash site</a>
+      <a href="${pieceHref("lizard-site")}">Legacy Flash site</a>
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="lizard-site/index.html">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="${pieceHref("lizard-site")}">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
   <script src="/swf-compare/players.js"></script>

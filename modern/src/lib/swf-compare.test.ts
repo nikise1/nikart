@@ -213,8 +213,12 @@ describe("swf-compare", () => {
     );
     expect(nextConfig).toContain('source: "/swf-compare/content/:path*"');
     expect(nextConfig).not.toContain("/swf-compare/pieces/");
+    expect(nextConfig).toContain('source: "/swf-compare"');
+    expect(nextConfig).toContain('destination: "/swf-compare/index.html"');
 
-    expect(lizardHtml).toContain('href="../claro/index.html">Claro →');
+    expect(lizardHtml).toContain(
+      'href="/swf-compare/claro/index.html">Claro →',
+    );
     expect(lizardHtml).not.toContain("118aua-energyball");
 
     const playersCss = readFileSync(
@@ -223,11 +227,21 @@ describe("swf-compare", () => {
     );
     expect(playersCss).toContain("var(--swf-w");
     expect(playersCss).toContain(".stage.stage-fill");
+    expect(playersCss).toContain(
+      "min(100vw, calc(100vh * (var(--swf-w, 640) / var(--swf-h, 400))))",
+    );
     expect(playersJs).toContain("w: size.width");
     expect(playersJs).toContain("next.width + 1, next.height + 1");
-    expect(playersJs).toContain("function fillViewport()");
+    expect(playersJs).toContain("function fillStageSize(el)");
     expect(playersJs).toContain('el.dataset.fill === "1"');
+    expect(playersJs).toContain('options.scale = "exactFit"');
     expect(playersJs).not.toContain("pane.clientWidth");
+    expect(playersJs).not.toContain("function fillViewport()");
+
+    expect(indexHtml).toContain('href="/swf-compare/lizard-site/index.html"');
+    expect(indexHtml).toContain('href="/swf-compare/claro/index.html"');
+    expect(indexHtml).not.toContain('href="lizard-site/index.html"');
+    expect(indexHtml).not.toContain('href="claro/index.html"');
 
     for (const id of expected) {
       const stage = stageSizes[id];
@@ -237,11 +251,13 @@ describe("swf-compare", () => {
       expect(html).toContain(`data-height="${stage?.height}"`);
       expect(html).toContain(`--swf-w: ${stage?.width}`);
       expect(html).toContain(`--swf-h: ${stage?.height}`);
-      expect(html).toContain('href="fill.html"');
+      expect(html).toContain(`href="/swf-compare/${id}/fill.html"`);
       const fill = readFileSync(join(pieceRoot, id, "fill.html"), "utf8");
       expect(fill).toContain('data-fill="1"');
       expect(fill).toContain(`data-width="${stage?.width}"`);
       expect(fill).toContain(`data-height="${stage?.height}"`);
+      expect(fill).toContain(`--swf-w: ${stage?.width}`);
+      expect(fill).toContain(`--swf-h: ${stage?.height}`);
       expect(fill).toContain("data-background=");
       expect(fill).toContain("stage-fill");
       expect(fill).not.toContain("topnav");
@@ -252,10 +268,10 @@ describe("swf-compare", () => {
       const prev = expected[index - 1];
       const next = expected[index + 1];
       if (prev) {
-        expect(html).toContain(`href="../${prev}/index.html"`);
+        expect(html).toContain(`href="/swf-compare/${prev}/index.html"`);
       }
       if (next) {
-        expect(html).toContain(`href="../${next}/index.html"`);
+        expect(html).toContain(`href="/swf-compare/${next}/index.html"`);
       }
     }
   });

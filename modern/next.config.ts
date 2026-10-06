@@ -32,6 +32,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Relative card links break when the URL is /swf-compare (no slash /
+      // index.html): the browser resolves against /. Always land on the index.
+      {
+        source: "/swf-compare",
+        destination: "/swf-compare/index.html",
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

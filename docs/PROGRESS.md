@@ -232,6 +232,8 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Compile compare HTML and a full-window fill page per movie from `modern/public/swf-compare/pages.json` (gitignored outputs; fill background is the legacy embed color) (2026-10-06)
 - [x] Portfolio launch buttons and `popWin` open `/swf-compare/{id}/fill.html` (2026-10-06)
 - [x] Stop AwayFL stretching a 300×150 bitmap to the CSS stage: set the stage size twice so both canvas axes update (2026-10-06)
+- [x] Compare index/piece links are root-absolute; redirect `/swf-compare` → `/swf-compare/index.html` so cards work without `/index.html` (2026-10-06)
+- [x] Fill pages and `/fl` stretch into a viewport-sized box clipped to the SWF stage aspect ratio (`exactFit`), so off-stage content is masked (2026-10-06)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
@@ -318,5 +320,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | Agents paste the Vercel branch preview URL | Root `AGENTS.md`: after push, the summary includes the stable preview from the PR’s Vercel comment, not `nikart-beta.vercel.app` |
 | 2026-10-06 | One branch per chat | Root `AGENTS.md`: follow-up work in the same conversation stays on the chat’s existing branch |
 | 2026-10-06 | Compile SWF compare pages from `pages.json` | The HTML files were copies of one template; gitignore the output and generate a full-window fill page per movie |
+| 2026-10-06 | Fill/`/fl` clip to stage aspect ratio | Stretching the player to the full viewport showed off-stage content; mask to native ratio with `exactFit` |
+| 2026-10-06 | Absolute `/swf-compare/…` hrefs + redirect | Relative index cards broke when the URL was `/swf-compare` without `/index.html` |
 | 2026-10-06 | One pretty-printed git copy of portfolio JSON at repo-root `public/content/json/data.json` | Flash still requests `/content/json/data.json`, so install/build minifies that file into the Next public path |
 | 2026-10-06 | Edit portfolio JSON in JSON Editor Online | `npm run json:edit` loads the file via the site’s `#left=json.` hash. Saying “edit json data” in a chat follows root `AGENTS.md` |
