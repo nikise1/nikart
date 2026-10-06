@@ -56,8 +56,8 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
     const container = containerRef.current;
     const ruffle = window.RufflePlayer.newest();
     const player = ruffle.createPlayer();
-    player.style.width = `${SWF_WIDTH}px`;
-    player.style.height = `${SWF_HEIGHT}px`;
+    player.style.width = "100%";
+    player.style.height = "100%";
     container.replaceChildren(player);
 
     const base = new URL(swfUrl, window.location.href).href.replace(
@@ -77,6 +77,10 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
       compatibilityRules: true,
       warnOnUnsupportedContent: true,
       logLevel: "warn",
+      // Container is already clipped to 750×500; stretch into that box.
+      scale: "exactFit",
+      width: SWF_WIDTH,
+      height: SWF_HEIGHT,
     });
 
     return () => {
@@ -96,7 +100,6 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
         ref={containerRef}
         id="swf_container"
         data-component="FlashPlayer"
-        style={{ width: SWF_WIDTH, height: SWF_HEIGHT }}
       />
       {loadError ? <p className="fl-fallback">{loadError}</p> : null}
     </>

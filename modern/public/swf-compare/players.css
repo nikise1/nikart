@@ -223,9 +223,18 @@ body:has(.stage-fill) {
   overflow: hidden;
 }
 
+body:has(.stage-fill) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .stage.stage-fill {
-  width: 100%;
-  height: 100vh;
+  /* Stretch to fill the viewport, but clip to the SWF stage ratio so
+     off-stage content never shows in the letterbox regions. */
+  width: min(100vw, calc(100vh * (var(--swf-w, 640) / var(--swf-h, 400))));
+  height: min(100vh, calc(100vw * (var(--swf-h, 400) / var(--swf-w, 640))));
+  overflow: hidden;
 }
 
 .stage-fill ~ .status {

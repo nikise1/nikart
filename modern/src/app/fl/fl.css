@@ -18,29 +18,31 @@ img {
   border: 0;
 }
 
+html,
 body {
-  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   font-family: helvetica, arial;
   font-size: 14px;
   color: #ffffff;
   background-color: #000000;
 }
 
-html,
-body,
-#container {
-  width: 100%;
-  height: 100%;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Same fill+mask as /swf-compare/lizard-site/fill.html: stretch to the
+   viewport, but clip to the original 750×500 stage ratio. */
 #container {
-  position: absolute;
-  width: 750px;
-  height: 500px;
-  left: 50%;
-  top: 50%;
-  margin-left: -375px;
-  margin-top: -250px;
+  position: relative;
+  width: min(100vw, calc(100vh * (750 / 500)));
+  height: min(100vh, calc(100vw * (500 / 750)));
+  overflow: hidden;
+  background: #000000;
 }
 
 #swf_container {
@@ -49,8 +51,29 @@ body,
   text-align: center;
 }
 
+#swf_container ruffle-player {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .fl-fallback {
-  margin-top: 1.5rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  margin: 0;
   text-align: center;
   line-height: 1.6;
+  font-size: 13px;
+  color: #aaa;
+  pointer-events: none;
+}
+
+.fl-fallback a {
+  pointer-events: auto;
+}
+
+.fl-fallback p {
+  margin: 0.25rem 0;
 }
