@@ -1,5 +1,6 @@
 "use client";
 
+import { ViewTransition } from "react";
 import { compareHrefForItem, compareHrefForSource } from "@/lib/swf-compare";
 import { processUrl } from "@/lib/assets";
 import { localize, localizeUrl } from "@/lib/data/content";
@@ -37,37 +38,32 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
   const linkSlot = link && launchText ? slot++ : null;
 
   return (
-    <article data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
+    <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
+      <article data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
       <ContentTransition index={titleSlot}>
-        <h1 data-content-slot={titleSlot} className="text-center text-2xl font-semibold text-[#4F3E2D]">
-          {title}
-        </h1>
+        <h1 className="text-center text-2xl font-semibold text-[#4F3E2D]">{title}</h1>
       </ContentTransition>
 
       {slideshowSlot !== null && (
         <ContentTransition index={slideshowSlot}>
-          <div data-content-slot={slideshowSlot}>
-            <Slideshow
-              itemId={item.id}
-              imgCount={imgCount}
-              alt={title}
-              className="mt-4 h-[240px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[480px]"
-            />
-          </div>
+          <Slideshow
+            itemId={item.id}
+            imgCount={imgCount}
+            alt={title}
+            className="mt-4 h-[240px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[480px]"
+          />
         </ContentTransition>
       )}
 
       {descSlot !== null && desc && (
         <ContentTransition index={descSlot}>
-          <p data-content-slot={descSlot} className="mt-4 max-w-prose text-center text-[#4F3E2D]">
-            {desc}
-          </p>
+          <p className="mt-4 max-w-prose text-center text-[#4F3E2D]">{desc}</p>
         </ContentTransition>
       )}
 
       {linkSlot !== null && link && launchText && (
         <ContentTransition index={linkSlot}>
-          <p data-content-slot={linkSlot} className="mt-4">
+          <p className="mt-4">
             <a
               href={link.href}
               target={link.isSelf ? "_self" : "_blank"}
@@ -79,6 +75,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
           </p>
         </ContentTransition>
       )}
-    </article>
+      </article>
+    </ViewTransition>
   );
 }

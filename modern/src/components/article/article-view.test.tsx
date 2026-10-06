@@ -34,12 +34,12 @@ describe("ArticleView", () => {
   it("staggers title, slideshow, description, and launch as separate slots", () => {
     render(<ArticleView item={slideshowItem} locale="en" />);
 
-    expect(screen.getByRole("heading", { name: "One Day in May" })).toHaveAttribute(
+    expect(screen.getByRole("heading", { name: "One Day in May" }).parentElement).toHaveAttribute(
       "data-content-slot",
       "0",
     );
-    expect(screen.getByText("A microsite.")).toHaveAttribute("data-content-slot", "2");
-    expect(screen.getByRole("link", { name: "Launch Website" }).parentElement).toHaveAttribute(
+    expect(screen.getByText("A microsite.").parentElement).toHaveAttribute("data-content-slot", "2");
+    expect(screen.getByRole("link", { name: "Launch Website" }).parentElement?.parentElement).toHaveAttribute(
       "data-content-slot",
       "3",
     );
@@ -59,8 +59,11 @@ describe("ArticleView", () => {
 
     render(<ArticleView item={textOnly} locale="en" />);
 
-    expect(screen.getByRole("heading", { name: "Note" })).toHaveAttribute("data-content-slot", "0");
-    expect(screen.getByText("Just words.")).toHaveAttribute("data-content-slot", "1");
+    expect(screen.getByRole("heading", { name: "Note" }).parentElement).toHaveAttribute(
+      "data-content-slot",
+      "0",
+    );
+    expect(screen.getByText("Just words.").parentElement).toHaveAttribute("data-content-slot", "1");
     expect(document.querySelector("[data-content-slot='2']")).toBeNull();
   });
 });

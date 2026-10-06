@@ -1,8 +1,8 @@
 "use client";
 
-import { ViewTransition, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
-/** Keep in sync with the content-in / content-out rules in globals.css. */
+/** Keep in sync with the content-piece rules in globals.css. */
 export const CONTENT_TRANSITION_MS = 240;
 export const CONTENT_STAGGER_MS = 40;
 export const CONTENT_ENTER_LEAD_MS = 60;
@@ -14,15 +14,14 @@ interface ContentTransitionProps {
 }
 
 export function ContentTransition({ index, children }: ContentTransitionProps) {
+  const style: CSSProperties = {
+    viewTransitionName: `content-slot-${index}`,
+    viewTransitionClass: `content-piece-${index}`,
+  };
+
   return (
-    <ViewTransition
-      enter={`content-in-${index}`}
-      exit={`content-out-${index}`}
-      update="none"
-      share="none"
-      default="none"
-    >
+    <div data-content-slot={index} className="flex w-full flex-col items-center" style={style}>
       {children}
-    </ViewTransition>
+    </div>
   );
 }

@@ -22,7 +22,13 @@ describe("VideoView", () => {
   it("staggers the title ahead of the player", () => {
     render(<VideoView item={videoItem} locale="en" />);
 
-    expect(screen.getByRole("heading", { name: "Spark" })).toHaveAttribute("data-content-slot", "0");
-    expect(document.querySelector("video")?.parentElement).toHaveAttribute("data-content-slot", "1");
+    expect(screen.getByRole("heading", { name: "Spark" }).parentElement).toHaveAttribute(
+      "data-content-slot",
+      "0",
+    );
+    expect(document.querySelector("video")?.parentElement?.parentElement).toHaveAttribute(
+      "data-content-slot",
+      "1",
+    );
   });
 });
