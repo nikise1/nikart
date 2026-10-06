@@ -320,4 +320,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | Compile SWF compare pages from `pages.json` | The HTML files were copies of one template; gitignore the output and generate a full-window fill page per movie |
 | 2026-10-06 | One pretty-printed git copy of portfolio JSON at repo-root `public/content/json/data.json` | Flash still requests `/content/json/data.json`, so install/build minifies that file into the Next public path |
 | 2026-10-06 | Edit portfolio JSON in JSON Editor Online | `npm run json:edit` loads the file via the site’s `#left=json.` hash. Saying “edit json data” in a chat follows root `AGENTS.md` |
-| 2026-10-06 | Weekly Dependabot for `/` and `/modern` | Group minor and patch; one PR per major. Manual `@cursor` comment for a migration. Monthly library radar stays a Cursor automation |
+| 2026-10-06 | Weekly Dependabot for `/modern` only | Root and `public/html5/` are deprecated and will be decommissioned. Group minor and patch; one PR per major. Manual `@cursor` comment for a migration. Monthly library radar stays a Cursor automation and uses the same scope |
