@@ -235,6 +235,13 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
 
+#### 9i: Article and video enter/exit ✅ (2026-10-06)
+
+- [x] Legacy fades the whole article or video panel (`timeArticleOut` 0.5s, `timeArticleIn` 1.5s). Modern only faded the panel in over 0.4s, so leaving it cut.
+- [x] Title, slideshow or player, description, and launch link each leave and arrive on their own. Leave is 240ms, each next block starts 40ms later (about 360ms for a full article). Arrival starts 60ms in, same stagger. Shorter than the legacy fade-in.
+- [x] These blocks are not inside the thumbnail route transition, so the page slide does not replace the content fade.
+- [x] `prefers-reduced-motion` still zeros the animation.
+
 #### 9h: Breadcrumb entrance animation ✅ (2026-09-10)
 
 - [x] Image notches (`stump.png`) drop in from above the page top, staggered with nav `staggerIn`

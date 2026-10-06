@@ -1,9 +1,24 @@
 "use client";
 
+import { ViewTransition } from "react";
 import { isMenuItem, type DataNode, type Locale } from "@/lib/data/schema";
 import { ThumbnailGrid } from "@/components/thumbnail/thumbnail-grid";
 import { ArticleView } from "@/components/article/article-view";
 import { VideoView } from "@/components/video/video-view";
+
+const routeTransition = {
+  enter: {
+    "nav-forward": "nav-forward",
+    "nav-back": "nav-back",
+    default: "crossfade",
+  },
+  exit: {
+    "nav-forward": "nav-forward",
+    "nav-back": "nav-back",
+    default: "crossfade",
+  },
+  default: "crossfade",
+} as const;
 
 interface ContentPageProps {
   node: DataNode;
@@ -16,9 +31,15 @@ export function ContentPage({ node, path, locale }: ContentPageProps) {
 
   if (isMenuItem(node)) {
     return (
-      <main data-component="ContentPage" className="flex flex-1 flex-col">
-        <ThumbnailGrid menu={node} locale={locale} basePath={basePath} />
-      </main>
+      <ViewTransition
+        enter={routeTransition.enter}
+        exit={routeTransition.exit}
+        default={routeTransition.default}
+      >
+        <main data-component="ContentPage" className="flex flex-1 flex-col">
+          <ThumbnailGrid menu={node} locale={locale} basePath={basePath} />
+        </main>
+      </ViewTransition>
     );
   }
 
