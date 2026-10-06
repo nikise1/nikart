@@ -306,4 +306,5 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-05 | Gitignore generated Ruffle/AwayFL copies | `postinstall`/`prebuild` already copy them; keep the LoadVars patch and vendored ABC catalogs |
 | 2026-10-05 | Restore `docs/diagrams/*.svg` to UTF-8 | Files were invalid XML (C0 control chars, bare `&`) and still said HTTP S3 / no CORS |
 | 2026-10-06 | Agents paste the Vercel branch preview URL | Root `AGENTS.md`: after push, the summary includes the stable preview from the PR’s Vercel comment, not `nikart-beta.vercel.app` |
+| 2026-10-06 | One branch per chat | Root `AGENTS.md`: follow-up work in the same conversation stays on the chat’s existing branch |
 | 2026-10-06 | Compile SWF compare pages from `pages.json` | The HTML files were copies of one template; gitignore the output and generate a full-window fill page per movie |
