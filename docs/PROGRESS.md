@@ -116,6 +116,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Repo on GitHub: `https://github.com/nikise1/nikart`
 - [x] Content images: one git copy at repo-root `public/content/img`; install/build copies into `modern/public/_generated/img/` (gitignored); rewrite `/content/img/*` → `/_generated/img/*`
 - [x] Content JSON: one pretty-printed git copy at repo-root `public/content/json/data.json`; install/build minifies it into `modern/public/content/json/data.json` (gitignored). Next imports the pretty repo-root file (2026-10-06)
+- [x] Dev-only editor at `/dev/content`: fold and drag the portfolio JSON, Save writes the pretty source and refreshes the minified copy (2026-10-06)
 - [x] `sync:images` is symlink-safe (staging copy; never copies onto the legacy folder)
 - [x] Node `22` pinned via `modern/.nvmrc` and `modern/package.json` `engines`
 

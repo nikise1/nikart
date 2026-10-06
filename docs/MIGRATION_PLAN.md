@@ -243,6 +243,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 - Do **not** symlink `modern/public/content/img` → `../../../public/content/img` — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
 - Single git copy stays at legacy `public/content/img` (legacy app untouched). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`
 - Single git copy of portfolio JSON stays at legacy `public/content/json/data.json`, pretty printed (legacy Backbone still fetches it). `sync:json` minifies it to `modern/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-06).
+- Dev-only tree editor at `/dev/content` (while `npm run dev` is running) loads that file in jsoneditor: fold fields, drag to reorder, Save pretty-prints the source and refreshes the minified copy. The route is off in production (2026-10-06).
 
 **After initial deploy:**
 
