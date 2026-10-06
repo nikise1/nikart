@@ -64,17 +64,11 @@
 
   function applyStageBox(el) {
     const native = nativeSize(el);
+    el.style.width = `${native.width}px`;
+    el.style.height = `${native.height}px`;
+    el.style.setProperty("--swf-w", String(native.width));
+    el.style.setProperty("--swf-h", String(native.height));
     el.style.setProperty("--swf-aspect", `${native.width} / ${native.height}`);
-  }
-
-  function paneBox(el) {
-    const native = nativeSize(el);
-    const width = Math.max(1, Math.round(el.clientWidth || native.width));
-    const height = Math.max(
-      1,
-      Math.round(el.clientHeight || (width * native.height) / native.width),
-    );
-    return { width, height };
   }
 
   const LAUNCH_PAGES = {
@@ -294,8 +288,9 @@
     const buffer = await movieBuffer(el);
     const ruffle = window.RufflePlayer.newest();
     const player = ruffle.createPlayer();
-    player.style.width = "100%";
-    player.style.height = "100%";
+    const native = nativeSize(el);
+    player.style.width = `${native.width}px`;
+    player.style.height = `${native.height}px`;
     el.replaceChildren(player);
     await player.load({
       ...ruffleLoadOptions(el, url),
@@ -322,8 +317,10 @@
     const canvas = document.createElement("canvas");
     canvas.id = `awayfl_stage_${el.dataset.swf?.replace(/\W+/g, "_") ?? "swf"}`;
     canvas.style.display = "block";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
     el.replaceChildren(canvas);
-    const size = paneBox(el);
+    const size = nativeSize(el);
     window.awayflplayer.StageManager.htmlCanvas = canvas;
     window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS;
     const loaderUrl = playHref(el).href;
@@ -337,22 +334,8 @@
       h: size.height,
       stageScaleMode: "showAll",
     });
-    let lastBox = `${size.width}x${size.height}`;
-    const refit = () => {
-      const next = paneBox(el);
-      const key = `${next.width}x${next.height}`;
-      if (key === lastBox) {
-        return;
-      }
-      lastBox = key;
-      player.setStageDimensions?.(0, 0, next.width, next.height);
-    };
-    window.addEventListener("resize", refit);
-    if (typeof ResizeObserver === "function") {
-      new ResizeObserver(refit).observe(el);
-    }
     player.addEventListener("loaderComplete", () => {
-      refit();
+      player.setStageDimensions?.(0, 0, size.width, size.height);
       player.play?.();
       setStatus(el, "");
     });

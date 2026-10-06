@@ -44,18 +44,14 @@ h1 {
 }
 
 .split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 1rem;
 }
 
-@media (max-width: 900px) {
-  .split {
-    grid-template-columns: 1fr;
-  }
-}
-
 .pane {
+  width: max-content;
   background: #000;
   border: 1px solid #333;
   min-height: 280px;
@@ -104,15 +100,11 @@ h1 {
   display: none;
 }
 
-.split:has(> .pane.is-off):has(> .pane:not(.is-off)) {
-  grid-template-columns: 1fr;
-}
-
 .stage {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  aspect-ratio: var(--swf-aspect, 4 / 3);
+  width: calc(var(--swf-w, 640) * 1px);
+  height: calc(var(--swf-h, 400) * 1px);
   background: #000;
 }
 
@@ -124,6 +116,8 @@ h1 {
 
 .stage canvas {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .status {
