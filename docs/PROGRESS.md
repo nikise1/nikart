@@ -224,6 +224,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Gitignore generated `public/ruffle/` and `public/awayfl/` copies (keep `loadvars-ondata-patch.js`; `postinstall`/`prebuild` restore the runtimes) (2026-10-05)
 - [x] Fix `docs/diagrams/*.svg` encoding (invalid XML control chars / bare `&`) and HTTPS+CORS labels (2026-10-05)
 - [x] Drop leftover `/swf-compare/pieces/` aliases (rewrite, LoadVars remap, movie-path strip, visibility id parser) (2026-10-05)
+- [x] Size compare stages from each SWF header, not the `data.json` popup window or the stretched column. Avis is 500×500 (window was 600×600); banners use their own stage (300×250, 728×90, and so on) (2026-10-06)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

@@ -11,6 +11,35 @@ import {
   swfCompareSources,
 } from "./swf-compare";
 
+/** SWF header stage size, not the data.json popup window. */
+const stageSizes: Record<string, { width: number; height: number }> = {
+  "118aua-energyball": { width: 982, height: 494 },
+  "118aua-livefeed": { width: 982, height: 494 },
+  "ar-heart": { width: 494, height: 370 },
+  "ar-lizard": { width: 500, height: 375 },
+  "avis-donde": { width: 500, height: 500 },
+  "banner-hellboy": { width: 728, height: 300 },
+  "banner-johnfrieda": { width: 776, height: 334 },
+  "banner-nintendo": { width: 300, height: 250 },
+  "banner-shell": { width: 728, height: 90 },
+  "banner-shell__glasses": { width: 300, height: 250 },
+  "banner-shell__matchstick": { width: 300, height: 250 },
+  "banner-standardlife": { width: 720, height: 360 },
+  "banner-standardlife-lite": { width: 728, height: 90 },
+  "banner-trunk__mpu_2": { width: 300, height: 250 },
+  ciudad: { width: 1024, height: 768 },
+  claro: { width: 1024, height: 640 },
+  "desafio-pacifico": { width: 1024, height: 768 },
+  escalera: { width: 800, height: 600 },
+  "lizard-site": { width: 750, height: 500 },
+  "reading-leeds": { width: 520, height: 893 },
+  "rockstars-divas": { width: 520, height: 620 },
+  slate20: { width: 768, height: 586 },
+  spaceship: { width: 500, height: 375 },
+  weeds: { width: 640, height: 480 },
+  whiplash: { width: 550, height: 400 },
+};
+
 const publicRoot = join(__dirname, "../../public");
 const lizardHtml = readFileSync(
   join(publicRoot, "swf-compare/lizard-site/index.html"),
@@ -180,6 +209,24 @@ describe("swf-compare", () => {
 
     expect(lizardHtml).toContain('href="../claro/index.html">Claro →');
     expect(lizardHtml).not.toContain("118aua-energyball");
+
+    const playersCss = readFileSync(
+      join(publicRoot, "swf-compare/players.css"),
+      "utf8",
+    );
+    expect(playersCss).toContain("var(--swf-w");
+    expect(playersJs).toContain("w: size.width");
+    expect(playersJs).not.toContain("clientWidth");
+
+    for (const id of expected) {
+      const stage = stageSizes[id];
+      expect(stage, id).toBeTruthy();
+      const html = readFileSync(join(pieceRoot, id, "index.html"), "utf8");
+      expect(html).toContain(`data-width="${stage?.width}"`);
+      expect(html).toContain(`data-height="${stage?.height}"`);
+      expect(html).toContain(`--swf-w: ${stage?.width}`);
+      expect(html).toContain(`--swf-h: ${stage?.height}`);
+    }
 
     for (const [index, id] of expected.entries()) {
       const html = readFileSync(join(pieceRoot, id, "index.html"), "utf8");

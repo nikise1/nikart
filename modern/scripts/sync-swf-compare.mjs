@@ -191,6 +191,54 @@ function refsFromText(text) {
   return [...found];
 }
 
+function swfStageSize(buffer) {
+  if (!buffer || buffer.length < 9) {
+    return null;
+  }
+  let payload = buffer;
+  const sig = buffer.subarray(0, 3).toString("ascii");
+  if (sig === "CWS") {
+    try {
+      payload = Buffer.concat([
+        buffer.subarray(0, 8),
+        inflateSync(buffer.subarray(8)),
+      ]);
+    } catch {
+      return null;
+    }
+  } else if (sig !== "FWS") {
+    return null;
+  }
+  const nbits = payload[8] >> 3;
+  if (!nbits) {
+    return null;
+  }
+  let bitpos = 5;
+  const take = (n) => {
+    let val = 0;
+    for (let i = 0; i < n; i += 1) {
+      const byte = payload[8 + (bitpos >> 3)];
+      const bit = 7 - (bitpos & 7);
+      val = (val << 1) | ((byte >> bit) & 1);
+      bitpos += 1;
+    }
+    if (val & (1 << (n - 1))) {
+      val -= 1 << n;
+    }
+    return val;
+  };
+  const xmin = take(nbits);
+  const xmax = take(nbits);
+  const ymin = take(nbits);
+  const ymax = take(nbits);
+  const width = Math.round((xmax - xmin) / 20);
+  const height = Math.round((ymax - ymin) / 20);
+  if (width < 1 || height < 1) {
+    return null;
+  }
+  return { width, height };
+}
+
 function swfRawRefs(buffer) {
   let payload = buffer;
   const sig = buffer.subarray(0, 3).toString("ascii");
@@ -674,14 +722,14 @@ function renderPieceHtml(piece, siblings, prev, next) {
           <h2>Ruffle</h2>
           ${visPaneToggle(piece.id, "ruffle")}
         </div>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
+        <div class="stage" style="--swf-w: ${piece.width}; --swf-h: ${piece.height}; --swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
       <section class="pane${defaultVisible(piece.id, "awayfl") ? "" : " is-off"}" data-pane="awayfl">
         <div class="pane-head">
           <h2>AwayFL</h2>
           ${visPaneToggle(piece.id, "awayfl")}
         </div>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
+        <div class="stage" style="--swf-w: ${piece.width}; --swf-h: ${piece.height}; --swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
     </div>
   </div>
@@ -769,6 +817,10 @@ async function syncSource(source, produced) {
     const destName =
       (source.localSwf.split("/").pop() ?? "movie.swf").split("?")[0] ??
       "movie.swf";
+    const localPath = join(root, "public", source.localSwf.replace(/^\//, ""));
+    const stage = existsSync(localPath)
+      ? swfStageSize(readFileSync(localPath))
+      : null;
     produced.push({
       id: source.id,
       title: source.title,
@@ -784,8 +836,8 @@ async function syncSource(source, produced) {
       background: source.background,
       parameters: source.parameters,
       note: source.note,
-      width: source.width,
-      height: source.height,
+      width: stage?.width ?? source.width,
+      height: stage?.height ?? source.height,
       primary: Boolean(source.primary),
     });
     console.log(`  ${source.id}: ${source.localSwf} (local, not mirrored)`);
@@ -817,6 +869,11 @@ async function syncSource(source, produced) {
       movies.length === 1
         ? source.title
         : `${source.title} (${movie.path.split("/").pop()})`;
+    const movieBuf = await fetchBuffer(movie.path);
+    const stage = swfStageSize(movieBuf) ?? {
+      width: source.width,
+      height: source.height,
+    };
     produced.push({
       id,
       title,
@@ -826,8 +883,8 @@ async function syncSource(source, produced) {
       swfPath: movie.path,
       movieUrl: originUrl(movie.path),
       base: originDirUrl(movie.path),
-      width: source.width,
-      height: source.height,
+      width: stage.width,
+      height: stage.height,
       primary: Boolean(source.primary) && index === 0,
     });
     console.log(`  ${id}: ${originUrl(movie.path)}`);
