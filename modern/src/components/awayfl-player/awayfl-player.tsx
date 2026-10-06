@@ -186,8 +186,8 @@ export function AwayFlPlayer({ source }: AwayFlPlayerProps) {
         data-awayfl-status={phase}
         className="awayfl-stage"
       />
-      {status && !loadError ? <p className="fl-fallback">{status}</p> : null}
-      {loadError ? <p className="fl-fallback">{loadError}</p> : null}
+      {status && !loadError ? <p className="awayfl-status">{status}</p> : null}
+      {loadError ? <p className="awayfl-status">{loadError}</p> : null}
     </>
   );
 }

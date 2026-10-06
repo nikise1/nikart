@@ -101,7 +101,7 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
         id="swf_container"
         data-component="FlashPlayer"
       />
-      {loadError ? <p className="fl-fallback">{loadError}</p> : null}
+      {loadError ? <p>{loadError}</p> : null}
     </>
   );
 }

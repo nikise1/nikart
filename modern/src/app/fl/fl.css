@@ -61,25 +61,3 @@ body {
   height: 100%;
   overflow: hidden;
 }
-
-.fl-fallback {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 1rem;
-  z-index: 2;
-  margin: 0;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 13px;
-  color: #aaa;
-  pointer-events: none;
-}
-
-.fl-fallback a {
-  pointer-events: auto;
-}
-
-.fl-fallback p {
-  margin: 0.25rem 0;
-}

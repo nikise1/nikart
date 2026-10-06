@@ -1,5 +1,4 @@
 import { cookies } from "next/headers";
-import Link from "next/link";
 import { FlashPlayer } from "@/components/flash-player/flash-player";
 import { buildFlashVars, resolveFlashLangCode } from "@/lib/flash-config";
 
@@ -17,25 +16,8 @@ export default async function FlPage({ searchParams }: FlPageProps) {
   const flashVars = buildFlashVars(langCode);
 
   return (
-    <>
-      <div id="container">
-        <FlashPlayer swfUrl="/fl/main.ruffle.swf" parameters={flashVars} />
-      </div>
-      <div className="fl-fallback">
-        <p>
-          <Link href="/fl">Reload the Flash view</Link>
-        </p>
-        <p>
-          <Link href="/en">HTML5 view (English)</Link>
-          {" · "}
-          <Link href="/es">HTML5 view (Spanish)</Link>
-        </p>
-        <p>
-          <Link href="/swf-compare/index.html" target="_blank">
-            Ruffle vs AwayFL
-          </Link>
-        </p>
-      </div>
-    </>
+    <div id="container">
+      <FlashPlayer swfUrl="/fl/main.ruffle.swf" parameters={flashVars} />
+    </div>
   );
 }
