@@ -14,15 +14,6 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "src/lib/swf-compare-catalog.json");
 const outRoot = join(root, "public/swf-compare");
 const leftoverPiecesRoot = join(outRoot, "pieces");
-const KIT_NAMES = new Set([
-  "pieces",
-  "index.html",
-  "players.js",
-  "players.css",
-  "README.md",
-  "visibility-defaults.json",
-  "generated-catalog.json",
-]);
 const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "https://static.nikart.co.uk";
 const MAX_BYTES = 80 * 1024 * 1024;
 
@@ -497,14 +488,6 @@ function stripMoviePath(swf) {
   return path;
 }
 
-function unescapeHtml(value) {
-  return value
-    .replaceAll("&quot;", '"')
-    .replaceAll("&lt;", "<")
-    .replaceAll("&gt;", ">")
-    .replaceAll("&amp;", "&");
-}
-
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -521,13 +504,6 @@ function movieHref(piece) {
     return piece.movieUrl;
   }
   return originUrl(piece.swfPath);
-}
-
-function sourceForPieceId(id) {
-  return (
-    sources.find((source) => source.id === id) ??
-    sources.find((source) => id.startsWith(`${source.id}__`))
-  );
 }
 
 /** Catalog JSON order, with extra movies from one wrapper kept after that source. */
@@ -574,89 +550,6 @@ function writeCompareHtml(produced) {
     `${JSON.stringify(ordered, null, 2)}\n`,
   );
   return ordered;
-}
-
-function pieceHtmlPath(id) {
-  return join(outRoot, id, "index.html");
-}
-
-function existingPieceIds() {
-  const ids = new Set();
-  if (!existsSync(outRoot)) {
-    return [];
-  }
-  for (const name of readdirSync(outRoot)) {
-    if (KIT_NAMES.has(name)) {
-      continue;
-    }
-    if (existsSync(join(outRoot, name, "index.html"))) {
-      ids.add(name);
-    }
-  }
-  return [...ids];
-}
-
-function parseExistingPiece(id) {
-  const htmlPath = pieceHtmlPath(id);
-  if (!existsSync(htmlPath)) {
-    return null;
-  }
-  const html = readFileSync(htmlPath, "utf8");
-  const source = sourceForPieceId(id);
-  if (!source) {
-    return null;
-  }
-  const title = unescapeHtml(html.match(/<h1>(.*?)<\/h1>/s)?.[1] ?? source.title);
-  const swf = unescapeHtml(
-    html.match(/data-swf="([^"]+)"/)?.[1] ?? "",
-  );
-  const swfPath = source.localSwf
-    ? (source.localSwf.split("/").pop() ?? "movie.swf")
-    : stripMoviePath(swf);
-  const width = Number.parseInt(html.match(/data-width="(\d+)"/)?.[1] ?? "", 10);
-  const height = Number.parseInt(html.match(/data-height="(\d+)"/)?.[1] ?? "", 10);
-  const parametersRaw = html.match(/data-parameters="([^"]*)"/)?.[1];
-  let parameters;
-  if (parametersRaw) {
-    try {
-      parameters = JSON.parse(unescapeHtml(parametersRaw));
-    } catch {
-      parameters = undefined;
-    }
-  }
-  const baseAttr = unescapeHtml(html.match(/data-base="([^"]*)"/)?.[1] ?? "");
-  return {
-    id,
-    title,
-    group: source.group,
-    itemId: source.itemId,
-    wrapper: source.wrapper,
-    localSwf: source.localSwf,
-    swfPath,
-    movieUrl: source.localSwf ?? originUrl(swfPath),
-    loaderUrl: source.loaderUrl,
-    base: source.base ?? originDirUrl(swfPath) ?? (baseAttr || undefined),
-    playerVersion: source.playerVersion,
-    background: source.background,
-    parameters: source.parameters ?? parameters,
-    note: source.note,
-    width: Number.isFinite(width) ? width : source.width,
-    height: Number.isFinite(height) ? height : source.height,
-    primary: Boolean(source.primary),
-  };
-}
-
-function rebuildHtmlFromPieces() {
-  const produced = existingPieceIds()
-    .map((id) => parseExistingPiece(id))
-    .filter(Boolean);
-  const ordered = writeCompareHtml(produced);
-  if (existsSync(leftoverPiecesRoot)) {
-    rmSync(leftoverPiecesRoot, { recursive: true, force: true });
-  }
-  console.log(
-    `Rewrote ${ordered.length} compare pages in catalog order (no SWF download).`,
-  );
 }
 
 function extraStageAttrs(piece) {
@@ -892,7 +785,7 @@ async function syncSource(source, produced) {
 }
 
 if (process.argv.includes("--html-only")) {
-  rebuildHtmlFromPieces();
+  await import("./compile-swf-compare.mjs");
 } else {
   mkdirSync(outRoot, { recursive: true });
   const produced = [];

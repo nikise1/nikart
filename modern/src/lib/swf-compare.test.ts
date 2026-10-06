@@ -215,8 +215,11 @@ describe("swf-compare", () => {
       "utf8",
     );
     expect(playersCss).toContain("var(--swf-w");
+    expect(playersCss).toContain(".stage.stage-fill");
     expect(playersJs).toContain("w: size.width");
-    expect(playersJs).not.toContain("clientWidth");
+    expect(playersJs).toContain("function fillViewport()");
+    expect(playersJs).toContain('el.dataset.fill === "1"');
+    expect(playersJs).not.toContain("pane.clientWidth");
 
     for (const id of expected) {
       const stage = stageSizes[id];
@@ -226,6 +229,14 @@ describe("swf-compare", () => {
       expect(html).toContain(`data-height="${stage?.height}"`);
       expect(html).toContain(`--swf-w: ${stage?.width}`);
       expect(html).toContain(`--swf-h: ${stage?.height}`);
+      expect(html).toContain('href="fill.html"');
+      const fill = readFileSync(join(pieceRoot, id, "fill.html"), "utf8");
+      expect(fill).toContain('data-fill="1"');
+      expect(fill).toContain(`data-width="${stage?.width}"`);
+      expect(fill).toContain(`data-height="${stage?.height}"`);
+      expect(fill).toContain("data-background=");
+      expect(fill).toContain("stage-fill");
+      expect(fill).not.toContain("topnav");
     }
 
     for (const [index, id] of expected.entries()) {
