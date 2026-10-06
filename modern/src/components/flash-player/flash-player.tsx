@@ -14,6 +14,41 @@ export interface FlashPlayerProps {
   parameters: FlashVars;
 }
 
+function stopMediaTree(root: ParentNode | null | undefined): void {
+  if (!root) {
+    return;
+  }
+
+  const media = new Set<HTMLMediaElement>();
+  if (root instanceof HTMLMediaElement) {
+    media.add(root);
+  }
+  if ("querySelectorAll" in root) {
+    for (const el of root.querySelectorAll("video, audio")) {
+      media.add(el as HTMLMediaElement);
+    }
+  }
+
+  const elements =
+    root instanceof Element
+      ? [root, ...Array.from(root.querySelectorAll("*"))]
+      : Array.from(
+          "querySelectorAll" in root ? root.querySelectorAll("*") : [],
+        );
+
+  for (const el of elements) {
+    if (el.shadowRoot) {
+      stopMediaTree(el.shadowRoot);
+    }
+  }
+
+  for (const node of media) {
+    node.pause();
+    node.removeAttribute("src");
+    node.load();
+  }
+}
+
 export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ruffleReady, setRuffleReady] = useState(
@@ -65,6 +100,7 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
       "",
     );
 
+    // Same as compare fill pages: start without the unmute click gate.
     player.load({
       url: swfUrl,
       base,
@@ -77,13 +113,38 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
       compatibilityRules: true,
       warnOnUnsupportedContent: true,
       logLevel: "warn",
+      autoplay: "on",
+      unmuteOverlay: "hidden",
       // Container is already clipped to 750×500; stretch into that box.
       scale: "exactFit",
       width: SWF_WIDTH,
       height: SWF_HEIGHT,
     });
 
+    // Ruffle may leave HTML media running after the SWF closes a NetStream
+    // (leaving a Flash video page). Pause anything it detaches.
+    const mediaObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.removedNodes) {
+          if (node instanceof HTMLMediaElement || node instanceof Element) {
+            stopMediaTree(node);
+          }
+        }
+      }
+    });
+    mediaObserver.observe(player, { childList: true, subtree: true });
+    if (player.shadowRoot) {
+      mediaObserver.observe(player.shadowRoot, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
     return () => {
+      mediaObserver.disconnect();
+      player.pause?.();
+      stopMediaTree(player);
+      stopMediaTree(player.shadowRoot);
       container.replaceChildren();
     };
   }, [ruffleReady, swfUrl, parameters]);

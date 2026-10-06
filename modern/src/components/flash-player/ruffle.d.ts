@@ -12,9 +12,12 @@ interface RufflePlayerElement extends HTMLElement {
     warnOnUnsupportedContent?: boolean;
     logLevel?: "error" | "warn" | "info" | "debug" | "trace";
     scale?: "showAll" | "exactFit" | "noborder" | "noscale";
+    autoplay?: "on" | "off" | "auto";
+    unmuteOverlay?: "visible" | "hidden";
     width?: number;
     height?: number;
-  }): void;
+  }): void | Promise<void>;
+  pause?: () => void;
 }
 
 interface RufflePlayerInstance {
