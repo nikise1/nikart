@@ -102,7 +102,7 @@ flowchart LR
 | JS bridge | `modern/src/lib/flash-bridge.ts` | `javascript:nikart.popWin` / `doTracker` from the SWF |
 | Runtime | `modern/public/ruffle/` (gitignored) | Copied from `@ruffle-rs/ruffle` in `postinstall` |
 | SWF | `modern/public/fl/main.ruffle.swf` | AS2 (AVM1), zlib `CWS`, Flash 8; Animate export stays at `main.swf` |
-| Data | `modern/public/content/json/data.json` | SWF path `../content/json/data.json` via Ruffle `base` |
+| Data | repo-root `public/content/json/data.json`, copied to `modern/public/content/json/data.json` | SWF path `../content/json/data.json` via Ruffle `base` |
 | Images | `/content/img` rewrite | Same tree the HTML5 site uses |
 | Static host | `https://static.nikart.co.uk` | CloudFront TLS + CORS (`Access-Control-Allow-Origin: *`); HTTP still redirects to HTTPS |
 

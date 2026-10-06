@@ -53,6 +53,12 @@ Do not symlink `modern/public/content/img` to the legacy folder — Vercel copie
 
 `postinstall` and the Vercel `buildCommand` run `npm run sync:images`. To refresh locally after changing legacy images, run that again from `modern/`.
 
+### Portfolio JSON
+
+One copy in git: repo-root `public/content/json/data.json` (legacy Backbone and the Next import). Install/build copies it to `modern/public/content/json/data.json` (gitignored) so Ruffle and AwayFL can still fetch `/content/json/data.json`. The pretty duplicate is not kept.
+
+`postinstall`, `prebuild`, and the Vercel `buildCommand` run `npm run sync:json`.
+
 ### Post-deploy smoke test
 
 - `/en/` and `/es/` — locale routes

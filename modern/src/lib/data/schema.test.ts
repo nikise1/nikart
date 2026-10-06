@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { DataSchema } from "./schema";
-import rawData from "../../../public/content/json/data-pretty.json";
+import rawData from "../../../../public/content/json/data.json";
 
 describe("DataSchema", () => {
   it("validates the production data.json without errors", () => {

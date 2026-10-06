@@ -58,6 +58,7 @@
 - [x] Content access utilities: `localize()`, `localizeUrl()`, `findByPath()`, `findById()`, `getPathTo()`, `getBreadcrumbs()`, `getContentItems()`, `getSubMenus()`, `getTopMenu()`
 - [x] 25 unit tests passing (schema validation + all utilities)
 - [x] Copied `data-pretty.json` into `modern/public/content/json/`
+- [x] One committed portfolio JSON: repo-root `public/content/json/data.json`. `sync:json` copies it to `modern/public/content/json/data.json` (gitignored) for the SWF URL. Dropped the `data-pretty.json` duplicates (2026-10-06)
 
 ---
 
@@ -294,3 +295,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-09-07 | Generated images live at `modern/public/_generated/img` | Distinct from legacy `public/content/img` so gitignore cannot collide; app still uses `/content/img/` via rewrite |
 | 2026-10-05 | Gitignore generated Ruffle/AwayFL copies | `postinstall`/`prebuild` already copy them; keep the LoadVars patch and vendored ABC catalogs |
 | 2026-10-05 | Restore `docs/diagrams/*.svg` to UTF-8 | Files were invalid XML (C0 control chars, bare `&`) and still said HTTP S3 / no CORS |
+| 2026-10-06 | One git copy of portfolio JSON at repo-root `public/content/json/data.json` | `data.json` and `data-pretty.json` were duplicated under `public/` and `modern/public/`; install/build copies the compact file for the SWF URL |

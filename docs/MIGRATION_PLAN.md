@@ -166,7 +166,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
 - `modern/public/fl/main.swf` — untouched Animate export, copied from legacy `public/fl/main.swf`
 - `modern/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
-- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`)
+- `modern/public/content/json/data.json` — generated at install/build from the only committed copy, repo-root `public/content/json/data.json` (gitignored in `modern/`). Required by SWF (`../content/json/data.json` via Ruffle `base`). The Next app imports the repo-root file.
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
@@ -226,7 +226,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
 2. **Root Directory:** set to `modern/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
-3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `public/content/img`
+3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `public/content/img` and `public/content/json/data.json`
 4. Build settings come from `modern/vercel.json` (`framework: nextjs`). Do not set Output Directory to `.next` — that breaks next-intl middleware and SSR
 5. Framework preset: Next.js (auto-detected); Node `22` from `modern/.nvmrc` / `engines`
 6. Environment variables: none required for WIP (static content, no secrets)
@@ -237,6 +237,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 - Removed `outputDirectory: ".next"` from `modern/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
 - Do **not** symlink `modern/public/content/img` → `../../../public/content/img` — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
 - Single git copy stays at legacy `public/content/img` (legacy app untouched). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`
+- Single git copy of portfolio JSON stays at legacy `public/content/json/data.json` (2026-10-06). `sync:json` copies it to `modern/public/content/json/data.json` (gitignored) so `/content/json/data.json` still resolves for Ruffle and AwayFL. The Next app imports the repo-root file. Dropped the `data-pretty.json` duplicates.
 
 **After initial deploy:**
 
