@@ -242,11 +242,11 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Progress `n / total` centred under the images, clickable to advance
 - [x] Colocated unit tests for arrows, swipe, pause zones, progress click, and single-image mode
 
-#### 9j: Mobile article spacing ✅ (2026-10-06)
+#### 9j: Mobile article heading width ✅ (2026-10-06)
 
-- [x] Thumbnail rows no longer use a fixed 100px height, so a wrapped label can extend the row instead of painting over the next article.
-- [x] Below the `sm` breakpoint the thumbnail list gap is 64px (`gap-16`); `sm` and up stay at the legacy 40px (`gap-10`).
-- [x] Article and video panels use extra top padding on small screens (`pt-12`) so the title sits clear of the fixed breadcrumb.
+- [x] Article and video `h1` elements stay `text-2xl` (1.5rem / 24px, line-height 2rem).
+- [x] Below `sm`, the heading is `calc(100% - 3.5rem)` wide and aligned to the end, so it starts to the right of the menu curl. Wider screens stay full width and centered.
+- [x] Thumbnail row height and list gap stay as they were.
 
 #### 9i: Article and video enter/exit ✅ (2026-10-06)
 

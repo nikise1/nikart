@@ -77,8 +77,8 @@ export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps)
   );
 
   return (
-    <li ref={ref} data-component="ThumbnailItem" className="group relative min-h-[100px] list-none">
-      <Link href={href} className="flex min-h-[100px] items-center" transitionTypes={["nav-forward"]}>
+    <li ref={ref} data-component="ThumbnailItem" className="group relative h-[100px] list-none">
+      <Link href={href} className="flex h-full items-center" transitionTypes={["nav-forward"]}>
         <span className="w-[150px] pr-2.5 pt-8 text-right text-sm text-[#4F3E2D] transition-colors duration-300 group-hover:text-[#94B864]">
           {title}
         </span>

@@ -99,7 +99,7 @@ Legacy `thumb-view.js` / `thumb-item-view.js` differences from modern `Thumbnail
 | Container entrance | `right: -300 → 0` after `timeDelayThumbIn` delay | `gsap.from({ x: 300 })` immediately | Add delay |
 | Container exit | Slides to `right: -300`, clears items | View Transitions | Acceptable (React handles unmount) |
 | Stagger timing | Per-item delay in `aniIn()` | `index * 0.08` | Verify against legacy constants |
-| Mobile vertical gap (2026-10-06) | Fixed 100px rows, 20px margins | Rows are at least 100px and can grow with a wrapped label. Below `sm`, the list gap is `gap-16` (64px) instead of `gap-10` (40px). Article and video panels use `pt-12` so the title clears the fixed breadcrumb | Applied |
+| Mobile heading width (2026-10-06) | Full-width `text-2xl` title | Below `sm`, article and video `h1` width is `calc(100% - 3.5rem)` and aligned to the end, so the line starts to the right of the 90px menu curl (`left: -30px`, visible through 60px). `sm` and up stay full width and centered | Applied |
 
 #### 6b: Background image
 

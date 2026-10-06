@@ -31,7 +31,7 @@ export function ThumbnailGrid({ menu, locale, basePath }: ThumbnailGridProps) {
   );
 
   return (
-    <ul ref={ref} data-component="ThumbnailGrid" className="my-10 ml-auto mr-4 flex flex-col gap-16 p-0 sm:gap-10">
+    <ul ref={ref} data-component="ThumbnailGrid" className="my-10 ml-auto mr-4 flex flex-col gap-10 p-0">
       {items.map((item, index) => (
         <ThumbnailItem
           key={item.id}
