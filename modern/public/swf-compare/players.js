@@ -361,8 +361,13 @@
     });
     const fitAwayFl = () => {
       const next = isFill(el) ? fillViewport() : size;
+      // AwayFL stores the canvas client size before the bitmap exists. Setting
+      // that same size again returns early and leaves the default 300×150
+      // buffer stretched to the CSS box. A one-pixel nudge forces both axes.
+      player.setStageDimensions?.(0, 0, next.width + 1, next.height + 1);
       player.setStageDimensions?.(0, 0, next.width, next.height);
     };
+    fitAwayFl();
     player.addEventListener("loaderComplete", () => {
       fitAwayFl();
       player.play?.();

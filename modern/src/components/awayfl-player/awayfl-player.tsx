@@ -105,6 +105,9 @@ export function AwayFlPlayer({ source }: AwayFlPlayerProps) {
           return;
         }
         const next = measureViewport(container);
+        // Same size as the canvas client box is a no-op inside AwayFL, so the
+        // bitmap stays the default 300×150 and is stretched to the CSS box.
+        instance.setStageDimensions?.(0, 0, next.width + 1, next.height + 1);
         instance.setStageDimensions?.(0, 0, next.width, next.height);
       };
       if (cancelled) {
@@ -127,6 +130,7 @@ export function AwayFlPlayer({ source }: AwayFlPlayerProps) {
           setStatus("");
         }
       });
+      refit();
       instance.playSWF(buffer, swfHref);
     }
 

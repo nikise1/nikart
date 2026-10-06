@@ -224,6 +224,7 @@ describe("swf-compare", () => {
     expect(playersCss).toContain("var(--swf-w");
     expect(playersCss).toContain(".stage.stage-fill");
     expect(playersJs).toContain("w: size.width");
+    expect(playersJs).toContain("next.width + 1, next.height + 1");
     expect(playersJs).toContain("function fillViewport()");
     expect(playersJs).toContain('el.dataset.fill === "1"');
     expect(playersJs).not.toContain("pane.clientWidth");
