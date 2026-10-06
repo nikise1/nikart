@@ -235,6 +235,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Compare index/piece links are root-absolute; redirect `/swf-compare` → `/swf-compare/index.html` so cards work without `/index.html` (2026-10-06)
 - [x] Fill pages and `/fl` stretch into a viewport-sized box clipped to the SWF stage aspect ratio (`exactFit`), so off-stage content is masked (2026-10-06)
 - [x] `/fl` overrides root `globals.css` portfolio background with `!important` black (same as `/fl/away`) so letterbox regions stay black (2026-10-06)
+- [x] Remove `/fl` `fl-fallback` links and the shared `fl-fallback` class (2026-10-06)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 
