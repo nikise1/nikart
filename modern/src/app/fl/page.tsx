@@ -17,8 +17,10 @@ export default async function FlPage({ searchParams }: FlPageProps) {
   const flashVars = buildFlashVars(langCode);
 
   return (
-    <div id="container">
-      <FlashPlayer swfUrl="/fl/main.ruffle.swf" parameters={flashVars} />
+    <>
+      <div id="container">
+        <FlashPlayer swfUrl="/fl/main.ruffle.swf" parameters={flashVars} />
+      </div>
       <div className="fl-fallback">
         <p>
           <Link href="/fl">Reload the Flash view</Link>
@@ -34,6 +36,6 @@ export default async function FlPage({ searchParams }: FlPageProps) {
           </Link>
         </p>
       </div>
-    </div>
+    </>
   );
 }
