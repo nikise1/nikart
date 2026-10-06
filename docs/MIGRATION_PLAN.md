@@ -167,7 +167,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
 - `modern/public/fl/main.swf` — untouched Animate export, copied from legacy `public/fl/main.swf`
 - `modern/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
-- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`)
+- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is repo-root `public/content/json/data.json`; `sync:json` copies it here on install and on the Vercel build (gitignored). Next imports that repo-root file. The pretty duplicate is gone (2026-10-06).
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
@@ -242,6 +242,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 - Removed `outputDirectory: ".next"` from `modern/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
 - Do **not** symlink `modern/public/content/img` → `../../../public/content/img` — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
 - Single git copy stays at legacy `public/content/img` (legacy app untouched). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`
+- Single git copy of portfolio JSON stays at legacy `public/content/json/data.json` (legacy Backbone still fetches it). `sync:json` copies it to `modern/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the repo-root file. `data-pretty.json` removed (2026-10-06).
 
 **After initial deploy:**
 

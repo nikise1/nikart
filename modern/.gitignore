@@ -35,6 +35,9 @@
 # generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
 /public/_generated/
 
+# generated from repo-root public/content/json/data.json (see scripts/sync-content-json.mjs)
+/public/content/json/
+
 # production
 /build
 

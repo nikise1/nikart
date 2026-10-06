@@ -115,6 +115,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] `vercel.json` present in `modern/` (`framework: nextjs`; no `outputDirectory`)
 - [x] Repo on GitHub: `https://github.com/nikise1/nikart`
 - [x] Content images: one git copy at repo-root `public/content/img`; install/build copies into `modern/public/_generated/img/` (gitignored); rewrite `/content/img/*` → `/_generated/img/*`
+- [x] Content JSON: one git copy at repo-root `public/content/json/data.json`; install/build copies into `modern/public/content/json/data.json` (gitignored). Next imports the repo-root file. Pretty duplicates removed (2026-10-06)
 - [x] `sync:images` is symlink-safe (staging copy; never copies onto the legacy folder)
 - [x] Node `22` pinned via `modern/.nvmrc` and `modern/package.json` `engines`
 
@@ -309,3 +310,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | Agents paste the Vercel branch preview URL | Root `AGENTS.md`: after push, the summary includes the stable preview from the PR’s Vercel comment, not `nikart-beta.vercel.app` |
 | 2026-10-06 | One branch per chat | Root `AGENTS.md`: follow-up work in the same conversation stays on the chat’s existing branch |
 | 2026-10-06 | Compile SWF compare pages from `pages.json` | The HTML files were copies of one template; gitignore the output and generate a full-window fill page per movie |
+| 2026-10-06 | One git copy of portfolio JSON at repo-root `public/content/json/data.json` | Same idea as images. Flash still requests `/content/json/data.json`, so install/build copies that file and the pretty duplicate is dropped |

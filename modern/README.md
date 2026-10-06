@@ -53,6 +53,10 @@ Do not symlink `modern/public/content/img` to the legacy folder — Vercel copie
 
 `postinstall` and the Vercel `buildCommand` run `npm run sync:images`. To refresh locally after changing legacy images, run that again from `modern/`.
 
+### Content JSON
+
+One copy in git: repo-root `public/content/json/data.json` (legacy Backbone and the Next data import). Install and the Vercel build copy it to `modern/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`. Edit the repo-root file, then run `npm run sync:json` from `modern/`.
+
 ### Post-deploy smoke test
 
 - `/en/` and `/es/` — locale routes
