@@ -27,6 +27,11 @@
 # generated catalog from swf-compare:sync
 /public/swf-compare/generated-catalog.json
 
+# compare HTML compiled from public/swf-compare/pages.json
+/public/swf-compare/index.html
+/public/swf-compare/visibility-defaults.json
+/public/swf-compare/*/
+
 # generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
 /public/_generated/
 

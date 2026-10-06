@@ -62,19 +62,29 @@
     };
   }
 
-  function applyStageBox(el) {
-    const native = nativeSize(el);
-    el.style.setProperty("--swf-aspect", `${native.width} / ${native.height}`);
+  function isFill(el) {
+    return el.dataset.fill === "1";
   }
 
-  function paneBox(el) {
+  function fillViewport() {
+    return {
+      width: Math.max(1, document.documentElement.clientWidth),
+      height: Math.max(1, document.documentElement.clientHeight),
+    };
+  }
+
+  function applyStageBox(el) {
     const native = nativeSize(el);
-    const width = Math.max(1, Math.round(el.clientWidth || native.width));
-    const height = Math.max(
-      1,
-      Math.round(el.clientHeight || (width * native.height) / native.width),
-    );
-    return { width, height };
+    el.style.setProperty("--swf-w", String(native.width));
+    el.style.setProperty("--swf-h", String(native.height));
+    el.style.setProperty("--swf-aspect", `${native.width} / ${native.height}`);
+    if (isFill(el)) {
+      el.style.width = "100%";
+      el.style.height = "100%";
+      return;
+    }
+    el.style.width = `${native.width}px`;
+    el.style.height = `${native.height}px`;
   }
 
   const LAUNCH_PAGES = {
@@ -294,11 +304,21 @@
     const buffer = await movieBuffer(el);
     const ruffle = window.RufflePlayer.newest();
     const player = ruffle.createPlayer();
-    player.style.width = "100%";
-    player.style.height = "100%";
+    const native = nativeSize(el);
+    if (isFill(el)) {
+      player.style.width = "100%";
+      player.style.height = "100%";
+    } else {
+      player.style.width = `${native.width}px`;
+      player.style.height = `${native.height}px`;
+    }
     el.replaceChildren(player);
+    const options = ruffleLoadOptions(el, url);
+    if (isFill(el)) {
+      options.scale = "showAll";
+    }
     await player.load({
-      ...ruffleLoadOptions(el, url),
+      ...options,
       data: new Uint8Array(buffer.slice(0)),
       swfFileName: url.pathname.split("/").pop() ?? "movie.swf",
     });
@@ -322,8 +342,10 @@
     const canvas = document.createElement("canvas");
     canvas.id = `awayfl_stage_${el.dataset.swf?.replace(/\W+/g, "_") ?? "swf"}`;
     canvas.style.display = "block";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
     el.replaceChildren(canvas);
-    const size = paneBox(el);
+    const size = isFill(el) ? fillViewport() : nativeSize(el);
     window.awayflplayer.StageManager.htmlCanvas = canvas;
     window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS;
     const loaderUrl = playHref(el).href;
@@ -337,25 +359,25 @@
       h: size.height,
       stageScaleMode: "showAll",
     });
-    let lastBox = `${size.width}x${size.height}`;
-    const refit = () => {
-      const next = paneBox(el);
-      const key = `${next.width}x${next.height}`;
-      if (key === lastBox) {
-        return;
-      }
-      lastBox = key;
+    const fitAwayFl = () => {
+      const next = isFill(el) ? fillViewport() : size;
+      // AwayFL stores the canvas client size before the bitmap exists. Setting
+      // that same size again returns early and leaves the default 300×150
+      // buffer stretched to the CSS box. A one-pixel nudge forces both axes.
+      player.setStageDimensions?.(0, 0, next.width + 1, next.height + 1);
       player.setStageDimensions?.(0, 0, next.width, next.height);
     };
-    window.addEventListener("resize", refit);
-    if (typeof ResizeObserver === "function") {
-      new ResizeObserver(refit).observe(el);
-    }
+    fitAwayFl();
     player.addEventListener("loaderComplete", () => {
-      refit();
+      fitAwayFl();
       player.play?.();
       setStatus(el, "");
     });
+    if (isFill(el)) {
+      window.addEventListener("resize", () => {
+        fitAwayFl();
+      });
+    }
     if (typeof player.load === "function") {
       player.load();
     } else {
@@ -561,12 +583,12 @@
     const ruffle = stages.filter((el) => el.dataset.player === "ruffle");
     const rest = stages.filter((el) => el.dataset.player !== "ruffle");
     for (const el of ruffle) {
-      if (state.ruffle !== false) {
+      if (isFill(el) || state.ruffle !== false) {
         await runStarter(el);
       }
     }
     for (const el of rest) {
-      if (state[el.dataset.player] !== false) {
+      if (isFill(el) || state[el.dataset.player] !== false) {
         await runStarter(el);
       }
     }

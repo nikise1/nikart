@@ -43,6 +43,11 @@ export function piecePageHref(id: string): string {
   return `/swf-compare/${id}/index.html`;
 }
 
+/** Full-window page the portfolio opens for one movie. */
+export function pieceFillHref(id: string): string {
+  return `/swf-compare/${id}/fill.html`;
+}
+
 function compareSourceForId(id: string): SwfCompareSource | undefined {
   return (
     swfCompareSources.find((source) => source.id === id) ??
@@ -100,13 +105,13 @@ export function compareHrefForItem(itemId: string): string | null {
   }
   const primary = pieces.find((piece) => piece.primary);
   if (primary) {
-    return piecePageHref(primary.id);
+    return pieceFillHref(primary.id);
   }
   if (pieces.length > 1) {
     return compareIndexHref(pieces[0]?.group ?? itemId);
   }
   const first = pieces[0];
-  return first ? piecePageHref(first.id) : null;
+  return first ? pieceFillHref(first.id) : null;
 }
 
 export function compareHrefForSource(href: string): string | null {
@@ -119,16 +124,7 @@ export function compareHrefForSource(href: string): string | null {
   if (!match) {
     return compareHrefForItemPath(path);
   }
-  if (match.primary) {
-    return piecePageHref(match.id);
-  }
-  const siblings = swfCompareSources.filter(
-    (piece) => piece.itemId === match.itemId,
-  );
-  if (siblings.length > 1 && !siblings.some((piece) => piece.primary)) {
-    return compareIndexHref(match.group);
-  }
-  return piecePageHref(match.id);
+  return pieceFillHref(match.id);
 }
 
 function compareHrefForItemPath(path: string): string | null {

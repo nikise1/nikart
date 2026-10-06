@@ -14,15 +14,6 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "src/lib/swf-compare-catalog.json");
 const outRoot = join(root, "public/swf-compare");
 const leftoverPiecesRoot = join(outRoot, "pieces");
-const KIT_NAMES = new Set([
-  "pieces",
-  "index.html",
-  "players.js",
-  "players.css",
-  "README.md",
-  "visibility-defaults.json",
-  "generated-catalog.json",
-]);
 const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "https://static.nikart.co.uk";
 const MAX_BYTES = 80 * 1024 * 1024;
 
@@ -189,6 +180,54 @@ function refsFromText(text) {
     }
   }
   return [...found];
+}
+
+function swfStageSize(buffer) {
+  if (!buffer || buffer.length < 9) {
+    return null;
+  }
+  let payload = buffer;
+  const sig = buffer.subarray(0, 3).toString("ascii");
+  if (sig === "CWS") {
+    try {
+      payload = Buffer.concat([
+        buffer.subarray(0, 8),
+        inflateSync(buffer.subarray(8)),
+      ]);
+    } catch {
+      return null;
+    }
+  } else if (sig !== "FWS") {
+    return null;
+  }
+  const nbits = payload[8] >> 3;
+  if (!nbits) {
+    return null;
+  }
+  let bitpos = 5;
+  const take = (n) => {
+    let val = 0;
+    for (let i = 0; i < n; i += 1) {
+      const byte = payload[8 + (bitpos >> 3)];
+      const bit = 7 - (bitpos & 7);
+      val = (val << 1) | ((byte >> bit) & 1);
+      bitpos += 1;
+    }
+    if (val & (1 << (n - 1))) {
+      val -= 1 << n;
+    }
+    return val;
+  };
+  const xmin = take(nbits);
+  const xmax = take(nbits);
+  const ymin = take(nbits);
+  const ymax = take(nbits);
+  const width = Math.round((xmax - xmin) / 20);
+  const height = Math.round((ymax - ymin) / 20);
+  if (width < 1 || height < 1) {
+    return null;
+  }
+  return { width, height };
 }
 
 function swfRawRefs(buffer) {
@@ -449,14 +488,6 @@ function stripMoviePath(swf) {
   return path;
 }
 
-function unescapeHtml(value) {
-  return value
-    .replaceAll("&quot;", '"')
-    .replaceAll("&lt;", "<")
-    .replaceAll("&gt;", ">")
-    .replaceAll("&amp;", "&");
-}
-
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -473,13 +504,6 @@ function movieHref(piece) {
     return piece.movieUrl;
   }
   return originUrl(piece.swfPath);
-}
-
-function sourceForPieceId(id) {
-  return (
-    sources.find((source) => source.id === id) ??
-    sources.find((source) => id.startsWith(`${source.id}__`))
-  );
 }
 
 /** Catalog JSON order, with extra movies from one wrapper kept after that source. */
@@ -526,89 +550,6 @@ function writeCompareHtml(produced) {
     `${JSON.stringify(ordered, null, 2)}\n`,
   );
   return ordered;
-}
-
-function pieceHtmlPath(id) {
-  return join(outRoot, id, "index.html");
-}
-
-function existingPieceIds() {
-  const ids = new Set();
-  if (!existsSync(outRoot)) {
-    return [];
-  }
-  for (const name of readdirSync(outRoot)) {
-    if (KIT_NAMES.has(name)) {
-      continue;
-    }
-    if (existsSync(join(outRoot, name, "index.html"))) {
-      ids.add(name);
-    }
-  }
-  return [...ids];
-}
-
-function parseExistingPiece(id) {
-  const htmlPath = pieceHtmlPath(id);
-  if (!existsSync(htmlPath)) {
-    return null;
-  }
-  const html = readFileSync(htmlPath, "utf8");
-  const source = sourceForPieceId(id);
-  if (!source) {
-    return null;
-  }
-  const title = unescapeHtml(html.match(/<h1>(.*?)<\/h1>/s)?.[1] ?? source.title);
-  const swf = unescapeHtml(
-    html.match(/data-swf="([^"]+)"/)?.[1] ?? "",
-  );
-  const swfPath = source.localSwf
-    ? (source.localSwf.split("/").pop() ?? "movie.swf")
-    : stripMoviePath(swf);
-  const width = Number.parseInt(html.match(/data-width="(\d+)"/)?.[1] ?? "", 10);
-  const height = Number.parseInt(html.match(/data-height="(\d+)"/)?.[1] ?? "", 10);
-  const parametersRaw = html.match(/data-parameters="([^"]*)"/)?.[1];
-  let parameters;
-  if (parametersRaw) {
-    try {
-      parameters = JSON.parse(unescapeHtml(parametersRaw));
-    } catch {
-      parameters = undefined;
-    }
-  }
-  const baseAttr = unescapeHtml(html.match(/data-base="([^"]*)"/)?.[1] ?? "");
-  return {
-    id,
-    title,
-    group: source.group,
-    itemId: source.itemId,
-    wrapper: source.wrapper,
-    localSwf: source.localSwf,
-    swfPath,
-    movieUrl: source.localSwf ?? originUrl(swfPath),
-    loaderUrl: source.loaderUrl,
-    base: source.base ?? originDirUrl(swfPath) ?? (baseAttr || undefined),
-    playerVersion: source.playerVersion,
-    background: source.background,
-    parameters: source.parameters ?? parameters,
-    note: source.note,
-    width: Number.isFinite(width) ? width : source.width,
-    height: Number.isFinite(height) ? height : source.height,
-    primary: Boolean(source.primary),
-  };
-}
-
-function rebuildHtmlFromPieces() {
-  const produced = existingPieceIds()
-    .map((id) => parseExistingPiece(id))
-    .filter(Boolean);
-  const ordered = writeCompareHtml(produced);
-  if (existsSync(leftoverPiecesRoot)) {
-    rmSync(leftoverPiecesRoot, { recursive: true, force: true });
-  }
-  console.log(
-    `Rewrote ${ordered.length} compare pages in catalog order (no SWF download).`,
-  );
 }
 
 function extraStageAttrs(piece) {
@@ -674,14 +615,14 @@ function renderPieceHtml(piece, siblings, prev, next) {
           <h2>Ruffle</h2>
           ${visPaneToggle(piece.id, "ruffle")}
         </div>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
+        <div class="stage" style="--swf-w: ${piece.width}; --swf-h: ${piece.height}; --swf-aspect: ${piece.width} / ${piece.height}" data-player="ruffle" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
       <section class="pane${defaultVisible(piece.id, "awayfl") ? "" : " is-off"}" data-pane="awayfl">
         <div class="pane-head">
           <h2>AwayFL</h2>
           ${visPaneToggle(piece.id, "awayfl")}
         </div>
-        <div class="stage" style="--swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
+        <div class="stage" style="--swf-w: ${piece.width}; --swf-h: ${piece.height}; --swf-aspect: ${piece.width} / ${piece.height}" data-player="awayfl" data-swf="${escapeHtml(href)}" data-width="${piece.width}" data-height="${piece.height}"${extra}></div>
       </section>
     </div>
   </div>
@@ -769,6 +710,10 @@ async function syncSource(source, produced) {
     const destName =
       (source.localSwf.split("/").pop() ?? "movie.swf").split("?")[0] ??
       "movie.swf";
+    const localPath = join(root, "public", source.localSwf.replace(/^\//, ""));
+    const stage = existsSync(localPath)
+      ? swfStageSize(readFileSync(localPath))
+      : null;
     produced.push({
       id: source.id,
       title: source.title,
@@ -784,8 +729,8 @@ async function syncSource(source, produced) {
       background: source.background,
       parameters: source.parameters,
       note: source.note,
-      width: source.width,
-      height: source.height,
+      width: stage?.width ?? source.width,
+      height: stage?.height ?? source.height,
       primary: Boolean(source.primary),
     });
     console.log(`  ${source.id}: ${source.localSwf} (local, not mirrored)`);
@@ -817,6 +762,11 @@ async function syncSource(source, produced) {
       movies.length === 1
         ? source.title
         : `${source.title} (${movie.path.split("/").pop()})`;
+    const movieBuf = await fetchBuffer(movie.path);
+    const stage = swfStageSize(movieBuf) ?? {
+      width: source.width,
+      height: source.height,
+    };
     produced.push({
       id,
       title,
@@ -826,8 +776,8 @@ async function syncSource(source, produced) {
       swfPath: movie.path,
       movieUrl: originUrl(movie.path),
       base: originDirUrl(movie.path),
-      width: source.width,
-      height: source.height,
+      width: stage.width,
+      height: stage.height,
       primary: Boolean(source.primary) && index === 0,
     });
     console.log(`  ${id}: ${originUrl(movie.path)}`);
@@ -835,7 +785,7 @@ async function syncSource(source, produced) {
 }
 
 if (process.argv.includes("--html-only")) {
-  rebuildHtmlFromPieces();
+  await import("./compile-swf-compare.mjs");
 } else {
   mkdirSync(outRoot, { recursive: true });
   const produced = [];
