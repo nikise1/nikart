@@ -202,6 +202,10 @@ Modern `Slideshow` (`src/components/slideshow/slideshow.tsx`) extracted from `Ar
 - Progress `n / total` sits centred under the images and clicks through to the next slide
 - Cross-fade timing unchanged (`1.25s` delay, `0.4s` `autoAlpha`)
 
+Article and video enter/exit (2026-10-06):
+
+Legacy `articleClose` / `videoClose` fade the whole panel out in `timeArticleOut` (0.5s). `articleOpen` / `videoOpen` fade it in over `timeArticleIn` (1.5s). Modern was a 0.4s fade-in only, so the panel disappeared on navigation. `ContentTransition` now fades each block (title, slideshow or player, description, launch) down and out, then the next page's blocks up and in. Leave is 240ms with a 40ms stagger (a full article finishes in about 360ms). Arrival is the same length, starting 60ms after navigation. The thumbnail list keeps the route-level `nav-forward` / `nav-back` transition and does not wrap these blocks. Reduced motion still cuts the animation to 0s.
+
 Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
