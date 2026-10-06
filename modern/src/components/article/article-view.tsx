@@ -41,7 +41,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
       <article data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
       <ContentTransition index={titleSlot}>
-        <h1 className="w-[calc(100%-3.5rem)] self-end text-center text-2xl font-semibold text-[#4F3E2D] sm:w-auto sm:self-center">{title}</h1>
+        <h1 className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#4F3E2D] md:w-auto md:self-center">{title}</h1>
       </ContentTransition>
 
       {slideshowSlot !== null && (

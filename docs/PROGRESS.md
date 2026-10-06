@@ -245,8 +245,8 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 #### 9j: Mobile article heading width ✅ (2026-10-06)
 
 - [x] Article and video `h1` elements stay `text-2xl` (1.5rem / 24px, line-height 2rem).
-- [x] Below `sm`, the heading is `calc(100% - 3.5rem)` wide and aligned to the end, so it starts to the right of the menu curl. Wider screens stay full width and centered.
-- [x] Thumbnail row height and list gap stay as they were.
+- [x] Below `md`, the heading is `calc(100% - 5.5rem)` wide and aligned to the end. The closed menu curl is 90px wide at `left: 0`, and this inset clears it, including at 641px where `sm` had already restored a full centered line.
+- [x] From `md` (768px) up the heading is full width and centered. Thumbnail row height and list gap stay as they were.
 
 #### 9i: Article and video enter/exit ✅ (2026-10-06)
 
