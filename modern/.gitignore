@@ -38,9 +38,6 @@
 # generated from repo-root public/content/json/data.json (see scripts/sync-content-json.mjs)
 /public/content/json/
 
-# jsoneditor files copied from node_modules for /dev/content
-/public/dev/jsoneditor/
-
 # production
 /build
 

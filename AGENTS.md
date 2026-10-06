@@ -15,6 +15,14 @@
 - In one chat, stay on the branch that chat already has. Do not create a second branch or pull request for later work in the same conversation. Commit follow-ups on that branch.
 - After pushing a branch that has a pull request, include the stable Vercel branch preview URL from that pull request’s Vercel comment in the summary. That URL stays the same for the life of the branch. `https://nikart-beta.vercel.app` is the shared beta site, not the branch preview.
 
+## Edit portfolio JSON
+
+When the user says **edit json data**:
+
+1. From the repo root, run `npm run json:edit`.
+2. Reply with the printed URL. It opens [JSON Editor Online](https://jsoneditoronline.org) with `public/content/json/data.json` already loaded in tree mode. Do not paste the file body into the chat.
+3. When they bring edited JSON back, write it to `public/content/json/data.json` with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix modern`.
+
 ## Documentation Updates
 
 - Every adjustment/fix: add a brief summary to the relevant section in `docs/MIGRATION_PLAN.md`.
