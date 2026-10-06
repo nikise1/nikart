@@ -340,6 +340,7 @@ A "session" = one focused working block with AI agent collaboration.
 2. **PR checks:** Vitest (unit/integration) + Playwright (E2E) + build
 3. **Preview deploys:** Every PR gets a Vercel preview URL for visual review
 4. **Main branch:** Auto-deploy to production on merge
+5. **Dependency updates (2026-10-06):** `.github/dependabot.yml` checks npm in `/modern` only, every Monday 09:00 UTC. Minor and patch updates are grouped into one pull request. Each major version gets its own pull request. The repo root and `public/html5/` are deprecated and scheduled for decommission, so Dependabot, the manual `@cursor` migration, and the monthly library radar all ignore them. Merge is still manual.
 
 ---
 
