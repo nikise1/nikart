@@ -12,6 +12,7 @@
 ## Workflow
 
 - Always update `docs/PROGRESS.md` after completing a task/step.
+- After pushing a branch that has a pull request, include the stable Vercel branch preview URL from that pull request’s Vercel comment in the summary. That URL stays the same for the life of the branch. `https://nikart-beta.vercel.app` is the shared beta site, not the branch preview.
 
 ## Documentation Updates
 
