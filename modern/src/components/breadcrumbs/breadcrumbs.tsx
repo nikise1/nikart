@@ -45,6 +45,7 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
 
   const segments = pathname.split("/").filter(Boolean);
   const contentPath = segments.slice(1);
+  const currentContentPath = contentPath.join("/");
   const urlCrumbs = contentPath.length === 0 ? [] : getBreadcrumbs(contentPath, locale);
 
   useBreadcrumbTrail(urlCrumbs, !navVisible);
@@ -71,13 +72,9 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
     >
       {visualCrumbs.map((crumb) => {
         const start = crumbStartStyles(crumb.phase);
-        return (
-          <span
-            key={crumb.id}
-            data-breadcrumb-phase={crumb.phase}
-            className={`breadcrumb-container mr-[0.3em] flex${crumb.phase === "exiting" ? " pointer-events-none" : ""}`}
-            aria-hidden={crumb.phase === "exiting"}
-          >
+        const isCurrent = crumb.phase !== "exiting" && crumb.path === currentContentPath;
+        const body = (
+          <>
             <span
               className="breadcrumb-notch inline-block shrink-0"
               style={{ transform: `translateY(${start.notchY})` }}
@@ -91,15 +88,38 @@ export function Breadcrumbs({ locale }: BreadcrumbsProps) {
               className="breadcrumb-text-mask inline-block overflow-hidden whitespace-nowrap"
               style={{ clipPath: start.clipPath }}
             >
-              <Link
-                href={`/${crumb.path}`}
-                className="breadcrumb-link inline-block pt-[0.3em] text-[#1C6B00] transition-colors hover:text-[#A8682B]"
-                transitionTypes={["nav-back"]}
+              <span
+                className={`breadcrumb-link inline-block pt-[0.3em] text-[#1C6B00]${isCurrent ? "" : " transition-colors group-hover:text-[#A8682B]"}`}
               >
                 {crumb.title}
-              </Link>
+              </span>
             </span>
-          </span>
+          </>
+        );
+
+        if (isCurrent) {
+          return (
+            <span
+              key={crumb.id}
+              data-breadcrumb-phase={crumb.phase}
+              className="breadcrumb-container mr-[0.3em] flex"
+              aria-current="page"
+            >
+              {body}
+            </span>
+          );
+        }
+
+        return (
+          <Link
+            key={crumb.id}
+            href={`/${crumb.path}`}
+            data-breadcrumb-phase={crumb.phase}
+            className="breadcrumb-container group mr-[0.3em] flex"
+            transitionTypes={["nav-back"]}
+          >
+            {body}
+          </Link>
         );
       })}
     </nav>

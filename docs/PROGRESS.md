@@ -155,6 +155,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 #### 9b2: Breadcrumbs fidelity
 - [x] Matches legacy positioning and styling
 - [x] Staggered notch drop from the page top (rest at `-0.3em`); only new crumbs enter; removed crumbs reverse-exit (`use-breadcrumb-animator.ts`)
+- [x] One click navigates — current crumb is not a link, exiting crumbs stay clickable, view-transition snapshots ignore pointer events
 
 #### 9b3: Language switcher
 - [x] Fixed bottom-left, `{{otherversions}}` interpolation

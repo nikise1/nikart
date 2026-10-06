@@ -24,7 +24,19 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {/* Kept out of globals.css — the CSS pipeline drops ::view-transition-group(*). */}
+        <style>{`
+          ::view-transition,
+          ::view-transition-group(*),
+          ::view-transition-image-pair(*),
+          ::view-transition-old(*),
+          ::view-transition-new(*) {
+            pointer-events: none;
+          }
+        `}</style>
+        {children}
+      </body>
     </html>
   );
 }

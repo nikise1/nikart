@@ -120,6 +120,12 @@ export function useBreadcrumbAnimator({
         );
       });
     },
-    { scope: containerRef, dependencies: [signature, enabled, onExitsComplete, onEntersComplete] },
+    {
+      scope: containerRef,
+      dependencies: [signature, enabled, onExitsComplete, onEntersComplete],
+      // Drop the previous trail's tweens before starting the next ones so a
+      // late onComplete cannot overwrite a newer click.
+      revertOnUpdate: true,
+    },
   );
 }

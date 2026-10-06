@@ -45,12 +45,16 @@ vi.mock("@/navigation", () => ({
     href,
     children,
     className,
+    transitionTypes: _transitionTypes,
+    ...rest
   }: {
     href: string;
     children: ReactNode;
     className?: string;
+    transitionTypes?: string[];
+    "data-breadcrumb-phase"?: string;
   }) => (
-    <a href={href} className={className}>
+    <a href={href} className={className} {...rest}>
       {children}
     </a>
   ),
@@ -103,10 +107,9 @@ describe("Breadcrumbs", () => {
       "href",
       "/art/install",
     );
-    expect(screen.getByRole("link", { name: "Spark" })).toHaveAttribute(
-      "href",
-      "/art/install/spark",
-    );
+    const spark = screen.getByText("Spark");
+    expect(spark.closest("a")).toBeNull();
+    expect(spark.closest("[aria-current='page']")).not.toBeNull();
   });
 
   it("drops notches from the page top, then clip-reveals only on first mount", async () => {
@@ -161,6 +164,9 @@ describe("Breadcrumbs", () => {
       (el) => el.querySelector(".breadcrumb-link")?.textContent === "Spark",
     );
     expect(spark).toHaveAttribute("data-breadcrumb-phase", "exiting");
+    expect(spark?.tagName).toBe("A");
+    expect(spark).toHaveAttribute("href", "/art/install/spark");
+    expect(spark).not.toHaveClass("pointer-events-none");
 
     const sparkNotch = spark?.querySelector(".breadcrumb-notch");
     const sparkMask = spark?.querySelector(".breadcrumb-text-mask");
@@ -254,6 +260,8 @@ describe("Breadcrumbs", () => {
       (el) => el.querySelector(".breadcrumb-link")?.textContent === "Spark",
     );
     expect(spark).toHaveAttribute("data-breadcrumb-phase", "exiting");
+    expect(spark?.tagName).toBe("A");
+    expect(spark).not.toHaveClass("pointer-events-none");
 
     const notchTweens = gsapFromTo.mock.calls.filter(([target]) =>
       (target as HTMLElement).classList.contains("breadcrumb-notch"),
