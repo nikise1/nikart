@@ -39,7 +39,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
   return (
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
-      <article data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
+      <article data-component="ArticleView" className="flex flex-1 flex-col items-center px-4 pt-12 pb-4 sm:p-4">
       <ContentTransition index={titleSlot}>
         <h1 className="text-center text-2xl font-semibold text-[#4F3E2D]">{title}</h1>
       </ContentTransition>

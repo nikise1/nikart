@@ -16,7 +16,7 @@ export function VideoView({ item, locale }: VideoViewProps) {
 
   return (
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
-      <article data-component="VideoView" className="flex flex-1 flex-col items-center p-4">
+      <article data-component="VideoView" className="flex flex-1 flex-col items-center px-4 pt-12 pb-4 sm:p-4">
         <ContentTransition index={0}>
           <h1 className="text-center text-2xl font-semibold text-[#4F3E2D]">{title}</h1>
         </ContentTransition>
