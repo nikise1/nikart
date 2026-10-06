@@ -108,7 +108,7 @@
 
 ### Step 10: WIP Deploy to Vercel Preview (2026-09-07)
 
-Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets.
+Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets. Step 9 closed on 2026-10-06; this deploy checklist is the current step.
 
 **Prerequisites verified:**
 - [x] Production build passes locally (`npm run build` in `modern/`)
@@ -138,7 +138,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ---
 
-### Step 9: Polish & Verification (continues in parallel)
+### Step 9: Polish & Verification ✅ (2026-10-06)
 
 #### 9a: ThumbnailGrid fidelity
 - [x] Vertical list layout (not grid) — matches legacy `.thumb-list`
@@ -149,7 +149,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Remove ScrollTrigger from `ThumbnailItem` — stagger on mount instead
 - [x] Item initial opacity `0` → `0.05`
 - [x] Add entrance delay to grid container slide
-- [ ] Verify exit via View Transitions
+- [x] Verify exit via View Transitions — the route `nav-forward` / `nav-back` slide is the list exit; a separate panel slide-out is not required (2026-10-06)
 - [x] Match stagger timing to legacy
 
 #### 9b: Background image
@@ -304,7 +304,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 6 | Layout & Navigation Shell | ✅ Done |
 | 7 | Content Views | ✅ Done |
 | 8 | Animation & Transitions | ✅ Done |
-| 9 | Polish & Verification | In Progress (parallel) |
+| 9 | Polish & Verification | ✅ Done |
 | 10 | WIP Deploy to Vercel Preview | **Current** (project live; smoke tests pending) |
 | 11 | Production Cutover | Not Started |
 
@@ -337,6 +337,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | Absolute `/swf-compare/…` hrefs + redirect | Relative index cards broke when the URL was `/swf-compare` without `/index.html` |
 | 2026-10-06 | One pretty-printed git copy of portfolio JSON at repo-root `public/content/json/data.json` | Flash still requests `/content/json/data.json`, so install/build minifies that file into the Next public path |
 | 2026-10-06 | Edit portfolio JSON in JSON Editor Online | `npm run json:edit` loads the file via the site’s `#left=json.` hash. Saying “edit json data” in a chat follows root `AGENTS.md` |
+| 2026-10-06 | Close Step 9 | Tracked polish is complete. Thumbnail list exit stays the route view transition |
 | 2026-10-06 | Weekly Dependabot for `/modern` only | Root and `public/html5/` are deprecated and will be decommissioned. Group minor and patch; one PR per major. Manual `@cursor` comment for a migration. Monthly library radar stays a Cursor automation and uses the same scope |
 | 2026-10-07 | Modern runtime is Node 24 LTS | Node 22 is Maintenance LTS. Vercel builds and functions support `24.x` (the default) and do not yet run `26.x`. Node 26 stays Current until 2026-10-28. Legacy root stays on Node `22.x` |
 | 2026-10-07 | TypeScript 6 in `modern/` | `typescript@^6` (6.0.3). `"types": ["node"]` replaces the old default of loading every `@types` package. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
