@@ -66,10 +66,14 @@
     return el.dataset.fill === "1";
   }
 
-  function fillViewport() {
+  /** CSS box for a fill stage (already clipped to the SWF aspect ratio). */
+  function fillStageSize(el) {
     return {
-      width: Math.max(1, document.documentElement.clientWidth),
-      height: Math.max(1, document.documentElement.clientHeight),
+      width: Math.max(1, el.clientWidth || document.documentElement.clientWidth),
+      height: Math.max(
+        1,
+        el.clientHeight || document.documentElement.clientHeight,
+      ),
     };
   }
 
@@ -79,8 +83,8 @@
     el.style.setProperty("--swf-h", String(native.height));
     el.style.setProperty("--swf-aspect", `${native.width} / ${native.height}`);
     if (isFill(el)) {
-      el.style.width = "100%";
-      el.style.height = "100%";
+      el.style.width = "";
+      el.style.height = "";
       return;
     }
     el.style.width = `${native.width}px`;
@@ -315,7 +319,8 @@
     el.replaceChildren(player);
     const options = ruffleLoadOptions(el, url);
     if (isFill(el)) {
-      options.scale = "showAll";
+      // Box is already the stage ratio; stretch into it (exactFit).
+      options.scale = "exactFit";
     }
     await player.load({
       ...options,
@@ -345,7 +350,7 @@
     canvas.style.width = "100%";
     canvas.style.height = "100%";
     el.replaceChildren(canvas);
-    const size = isFill(el) ? fillViewport() : nativeSize(el);
+    const size = isFill(el) ? fillStageSize(el) : nativeSize(el);
     window.awayflplayer.StageManager.htmlCanvas = canvas;
     window.awayflplayer.PlayerGlobal.builtinsBaseUrl = BUILTINS;
     const loaderUrl = playHref(el).href;
@@ -357,10 +362,10 @@
       y: 0,
       w: size.width,
       h: size.height,
-      stageScaleMode: "showAll",
+      stageScaleMode: isFill(el) ? "exactFit" : "showAll",
     });
     const fitAwayFl = () => {
-      const next = isFill(el) ? fillViewport() : size;
+      const next = isFill(el) ? fillStageSize(el) : size;
       // AwayFL stores the canvas client size before the bitmap exists. Setting
       // that same size again returns early and leaves the default 300×150
       // buffer stretched to the CSS box. A one-pixel nudge forces both axes.

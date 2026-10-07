@@ -11,7 +11,12 @@ interface RufflePlayerElement extends HTMLElement {
     compatibilityRules?: boolean;
     warnOnUnsupportedContent?: boolean;
     logLevel?: "error" | "warn" | "info" | "debug" | "trace";
-  }): void;
+    scale?: "showAll" | "exactFit" | "noborder" | "noscale";
+    autoplay?: "on" | "off" | "auto";
+    unmuteOverlay?: "visible" | "hidden";
+    width?: number;
+    height?: number;
+  }): void | Promise<void>;
 }
 
 interface RufflePlayerInstance {

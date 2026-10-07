@@ -574,12 +574,16 @@ function extraStageAttrs(piece) {
   return attrs.length ? ` ${attrs.join(" ")}` : "";
 }
 
+function pieceHref(id) {
+  return `/swf-compare/${id}/index.html`;
+}
+
 function renderPieceHtml(piece, siblings, prev, next) {
   const siblingLinks = siblings
     .filter((item) => item.id !== piece.id)
     .map(
       (item) =>
-        `<a href="../${item.id}/index.html">${escapeHtml(item.title)}</a>`,
+        `<a href="${pieceHref(item.id)}">${escapeHtml(item.title)}</a>`,
     )
     .join(" · ");
   const href = movieHref(piece);
@@ -590,8 +594,8 @@ function renderPieceHtml(piece, siblings, prev, next) {
   const navLinks = [
     `<a href="/swf-compare/index.html">All SWFs</a>`,
     piece.id === "lizard-site" ? `<a href="/fl">Flash view</a>` : "",
-    prev ? `<a href="../${prev.id}/index.html">← ${escapeHtml(prev.title)}</a>` : "",
-    next ? `<a href="../${next.id}/index.html">${escapeHtml(next.title)} →</a>` : "",
+    prev ? `<a href="${pieceHref(prev.id)}">← ${escapeHtml(prev.title)}</a>` : "",
+    next ? `<a href="${pieceHref(next.id)}">${escapeHtml(next.title)} →</a>` : "",
   ].filter(Boolean);
   return `<!doctype html>
 <html lang="en">
@@ -651,7 +655,7 @@ function renderIndex(pieces) {
       const cards = list
         .map(
           (piece) =>
-            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="${escapeHtml(piece.id)}/index.html">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
+            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="${pieceHref(piece.id)}">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
@@ -669,11 +673,11 @@ function renderIndex(pieces) {
   <div class="wrap">
     <nav class="topnav">
       <a href="/fl">Flash site</a>
-      <a href="lizard-site/index.html">Legacy Flash site</a>
+      <a href="${pieceHref("lizard-site")}">Legacy Flash site</a>
       <a href="/en">HTML5 site</a>
     </nav>
     <h1>Ruffle vs AwayFL</h1>
-    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="lizard-site/index.html">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
+    <p class="note">One page per SWF, both players side by side. Movies load from <code>https://static.nikart.co.uk</code> (HTTPS + CORS) so this repo does not duplicate the bucket. The <a href="${pieceHref("lizard-site")}">legacy lizard Flash site</a> stays on <code>/fl/main.ruffle.swf</code> with <code>base=/fl/</code>.</p>
     ${sections}
   </div>
   <script src="/swf-compare/players.js"></script>

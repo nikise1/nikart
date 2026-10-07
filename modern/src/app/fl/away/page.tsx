@@ -9,7 +9,7 @@ const DEFAULT_SRC = "websites/claro/index.html";
 
 export default function AwayFlPage() {
   return (
-    <Suspense fallback={<p className="fl-fallback">Loading AwayFL…</p>}>
+    <Suspense fallback={<p className="awayfl-status">Loading AwayFL…</p>}>
       <AwayFlPageInner />
     </Suspense>
   );
