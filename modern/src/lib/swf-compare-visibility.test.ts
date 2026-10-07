@@ -23,15 +23,12 @@ describe("swf-compare player visibility", () => {
     localStorage.clear();
     document.body.innerHTML = "";
     window.history.pushState({}, "", "/swf-compare/index.html");
-    globalThis.fetch = async (url) => {
+    globalThis.fetch = (async (url) => {
       if (String(url).includes("visibility-defaults.json")) {
-        return {
-          ok: true,
-          json: async () => structuredClone(visibilityDefaults),
-        };
+        return Response.json(structuredClone(visibilityDefaults));
       }
       throw new Error(`unexpected fetch ${url}`);
-    };
+    }) as typeof fetch;
   });
 
   afterEach(() => {

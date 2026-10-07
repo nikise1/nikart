@@ -1,15 +1,13 @@
-import { describe, it, expect, afterEach, beforeEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildFlashVars, resolveFlashLangCode, getStaticFilesBase } from "./flash-config";
 
 describe("flash-config", () => {
-  const originalNodeEnv = process.env.NODE_ENV;
-
   beforeEach(() => {
-    process.env.NODE_ENV = "test";
+    vi.stubEnv("NODE_ENV", "test");
   });
 
   afterEach(() => {
-    process.env.NODE_ENV = originalNodeEnv;
+    vi.unstubAllEnvs();
   });
 
   describe("getStaticFilesBase", () => {
@@ -18,7 +16,7 @@ describe("flash-config", () => {
     });
 
     it("uses legacy relative static path in development", () => {
-      process.env.NODE_ENV = "development";
+      vi.stubEnv("NODE_ENV", "development");
       expect(getStaticFilesBase()).toBe("../static");
     });
   });
