@@ -31,7 +31,7 @@ Do **not** set an Output Directory. `framework: nextjs` in `vercel.json` is enou
 
 1. Open [vercel.com/new](https://vercel.com/new) and import `nikise1/nikart`.
 2. **Root Directory:** `modern/` (keep “Include source files outside of the Root Directory” checked)
-3. Framework: Next.js (from `vercel.json`). Node `22` from `.nvmrc` / `engines`.
+3. Framework: Next.js (from `vercel.json`). Node `24` from `.nvmrc` / `engines`. `engines` overrides the Node version in Vercel project settings.
 4. No environment variables required for WIP (static JSON content, videos proxied to `static.nikart.co.uk`).
 5. Deploy. Every push to `master` and every PR gets a preview URL.
 
