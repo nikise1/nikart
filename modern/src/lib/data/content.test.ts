@@ -10,7 +10,7 @@ import {
   localize,
   localizeUrl,
 } from "./content";
-import type { MenuItem } from "./schema";
+import { isContentItem, type MenuItem } from "./schema";
 
 describe("localize", () => {
   it("returns a plain string unchanged", () => {
@@ -113,7 +113,7 @@ describe("getContentItems", () => {
     const gamesMenu = findById("games") as MenuItem;
     const items = getContentItems(gamesMenu);
     expect(items.length).toBeGreaterThan(0);
-    expect(items.every((item) => item.type !== "men")).toBe(true);
+    expect(items.every(isContentItem)).toBe(true);
   });
 });
 

@@ -7,9 +7,6 @@ const STATIC_HOST = "https://static.nikart.co.uk";
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["127.0.0.1"],
-  experimental: {
-    viewTransition: true,
-  },
   async headers() {
     return [
       {
