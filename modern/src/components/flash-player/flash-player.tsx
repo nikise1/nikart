@@ -4,6 +4,10 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { installFlashBridge } from "@/lib/flash-bridge";
 import type { FlashVars } from "@/lib/flash-config";
+import {
+  installFlashVideoGuard,
+  stopFlashVideo,
+} from "@/lib/flash-video-guard";
 
 const RUFFLE_SRC = "/ruffle/ruffle.js";
 const SWF_WIDTH = 750;
@@ -12,41 +16,6 @@ const SWF_HEIGHT = 500;
 export interface FlashPlayerProps {
   swfUrl: string;
   parameters: FlashVars;
-}
-
-function stopMediaTree(root: ParentNode | null | undefined): void {
-  if (!root) {
-    return;
-  }
-
-  const media = new Set<HTMLMediaElement>();
-  if (root instanceof HTMLMediaElement) {
-    media.add(root);
-  }
-  if ("querySelectorAll" in root) {
-    for (const el of root.querySelectorAll("video, audio")) {
-      media.add(el as HTMLMediaElement);
-    }
-  }
-
-  const elements =
-    root instanceof Element
-      ? [root, ...Array.from(root.querySelectorAll("*"))]
-      : Array.from(
-          "querySelectorAll" in root ? root.querySelectorAll("*") : [],
-        );
-
-  for (const el of elements) {
-    if (el.shadowRoot) {
-      stopMediaTree(el.shadowRoot);
-    }
-  }
-
-  for (const node of media) {
-    node.pause();
-    node.removeAttribute("src");
-    node.load();
-  }
 }
 
 export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
@@ -121,30 +90,14 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
       height: SWF_HEIGHT,
     });
 
-    // Ruffle may leave HTML media running after the SWF closes a NetStream
-    // (leaving a Flash video page). Pause anything it detaches.
-    const mediaObserver = new MutationObserver((mutations) => {
-      for (const mutation of mutations) {
-        for (const node of mutation.removedNodes) {
-          if (node instanceof HTMLMediaElement || node instanceof Element) {
-            stopMediaTree(node);
-          }
-        }
-      }
-    });
-    mediaObserver.observe(player, { childList: true, subtree: true });
-    if (player.shadowRoot) {
-      mediaObserver.observe(player.shadowRoot, {
-        childList: true,
-        subtree: true,
-      });
-    }
+    // FLV NetStream audio is Web Audio + fetch, not <video>. Abort leaked
+    // streams when Back leaves a video view without closing NetStream.
+    const disposeVideoGuard = installFlashVideoGuard(player);
 
     return () => {
-      mediaObserver.disconnect();
+      disposeVideoGuard();
+      stopFlashVideo();
       player.pause?.();
-      stopMediaTree(player);
-      stopMediaTree(player.shadowRoot);
       container.replaceChildren();
     };
   }, [ruffleReady, swfUrl, parameters]);

@@ -238,6 +238,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Remove `/fl` `fl-fallback` links and the shared `fl-fallback` class (2026-10-06)
 - [x] `/fl` Ruffle uses `autoplay: "on"` + `unmuteOverlay: "hidden"` like compare fill pages; pause/stop media on unmount and when Ruffle detaches video nodes (2026-10-06)
 - [x] HTML5 `VideoView` pauses its `<video>` on unmount so leave transitions do not keep audio playing (2026-10-06)
+- [x] Abort leaked Ruffle FLV NetStream audio after leaving a Flash video view: track `video_flv` fetch + Web Audio buffer sources and stop them when Back keeps the decoder pumping (2026-10-07)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

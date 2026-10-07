@@ -7,12 +7,13 @@ describe("flash-bridge", () => {
     vi.restoreAllMocks();
   });
 
-  it("exposes popWin and doTracker on window.nikart", () => {
+  it("exposes popWin, doTracker, and endFlashVideo on window.nikart", () => {
     installFlashBridge();
 
     expect(window.nikart).toBeDefined();
     expect(typeof window.nikart?.popWin).toBe("function");
     expect(typeof window.nikart?.doTracker).toBe("function");
+    expect(typeof window.nikart?.endFlashVideo).toBe("function");
   });
 
   it("opens static Flash wrappers on the fill page", () => {

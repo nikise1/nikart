@@ -1,5 +1,6 @@
 import { compareHrefForSource } from "@/lib/swf-compare";
 import { buildAwayFlPopupUrl, isAwayFlLaunch } from "@/lib/awayfl-static";
+import { stopFlashVideo } from "@/lib/flash-video-guard";
 
 declare global {
   interface Window {
@@ -18,6 +19,8 @@ export interface FlashBridge {
     location: string,
   ) => void;
   doTracker: (event: string) => void;
+  /** Abort a leaked Ruffle FLV NetStream (host-side video audio cleanup). */
+  endFlashVideo: () => void;
 }
 
 export function installFlashBridge(): void {
@@ -59,7 +62,13 @@ export function installFlashBridge(): void {
     doTracker(event) {
       console.log(`nikart.doTracker: fl_${event}`);
     },
+    endFlashVideo() {
+      stopFlashVideo();
+    },
   };
 
+  nikart.endFlashVideo = () => {
+    stopFlashVideo();
+  };
   window.nikart = nikart;
 }
