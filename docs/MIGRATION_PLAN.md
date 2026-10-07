@@ -215,6 +215,10 @@ Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
 - Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
+
+Maintenance note (2026-10-07):
+- Modern runtime moved from Node `22` to Node `24` (Active LTS). `modern/.nvmrc` and `modern/package.json` `engines` are `24` / `24.x`. Vercel builds and functions deploy `24.x` from that field, which overrides the project setting. Node `26` is still Current until 2026-10-28 and is not a Vercel builds/functions runtime.
+- `@types/node` is `^24` so the types match that runtime. The legacy root app stays on Node `22.x`.
 - Standardized package manager to npm for modern app: added `packageManager: npm@10` in root/modern `package.json`.
 - Simplified `docs/PROGRESS.md` "Upcoming Steps" table to remove redundant separate "Migration Phase" column.
 - Removed remaining phase references from the "Step" labels in `docs/PROGRESS.md` to keep the table concise.
@@ -237,7 +241,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 2. **Root Directory:** set to `modern/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
 3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `public/content/img`
 4. Build settings come from `modern/vercel.json` (`framework: nextjs`). Do not set Output Directory to `.next` — that breaks next-intl middleware and SSR
-5. Framework preset: Next.js (auto-detected); Node `22` from `modern/.nvmrc` / `engines`
+5. Framework preset: Next.js (auto-detected); Node `24` from `modern/.nvmrc` / `engines` (updated 2026-10-07; was `22`)
 6. Environment variables: none required for WIP (static content, no secrets)
 7. Click Deploy — first deploy takes ~2 min
 

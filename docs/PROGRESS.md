@@ -119,11 +119,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Removed the in-app `/dev/content` editor. `npm run json:edit` prints a JSON Editor Online link with the portfolio file already loaded (2026-10-06)
 - [x] `sync:images` is symlink-safe (staging copy; never copies onto the legacy folder)
 - [x] Node `22` pinned via `modern/.nvmrc` and `modern/package.json` `engines`
+- [x] Node runtime moved to `24` (2026-10-07): `.nvmrc` and `engines` are `24` / `24.x`; `@types/node` is `^24`
 
 **One-time setup:**
 - [x] Git repo imported to Vercel project [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart)
 - [x] Root Directory `modern/`; include files outside root enabled
-- [x] Framework Next.js; Node 22; no WIP env vars
+- [x] Framework Next.js; Node 24 (was 22 in the first project setup); no WIP env vars
 - [x] `master` auto-deploys — first Git deploy (`8cc8046`) failed; `e70e2b1` succeeded
 - [x] Deployment dashboard: [e70e2b1](https://vercel.com/nikise1s-projects/nikart/EnPwiCayBWymivxog83ojpYMvWnR)
 
@@ -337,4 +338,5 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | One pretty-printed git copy of portfolio JSON at repo-root `public/content/json/data.json` | Flash still requests `/content/json/data.json`, so install/build minifies that file into the Next public path |
 | 2026-10-06 | Edit portfolio JSON in JSON Editor Online | `npm run json:edit` loads the file via the site’s `#left=json.` hash. Saying “edit json data” in a chat follows root `AGENTS.md` |
 | 2026-10-06 | Weekly Dependabot for `/modern` only | Root and `public/html5/` are deprecated and will be decommissioned. Group minor and patch; one PR per major. Manual `@cursor` comment for a migration. Monthly library radar stays a Cursor automation and uses the same scope |
+| 2026-10-07 | Modern runtime is Node 24 LTS | Node 22 is Maintenance LTS. Vercel builds and functions support `24.x` (the default) and do not yet run `26.x`. Node 26 stays Current until 2026-10-28. Legacy root stays on Node `22.x` |
 | 2026-10-07 | TypeScript 6 in `modern/` | `typescript@^6` (6.0.3). `"types": ["node"]` replaces the old default of loading every `@types` package. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
