@@ -24,6 +24,8 @@
 
 **Step effort: ~1 session**
 
+**Adjustment (2026-10-07):** `modern/` uses TypeScript 6 (`typescript@^6`, resolved 6.0.3). Existing explicit compiler options stay (`strict`, `module: esnext`, `moduleResolution: bundler`, `target: ES2017`). `"types": ["node"]` is set because TypeScript 6 defaults `types` to `[]` and no longer loads every `@types` package. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
+
 ---
 
 ### Step 5: Data Layer & Content Types
