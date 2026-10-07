@@ -5,9 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import { installFlashBridge } from "@/lib/flash-bridge";
 import type { FlashVars } from "@/lib/flash-config";
 import {
+  ensureFlashVideoPatches,
   installFlashVideoGuard,
   stopFlashVideo,
 } from "@/lib/flash-video-guard";
+
+// Run as soon as this module evaluates — before the Ruffle <Script> loads.
+ensureFlashVideoPatches();
 
 const RUFFLE_SRC = "/ruffle/ruffle.js";
 const SWF_WIDTH = 750;

@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
+  ensureFlashVideoPatches,
   installFlashVideoGuard,
   stopFlashVideo,
 } from "./flash-video-guard";
@@ -13,7 +14,7 @@ describe("flash-video-guard", () => {
   });
 
   it("aborts a tracked FLV fetch when stopFlashVideo is called", async () => {
-    const fetchMock = vi.fn((input: RequestInfo | URL, init?: RequestInit) => {
+    const fetchMock = vi.fn((_input: RequestInfo | URL, init?: RequestInit) => {
       return new Promise<Response>((_resolve, reject) => {
         init?.signal?.addEventListener("abort", () => {
           reject(new DOMException("Aborted", "AbortError"));
@@ -21,34 +22,61 @@ describe("flash-video-guard", () => {
       });
     });
     vi.stubGlobal("fetch", fetchMock);
-
-    const target = document.createElement("div");
-    const dispose = installFlashVideoGuard(target);
+    delete window.__nikartFlashVideoGuard;
+    ensureFlashVideoPatches();
 
     const pending = fetch("/static/video_flv/close_500.flv");
-    expect(fetchMock).toHaveBeenCalledOnce();
+    const expectAbort = expect(pending).rejects.toMatchObject({
+      name: "AbortError",
+    });
+    stopFlashVideo();
+    await expectAbort;
+  });
+
+  it("suppresses buffer sources after stopFlashVideo", () => {
+    class FakeSource extends EventTarget {
+      stopped = false;
+      start() {
+        /* replaced by patch */
+      }
+      stop() {
+        this.stopped = true;
+      }
+    }
+    vi.stubGlobal("AudioBufferSourceNode", FakeSource);
+    delete window.__nikartFlashVideoGuard;
+    ensureFlashVideoPatches();
+
+    // Mark video active via a stubbed fetch, then suppress.
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => Promise.resolve(new Response(null, { status: 200 }))),
+    );
+    delete window.__nikartFlashVideoGuard;
+    ensureFlashVideoPatches();
+    void fetch("/static/video_flv/spark_500.flv");
 
     stopFlashVideo();
 
-    await expect(pending).rejects.toMatchObject({ name: "AbortError" });
-    dispose();
+    const source = new FakeSource();
+    source.start();
+    expect(source.stopped).toBe(true);
   });
 
-  it("aborts after a click when the decoder keeps starting buffer sources", async () => {
+  it("stops a leaked stream after a click that keeps pumping buffer sources", async () => {
     vi.useFakeTimers();
 
     class FakeSource extends EventTarget {
       start() {
-        /* patched below via prototype once AudioBufferSourceNode exists */
+        /* patched */
       }
       stop() {
         /* no-op */
       }
     }
-
     vi.stubGlobal("AudioBufferSourceNode", FakeSource);
 
-    const fetchMock = vi.fn((input: RequestInfo | URL, init?: RequestInit) => {
+    const fetchMock = vi.fn((_input: RequestInfo | URL, init?: RequestInit) => {
       return new Promise<Response>((_resolve, reject) => {
         init?.signal?.addEventListener("abort", () => {
           reject(new DOMException("Aborted", "AbortError"));
@@ -56,9 +84,8 @@ describe("flash-video-guard", () => {
       });
     });
     vi.stubGlobal("fetch", fetchMock);
-
-    // Re-install after stubbing Web Audio so the prototype patch applies.
     delete window.__nikartFlashVideoGuard;
+
     const target = document.createElement("div");
     const dispose = installFlashVideoGuard(target);
 
@@ -68,12 +95,10 @@ describe("flash-video-guard", () => {
     });
 
     target.dispatchEvent(new Event("pointerup", { bubbles: true }));
-    // Simulate Ruffle still pumping audio after Back.
-    new FakeSource().start();
     new FakeSource().start();
     new FakeSource().start();
 
-    await vi.advanceTimersByTimeAsync(450);
+    await vi.advanceTimersByTimeAsync(400);
     await expectAbort;
     dispose();
     vi.useRealTimers();

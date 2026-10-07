@@ -1,6 +1,9 @@
 import { compareHrefForSource } from "@/lib/swf-compare";
 import { buildAwayFlPopupUrl, isAwayFlLaunch } from "@/lib/awayfl-static";
-import { stopFlashVideo } from "@/lib/flash-video-guard";
+import {
+  ensureFlashVideoPatches,
+  stopFlashVideo,
+} from "@/lib/flash-video-guard";
 
 declare global {
   interface Window {
@@ -24,6 +27,9 @@ export interface FlashBridge {
 }
 
 export function installFlashBridge(): void {
+  // Patch fetch / Web Audio before Ruffle caches the natives.
+  ensureFlashVideoPatches();
+
   const nikart: FlashBridge = window.nikart ?? {
     popWin(filename, winname, width, height, resize, scrollbars, location) {
       const compareHref = compareHrefForSource(filename);
