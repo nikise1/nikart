@@ -64,7 +64,7 @@
 |------|--------|-------|
 | Thumbnail grid view | Medium | Shows ALL children of a menu node (sub-menus + content items) — matches legacy `thumb-view.js` rendering `curItem.menu` |
 | Thumbnail item component | Small | Image + label, hover state. Accepts any `DataNode` (not just `ContentItem`) |
-| Article view (text/web/image) | Medium | Type-driven rendering, image slideshow |
+| Article view (text/web/image) | Medium | Type-driven rendering, image slideshow. `_self/` launch links resolve against the legacy `/html5/` document (`../fl` → `/fl`, `es` → `/html5/es`), so a nested route such as `/en/config/fl` does not turn them into `/en/fl` (2026-10-07) |
 | Video view | Small | Native `<video>` with H.264/WebM sources |
 
 Note: No dedicated "menu landing" view exists in legacy. Menu nodes always show thumbnail grid of their children. `MenuLanding` was removed.
@@ -179,7 +179,8 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
 - Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall`/`prebuild` from `@ruffle-rs/ruffle`; gitignored — Vercel `buildCommand` copies it)
 - `/fl/en` and `/fl/es` route handlers set the `NEXT_LOCALE` cookie and redirect to `/fl` (legacy parity). Explicit paths so `/fl/main.swf` cannot be captured by a `[lang]` segment.
-- i18n middleware excludes `/fl` so it is not prefixed with `/en` or `/es`
+- i18n middleware excludes `/fl` and `/html5` so they are not prefixed with `/en` or `/es`. `/html5` redirects to `/` (locale home). `/html5/en` and `/html5/es` set `NEXT_LOCALE` and redirect to that locale home, matching the legacy language links (2026-10-07).
+- `_self/` launches: article `processUrl` resolves against `/html5/`. Flash `popWin` (and compare `players.js`) resolves the stripped remainder against `/fl/main.ruffle.swf`, so `../fl` still opens `/fl` when the HTML page is several segments deep (2026-10-07).
 - Lizard tongue chord (2026-09-15): the `/fl` Ruffle preview was drawing the quadratic tongue **and** a straight line between the mouth and the tip. That is not a Next.js/Ruffle embed setting — it is the AVM1 Drawing API path in `main.swf` (FLA timeline frame 22). Original AS2:
 
   ```

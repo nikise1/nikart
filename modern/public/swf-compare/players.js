@@ -116,7 +116,7 @@
     }
     window.nikart = {
       popWin(filename, winname) {
-        const href = compareHrefForLaunch(filename) ?? filename;
+        const href = compareHrefForLaunch(filename) ?? flashSelfHref(filename) ?? filename;
         const tab = window.open(href, winname || "_blank");
         tab?.focus();
         window.nikart.doTracker(`${winname || "launch"}_launch`);
@@ -131,6 +131,19 @@
     const path = launchPath(filename);
     const id = LAUNCH_PAGES[path];
     return id ? `/swf-compare/${id}/index.html` : null;
+  }
+
+  // Movie-relative `_self` remainders (`../fl`, `en`). The HTML page may be
+  // several segments deep (`/swf-compare/lizard-site/`), so do not resolve
+  // them against `window.location`.
+  function flashSelfHref(filename) {
+    const raw = String(filename ?? "").trim();
+    if (raw !== "en" && raw !== "es" && !raw.startsWith("../")) {
+      return null;
+    }
+    const movie = new URL("/fl/main.ruffle.swf", window.location.origin);
+    const resolved = new URL(raw, movie);
+    return `${resolved.pathname}${resolved.search}${resolved.hash}`;
   }
 
   function launchPath(filename) {

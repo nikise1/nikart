@@ -291,6 +291,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Kept the Next.js core-web-vitals / `typescript-eslint` recommended bar: React hooks, the six jsx-a11y warnings, and `no-explicit-any`
 - [x] `npm run lint` and `npm run format:check` are clean
 
+### Same-origin `_self` links ✅ (2026-10-07)
+
+- [x] Article launch links with a `_self/` prefix resolve against `/html5/`, so `../fl` is `/fl` from any route depth (`/en/config/fl` no longer opens `/en/fl`).
+- [x] `/html5`, `/html5/en`, and `/html5/es` are outside locale middleware. Home redirects to `/`. Language links set `NEXT_LOCALE` and open `/en` or `/es`.
+- [x] Flash `popWin` and the compare-kit bridge resolve movie-relative remainders (`../fl`, `en`, `es`) against `/fl/main.ruffle.swf`.
+
 ### TypeScript 6 ✅ (2026-10-07)
 
 - [x] `modern/` devDependency `typescript` is `^6` (6.0.3)
@@ -357,4 +363,5 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-07 | Modern runtime is Node 24 LTS | Node 22 is Maintenance LTS. Vercel builds and functions support `24.x` (the default) and do not yet run `26.x`. Node 26 stays Current until 2026-10-28. Legacy root stays on Node `22.x` |
 | 2026-10-07 | TypeScript 6 in `modern/` | `typescript@^6` (6.0.3). `"types": ["node"]` replaces the old default of loading every `@types` package. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
 | 2026-10-07 | Oxlint + Oxfmt for `modern/` only | ESLint stays blocked on the TypeScript 7 compiler API. Oxlint type-aware rules use the native checker. Oxfmt formats this app. Legacy root is out of scope |
+| 2026-10-07 | `_self/` links are root-absolute | Article links resolve against `/html5/`; Flash `popWin` resolves against `/fl/main.ruffle.swf`. Nested routes were turning `../fl` into `/en/fl` |
 | 2026-10-08 | TypeScript 7 in `modern/` | `typescript@^7` (7.0.2). Oxlint already type-checks through `oxlint-tsgolint`, so the lint setup stays. Next.js 16.3.8 runs project-local `tsc` during `next build`. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |

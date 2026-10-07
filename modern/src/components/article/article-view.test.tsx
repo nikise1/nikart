@@ -51,6 +51,47 @@ describe("ArticleView", () => {
     );
   });
 
+  it("opens the flash view at /fl from a nested article", () => {
+    const flashItem: ContentItem = {
+      id: "fl",
+      type: "web",
+      title: { en: "Flash View", es: "Vista en Flash" },
+      desc: { en: "The Flash view of this site.", es: "Vista en Flash." },
+      imgs: 1,
+      url: "_self/../fl",
+      launch: {
+        en: "Change to the Flash view",
+        es: "Cambia a la versión en Flash",
+      },
+    };
+
+    render(<ArticleView item={flashItem} locale="en" />);
+
+    const link = screen.getByRole("link", { name: "Change to the Flash view" });
+    expect(link).toHaveAttribute("href", "/fl");
+    expect(link).toHaveAttribute("target", "_self");
+  });
+
+  it("opens the other language at /html5/{locale}", () => {
+    const languageItem: ContentItem = {
+      id: "language",
+      type: "web",
+      title: { en: "Español", es: "English" },
+      url: { en: "_self/es", es: "_self/en" },
+      launch: {
+        en: "Cambia idioma a Español",
+        es: "Change Language to English",
+      },
+    };
+
+    render(<ArticleView item={languageItem} locale="en" />);
+
+    expect(screen.getByRole("link", { name: "Cambia idioma a Español" })).toHaveAttribute(
+      "href",
+      "/html5/es",
+    );
+  });
+
   it("does not reserve empty slots when the article has no images or link", () => {
     const textOnly: ContentItem = {
       id: "note",

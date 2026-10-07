@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { imgUrl, imgSlideUrl, videoH264Url, videoWebmUrl, processUrl } from "./assets";
+import {
+  imgUrl,
+  imgSlideUrl,
+  videoH264Url,
+  videoWebmUrl,
+  processUrl,
+  resolveFlashLaunchHref,
+} from "./assets";
 
 describe("assets", () => {
   describe("imgUrl", () => {
@@ -27,9 +34,21 @@ describe("assets", () => {
   });
 
   describe("processUrl", () => {
-    it("handles _self/ prefix", () => {
+    it("resolves _self/ links against /html5/ so depth cannot change them", () => {
       expect(processUrl("_self/../html5")).toEqual({
-        href: "../html5",
+        href: "/html5",
+        isSelf: true,
+      });
+      expect(processUrl("_self/../fl")).toEqual({
+        href: "/fl",
+        isSelf: true,
+      });
+      expect(processUrl("_self/es")).toEqual({
+        href: "/html5/es",
+        isSelf: true,
+      });
+      expect(processUrl("_self/en")).toEqual({
+        href: "/html5/en",
         isSelf: true,
       });
     });
@@ -53,6 +72,25 @@ describe("assets", () => {
         href: "https://example.com",
         isSelf: false,
       });
+    });
+  });
+
+  describe("resolveFlashLaunchHref", () => {
+    it("resolves movie-relative _self remainders to root paths", () => {
+      expect(resolveFlashLaunchHref("../fl")).toBe("/fl");
+      expect(resolveFlashLaunchHref("../html5")).toBe("/html5");
+      expect(resolveFlashLaunchHref("es")).toBe("/fl/es");
+      expect(resolveFlashLaunchHref("en")).toBe("/fl/en");
+      expect(resolveFlashLaunchHref("../static/games/ciudad_helm/index.html")).toBe(
+        "/static/games/ciudad_helm/index.html",
+      );
+    });
+
+    it("leaves absolute launch URLs unchanged", () => {
+      expect(resolveFlashLaunchHref("http://onedayinmay.co.uk")).toBe("http://onedayinmay.co.uk");
+      expect(resolveFlashLaunchHref("https://static.nikart.co.uk/websites/claro/index.html")).toBe(
+        "https://static.nikart.co.uk/websites/claro/index.html",
+      );
     });
   });
 });

@@ -1,3 +1,4 @@
+import { resolveFlashLaunchHref } from "@/lib/assets";
 import { compareHrefForSource } from "@/lib/swf-compare";
 import { buildAwayFlPopupUrl, isAwayFlLaunch } from "@/lib/awayfl-static";
 
@@ -23,20 +24,21 @@ export interface FlashBridge {
 export function installFlashBridge(): void {
   const nikart: FlashBridge = window.nikart ?? {
     popWin(filename, winname, width, height, resize, scrollbars, location) {
-      const compareHref = compareHrefForSource(filename);
+      const launchHref = resolveFlashLaunchHref(filename);
+      const compareHref = compareHrefForSource(launchHref);
       if (compareHref) {
         const tab = window.open(compareHref, winname);
         tab?.focus();
         nikart.doTracker(`${winname}_launch`);
         return;
       }
-      const href = isAwayFlLaunch(filename)
-        ? buildAwayFlPopupUrl(filename, {
+      const href = isAwayFlLaunch(launchHref)
+        ? buildAwayFlPopupUrl(launchHref, {
             width,
             height,
             title: winname,
           })
-        : filename;
+        : launchHref;
       const left = screen.availWidth / 2 - width / 2;
       const top = screen.availHeight / 2 - height / 2;
       const specs = [
