@@ -12,7 +12,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "playwright test",
-    "postinstall": "node scripts/link-typescript-bin.mjs && node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs && node scripts/sync-content-json.mjs && node scripts/compile-swf-compare.mjs",
+    "postinstall": "node -e \"const fs=require('node:fs');const p='node_modules/.bin/tsc';fs.rmSync(p,{force:true});fs.symlinkSync('../typescript/bin/tsc',p)\" && node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs && node scripts/sync-content-json.mjs && node scripts/compile-swf-compare.mjs",
     "sync:images": "node scripts/sync-content-images.mjs",
     "sync:json": "node scripts/sync-content-json.mjs",
     "swf-compare:sync": "node scripts/sync-swf-compare.mjs",
