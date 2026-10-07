@@ -212,6 +212,7 @@ Legacy `articleClose` / `videoClose` fade the whole panel out in `timeArticleOut
 Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
+- TypeScript 7.0.2 in `modern/` (2026-10-07). Dependabot's bump conflicted with the Vercel 62 lockfile (`package.json` and `package-lock.json`); the rebase keeps `typescript` `^7` and `vercel` `^62`. TypeScript 7 has no compiler API, so ESLint resolves `typescript` to `@typescript/typescript6`, and `postinstall` points the `tsc` bin back at TypeScript 7. `eslint-plugin-react`'s `detect` setting calls `context.getFilename()`, which ESLint 10 removed, so the React version comes from `package.json`. `npm run lint`, unit tests, and `next build` pass.
 - Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
 - Standardized package manager to npm for modern app: added `packageManager: npm@10` in root/modern `package.json`.
 - Simplified `docs/PROGRESS.md` "Upcoming Steps" table to remove redundant separate "Migration Phase" column.
