@@ -3,10 +3,7 @@ import { join } from "node:path";
 import { describe, it, expect } from "vitest";
 
 const publicRoot = join(__dirname, "../../public");
-const patch = readFileSync(
-  join(publicRoot, "awayfl/loadvars-ondata-patch.js"),
-  "utf8",
-);
+const patch = readFileSync(join(publicRoot, "awayfl/loadvars-ondata-patch.js"), "utf8");
 const playersJs = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
 
 describe("AwayFL LoadVars onData host patch", () => {

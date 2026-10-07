@@ -8,17 +8,12 @@ const vendor = join(root, "vendor", "awayfl-builtins");
 const target = join(root, "public", "awayfl");
 
 if (!existsSync(join(pkg, "bundle", "awayfl-player.umd.js"))) {
-  throw new Error(
-    "AwayFL package missing. Run npm install before copy-awayfl.",
-  );
+  throw new Error("AwayFL package missing. Run npm install before copy-awayfl.");
 }
 
 mkdirSync(join(target, "builtins"), { recursive: true });
 
-cpSync(
-  join(pkg, "bundle", "awayfl-player.umd.js"),
-  join(target, "awayfl-player.umd.js"),
-);
+cpSync(join(pkg, "bundle", "awayfl-player.umd.js"), join(target, "awayfl-player.umd.js"));
 cpSync(join(pkg, "builtins"), join(target, "builtins"), { recursive: true });
 
 // npm omits the ABC catalogs; overlay the vendored copies from GitHub.

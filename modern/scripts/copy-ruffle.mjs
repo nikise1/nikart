@@ -12,11 +12,7 @@ for (const file of readdirSync(source)) {
   if (file.endsWith(".map")) {
     continue;
   }
-  if (
-    file === "ruffle.js" ||
-    file.endsWith(".wasm") ||
-    file.startsWith("core.ruffle.")
-  ) {
+  if (file === "ruffle.js" || file.endsWith(".wasm") || file.startsWith("core.ruffle.")) {
     cpSync(join(source, file), join(target, file));
   }
 }

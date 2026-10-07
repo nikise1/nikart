@@ -1,4 +1,5 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
@@ -18,6 +19,7 @@ Portfolio site migration from legacy Flash/Backbone to Next.js 16. Faithful repr
 - **State:** Zustand (UI state); URL-driven navigation state
 - **i18n:** next-intl (locales: en, es)
 - **Testing:** Vitest + React Testing Library (unit); Playwright (E2E)
+- **Lint / format:** Oxlint (type-aware) and Oxfmt. Configs apply only inside this folder.
 - **Deployment:** Vercel
 
 ## Commands
@@ -33,7 +35,9 @@ From `modern/`:
 ```bash
 npm run dev          # Dev server (Turbopack)
 npm run build        # Production build
-npm run lint         # ESLint
+npm run lint         # Oxlint (type-aware)
+npm run format       # Oxfmt write
+npm run format:check # Oxfmt check
 npm run test         # Vitest watch mode
 npm run test:run     # Vitest single run
 npm run test:e2e     # Playwright E2E

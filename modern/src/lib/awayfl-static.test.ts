@@ -11,11 +11,9 @@ import {
 describe("awayfl-static", () => {
   describe("toProxiedStaticUrl", () => {
     it("rewrites the S3 host to /static", () => {
-      expect(
-        toProxiedStaticUrl(
-          "http://static.nikart.co.uk/websites/claro/index.html",
-        ),
-      ).toBe("/static/websites/claro/index.html");
+      expect(toProxiedStaticUrl("http://static.nikart.co.uk/websites/claro/index.html")).toBe(
+        "/static/websites/claro/index.html",
+      );
     });
 
     it("rewrites the legacy relative static path", () => {
@@ -37,25 +35,15 @@ describe("awayfl-static", () => {
 
   describe("isAwayFlLaunch", () => {
     it("accepts Claro", () => {
-      expect(
-        isAwayFlLaunch("http://static.nikart.co.uk/websites/claro/index.html"),
-      ).toBe(true);
+      expect(isAwayFlLaunch("http://static.nikart.co.uk/websites/claro/index.html")).toBe(true);
     });
 
     it("rejects Shockwave Director files", () => {
-      expect(
-        isAwayFlLaunch(
-          "http://static.nikart.co.uk/3d/shockwave3d/japanese.dcr",
-        ),
-      ).toBe(false);
+      expect(isAwayFlLaunch("http://static.nikart.co.uk/3d/shockwave3d/japanese.dcr")).toBe(false);
     });
 
     it("rejects Shockwave wrapper HTML", () => {
-      expect(
-        isAwayFlLaunch(
-          "http://static.nikart.co.uk/3d/shockwave3d/index.html",
-        ),
-      ).toBe(false);
+      expect(isAwayFlLaunch("http://static.nikart.co.uk/3d/shockwave3d/index.html")).toBe(false);
     });
 
     it("rejects off-site URLs", () => {
@@ -71,9 +59,7 @@ describe("awayfl-static", () => {
           height: 700,
           title: "claro",
         }),
-      ).toBe(
-        "/fl/away?src=websites%2Fclaro%2Findex.html&w=960&h=700&title=claro",
-      );
+      ).toBe("/fl/away?src=websites%2Fclaro%2Findex.html&w=960&h=700&title=claro");
     });
   });
 
@@ -93,9 +79,7 @@ describe("awayfl-static", () => {
         fo.addParam('scale', 'showAll');
         fo.write('flash');
       `;
-      expect(
-        parseFlashEmbed(html, "http://localhost/static/websites/claro/index.html"),
-      ).toEqual({
+      expect(parseFlashEmbed(html, "http://localhost/static/websites/claro/index.html")).toEqual({
         swfUrl: "/static/websites/claro/swf/claro.swf?base_url=",
         width: "100%",
         height: "100%",
@@ -109,9 +93,7 @@ describe("awayfl-static", () => {
         var urlMovie = "weeds.swf" + paramsURL;
         swfobject.embedSWF(urlMovie, "objFlash", "800", "600", "6", false, flashvars, params, attributes);
       `;
-      expect(
-        parseFlashEmbed(html, "http://localhost/static/games/weeds/index.html"),
-      ).toEqual({
+      expect(parseFlashEmbed(html, "http://localhost/static/games/weeds/index.html")).toEqual({
         swfUrl: "/static/games/weeds/weeds.swf",
         width: "800",
         height: "600",
@@ -123,12 +105,7 @@ describe("awayfl-static", () => {
       const html = `
         swfobject.embedSWF("whiplash_cmb.swf", "swf_container", "550", "400", "6.0.0", false, flashvars, params, attributes);
       `;
-      expect(
-        parseFlashEmbed(
-          html,
-          "http://localhost/static/games/whiplash/index.html",
-        ),
-      ).toEqual({
+      expect(parseFlashEmbed(html, "http://localhost/static/games/whiplash/index.html")).toEqual({
         swfUrl: "/static/games/whiplash/whiplash_cmb.swf",
         width: "550",
         height: "400",
@@ -151,10 +128,7 @@ describe("awayfl-static", () => {
         );
       `;
       expect(
-        parseFlashEmbed(
-          html,
-          "http://localhost/static/3d/papervision3d/spaceship/index.html",
-        ),
+        parseFlashEmbed(html, "http://localhost/static/3d/papervision3d/spaceship/index.html"),
       ).toEqual({
         swfUrl: "/static/3d/papervision3d/spaceship/Spaceship.swf",
         width: "100%",
@@ -167,14 +141,9 @@ describe("awayfl-static", () => {
 
   describe("siblingSwfCandidates", () => {
     it("guesses Main.swf next to a splash HTML page", () => {
-      expect(
-        siblingSwfCandidates(
-          "http://localhost/static/3d/away3d/ar_heart/index.html",
-        ),
-      ).toEqual([
-        "/static/3d/away3d/ar_heart/Main.swf",
-        "/static/3d/away3d/ar_heart/main.swf",
-      ]);
+      expect(siblingSwfCandidates("http://localhost/static/3d/away3d/ar_heart/index.html")).toEqual(
+        ["/static/3d/away3d/ar_heart/Main.swf", "/static/3d/away3d/ar_heart/main.swf"],
+      );
     });
   });
 });

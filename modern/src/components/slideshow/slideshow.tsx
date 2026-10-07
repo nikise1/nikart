@@ -1,6 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type MouseEvent, type PointerEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+  type PointerEvent,
+} from "react";
 import { gsap } from "@/lib/gsap";
 import { imgSlideUrl } from "@/lib/assets";
 
@@ -93,7 +100,13 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     const cr = container.getBoundingClientRect();
     const slides = container.querySelectorAll<HTMLImageElement>(".slide-img");
     const img = slides[currentSlideRef.current] ?? slides[0];
-    if (!img || img.naturalWidth === 0 || img.naturalHeight === 0 || cr.width === 0 || cr.height === 0) {
+    if (
+      !img ||
+      img.naturalWidth === 0 ||
+      img.naturalHeight === 0 ||
+      cr.width === 0 ||
+      cr.height === 0
+    ) {
       setHitBox(null);
       return;
     }
@@ -287,7 +300,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         className={`relative overflow-hidden rounded select-none touch-pan-y ${className ?? ""}`}
       >
         {Array.from({ length: imgCount }, (_, i) => (
-          // eslint-disable-next-line @next/next/no-img-element
+          // oxlint-disable-next-line nextjs/no-img-element
           <img
             key={i}
             src={imgSlideUrl(itemId, i + 1)}

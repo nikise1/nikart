@@ -41,18 +41,13 @@ describe("GET /static/[...path]", () => {
       expect.objectContaining({ method: "GET", cache: "no-store" }),
     );
     expect(response.status).toBe(200);
-    expect(response.headers.get("content-type")).toBe(
-      "application/x-shockwave-flash",
-    );
+    expect(response.headers.get("content-type")).toBe("application/x-shockwave-flash");
     expect(response.headers.get("content-length")).toBe(String(bytes.byteLength));
     expect(new Uint8Array(await response.arrayBuffer())).toEqual(bytes);
   });
 
   it("returns 502 when the origin fetch throws", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockRejectedValue(new TypeError("fetch failed")),
-    );
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new TypeError("fetch failed")));
 
     const response = await GET(request(), {
       params: Promise.resolve(weedsPath),

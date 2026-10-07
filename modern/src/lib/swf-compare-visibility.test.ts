@@ -5,15 +5,23 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 const publicRoot = join(__dirname, "../../public");
 const playersSrc = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
 const indexHtml = readFileSync(join(publicRoot, "swf-compare/index.html"), "utf8");
-const claroHtml = readFileSync(
-  join(publicRoot, "swf-compare/claro/index.html"),
-  "utf8",
-);
+const claroHtml = readFileSync(join(publicRoot, "swf-compare/claro/index.html"), "utf8");
 const visibilityDefaults = JSON.parse(
   readFileSync(join(publicRoot, "swf-compare/visibility-defaults.json"), "utf8"),
 );
 
+function requestUrl(input: RequestInfo | URL): string {
+  if (typeof input === "string") {
+    return input;
+  }
+  if (input instanceof URL) {
+    return input.href;
+  }
+  return input.url;
+}
+
 async function loadPlayers() {
+  // oxlint-disable-next-line typescript/no-implied-eval -- run the page script inside jsdom
   new Function(playersSrc)();
   await window.SwfCompare.ready;
 }
@@ -23,11 +31,12 @@ describe("swf-compare player visibility", () => {
     localStorage.clear();
     document.body.innerHTML = "";
     window.history.pushState({}, "", "/swf-compare/index.html");
-    globalThis.fetch = (async (url) => {
-      if (String(url).includes("visibility-defaults.json")) {
+    globalThis.fetch = (async (input) => {
+      const href = requestUrl(input);
+      if (href.includes("visibility-defaults.json")) {
         return Response.json(structuredClone(visibilityDefaults));
       }
-      throw new Error(`unexpected fetch ${url}`);
+      throw new Error(`unexpected fetch ${href}`);
     }) as typeof fetch;
   });
 
@@ -50,11 +59,9 @@ describe("swf-compare player visibility", () => {
       awayfl: true,
     });
     api.setPageVisible("lizard-site", "ruffle", false);
-    expect(JSON.parse(localStorage.getItem("swf-compare-pages") ?? "{}")).toEqual(
-      {
-        "lizard-site": { ruffle: false, awayfl: false },
-      },
-    );
+    expect(JSON.parse(localStorage.getItem("swf-compare-pages") ?? "{}")).toEqual({
+      "lizard-site": { ruffle: false, awayfl: false },
+    });
   });
 
   it("paints index card visibilities from defaults", async () => {
@@ -67,12 +74,8 @@ describe("swf-compare player visibility", () => {
         </span>
       </div>`;
     await loadPlayers();
-    expect(document.querySelector('[data-vis="ruffle"]')?.className).toContain(
-      "is-on",
-    );
-    expect(document.querySelector('[data-vis="awayfl"]')?.className).toContain(
-      "is-off",
-    );
+    expect(document.querySelector('[data-vis="ruffle"]')?.className).toContain("is-on");
+    expect(document.querySelector('[data-vis="awayfl"]')?.className).toContain("is-off");
   });
 
   it("toggles index card flags without following the title link", async () => {
@@ -120,7 +123,9 @@ describe("swf-compare player visibility", () => {
     await loadPlayers();
     const awayBtn = document.querySelector('[data-vis="awayfl"]');
     expect(
-      document.querySelector('[data-player="awayfl"]')?.closest(".pane")
+      document
+        .querySelector('[data-player="awayfl"]')
+        ?.closest(".pane")
         ?.classList.contains("is-off"),
     ).toBe(true);
     expect(awayBtn?.textContent).toBe("Show");
@@ -130,7 +135,9 @@ describe("swf-compare player visibility", () => {
       awayfl: true,
     });
     expect(
-      document.querySelector('[data-player="awayfl"]')?.closest(".pane")
+      document
+        .querySelector('[data-player="awayfl"]')
+        ?.closest(".pane")
         ?.classList.contains("is-off"),
     ).toBe(false);
     expect(awayBtn?.textContent).toBe("Hide");

@@ -29,25 +29,14 @@ describe("flash-bridge", () => {
       "yes",
     );
 
-    expect(open).toHaveBeenCalledWith(
-      "/swf-compare/claro/fill.html",
-      "claro",
-    );
+    expect(open).toHaveBeenCalledWith("/swf-compare/claro/fill.html", "claro");
   });
 
   it("leaves non-static URLs unchanged", () => {
     const open = vi.spyOn(window, "open").mockReturnValue(null);
     installFlashBridge();
 
-    window.nikart?.popWin(
-      "http://onedayinmay.co.uk",
-      "oneday",
-      1200,
-      850,
-      "yes",
-      "yes",
-      "yes",
-    );
+    window.nikart?.popWin("http://onedayinmay.co.uk", "oneday", 1200, 850, "yes", "yes", "yes");
 
     expect(open.mock.calls[0]?.[0]).toBe("http://onedayinmay.co.uk");
   });

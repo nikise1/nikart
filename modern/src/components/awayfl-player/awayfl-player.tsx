@@ -136,8 +136,7 @@ export function AwayFlPlayer({ source }: AwayFlPlayerProps) {
 
     start().catch((error: unknown) => {
       if (!cancelled) {
-        const message =
-          error instanceof Error ? error.message : "AwayFL failed to start.";
+        const message = error instanceof Error ? error.message : "AwayFL failed to start.";
         setLoadError(message);
       }
     });
@@ -209,8 +208,7 @@ async function resolveEmbed(proxied: string): Promise<FlashEmbed> {
     throw new Error(`Could not fetch wrapper HTML (${response.status})`);
   }
   const html = await response.text();
-  const embed =
-    parseFlashEmbed(html, pageUrl) ?? (await resolveSiblingSwf(pageUrl));
+  const embed = parseFlashEmbed(html, pageUrl) ?? (await resolveSiblingSwf(pageUrl));
   if (!embed) {
     throw new Error("No SWF embed found in that page.");
   }

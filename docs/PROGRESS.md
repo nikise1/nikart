@@ -284,6 +284,13 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ---
 
+### Oxlint and Oxfmt in `modern/` ✅ (2026-10-07)
+
+- [x] Replaced ESLint and `eslint-config-next` with Oxlint 1.87 (`oxlint --type-aware`) and Oxfmt 0.72
+- [x] Configs (`.oxlintrc.json`, `.oxfmtrc.json`) live in `modern/` and do not format or lint the legacy app
+- [x] Kept the Next.js core-web-vitals / `typescript-eslint` recommended bar: React hooks, the six jsx-a11y warnings, and `no-explicit-any`
+- [x] `npm run lint` and `npm run format:check` are clean
+
 ### TypeScript 6 ✅ (2026-10-07)
 
 - [x] `modern/` devDependency `typescript` is `^6` (6.0.3)
@@ -341,3 +348,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | Weekly Dependabot for `/modern` only | Root and `public/html5/` are deprecated and will be decommissioned. Group minor and patch; one PR per major. Manual `@cursor` comment for a migration. Monthly library radar stays a Cursor automation and uses the same scope |
 | 2026-10-07 | Modern runtime is Node 24 LTS | Node 22 is Maintenance LTS. Vercel builds and functions support `24.x` (the default) and do not yet run `26.x`. Node 26 stays Current until 2026-10-28. Legacy root stays on Node `22.x` |
 | 2026-10-07 | TypeScript 6 in `modern/` | `typescript@^6` (6.0.3). `"types": ["node"]` replaces the old default of loading every `@types` package. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
+| 2026-10-07 | Oxlint + Oxfmt for `modern/` only | ESLint stays blocked on the TypeScript 7 compiler API. Oxlint type-aware rules use the native checker. Oxfmt formats this app. Legacy root is out of scope |

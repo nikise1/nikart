@@ -4,10 +4,7 @@ import { describe, expect, it } from "vitest";
 import { DataSchema } from "./schema";
 import rawData from "../../../../public/content/json/data.json";
 
-const copiedDataPath = join(
-  __dirname,
-  "../../../public/content/json/data.json",
-);
+const copiedDataPath = join(__dirname, "../../../public/content/json/data.json");
 
 describe("DataSchema", () => {
   it("validates the production data.json without errors", () => {

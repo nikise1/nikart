@@ -19,11 +19,7 @@ export function diffBreadcrumbs(
   added: BreadcrumbItem[];
 } {
   let prefix = 0;
-  while (
-    prefix < prev.length &&
-    prefix < next.length &&
-    prev[prefix]?.id === next[prefix]?.id
-  ) {
+  while (prefix < prev.length && prefix < next.length && prev[prefix]?.id === next[prefix]?.id) {
     prefix += 1;
   }
 

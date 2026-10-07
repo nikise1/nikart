@@ -38,11 +38,13 @@ describe("ArticleView", () => {
       "data-content-slot",
       "0",
     );
-    expect(screen.getByText("A microsite.").parentElement).toHaveAttribute("data-content-slot", "2");
-    expect(screen.getByRole("link", { name: "Launch Website" }).parentElement?.parentElement).toHaveAttribute(
+    expect(screen.getByText("A microsite.").parentElement).toHaveAttribute(
       "data-content-slot",
-      "3",
+      "2",
     );
+    expect(
+      screen.getByRole("link", { name: "Launch Website" }).parentElement?.parentElement,
+    ).toHaveAttribute("data-content-slot", "3");
     expect(document.querySelector("[data-component='Slideshow']")?.parentElement).toHaveAttribute(
       "data-content-slot",
       "1",

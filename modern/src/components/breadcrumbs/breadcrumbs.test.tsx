@@ -27,11 +27,11 @@ vi.mock("@/lib/gsap", async () => {
       killTweensOf: gsapKill,
     },
     useGSAP: (callback: () => void, config?: { dependencies?: unknown[] }) => {
-      /* eslint-disable react-hooks/exhaustive-deps -- test mock of useGSAP */
+      /* oxlint-disable react/exhaustive-deps -- test mock of useGSAP */
       React.useLayoutEffect(() => {
         callback();
       }, config?.dependencies);
-      /* eslint-enable react-hooks/exhaustive-deps */
+      /* oxlint-enable react/exhaustive-deps */
     },
   };
 });
@@ -61,8 +61,7 @@ vi.mock("@/navigation", () => ({
 }));
 
 vi.mock("@/store/nav-store", () => ({
-  useNavStore: (selector: (state: { navPhase: string }) => unknown) =>
-    selector({ navPhase }),
+  useNavStore: (selector: (state: { navPhase: string }) => unknown) => selector({ navPhase }),
 }));
 
 async function flushAnimation() {
@@ -281,8 +280,8 @@ describe("Breadcrumbs", () => {
     gsapSet.mockClear();
 
     const { container } = await renderBreadcrumbs();
-    const phases = [...container.querySelectorAll(".breadcrumb-container")].map(
-      (el) => el.getAttribute("data-breadcrumb-phase"),
+    const phases = [...container.querySelectorAll(".breadcrumb-container")].map((el) =>
+      el.getAttribute("data-breadcrumb-phase"),
     );
     expect(phases).toEqual(["present", "present", "present"]);
     expect(gsapFromTo).not.toHaveBeenCalled();

@@ -9,10 +9,7 @@ interface FlPageProps {
 export default async function FlPage({ searchParams }: FlPageProps) {
   const { lang } = await searchParams;
   const cookieStore = await cookies();
-  const langCode = resolveFlashLangCode(
-    lang,
-    cookieStore.get("NEXT_LOCALE")?.value,
-  );
+  const langCode = resolveFlashLangCode(lang, cookieStore.get("NEXT_LOCALE")?.value);
   const flashVars = buildFlashVars(langCode);
 
   return (

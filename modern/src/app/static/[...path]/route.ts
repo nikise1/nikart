@@ -18,17 +18,11 @@ function originHeaders(upstream: Response): Headers {
       headers.set(name, value);
     }
   }
-  headers.set(
-    "cache-control",
-    "public, s-maxage=3600, stale-while-revalidate=86400",
-  );
+  headers.set("cache-control", "public, s-maxage=3600, stale-while-revalidate=86400");
   return headers;
 }
 
-async function fetchOrigin(
-  url: string,
-  request: Request,
-): Promise<Response | null> {
+async function fetchOrigin(url: string, request: Request): Promise<Response | null> {
   try {
     return await fetch(url, {
       method: request.method === "HEAD" ? "HEAD" : "GET",
@@ -41,10 +35,7 @@ async function fetchOrigin(
   }
 }
 
-async function proxyStatic(
-  request: Request,
-  { params }: StaticProxyContext,
-): Promise<Response> {
+async function proxyStatic(request: Request, { params }: StaticProxyContext): Promise<Response> {
   const { path } = await params;
   const url = originStaticUrl(path);
   if (!url) {
@@ -72,16 +63,10 @@ async function proxyStatic(
   return new Response(body, { status: upstream.status, headers });
 }
 
-export function GET(
-  request: Request,
-  context: StaticProxyContext,
-): Promise<Response> {
+export function GET(request: Request, context: StaticProxyContext): Promise<Response> {
   return proxyStatic(request, context);
 }
 
-export function HEAD(
-  request: Request,
-  context: StaticProxyContext,
-): Promise<Response> {
+export function HEAD(request: Request, context: StaticProxyContext): Promise<Response> {
   return proxyStatic(request, context);
 }

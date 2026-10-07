@@ -27,7 +27,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <ContentWrapper>
           {/* Outside site-header so view transitions do not snapshot/freeze the GSAP entrance. */}
           <Breadcrumbs locale={locale as "en" | "es"} />
-          <header className="flex items-center justify-between px-4 py-2" style={{ viewTransitionName: "site-header" }}>
+          <header
+            className="flex items-center justify-between px-4 py-2"
+            style={{ viewTransitionName: "site-header" }}
+          >
             <LanguageSwitcher locale={locale as "en" | "es"} />
           </header>
           {children}

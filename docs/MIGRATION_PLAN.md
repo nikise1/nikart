@@ -217,6 +217,7 @@ Maintenance note (2026-07-15):
 - Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
 
 Maintenance note (2026-10-07):
+- `modern/` lint and format moved from ESLint to Oxlint and Oxfmt. `npm run lint` runs `oxlint --type-aware`. `npm run format` and `format:check` run Oxfmt. Configs live in `modern/` and do not apply to the legacy app. jsx-a11y stays at the six `eslint-config-next` warnings; the rest of that plugin stays off.
 - Modern runtime moved from Node `22` to Node `24` (Active LTS). `modern/.nvmrc` and `modern/package.json` `engines` are `24` / `24.x`. Vercel builds and functions deploy `24.x` from that field, which overrides the project setting. Node `26` is still Current until 2026-10-28 and is not a Vercel builds/functions runtime.
 - `@types/node` is `^24` so the types match that runtime. The legacy root app stays on Node `22.x`.
 - Standardized package manager to npm for modern app: added `packageManager: npm@10` in root/modern `package.json`.
@@ -318,7 +319,7 @@ A "session" = one focused working block with AI agent collaboration.
 
 ## Agent Maintainability Requirements
 
-### Code Conventions (enforced via AGENTS.md + ESLint)
+### Code Conventions (enforced via AGENTS.md + Oxlint)
 
 1. **TypeScript strict** — No `any`, no implicit returns, strict null checks. Agents get immediate type error feedback.
 2. **One component per file** — Named exports matching filename. Agents can locate and modify components by name.
@@ -344,7 +345,7 @@ A "session" = one focused working block with AI agent collaboration.
 
 ### CI/CD Requirements
 
-1. **Pre-commit:** TypeScript check + ESLint (via lint-staged)
+1. **Pre-commit:** TypeScript check + Oxlint (via lint-staged)
 2. **PR checks:** Vitest (unit/integration) + Playwright (E2E) + build
 3. **Preview deploys:** Every PR gets a Vercel preview URL for visual review
 4. **Main branch:** Auto-deploy to production on merge
@@ -360,4 +361,4 @@ A "session" = one focused working block with AI agent collaboration.
 | External video host unavailable | Verify `static.nikart.co.uk` early; fallback plan to self-host media |
 | GSAP React integration complexity | Use established `gsap.context()` pattern; isolate animation logic in custom hooks |
 | Scope creep (redesign temptation) | Step 8 is about faithful reproduction; any redesign is a separate future step |
-| Agent-generated code quality | Strict TypeScript + ESLint + pre-commit hooks catch issues immediately |
+| Agent-generated code quality | Strict TypeScript + Oxlint + pre-commit hooks catch issues immediately |

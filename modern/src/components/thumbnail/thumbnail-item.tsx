@@ -82,8 +82,11 @@ export function ThumbnailItem({ item, locale, href, index }: ThumbnailItemProps)
         <span className="w-[150px] pr-2.5 pt-8 text-right text-sm text-[#4F3E2D] transition-colors duration-300 group-hover:text-[#94B864]">
           {title}
         </span>
-        <div ref={imgRef} className="relative h-[90px] w-[120px] overflow-hidden rounded border border-[rgba(28,107,0,0.5)] transition-all duration-300 group-hover:border-[#A8682B] group-hover:shadow-[0_0_3px_#A8682B]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+        <div
+          ref={imgRef}
+          className="relative h-[90px] w-[120px] overflow-hidden rounded border border-[rgba(28,107,0,0.5)] transition-all duration-300 group-hover:border-[#A8682B] group-hover:shadow-[0_0_3px_#A8682B]"
+        >
+          {/* oxlint-disable-next-line nextjs/no-img-element */}
           <img
             src={imgUrl(item.id)}
             alt={title}

@@ -19,9 +19,7 @@ export function videoWebmUrl(id: string): string {
   return `${STATIC_BASE}/video_webm/${id}.webm`;
 }
 
-export function processUrl(
-  url: string,
-): { href: string; isSelf: boolean } {
+export function processUrl(url: string): { href: string; isSelf: boolean } {
   if (url.startsWith("_self/")) {
     return { href: url.slice(6), isSelf: true };
   }

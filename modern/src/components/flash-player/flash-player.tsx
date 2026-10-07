@@ -60,13 +60,10 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
     player.style.height = "100%";
     container.replaceChildren(player);
 
-    const base = new URL(swfUrl, window.location.href).href.replace(
-      /[^/]+$/,
-      "",
-    );
+    const base = new URL(swfUrl, window.location.href).href.replace(/[^/]+$/, "");
 
     // Same as compare fill pages: start without the unmute click gate.
-    player.load({
+    void player.load({
       url: swfUrl,
       base,
       parameters: { ...parameters },
@@ -99,11 +96,7 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
         onLoad={() => setRuffleReady(true)}
         onError={() => setLoadError("Ruffle script failed to load.")}
       />
-      <div
-        ref={containerRef}
-        id="swf_container"
-        data-component="FlashPlayer"
-      />
+      <div ref={containerRef} id="swf_container" data-component="FlashPlayer" />
       {loadError ? <p>{loadError}</p> : null}
     </>
   );
