@@ -236,9 +236,8 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Fill pages and `/fl` stretch into a viewport-sized box clipped to the SWF stage aspect ratio (`exactFit`), so off-stage content is masked (2026-10-06)
 - [x] `/fl` overrides root `globals.css` portfolio background with `!important` black (same as `/fl/away`) so letterbox regions stay black (2026-10-06)
 - [x] Remove `/fl` `fl-fallback` links and the shared `fl-fallback` class (2026-10-06)
-- [x] `/fl` Ruffle uses `autoplay: "on"` + `unmuteOverlay: "hidden"` like compare fill pages; pause/stop media on unmount and when Ruffle detaches video nodes (2026-10-06)
-- [x] HTML5 `VideoView` pauses its `<video>` on unmount so leave transitions do not keep audio playing (2026-10-06)
-- [x] Abort/suppress leaked Ruffle FLV NetStream audio after leaving a Flash video view: `/static` buffers whole FLVs so fetch abort is not enough; patch Web Audio early and suppress buffer sources after Back / NetStream leave (2026-10-07)
+- [x] `/fl` Ruffle uses `autoplay: "on"` + `unmuteOverlay: "hidden"` like compare fill pages (2026-10-06)
+- [x] Dropped `flash-video-guard` / FLV Web Audio suppress and HTML5 `VideoView` pause-on-unmount — those edits did not stop leaked Flash video audio (2026-10-07)
 
 #### 9g: Slideshow interaction ✅ (2026-09-07)
 

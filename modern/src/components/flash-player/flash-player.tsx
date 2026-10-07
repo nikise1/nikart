@@ -4,14 +4,6 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { installFlashBridge } from "@/lib/flash-bridge";
 import type { FlashVars } from "@/lib/flash-config";
-import {
-  ensureFlashVideoPatches,
-  installFlashVideoGuard,
-  stopFlashVideo,
-} from "@/lib/flash-video-guard";
-
-// Run as soon as this module evaluates — before the Ruffle <Script> loads.
-ensureFlashVideoPatches();
 
 const RUFFLE_SRC = "/ruffle/ruffle.js";
 const SWF_WIDTH = 750;
@@ -94,14 +86,7 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
       height: SWF_HEIGHT,
     });
 
-    // FLV NetStream audio is Web Audio + fetch, not <video>. Abort leaked
-    // streams when Back leaves a video view without closing NetStream.
-    const disposeVideoGuard = installFlashVideoGuard(player);
-
     return () => {
-      disposeVideoGuard();
-      stopFlashVideo();
-      player.pause?.();
       container.replaceChildren();
     };
   }, [ruffleReady, swfUrl, parameters]);

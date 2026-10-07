@@ -17,7 +17,6 @@ interface RufflePlayerElement extends HTMLElement {
     width?: number;
     height?: number;
   }): void | Promise<void>;
-  pause?: () => void;
 }
 
 interface RufflePlayerInstance {

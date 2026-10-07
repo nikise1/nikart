@@ -31,15 +31,4 @@ describe("VideoView", () => {
       "1",
     );
   });
-
-  it("pauses the video element when the view unmounts", () => {
-    const { unmount } = render(<VideoView item={videoItem} locale="en" />);
-    const video = document.querySelector("video");
-    expect(video).toBeTruthy();
-    const pause = vi.spyOn(video as HTMLVideoElement, "pause");
-
-    unmount();
-
-    expect(pause).toHaveBeenCalledOnce();
-  });
 });

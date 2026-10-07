@@ -1,7 +1,6 @@
 "use client";
 
 import { ViewTransition } from "react";
-import { useEffect, useRef } from "react";
 import { videoH264Url, videoWebmUrl, imgUrl } from "@/lib/assets";
 import { localize } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
@@ -14,15 +13,6 @@ interface VideoViewProps {
 
 export function VideoView({ item, locale }: VideoViewProps) {
   const title = localize(item.title, locale);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    return () => {
-      // Stop audio as soon as this view leaves the tree (incl. view transitions).
-      video?.pause();
-    };
-  }, []);
 
   return (
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
@@ -34,7 +24,6 @@ export function VideoView({ item, locale }: VideoViewProps) {
         <ContentTransition index={1}>
           <div className="mt-4 w-full max-w-[480px]">
             <video
-              ref={videoRef}
               controls
               poster={imgUrl(item.id)}
               className="w-full rounded"
