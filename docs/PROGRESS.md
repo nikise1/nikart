@@ -277,6 +277,14 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ---
 
+### TypeScript 6 ✅ (2026-10-07)
+
+- [x] `modern/` devDependency `typescript` is `^6` (6.0.3)
+- [x] `tsconfig.json` sets `"types": ["node"]` so Node globals stay typed after TypeScript 6 stops auto-including every `@types` package
+- [x] `tsc --noEmit`, Next.js production typecheck, and 133 unit tests pass
+
+---
+
 ## Upcoming Steps
 
 | Step | Description | Status |
@@ -321,3 +329,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-06 | One pretty-printed git copy of portfolio JSON at repo-root `public/content/json/data.json` | Flash still requests `/content/json/data.json`, so install/build minifies that file into the Next public path |
 | 2026-10-06 | Edit portfolio JSON in JSON Editor Online | `npm run json:edit` loads the file via the site’s `#left=json.` hash. Saying “edit json data” in a chat follows root `AGENTS.md` |
 | 2026-10-06 | Weekly Dependabot for `/modern` only | Root and `public/html5/` are deprecated and will be decommissioned. Group minor and patch; one PR per major. Manual `@cursor` comment for a migration. Monthly library radar stays a Cursor automation and uses the same scope |
+| 2026-10-07 | TypeScript 6 in `modern/` | `typescript@^6` (6.0.3). `"types": ["node"]` replaces the old default of loading every `@types` package. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
