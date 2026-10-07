@@ -99,7 +99,7 @@ Legacy `thumb-view.js` / `thumb-item-view.js` differences from modern `Thumbnail
 | Item entrance trigger | Immediate on container open | IntersectionObserver (threshold 0.01, per item) + GSAP | Switch to observer-driven visibility transitions (`observerEnter`/`observerLeave`) for deterministic play/reset; keep tween cancellation on reset; dev logs via shared `devDebug` utility |
 | Item initial opacity | `0.05` (ghost) | `0.05` (on image container) | Matched |
 | Container entrance | `right: -300 → 0` after `timeDelayThumbIn` delay | `gsap.from({ x: 300 })` immediately | Add delay |
-| Container exit | Slides to `right: -300`, clears items | View Transitions | Acceptable (React handles unmount) |
+| Container exit | Slides to `right: -300`, clears items | View Transitions | Accepted (2026-10-06): route `nav-forward` / `nav-back` is the list exit |
 | Stagger timing | Per-item delay in `aniIn()` | `index * 0.08` | Verify against legacy constants |
 | Mobile heading width (2026-10-06) | Full-width `text-2xl` title | Below `md`, article and video `h1` width is `calc(100% - 5.5rem)` and aligned to the end. The closed menu curl sits at `left: 0` and is 90px wide; this inset starts the line about 14px past it. `md` (768px) and up stay full width and centered, which clears the longest title | Applied |
 
@@ -223,15 +223,17 @@ Maintenance note (2026-10-07):
 - Simplified `docs/PROGRESS.md` "Upcoming Steps" table to remove redundant separate "Migration Phase" column.
 - Removed remaining phase references from the "Step" labels in `docs/PROGRESS.md` to keep the table concise.
 
+**Closed (2026-10-06).** Tracked polish in `docs/PROGRESS.md` is complete, including the thumbnail list exit (route view transition). The audit rows in 6d were planning notes and are not open tasks.
+
 **Step effort: ~2–3 sessions**
 
 ---
 
-### Step 10: WIP Deploy — Vercel Preview (**current — before remaining Step 9 polish**)
+### Step 10: WIP Deploy — Vercel Preview (**current**)
 
 The modern app can be deployed to Vercel as a live preview at any point. This gives a shareable URL for visual review without touching the production domain.
 
-**Order change (2026-09-02):** Step 10 moved ahead of finishing Step 9. Remaining polish (e.g. ThumbnailGrid exit via View Transitions, visual regression, a11y) continues in parallel once a preview URL exists.
+**Order change (2026-09-02):** Step 10 moved ahead of finishing Step 9 so a preview URL existed during polish. Step 9 closed on 2026-10-06. The open work is the preview smoke checklist below.
 
 **One-time Vercel project setup:** ✅ (2026-09-07)
 
@@ -270,7 +272,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 ---
 
-### Step 11: Production Cutover (after Step 9 complete)
+### Step 11: Production Cutover (after Step 10 smoke tests)
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -295,9 +297,9 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | 6. Layout & Navigation Shell | 2 | Step 5 |
 | 7. Content Views | 2 | Step 6 |
 | 8. Animation & Transitions | 2–3 | Step 7 |
-| 9. Polish & Verification | 1–2 | Step 8 (parallel with Step 10) |
+| 9. Polish & Verification | 1–2 | Step 8 — **done** (2026-10-06) |
 | 10. WIP Deploy to Vercel Preview | Ongoing | Step 8 (**current**) |
-| 11. Production Cutover | 1 | Steps 9 + 10 |
+| 11. Production Cutover | 1 | Step 10 |
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.
