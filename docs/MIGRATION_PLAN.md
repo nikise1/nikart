@@ -26,6 +26,8 @@
 
 **Adjustment (2026-10-07):** `modern/` uses TypeScript 6 (`typescript@^6`, resolved 6.0.3). Existing explicit compiler options stay (`strict`, `module: esnext`, `moduleResolution: bundler`, `target: ES2017`). `"types": ["node"]` is set because TypeScript 6 defaults `types` to `[]` and no longer loads every `@types` package. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
 
+**Adjustment (2026-10-08):** `modern/` uses TypeScript 7 (`typescript@^7`, resolved 7.0.2). Compiler options are unchanged from the TypeScript 6 config. Next.js 16.3.8 typechecks the production build with the project-local `tsc` CLI. Oxlint type-aware rules stay on `oxlint-tsgolint`. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
+
 ---
 
 ### Step 5: Data Layer & Content Types
@@ -215,6 +217,9 @@ Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
 - Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
+
+Maintenance note (2026-10-08):
+- `modern/` TypeScript moved from `^6` (6.0.3) to `^7` (7.0.2). `tsc --noEmit`, `next build`, Oxlint, and 133 unit tests pass. `tsconfig.json` and `next.config.ts` are unchanged.
 
 Maintenance note (2026-10-07):
 - `modern/` lint and format moved from ESLint to Oxlint and Oxfmt. `npm run lint` runs `oxlint --type-aware`. `npm run format` and `format:check` run Oxfmt. Configs live in `modern/` and do not apply to the legacy app. jsx-a11y stays at the six `eslint-config-next` warnings; the rest of that plugin stays off.
