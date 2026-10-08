@@ -2,7 +2,7 @@
 
 :root {
   --background: #bcc986;
-  --foreground: #4F3E2D;
+  --foreground: #4f3e2d;
 }
 
 @theme inline {
@@ -18,7 +18,9 @@ body {
   line-height: 1.4;
   font-size: 0.9em;
   background-color: #bcc986;
-  background: url("/content/bg/bg.jpg") top left no-repeat, linear-gradient(to bottom, #D6D59D, #94B864);
+  background:
+    url("/content/bg/bg.jpg") top left no-repeat,
+    linear-gradient(to bottom, #d6d59d, #94b864);
   background-size: cover;
   background-attachment: fixed;
 }

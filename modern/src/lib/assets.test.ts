@@ -1,42 +1,28 @@
 import { describe, it, expect } from "vitest";
-import {
-  imgUrl,
-  imgSlideUrl,
-  videoH264Url,
-  videoWebmUrl,
-  processUrl,
-} from "./assets";
+import { imgUrl, imgSlideUrl, videoH264Url, videoWebmUrl, processUrl } from "./assets";
 
 describe("assets", () => {
   describe("imgUrl", () => {
     it("returns correct thumbnail URL", () => {
-      expect(imgUrl("onedayinmay")).toBe(
-        "/content/img/onedayinmay.jpg",
-      );
+      expect(imgUrl("onedayinmay")).toBe("/content/img/onedayinmay.jpg");
     });
   });
 
   describe("imgSlideUrl", () => {
     it("returns correct slide URL with index", () => {
-      expect(imgSlideUrl("ciudad", 3)).toBe(
-        "/content/img/ciudad_3.jpg",
-      );
+      expect(imgSlideUrl("ciudad", 3)).toBe("/content/img/ciudad_3.jpg");
     });
   });
 
   describe("videoH264Url", () => {
     it("returns correct H264 video URL", () => {
-      expect(videoH264Url("spark")).toBe(
-        "https://static.nikart.co.uk/video_h264/spark.mp4",
-      );
+      expect(videoH264Url("spark")).toBe("https://static.nikart.co.uk/video_h264/spark.mp4");
     });
   });
 
   describe("videoWebmUrl", () => {
     it("returns correct WebM video URL", () => {
-      expect(videoWebmUrl("spark")).toBe(
-        "https://static.nikart.co.uk/video_webm/spark.webm",
-      );
+      expect(videoWebmUrl("spark")).toBe("https://static.nikart.co.uk/video_webm/spark.webm");
     });
   });
 

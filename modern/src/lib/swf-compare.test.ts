@@ -42,10 +42,7 @@ const stageSizes: Record<string, { width: number; height: number }> = {
 };
 
 const publicRoot = join(__dirname, "../../public");
-const lizardHtml = readFileSync(
-  join(publicRoot, "swf-compare/lizard-site/index.html"),
-  "utf8",
-);
+const lizardHtml = readFileSync(join(publicRoot, "swf-compare/lizard-site/index.html"), "utf8");
 const playersJs = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
 
 describe("swf-compare", () => {
@@ -56,22 +53,16 @@ describe("swf-compare", () => {
   });
 
   it("sends banner launches to the compare index", () => {
-    expect(compareHrefForItem("banners")).toBe(
-      "/swf-compare/index.html#banners",
-    );
+    expect(compareHrefForItem("banners")).toBe("/swf-compare/index.html#banners");
   });
 
   it("maps an S3 wrapper URL to the fill page", () => {
-    expect(
-      compareHrefForSource(
-        "https://static.nikart.co.uk/websites/claro/index.html",
-      ),
-    ).toBe(pieceFillHref("claro"));
-    expect(
-      compareHrefForSource(
-        "https://static.nikart.co.uk/banners/hellboy/index.html",
-      ),
-    ).toBe(pieceFillHref("banner-hellboy"));
+    expect(compareHrefForSource("https://static.nikart.co.uk/websites/claro/index.html")).toBe(
+      pieceFillHref("claro"),
+    );
+    expect(compareHrefForSource("https://static.nikart.co.uk/banners/hellboy/index.html")).toBe(
+      pieceFillHref("banner-hellboy"),
+    );
   });
 
   it("ignores off-site URLs", () => {
@@ -85,12 +76,8 @@ describe("swf-compare", () => {
       loaderUrl: "/fl/main.ruffle.swf",
       base: "/fl/",
     });
-    expect(piecePageHref("lizard-site")).toBe(
-      "/swf-compare/lizard-site/index.html",
-    );
-    expect(pieceMovieUrl("lizard-site", "main.ruffle.swf")).toBe(
-      "/fl/main.ruffle.swf",
-    );
+    expect(piecePageHref("lizard-site")).toBe("/swf-compare/lizard-site/index.html");
+    expect(pieceMovieUrl("lizard-site", "main.ruffle.swf")).toBe("/fl/main.ruffle.swf");
     expect(pieceMovieBase("lizard-site", "main.ruffle.swf")).toBe("/fl/");
   });
 
@@ -132,12 +119,9 @@ describe("swf-compare", () => {
     expect(pieceMovieUrl("weeds", "/static/games/weeds/weeds.swf")).toBe(
       "https://static.nikart.co.uk/games/weeds/weeds.swf",
     );
-    expect(
-      pieceMovieUrl(
-        "claro",
-        "http://static.nikart.co.uk/websites/claro/swf/claro.swf",
-      ),
-    ).toBe("https://static.nikart.co.uk/websites/claro/swf/claro.swf");
+    expect(pieceMovieUrl("claro", "http://static.nikart.co.uk/websites/claro/swf/claro.swf")).toBe(
+      "https://static.nikart.co.uk/websites/claro/swf/claro.swf",
+    );
     expect(pieceMovieBase("whiplash", "games/whiplash/whiplash_cmb.swf")).toBe(
       "https://static.nikart.co.uk/games/whiplash/",
     );
@@ -162,17 +146,11 @@ describe("swf-compare", () => {
   });
 
   it("lists index cards and piece prev/next in catalog JSON order", () => {
-    const indexHtml = readFileSync(
-      join(publicRoot, "swf-compare/index.html"),
-      "utf8",
-    );
-    const cardIds = [
-      ...indexHtml.matchAll(/data-piece="([^"]+)"/g),
-    ].map((match) => match[1]);
+    const indexHtml = readFileSync(join(publicRoot, "swf-compare/index.html"), "utf8");
+    const cardIds = [...indexHtml.matchAll(/data-piece="([^"]+)"/g)].map((match) => match[1]);
     const pieceRoot = join(publicRoot, "swf-compare");
-    const existingIds = readdirSync(pieceRoot).filter((id) =>
-      existsSync(join(pieceRoot, id, "index.html")) &&
-      id !== "pieces",
+    const existingIds = readdirSync(pieceRoot).filter(
+      (id) => existsSync(join(pieceRoot, id, "index.html")) && id !== "pieces",
     );
     const expected = orderComparePieceIds(existingIds);
     const groupOrder = ["site", "websites", "games", "3d", "banners"];
@@ -195,36 +173,23 @@ describe("swf-compare", () => {
       "118aua-livefeed",
     ]);
 
-    const claroHtml = readFileSync(
-      join(publicRoot, "swf-compare/claro/index.html"),
-      "utf8",
-    );
+    const claroHtml = readFileSync(join(publicRoot, "swf-compare/claro/index.html"), "utf8");
     expect(claroHtml).toContain(
       'data-swf="https://static.nikart.co.uk/websites/claro/swf/claro.swf"',
     );
-    expect(claroHtml).toContain(
-      'data-base="https://static.nikart.co.uk/websites/claro/swf/"',
-    );
+    expect(claroHtml).toContain('data-base="https://static.nikart.co.uk/websites/claro/swf/"');
     expect(claroHtml).not.toContain("/swf-compare/pieces/");
     expect(playersJs).not.toContain("/swf-compare/pieces/");
-    const nextConfig = readFileSync(
-      join(__dirname, "../../next.config.ts"),
-      "utf8",
-    );
+    const nextConfig = readFileSync(join(__dirname, "../../next.config.ts"), "utf8");
     expect(nextConfig).toContain('source: "/swf-compare/content/:path*"');
     expect(nextConfig).not.toContain("/swf-compare/pieces/");
     expect(nextConfig).toContain('source: "/swf-compare"');
     expect(nextConfig).toContain('destination: "/swf-compare/index.html"');
 
-    expect(lizardHtml).toContain(
-      'href="/swf-compare/claro/index.html">Claro →',
-    );
+    expect(lizardHtml).toContain('href="/swf-compare/claro/index.html">Claro →');
     expect(lizardHtml).not.toContain("118aua-energyball");
 
-    const playersCss = readFileSync(
-      join(publicRoot, "swf-compare/players.css"),
-      "utf8",
-    );
+    const playersCss = readFileSync(join(publicRoot, "swf-compare/players.css"), "utf8");
     expect(playersCss).toContain("var(--swf-w");
     expect(playersCss).toContain(".stage.stage-fill");
     expect(playersCss).toContain(

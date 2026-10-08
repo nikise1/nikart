@@ -65,10 +65,7 @@ export function isAwayFlLaunch(href: string): boolean {
   return FLASH_PATH_PREFIXES.some((prefix) => path.startsWith(prefix));
 }
 
-export function buildAwayFlPopupUrl(
-  source: string,
-  options: AwayFlPopupOptions = {},
-): string {
+export function buildAwayFlPopupUrl(source: string, options: AwayFlPopupOptions = {}): string {
   const params = new URLSearchParams({ src: source });
   if (options.width) {
     params.set("w", String(options.width));
@@ -100,10 +97,7 @@ export function parsePopSize(
   return { width, height };
 }
 
-export function parseFlashEmbed(
-  html: string,
-  pageUrl: string,
-): FlashEmbed | null {
+export function parseFlashEmbed(html: string, pageUrl: string): FlashEmbed | null {
   const urlMovie = html.match(
     /urlMovie\s*=\s*['"]([^'"]+\.swf)['"][\s\S]{0,400}?embedSWF\s*\(\s*urlMovie\s*,\s*['"][^'"]*['"]\s*,\s*['"]?([^'",\s]+)['"]?\s*,\s*['"]?([^'",\s)]+)/i,
   );
@@ -123,13 +117,7 @@ export function parseFlashEmbed(
   );
   if (swfObject1?.[1] && swfObject1[2] && swfObject1[3]) {
     const bg = html.match(/['"](#[0-9a-fA-F]{3,8})['"]\s*\)/);
-    return embedFromMovie(
-      swfObject1[1],
-      pageUrl,
-      swfObject1[2],
-      swfObject1[3],
-      bg?.[1],
-    );
+    return embedFromMovie(swfObject1[1], pageUrl, swfObject1[2], swfObject1[3], bg?.[1]);
   }
 
   const movie = html.match(
@@ -148,10 +136,7 @@ export function parseFlashEmbed(
   return null;
 }
 
-export function parseAllFlashEmbeds(
-  html: string,
-  pageUrl: string,
-): FlashEmbed[] {
+export function parseAllFlashEmbeds(html: string, pageUrl: string): FlashEmbed[] {
   const found: FlashEmbed[] = [];
   const seen = new Set<string>();
 
@@ -205,9 +190,7 @@ function parseAcFlRunContent(html: string, pageUrl: string): FlashEmbed | null {
 }
 
 function acFlArg(body: string, key: string): string | undefined {
-  const match = body.match(
-    new RegExp(`['"]${key}['"]\\s*,\\s*['"]([^'"]*)['"]`, "i"),
-  );
+  const match = body.match(new RegExp(`['"]${key}['"]\\s*,\\s*['"]([^'"]*)['"]`, "i"));
   return match?.[1];
 }
 

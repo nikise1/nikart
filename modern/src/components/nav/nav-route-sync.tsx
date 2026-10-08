@@ -30,7 +30,9 @@ export function NavRouteSync() {
   useEffect(() => {
     if (navPhase === "closed" && pendingRoute && pushedRouteRef.current !== pendingRoute) {
       pushedRouteRef.current = pendingRoute;
-      const transitionTypes = isNavBackNavigation(pathname, pendingRoute) ? ["nav-back"] : ["nav-forward"];
+      const transitionTypes = isNavBackNavigation(pathname, pendingRoute)
+        ? ["nav-back"]
+        : ["nav-forward"];
       router.push(pendingRoute, { transitionTypes });
     }
   }, [navPhase, pendingRoute, pathname, router]);

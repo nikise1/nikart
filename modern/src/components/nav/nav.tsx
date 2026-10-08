@@ -54,7 +54,9 @@ export function Nav({ locale }: NavProps) {
   }, [setNavReady, runStartupSequence, runButtonReveal, isHome]);
 
   function handleNavigateHome(): void {
-    const button = containerRef.current?.querySelector<HTMLButtonElement>('[data-component="NavButton"]');
+    const button = containerRef.current?.querySelector<HTMLButtonElement>(
+      '[data-component="NavButton"]',
+    );
     if (!button) {
       router.push("/", { transitionTypes: ["nav-back"] });
       return;

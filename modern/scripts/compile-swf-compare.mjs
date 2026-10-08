@@ -106,10 +106,7 @@ function fillHref(id) {
 function renderPieceHtml(page, siblings, prev, next) {
   const siblingLinks = siblings
     .filter((item) => item.id !== page.id)
-    .map(
-      (item) =>
-        `<a href="${pieceHref(item.id)}">${escapeHtml(item.title)}</a>`,
-    )
+    .map((item) => `<a href="${pieceHref(item.id)}">${escapeHtml(item.title)}</a>`)
     .join(" · ");
   const extra = extraStageAttrs(page, {
     includeBackground: page.stageBackground === true,
@@ -205,9 +202,7 @@ function renderIndex(pages) {
   }
   const sections = [...groups.entries()]
     .sort(
-      (a, b) =>
-        GROUP_ORDER.indexOf(a[0]) - GROUP_ORDER.indexOf(b[0]) ||
-        a[0].localeCompare(b[0]),
+      (a, b) => GROUP_ORDER.indexOf(a[0]) - GROUP_ORDER.indexOf(b[0]) || a[0].localeCompare(b[0]),
     )
     .map(([group, list]) => {
       const cards = list
@@ -289,9 +284,7 @@ function compile() {
     join(outRoot, "visibility-defaults.json"),
     `${JSON.stringify(visibilityDefaults(pages), null, 2)}\n`,
   );
-  console.log(
-    `Compiled ${pages.length} compare pages and fill pages from pages.json.`,
-  );
+  console.log(`Compiled ${pages.length} compare pages and fill pages from pages.json.`);
 }
 
 compile();

@@ -22,10 +22,7 @@
           resolve();
           return;
         }
-        if (
-          src.endsWith("loadvars-ondata-patch.js") &&
-          window.NikartAwayFlLoadVarsPatch
-        ) {
+        if (src.endsWith("loadvars-ondata-patch.js") && window.NikartAwayFlLoadVarsPatch) {
           resolve();
           return;
         }
@@ -70,10 +67,7 @@
   function fillStageSize(el) {
     return {
       width: Math.max(1, el.clientWidth || document.documentElement.clientWidth),
-      height: Math.max(
-        1,
-        el.clientHeight || document.documentElement.clientHeight,
-      ),
+      height: Math.max(1, el.clientHeight || document.documentElement.clientHeight),
     };
   }
 
@@ -270,8 +264,7 @@
     const loader = loaderHref(el);
     return [
       {
-        test: (url) =>
-          typeof url === "string" && url.includes("../content/"),
+        test: (url) => typeof url === "string" && url.includes("../content/"),
         resolve: (url) => {
           const marker = "../content/";
           const rel = url.slice(url.indexOf(marker));
@@ -287,6 +280,7 @@
       return;
     }
     proto.__nikartContentAlias = true;
+    // oxlint-disable-next-line typescript/unbound-method -- rebound onto the XHR instance below
     const open = proto.open;
     proto.open = function (method, url, ...rest) {
       return open.call(this, method, rewriteContentLoaderUrl(url), ...rest);
@@ -436,9 +430,7 @@
         return {};
       }
       const parsed = JSON.parse(raw);
-      return parsed && typeof parsed === "object" && !Array.isArray(parsed)
-        ? parsed
-        : {};
+      return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
     } catch {
       return {};
     }

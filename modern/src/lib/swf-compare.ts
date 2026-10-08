@@ -69,7 +69,10 @@ function originMoviePath(swfPath: string): string {
       path = toProxiedStaticUrl(path) ?? path;
     }
   }
-  return path.replace(/^\/static\//, "").replace(/^\.\//, "").replace(/^\//, "");
+  return path
+    .replace(/^\/static\//, "")
+    .replace(/^\.\//, "")
+    .replace(/^\//, "");
 }
 
 /** Movie URL: local `/fl` for lizard, otherwise HTTPS origin. */
@@ -129,9 +132,7 @@ export function compareHrefForSource(href: string): string | null {
 
 function compareHrefForItemPath(path: string): string | null {
   const match = swfCompareSources.find(
-    (piece) =>
-      path === piece.wrapper ||
-      path.startsWith(piece.wrapper.replace(/\/[^/]+$/, "/")),
+    (piece) => path === piece.wrapper || path.startsWith(piece.wrapper.replace(/\/[^/]+$/, "/")),
   );
   return match ? compareHrefForItem(match.itemId) : null;
 }

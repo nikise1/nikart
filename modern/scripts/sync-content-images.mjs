@@ -1,12 +1,4 @@
-import {
-  cpSync,
-  existsSync,
-  lstatSync,
-  mkdirSync,
-  renameSync,
-  rmSync,
-  unlinkSync,
-} from "node:fs";
+import { cpSync, existsSync, lstatSync, mkdirSync, renameSync, rmSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 

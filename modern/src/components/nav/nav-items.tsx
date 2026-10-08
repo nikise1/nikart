@@ -17,12 +17,15 @@ export function NavItems({ items, locale }: NavItemsProps) {
   }
 
   return (
-    <ul data-component="NavItems" className="relative top-[30px] left-0 hidden w-[20em] list-none p-0">
+    <ul
+      data-component="NavItems"
+      className="relative top-[30px] left-0 hidden w-[20em] list-none p-0"
+    >
       {items.map((item) => {
         const title = localize(item.title, locale);
         return (
           <li key={item.id} className="nav-item flex h-8 items-center overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
+            {/* oxlint-disable-next-line nextjs/no-img-element */}
             <img
               src="/content/img/stump.png"
               alt=""

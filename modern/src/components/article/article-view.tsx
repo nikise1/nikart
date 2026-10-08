@@ -23,8 +23,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
   const processed = rawUrl ? processUrl(rawUrl) : undefined;
   const compareHref =
-    compareHrefForItem(item.id) ??
-    (processed ? compareHrefForSource(processed.href) : null);
+    compareHrefForItem(item.id) ?? (processed ? compareHrefForSource(processed.href) : null);
   const link = processed
     ? compareHref
       ? { href: compareHref, isSelf: false }
@@ -40,41 +39,43 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
   return (
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
       <article data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
-      <ContentTransition index={titleSlot}>
-        <h1 className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#4F3E2D] md:w-auto md:self-center">{title}</h1>
-      </ContentTransition>
-
-      {slideshowSlot !== null && (
-        <ContentTransition index={slideshowSlot}>
-          <Slideshow
-            itemId={item.id}
-            imgCount={imgCount}
-            alt={title}
-            className="mt-4 h-[240px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[480px]"
-          />
+        <ContentTransition index={titleSlot}>
+          <h1 className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#4F3E2D] md:w-auto md:self-center">
+            {title}
+          </h1>
         </ContentTransition>
-      )}
 
-      {descSlot !== null && desc && (
-        <ContentTransition index={descSlot}>
-          <p className="mt-4 max-w-prose text-center text-[#4F3E2D]">{desc}</p>
-        </ContentTransition>
-      )}
+        {slideshowSlot !== null && (
+          <ContentTransition index={slideshowSlot}>
+            <Slideshow
+              itemId={item.id}
+              imgCount={imgCount}
+              alt={title}
+              className="mt-4 h-[240px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[480px]"
+            />
+          </ContentTransition>
+        )}
 
-      {linkSlot !== null && link && launchText && (
-        <ContentTransition index={linkSlot}>
-          <p className="mt-4">
-            <a
-              href={link.href}
-              target={link.isSelf ? "_self" : "_blank"}
-              rel={link.isSelf ? undefined : "noopener noreferrer"}
-              className="rounded bg-[#94B864] px-4 py-2 text-white transition-colors hover:bg-[#7DA04E]"
-            >
-              {launchText}
-            </a>
-          </p>
-        </ContentTransition>
-      )}
+        {descSlot !== null && desc && (
+          <ContentTransition index={descSlot}>
+            <p className="mt-4 max-w-prose text-center text-[#4F3E2D]">{desc}</p>
+          </ContentTransition>
+        )}
+
+        {linkSlot !== null && link && launchText && (
+          <ContentTransition index={linkSlot}>
+            <p className="mt-4">
+              <a
+                href={link.href}
+                target={link.isSelf ? "_self" : "_blank"}
+                rel={link.isSelf ? undefined : "noopener noreferrer"}
+                className="rounded bg-[#94B864] px-4 py-2 text-white transition-colors hover:bg-[#7DA04E]"
+              >
+                {launchText}
+              </a>
+            </p>
+          </ContentTransition>
+        )}
       </article>
     </ViewTransition>
   );

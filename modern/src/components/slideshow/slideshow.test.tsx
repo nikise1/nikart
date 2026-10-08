@@ -85,12 +85,36 @@ describe("Slideshow", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
 
-    fireEvent.pointerDown(root, { clientX: 200, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
-    fireEvent.pointerUp(root, { clientX: 80, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
+    fireEvent.pointerDown(root, {
+      clientX: 200,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "touch",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 80,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "touch",
+    });
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
 
-    fireEvent.pointerDown(root, { clientX: 80, clientY: 80, pointerId: 2, button: 0, pointerType: "touch" });
-    fireEvent.pointerUp(root, { clientX: 200, clientY: 80, pointerId: 2, button: 0, pointerType: "touch" });
+    fireEvent.pointerDown(root, {
+      clientX: 80,
+      clientY: 80,
+      pointerId: 2,
+      button: 0,
+      pointerType: "touch",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 200,
+      clientY: 80,
+      pointerId: 2,
+      button: 0,
+      pointerType: "touch",
+    });
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
@@ -98,8 +122,20 @@ describe("Slideshow", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
 
-    fireEvent.pointerDown(root, { clientX: 120, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
-    fireEvent.pointerUp(root, { clientX: 130, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
+    fireEvent.pointerDown(root, {
+      clientX: 120,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "touch",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 130,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "touch",
+    });
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
   });
 
@@ -171,13 +207,37 @@ describe("Slideshow", () => {
     const root = screen.getByRole("region", { name: "Slideshow" });
     mockStageRect(root);
 
-    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerDown(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
     expect(root).toHaveAttribute("data-paused", "true");
     expect(screen.getByTestId("slideshow-pause")).toHaveClass("opacity-100");
 
-    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 2, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(root, { clientX: 150, clientY: 80, pointerId: 2, button: 0, pointerType: "mouse" });
+    fireEvent.pointerDown(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 2,
+      button: 0,
+      pointerType: "mouse",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 2,
+      button: 0,
+      pointerType: "mouse",
+    });
     expect(root).toHaveAttribute("data-paused", "false");
     expect(screen.getByTestId("slideshow-pause")).toHaveClass("opacity-0");
   });
@@ -187,8 +247,20 @@ describe("Slideshow", () => {
     const root = screen.getByRole("region", { name: "Slideshow" });
     mockStageRect(root);
 
-    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(root, { clientX: 125, clientY: 88, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerDown(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 125,
+      clientY: 88,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
     expect(root).toHaveAttribute("data-paused", "true");
   });
@@ -198,8 +270,20 @@ describe("Slideshow", () => {
     const root = screen.getByRole("region", { name: "Slideshow" });
     mockStageRect(root);
 
-    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(root, { clientX: 190, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerDown(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 190,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
     expect(screen.getByText("1 / 3")).toBeInTheDocument();
     expect(root).toHaveAttribute("data-paused", "true");
   });
@@ -209,8 +293,20 @@ describe("Slideshow", () => {
     const root = screen.getByRole("region", { name: "Slideshow" });
     mockStageRect(root);
 
-    fireEvent.pointerDown(root, { clientX: 150, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(root, { clientX: 50, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerDown(root, {
+      clientX: 150,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 50,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
   });
 
@@ -240,8 +336,20 @@ describe("Slideshow", () => {
     const prevVisual = arrowVisual("Previous image");
     mockStageRect(root);
 
-    fireEvent.pointerDown(root, { clientX: 40, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
-    fireEvent.pointerUp(root, { clientX: 40, clientY: 80, pointerId: 1, button: 0, pointerType: "mouse" });
+    fireEvent.pointerDown(root, {
+      clientX: 40,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 40,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "mouse",
+    });
     expect(prevVisual).toHaveClass("opacity-100");
     expect(root).toHaveAttribute("data-flash-side", "left");
     expect(screen.getByText("3 / 3")).toBeInTheDocument();
@@ -260,8 +368,20 @@ describe("Slideshow", () => {
     const prev = screen.getByRole("button", { name: "Previous image" });
     const prevVisual = arrowVisual("Previous image");
 
-    fireEvent.pointerDown(prev, { pointerType: "touch", pointerId: 1, button: 0, clientX: 10, clientY: 80 });
-    fireEvent.pointerUp(prev, { pointerType: "touch", pointerId: 1, button: 0, clientX: 10, clientY: 80 });
+    fireEvent.pointerDown(prev, {
+      pointerType: "touch",
+      pointerId: 1,
+      button: 0,
+      clientX: 10,
+      clientY: 80,
+    });
+    fireEvent.pointerUp(prev, {
+      pointerType: "touch",
+      pointerId: 1,
+      button: 0,
+      clientX: 10,
+      clientY: 80,
+    });
     fireEvent.click(prev);
 
     expect(prevVisual).toHaveClass("opacity-100");
@@ -285,8 +405,20 @@ describe("Slideshow", () => {
     renderSlideshow(3);
     const root = screen.getByRole("region", { name: "Slideshow" });
 
-    fireEvent.pointerDown(root, { clientX: 200, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
-    fireEvent.pointerUp(root, { clientX: 80, clientY: 80, pointerId: 1, button: 0, pointerType: "touch" });
+    fireEvent.pointerDown(root, {
+      clientX: 200,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "touch",
+    });
+    fireEvent.pointerUp(root, {
+      clientX: 80,
+      clientY: 80,
+      pointerId: 1,
+      button: 0,
+      pointerType: "touch",
+    });
     expect(screen.getByText("2 / 3")).toBeInTheDocument();
 
     const prev = screen.getByRole("button", { name: "Previous image" });

@@ -1,12 +1,5 @@
 import { inflateSync } from "node:zlib";
-import {
-  existsSync,
-  mkdirSync,
-  readdirSync,
-  readFileSync,
-  rmSync,
-  writeFileSync,
-} from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -41,6 +34,7 @@ function visPaneToggle(id, player) {
 const ASSET_EXT =
   /\.(?:swf|xml|jpg|jpeg|png|gif|dae|mp3|wav|flv|json|css|js|html|txt|obj|mtl|atf|csv|pdf|pat|dat)(?:$|[?#])/i;
 
+// oxlint-disable-next-line no-unused-vars -- retained for the manual SWF asset walk
 const SWF_DIR_SEEDS = [
   "xml/config.xml",
   "xml/textos.xml",
@@ -190,10 +184,7 @@ function swfStageSize(buffer) {
   const sig = buffer.subarray(0, 3).toString("ascii");
   if (sig === "CWS") {
     try {
-      payload = Buffer.concat([
-        buffer.subarray(0, 8),
-        inflateSync(buffer.subarray(8)),
-      ]);
+      payload = Buffer.concat([buffer.subarray(0, 8), inflateSync(buffer.subarray(8))]);
     } catch {
       return null;
     }
@@ -313,20 +304,13 @@ function enqueueXmlDerived(text, swfPath, queue, seen) {
       continue;
     }
     for (let n = 1; n <= 12; n += 1) {
-      enqueue(
-        queue,
-        seen,
-        `${swfDir}${folder}/${imgFolder}/${startReto}${n}${term}`,
-      );
+      enqueue(queue, seen, `${swfDir}${folder}/${imgFolder}/${startReto}${n}${term}`);
     }
   }
   const extTag = text.match(/<extension\b([^>]*)\/?>/i)?.[1] ?? "";
   const imgExt = xmlAttr(extTag, "img") || ".jpg";
   const preguntas = [...text.matchAll(/<pregunta\b/gi)];
-  if (
-    preguntas.length > 0 &&
-    (/tipo="img"/i.test(text) || /<extension\b[^>]*\bimg=/i.test(text))
-  ) {
+  if (preguntas.length > 0 && (/tipo="img"/i.test(text) || /<extension\b[^>]*\bimg=/i.test(text))) {
     preguntas.forEach((_, index) => {
       const n = index + 1;
       for (let j = 0; j <= 8; j += 1) {
@@ -348,6 +332,7 @@ function walkFiles(dir, acc = []) {
   return acc;
 }
 
+// oxlint-disable-next-line no-unused-vars -- retained for the manual SWF asset walk
 function aliasDaeTextures(pieceDir) {
   if (!existsSync(pieceDir)) {
     return;
@@ -426,6 +411,7 @@ function enqueueTextureRefs(text, fromPath, swfPath, queue, seen) {
   }
 }
 
+// oxlint-disable-next-line no-unused-vars -- retained for the manual SWF asset walk
 async function ingestPath(pieceDir, path, swfPath, queue, seen, fetched) {
   const dest = join(pieceDir, path);
   let buffer;
@@ -480,6 +466,7 @@ function originDirUrl(path) {
   return originUrl(path).replace(/[^/]+$/, "");
 }
 
+// oxlint-disable-next-line no-unused-vars -- retained for the manual SWF asset walk
 function stripMoviePath(swf) {
   let path = String(swf ?? "");
   path = path.replace(/^https?:\/\/static\.nikart\.co\.uk\//, "");
@@ -524,9 +511,7 @@ function orderPiecesByCatalog(produced) {
       remaining.delete(id);
     }
   }
-  const leftovers = [...remaining.values()].sort((a, b) =>
-    a.id.localeCompare(b.id),
-  );
+  const leftovers = [...remaining.values()].sort((a, b) => a.id.localeCompare(b.id));
   ordered.push(...leftovers);
   return ordered;
 }
@@ -535,20 +520,12 @@ function writeCompareHtml(produced) {
   const ordered = orderPiecesByCatalog(produced);
   for (const [index, piece] of ordered.entries()) {
     const siblings = ordered.filter((item) => item.itemId === piece.itemId);
-    const html = renderPieceHtml(
-      piece,
-      siblings,
-      ordered[index - 1],
-      ordered[index + 1],
-    );
+    const html = renderPieceHtml(piece, siblings, ordered[index - 1], ordered[index + 1]);
     mkdirSync(join(outRoot, piece.id), { recursive: true });
     writeFileSync(join(outRoot, piece.id, "index.html"), html);
   }
   writeFileSync(join(outRoot, "index.html"), renderIndex(ordered));
-  writeFileSync(
-    join(outRoot, "generated-catalog.json"),
-    `${JSON.stringify(ordered, null, 2)}\n`,
-  );
+  writeFileSync(join(outRoot, "generated-catalog.json"), `${JSON.stringify(ordered, null, 2)}\n`);
   return ordered;
 }
 
@@ -567,9 +544,7 @@ function extraStageAttrs(piece) {
     attrs.push(`data-background="${escapeHtml(piece.background)}"`);
   }
   if (piece.parameters) {
-    attrs.push(
-      `data-parameters="${escapeHtml(JSON.stringify(piece.parameters))}"`,
-    );
+    attrs.push(`data-parameters="${escapeHtml(JSON.stringify(piece.parameters))}"`);
   }
   return attrs.length ? ` ${attrs.join(" ")}` : "";
 }
@@ -581,10 +556,7 @@ function pieceHref(id) {
 function renderPieceHtml(piece, siblings, prev, next) {
   const siblingLinks = siblings
     .filter((item) => item.id !== piece.id)
-    .map(
-      (item) =>
-        `<a href="${pieceHref(item.id)}">${escapeHtml(item.title)}</a>`,
-    )
+    .map((item) => `<a href="${pieceHref(item.id)}">${escapeHtml(item.title)}</a>`)
     .join(" · ");
   const href = movieHref(piece);
   const extra = extraStageAttrs(piece);
@@ -645,11 +617,7 @@ function renderIndex(pieces) {
   }
   const groupOrder = ["site", "websites", "games", "3d", "banners"];
   const sections = [...groups.entries()]
-    .sort(
-      (a, b) =>
-        groupOrder.indexOf(a[0]) - groupOrder.indexOf(b[0]) ||
-        a[0].localeCompare(b[0]),
-    )
+    .sort((a, b) => groupOrder.indexOf(a[0]) - groupOrder.indexOf(b[0]) || a[0].localeCompare(b[0]))
     .map(([group, list]) => {
       // Cards stay in catalog JSON order (the order `list` was filled).
       const cards = list
@@ -711,13 +679,9 @@ function pieceIdFor(source, swfPath, index) {
 
 async function syncSource(source, produced) {
   if (source.localSwf) {
-    const destName =
-      (source.localSwf.split("/").pop() ?? "movie.swf").split("?")[0] ??
-      "movie.swf";
+    const destName = (source.localSwf.split("/").pop() ?? "movie.swf").split("?")[0] ?? "movie.swf";
     const localPath = join(root, "public", source.localSwf.replace(/^\//, ""));
-    const stage = existsSync(localPath)
-      ? swfStageSize(readFileSync(localPath))
-      : null;
+    const stage = existsSync(localPath) ? swfStageSize(readFileSync(localPath)) : null;
     produced.push({
       id: source.id,
       title: source.title,
@@ -763,9 +727,7 @@ async function syncSource(source, produced) {
   for (const [index, movie] of movies.entries()) {
     const id = pieceIdFor(source, movie.path, index);
     const title =
-      movies.length === 1
-        ? source.title
-        : `${source.title} (${movie.path.split("/").pop()})`;
+      movies.length === 1 ? source.title : `${source.title} (${movie.path.split("/").pop()})`;
     const movieBuf = await fetchBuffer(movie.path);
     const stage = swfStageSize(movieBuf) ?? {
       width: source.width,
@@ -806,7 +768,5 @@ if (process.argv.includes("--html-only")) {
   if (existsSync(leftoverPiecesRoot)) {
     rmSync(leftoverPiecesRoot, { recursive: true, force: true });
   }
-  console.log(
-    `Wrote ${ordered.length} compare pages (movies load from ${ORIGIN})`,
-  );
+  console.log(`Wrote ${ordered.length} compare pages (movies load from ${ORIGIN})`);
 }

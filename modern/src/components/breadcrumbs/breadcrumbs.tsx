@@ -54,11 +54,13 @@ function crumbLayoutClass(phase: VisualBreadcrumb["phase"], isCurrent: boolean):
 function labelClass(isCurrent: boolean): string {
   const cap = isCurrent ? "max-sm:shrink" : "max-sm:max-w-[8rem]";
   const hover = isCurrent ? "" : " transition-colors group-hover:text-[#A8682B]";
-  return [
-    "breadcrumb-text-mask breadcrumb-link inline-block overflow-hidden whitespace-nowrap",
-    "pt-[0.3em] text-[#1C6B00] max-sm:min-w-0 max-sm:truncate",
-    cap,
-  ].join(" ") + hover;
+  return (
+    [
+      "breadcrumb-text-mask breadcrumb-link inline-block overflow-hidden whitespace-nowrap",
+      "pt-[0.3em] text-[#1C6B00] max-sm:min-w-0 max-sm:truncate",
+      cap,
+    ].join(" ") + hover
+  );
 }
 
 export function Breadcrumbs({ locale }: BreadcrumbsProps) {
