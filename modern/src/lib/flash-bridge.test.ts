@@ -15,6 +15,23 @@ describe("flash-bridge", () => {
     expect(typeof window.nikart?.doTracker).toBe("function");
   });
 
+  it("opens dev ../static wrappers on the fill page", () => {
+    const open = vi.spyOn(window, "open").mockReturnValue(null);
+    installFlashBridge();
+
+    window.nikart?.popWin(
+      "../static/websites/claro/index.html",
+      "claro",
+      960,
+      700,
+      "yes",
+      "yes",
+      "yes",
+    );
+
+    expect(open).toHaveBeenCalledWith("/swf-compare/claro/fill.html", "claro");
+  });
+
   it("opens static Flash wrappers on the fill page", () => {
     const open = vi.spyOn(window, "open").mockReturnValue(null);
     installFlashBridge();
@@ -30,6 +47,17 @@ describe("flash-bridge", () => {
     );
 
     expect(open).toHaveBeenCalledWith("/swf-compare/claro/fill.html", "claro");
+  });
+
+  it("opens _self flash and html5 links at the site root", () => {
+    const open = vi.spyOn(window, "open").mockReturnValue(null);
+    installFlashBridge();
+
+    window.nikart?.popWin("../fl", "fl", 750, 500, "yes", "yes", "yes");
+    window.nikart?.popWin("../html5", "html5", 1200, 850, "yes", "yes", "yes");
+    window.nikart?.popWin("es", "language", 1200, 850, "yes", "yes", "yes");
+
+    expect(open.mock.calls.map((call) => call[0])).toEqual(["/fl", "/html5", "/fl/es"]);
   });
 
   it("leaves non-static URLs unchanged", () => {

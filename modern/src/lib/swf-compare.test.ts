@@ -197,6 +197,8 @@ describe("swf-compare", () => {
     );
     expect(playersJs).toContain("w: size.width");
     expect(playersJs).toContain("next.width + 1, next.height + 1");
+    expect(playersJs).toContain("function flashSelfHref(filename)");
+    expect(playersJs).toContain('new URL("/fl/main.ruffle.swf", window.location.origin)');
     expect(playersJs).toContain("function fillStageSize(el)");
     expect(playersJs).toContain('el.dataset.fill === "1"');
     expect(playersJs).toContain('options.scale = "exactFit"');
