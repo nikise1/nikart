@@ -13,7 +13,7 @@ Portfolio site migration from legacy Flash/Backbone to Next.js 16. Faithful repr
 
 ## Stack
 
-- **Framework:** Next.js 16 (App Router, React 19, TypeScript 6 strict)
+- **Framework:** Next.js 16 (App Router, React 19, TypeScript 7 strict)
 - **Styling:** Tailwind CSS 4
 - **Animation:** GSAP 3 via `@gsap/react` (`useGSAP` hook with `gsap.context()` cleanup)
 - **State:** Zustand (UI state); URL-driven navigation state

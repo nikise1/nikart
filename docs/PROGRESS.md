@@ -297,6 +297,14 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] `tsconfig.json` sets `"types": ["node"]` so Node globals stay typed after TypeScript 6 stops auto-including every `@types` package
 - [x] `tsc --noEmit`, Next.js production typecheck, and 133 unit tests pass
 
+### TypeScript 7 ✅ (2026-10-08)
+
+- [x] `modern/` devDependency `typescript` is `^7` (7.0.2), the native compiler
+- [x] `tsconfig.json` is unchanged. It already matches the TypeScript 6/7 options (`strict`, `module: esnext`, `moduleResolution: bundler`, `target: ES2017`, `"types": ["node"]`, `paths` without `baseUrl`)
+- [x] Next.js 16.3.8 typechecks with the project `tsc` (`experimental.useTypeScriptCli` stays at its default, `true`). `next.config.ts` does not opt out
+- [x] `tsc --noEmit`, `next build` (TypeScript step), Oxlint `--type-aware`, and 133 unit tests pass
+- [x] `@vercel/node` still depends on TypeScript 5.9.3 for the Vercel CLI. That copy is separate from the app compiler
+
 ---
 
 ## Upcoming Steps
@@ -349,3 +357,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-07 | Modern runtime is Node 24 LTS | Node 22 is Maintenance LTS. Vercel builds and functions support `24.x` (the default) and do not yet run `26.x`. Node 26 stays Current until 2026-10-28. Legacy root stays on Node `22.x` |
 | 2026-10-07 | TypeScript 6 in `modern/` | `typescript@^6` (6.0.3). `"types": ["node"]` replaces the old default of loading every `@types` package. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
 | 2026-10-07 | Oxlint + Oxfmt for `modern/` only | ESLint stays blocked on the TypeScript 7 compiler API. Oxlint type-aware rules use the native checker. Oxfmt formats this app. Legacy root is out of scope |
+| 2026-10-08 | TypeScript 7 in `modern/` | `typescript@^7` (7.0.2). Oxlint already type-checks through `oxlint-tsgolint`, so the lint setup stays. Next.js 16.3.8 runs project-local `tsc` during `next build`. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
