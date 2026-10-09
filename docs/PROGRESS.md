@@ -142,10 +142,10 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 `nikart.co.uk` still points at the legacy host. The public modern site is `https://nikart-beta.vercel.app`.
 
-- [ ] Add `nikart.co.uk` in the Vercel project domains
-- [ ] Point DNS at Vercel (`76.76.21.21`, `www` CNAME `cname.vercel-dns.com`)
-- [ ] Confirm the SSL certificate
-- [ ] Smoke-test the production domain (nav, content, video, `/en` and `/es`)
+- [x] Add `nikart.co.uk` and `www.nikart.co.uk` in the Vercel project domains (2026-10-09). Apex redirects to `www`. Production environment
+- [x] Point DNS at Vercel (2026-10-09). Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. `static` stays on CloudFront
+- [x] Confirm the SSL certificate (2026-10-09). `https://nikart.co.uk` 308s to `https://www.nikart.co.uk`
+- [ ] Smoke-test the production domain in a browser (nav, content, video, `/en` and `/es`). HTTP checks already return 200 for `/en`, `/es`, `/content/img/stump.png`, and `/video_h264/spark.mp4`
 - [ ] Remove the legacy app and promote `modern/` after cutover
 - [ ] Decommission the Heroku app once `dig nikart.co.uk` shows Vercel
 - [ ] Cancel the Heroku account last: download invoices, settle any open or current-period balance, then close the account
@@ -397,3 +397,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-09 | Vercel Web Analytics for content views | Hobby page views by URL. `<Analytics />` in the root layout. Custom events stay off Hobby |
 | 2026-10-09 | Close Step 10 | Public beta `https://nikart-beta.vercel.app` serves `/en`, `/es`, images, video/games rewrites, and `/fl`. Branch previews stay behind Vercel Authentication. Production DNS cutover is Step 11 |
 | 2026-10-09 | Cancel the Heroku account at the end of Step 11 | Deleting the app is not enough to stop the account. Close it only after DNS is on Vercel, the app is gone, invoices are saved, and any open or current-period balance is paid |
+| 2026-10-09 | Production DNS is on Vercel | Apex A `216.198.79.1`, `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Apex redirects to `www`. The Vercel project card is the source of the records, not the generic `76.76.21.21` address |

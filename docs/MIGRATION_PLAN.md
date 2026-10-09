@@ -283,9 +283,9 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 | Task | Effort | Notes |
 |------|--------|-------|
-| Add custom domain in Vercel dashboard | Small | `nikart.co.uk` → Vercel project settings → Domains |
-| Update DNS at registrar | Small | Add Vercel's A record (`76.76.21.21`) + CNAME (`cname.vercel-dns.com`) for `www` |
-| Verify SSL certificate issued | Small | Vercel provisions Let's Encrypt automatically |
+| Add custom domain in Vercel dashboard | Small | Done 2026-10-09. `www.nikart.co.uk` is primary. Apex redirects to `www`. Environment: Production |
+| Update DNS at registrar | Small | Done 2026-10-09 at Dyn. Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Use the project domain card if these values change. Leave `static` on CloudFront |
+| Verify SSL certificate issued | Small | Done 2026-10-09. Apex HTTPS 308s to `https://www.nikart.co.uk` |
 | Smoke-test production domain | Small | Nav, content, video, both languages |
 | DNS cutover (nikart.co.uk → Vercel) | Small | After verification period; legacy Heroku still live during propagation |
 | Legacy cleanup commit | Small | Remove legacy files, promote `modern/` to root |
