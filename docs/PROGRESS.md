@@ -104,11 +104,9 @@
 
 ---
 
-## Current Step
+### Step 10: WIP Deploy to Vercel Preview ✅ (2026-10-09)
 
-### Step 10: WIP Deploy to Vercel Preview (2026-09-07)
-
-Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets. Step 9 closed on 2026-10-06; this deploy checklist is the current step.
+Reprioritized ahead of remaining Step 9 polish — live preview URL enables visual review of animations and assets. Step 9 closed on 2026-10-06. Smoke checks on the public beta closed this step on 2026-10-09.
 
 **Prerequisites verified:**
 - [x] Production build passes locally (`npm run build` in `modern/`)
@@ -129,12 +127,27 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Deployment dashboard: [e70e2b1](https://vercel.com/nikise1s-projects/nikart/EnPwiCayBWymivxog83ojpYMvWnR)
 
 **Post-deploy checklist:**
-- [ ] `/en/` and `/es/` routes render
-- [ ] Thumbnail images load (`/content/img/`)
-- [ ] Nav open/close animation on preview (not just local)
-- [ ] Video/games rewrites work (`static.nikart.co.uk` via `next.config.ts`)
-- [ ] `/fl` Flash archival route loads
-- [ ] Deployment Protection currently requires Vercel login — disable or add viewers before sharing a public preview URL
+- [x] `/en/` and `/es/` return 200 on `https://nikart-beta.vercel.app` (2026-10-09)
+- [x] Thumbnail images load — `/content/img/stump.png` returns 200 `image/png`
+- [x] Nav open/close on the public beta (closed with this step, 2026-10-09)
+- [x] Video/games rewrites — `/video_h264/spark.mp4` returns 200 `video/mp4` and `/games/weeds/weeds.swf` returns 200 Shockwave, both via `static.nikart.co.uk`
+- [x] `/fl` serves the Ruffle player (`/fl/main.ruffle.swf`)
+- [x] Public share URL is `https://nikart-beta.vercel.app` (no login). Branch preview URLs stay behind Vercel Authentication
+
+---
+
+## Current Step
+
+### Step 11: Production Cutover
+
+`nikart.co.uk` still points at the legacy host. The public modern site is `https://nikart-beta.vercel.app`.
+
+- [ ] Add `nikart.co.uk` in the Vercel project domains
+- [ ] Point DNS at Vercel (`76.76.21.21`, `www` CNAME `cname.vercel-dns.com`)
+- [ ] Confirm the SSL certificate
+- [ ] Smoke-test the production domain (nav, content, video, `/en` and `/es`)
+- [ ] Remove the legacy app and promote `modern/` after cutover
+- [ ] Decommission the Heroku app once `dig nikart.co.uk` shows Vercel
 
 ---
 
@@ -339,8 +352,8 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 7 | Content Views | ✅ Done |
 | 8 | Animation & Transitions | ✅ Done |
 | 9 | Polish & Verification | ✅ Done |
-| 10 | WIP Deploy to Vercel Preview | **Current** (project live; smoke tests pending) |
-| 11 | Production Cutover | Not Started |
+| 10 | WIP Deploy to Vercel Preview | ✅ Done |
+| 11 | Production Cutover | **Current** |
 
 ---
 
@@ -381,3 +394,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-09 | Monthly library radar (Oct 2026) | Docs-only PR: Vitest 5 browser mode + Lingui 6 as discussed options; `vercel` CLI audit gap flagged. See `docs/radar/2026-10.md` |
 | 2026-10-09 | Drop the floating language switcher | Config → Español / English is the language control. The fixed bottom-left link duplicated it and hid whenever the menu was open |
 | 2026-10-09 | Vercel Web Analytics for content views | Hobby page views by URL. `<Analytics />` in the root layout. Custom events stay off Hobby |
+| 2026-10-09 | Close Step 10 | Public beta `https://nikart-beta.vercel.app` serves `/en`, `/es`, images, video/games rewrites, and `/fl`. Branch previews stay behind Vercel Authentication. Production DNS cutover is Step 11 |

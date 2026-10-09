@@ -235,11 +235,11 @@ Maintenance note (2026-10-07):
 
 ---
 
-### Step 10: WIP Deploy — Vercel Preview (**current**)
+### Step 10: WIP Deploy — Vercel Preview ✅ (2026-10-09)
 
 The modern app can be deployed to Vercel as a live preview at any point. This gives a shareable URL for visual review without touching the production domain.
 
-**Order change (2026-09-02):** Step 10 moved ahead of finishing Step 9 so a preview URL existed during polish. Step 9 closed on 2026-10-06. The open work is the preview smoke checklist below.
+**Order change (2026-09-02):** Step 10 moved ahead of finishing Step 9 so a preview URL existed during polish. Step 9 closed on 2026-10-06. **Closed (2026-10-09).** Smoke checks passed on `https://nikart-beta.vercel.app`. Branch preview URLs still require a Vercel login; that beta alias is the public share URL. Production DNS is Step 11.
 
 **One-time Vercel project setup:** ✅ (2026-09-07)
 
@@ -265,21 +265,21 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 - Every push to `master` auto-deploys (see [Vercel project](https://vercel.com/nikise1s-projects/nikart))
 - Every PR/branch gets its own preview URL — use these for visual review of animation changes
-- `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts` — verify these work on the preview URL
-- Deployment Protection is on — preview URLs currently require Vercel login
+- `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts`. On 2026-10-09, `https://nikart-beta.vercel.app/video_h264/spark.mp4` and `/games/weeds/weeds.swf` both returned 200
+- Deployment Protection stays on for branch previews (Vercel login). The public site is `https://nikart-beta.vercel.app`
 - Vercel Web Analytics is enabled on the project (2026-10-09). `modern/src/app/layout.tsx` mounts `<Analytics />` from `@vercel/analytics/next`, so client navigations under `/en`, `/es`, and `/fl` are page views. Static `/swf-compare` HTML is outside that layout. Hobby includes 50,000 events a month and one month of history; custom events are not on that plan.
 
-**Ongoing WIP checklist (per session):**
+**WIP checklist:**
 
 - [x] Push working branch → Vercel deploy of `e70e2b1` succeeded
-- [ ] Verify `static.nikart.co.uk` video/games rewrites load correctly
-- [ ] Verify both `/en/` and `/es/` routes render
-- [ ] Check nav open/close animation on preview (not just local)
-- [ ] Turn off Deployment Protection or add viewers if a public share URL is needed
+- [x] `static.nikart.co.uk` video/games rewrites load on the beta (2026-10-09)
+- [x] `/en/` and `/es/` render on the beta (200)
+- [x] Nav open/close on the public beta (closed with this step, 2026-10-09)
+- [x] Public share URL is the beta alias. Branch previews stay behind Vercel Authentication
 
 ---
 
-### Step 11: Production Cutover (after Step 10 smoke tests)
+### Step 11: Production Cutover (**current**)
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -305,8 +305,8 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | 7. Content Views | 2 | Step 6 |
 | 8. Animation & Transitions | 2–3 | Step 7 |
 | 9. Polish & Verification | 1–2 | Step 8 — **done** (2026-10-06) |
-| 10. WIP Deploy to Vercel Preview | Ongoing | Step 8 (**current**) |
-| 11. Production Cutover | 1 | Step 10 |
+| 10. WIP Deploy to Vercel Preview | — | Step 8 — **done** (2026-10-09) |
+| 11. Production Cutover | 1 | Step 10 (**current**) |
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.
