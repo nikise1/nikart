@@ -365,3 +365,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-07 | Oxlint + Oxfmt for `modern/` only | ESLint stays blocked on the TypeScript 7 compiler API. Oxlint type-aware rules use the native checker. Oxfmt formats this app. Legacy root is out of scope |
 | 2026-10-07 | `_self/` links are root-absolute | Article links resolve against `/html5/`; Flash `popWin` resolves against `/fl/main.ruffle.swf`. Nested routes were turning `../fl` into `/en/fl` |
 | 2026-10-08 | TypeScript 7 in `modern/` | `typescript@^7` (7.0.2). Oxlint already type-checks through `oxlint-tsgolint`, so the lint setup stays. Next.js 16.3.8 runs project-local `tsc` during `next build`. `@vercel/node` keeps TypeScript 5.9.3 for its own tooling |
+| 2026-10-09 | Monthly library radar (Oct 2026) | Docs-only PR: Vitest 5 browser mode + Lingui 6 as discussed options; `vercel` CLI audit gap flagged. See `docs/radar/2026-10.md` |
