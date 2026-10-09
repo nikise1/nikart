@@ -303,6 +303,10 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] `tsconfig.json` sets `"types": ["node"]` so Node globals stay typed after TypeScript 6 stops auto-including every `@types` package
 - [x] `tsc --noEmit`, Next.js production typecheck, and 133 unit tests pass
 
+### Hide HTML5 self-links ✅ (2026-10-09)
+
+- [x] Thumbnail menus omit children whose id is `html5`, matching legacy HTML5 (`thumb-view.js`). Flash still appears under Config. The source menu is unchanged, so a direct URL can still open the item.
+
 ### TypeScript 7 ✅ (2026-10-08)
 
 - [x] `modern/` devDependency `typescript` is `^7` (7.0.2), the native compiler

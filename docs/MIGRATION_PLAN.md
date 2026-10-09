@@ -62,7 +62,7 @@
 
 | Task | Effort | Notes |
 |------|--------|-------|
-| Thumbnail grid view | Medium | Shows ALL children of a menu node (sub-menus + content items) — matches legacy `thumb-view.js` rendering `curItem.menu` |
+| Thumbnail grid view | Medium | Shows children of a menu node (sub-menus + content items), except `html5`. Legacy `thumb-view.js` drops that id so the HTML5 view does not link to itself; Flash drops `fl`. Modern is the HTML5 view, so it drops `html5` and still lists `fl` (2026-10-09) |
 | Thumbnail item component | Small | Image + label, hover state. Accepts any `DataNode` (not just `ContentItem`) |
 | Article view (text/web/image) | Medium | Type-driven rendering, image slideshow. `_self/` launch links resolve against the legacy `/html5/` document (`../fl` → `/fl`, `es` → `/html5/es`), so a nested route such as `/en/config/fl` does not turn them into `/en/fl` (2026-10-07) |
 | Video view | Small | Native `<video>` with H.264/WebM sources |

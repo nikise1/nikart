@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { thumbMenuItems } from "@/lib/data/content";
 import { ThumbnailItem } from "./thumbnail-item";
 import type { MenuItem, Locale } from "@/lib/data/schema";
 
@@ -13,7 +14,7 @@ interface ThumbnailGridProps {
 
 export function ThumbnailGrid({ menu, locale, basePath }: ThumbnailGridProps) {
   const ref = useRef<HTMLUListElement>(null);
-  const items = menu.menu;
+  const items = thumbMenuItems(menu.menu);
 
   useGSAP(
     () => {
