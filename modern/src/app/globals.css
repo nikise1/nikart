@@ -81,18 +81,6 @@ body {
   }
 }
 
-/* Anchor the header during transitions */
-::view-transition-group(site-header) {
-  animation: none;
-  z-index: 100;
-}
-::view-transition-old(site-header) {
-  display: none;
-}
-::view-transition-new(site-header) {
-  animation: none;
-}
-
 /* Article and video blocks. Legacy fades the whole panel (0.5s out, 1.5s in).
    These are shorter and staggered top to bottom so the leave reads without lingering.
    Durations match CONTENT_TRANSITION_MS / CONTENT_STAGGER_MS / CONTENT_ENTER_LEAD_MS. */

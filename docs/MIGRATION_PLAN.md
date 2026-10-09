@@ -123,20 +123,19 @@ Legacy breadcrumb styling (`_nav.scss`):
 - Link: `display: inline-block; padding: 0.3em 0 0 0`
 - Hidden when nav is open
 - Entrance (modern): only newly added crumbs animate — stump notches drop in from above the page top (staggered with `NAV_TIMING.staggerIn`) and rest at `y: -0.3em`; after each new notch lands (`NAV_TIMING.growIn`), the label unmasks via `clip-path` inset (left-to-right, `BREADCRUMB_TEXT_IN` 0.75s) so reserved width does not shove later crumbs. Removed crumbs reverse: mask out, then the notch moves up. Unchanged crumbs stay put. The live trail is stored in Zustand (`breadcrumb-store.ts`) so a view-transition remount still diffs against the previous crumbs instead of replaying the whole bar.
-- Breadcrumbs render outside the `site-header` view-transition group so the GSAP entrance is not snapshotted/frozen during route changes
+- Breadcrumbs are not in a view-transition group, so the GSAP entrance is not snapshotted during route changes. The `site-header` group was removed with the floating language switcher (2026-10-09)
 - A single click navigates. The current crumb is not a link (`aria-current="page"`), so it does not start a same-page view transition that swallows the next click. The link is the whole crumb (stump and label), so a clip-path reveal does not shrink the hit target. View-transition snapshots set `pointer-events: none` from a style tag in the root layout (the CSS pipeline drops `::view-transition-group(*)`). Trail changes revert the previous GSAP tweens before starting the next ones.
 - Narrow viewports (`max-sm`): the bar is bounded to the right of the `6em` inset. Ancestor labels cap at `8rem` with ellipsis. The current title keeps the remaining width and ellipsizes only if it still overflows. Exiting crumbs shrink before that title so a long leaf does not crush the page you landed on. At `sm` and wider the trail stays full width. Notch travel is not clipped (`overflow` stays visible on the bar).
 
 #### 6b3: Language switcher
 
-- No legacy equivalent (language set server-side via `nikart.langCode`)
-- Modern: fixed bottom-left position
+- Floating bottom-left `LanguageSwitcher` removed (2026-10-09). It duplicated the Config menu item (`Español` / `English`), whose launch link opens `/html5/es` or `/html5/en`.
 - Legacy `{{otherversions}}` menu item interpolated as "Config" in `localize()`
 
 #### 6b4: Dev ergonomics
 
 - `data-component` attributes on all component root elements for DOM identification
-- Components: Nav, NavButton, NavCanvas, NavItems, Breadcrumbs, LanguageSwitcher, ContentPage, ThumbnailGrid, ThumbnailItem, ArticleView, Slideshow, VideoView
+- Components: Nav, NavButton, NavCanvas, NavItems, Breadcrumbs, ContentPage, ThumbnailGrid, ThumbnailItem, ArticleView, Slideshow, VideoView
 
 #### 6c: Nav fidelity
 
