@@ -25,6 +25,7 @@
     "@awayfl/awayfl-player": "^0.2.54",
     "@gsap/react": "^2.1.2",
     "@ruffle-rs/ruffle": "^0.6.0",
+    "@vercel/analytics": "^2.0.1",
     "gsap": "^3.15.0",
     "next": "16.3.8",
     "next-intl": "^4.14.9",
