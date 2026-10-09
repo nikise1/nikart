@@ -356,6 +356,7 @@ A "session" = one focused working block with AI agent collaboration.
 3. **Preview deploys:** Every PR gets a Vercel preview URL for visual review
 4. **Main branch:** Auto-deploy to production on merge
 5. **Dependency updates (2026-10-06):** `.github/dependabot.yml` checks npm in `/modern` only, every Monday 09:00 UTC. Minor and patch updates are grouped into one pull request. Each major version gets its own pull request. The repo root and `public/html5/` are deprecated and scheduled for decommission, so Dependabot, the manual `@cursor` migration, and the monthly library radar all ignore them. Merge is still manual.
+6. **Library radar (2026-10-09):** October scan recorded in `docs/radar/2026-10.md` — optional Vitest browser-mode + Playwright provider; Lingui 6 noted as next-intl alternative (no switch planned); `vercel` dev CLI has npm audit findings without a fix on current majors (monitor only).
 
 ---
 
