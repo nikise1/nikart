@@ -83,6 +83,15 @@ export function getPathTo(id: string, nodes: DataNode[] = siteData.menu): string
   return undefined;
 }
 
+/**
+ * Thumbnails the current site should list.
+ * Flash drops menu children whose id is `fl`. Legacy HTML5 drops `html5`.
+ * Modern is that HTML5 view, so it drops `html5` too.
+ */
+export function thumbMenuItems(items: DataNode[]): DataNode[] {
+  return items.filter((item) => item.id !== "html5");
+}
+
 /** Get all content items (leaves) from a menu node */
 export function getContentItems(node: MenuItem): ContentItem[] {
   return node.menu.filter((child): child is ContentItem => !isMenuItem(child));

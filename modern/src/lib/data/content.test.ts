@@ -9,6 +9,7 @@ import {
   getTopMenu,
   localize,
   localizeUrl,
+  thumbMenuItems,
 } from "./content";
 import { isContentItem, type MenuItem } from "./schema";
 
@@ -105,6 +106,20 @@ describe("getPathTo", () => {
 
   it("returns undefined for non-existent ID", () => {
     expect(getPathTo("nonexistent")).toBeUndefined();
+  });
+});
+
+describe("thumbMenuItems", () => {
+  it("drops html5 links and keeps the flash link", () => {
+    const featured = findById("featured") as MenuItem;
+    const featuredIds = thumbMenuItems(featured.menu).map((item) => item.id);
+    expect(featuredIds).not.toContain("html5");
+    expect(featuredIds).toContain("onedayinmay");
+    expect(featured.menu.some((item) => item.id === "html5")).toBe(true);
+
+    const config = findById("config") as MenuItem;
+    const configIds = thumbMenuItems(config.menu).map((item) => item.id);
+    expect(configIds).toEqual(["language", "fl"]);
   });
 });
 
