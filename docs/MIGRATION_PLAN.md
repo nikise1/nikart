@@ -290,8 +290,16 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | DNS cutover (nikart.co.uk → Vercel) | Small | After verification period; legacy Heroku still live during propagation |
 | Legacy cleanup commit | Small | Remove legacy files, promote `modern/` to root |
 | Decommission Heroku app | Small | After DNS propagation confirmed (check with `dig nikart.co.uk`) |
+| Cancel the Heroku account | Small | Last. Download invoices, pay any open or current-period balance, then Account Settings → Close this account |
 
 **Step effort: ~1 session**
+
+**Account close is last (2026-10-09).** Destroying the app stops the dyno. Closing the account is a separate, irreversible step, and Heroku blocks it while any app, pipeline, add-on, or unpaid invoice remains. Do it only after `dig nikart.co.uk` shows Vercel.
+
+1. Confirm this account has nothing else on it. `static.nikart.co.uk` is CloudFront and stays up.
+2. Download invoices. They are gone once the account is closed.
+3. Pay any past-due invoice. On a personal account, Billing → Remove Credit Card charges the current partial period so the account can close before the next invoice. A Team cannot drop its card: close the team first (a billing ticket if the current period still has a balance), then close the personal account.
+4. Account Settings → Close this account.
 
 ---
 

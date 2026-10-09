@@ -148,6 +148,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [ ] Smoke-test the production domain (nav, content, video, `/en` and `/es`)
 - [ ] Remove the legacy app and promote `modern/` after cutover
 - [ ] Decommission the Heroku app once `dig nikart.co.uk` shows Vercel
+- [ ] Cancel the Heroku account last: download invoices, settle any open or current-period balance, then close the account
 
 ---
 
@@ -395,3 +396,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-09 | Drop the floating language switcher | Config → Español / English is the language control. The fixed bottom-left link duplicated it and hid whenever the menu was open |
 | 2026-10-09 | Vercel Web Analytics for content views | Hobby page views by URL. `<Analytics />` in the root layout. Custom events stay off Hobby |
 | 2026-10-09 | Close Step 10 | Public beta `https://nikart-beta.vercel.app` serves `/en`, `/es`, images, video/games rewrites, and `/fl`. Branch previews stay behind Vercel Authentication. Production DNS cutover is Step 11 |
+| 2026-10-09 | Cancel the Heroku account at the end of Step 11 | Deleting the app is not enough to stop the account. Close it only after DNS is on Vercel, the app is gone, invoices are saved, and any open or current-period balance is paid |
