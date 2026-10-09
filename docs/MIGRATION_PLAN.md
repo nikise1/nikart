@@ -267,6 +267,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 - Every PR/branch gets its own preview URL — use these for visual review of animation changes
 - `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts` — verify these work on the preview URL
 - Deployment Protection is on — preview URLs currently require Vercel login
+- Vercel Web Analytics is enabled on the project (2026-10-09). `modern/src/app/layout.tsx` mounts `<Analytics />` from `@vercel/analytics/next`, so client navigations under `/en`, `/es`, and `/fl` are page views. Static `/swf-compare` HTML is outside that layout. Hobby includes 50,000 events a month and one month of history; custom events are not on that plan.
 
 **Ongoing WIP checklist (per session):**
 
