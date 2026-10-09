@@ -140,12 +140,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ### Step 11: Production Cutover
 
-`nikart.co.uk` still points at the legacy host. The public modern site is `https://nikart-beta.vercel.app`.
+`nikart.co.uk` points at Vercel. `www.nikart.co.uk` is the production site. The Heroku app is still running at `nikart.herokuapp.com`.
 
 - [x] Add `nikart.co.uk` and `www.nikart.co.uk` in the Vercel project domains (2026-10-09). Apex redirects to `www`. Production environment
 - [x] Point DNS at Vercel (2026-10-09). Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. `static` stays on CloudFront
 - [x] Confirm the SSL certificate (2026-10-09). `https://nikart.co.uk` 308s to `https://www.nikart.co.uk`
-- [ ] Smoke-test the production domain in a browser (nav, content, video, `/en` and `/es`). HTTP checks already return 200 for `/en`, `/es`, `/content/img/stump.png`, and `/video_h264/spark.mp4`
+- [x] Smoke-test the production domain (2026-10-09). Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200
 - [ ] Remove the legacy app and promote `modern/` after cutover
 - [ ] Decommission the Heroku app once `dig nikart.co.uk` shows Vercel
 - [ ] Cancel the Heroku account last: download invoices, settle any open or current-period balance, then close the account
