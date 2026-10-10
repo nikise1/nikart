@@ -31,7 +31,7 @@ Three approaches were evaluated for organising legacy and modern code during mig
 - Both apps deployable simultaneously on separate platforms/URLs during the transition
 - Full git history preserved without `--follow`
 - Shared assets (`public/content/img/`, `data.json`) directly accessible during migration
-- When legacy is decommissioned: delete it and, in a later commit, promote `modern/` to root. The 2026-10-10 plan is [`LEGACY_MOVE.md`](LEGACY_MOVE.md): move the Express app into `legacy/` while Heroku still deploys this repo, then delete that folder once DNS is on Vercel. A frozen branch is the archive after Heroku is off.
+- When legacy is decommissioned: delete it and, in a later commit, promote `modern/` to root. The 2026-10-10 plan is [`LEGACY_MOVE.md`](LEGACY_MOVE.md): freeze `archive/legacy`, delete the Express app from `master`, and move `public/content/` under `modern/`. The Heroku app does not need to keep deploying this repo.
 
 ---
 

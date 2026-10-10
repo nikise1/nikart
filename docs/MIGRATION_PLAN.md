@@ -291,8 +291,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | DNS cutover (nikart.co.uk → Vercel) | Small | Done 2026-10-09 |
 | Cancel the Heroku subscription | Small | Done 2026-10-10. Pay the last invoice. That removes the payment method. The account stays open |
 | Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
-| Move legacy into `legacy/` | Small | See [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Root Heroku shim stays; `public/content/` stays put |
-| Legacy removal | Small | Delete `legacy/` and retarget content into `modern/` |
+| Archive and remove the legacy app | Small | [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Branch `archive/legacy`, delete the Express app from `master`, move `public/content/` under `modern/content/`. Heroku does not need to keep deploying this repo (2026-10-10) |
 | Promote `modern/` to repo root | Small | Separate commit after removal. Vercel Root Directory changes from `modern/` to the repo root |
 
 **Step effort: ~1 session**

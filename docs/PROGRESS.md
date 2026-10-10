@@ -148,8 +148,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Smoke-test the production domain (2026-10-09). Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200
 - [x] Cancel the Heroku subscription (2026-10-10). Pay the last invoice, which removes the payment method. The account stays open
 - [x] Leave `nikart.herokuapp.com` in place. It stops when the paid month ends. No manual app delete
-- [ ] Move the Express app into `legacy/` with a root Heroku shim ([`LEGACY_MOVE.md`](LEGACY_MOVE.md), 2026-10-10). `public/content/` stays at the repo root
-- [ ] After that, delete `legacy/` and retarget content into `modern/`
+- [ ] Archive `archive/legacy`, delete the Express app from `master`, and move `public/content/` under `modern/content/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)). Heroku does not need to keep deploying this repo (2026-10-10)
 - [ ] Promote `modern/` to the repo root in a later commit (Vercel Root Directory changes with it)
 
 ---
@@ -403,4 +402,5 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-09 | Production DNS is on Vercel | Apex A `216.198.79.1`, `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Apex redirects to `www`. The Vercel project card is the source of the records, not the generic `76.76.21.21` address |
 | 2026-10-09 | Production smoke test passed | `www.nikart.co.uk` looked right in the browser. HTTP checks returned 200 for `/en`, `/es`, a thumbnail, and `spark.mp4`. Heroku app deletion is next |
 | 2026-10-10 | Heroku subscription cancellation is enough | Pay the last invoice and let that remove the payment method. Keep the account. Leave `nikart.herokuapp.com` until the paid month ends. No manual app delete and no account close |
-| 2026-10-10 | Legacy move plan: folder first, archive at cutover | [`LEGACY_MOVE.md`](LEGACY_MOVE.md). While Heroku deploys this repo, `git mv` the Express app into `legacy/` and keep `public/content/` here. Archive-and-remove waits until DNS is on Vercel, because a fork now would freeze the JSON the public site serves. Promoting `modern/` to the repo root stays a separate commit |
+| 2026-10-10 | Legacy move plan: folder first, archive at cutover | [`LEGACY_MOVE.md`](LEGACY_MOVE.md). First pass kept a `legacy/` folder so Heroku could still boot this repo. Superseded the same day |
+| 2026-10-10 | Legacy move plan: archive, then remove | Heroku does not need to keep deploying this repo. Freeze `archive/legacy`, delete the Express app from `master`, move `public/content/` under `modern/content/`. Promoting `modern/` to the repo root stays a later commit. DNS for `nikart.co.uk` stays a separate cutover |
