@@ -176,6 +176,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
+- Mobile taps (2026-10-10): a finger contact is `pointerdown` with no prior move. Ruffle only sends AVM1 `rollOver` while the mouse button is up, so the lizard treated the tap as a drag and ignored it. `installFlashTouchHover` dispatches a hover at the touch point before that press reaches the canvas.
 - Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall`/`prebuild` from `@ruffle-rs/ruffle`; gitignored — Vercel `buildCommand` copies it)
 - `/fl/en` and `/fl/es` route handlers set the `NEXT_LOCALE` cookie and redirect to `/fl` (legacy parity). Explicit paths so `/fl/main.swf` cannot be captured by a `[lang]` segment.
 - i18n middleware excludes `/fl` and `/html5` so they are not prefixed with `/en` or `/es`. `/html5` redirects to `/` (locale home). `/html5/en` and `/html5/es` set `NEXT_LOCALE` and redirect to that locale home, matching the legacy language links (2026-10-07).
