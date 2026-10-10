@@ -140,14 +140,15 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ### Step 11: Production Cutover
 
-`nikart.co.uk` still points at the legacy host. The public modern site is `https://nikart-beta.vercel.app`.
+`nikart.co.uk` points at Vercel. `www.nikart.co.uk` is the production site. The Heroku subscription is cancelled. `nikart.herokuapp.com` can keep answering until the paid month ends.
 
-- [ ] Add `nikart.co.uk` in the Vercel project domains
-- [ ] Point DNS at Vercel (`76.76.21.21`, `www` CNAME `cname.vercel-dns.com`)
-- [ ] Confirm the SSL certificate
-- [ ] Smoke-test the production domain (nav, content, video, `/en` and `/es`)
+- [x] Add `nikart.co.uk` and `www.nikart.co.uk` in the Vercel project domains (2026-10-09). Apex redirects to `www`. Production environment
+- [x] Point DNS at Vercel (2026-10-09). Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. `static` stays on CloudFront
+- [x] Confirm the SSL certificate (2026-10-09). `https://nikart.co.uk` 308s to `https://www.nikart.co.uk`
+- [x] Smoke-test the production domain (2026-10-09). Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200
+- [x] Cancel the Heroku subscription (2026-10-10). Pay the last invoice, which removes the payment method. The account stays open
+- [x] Leave `nikart.herokuapp.com` in place. It stops when the paid month ends. No manual app delete
 - [ ] Remove the legacy app and promote `modern/` after cutover
-- [ ] Decommission the Heroku app once `dig nikart.co.uk` shows Vercel
 
 ---
 
@@ -396,3 +397,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-09 | Drop the floating language switcher | Config → Español / English is the language control. The fixed bottom-left link duplicated it and hid whenever the menu was open |
 | 2026-10-09 | Vercel Web Analytics for content views | Hobby page views by URL. `<Analytics />` in the root layout. Custom events stay off Hobby |
 | 2026-10-09 | Close Step 10 | Public beta `https://nikart-beta.vercel.app` serves `/en`, `/es`, images, video/games rewrites, and `/fl`. Branch previews stay behind Vercel Authentication. Production DNS cutover is Step 11 |
+| 2026-10-09 | Cancel the Heroku account at the end of Step 11 | Deleting the app is not enough to stop the account. Close it only after DNS is on Vercel, the app is gone, invoices are saved, and any open or current-period balance is paid |
+| 2026-10-09 | Production DNS is on Vercel | Apex A `216.198.79.1`, `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Apex redirects to `www`. The Vercel project card is the source of the records, not the generic `76.76.21.21` address |
+| 2026-10-09 | Production smoke test passed | `www.nikart.co.uk` looked right in the browser. HTTP checks returned 200 for `/en`, `/es`, a thumbnail, and `spark.mp4`. Heroku app deletion is next |
+| 2026-10-10 | Heroku subscription cancellation is enough | Pay the last invoice and let that remove the payment method. Keep the account. Leave `nikart.herokuapp.com` until the paid month ends. No manual app delete and no account close |

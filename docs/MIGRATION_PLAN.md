@@ -284,15 +284,18 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 | Task | Effort | Notes |
 |------|--------|-------|
-| Add custom domain in Vercel dashboard | Small | `nikart.co.uk` → Vercel project settings → Domains |
-| Update DNS at registrar | Small | Add Vercel's A record (`76.76.21.21`) + CNAME (`cname.vercel-dns.com`) for `www` |
-| Verify SSL certificate issued | Small | Vercel provisions Let's Encrypt automatically |
-| Smoke-test production domain | Small | Nav, content, video, both languages |
-| DNS cutover (nikart.co.uk → Vercel) | Small | After verification period; legacy Heroku still live during propagation |
-| Legacy cleanup commit | Small | Remove legacy files, promote `modern/` to root |
-| Decommission Heroku app | Small | After DNS propagation confirmed (check with `dig nikart.co.uk`) |
+| Add custom domain in Vercel dashboard | Small | Done 2026-10-09. `www.nikart.co.uk` is primary. Apex redirects to `www`. Environment: Production |
+| Update DNS at registrar | Small | Done 2026-10-09 at Dyn. Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Use the project domain card if these values change. Leave `static` on CloudFront |
+| Verify SSL certificate issued | Small | Done 2026-10-09. Apex HTTPS 308s to `https://www.nikart.co.uk` |
+| Smoke-test production domain | Small | Done 2026-10-09. Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200 |
+| DNS cutover (nikart.co.uk → Vercel) | Small | Done 2026-10-09 |
+| Cancel the Heroku subscription | Small | Done 2026-10-10. Pay the last invoice. That removes the payment method. The account stays open |
+| Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
+| Legacy cleanup commit | Small | Still open. Remove legacy files, promote `modern/` to root |
 
 **Step effort: ~1 session**
+
+**Heroku billing ends with the subscription (2026-10-10).** Closing the account and deleting the app are not required. Pay the final invoice, let Heroku remove the payment method, and leave `nikart.herokuapp.com` in place until that paid month runs out. `static.nikart.co.uk` is CloudFront and stays up.
 
 ---
 
