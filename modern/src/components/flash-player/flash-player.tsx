@@ -4,6 +4,7 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { installFlashBridge } from "@/lib/flash-bridge";
 import type { FlashVars } from "@/lib/flash-config";
+import { installFlashTouchHover } from "@/lib/flash-touch";
 
 const RUFFLE_SRC = "/ruffle/ruffle.js";
 const SWF_WIDTH = 750;
@@ -59,6 +60,7 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
     player.style.width = "100%";
     player.style.height = "100%";
     container.replaceChildren(player);
+    const removeTouchHover = installFlashTouchHover(player);
 
     const base = new URL(swfUrl, window.location.href).href.replace(/[^/]+$/, "");
 
@@ -84,6 +86,7 @@ export function FlashPlayer({ swfUrl, parameters }: FlashPlayerProps) {
     });
 
     return () => {
+      removeTouchHover();
       container.replaceChildren();
     };
   }, [ruffleReady, swfUrl, parameters]);
