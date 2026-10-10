@@ -284,15 +284,23 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 | Task | Effort | Notes |
 |------|--------|-------|
-| Add custom domain in Vercel dashboard | Small | `nikart.co.uk` → Vercel project settings → Domains |
-| Update DNS at registrar | Small | Add Vercel's A record (`76.76.21.21`) + CNAME (`cname.vercel-dns.com`) for `www` |
-| Verify SSL certificate issued | Small | Vercel provisions Let's Encrypt automatically |
-| Smoke-test production domain | Small | Nav, content, video, both languages |
-| DNS cutover (nikart.co.uk → Vercel) | Small | After verification period; legacy Heroku still live during propagation |
+| Add custom domain in Vercel dashboard | Small | Done 2026-10-09. `www.nikart.co.uk` is primary. Apex redirects to `www`. Environment: Production |
+| Update DNS at registrar | Small | Done 2026-10-09 at Dyn. Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Use the project domain card if these values change. Leave `static` on CloudFront |
+| Verify SSL certificate issued | Small | Done 2026-10-09. Apex HTTPS 308s to `https://www.nikart.co.uk` |
+| Smoke-test production domain | Small | Done 2026-10-09. Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200 |
+| DNS cutover (nikart.co.uk → Vercel) | Small | Done 2026-10-09. Heroku app still running at `nikart.herokuapp.com` until it is deleted |
 | Legacy cleanup commit | Small | Remove legacy files, promote `modern/` to root |
 | Decommission Heroku app | Small | After DNS propagation confirmed (check with `dig nikart.co.uk`) |
+| Cancel the Heroku account | Small | Last. Download invoices, pay any open or current-period balance, then Account Settings → Close this account |
 
 **Step effort: ~1 session**
+
+**Account close is last (2026-10-09).** Destroying the app stops the dyno. Closing the account is a separate, irreversible step, and Heroku blocks it while any app, pipeline, add-on, or unpaid invoice remains. Do it only after `dig nikart.co.uk` shows Vercel.
+
+1. Confirm this account has nothing else on it. `static.nikart.co.uk` is CloudFront and stays up.
+2. Download invoices. They are gone once the account is closed.
+3. Pay any past-due invoice. On a personal account, Billing → Remove Credit Card charges the current partial period so the account can close before the next invoice. A Team cannot drop its card: close the team first (a billing ticket if the current period still has a balance), then close the personal account.
+4. Account Settings → Close this account.
 
 ---
 
