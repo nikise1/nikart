@@ -1,6 +1,7 @@
 'use strict';
 
 //*** Libraries ***
+var path = require('path');
 var express = require('express');
 var swig = require('swig');
 var compression = require('compression');
@@ -33,9 +34,10 @@ app.use(compression());
 
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
-app.set('views', './app/views');
+app.set('views', path.join(__dirname, 'app', 'views'));
 
-app.use(express.static('./public'));
+app.use('/content', express.static(path.join(__dirname, '..', 'content')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 //app.use(express.cookieSession({secret: 'nikart'}));
 

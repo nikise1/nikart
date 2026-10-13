@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { DataSchema } from "./schema";
-import rawData from "../../../../public/content/json/data.json";
+import rawData from "../../../../content/json/data.json";
 
 const copiedDataPath = join(__dirname, "../../../public/content/json/data.json");
 
@@ -13,10 +13,7 @@ describe("DataSchema", () => {
   });
 
   it("matches the copied public data.json Flash loads", () => {
-    const sourceText = readFileSync(
-      join(__dirname, "../../../../public/content/json/data.json"),
-      "utf8",
-    );
+    const sourceText = readFileSync(join(__dirname, "../../../../content/json/data.json"), "utf8");
     const copiedText = readFileSync(copiedDataPath, "utf8");
     expect(sourceText).toContain("\n    ");
     expect(copiedText).not.toContain("\n");

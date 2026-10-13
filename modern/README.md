@@ -23,7 +23,7 @@ npm run test:e2e     # Playwright E2E
 
 ## Deploy to Vercel (preview)
 
-**Critical:** set the Vercel project **Root Directory** to `modern/`. The legacy Express app lives at the repo root and must not be deployed. Leave **Include source files outside of the Root Directory in the Build Step** enabled (Vercel default) so the build can read repo-root `public/content/img`.
+**Critical:** set the Vercel project **Root Directory** to `modern/`. The legacy Express app lives in `legacy-2014/` and must not be deployed. Leave **Include source files outside of the Root Directory in the Build Step** enabled (Vercel default) so the build can read repo-root `content/img`.
 
 Do **not** set an Output Directory. `framework: nextjs` in `vercel.json` is enough; pointing output at `.next` breaks middleware and SSR.
 
@@ -47,15 +47,15 @@ npx vercel --prod   # production deploy (after cutover)
 
 ### Content images
 
-One copy in git: repo-root `public/content/img` (legacy). Install/build copies it to `modern/public/_generated/img/` (gitignored as `modern/public/_generated/`). A rewrite maps `/content/img/…` → `/_generated/img/…` so app URLs stay the same. The legacy app is not changed.
+One copy in git: repo-root `content/img`. Install/build copies it to `modern/public/_generated/img/` (gitignored as `modern/public/_generated/`). A rewrite maps `/content/img/…` → `/_generated/img/…` so app URLs stay the same. `legacy-2014` serves the same tree at `/content`.
 
-Do not symlink `modern/public/content/img` to the legacy folder — Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”.
+Do not symlink `modern/public/content/img` to `content/img` — Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”.
 
-`postinstall` and the Vercel `buildCommand` run `npm run sync:images`. To refresh locally after changing legacy images, run that again from `modern/`.
+`postinstall` and the Vercel `buildCommand` run `npm run sync:images`. To refresh locally after changing images, run that again from `modern/`.
 
 ### Content JSON
 
-One copy in git: repo-root `public/content/json/data.json`, pretty printed (legacy Backbone and the Next data import). Install and the Vercel build minify it into `modern/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
+One copy in git: repo-root `content/json/data.json`, pretty printed (legacy Backbone and the Next data import). Install and the Vercel build minify it into `modern/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
 
 To edit it in a tree, run `npm run json:edit` from the repo root. That prints a link which opens [JSON Editor Online](https://jsoneditoronline.org) with this file already loaded. Add `-- --open` to open the browser on your machine. After you copy the edited JSON back, run `npm run sync:json` from `modern/`.
 

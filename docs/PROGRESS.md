@@ -148,7 +148,8 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Smoke-test the production domain (2026-10-09). Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200
 - [x] Cancel the Heroku subscription (2026-10-10). Pay the last invoice, which removes the payment method. The account stays open
 - [x] Leave `nikart.herokuapp.com` in place. It stops when the paid month ends. No manual app delete
-- [ ] Move the Express app to `legacy-2014/`, rename `modern/` to a sibling version folder, and keep JSON and images at `content/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)). The new folder name is still open (2026-10-12)
+- [x] Move the Express app to `legacy-2014/` and keep JSON and images at `content/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)) (2026-10-13). `legacy-2014/server.js` serves `content/` at `/content`. Root `package.json` launches `modern`, `legacy-2014`, and `json:edit`
+- [ ] Rename `modern/` to a sibling version folder. The new folder name is still open. Vercel Root Directory stays `modern/` until then (2026-10-12)
 
 ---
 
@@ -292,7 +293,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 ### Cloud Agent Dev Environment ✅ (2026-09-07)
 
 - [x] Added repo-managed `.cursor/environment.json` (default image, Node 22 preinstalled)
-- [x] `install` installs both apps: `npm install && npm install --prefix modern` (modern `postinstall` copies Ruffle + syncs content images)
+- [x] `install` installs both apps: `npm install --prefix legacy-2014 && npm install --prefix modern` (modern `postinstall` copies Ruffle + syncs content images). Retargeted from the repo root when the Express app moved (2026-10-13)
 - [x] `terminals`: `modern` (Next.js dev :3000) and `legacy` (Express/Swig :5000); `ports` 3000 + 5000 exposed
 - [x] Verified end-to-end: install idempotent, lint clean, 59 unit tests passing, production build clean
 - [x] Both servers serve: modern `/` → `/en` (200), `/es` (200); legacy `/` → 302, `/html5/` (200)
@@ -405,3 +406,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-10 | Legacy move plan: archive, then remove | Heroku does not need to keep deploying this repo. Freeze `archive/legacy`, delete the Express app from `master`, move `public/content/` under `modern/content/`. Superseded 2026-10-12 |
 | 2026-10-12 | Legacy stays in-repo as `legacy-2014` | [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Versions and skins are sibling folders. `modern/` will be renamed. Shared JSON and images move from `public/content/` to `content/`. The new folder name is still open |
 | 2026-10-12 | Legacy folder year is 2014 | The Express app moves to `legacy-2014/` |
+| 2026-10-13 | Carry out the legacy move, leave `modern/` named | Express sources are in `legacy-2014/`. Pretty JSON and images are repo-root `content/`. Next still imports and syncs that tree. The Next folder name is still open, so Vercel Root Directory stays `modern/` |

@@ -1,10 +1,12 @@
 # Moving the legacy app
 
 **Date:** 2026-10-10
-**Status:** Plan only. The legacy folder is `legacy-2014/`. The rename of `modern/` is still open. No files have moved.
+**Status:** Carried out 2026-10-13, except the rename of `modern/`. The Express app is in `legacy-2014/`. Shared JSON and images are in `content/`. `modern/` stays until its name is chosen. Vercel Root Directory stays `modern/`.
 **Revisits:** [MIGRATION_OVERVIEW.md](MIGRATION_OVERVIEW.md) Option C (legacy at repo root, Next.js in `modern/`)
 
 **Update (2026-10-12):** Keep the Express app in this repo, under `legacy-2014/`. Rename `modern/` when that name is chosen. Further versions and skins are sibling folders. Portfolio JSON and images stay one shared tree at `content/`, outside every version.
+
+**Update (2026-10-13):** That move is in the tree. `legacy-2014/server.js` serves repo-root `content/` at `/content`, so Backbone `../content` URLs still resolve. The root `package.json` is a launcher: `modern`, `legacy-2014`, and `json:edit`. The Next folder in the example below is still a placeholder; the app is `modern/`.
 
 Heroku does not need to keep deploying this repo. The subscription was cancelled on 2026-10-10, and `nikart.herokuapp.com` stays until that paid month ends. DNS cutover to Vercel finished on 2026-10-09.
 
