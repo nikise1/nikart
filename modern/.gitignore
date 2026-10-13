@@ -32,10 +32,10 @@
 /public/swf-compare/visibility-defaults.json
 /public/swf-compare/*/
 
-# generated from repo-root public/content/img (see scripts/sync-content-images.mjs)
+# generated from repo-root content/img (see scripts/sync-content-images.mjs)
 /public/_generated/
 
-# generated from repo-root public/content/json/data.json (see scripts/sync-content-json.mjs)
+# generated from repo-root content/json/data.json (see scripts/sync-content-json.mjs)
 /public/content/json/
 
 # production

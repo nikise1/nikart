@@ -41,8 +41,8 @@ npm run format:check # Oxfmt check
 npm run test         # Vitest watch mode
 npm run test:run     # Vitest single run
 npm run test:e2e     # Playwright E2E
-npm run sync:images  # Copy repo-root public/content/img → public/_generated/img (gitignored)
-npm run sync:json    # Minify repo-root public/content/json/data.json → public/content/json/data.json (gitignored)
+npm run sync:images  # Copy repo-root content/img → public/_generated/img (gitignored)
+npm run sync:json    # Minify repo-root content/json/data.json → public/content/json/data.json (gitignored)
 npm run deploy       # Vercel preview (requires vercel login + link)
 ```
 

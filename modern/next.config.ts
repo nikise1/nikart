@@ -1,3 +1,5 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
@@ -5,7 +7,15 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 const STATIC_HOST = "https://static.nikart.co.uk";
 
+// The Express lockfile used to sit at the repo root, so Turbopack treated that
+// directory as the module root and could import content/json/data.json. After
+// that lockfile moved into legacy-2014/, the root is modern/ unless we set it.
+const repoRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: repoRoot,
+  },
   allowedDevOrigins: ["127.0.0.1"],
   async headers() {
     return [

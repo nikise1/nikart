@@ -31,14 +31,14 @@ function minifyJson(json) {
 }
 
 const modernRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const source = join(modernRoot, "..", "public", "content", "json", "data.json");
+const source = join(modernRoot, "..", "content", "json", "data.json");
 const destDir = join(modernRoot, "public", "content", "json");
 const dest = join(destDir, "data.json");
 const leftoverPretty = join(destDir, "data-pretty.json");
 
 if (!existsSync(source)) {
   console.log(
-    "Legacy public/content/json/data.json not found; skipping JSON sync. On Vercel, enable “Include source files outside of the Root Directory in the Build Step”.",
+    "Repo-root content/json/data.json not found; skipping JSON sync. On Vercel, enable “Include source files outside of the Root Directory in the Build Step”.",
   );
   process.exit(0);
 }

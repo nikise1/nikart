@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-24
 **Stack:** Next.js 16 + GSAP 3 + Zustand + Tailwind CSS 4 + Vitest/Playwright + Vercel
-**Strategy:** Option C — modern app in `modern/`, legacy untouched at root
+**Strategy:** Sibling versions. Express app in `legacy-2014/`, Next.js app in `modern/` until that folder is renamed, shared JSON and images at `content/`
 
 ---
 
@@ -170,9 +170,9 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 
 - `modern/src/app/fl/` — minimal black layout matching legacy `fl.html`
 - `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
-- `modern/public/fl/main.swf` — untouched Animate export, copied from legacy `public/fl/main.swf`
+- `modern/public/fl/main.swf` — untouched Animate export, copied from `legacy-2014/public/fl/main.swf`
 - `modern/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
-- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is pretty-printed repo-root `public/content/json/data.json`; `sync:json` minifies it here on install and on the Vercel build (gitignored). Next imports the pretty repo-root file (2026-10-06).
+- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is pretty-printed repo-root `content/json/data.json`; `sync:json` minifies it here on install and on the Vercel build (gitignored). Next imports the pretty repo-root file (2026-10-13).
 - `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
@@ -248,7 +248,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
 2. **Root Directory:** set to `modern/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
-3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `public/content/img`
+3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `content/img`
 4. Build settings come from `modern/vercel.json` (`framework: nextjs`). Do not set Output Directory to `.next` — that breaks next-intl middleware and SSR
 5. Framework preset: Next.js (auto-detected); Node `24` from `modern/.nvmrc` / `engines` (updated 2026-10-07; was `22`)
 6. Environment variables: none required for WIP (static content, no secrets)
@@ -257,10 +257,10 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 **Deploy blockers fixed (2026-09-07):**
 
 - Removed `outputDirectory: ".next"` from `modern/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
-- Do **not** symlink `modern/public/content/img` → `../../../public/content/img` — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
-- Single git copy stays at legacy `public/content/img` (legacy app untouched). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`
-- Single git copy of portfolio JSON stays at legacy `public/content/json/data.json`, pretty printed (legacy Backbone still fetches it). `sync:json` minifies it to `modern/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-06).
-- Portfolio JSON is edited in [JSON Editor Online](https://jsoneditoronline.org), not in the app. `npm run json:edit` prints a link that loads `public/content/json/data.json` in tree mode (`#left=json.` plus the compact document). The in-app `/dev/content` editor and the `jsoneditor` dependency are removed (2026-10-06).
+- Do **not** symlink `modern/public/content/img` → the shared image tree — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
+- Single git copy of images is repo-root `content/img` (moved from `public/content/img` on 2026-10-13). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`. `legacy-2014` serves the same tree at `/content`
+- Single git copy of portfolio JSON is repo-root `content/json/data.json`, pretty printed (legacy Backbone still fetches it). `sync:json` minifies it to `modern/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-13)
+- Portfolio JSON is edited in [JSON Editor Online](https://jsoneditoronline.org), not in the app. `npm run json:edit` prints a link that loads `content/json/data.json` in tree mode (`#left=json.` plus the compact document). The in-app `/dev/content` editor and the `jsoneditor` dependency are removed (2026-10-06).
 
 **After initial deploy:**
 
@@ -291,11 +291,13 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | DNS cutover (nikart.co.uk → Vercel) | Small | Done 2026-10-09 |
 | Cancel the Heroku subscription | Small | Done 2026-10-10. Pay the last invoice. That removes the payment method. The account stays open |
 | Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
-| Move legacy to `legacy-2014/` and share `content/` | Small | Still open. [`LEGACY_MOVE.md`](LEGACY_MOVE.md) (2026-10-12). The `modern/` rename is still open. Further skins are sibling folders |
+| Move legacy to `legacy-2014/` and share `content/` | Small | Done 2026-10-13. [`LEGACY_MOVE.md`](LEGACY_MOVE.md). The `modern/` rename is still open. Further skins are sibling folders |
 
 **Step effort: ~1 session**
 
 **Heroku billing ends with the subscription (2026-10-10).** Closing the account and deleting the app are not required. Pay the final invoice, let Heroku remove the payment method, and leave `nikart.herokuapp.com` in place until that paid month runs out. `static.nikart.co.uk` is CloudFront and stays up.
+
+**Adjustment (2026-10-13):** The Express app, its `package.json` (Node `22.x`), Procfile, and `public/html5`, `public/fl`, and `public/accessible` are in `legacy-2014/`. Pretty JSON and the 308 images are repo-root `content/`. Root `package.json` only launches `modern`, `legacy-2014`, and `json:edit`. `legacy-2014/server.js` mounts `../content` at `/content`. `modern/` is not renamed; Vercel Root Directory stays `modern/`, with files outside that root still included so sync can read `content/`. `modern/next.config.ts` sets `turbopack.root` to the repo root. The Express lockfile used to sit there, and without it Turbopack treats `modern/` as the module root and cannot import `content/json/data.json`.
 
 ---
 
@@ -320,8 +322,8 @@ A "session" = one focused working block with AI agent collaboration.
 ## Cloud Agent Dev Environment
 
 - `.cursor/environment.json` (2026-09-07): repo-managed Cloud Agent environment on the default image (Node 22 preinstalled).
-  - `install`: `npm install && npm install --prefix modern` — installs legacy (root) and modern deps; modern `postinstall` copies the Ruffle runtime and syncs `public/content/img` → `modern/public/_generated/img`.
-  - `terminals`: `modern` (`npm run modern`, Next.js dev on :3000) and `legacy` (`npm start`, Express/Swig on :5000).
+  - `install`: `npm install --prefix legacy-2014 && npm install --prefix modern` — installs both apps; modern `postinstall` copies the Ruffle runtime and syncs `content/img` → `modern/public/_generated/img` (updated 2026-10-13).
+  - `terminals`: `modern` (`npm run modern`, Next.js dev on :3000) and `legacy` (`npm run legacy-2014`, Express/Swig on :5000).
   - `ports`: 3000 (modern) and 5000 (legacy) exposed.
   - Validated: lint clean, 59 unit tests passing, production build clean, both dev servers serve (`/en`, `/es`, and legacy `/html5/`).
 

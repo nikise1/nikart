@@ -4,7 +4,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
-const source = join(repoRoot, "public", "content", "json", "data.json");
+const source = join(repoRoot, "content", "json", "data.json");
 const compact = JSON.stringify(JSON.parse(readFileSync(source, "utf8")));
 const url =
   "https://jsoneditoronline.org/#left=json." +

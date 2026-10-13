@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const modernRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const source = join(modernRoot, "..", "public", "content", "img");
+const source = join(modernRoot, "..", "content", "img");
 const dest = join(modernRoot, "public", "_generated", "img");
 const staging = join(modernRoot, "public", "_generated", ".img-sync-staging");
 const leftoverPublicImg = join(modernRoot, "public", "content", "img");
@@ -38,7 +38,7 @@ removePath(leftoverPublicImg);
 
 if (!existsSync(source)) {
   console.log(
-    "Legacy public/content/img not found; skipping image sync. On Vercel, enable “Include source files outside of the Root Directory in the Build Step”.",
+    "Repo-root content/img not found; skipping image sync. On Vercel, enable “Include source files outside of the Root Directory in the Build Step”.",
   );
   process.exit(0);
 }

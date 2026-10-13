@@ -1,6 +1,6 @@
 {
   "name": "nikart",
-  "install": "npm install && npm install --prefix modern",
+  "install": "npm install --prefix legacy-2014 && npm install --prefix modern",
   "terminals": [
     {
       "name": "modern",
@@ -9,8 +9,8 @@
     },
     {
       "name": "legacy",
-      "command": "npm start",
-      "description": "Legacy Express/Swig site (http://localhost:5000)."
+      "command": "npm run legacy-2014",
+      "description": "Legacy Express/Swig site in legacy-2014/ (http://localhost:5000)."
     }
   ],
   "ports": [
