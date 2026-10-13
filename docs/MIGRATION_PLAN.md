@@ -291,7 +291,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | DNS cutover (nikart.co.uk → Vercel) | Small | Done 2026-10-09 |
 | Cancel the Heroku subscription | Small | Done 2026-10-10. Pay the last invoice. That removes the payment method. The account stays open |
 | Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
-| Legacy cleanup commit | Small | Still open. Remove legacy files, promote `modern/` to root |
+| Move legacy to `legacy-2014/` and share `content/` | Small | Still open. [`LEGACY_MOVE.md`](LEGACY_MOVE.md) (2026-10-12). The `modern/` rename is still open. Further skins are sibling folders |
 
 **Step effort: ~1 session**
 

@@ -31,7 +31,7 @@ Three approaches were evaluated for organising legacy and modern code during mig
 - Both apps deployable simultaneously on separate platforms/URLs during the transition
 - Full git history preserved without `--follow`
 - Shared assets (`public/content/img/`, `data.json`) directly accessible during migration
-- When legacy is decommissioned: single cleanup commit removes legacy files and promotes `modern/` to root
+- When legacy is decommissioned: move it to `legacy-2014/` and rename `modern/` to a sibling version folder. Shared JSON and images stay at `content/`. The 2026-10-12 plan is [`LEGACY_MOVE.md`](LEGACY_MOVE.md). The new folder name is still open. The Heroku app does not need to keep deploying this repo.
 
 ---
 
