@@ -13,9 +13,9 @@ The modern app does **not** load the lizard SWF from the static host. Ruffle run
 ```mermaid
 flowchart TB
   visitor["Browser → GET /fl"]
-  nextjs["Next.js FlPage<br/>modern/src/app/fl/page.tsx"]
+  nextjs["Next.js FlPage<br/>www-root/src/app/fl/page.tsx"]
   vars["buildFlashVars(lang)<br/>dotracking, embedlang, staticfilesstr"]
-  player["FlashPlayer client<br/>modern/src/components/flash-player/"]
+  player["FlashPlayer client<br/>www-root/src/components/flash-player/"]
   ruffleJs["GET /ruffle/ruffle.js + WASM<br/>copied by postinstall"]
   bridge["installFlashBridge()<br/>window.nikart.popWin / doTracker"]
   wasm["Ruffle AVM1 player<br/>playerVersion 8, allowNetworking all"]
@@ -95,20 +95,20 @@ flowchart LR
 
 | Piece | Where | Role |
 |-------|--------|------|
-| Route | `modern/src/app/fl/page.tsx` | 750×500 black stage, outside locale middleware |
+| Route | `www-root/src/app/fl/page.tsx` | 750×500 black stage, outside locale middleware |
 | Lang | `?lang=` or `NEXT_LOCALE`; `/fl/en` and `/fl/es` set cookie and redirect | Same flashVar `embedlang` as legacy |
-| Player | `modern/src/components/flash-player/flash-player.tsx` | Loads self-hosted Ruffle, `base` = directory of the SWF |
-| flashVars | `modern/src/lib/flash-config.ts` | `dotracking=yes`, `embedlang`, `staticfilesstr` |
-| JS bridge | `modern/src/lib/flash-bridge.ts` | `javascript:nikart.popWin` / `doTracker` from the SWF |
-| Runtime | `modern/public/ruffle/` (gitignored) | Copied from `@ruffle-rs/ruffle` in `postinstall` |
-| SWF | `modern/public/fl/main.ruffle.swf` | AS2 (AVM1), zlib `CWS`, Flash 8; Animate export stays at `main.swf` |
-| Data | pretty repo-root `content/json/data.json`, minified into gitignored `modern/public/content/json/data.json` | SWF path `../content/json/data.json` via Ruffle `base` |
+| Player | `www-root/src/components/flash-player/flash-player.tsx` | Loads self-hosted Ruffle, `base` = directory of the SWF |
+| flashVars | `www-root/src/lib/flash-config.ts` | `dotracking=yes`, `embedlang`, `staticfilesstr` |
+| JS bridge | `www-root/src/lib/flash-bridge.ts` | `javascript:nikart.popWin` / `doTracker` from the SWF |
+| Runtime | `www-root/public/ruffle/` (gitignored) | Copied from `@ruffle-rs/ruffle` in `postinstall` |
+| SWF | `www-root/public/fl/main.ruffle.swf` | AS2 (AVM1), zlib `CWS`, Flash 8; Animate export stays at `main.swf` |
+| Data | pretty repo-root `content/json/data.json`, minified into gitignored `www-root/public/content/json/data.json` | SWF path `../content/json/data.json` via Ruffle `base` |
 | Images | `/content/img` rewrite | Same tree the HTML5 site uses |
 | Static host | `https://static.nikart.co.uk` | CloudFront TLS + CORS (`Access-Control-Allow-Origin: *`); HTTP still redirects to HTTPS |
 
 Inside `main.swf` (decompressed strings): `pathContent = ../content`, `pathStatic = _root.staticfilesstr \|\| ../static`, `pathJSON = /json/data.json`, `pathImg`, `pathVideo = /video_flv`, plus `javascript:nikart.popWin(` and `javascript:nikart.doTracker(`.
 
-HTML5 already proxies some of that host through Next (`/video_h264`, `/video_webm`, `/games` in `modern/next.config.ts`). The Flash player does **not** use those rewrites: it is given the raw `staticfilesstr` URL.
+HTML5 already proxies some of that host through Next (`/video_h264`, `/video_webm`, `/games` in `www-root/next.config.ts`). The Flash player does **not** use those rewrites: it is given the raw `staticfilesstr` URL.
 
 ### What actually previews today
 
@@ -309,13 +309,13 @@ sequenceDiagram
 - `nikart.popWin` on `/fl` now opens that page instead of the raw S3 HTML for `games/`, `banners/`, `websites/`, and `3d/` (Shockwave `.dcr` is skipped).
 - HTML5 article launch buttons for those URLs go to the same popup page.
 - Default / Claro shortcut: `/fl/away?src=websites/claro/index.html&w=960&h=700`.
-- Runtime is copied from `@awayfl/awayfl-player` to `public/awayfl/` in `postinstall` (gitignored except `loadvars-ondata-patch.js`). AVM2 ABC catalogs that npm omits are vendored in `modern/vendor/awayfl-builtins/`.
+- Runtime is copied from `@awayfl/awayfl-player` to `public/awayfl/` in `postinstall` (gitignored except `loadvars-ondata-patch.js`). AVM2 ABC catalogs that npm omits are vendored in `www-root/vendor/awayfl-builtins/`.
 - Wrapper HTML with no embed (Away3D heart splash) still tries sibling `Main.swf`. `AC_FL_RunContent` (Papervision Spaceship) is parsed the same way as SWFObject.
 - First-run notes: Claro’s SWF executes (client XML traces) but the stage stays white because AwayFL `TextField` / `LoaderInfo.parameters` are stubbed. Whiplash’s menu renders. Heart splash has no embed; the player then loads `Main.swf` beside it.
 
 ### Option F — side-by-side compare kit (temporary)
 
-`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Portfolio movies load from `https://static.nikart.co.uk` (CloudFront HTTPS + CORS). The legacy lizard Flash site is `/swf-compare/lizard-site/`: both players load `/fl/main.ruffle.swf` (same Ruffle tongue-chord patch as `/fl`) with Flash 8 flashVars, Ruffle `base=/fl/`, and AwayFL loader URL `/fl/main.ruffle.swf`. Do not set `<base href="/fl/">` on that page — Safari then resolves Ruffle WASM/workers under `/fl/`, destroys the instance, and aborts the movie (`Could not allocate array buffer for response`). Players share one SWF fetch; AwayFL starts after Ruffle. AwayFL LoadVars still logs `../content/json/data.json`; compare `players.js` remaps that onto `/content/` (against the compare HTML page it never sets `_root.dataLoaded`). Next also rewrites `/swf-compare/content/` to `/content/`. A separate host file `public/awayfl/loadvars-ondata-patch.js` makes LoadVars `onData` writable so the movie’s JSON parse can run (AwayFL prototype slot is READ_ONLY; see [`docs/AWAYFL_LOADVARS.md`](AWAYFL_LOADVARS.md)). Child SWF/XML/JPEG URLs resolve from the origin movie directory. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Index cards (within each group) and piece topnav prev/next follow `modern/src/lib/swf-compare-catalog.json` order. Hide/Show next to each player writes `{ ruffle, awayfl }` into `localStorage` `swf-compare-pages` keyed by piece id, falling back to `visibility-defaults.json`; the index cards show those two visibilities as clickable toggles. Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
+`/swf-compare/` is one HTML page per SWF with generic Ruffle and AwayFL players (Ruffle `autoplay: "on"`, unmute overlay hidden). Portfolio movies load from `https://static.nikart.co.uk` (CloudFront HTTPS + CORS). The legacy lizard Flash site is `/swf-compare/lizard-site/`: both players load `/fl/main.ruffle.swf` (same Ruffle tongue-chord patch as `/fl`) with Flash 8 flashVars, Ruffle `base=/fl/`, and AwayFL loader URL `/fl/main.ruffle.swf`. Do not set `<base href="/fl/">` on that page — Safari then resolves Ruffle WASM/workers under `/fl/`, destroys the instance, and aborts the movie (`Could not allocate array buffer for response`). Players share one SWF fetch; AwayFL starts after Ruffle. AwayFL LoadVars still logs `../content/json/data.json`; compare `players.js` remaps that onto `/content/` (against the compare HTML page it never sets `_root.dataLoaded`). Next also rewrites `/swf-compare/content/` to `/content/`. A separate host file `public/awayfl/loadvars-ondata-patch.js` makes LoadVars `onData` writable so the movie’s JSON parse can run (AwayFL prototype slot is READ_ONLY; see [`docs/AWAYFL_LOADVARS.md`](AWAYFL_LOADVARS.md)). Child SWF/XML/JPEG URLs resolve from the origin movie directory. Compare `.stage` boxes use the SWF aspect-ratio; AwayFL `SHOW_ALL` gets that pane’s CSS pixel size (AwayFL takes the canvas `position:absolute`, which would otherwise collapse a height-less pane). Index cards (within each group) and piece topnav prev/next follow `www-root/src/lib/swf-compare-catalog.json` order. Hide/Show next to each player writes `{ ruffle, awayfl }` into `localStorage` `swf-compare-pages` keyed by piece id, falling back to `visibility-defaults.json`; the index cards show those two visibilities as clickable toggles. Portfolio launch buttons and `nikart.popWin` open that page in a full tab instead of the old popup.
 
 
 ---
@@ -334,14 +334,14 @@ The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S
 
 ## Related files
 
-- `modern/src/app/fl/page.tsx` — archival route
-- `modern/src/components/flash-player/flash-player.tsx` — Ruffle embed
-- `modern/src/lib/flash-config.ts` — flashVars / static base
-- `modern/src/lib/flash-bridge.ts` — `window.nikart`
-- `modern/next.config.ts` — existing S3 rewrites for HTML5
+- `www-root/src/app/fl/page.tsx` — archival route
+- `www-root/src/components/flash-player/flash-player.tsx` — Ruffle embed
+- `www-root/src/lib/flash-config.ts` — flashVars / static base
+- `www-root/src/lib/flash-bridge.ts` — `window.nikart`
+- `www-root/next.config.ts` — existing S3 rewrites for HTML5
 - `app/views/fl.html` — legacy swfobject embed this route mirrors
-- `modern/src/app/fl/away/` — AwayFL popup page
-- `modern/src/components/awayfl-player/` — UMD loader + `playSWF`
-- `modern/src/lib/awayfl-static.ts` — `/static` proxy + HTML→SWF parser
-- `modern/scripts/copy-awayfl.mjs` — copies UMD + vendored ABC builtins
+- `www-root/src/app/fl/away/` — AwayFL popup page
+- `www-root/src/components/awayfl-player/` — UMD loader + `playSWF`
+- `www-root/src/lib/awayfl-static.ts` — `/static` proxy + HTML→SWF parser
+- `www-root/scripts/copy-awayfl.mjs` — copies UMD + vendored ABC builtins
 - [AwayFL player](https://github.com/awayfl/awayfl-player) / [embed](https://github.com/awayfl/awayfl-embed) — Option F runtime

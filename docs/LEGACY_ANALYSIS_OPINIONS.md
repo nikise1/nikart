@@ -45,7 +45,7 @@ Use the existing HTML5 app as a behavioral spec:
 3. Whether `/fl` should be removed entirely or kept as an archival route/page.
 4. Whether Spanish/English language handling should remain cookie-based or become URL-based.
 5. Whether content editing is needed, or whether versioned static JSON/content files are enough.
-6. **Repo structure during migration** — Decided: Option C (additive). Legacy stays at repo root (Heroku untouched), modern app added in `modern/` folder (deployed separately via Vercel/Netlify). Both apps live simultaneously. Cleanup commit after legacy decommission.
+6. **Repo structure during migration** — Decided: Option C (additive). Legacy stays at repo root (Heroku untouched), modern app added in `modern/` folder (deployed separately via Vercel/Netlify). Both apps live simultaneously. Cleanup commit after legacy decommission. Carried further in [`LEGACY_MOVE.md`](LEGACY_MOVE.md): Express is `legacy-2014/`, Next.js is `www-root/` (2026-10-14).
 
 ---
 

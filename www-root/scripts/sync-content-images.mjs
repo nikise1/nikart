@@ -2,11 +2,11 @@ import { cpSync, existsSync, lstatSync, mkdirSync, renameSync, rmSync, unlinkSyn
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const modernRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const source = join(modernRoot, "..", "content", "img");
-const dest = join(modernRoot, "public", "_generated", "img");
-const staging = join(modernRoot, "public", "_generated", ".img-sync-staging");
-const leftoverPublicImg = join(modernRoot, "public", "content", "img");
+const appRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const source = join(appRoot, "..", "content", "img");
+const dest = join(appRoot, "public", "_generated", "img");
+const staging = join(appRoot, "public", "_generated", ".img-sync-staging");
+const leftoverPublicImg = join(appRoot, "public", "content", "img");
 
 function kindAt(path) {
   try {
@@ -43,9 +43,9 @@ if (!existsSync(source)) {
   process.exit(0);
 }
 
-mkdirSync(join(modernRoot, "public", "_generated"), { recursive: true });
+mkdirSync(join(appRoot, "public", "_generated"), { recursive: true });
 rmSync(staging, { recursive: true, force: true });
 cpSync(source, staging, { recursive: true, dereference: true });
 removePath(dest);
 renameSync(staging, dest);
-console.log("Synced content images to modern/public/_generated/img");
+console.log("Synced content images to www-root/public/_generated/img");

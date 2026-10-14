@@ -126,7 +126,7 @@ Use GSAP 3 for complex sequenced/choreographed animations (nav, thumbnails, tran
 
 2. **Preview deployments** — Every PR gets a preview URL. Critical for visual review of animation changes.
 
-3. **Modern app in `modern/` folder** — Per the Option C decision, the modern app lives in `modern/`. Vercel natively supports "root directory" settings to deploy from a subfolder.
+3. **Next.js app in its own folder** — Per the Option C decision, the Next.js app started in `modern/`. It is `www-root/` (2026-10-14). Vercel deploys that subfolder through the project Root Directory setting.
 
 4. **Exit strategy** — Next.js 16.2 Adapter API means the app can be moved to Netlify, Cloudflare, or self-hosted if needed. No permanent lock-in.
 

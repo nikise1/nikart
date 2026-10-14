@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-24
 **Stack:** Next.js 16 + GSAP 3 + Zustand + Tailwind CSS 4 + Vitest/Playwright + Vercel
-**Strategy:** Sibling versions. Express app in `legacy-2014/`, Next.js app in `modern/` until that folder is renamed, shared JSON and images at `content/`
+**Strategy:** Sibling versions. Express app in `legacy-2014/`, Next.js app in `www-root/`, shared JSON and images at `content/`
 
 ---
 
@@ -12,7 +12,7 @@
 
 | Task | Effort | Notes |
 |------|--------|-------|
-| Init Next.js 16 in `modern/` | Small | `create-next-app` with App Router, TypeScript, Tailwind, ESLint |
+| Init Next.js 16 in `www-root/` | Small | `create-next-app` with App Router, TypeScript, Tailwind, ESLint |
 | Configure TypeScript strict mode | Small | Strict config, path aliases |
 | Set up Vitest + React Testing Library | Small | Unit/integration test harness |
 | Set up Playwright | Small | E2E test harness with visual comparison |
@@ -20,13 +20,13 @@
 | Install GSAP 3 + React integration | Small | `gsap.context()` pattern, shared timeline utils |
 | Set up Zustand store | Small | Language pref, UI state (nav open/close) |
 | Create AGENTS.md + code conventions | Small | Agent maintainability rules |
-| Vercel project config (root = `modern/`) | Small | Preview deploys from PRs |
+| Vercel project config (root = `www-root/`) | Small | Preview deploys from PRs |
 
 **Step effort: ~1 session**
 
-**Adjustment (2026-10-07):** `modern/` uses TypeScript 6 (`typescript@^6`, resolved 6.0.3). Existing explicit compiler options stay (`strict`, `module: esnext`, `moduleResolution: bundler`, `target: ES2017`). `"types": ["node"]` is set because TypeScript 6 defaults `types` to `[]` and no longer loads every `@types` package. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
+**Adjustment (2026-10-07):** `www-root/` uses TypeScript 6 (`typescript@^6`, resolved 6.0.3). Existing explicit compiler options stay (`strict`, `module: esnext`, `moduleResolution: bundler`, `target: ES2017`). `"types": ["node"]` is set because TypeScript 6 defaults `types` to `[]` and no longer loads every `@types` package. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
 
-**Adjustment (2026-10-08):** `modern/` uses TypeScript 7 (`typescript@^7`, resolved 7.0.2). Compiler options are unchanged from the TypeScript 6 config. Next.js 16.3.8 typechecks the production build with the project-local `tsc` CLI. Oxlint type-aware rules stay on `oxlint-tsgolint`. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
+**Adjustment (2026-10-08):** `www-root/` uses TypeScript 7 (`typescript@^7`, resolved 7.0.2). Compiler options are unchanged from the TypeScript 6 config. Next.js 16.3.8 typechecks the production build with the project-local `tsc` CLI. Oxlint type-aware rules stay on `oxlint-tsgolint`. `@vercel/node` still depends on TypeScript 5.9.3 for its own tooling.
 
 ---
 
@@ -168,13 +168,13 @@ Legacy `nav-container` / `nav-view.js` behavior:
 
 Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outside locale routing):
 
-- `modern/src/app/fl/` — minimal black layout matching legacy `fl.html`
-- `modern/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
-- `modern/public/fl/main.swf` — untouched Animate export, copied from `legacy-2014/public/fl/main.swf`
-- `modern/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
-- `modern/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is pretty-printed repo-root `content/json/data.json`; `sync:json` minifies it here on install and on the Vercel build (gitignored). Next imports the pretty repo-root file (2026-10-13).
-- `modern/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
-- `modern/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
+- `www-root/src/app/fl/` — minimal black layout matching legacy `fl.html`
+- `www-root/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
+- `www-root/public/fl/main.swf` — untouched Animate export, copied from `legacy-2014/public/fl/main.swf`
+- `www-root/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
+- `www-root/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is pretty-printed repo-root `content/json/data.json`; `sync:json` minifies it here on install and on the Vercel build (gitignored). Next imports the pretty repo-root file (2026-10-13).
+- `www-root/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
+- `www-root/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
 - Mobile taps (2026-10-10): a finger contact is `pointerdown` with no prior move. Ruffle only sends AVM1 `rollOver` while the mouse button is up, so the lizard treated the tap as a drag and ignored it. `installFlashTouchHover` dispatches a hover at the touch point before that press reaches the canvas.
 - Self-hosted Ruffle runtime in `public/ruffle/` (copied via `postinstall`/`prebuild` from `@ruffle-rs/ruffle`; gitignored — Vercel `buildCommand` copies it)
@@ -193,7 +193,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
   lizard.tongue.curveTo(midx,midy,0,0); // returns to origin → closed path / chord
   ```
 
-  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `modern/public/fl/main.ruffle.swf` and edit only that copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). The Animate export stays at `public/fl/main.swf` and `modern/public/fl/main.swf`. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace both `main.swf` files, copy the new export onto `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
+  Ruffle strokes that closed path, so the return to `(0,0)` shows as a chord and kills the tongue illusion. Fix: copy `main.swf` to `www-root/public/fl/main.ruffle.swf` and edit only that copy — `moveTo(0,0)` before each `curveTo`, inner highlight as a second **open** curve to the tip (do not `curveTo` back to the origin). The Animate export stays at `public/fl/main.swf` and `www-root/public/fl/main.swf`. `/fl` points at `main.ruffle.swf` (JPEXS, no Animate republish). If you export again from Adobe Animate, replace both `main.swf` files, copy the new export onto `main.ruffle.swf`, and re-apply that frame-22 change on the copy.
 - Architecture diagrams (current `/fl` preview + options for S3 Flash, including AwayFL): [`docs/RUFFLE_PREVIEW.md`](RUFFLE_PREVIEW.md) (2026-09-15). `docs/diagrams/*.svg` restored to well-formed UTF-8 (illegal control chars / bare `&` broke XML parse) and HTTPS+CORS labels (2026-10-05).
 - AwayFL popup mock: `/fl/away` + `/static` rewrite; `popWin` and HTML5 launches for S3 Flash wrappers open AwayFL instead of a dead swfobject page (Claro is the default).
 - Temporary Ruffle vs AwayFL compare kit: one HTML page per SWF with generic players (Ruffle autoplay on, unmute overlay hidden); menu/popWin open `/swf-compare/` instead of the popup. Portfolio movies load from `https://static.nikart.co.uk` (CloudFront HTTPS + CORS, 2026-10-05) so this repo does not copy bucket binaries. Compare HTML lives at `/swf-compare/{id}/` (`pieces/` removed, 2026-10-05). Generated `public/ruffle/` and `public/awayfl/` copies are gitignored again (2026-10-05); keep `loadvars-ondata-patch.js` and `vendor/awayfl-builtins/`. Dropped leftover `/swf-compare/pieces/` aliases (2026-10-05). The `/static` origin proxy remains as a same-origin fallback. The legacy lizard Flash site is `/swf-compare/lizard-site/`: both players load `/fl/main.ruffle.swf` (750×500, `playerVersion: 8`, same flashVars and tongue-chord patch as `/fl`) with Ruffle `base=/fl/` and AwayFL loader URL `/fl/main.ruffle.swf` — no document `<base href>` (Safari was resolving Ruffle WASM under `/fl/` and aborting the movie). Players share one SWF fetch; AwayFL starts after Ruffle. AwayFL LoadVars `../content/json/data.json` is rewritten to `/content/` (it otherwise resolves against the compare HTML page and `_root.dataLoaded` stays false). Next also rewrites `/swf-compare/content/` to `/content/`. Host-side LoadVars `onData` patch (`public/awayfl/loadvars-ondata-patch.js`) makes the instance override writable so `classes.JSON.parse` can run; upstream notes in [`docs/AWAYFL_LOADVARS.md`](AWAYFL_LOADVARS.md). The compare index topnav and intro note link to that page. Index cards (within each group) and piece prev/next follow `swf-compare-catalog.json` order. Each piece id is a key in `localStorage` `swf-compare-pages` with `{ ruffle, awayfl }` booleans (committed defaults in `public/swf-compare/visibility-defaults.json`); Hide/Show buttons next to each player toggle those, and index cards show the two flags as clickable toggles. Compare stages use each SWF’s header stage size in CSS pixels (2026-10-06), not the `data.json` popup window or a column stretched to `100%`. Avis is 500×500 (the window is 600×600). AwayFL `w`/`h` is that stage size (`showAll`). Compare HTML, `visibility-defaults.json`, and a full-window page per movie are compiled from `public/swf-compare/pages.json` and gitignored (`compile-swf-compare.mjs` on postinstall, prebuild, and dev, 2026-10-06). `/swf-compare/{id}/fill.html` stretches one player into a box that fills the viewport while staying clipped to the SWF stage aspect ratio (`exactFit`, 2026-10-06); `/fl` uses the same fill+mask layout for the 750×500 lizard stage and overrides the root portfolio `globals.css` background with `!important` black (same as `/fl/away`) so letterbox regions stay black; the old `fl-fallback` HTML5/compare links under the stage are removed (2026-10-06). `/fl` Ruffle matches compare fill pages (`autoplay: "on"`, `unmuteOverlay: "hidden"`) (2026-10-06). Index/piece hrefs are root-absolute (`/swf-compare/…`) and `/swf-compare` redirects to `/swf-compare/index.html` so relative cards do not break without a trailing slash (2026-10-06). Portfolio launch buttons and `popWin` open that fill page (2026-10-06). The Banners menu item still opens the compare index, because that entry is several movies. AwayFL’s stage size setter skips an axis that already matches the canvas client box, which left the default 300×150 bitmap stretched to the CSS size (2026-10-06). Compare `players.js` and `/fl/away` nudge the size by one pixel and set it again so both bitmap axes update.
@@ -217,16 +217,16 @@ Legacy `articleClose` / `videoClose` fade the whole panel out in `timeArticleOut
 Maintenance note (2026-07-15):
 - Modern app Stage 1 safe dependency updates applied (`next`, `eslint-config-next`, `next-intl`, `tailwindcss`, `@tailwindcss/postcss`, `vitest`, `eslint`) and validated with lint + unit tests.
 - Modern app Stage 2 patch updates applied (`react`, `react-dom`) and validated with lint + unit tests.
-- Added `modern/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
+- Added `www-root/.nvmrc` (`22`) to align local runtime selection with repo Node engine target.
 
 Maintenance note (2026-10-08):
-- `modern/` TypeScript moved from `^6` (6.0.3) to `^7` (7.0.2). `tsc --noEmit`, `next build`, Oxlint, and 133 unit tests pass. `tsconfig.json` and `next.config.ts` are unchanged.
+- `www-root/` TypeScript moved from `^6` (6.0.3) to `^7` (7.0.2). `tsc --noEmit`, `next build`, Oxlint, and 133 unit tests pass. `tsconfig.json` and `next.config.ts` are unchanged.
 
 Maintenance note (2026-10-07):
-- `modern/` lint and format moved from ESLint to Oxlint and Oxfmt. `npm run lint` runs `oxlint --type-aware`. `npm run format` and `format:check` run Oxfmt. Configs live in `modern/` and do not apply to the legacy app. jsx-a11y stays at the six `eslint-config-next` warnings; the rest of that plugin stays off.
-- Modern runtime moved from Node `22` to Node `24` (Active LTS). `modern/.nvmrc` and `modern/package.json` `engines` are `24` / `24.x`. Vercel builds and functions deploy `24.x` from that field, which overrides the project setting. Node `26` is still Current until 2026-10-28 and is not a Vercel builds/functions runtime.
+- `www-root/` lint and format moved from ESLint to Oxlint and Oxfmt. `npm run lint` runs `oxlint --type-aware`. `npm run format` and `format:check` run Oxfmt. Configs live in `www-root/` and do not apply to the legacy app. jsx-a11y stays at the six `eslint-config-next` warnings; the rest of that plugin stays off.
+- Modern runtime moved from Node `22` to Node `24` (Active LTS). `www-root/.nvmrc` and `www-root/package.json` `engines` are `24` / `24.x`. Vercel builds and functions deploy `24.x` from that field, which overrides the project setting. Node `26` is still Current until 2026-10-28 and is not a Vercel builds/functions runtime.
 - `@types/node` is `^24` so the types match that runtime. The legacy root app stays on Node `22.x`.
-- Standardized package manager to npm for modern app: added `packageManager: npm@10` in root/modern `package.json`.
+- Standardized package manager to npm for the Next.js app: added `packageManager: npm@10` in the root and `www-root/package.json`.
 - Simplified `docs/PROGRESS.md` "Upcoming Steps" table to remove redundant separate "Migration Phase" column.
 - Removed remaining phase references from the "Step" labels in `docs/PROGRESS.md` to keep the table concise.
 
@@ -244,22 +244,22 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 
 **One-time Vercel project setup:** ✅ (2026-09-07)
 
-Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart). Root Directory `modern/`. Latest successful deploy: `e70e2b1`.
+Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart). Root Directory `www-root/` (was `modern/` until 2026-10-14). Latest successful deploy: `e70e2b1`.
 
 1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
-2. **Root Directory:** set to `modern/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
+2. **Root Directory:** set to `www-root/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
 3. Keep **Include source files outside of the Root Directory in the Build Step** enabled (default) so the build can copy repo-root `content/img`
-4. Build settings come from `modern/vercel.json` (`framework: nextjs`). Do not set Output Directory to `.next` — that breaks next-intl middleware and SSR
-5. Framework preset: Next.js (auto-detected); Node `24` from `modern/.nvmrc` / `engines` (updated 2026-10-07; was `22`)
+4. Build settings come from `www-root/vercel.json` (`framework: nextjs`). Do not set Output Directory to `.next` — that breaks next-intl middleware and SSR
+5. Framework preset: Next.js (auto-detected); Node `24` from `www-root/.nvmrc` / `engines` (updated 2026-10-07; was `22`)
 6. Environment variables: none required for WIP (static content, no secrets)
 7. Click Deploy — first deploy takes ~2 min
 
 **Deploy blockers fixed (2026-09-07):**
 
-- Removed `outputDirectory: ".next"` from `modern/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
-- Do **not** symlink `modern/public/content/img` → the shared image tree — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
-- Single git copy of images is repo-root `content/img` (moved from `public/content/img` on 2026-10-13). `sync:images` copies into `modern/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`. `legacy-2014` serves the same tree at `/content`
-- Single git copy of portfolio JSON is repo-root `content/json/data.json`, pretty printed (legacy Backbone still fetches it). `sync:json` minifies it to `modern/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-13)
+- Removed `outputDirectory: ".next"` from `www-root/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
+- Do **not** symlink `www-root/public/content/img` → the shared image tree — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
+- Single git copy of images is repo-root `content/img` (moved from `public/content/img` on 2026-10-13). `sync:images` copies into `www-root/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`. `legacy-2014` serves the same tree at `/content`
+- Single git copy of portfolio JSON is repo-root `content/json/data.json`, pretty printed (legacy Backbone still fetches it). `sync:json` minifies it to `www-root/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-13)
 - Portfolio JSON is edited in [JSON Editor Online](https://jsoneditoronline.org), not in the app. `npm run json:edit` prints a link that loads `content/json/data.json` in tree mode (`#left=json.` plus the compact document). The in-app `/dev/content` editor and the `jsoneditor` dependency are removed (2026-10-06).
 
 **After initial deploy:**
@@ -268,7 +268,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 - Every PR/branch gets its own preview URL — use these for visual review of animation changes
 - `static.nikart.co.uk` rewrites (video, games) are configured in `next.config.ts`. On 2026-10-09, `https://nikart-beta.vercel.app/video_h264/spark.mp4` and `/games/weeds/weeds.swf` both returned 200
 - Deployment Protection stays on for branch previews (Vercel login). The public site is `https://nikart-beta.vercel.app`
-- Vercel Web Analytics is enabled on the project (2026-10-09). `modern/src/app/layout.tsx` mounts `<Analytics />` from `@vercel/analytics/next`, so client navigations under `/en`, `/es`, and `/fl` are page views. Static `/swf-compare` HTML is outside that layout. Hobby includes 50,000 events a month and one month of history; custom events are not on that plan.
+- Vercel Web Analytics is enabled on the project (2026-10-09). `www-root/src/app/layout.tsx` mounts `<Analytics />` from `@vercel/analytics/next`, so client navigations under `/en`, `/es`, and `/fl` are page views. Static `/swf-compare` HTML is outside that layout. Hobby includes 50,000 events a month and one month of history; custom events are not on that plan.
 
 **WIP checklist:**
 
@@ -291,13 +291,16 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | DNS cutover (nikart.co.uk → Vercel) | Small | Done 2026-10-09 |
 | Cancel the Heroku subscription | Small | Done 2026-10-10. Pay the last invoice. That removes the payment method. The account stays open |
 | Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
-| Move legacy to `legacy-2014/` and share `content/` | Small | Done 2026-10-13. [`LEGACY_MOVE.md`](LEGACY_MOVE.md). The `modern/` rename is still open. Further skins are sibling folders |
+| Move legacy to `legacy-2014/` and share `content/` | Small | Done 2026-10-13. [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Further skins are sibling folders |
+| Rename the Next.js app to `www-root/` | Small | Done 2026-10-14. Was `modern/`. Vercel Root Directory changes to `www-root/` in the project settings. Include files outside that root |
 
 **Step effort: ~1 session**
 
 **Heroku billing ends with the subscription (2026-10-10).** Closing the account and deleting the app are not required. Pay the final invoice, let Heroku remove the payment method, and leave `nikart.herokuapp.com` in place until that paid month runs out. `static.nikart.co.uk` is CloudFront and stays up.
 
 **Adjustment (2026-10-13):** The Express app, its `package.json` (Node `22.x`), Procfile, and `public/html5`, `public/fl`, and `public/accessible` are in `legacy-2014/`. Pretty JSON and the 308 images are repo-root `content/`. Root `package.json` only launches `modern`, `legacy-2014`, and `json:edit`. `legacy-2014/server.js` mounts `../content` at `/content`. `modern/` is not renamed; Vercel Root Directory stays `modern/`, with files outside that root still included so sync can read `content/`. `modern/next.config.ts` sets `turbopack.root` to the repo root. The Express lockfile used to sit there, and without it Turbopack treats `modern/` as the module root and cannot import `content/json/data.json`.
+
+**Adjustment (2026-10-14):** `modern/` is renamed to `www-root/`. Root `package.json` launches `www-root`, `legacy-2014`, and `json:edit`. Dependabot’s directory is `/www-root`. `.cursor/environment.json` installs and starts that folder. `www-root/next.config.ts` still sets `turbopack.root` to the repo root so the app can import `content/json/data.json`. Vercel Root Directory changes from `modern/` to `www-root/`. “Include source files outside of the Root Directory” stays on.
 
 ---
 
@@ -322,9 +325,9 @@ A "session" = one focused working block with AI agent collaboration.
 ## Cloud Agent Dev Environment
 
 - `.cursor/environment.json` (2026-09-07): repo-managed Cloud Agent environment on the default image (Node 22 preinstalled).
-  - `install`: `npm install --prefix legacy-2014 && npm install --prefix modern` — installs both apps; modern `postinstall` copies the Ruffle runtime and syncs `content/img` → `modern/public/_generated/img` (updated 2026-10-13).
-  - `terminals`: `modern` (`npm run modern`, Next.js dev on :3000) and `legacy` (`npm run legacy-2014`, Express/Swig on :5000).
-  - `ports`: 3000 (modern) and 5000 (legacy) exposed.
+  - `install`: `npm install --prefix legacy-2014 && npm install --prefix www-root` — installs both apps; the Next.js `postinstall` copies the Ruffle runtime and syncs `content/img` → `www-root/public/_generated/img` (updated 2026-10-14).
+  - `terminals`: `www-root` (`npm run www-root`, Next.js dev on :3000) and `legacy` (`npm run legacy-2014`, Express/Swig on :5000).
+  - `ports`: 3000 (`www-root`) and 5000 (legacy) exposed.
   - Validated: lint clean, 59 unit tests passing, production build clean, both dev servers serve (`/en`, `/es`, and legacy `/html5/`).
 
 ---
@@ -350,8 +353,8 @@ A "session" = one focused working block with AI agent collaboration.
 
 ### Documentation Requirements
 
-1. **AGENTS.md at repo root** — Workspace agent rules; documents that `modern/` is the main app and the one-word run command `npm run modern`.
-2. **AGENTS.md at `modern/` root** — Describes project structure, commands, patterns, and constraints for AI agents.
+1. **AGENTS.md at repo root** — Workspace agent rules; documents that `www-root/` is the main app and the one-word run command `npm run www-root`.
+2. **AGENTS.md at `www-root/` root** — Describes project structure, commands, patterns, and constraints for AI agents.
 3. **README.md** — Human-readable setup and architecture overview.
 4. **Inline comments only for "why"** — Code should be self-documenting. Comments explain non-obvious decisions only.
 
@@ -361,7 +364,7 @@ A "session" = one focused working block with AI agent collaboration.
 2. **PR checks:** Vitest (unit/integration) + Playwright (E2E) + build
 3. **Preview deploys:** Every PR gets a Vercel preview URL for visual review
 4. **Main branch:** Auto-deploy to production on merge
-5. **Dependency updates (2026-10-06):** `.github/dependabot.yml` checks npm in `/modern` only, every Monday 09:00 UTC. Minor and patch updates are grouped into one pull request. Each major version gets its own pull request. The repo root and `public/html5/` are deprecated and scheduled for decommission, so Dependabot, the manual `@cursor` migration, and the monthly library radar all ignore them. Merge is still manual.
+5. **Dependency updates (2026-10-06):** `.github/dependabot.yml` checks npm in `/www-root` only (was `/modern` until 2026-10-14), every Monday 09:00 UTC. Minor and patch updates are grouped into one pull request. Each major version gets its own pull request. The repo root and `legacy-2014/public/html5/` are out of that scope. Merge is still manual.
 6. **Library radar (2026-10-09):** October scan recorded in `docs/radar/2026-10.md` — optional Vitest browser-mode + Playwright provider; Lingui 6 noted as next-intl alternative (no switch planned); `vercel` dev CLI has npm audit findings without a fix on current majors (monitor only).
 
 ---

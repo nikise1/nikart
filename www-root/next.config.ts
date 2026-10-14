@@ -9,7 +9,7 @@ const STATIC_HOST = "https://static.nikart.co.uk";
 
 // The Express lockfile used to sit at the repo root, so Turbopack treated that
 // directory as the module root and could import content/json/data.json. After
-// that lockfile moved into legacy-2014/, the root is modern/ unless we set it.
+// that lockfile moved into legacy-2014/, the root is www-root/ unless we set it.
 const repoRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const nextConfig: NextConfig = {

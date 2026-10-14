@@ -30,9 +30,9 @@ function minifyJson(json) {
   return out;
 }
 
-const modernRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const source = join(modernRoot, "..", "content", "json", "data.json");
-const destDir = join(modernRoot, "public", "content", "json");
+const appRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const source = join(appRoot, "..", "content", "json", "data.json");
+const destDir = join(appRoot, "public", "content", "json");
 const dest = join(destDir, "data.json");
 const leftoverPretty = join(destDir, "data-pretty.json");
 
@@ -48,4 +48,4 @@ writeFileSync(dest, minifyJson(readFileSync(source, "utf8")));
 if (existsSync(leftoverPretty)) {
   rmSync(leftoverPretty);
 }
-console.log("Synced content JSON to modern/public/content/json/data.json");
+console.log("Synced content JSON to www-root/public/content/json/data.json");
