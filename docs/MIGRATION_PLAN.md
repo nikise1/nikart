@@ -244,7 +244,7 @@ The modern app can be deployed to Vercel as a live preview at any point. This gi
 
 **One-time Vercel project setup:** ✅ (2026-09-07)
 
-Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart). Root Directory `www-root/` (was `modern/` until 2026-10-14). Latest successful deploy: `e70e2b1`.
+Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikart). Root Directory `www-root/` (was `modern/` until 2026-10-15). Latest successful deploy of the old root: `e70e2b1`.
 
 1. Go to [vercel.com/new](https://vercel.com/new) → Import Git Repository → select `nikart` repo
 2. **Root Directory:** set to `www-root/` (critical — do not leave as repo root or Vercel will pick the legacy Express app)
@@ -292,7 +292,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | Cancel the Heroku subscription | Small | Done 2026-10-10. Pay the last invoice. That removes the payment method. The account stays open |
 | Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
 | Move legacy to `legacy-2014/` and share `content/` | Small | Done 2026-10-13. [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Further skins are sibling folders |
-| Rename the Next.js app to `www-root/` | Small | Done 2026-10-14. Was `modern/`. Vercel Root Directory changes to `www-root/` in the project settings. Include files outside that root |
+| Rename the Next.js app to `www-root/` | Small | Done 2026-10-14. Was `modern/`. Vercel Root Directory is `www-root/` (set 2026-10-15). Include files outside that root |
 
 **Step effort: ~1 session**
 
@@ -301,6 +301,8 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 **Adjustment (2026-10-13):** The Express app, its `package.json` (Node `22.x`), Procfile, and `public/html5`, `public/fl`, and `public/accessible` are in `legacy-2014/`. Pretty JSON and the 308 images are repo-root `content/`. Root `package.json` only launches `modern`, `legacy-2014`, and `json:edit`. `legacy-2014/server.js` mounts `../content` at `/content`. `modern/` is not renamed; Vercel Root Directory stays `modern/`, with files outside that root still included so sync can read `content/`. `modern/next.config.ts` sets `turbopack.root` to the repo root. The Express lockfile used to sit there, and without it Turbopack treats `modern/` as the module root and cannot import `content/json/data.json`.
 
 **Adjustment (2026-10-14):** `modern/` is renamed to `www-root/`. Root `package.json` launches `www-root`, `legacy-2014`, and `json:edit`. Dependabot’s directory is `/www-root`. `.cursor/environment.json` installs and starts that folder. `www-root/next.config.ts` still sets `turbopack.root` to the repo root so the app can import `content/json/data.json`. Vercel Root Directory changes from `modern/` to `www-root/`. “Include source files outside of the Root Directory” stays on.
+
+**Adjustment (2026-10-15):** The Vercel project Root Directory is `www-root/`. Include files outside that root stays on, so install and build can still read repo-root `content/`. The preview of the rename failed on 2026-10-14 while the setting was still `modern/`.
 
 ---
 

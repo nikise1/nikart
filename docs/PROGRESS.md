@@ -149,7 +149,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] Cancel the Heroku subscription (2026-10-10). Pay the last invoice, which removes the payment method. The account stays open
 - [x] Leave `nikart.herokuapp.com` in place. It stops when the paid month ends. No manual app delete
 - [x] Move the Express app to `legacy-2014/` and keep JSON and images at `content/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)) (2026-10-13). `legacy-2014/server.js` serves `content/` at `/content`. Root `package.json` launches `modern`, `legacy-2014`, and `json:edit`
-- [x] Rename `modern/` to `www-root/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)) (2026-10-14). Root `package.json` launches `www-root`. Dependabot directory is `/www-root`. Vercel Root Directory changes to `www-root/` in the project settings; include files outside that root stays on
+- [x] Rename `modern/` to `www-root/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)) (2026-10-14). Root `package.json` launches `www-root`. Dependabot directory is `/www-root`. Vercel Root Directory is `www-root/` (set 2026-10-15); include files outside that root stays on
 
 ---
 
@@ -408,3 +408,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-12 | Legacy folder year is 2014 | The Express app moves to `legacy-2014/` |
 | 2026-10-13 | Carry out the legacy move, leave `modern/` named | Express sources are in `legacy-2014/`. Pretty JSON and images are repo-root `content/`. Next still imports and syncs that tree. The Next folder name is still open, so Vercel Root Directory stays `modern/` |
 | 2026-10-14 | Next.js folder is `www-root/` | Renamed from `modern/`. Root script is `npm run www-root`. Dependabot, gitignore, and the Cloud Agent install follow that folder. Vercel Root Directory changes to `www-root/`. Include files outside the root stays on so `content/` still syncs |
+| 2026-10-15 | Vercel Root Directory is `www-root/` | The project setting now matches the folder. Include files outside that root stays on. The 2026-10-14 preview failed while the setting was still `modern/` |

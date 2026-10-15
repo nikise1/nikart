@@ -1,7 +1,7 @@
 # Moving the legacy app
 
 **Date:** 2026-10-10
-**Status:** Done 2026-10-14. The Express app is in `legacy-2014/`. Shared JSON and images are in `content/`. The Next.js app is `www-root/` (renamed from `modern/`). Vercel Root Directory changes from `modern/` to `www-root/`. “Include source files outside of the Root Directory” stays on.
+**Status:** Done 2026-10-14. The Express app is in `legacy-2014/`. Shared JSON and images are in `content/`. The Next.js app is `www-root/` (renamed from `modern/`). Vercel Root Directory is `www-root/` (set 2026-10-15). “Include source files outside of the Root Directory” stays on.
 **Revisits:** [MIGRATION_OVERVIEW.md](MIGRATION_OVERVIEW.md) Option C (legacy at repo root, Next.js in a sibling folder)
 
 **Update (2026-10-12):** Keep the Express app in this repo, under `legacy-2014/`. Rename `modern/` when that name is chosen. Further versions and skins are sibling folders. Portfolio JSON and images stay one shared tree at `content/`, outside every version.
@@ -61,7 +61,7 @@ After this move the root `public/` directory is gone. `content/` is the neutral 
 
 Done 2026-10-14. The whole tree moved intact: app source, `package.json`, `vercel.json`, `AGENTS.md`, sync scripts, and the gitignored generated copies under `public/_generated/` and `public/content/json/`.
 
-Vercel’s Root Directory changes from `modern/` to `www-root/`. “Include source files outside of the Root Directory” stays on, because `content/` lives outside the app folder. Each future skin that Vercel deploys gets the same setting. Change that project setting when this rename is on `master`. Until then, a preview of a branch that has no `modern/` folder cannot build with Root Directory `modern/`.
+Vercel’s Root Directory is `www-root/` (set 2026-10-15). “Include source files outside of the Root Directory” stays on, because `content/` lives outside the app folder. Each future skin that Vercel deploys gets the same setting. The 2026-10-14 preview failed while that setting was still `modern/`.
 
 Paths that follow the folder name:
 
