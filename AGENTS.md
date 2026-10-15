@@ -2,8 +2,8 @@
 
 ## Main App
 
-- **`modern/` is the main app** (Next.js). The 2014 Express app is in `legacy-2014/` and is secondary.
-- **One-word run command** from repo root: `modern` → `npm run modern` (starts the Next.js dev server). `npm run legacy-2014` starts the Express site.
+- **`www-root/` is the main app** (Next.js). The 2014 Express app is in `legacy-2014/` and is secondary.
+- **One-word run command** from repo root: `www-root` → `npm run www-root` (starts the Next.js dev server). `npm run legacy-2014` starts the Express site.
 
 ## Storage
 
@@ -21,7 +21,7 @@ When the user says **edit json data**:
 
 1. From the repo root, run `npm run json:edit`.
 2. Reply with the printed URL. It opens [JSON Editor Online](https://jsoneditoronline.org) with `content/json/data.json` already loaded in tree mode. Do not paste the file body into the chat.
-3. When they bring edited JSON back, write it to `content/json/data.json` with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix modern`.
+3. When they bring edited JSON back, write it to `content/json/data.json` with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix www-root`.
 
 ## Documentation Updates
 

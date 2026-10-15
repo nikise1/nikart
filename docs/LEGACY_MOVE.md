@@ -1,12 +1,14 @@
 # Moving the legacy app
 
 **Date:** 2026-10-10
-**Status:** Carried out 2026-10-13, except the rename of `modern/`. The Express app is in `legacy-2014/`. Shared JSON and images are in `content/`. `modern/` stays until its name is chosen. Vercel Root Directory stays `modern/`.
-**Revisits:** [MIGRATION_OVERVIEW.md](MIGRATION_OVERVIEW.md) Option C (legacy at repo root, Next.js in `modern/`)
+**Status:** Done 2026-10-14. The Express app is in `legacy-2014/`. Shared JSON and images are in `content/`. The Next.js app is `www-root/` (renamed from `modern/`). Vercel Root Directory is `www-root/` (set 2026-10-15). “Include source files outside of the Root Directory” stays on.
+**Revisits:** [MIGRATION_OVERVIEW.md](MIGRATION_OVERVIEW.md) Option C (legacy at repo root, Next.js in a sibling folder)
 
 **Update (2026-10-12):** Keep the Express app in this repo, under `legacy-2014/`. Rename `modern/` when that name is chosen. Further versions and skins are sibling folders. Portfolio JSON and images stay one shared tree at `content/`, outside every version.
 
-**Update (2026-10-13):** That move is in the tree. `legacy-2014/server.js` serves repo-root `content/` at `/content`, so Backbone `../content` URLs still resolve. The root `package.json` is a launcher: `modern`, `legacy-2014`, and `json:edit`. The Next folder in the example below is still a placeholder; the app is `modern/`.
+**Update (2026-10-13):** That move is in the tree. `legacy-2014/server.js` serves repo-root `content/` at `/content`, so Backbone `../content` URLs still resolve. The root `package.json` is a launcher: `modern`, `legacy-2014`, and `json:edit`. The Next folder in the example below was still a placeholder; the app was `modern/`.
+
+**Update (2026-10-14):** The Next.js folder is `www-root/`. The root launcher scripts are `www-root`, `legacy-2014`, and `json:edit`. Dependabot, `.gitignore`, and `.cursor/environment.json` use `www-root/`. Imports of `content/json/data.json` stay `../../../../content/json/data.json` because the app folder is still one level below the repo root. Sync scripts still walk up one directory to `content/`.
 
 Heroku does not need to keep deploying this repo. The subscription was cancelled on 2026-10-10, and `nikart.herokuapp.com` stays until that paid month ends. DNS cutover to Vercel finished on 2026-10-09.
 
@@ -30,7 +32,7 @@ The Express site and the sources that belong to it:
 | Root `package.json` Express deps, engines `22.x`, and `package-lock.json` | `legacy-2014/package.json` and lockfile |
 | Root `README.md` | `legacy-2014/README.md` (it documents `npm start` and `/html5`) |
 
-`public/fl/main.swf` moves with that shell. The Next app already has its own `modern/public/fl/main.swf` and `main.ruffle.swf`.
+`public/fl/main.swf` moves with that shell. The Next app has its own `www-root/public/fl/main.swf` and `main.ruffle.swf`.
 
 ### Stays shared, at the repo root
 
@@ -49,30 +51,30 @@ After this move the root `public/` directory is gone. `content/` is the neutral 
 |------|------|
 | `docs/` | Migration history, radar, this plan |
 | `AGENTS.md` | Repo rules. The Next app keeps its own `AGENTS.md` inside its folder |
-| `.github/dependabot.yml` | Already scoped to `/modern`. The directory field changes when `modern/` is renamed. A new skin can add its own entry |
-| `.cursor/environment.json` | Install and terminals, updated to the new folder names |
-| `.gitignore`, `.gitattributes` | `modern/public/_generated/` and `public/html5/node_modules` get the new prefixes |
+| `.github/dependabot.yml` | Scoped to `/www-root` (was `/modern`). A new skin can add its own entry |
+| `.cursor/environment.json` | Install and terminals use `www-root` |
+| `.gitignore`, `.gitattributes` | `www-root/public/_generated/` and `legacy-2014/public/html5/node_modules`. `.gitattributes` has no folder prefixes |
 | `nikart.code-workspace` | Editor workspace |
 | Root `package.json` | Launcher only, after the Express manifest moves: `json:edit`, plus one script per version |
 
-### Moves by renaming `modern/`
+### Renamed `modern/` to `www-root/`
 
-The whole `modern/` tree stays intact and takes the new folder name: app source, `package.json`, `vercel.json`, `AGENTS.md`, sync scripts, and the gitignored generated copies under `public/_generated/` and `public/content/json/`.
+Done 2026-10-14. The whole tree moved intact: app source, `package.json`, `vercel.json`, `AGENTS.md`, sync scripts, and the gitignored generated copies under `public/_generated/` and `public/content/json/`.
 
-Vercel’s Root Directory changes from `modern/` to that name. “Include source files outside of the Root Directory” stays on, because `content/` lives outside the app folder. Each future skin that Vercel deploys gets the same setting.
+Vercel’s Root Directory is `www-root/` (set 2026-10-15). “Include source files outside of the Root Directory” stays on, because `content/` lives outside the app folder. Each future skin that Vercel deploys gets the same setting. The 2026-10-14 preview failed while that setting was still `modern/`.
 
-Scripts that retarget in the same change:
+Paths that follow the folder name:
 
-- `modern/src/lib/data/index.ts` and `schema.test.ts` (today: `../../../../public/content/json/data.json`)
-- `modern/scripts/sync-content-json.mjs` and `sync-content-images.mjs`
-- `modern/scripts/open-json-editor.mjs`
-- Root `AGENTS.md` path for `npm run json:edit`
+- `www-root/src/lib/data/index.ts` and `schema.test.ts` import `../../../../content/json/data.json`
+- `www-root/scripts/sync-content-json.mjs` and `sync-content-images.mjs`
+- `www-root/scripts/open-json-editor.mjs`
+- Root `AGENTS.md` path for `npm run json:edit` and `npm run sync:json --prefix www-root`
 
 ---
 
 ## Example tree
 
-The Next folder name below is a placeholder. The legacy folder is `legacy-2014/`.
+The Next.js folder is `www-root/`. The legacy folder is `legacy-2014/`.
 
 ```
 content/                              # shared portfolio data
@@ -97,7 +99,7 @@ legacy-2014/                          # Express, Backbone, Flash shell
     html5/                            # Backbone client
     fl/                               # swfobject shell + main.swf
     accessible/
-site/                                 # rename of modern/; name still open
+www-root/                             # Next.js; renamed from modern/
   package.json                        # Next.js, Node 24
   package-lock.json
   vercel.json
@@ -120,4 +122,4 @@ package.json                          # json:edit + one script per version
 .cursor/environment.json
 ```
 
-A new skin is a sibling of `legacy-2014/` and of the renamed Next app. It gets its own `package.json`, its own Vercel root, and it reads `content/`. It does not get a copy of `data.json` or `content/img/` in git.
+A new skin is a sibling of `legacy-2014/` and of `www-root/`. It gets its own `package.json`, its own Vercel root, and it reads `content/`. It does not get a copy of `data.json` or `content/img/` in git.

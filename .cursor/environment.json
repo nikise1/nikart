@@ -1,10 +1,10 @@
 {
   "name": "nikart",
-  "install": "npm install --prefix legacy-2014 && npm install --prefix modern",
+  "install": "npm install --prefix legacy-2014 && npm install --prefix www-root",
   "terminals": [
     {
-      "name": "modern",
-      "command": "npm run modern",
+      "name": "www-root",
+      "command": "npm run www-root",
       "description": "Main app: Next.js 16 dev server (http://localhost:3000)."
     },
     {
@@ -14,7 +14,7 @@
     }
   ],
   "ports": [
-    { "name": "modern", "port": 3000 },
+    { "name": "www-root", "port": 3000 },
     { "name": "legacy", "port": 5000 }
   ]
 }
