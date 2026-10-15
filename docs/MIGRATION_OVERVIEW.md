@@ -31,7 +31,7 @@ Three approaches were evaluated for organising legacy and modern code during mig
 - Both apps deployable simultaneously on separate platforms/URLs during the transition
 - Full git history preserved without `--follow`
 - Shared assets (`public/content/img/`, `data.json`) directly accessible during migration
-- Legacy now lives in `legacy-2014/` (2026-10-13). Shared JSON and images are at `content/`. `modern/` is still the Next.js folder; that rename is open. See [`LEGACY_MOVE.md`](LEGACY_MOVE.md). The Heroku app does not need to keep deploying this repo.
+- Legacy now lives in `legacy-2014/` (2026-10-13). The Next.js app is `www-root/` (2026-10-15). Shared JSON and images are at `content/`. See [`LEGACY_MOVE.md`](LEGACY_MOVE.md). The Heroku app does not need to keep deploying this repo.
 
 ---
 

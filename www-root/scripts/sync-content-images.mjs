@@ -48,4 +48,4 @@ rmSync(staging, { recursive: true, force: true });
 cpSync(source, staging, { recursive: true, dereference: true });
 removePath(dest);
 renameSync(staging, dest);
-console.log("Synced content images to modern/public/_generated/img");
+console.log("Synced content images to www-root/public/_generated/img");

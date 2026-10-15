@@ -48,4 +48,4 @@ writeFileSync(dest, minifyJson(readFileSync(source, "utf8")));
 if (existsSync(leftoverPretty)) {
   rmSync(leftoverPretty);
 }
-console.log("Synced content JSON to modern/public/content/json/data.json");
+console.log("Synced content JSON to www-root/public/content/json/data.json");

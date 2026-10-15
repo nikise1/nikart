@@ -1,12 +1,14 @@
 # Moving the legacy app
 
 **Date:** 2026-10-10
-**Status:** Carried out 2026-10-13, except the rename of `modern/`. The Express app is in `legacy-2014/`. Shared JSON and images are in `content/`. `modern/` stays until its name is chosen. Vercel Root Directory stays `modern/`.
+**Status:** Carried out. The Express app is in `legacy-2014/`. The Next.js app is in `www-root/` (renamed 2026-10-15). Shared JSON and images are in `content/`. Vercel Root Directory is `www-root/`.
 **Revisits:** [MIGRATION_OVERVIEW.md](MIGRATION_OVERVIEW.md) Option C (legacy at repo root, Next.js in `modern/`)
 
 **Update (2026-10-12):** Keep the Express app in this repo, under `legacy-2014/`. Rename `modern/` when that name is chosen. Further versions and skins are sibling folders. Portfolio JSON and images stay one shared tree at `content/`, outside every version.
 
-**Update (2026-10-13):** That move is in the tree. `legacy-2014/server.js` serves repo-root `content/` at `/content`, so Backbone `../content` URLs still resolve. The root `package.json` is a launcher: `modern`, `legacy-2014`, and `json:edit`. The Next folder in the example below is still a placeholder; the app is `modern/`.
+**Update (2026-10-13):** That move is in the tree. `legacy-2014/server.js` serves repo-root `content/` at `/content`, so Backbone `../content` URLs still resolve. The root `package.json` is a launcher: one script per version, plus `json:edit`.
+
+**Update (2026-10-15):** The Next folder is `www-root/`. Vercel’s Root Directory points there. The root script is `npm run www-root`.
 
 Heroku does not need to keep deploying this repo. The subscription was cancelled on 2026-10-10, and `nikart.herokuapp.com` stays until that paid month ends. DNS cutover to Vercel finished on 2026-10-09.
 
@@ -72,7 +74,7 @@ Scripts that retarget in the same change:
 
 ## Example tree
 
-The Next folder name below is a placeholder. The legacy folder is `legacy-2014/`.
+The Next folder is `www-root/`. The legacy folder is `legacy-2014/`.
 
 ```
 content/                              # shared portfolio data
@@ -97,7 +99,7 @@ legacy-2014/                          # Express, Backbone, Flash shell
     html5/                            # Backbone client
     fl/                               # swfobject shell + main.swf
     accessible/
-site/                                 # rename of modern/; name still open
+www-root/                             # Next.js, the www site
   package.json                        # Next.js, Node 24
   package-lock.json
   vercel.json

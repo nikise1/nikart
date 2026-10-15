@@ -3,8 +3,8 @@
   "private": true,
   "packageManager": "npm@10",
   "scripts": {
-    "modern": "npm run dev --prefix modern",
+    "www-root": "npm run dev --prefix www-root",
     "legacy-2014": "npm start --prefix legacy-2014",
-    "json:edit": "node modern/scripts/open-json-editor.mjs"
+    "json:edit": "node www-root/scripts/open-json-editor.mjs"
   }
 }
