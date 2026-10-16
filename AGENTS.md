@@ -11,7 +11,6 @@
 
 ## Workflow
 
-- Always update `docs/PROGRESS.md` after completing a task/step.
 - In one chat, stay on the branch that chat already has. Do not create a second branch or pull request for later work in the same conversation. Commit follow-ups on that branch.
 - After pushing a branch that has a pull request, include the stable Vercel branch preview URL from that pull request’s Vercel comment in the summary. That URL stays the same for the life of the branch. `https://nikart-beta.vercel.app` is the shared beta site, not the branch preview.
 
@@ -25,5 +24,6 @@ When the user says **edit json data**:
 
 ## Documentation Updates
 
-- Every adjustment/fix: add a brief summary to the relevant section in `docs/MIGRATION_PLAN.md`.
-- Big tasks (new features, component removal, architectural changes): also add an entry to `docs/PROGRESS.md`.
+- `docs/MIGRATION_PLAN.md` and `docs/LEGACY_MOVE.md` are the finished migration record. Do not append to them.
+- Record a new product decision in `docs/PROGRESS.md`.
+- Keep current how-to notes in `www-root/README.md` and `www-root/AGENTS.md`.

@@ -280,7 +280,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 ---
 
-### Step 11: Production Cutover (**current**)
+### Step 11: Production Cutover ✅ (2026-10-16)
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -293,6 +293,8 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | Leave the Heroku app | Small | `nikart.herokuapp.com` stays until the paid month ends, then it fails. No manual delete |
 | Move legacy to `legacy-2014/` and share `content/` | Small | Done 2026-10-13. [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Further skins are sibling folders |
 | Rename the Next.js app to `www-root/` | Small | Done 2026-10-14. Was `modern/`. Vercel Root Directory is `www-root/` (set 2026-10-15). Include files outside that root |
+
+**Closed (2026-10-16).** DNS, SSL, the production smoke test, the Heroku cancellation, the move to `legacy-2014/`, and the rename to `www-root/` are done.
 
 **Step effort: ~1 session**
 
@@ -319,7 +321,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | 8. Animation & Transitions | 2–3 | Step 7 |
 | 9. Polish & Verification | 1–2 | Step 8 — **done** (2026-10-06) |
 | 10. WIP Deploy to Vercel Preview | — | Step 8 — **done** (2026-10-09) |
-| 11. Production Cutover | 1 | Step 10 (**current**) |
+| 11. Production Cutover | 1 | Step 10 — **done** (2026-10-16) |
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.
