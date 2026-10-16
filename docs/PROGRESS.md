@@ -136,11 +136,9 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ---
 
-## Current Step
+### Step 11: Production Cutover ✅ (2026-10-16)
 
-### Step 11: Production Cutover
-
-`nikart.co.uk` points at Vercel. `www.nikart.co.uk` is the production site. The Heroku subscription is cancelled. `nikart.herokuapp.com` can keep answering until the paid month ends.
+Closed 2026-10-16. `www.nikart.co.uk` is the production site. The checklist below is complete. `nikart.herokuapp.com` can keep answering until the paid month that started on 2026-10-10 ends.
 
 - [x] Add `nikart.co.uk` and `www.nikart.co.uk` in the Vercel project domains (2026-10-09). Apex redirects to `www`. Production environment
 - [x] Point DNS at Vercel (2026-10-09). Apex A `216.198.79.1`. `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. `static` stays on CloudFront
@@ -362,7 +360,7 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 8 | Animation & Transitions | ✅ Done |
 | 9 | Polish & Verification | ✅ Done |
 | 10 | WIP Deploy to Vercel Preview | ✅ Done |
-| 11 | Production Cutover | **Current** |
+| 11 | Production Cutover | ✅ Done |
 
 ---
 
@@ -416,3 +414,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-14 | Next.js folder is `www-root/` | Renamed from `modern/`. Root script is `npm run www-root`. Dependabot, gitignore, and the Cloud Agent install follow that folder. Vercel Root Directory changes to `www-root/`. Include files outside the root stays on so `content/` still syncs |
 | 2026-10-15 | Vercel Root Directory is `www-root/` | The project setting now matches the folder. Include files outside that root stays on. The 2026-10-14 preview failed while the setting was still `modern/` |
 | 2026-10-16 | Split portfolio JSON into menu links, items, and shared text | `main.json`, `items.json`, and `other.json` compile to the existing `data.json` shape. A content id can sit in more than one menu and is defined once |
+| 2026-10-16 | Close the migration | Step 11 is done. `docs/MIGRATION_PLAN.md` and `docs/LEGACY_MOVE.md` stay as the record. Later work does not append to them. New decisions go in this log. How-to notes stay in `www-root/README.md` and `www-root/AGENTS.md` |
