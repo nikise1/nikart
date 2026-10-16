@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/compile-swf-compare.mjs && next dev",
-    "prebuild": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/compile-swf-compare.mjs",
+    "dev": "node scripts/compile-content-json.mjs && node scripts/compile-swf-compare.mjs && next dev",
+    "prebuild": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/compile-content-json.mjs && node scripts/compile-swf-compare.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "oxlint --type-aware --report-unused-disable-directives",
@@ -15,6 +15,7 @@
     "test:e2e": "playwright test",
     "postinstall": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs && node scripts/sync-content-json.mjs && node scripts/compile-swf-compare.mjs",
     "sync:images": "node scripts/sync-content-images.mjs",
+    "compile:json": "node scripts/compile-content-json.mjs",
     "sync:json": "node scripts/sync-content-json.mjs",
     "swf-compare:sync": "node scripts/sync-swf-compare.mjs",
     "swf-compare:html": "node scripts/compile-swf-compare.mjs",

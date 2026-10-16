@@ -20,8 +20,8 @@
 When the user says **edit json data**:
 
 1. From the repo root, run `npm run json:edit`.
-2. Reply with the printed URL. It opens [JSON Editor Online](https://jsoneditoronline.org) with `content/json/data.json` already loaded in tree mode. Do not paste the file body into the chat.
-3. When they bring edited JSON back, write it to `content/json/data.json` with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix www-root`.
+2. Reply with the printed URLs. They open [JSON Editor Online](https://jsoneditoronline.org) with `content/json/main.json` (menu links and order), `content/json/items.json` (flat content objects), and `content/json/other.json` (shared en/es UI text) already loaded in tree mode. Do not paste the file bodies into the chat.
+3. When they bring edited JSON back, write it to the matching source file with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix www-root`. That compiles `content/json/data.json` and minifies the Flash copy.
 
 ## Documentation Updates
 
