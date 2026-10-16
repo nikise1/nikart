@@ -342,6 +342,12 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 
 ---
 
+### Split portfolio JSON sources ✅ (2026-10-16)
+
+- [x] `content/json/data.json` stays the nested document Flash, Backbone, and Next already load
+- [x] Sources are `main.json` (menu links and order; an id may repeat), `items.json` (one content object per id), and `other.json` (shared en/es UI text)
+- [x] `DataSchema` is strict. `dev`, `prebuild`, and `sync:json` compile the sources back to that file
+
 ## Upcoming Steps
 
 | Step | Description | Status |
@@ -409,3 +415,4 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 | 2026-10-13 | Carry out the legacy move, leave `modern/` named | Express sources are in `legacy-2014/`. Pretty JSON and images are repo-root `content/`. Next still imports and syncs that tree. The Next folder name is still open, so Vercel Root Directory stays `modern/` |
 | 2026-10-14 | Next.js folder is `www-root/` | Renamed from `modern/`. Root script is `npm run www-root`. Dependabot, gitignore, and the Cloud Agent install follow that folder. Vercel Root Directory changes to `www-root/`. Include files outside the root stays on so `content/` still syncs |
 | 2026-10-15 | Vercel Root Directory is `www-root/` | The project setting now matches the folder. Include files outside that root stays on. The 2026-10-14 preview failed while the setting was still `modern/` |
+| 2026-10-16 | Split portfolio JSON into menu links, items, and shared text | `main.json`, `items.json`, and `other.json` compile to the existing `data.json` shape. A content id can sit in more than one menu and is defined once |

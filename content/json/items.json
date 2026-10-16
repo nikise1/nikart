@@ -1,0 +1,752 @@
+[
+    {
+        "id": "html5",
+        "type": "web",
+        "title": {
+            "en": "HTML5 View",
+            "es": "Vista en HTML5"
+        },
+        "desc": {
+            "en": "The HTML5 mobile first view of this site.",
+            "es": "Vista de este sitio en HTML5 que prioriza dispositivos móviles."
+        },
+        "imgs": 1,
+        "url": "_self/../html5",
+        "launch": {
+            "en": "Change to the HTML5 view",
+            "es": "Cambia a la versión en HTML5"
+        }
+    },
+    {
+        "id": "onedayinmay",
+        "type": "web",
+        "title": "One Day in May",
+        "desc": {
+            "en": "Responsive microsite for animator Vera Neubauer. HTML5, CSS, JavaScript & PHP.",
+            "es": "Sitio adaptivo para la animadora Vera Neubauer. HTML5, CSS, JavaScript y PHP."
+        },
+        "imgs": 4,
+        "url": "http://onedayinmay.co.uk",
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1200','850','yes','yes','yes'"
+    },
+    {
+        "id": "rockstars_divas",
+        "type": "web",
+        "title": "Rockstars vs Divas - Bestival",
+        "desc": {
+            "en": "Facebook festival game for Gaymers. Bestival match 3 with prizes. Security to prevent cheating.",
+            "es": "Juego de Gaymers en Facebook para festival Bestival match 3 con premios y seguridad para evitar engaños."
+        },
+        "imgs": 9,
+        "url": "games/rockstars_divas/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'600','700','yes','yes','yes'"
+    },
+    {
+        "id": "ciudad",
+        "type": "web",
+        "title": {
+            "en": "Isometric Cities",
+            "es": "Ciudades Isométricas"
+        },
+        "desc": {
+            "en": "Isometric city construction courses with multi level & multi user profiles. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
+            "es": "Cursos con ciudades isométricas. Varios niveles y perfiles. Aplicación e-learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
+        },
+        "imgs": 19,
+        "url": "games/ciudad_helm/index.html",
+        "launch": {
+            "en": "Launch Demo",
+            "es": "Comience el Demo"
+        },
+        "pop": "'1200','768','yes','yes','yes'"
+    },
+    {
+        "id": "cityread",
+        "type": "tex",
+        "title": "Cityread London 2014",
+        "desc": {
+            "en": "Ruby on Rails site for an annual celebration of literature.",
+            "es": "Sitio en Ruby on Rails para una celebración anual de literatura."
+        },
+        "imgs": 3,
+        "url": "http://www.cityreadlondon.org.uk",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'1016','710','yes','yes','yes'"
+    },
+    {
+        "id": "ar_heart",
+        "type": "web",
+        "title": {
+            "en": "Away3D heart",
+            "es": "Corazón en Away3D"
+        },
+        "desc": {
+            "en": "Away3D Lite animated heart using Augmented Reality. (webcam & printer required).",
+            "es": "Corazón animado en Away3D Lite usando \"Augmented Reality\" (Realidad Aumentada). (webcam e impresora necesarias)."
+        },
+        "imgs": 8,
+        "url": "3d/away3d/ar_heart/index.html",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'1016','710','yes','yes','yes'"
+    },
+    {
+        "id": "dataminh",
+        "type": "tex",
+        "title": "Dataminh",
+        "desc": {
+            "en": "Responsive landing page for Dataminh.",
+            "es": "Página de aterrizaje adaptivo para Dataminh."
+        },
+        "imgs": 2,
+        "url": "http://dataminh.co",
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1200','850','yes','yes','yes'"
+    },
+    {
+        "id": "claro",
+        "type": "web",
+        "title": "Claro",
+        "desc": {
+            "en": "Development for Claro Research.",
+            "es": "Desarrollo para la empresa Claro."
+        },
+        "imgs": 4,
+        "url": "websites/claro/index.html",
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'960','700','yes','yes','yes'"
+    },
+    {
+        "id": "118aua",
+        "type": "web",
+        "title": "118 118 Ask Us Anything",
+        "desc": {
+            "en": "Microsite 118 118 Ask Us Anything. Particle system populated with questions plus a live data feed. ActionScript, HTML, CSS.",
+            "es": "Micrositio 118 118 \"Ask Us Anything\" (pregúntenos cualquier cosa). \"Particle system\" (sistema de partículas) con preguntas para el servicio de información y el sistema de datos en vivo. ActionScript, HTML, CSS."
+        },
+        "imgs": 6,
+        "url": "websites/118aua/index.html",
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1010','640','yes','yes','yes'"
+    },
+    {
+        "id": "stcharles",
+        "type": "tex",
+        "title": "St. Charles Bowl",
+        "desc": {
+            "en": "WordPress site for St. Charles Bowl. PHP, HTML, CSS & jQuery with custom theme & fonts",
+            "es": "Sitio en WordPress para St. Charles Bowl. PHP, HTML, CSS y jQuery con tema y fuentes personalizadas"
+        },
+        "imgs": 7,
+        "url": "http://scb.aws.af.cm",
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'920','768','yes','yes','yes'"
+    },
+    {
+        "id": "terranova",
+        "type": "tex",
+        "title": "Sky Terra Nova",
+        "desc": {
+            "en": "Microsite for Terra Nova TV series. 3D, video, interactive landscape, tweets.",
+            "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
+        },
+        "imgs": 11,
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1200','850','yes','yes','yes'"
+    },
+    {
+        "id": "zubi",
+        "type": "tex",
+        "title": "Zubi",
+        "desc": {
+            "en": "Development for the art gallery section of Zubi. This website won silver at the 2009 Hispanic Creative Advertising Awards.",
+            "es": "Desarrollo de la sección de galería de arte de Zubi. Este sitio web ganó la medalla de plata en el \"2009 Hispanic Creative Advertising Awards\" (premios de publicidad Hispánicos 2009)."
+        },
+        "imgs": 6,
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1024','768','yes','yes','yes'"
+    },
+    {
+        "id": "bandstand",
+        "type": "web",
+        "title": "Bandstand",
+        "desc": {
+            "en": "Development for the website of Bandstand music event sponsored by Vauxhall Corsa.",
+            "es": "Desarrollo para el sitio del evento musical \"Bandstand\" (quiosco de música) patrocinado por Vauxhall Corsa."
+        },
+        "imgs": 7,
+        "url": "http://bandstand.thewebwell.com",
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1024','768','yes','yes','yes'"
+    },
+    {
+        "id": "quantum",
+        "type": "tex",
+        "title": "James Bond Heineken",
+        "desc": {
+            "en": "Development for the James Bond film Quantum of Solace site served by Heineken. It had a countdown till cinema release with behind the scenes footage and trailers.",
+            "es": "Desarrollo para la película de James Bond Quantum of Solace sitio de la cerveza Heineken. Tenía un reloj de cuenta regresiva hasta el lanzamiento en cines con detrás de cámaras y tráilers."
+        },
+        "imgs": 4,
+        "launch": {
+            "en": "Launch Website",
+            "es": "Abra el Sitio"
+        },
+        "pop": "'1000','650','yes','yes','yes'"
+    },
+    {
+        "id": "bestival",
+        "type": "tex",
+        "title": "Bestival & Camp Bestival",
+        "desc": {
+            "en": "Development for the websites of Bestival festival on the Isle of Wight & Camp Bestival in Dorset.",
+            "es": "Desarrollo para los sitios de los festivales de música Bestival y Camp Bestival en Reino Unido."
+        },
+        "imgs": 8
+    },
+    {
+        "id": "vidzone",
+        "type": "tex",
+        "title": "Vidzone",
+        "desc": {
+            "en": "Development for the Vidzone music video streaming site. Searchable with the facility to make playlists.",
+            "es": "Desarrollo para el siteo Vidzone de streaming de música y video. Buscador con opción de hacer listas de reproducción."
+        },
+        "imgs": 4
+    },
+    {
+        "id": "avis_donde",
+        "type": "web",
+        "title": {
+            "en": "Avis - Where in the world",
+            "es": "Avis - Donde en el mundo"
+        },
+        "desc": {
+            "en": "Drag and drop city game for Avis in multiple languages with prizes for the winners. It sent scores to Facebook walls.",
+            "es": "Juego de arrastrar ciudades para Avis, disponible en varios idiomas con premios para los ganadores. Enviaba los puntuaciones a muros de Facebook."
+        },
+        "imgs": 5,
+        "url": {
+            "en": "games/avis_donde/index.html",
+            "es": "games/avis_donde/index_es.html"
+        },
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'600','600','yes','yes','no'"
+    },
+    {
+        "id": "whiplash",
+        "type": "web",
+        "title": "Whiplash",
+        "desc": {
+            "en": "Whiplash Whip Game for Wacom graphics tablets.",
+            "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
+        },
+        "imgs": 4,
+        "url": "games/whiplash/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'800','600','yes','no','no'"
+    },
+    {
+        "id": "desafio_pacifico",
+        "type": "web",
+        "title": "Desafío Pacífico",
+        "desc": {
+            "en": "Course with top down car driving & various maps. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
+            "es": "Curso con carros y varias pistas. Aplicación e-learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
+        },
+        "imgs": 18,
+        "url": "games/desafio_pacifico/index.html",
+        "launch": {
+            "en": "Launch Demo",
+            "es": "Comience el Demo"
+        },
+        "pop": "'1000','700','yes','yes','yes'"
+    },
+    {
+        "id": "avis_mundial",
+        "type": "tex",
+        "title": {
+            "en": "Avis - World Cup 2010",
+            "es": "Avis - Mundial 2010"
+        },
+        "desc": {
+            "en": "World Cup quiz for Avis in 6 languages with prizes for the winners. Localisation in XML.",
+            "es": "Concurso de la copa del mundo para Avis, disponible en 6 idiomas con premios para los ganadores. Localización en XML."
+        },
+        "imgs": 6
+    },
+    {
+        "id": "reading_leeds",
+        "type": "web",
+        "title": "Reading vs Leeds",
+        "desc": {
+            "en": "Facebook festival game for Gaymers. Reading vs Leeds with prizes. Security to prevent cheating.",
+            "es": "Juego de Gaymers en Facebook para festival Reading vs Leeds con premios y seguridad para evitar engaños."
+        },
+        "imgs": 12,
+        "url": "games/reading_leeds/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'800','893','yes','yes','yes'"
+    },
+    {
+        "id": "escalera",
+        "type": "web",
+        "title": {
+            "en": "Snakes & Ladders quizes",
+            "es": "Juegos de Escaleras"
+        },
+        "desc": {
+            "en": "Snakes and ladders quizes with multi level & multi players. E-learning application that saves data to multiple SCORM platforms with XML content.",
+            "es": "Juegos de Escaleras con multi nivel y multi jugador. Aplicación e-learning que guarda datos de SCORM en plataformas múltiples con contenido XML."
+        },
+        "imgs": 4,
+        "url": "games/escalera/index.html",
+        "launch": {
+            "en": "Launch Demo",
+            "es": "Comience el Demo"
+        },
+        "pop": "'1000','700','yes','yes','yes'"
+    },
+    {
+        "id": "slate20",
+        "type": "web",
+        "title": "Slate 20",
+        "desc": {
+            "en": "Video combination game for Slate 20 alcoholic beverage. Find the correct mix of girls.",
+            "es": "Video juego de combinación para la bebida alcohólica Slate 20. Haga la mezcla correcta de chicas."
+        },
+        "imgs": 5,
+        "url": "games/slate20/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'808','606','yes','no','no'"
+    },
+    {
+        "id": "weeds",
+        "type": "web",
+        "title": {
+            "en": "Mow the Lawn",
+            "es": "Corta el Césped"
+        },
+        "desc": {
+            "en": "Mow the Lawn game from Stepping Stones, a European Leonardo project. Mow the lawn but watch out for the borders. Don't mow the same patch.",
+            "es": "Juego Corta el Césped de \"Stepping Stones\" (saltando sobre las piedras), un proyecto Europeo Leonardo. Corte el césped, pero cuidado con los bordes. No corte el mismo lugar."
+        },
+        "imgs": 1,
+        "url": "games/weeds/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'840','640','yes','yes','no'"
+    },
+    {
+        "id": "spark",
+        "type": "vid",
+        "title": "Spark"
+    },
+    {
+        "id": "collapse",
+        "type": "vid",
+        "title": "Collapse"
+    },
+    {
+        "id": "desires",
+        "type": "vid",
+        "title": "Desires"
+    },
+    {
+        "id": "dual",
+        "type": "vid",
+        "title": "Dual"
+    },
+    {
+        "id": "jenga",
+        "type": "vid",
+        "title": "Jenga"
+    },
+    {
+        "id": "shackled",
+        "type": "vid",
+        "title": "Shackled"
+    },
+    {
+        "id": "chemicals",
+        "type": "vid",
+        "title": "Chemicals"
+    },
+    {
+        "id": "no_of_worlds",
+        "type": "vid",
+        "title": "# of Worlds"
+    },
+    {
+        "id": "assailants",
+        "type": "vid",
+        "title": "Assailants"
+    },
+    {
+        "id": "aura",
+        "type": "vid",
+        "title": "Aura"
+    },
+    {
+        "id": "m25_dealer",
+        "type": "vid",
+        "title": "Party Animals with M25 Dealer"
+    },
+    {
+        "id": "hearth",
+        "type": "vid",
+        "title": "The Hearth"
+    },
+    {
+        "id": "ocean",
+        "type": "vid",
+        "title": "Ocean Treats"
+    },
+    {
+        "id": "scratch",
+        "type": "vid",
+        "title": "Scratch"
+    },
+    {
+        "id": "close",
+        "type": "vid",
+        "title": "Close"
+    },
+    {
+        "id": "desecration",
+        "type": "vid",
+        "title": "Desecration"
+    },
+    {
+        "id": "home",
+        "type": "vid",
+        "title": "Home"
+    },
+    {
+        "id": "bug",
+        "type": "vid",
+        "title": "The Bug"
+    },
+    {
+        "id": "mischief_1",
+        "type": "vid",
+        "title": "Mischief I"
+    },
+    {
+        "id": "mischief_2",
+        "type": "vid",
+        "title": "Mischief II"
+    },
+    {
+        "id": "dissension",
+        "type": "vid",
+        "title": "Dissension"
+    },
+    {
+        "id": "constrict",
+        "type": "vid",
+        "title": "Constrict"
+    },
+    {
+        "id": "homage",
+        "type": "vid",
+        "title": "Homage to Marcel Duchamp & Jean Tinguely"
+    },
+    {
+        "id": "eruption",
+        "type": "vid",
+        "title": "Eruption"
+    },
+    {
+        "id": "escape",
+        "type": "vid",
+        "title": "Escape"
+    },
+    {
+        "id": "decontamination",
+        "type": "vid",
+        "title": "Decontamination"
+    },
+    {
+        "id": "wheel",
+        "type": "vid",
+        "title": "Wheel"
+    },
+    {
+        "id": "rover",
+        "type": "vid",
+        "title": "Rover"
+    },
+    {
+        "id": "steppingstones",
+        "type": "tex",
+        "title": "Stepping Stones",
+        "desc": {
+            "en": "A fun CD to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
+            "es": "Un CD para ayudar de manera divertida a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
+        },
+        "imgs": 14
+    },
+    {
+        "id": "ar_lizard",
+        "type": "web",
+        "title": {
+            "en": "Augmented Reality lizard",
+            "es": "Lagartija en Realidad Aumentada"
+        },
+        "desc": {
+            "en": "Away3D model of my lizard using Augmented Realty (webcam & printer required).",
+            "es": "Modelo Away3D de mi lagartija usando \"Augmented Reality\" (Realidad Aumentada) (webcam e impresora necesarias)."
+        },
+        "imgs": 4,
+        "url": "3d/away3d/flar_lizard/pub/index.html",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'960','700','yes','no','no'"
+    },
+    {
+        "id": "sketchbook",
+        "type": "ima",
+        "title": {
+            "en": "Sketchbook",
+            "es": "Cuaderno de dibujo"
+        },
+        "imgs": 12
+    },
+    {
+        "id": "spaceship",
+        "type": "web",
+        "title": {
+            "en": "Papervison3D Spaceship",
+            "es": "Nave Espacial en Papervison3D"
+        },
+        "desc": {
+            "en": "Spaceship modelled in 3DS MAX, textured in Blender and viewed in Papervision3D.",
+            "es": "Nave espacial modelada en 3DS MAX, textura en Blender, vista con Papervision3D."
+        },
+        "imgs": 1,
+        "url": "3d/papervision3d/spaceship/index.html",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'960','700','yes','no','no'"
+    },
+    {
+        "id": "japanese",
+        "type": "web",
+        "title": {
+            "en": "Japanese Interior in Shockwave 3D",
+            "es": "Interior Japonés en Shockwave 3D"
+        },
+        "desc": {
+            "en": "Japanese walk through modelled in 3DS MAX and programmed in Lingo. (Shockwave player required)",
+            "es": "Visita virtual de un interior Japonés. Modelado en 3DS MAX y programado en Lingo. (Shockwave player necesario)"
+        },
+        "imgs": 2,
+        "url": "3d/shockwave3d/index.html",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'740','640','yes','no','no'"
+    },
+    {
+        "id": "cats",
+        "type": "tex",
+        "title": "Emerging Risk Factors in Hypertension",
+        "desc": {
+            "en": "Programming and design on the Emerging Risk Factors in Hypertension programme.",
+            "es": "Programación y diseño en el programa \"Emerging Risk Factors in Hypertension\" (factores de riesgo emergentes en hipertensión)."
+        },
+        "imgs": 4
+    },
+    {
+        "id": "six_cds",
+        "type": "tex",
+        "title": "Six Showreels",
+        "desc": {
+            "en": "Programming and design for video showreels of 10 directors for the production company Six.",
+            "es": "Programación y diseño para los showreels de video de 10 directores para la compañía Six."
+        },
+        "imgs": 7
+    },
+    {
+        "id": "ibs",
+        "type": "tex",
+        "title": {
+            "en": "IBS Learning Programme",
+            "es": "Programa de aprendizaje de SII"
+        },
+        "desc": {
+            "en": "Programming, design and animation on an Irritable Bowel Syndrome learning programme.",
+            "es": "Programación, diseño y animación del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (síndrome irritable de intestino)."
+        },
+        "imgs": 8
+    },
+    {
+        "id": "star",
+        "type": "tex",
+        "title": {
+            "en": "STAR Study",
+            "es": "Estudio STAR"
+        },
+        "desc": {
+            "en": "Programming and design on the STAR study learning tool. It runs in 6 languages and was a clinical study for the pharmaceutical Vesicare.",
+            "es": "Programación y diseño de la herramienta de aprendizaje \"STAR Study\" (estudio STAR). Disponible en 6 idiomas y era un estudio clínico para el medicamento Vesicare."
+        },
+        "imgs": 5
+    },
+    {
+        "id": "robots",
+        "type": "vid",
+        "title": {
+            "en": "4 Screen Projection Work - Robots",
+            "es": "Video de 4 pantallas con robots"
+        }
+    },
+    {
+        "id": "flickr",
+        "type": "web",
+        "title": {
+            "en": "Photography",
+            "es": "Fotografía"
+        },
+        "desc": {
+            "en": "Photography from my travels.",
+            "es": "Fotografías de mis viajes."
+        },
+        "imgs": 6,
+        "url": "http://www.flickr.com/photos/53781256@N00/sets",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'880','640','yes','yes','yes'"
+    },
+    {
+        "id": "banners",
+        "type": "web",
+        "title": {
+            "en": "Banners",
+            "es": "Banderas"
+        },
+        "desc": {
+            "en": "Advertising",
+            "es": "Publicidad"
+        },
+        "imgs": 4,
+        "url": "banners/index.html",
+        "launch": {
+            "en": "Open",
+            "es": "Abre"
+        },
+        "pop": "'800','600','yes','yes','yes'"
+    },
+    {
+        "id": "contact",
+        "type": "web",
+        "title": {
+            "en": "Contact",
+            "es": "Contacto"
+        },
+        "desc": {
+            "en": "I'm an interactive developer and artist based in the UK & Colombia. My CV is available upon request.",
+            "es": "Soy desarrollador interactivo y un artista. Radicado en Reino Unido y Colombia. Mi hoja de vida está disponible a petición."
+        },
+        "imgs": 3,
+        "url": "http://www.linkedin.com/in/nikart",
+        "launch": "linkedin.com/in/nikart",
+        "pop": "'1000','700','yes','yes','yes'"
+    },
+    {
+        "id": "language",
+        "type": "web",
+        "title": {
+            "en": "Español",
+            "es": "English"
+        },
+        "desc": {
+            "en": "Versión en Español. Este sitio va a utilizar una cookie para guardar tu preferencia.",
+            "es": "English version. This site will use a cookie to save your preference."
+        },
+        "imgs": 1,
+        "url": {
+            "en": "_self/es",
+            "es": "_self/en"
+        },
+        "launch": {
+            "en": "Cambia idioma a Español",
+            "es": "Change Language to English"
+        },
+        "pop": "'1200','850','yes','yes','yes'"
+    },
+    {
+        "id": "fl",
+        "type": "web",
+        "title": {
+            "en": "Flash View",
+            "es": "Vista en Flash"
+        },
+        "desc": {
+            "en": "The Flash view of this site.",
+            "es": "Vista de este sitio en Flash."
+        },
+        "imgs": 1,
+        "url": "_self/../fl",
+        "launch": {
+            "en": "Change to the Flash view",
+            "es": "Cambia a la versión en Flash"
+        }
+    }
+]
