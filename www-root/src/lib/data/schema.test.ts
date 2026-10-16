@@ -25,4 +25,9 @@ describe("DataSchema", () => {
     const result = DataSchema.safeParse({ invalid: true });
     expect(result.success).toBe(false);
   });
+
+  it("rejects keys that are not part of the compiled document", () => {
+    const result = DataSchema.safeParse({ ...rawData, extra: true });
+    expect(result.success).toBe(false);
+  });
 });
