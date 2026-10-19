@@ -340,10 +340,6 @@ Reprioritized ahead of remaining Step 9 polish — live preview URL enables visu
 - [x] `tsc --noEmit`, `next build` (TypeScript step), Oxlint `--type-aware`, and 133 unit tests pass
 - [x] `@vercel/node` still depends on TypeScript 5.9.3 for the Vercel CLI. That copy is separate from the app compiler
 
-### Root README ✅ (2026-10-19)
-
-- [x] Extremely minimal `README.md` at the repo root: the `npm run www-root` command
-
 ---
 
 ## Upcoming Steps
