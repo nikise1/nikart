@@ -59,6 +59,7 @@ Portfolio JSON is edited as three source files in repo-root `content/json/`:
 
 - `main.json` — menu order and links to content. The same id can appear in more than one menu.
 - `items.json` — flat array of content objects, one definition per id.
+- `items-disabled.json` — same shape as `items.json`. These ids are kept out of `data.json`. Remove the menu link from `main.json` when an item moves here.
 - `other.json` — shared en/es UI text (`back`, video quality, and the speed labels).
 
 `npm run compile:json` (also `dev`, `prebuild`, and `sync:json`) joins those files into `content/json/data.json`. That compiled file is the nested tree Flash, legacy Backbone, and Next import. It has to match `DataSchema` in `src/lib/data/schema.ts`. Install and the Vercel build minify it into `www-root/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.

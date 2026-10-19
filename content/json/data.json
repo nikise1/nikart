@@ -187,22 +187,6 @@
                     "pop": "'1010','640','yes','yes','yes'"
                 },
                 {
-                    "id": "stcharles",
-                    "type": "tex",
-                    "title": "St. Charles Bowl",
-                    "desc": {
-                        "en": "WordPress site for St. Charles Bowl. PHP, HTML, CSS & jQuery with custom theme & fonts",
-                        "es": "Sitio en WordPress para St. Charles Bowl. PHP, HTML, CSS y jQuery con tema y fuentes personalizadas"
-                    },
-                    "imgs": 7,
-                    "url": "http:\/\/scb.aws.af.cm",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'920','768','yes','yes','yes'"
-                },
-                {
                     "id": "terranova",
                     "type": "tex",
                     "title": "Sky Terra Nova",

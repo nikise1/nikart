@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const appRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-/** Compile content/json/main.json + items.json + other.json into data.json. */
+/** Compile content/json/main.json + items.json + other.json into data.json. items-disabled.json stays out. */
 export function compileContentJson() {
   const cli = join(appRoot, "src", "lib", "data", "compile-cli.ts");
   const result = spawnSync(

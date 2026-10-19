@@ -25,6 +25,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-19 — Progress entries are one line per significant task.
 
+2026-10-19 — St. Charles Bowl moved to `content/json/items-disabled.json` and unlinked from `main.json`.
+
 ---
 
 ## Migration record

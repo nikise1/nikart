@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const jsonDir = join(repoRoot, "content", "json");
-const sources = ["main.json", "items.json", "other.json"];
+const sources = ["main.json", "items.json", "items-disabled.json", "other.json"];
 const urls = sources.map((name) => {
   const compact = JSON.stringify(JSON.parse(readFileSync(join(jsonDir, name), "utf8")));
   return (

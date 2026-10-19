@@ -66,4 +66,30 @@ describe("compilePortfolio", () => {
     items[0] = { ...items[0]!, extra: true };
     expect(() => compilePortfolio({ ...sources, items })).toThrow(/extra/);
   });
+
+  it("keeps disabled items out of the compiled tree", () => {
+    const items = sources.items as { id: string }[];
+    const disabled = sources.disabled as { id: string }[];
+    const main = sources.main as { menu: MenuSourceNode[] };
+    expect(disabled.map((item) => item.id)).toEqual(["stcharles"]);
+    expect(items.some((item) => item.id === "stcharles")).toBe(false);
+    expect(linkedIds(main.menu)).not.toContain("stcharles");
+    const compiled = JSON.stringify(compilePortfolio(sources));
+    expect(compiled).not.toContain("stcharles");
+  });
+
+  it("rejects an id listed in both item files", () => {
+    const items = structuredClone(sources.items) as { id: string }[];
+    const disabled = sources.disabled as { id: string }[];
+    items.push(structuredClone(disabled[0]!));
+    expect(() => compilePortfolio({ ...sources, items })).toThrow(
+      /both items.json and items-disabled.json/,
+    );
+  });
+
+  it("rejects a menu link to a disabled id", () => {
+    const main = structuredClone(sources.main) as { menu: MenuSourceNode[] };
+    main.menu.push("stcharles");
+    expect(() => compilePortfolio({ ...sources, main })).toThrow(/disabled id "stcharles"/);
+  });
 });
