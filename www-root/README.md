@@ -55,9 +55,15 @@ Do not symlink `www-root/public/content/img` to `content/img` — Vercel copies 
 
 ### Content JSON
 
-One copy in git: repo-root `content/json/data.json`, pretty printed (legacy Backbone and the Next data import). Install and the Vercel build minify it into `www-root/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
+Portfolio JSON is edited as three source files in repo-root `content/json/`:
 
-To edit it in a tree, run `npm run json:edit` from the repo root. That prints a link which opens [JSON Editor Online](https://jsoneditoronline.org) with this file already loaded. Add `-- --open` to open the browser on your machine. After you copy the edited JSON back, run `npm run sync:json` from `www-root/`.
+- `main.json` — menu order and links to content. The same id can appear in more than one menu.
+- `items.json` — flat array of content objects, one definition per id.
+- `other.json` — shared en/es UI text (`back`, video quality, and the speed labels).
+
+`npm run compile:json` (also `dev`, `prebuild`, and `sync:json`) joins those files into `content/json/data.json`. That compiled file is the nested tree Flash, legacy Backbone, and Next import. It has to match `DataSchema` in `src/lib/data/schema.ts`. Install and the Vercel build minify it into `www-root/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
+
+To edit the sources in a tree, run `npm run json:edit` from the repo root. That prints a link for each source file which opens [JSON Editor Online](https://jsoneditoronline.org) with the file already loaded. Add `-- --open` to open the browser on your machine. After you copy the edited JSON back, run `npm run sync:json` from `www-root/`.
 
 ### Post-deploy smoke test
 
@@ -66,4 +72,4 @@ To edit it in a tree, run `npm run json:edit` from the repo root. That prints a 
 - `/video_h264/…` — rewrite to `static.nikart.co.uk`
 - `/fl` — Flash archival (Ruffle)
 
-See `docs/PROGRESS.md` Step 10 for the full checklist.
+See `docs/PROGRESS.md` for the post-migration log. The migration checklist is in `docs/legacy-migration/`.

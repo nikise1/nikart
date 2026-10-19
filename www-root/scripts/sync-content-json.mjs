@@ -1,6 +1,9 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { compileContentJson } from "./compile-content-json.mjs";
+
+compileContentJson();
 
 /** Drop insignificant whitespace. Keeps escapes inside strings. */
 function minifyJson(json) {
