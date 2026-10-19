@@ -172,7 +172,7 @@ Legacy Flash portfolio preserved via [Ruffle](https://ruffle.rs/) at `/fl` (outs
 - `www-root/src/components/flash-player/` — Ruffle embed (CDN `@ruffle-rs/ruffle@0.5.0`)
 - `www-root/public/fl/main.swf` — untouched Animate export, copied from `legacy-2014/public/fl/main.swf`
 - `www-root/public/fl/main.ruffle.swf` — named copy of that SWF with Ruffle-only Drawing API patches; `/fl` loads this file, not `main.swf`
-- `www-root/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is pretty-printed repo-root `content/json/data.json`, compiled from `main.json`, `items.json`, and `other.json`. `sync:json` compiles that file and minifies it here on install and on the Vercel build (gitignored). Next imports the pretty repo-root file (2026-10-16).
+- `www-root/public/content/json/data.json` — required by SWF (`../content/json/data.json` via Ruffle `base`). The git copy is pretty-printed repo-root `content/json/data.json`; `sync:json` minifies it here on install and on the Vercel build (gitignored). Next imports the pretty repo-root file (2026-10-13).
 - `www-root/src/lib/flash-config.ts` — same `flashVars` as legacy (`dotracking`, `embedlang`, `staticfilesstr`)
 - `www-root/src/lib/flash-bridge.ts` — restores `window.nikart.popWin` / `doTracker` for `javascript:` callbacks from the SWF
 - Ruffle nightly build + `playerVersion: 8`, `base` URL, `allowNetworking: "all"` for AS2 (AVM1) compatibility
@@ -259,8 +259,8 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 - Removed `outputDirectory: ".next"` from `www-root/vercel.json` so Vercel uses the Next.js builder instead of serving `.next` as static files
 - Do **not** symlink `www-root/public/content/img` → the shared image tree — Next/Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”
 - Single git copy of images is repo-root `content/img` (moved from `public/content/img` on 2026-10-13). `sync:images` copies into `www-root/public/_generated/img/` (gitignored). Rewrite `/content/img/*` → `/_generated/img/*`. `legacy-2014` serves the same tree at `/content`
-- Portfolio sources are repo-root `content/json/main.json` (menu links and order; an id may be linked more than once), `items.json` (one content object per id), and `other.json` (shared en/es UI text). `compile:json` / `sync:json` join them into pretty `content/json/data.json`, which must satisfy `DataSchema`. Legacy Backbone still fetches that compiled file. `sync:json` minifies it to `www-root/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-16)
-- Portfolio JSON is edited in [JSON Editor Online](https://jsoneditoronline.org), not in the app. `npm run json:edit` prints a link per source file (`main.json`, `items.json`, `other.json`) in tree mode (`#left=json.` plus the compact document). The in-app `/dev/content` editor and the `jsoneditor` dependency are removed (2026-10-06).
+- Single git copy of portfolio JSON is repo-root `content/json/data.json`, pretty printed (legacy Backbone still fetches it). `sync:json` minifies it to `www-root/public/content/json/data.json` (gitignored) because Flash requests that exact path and Next rewrites do not chain. Next imports the pretty repo-root file (2026-10-13)
+- Portfolio JSON is edited in [JSON Editor Online](https://jsoneditoronline.org), not in the app. `npm run json:edit` prints a link that loads `content/json/data.json` in tree mode (`#left=json.` plus the compact document). The in-app `/dev/content` editor and the `jsoneditor` dependency are removed (2026-10-06).
 
 **After initial deploy:**
 
@@ -280,7 +280,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 
 ---
 
-### Step 11: Production Cutover ✅ (2026-10-16)
+### Step 11: Production Cutover (**current**)
 
 | Task | Effort | Notes |
 |------|--------|-------|
@@ -294,8 +294,6 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | Move legacy to `legacy-2014/` and share `content/` | Small | Done 2026-10-13. [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Further skins are sibling folders |
 | Rename the Next.js app to `www-root/` | Small | Done 2026-10-14. Was `modern/`. Vercel Root Directory is `www-root/` (set 2026-10-15). Include files outside that root |
 
-**Closed (2026-10-16).** DNS, SSL, the production smoke test, the Heroku cancellation, the move to `legacy-2014/`, and the rename to `www-root/` are done.
-
 **Step effort: ~1 session**
 
 **Heroku billing ends with the subscription (2026-10-10).** Closing the account and deleting the app are not required. Pay the final invoice, let Heroku remove the payment method, and leave `nikart.herokuapp.com` in place until that paid month runs out. `static.nikart.co.uk` is CloudFront and stays up.
@@ -305,8 +303,6 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 **Adjustment (2026-10-14):** `modern/` is renamed to `www-root/`. Root `package.json` launches `www-root`, `legacy-2014`, and `json:edit`. Dependabot’s directory is `/www-root`. `.cursor/environment.json` installs and starts that folder. `www-root/next.config.ts` still sets `turbopack.root` to the repo root so the app can import `content/json/data.json`. Vercel Root Directory changes from `modern/` to `www-root/`. “Include source files outside of the Root Directory” stays on.
 
 **Adjustment (2026-10-15):** The Vercel project Root Directory is `www-root/`. Include files outside that root stays on, so install and build can still read repo-root `content/`. The preview of the rename failed on 2026-10-14 while the setting was still `modern/`.
-
-**Adjustment (2026-10-16):** Portfolio JSON sources are split into `content/json/main.json`, `items.json`, and `other.json`. `DataSchema` is strict and describes the nested document Flash already loads. `dev`, `prebuild`, and `sync:json` compile those sources back to `content/json/data.json` in the existing pretty-printed form, then minify the Flash copy. The same content id can be linked from more than one menu; the items file defines it once.
 
 ---
 
@@ -321,7 +317,7 @@ Project: [`nikise1s-projects/nikart`](https://vercel.com/nikise1s-projects/nikar
 | 8. Animation & Transitions | 2–3 | Step 7 |
 | 9. Polish & Verification | 1–2 | Step 8 — **done** (2026-10-06) |
 | 10. WIP Deploy to Vercel Preview | — | Step 8 — **done** (2026-10-09) |
-| 11. Production Cutover | 1 | Step 10 — **done** (2026-10-16) |
+| 11. Production Cutover | 1 | Step 10 (**current**) |
 | **Total** | **10–12 sessions** | |
 
 A "session" = one focused working block with AI agent collaboration.

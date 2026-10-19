@@ -24,6 +24,6 @@ When the user says **edit json data**:
 
 ## Documentation Updates
 
-- `docs/MIGRATION_PLAN.md` and `docs/LEGACY_MOVE.md` are the finished migration record. Do not append to them.
-- Record a new product decision in `docs/PROGRESS.md`.
+- The migration finished on 2026-10-16. `docs/legacy-migration/` is that record (`MIGRATION_*`, `LEGACY_*`, `STACK_DECISION.md`). Do not append to it.
+- Post-migration work is recorded in `docs/PROGRESS.md`.
 - Keep current how-to notes in `www-root/README.md` and `www-root/AGENTS.md`.

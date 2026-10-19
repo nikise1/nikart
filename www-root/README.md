@@ -72,4 +72,4 @@ To edit the sources in a tree, run `npm run json:edit` from the repo root. That 
 - `/video_h264/…` — rewrite to `static.nikart.co.uk`
 - `/fl` — Flash archival (Ruffle)
 
-See `docs/PROGRESS.md` Step 10 for the full checklist.
+See `docs/PROGRESS.md` for the post-migration log. The migration checklist is in `docs/legacy-migration/`.

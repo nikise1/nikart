@@ -38,7 +38,7 @@ The Express site and the sources that belong to it:
 
 | Current path | Lands at | Why it stays out of every version |
 |--------------|----------|-----------------------------------|
-| `public/content/json/data.json` | `content/json/main.json`, `items.json`, `other.json`, compiled to `data.json` | Sources are the menu links, the flat items, and shared en/es text. Next imports the compiled tree. `sync:json` compiles it and minifies a Flash copy into the app’s `public/content/json/data.json`. `npm run json:edit` opens the three source files |
+| `public/content/json/data.json` | `content/json/data.json` | Pretty-printed portfolio tree. Next imports it. `sync:json` minifies a Flash copy into the app’s `public/content/json/data.json`. `npm run json:edit` writes this file |
 | `public/content/img/` (308 files) | `content/img/` | `sync:images` copies into the app’s `public/_generated/img/`. A rewrite serves them at `/content/img/…` |
 
 A later skin reads the same `content/` tree. Putting it inside `legacy-2014/` or inside the renamed Next app would make every other version depend on that folder.
@@ -78,10 +78,7 @@ The Next.js folder is `www-root/`. The legacy folder is `legacy-2014/`.
 
 ```
 content/                              # shared portfolio data
-  json/main.json                    # menu links and order
-  json/items.json                   # one content object per id
-  json/other.json                   # shared en/es UI text
-  json/data.json                    # compiled nested tree
+  json/data.json
   img/                                # 308 files
 legacy-2014/                          # Express, Backbone, Flash shell
   server.js

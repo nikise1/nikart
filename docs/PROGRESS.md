@@ -1,9 +1,33 @@
 # Progress
 
-**Project:** nikart portfolio migration (Legacy → Next.js 16)
+**Project:** nikart portfolio
 **Started:** 2026-06-24
 
+The migration (Steps 1–11) is complete as of 2026-10-16. Entries from that date on are the post-migration phase. The migration write-up is in [`legacy-migration/`](legacy-migration/).
+
 ---
+
+## Post-migration
+
+Add new work in this section. The decisions log at the bottom of this file covers both phases.
+
+### Split portfolio JSON sources ✅ (2026-10-16)
+
+- [x] `content/json/data.json` stays the nested document Flash, Backbone, and Next already load
+- [x] Sources are `main.json` (menu links and order; an id may repeat), `items.json` (one content object per id), and `other.json` (shared en/es UI text)
+- [x] `DataSchema` is strict. `dev`, `prebuild`, and `sync:json` compile the sources back to that file
+
+### Migration record archived ✅ (2026-10-19)
+
+- [x] `MIGRATION_PLAN.md` and `LEGACY_MOVE.md` are back to their pre-split text
+- [x] `MIGRATION_*`, `LEGACY_*`, and `STACK_DECISION.md` now live in `docs/legacy-migration/`
+- [x] This file is where post-migration changes continue
+
+---
+
+## Migration record
+
+Steps 1–11. Closed 2026-10-16. Do not add steps here.
 
 ## Completed Steps
 
@@ -13,27 +37,25 @@
 - Inventoried all animations (GSAP, CSS, Canvas)
 - Identified tech debt and migration complexity
 - **Deliverables:**
-  - [LEGACY_ANALYSIS_FACTS.md](LEGACY_ANALYSIS_FACTS.md)
-  - [LEGACY_ANALYSIS_OPINIONS.md](LEGACY_ANALYSIS_OPINIONS.md)
+  - [LEGACY_ANALYSIS_FACTS.md](legacy-migration/LEGACY_ANALYSIS_FACTS.md)
+  - [LEGACY_ANALYSIS_OPINIONS.md](legacy-migration/LEGACY_ANALYSIS_OPINIONS.md)
 
 ### Step 2: Research ✅
 
 - Evaluated frameworks, animation libraries, state management, testing, deployment, i18n, styling
 - Assessed agent maintainability for each choice
 - **Deliverable:**
-  - [STACK_DECISION.md](STACK_DECISION.md)
+  - [STACK_DECISION.md](legacy-migration/STACK_DECISION.md)
 
 ### Step 3: Plan & Progress ✅
 
 - Defined 7 migration phases with effort estimates (~10–12 sessions total)
 - Established agent maintainability requirements (code conventions, testing, CI/CD)
 - **Deliverables:**
-  - [MIGRATION_PLAN.md](MIGRATION_PLAN.md)
+  - [MIGRATION_PLAN.md](legacy-migration/MIGRATION_PLAN.md)
   - [PROGRESS.md](PROGRESS.md) (this file)
 
 ---
-
-## Current Step
 
 ### Step 4: Project Setup & Architecture ✅ (2026-06-29)
 
@@ -73,8 +95,6 @@
 - [x] Build clean, 25 tests passing
 
 ---
-
-## Next Step
 
 ### Step 7: Content Views ✅ (2026-07-02)
 
@@ -146,8 +166,8 @@ Closed 2026-10-16. `www.nikart.co.uk` is the production site. The checklist belo
 - [x] Smoke-test the production domain (2026-10-09). Browser pass looked right. `/en`, `/es`, a thumbnail, and `spark.mp4` returned 200
 - [x] Cancel the Heroku subscription (2026-10-10). Pay the last invoice, which removes the payment method. The account stays open
 - [x] Leave `nikart.herokuapp.com` in place. It stops when the paid month ends. No manual app delete
-- [x] Move the Express app to `legacy-2014/` and keep JSON and images at `content/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)) (2026-10-13). `legacy-2014/server.js` serves `content/` at `/content`. Root `package.json` launches `modern`, `legacy-2014`, and `json:edit`
-- [x] Rename `modern/` to `www-root/` ([`LEGACY_MOVE.md`](LEGACY_MOVE.md)) (2026-10-14). Root `package.json` launches `www-root`. Dependabot directory is `/www-root`. Vercel Root Directory is `www-root/` (set 2026-10-15); include files outside that root stays on
+- [x] Move the Express app to `legacy-2014/` and keep JSON and images at `content/` ([`LEGACY_MOVE.md`](legacy-migration/LEGACY_MOVE.md)) (2026-10-13). `legacy-2014/server.js` serves `content/` at `/content`. Root `package.json` launches `modern`, `legacy-2014`, and `json:edit`
+- [x] Rename `modern/` to `www-root/` ([`LEGACY_MOVE.md`](legacy-migration/LEGACY_MOVE.md)) (2026-10-14). Root `package.json` launches `www-root`. Dependabot directory is `/www-root`. Vercel Root Directory is `www-root/` (set 2026-10-15); include files outside that root stays on
 
 ---
 
@@ -205,7 +225,7 @@ Closed 2026-10-16. `www.nikart.co.uk` is the production site. The checklist belo
 #### 9e: Package manager standardization (modern app) ✅ (2026-07-15)
 - [x] Added `packageManager: npm@10` in root and modern `package.json`
 - [x] Validation after standardization: npm install clean, lint clean, tests passing (33/33)
-- [x] Terminology sync: updated `docs/MIGRATION_PLAN.md` to use Progress-aligned `Step` labels instead of `Phase`
+- [x] Terminology sync: updated `docs/legacy-migration/MIGRATION_PLAN.md` to use Progress-aligned `Step` labels instead of `Phase`
 
 #### 9f: Flash archival route (`/fl`) ✅ (2026-08-04)
 - [x] Ruffle-based `/fl` page in `modern/` (legacy SWF + flashVars)
@@ -340,13 +360,7 @@ Closed 2026-10-16. `www.nikart.co.uk` is the production site. The checklist belo
 
 ---
 
-### Split portfolio JSON sources ✅ (2026-10-16)
-
-- [x] `content/json/data.json` stays the nested document Flash, Backbone, and Next already load
-- [x] Sources are `main.json` (menu links and order; an id may repeat), `items.json` (one content object per id), and `other.json` (shared en/es UI text)
-- [x] `DataSchema` is strict. `dev`, `prebuild`, and `sync:json` compile the sources back to that file
-
-## Upcoming Steps
+## Migration steps
 
 | Step | Description | Status |
 |------|-------------|--------|
@@ -406,12 +420,13 @@ Closed 2026-10-16. `www.nikart.co.uk` is the production site. The checklist belo
 | 2026-10-09 | Production DNS is on Vercel | Apex A `216.198.79.1`, `www` CNAME `f36dbd08a5571687.vercel-dns-017.com`. Apex redirects to `www`. The Vercel project card is the source of the records, not the generic `76.76.21.21` address |
 | 2026-10-09 | Production smoke test passed | `www.nikart.co.uk` looked right in the browser. HTTP checks returned 200 for `/en`, `/es`, a thumbnail, and `spark.mp4`. Heroku app deletion is next |
 | 2026-10-10 | Heroku subscription cancellation is enough | Pay the last invoice and let that remove the payment method. Keep the account. Leave `nikart.herokuapp.com` until the paid month ends. No manual app delete and no account close |
-| 2026-10-10 | Legacy move plan: folder first, archive at cutover | [`LEGACY_MOVE.md`](LEGACY_MOVE.md). First pass kept a `legacy/` folder so Heroku could still boot this repo. Superseded the same day |
+| 2026-10-10 | Legacy move plan: folder first, archive at cutover | [`LEGACY_MOVE.md`](legacy-migration/LEGACY_MOVE.md). First pass kept a `legacy/` folder so Heroku could still boot this repo. Superseded the same day |
 | 2026-10-10 | Legacy move plan: archive, then remove | Heroku does not need to keep deploying this repo. Freeze `archive/legacy`, delete the Express app from `master`, move `public/content/` under `modern/content/`. Superseded 2026-10-12 |
-| 2026-10-12 | Legacy stays in-repo as `legacy-2014` | [`LEGACY_MOVE.md`](LEGACY_MOVE.md). Versions and skins are sibling folders. `modern/` will be renamed. Shared JSON and images move from `public/content/` to `content/`. The new folder name is still open |
+| 2026-10-12 | Legacy stays in-repo as `legacy-2014` | [`LEGACY_MOVE.md`](legacy-migration/LEGACY_MOVE.md). Versions and skins are sibling folders. `modern/` will be renamed. Shared JSON and images move from `public/content/` to `content/`. The new folder name is still open |
 | 2026-10-12 | Legacy folder year is 2014 | The Express app moves to `legacy-2014/` |
 | 2026-10-13 | Carry out the legacy move, leave `modern/` named | Express sources are in `legacy-2014/`. Pretty JSON and images are repo-root `content/`. Next still imports and syncs that tree. The Next folder name is still open, so Vercel Root Directory stays `modern/` |
 | 2026-10-14 | Next.js folder is `www-root/` | Renamed from `modern/`. Root script is `npm run www-root`. Dependabot, gitignore, and the Cloud Agent install follow that folder. Vercel Root Directory changes to `www-root/`. Include files outside the root stays on so `content/` still syncs |
 | 2026-10-15 | Vercel Root Directory is `www-root/` | The project setting now matches the folder. Include files outside that root stays on. The 2026-10-14 preview failed while the setting was still `modern/` |
-| 2026-10-16 | Split portfolio JSON into menu links, items, and shared text | `main.json`, `items.json`, and `other.json` compile to the existing `data.json` shape. A content id can sit in more than one menu and is defined once |
-| 2026-10-16 | Close the migration | Step 11 is done. `docs/MIGRATION_PLAN.md` and `docs/LEGACY_MOVE.md` stay as the record. Later work does not append to them. New decisions go in this log. How-to notes stay in `www-root/README.md` and `www-root/AGENTS.md` |
+| 2026-10-16 | Split portfolio JSON into menu links, items, and shared text | First post-migration change. `main.json`, `items.json`, and `other.json` compile to the existing `data.json` shape. A content id can sit in more than one menu and is defined once |
+| 2026-10-16 | Close the migration | Step 11 is done. The write-up stays in `docs/legacy-migration/`. Later decisions go in this log. How-to notes stay in `www-root/README.md` and `www-root/AGENTS.md` |
+| 2026-10-19 | Post-migration phase | `MIGRATION_*`, `LEGACY_*`, and `STACK_DECISION.md` are archived under `docs/legacy-migration/` and are not updated. This log is where later changes are recorded |
