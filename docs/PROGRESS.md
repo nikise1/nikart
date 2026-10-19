@@ -23,6 +23,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 - [x] `MIGRATION_*`, `LEGACY_*`, and `STACK_DECISION.md` now live in `docs/legacy-migration/`
 - [x] This file is where post-migration changes continue
 
+2026-10-19 — Progress entries are one line per significant task.
+
 ---
 
 ## Migration record
