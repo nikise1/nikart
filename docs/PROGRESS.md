@@ -27,6 +27,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-19 — St. Charles Bowl moved to `content/json/items-disabled.json` and unlinked from `main.json`.
 
+2026-10-19 — `disable:` / `enable:` moves portfolio ids between `items.json` and `items-disabled.json` and rebuilds. Menu links stay in `main.json`.
+
 ---
 
 ## Migration record

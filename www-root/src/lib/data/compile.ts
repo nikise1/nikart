@@ -85,29 +85,29 @@ function compileMenu(
   used: Set<string>,
   trail: string[],
 ): SiteData["menu"] {
-  return nodes.map((node) => {
+  const compiled: SiteData["menu"] = [];
+  for (const node of nodes) {
     if (typeof node === "string") {
-      const where = trail.length > 0 ? trail.join("/") : "(root)";
-      if (disabled.has(node)) {
-        throw new PortfolioCompileError(
-          `Menu ${where} links to disabled id "${node}". Remove it from main.json or move it back to items.json`,
-        );
-      }
+      // The menu link stays put so enable can put the item back in this slot.
+      if (disabled.has(node)) continue;
       const item = items.get(node);
       if (!item) {
+        const where = trail.length > 0 ? trail.join("/") : "(root)";
         throw new PortfolioCompileError(`Menu ${where} links to unknown id "${node}"`);
       }
       used.add(node);
-      return normalizeItem(item);
+      compiled.push(normalizeItem(item));
+      continue;
     }
 
-    return {
+    compiled.push({
       id: node.id,
       type: "men" as const,
       menu: compileMenu(node.menu, items, disabled, used, [...trail, node.id]),
       title: normalizeLocalized(node.title),
-    };
-  });
+    });
+  }
+  return compiled;
 }
 
 /** Join the source documents into the nested portfolio tree. Disabled items are checked and left out. */

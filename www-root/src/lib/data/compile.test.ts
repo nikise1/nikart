@@ -73,7 +73,11 @@ describe("compilePortfolio", () => {
     const main = sources.main as { menu: MenuSourceNode[] };
     expect(disabled.map((item) => item.id)).toEqual(["stcharles"]);
     expect(items.some((item) => item.id === "stcharles")).toBe(false);
-    expect(linkedIds(main.menu)).not.toContain("stcharles");
+    const websites = main.menu.find((node) => typeof node !== "string" && node.id === "websites");
+    const websiteIds = websites && typeof websites !== "string" ? websites.menu : [];
+    const ask = websiteIds.indexOf("118aua");
+    expect(websiteIds[ask + 1]).toBe("stcharles");
+    expect(websiteIds[ask + 2]).toBe("terranova");
     const compiled = JSON.stringify(compilePortfolio(sources));
     expect(compiled).not.toContain("stcharles");
   });
@@ -87,9 +91,12 @@ describe("compilePortfolio", () => {
     );
   });
 
-  it("rejects a menu link to a disabled id", () => {
+  it("omits a menu link to a disabled id", () => {
     const main = structuredClone(sources.main) as { menu: MenuSourceNode[] };
+    const before = main.menu.length;
     main.menu.push("stcharles");
-    expect(() => compilePortfolio({ ...sources, main })).toThrow(/disabled id "stcharles"/);
+    const compiled = compilePortfolio({ ...sources, main });
+    expect(compiled.menu).toHaveLength(before);
+    expect(compiled.menu.some((node) => node.id === "stcharles")).toBe(false);
   });
 });
