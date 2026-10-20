@@ -1,0 +1,20 @@
+{
+    "back": {
+        "en": "Back",
+        "es": "Atrás"
+    },
+    "high_spd": "500K",
+    "high_txt": {
+        "en": "High",
+        "es": "Alto"
+    },
+    "low_spd": "150K",
+    "low_txt": {
+        "en": "Low",
+        "es": "Bajo"
+    },
+    "quality": {
+        "en": "Video quality",
+        "es": "Calidad de video"
+    }
+}
