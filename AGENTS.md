@@ -27,4 +27,4 @@ When the user says **edit json data**:
 
 - Every adjustment/fix: add a brief summary to the relevant section in `docs/MIGRATION_PLAN.md`.
 - Big tasks (new features, component removal, architectural changes): also add an entry to `docs/PROGRESS.md`. Docs, comments, and similar changes do not.
-- The root `README.md` lists the main libraries in one line, with no version numbers. Update that line when a main library is added, removed, or replaced.
+- The root `README.md` lists the main libraries in one line, with no version numbers. Update that line when a main library is added, removed, or replaced. Leave `content/` paths out of that file.
