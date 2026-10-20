@@ -193,7 +193,11 @@ export function moveItems<T extends { id: string }>(
     const source = live.get(id) as T & DisabledRecord;
     const rest = withoutPositions(source);
     const positions = positionsById.get(id) ?? [];
-    nextDisabled.push(positions.length > 0 ? { ...rest, menu_positions: positions } : rest);
+    const parkedItem = {
+      ...rest,
+      ...(positions.length > 0 ? { menu_positions: positions } : {}),
+    } as T & DisabledRecord;
+    nextDisabled.push(parkedItem);
   }
   for (const id of enable) {
     const source = parked.get(id);

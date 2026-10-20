@@ -102,7 +102,8 @@ describe("moveItems", () => {
 
   it("appends to the first menu when menu_positions is missing", () => {
     const parked = [{ id: "plain", type: "tex", title: "Plain" }];
-    const moved = moveItems([], parked, main, { disable: [], enable: ["plain"] });
+    const items: { id: string }[] = [];
+    const moved = moveItems(items, parked, main, { disable: [], enable: ["plain"] });
     expect(menuIds(moved.main, "featured").at(-1)).toBe("plain");
     expect(moved.items.find((item) => item.id === "plain")).not.toHaveProperty("menu_positions");
   });
