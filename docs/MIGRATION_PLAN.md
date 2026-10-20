@@ -357,7 +357,7 @@ A "session" = one focused working block with AI agent collaboration.
 
 1. **AGENTS.md at repo root** — Workspace agent rules; documents that `www-root/` is the main app and the one-word run command `npm run www-root`.
 2. **AGENTS.md at `www-root/` root** — Describes project structure, commands, patterns, and constraints for AI agents.
-3. **README.md** — Short root overview: both apps, shared `content/`, the `static.nikart.co.uk` folders, the run commands, and a version-free line of the main libraries. Update that line when a main library changes. Setup and architecture live in `www-root/README.md`.
+3. **README.md** — Short root overview: both apps, shared `content/`, the `static.nikart.co.uk` host, the run commands, and a version-free line of the main libraries. Update that line when a main library changes. Setup and architecture live in `www-root/README.md`.
 4. **Inline comments only for "why"** — Code should be self-documenting. Comments explain non-obvious decisions only.
 
 ### CI/CD Requirements
