@@ -25,6 +25,8 @@ Portfolio site in `www-root/`. Next.js 16 reproduction of the legacy Flash/Backb
 - **Lint / format:** Oxlint (type-aware) and Oxfmt. Configs apply only inside this folder.
 - **Deployment:** Vercel
 
+The repo-root `README.md` lists these libraries in one line and leaves version numbers out. Update that line when a main library is added, removed, or replaced.
+
 ## Commands
 
 From repo root (preferred one-word shortcut):
