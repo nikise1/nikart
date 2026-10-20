@@ -161,11 +161,6 @@ export function moveItems<T extends { id: string }>(
   request: ItemMoveRequest,
 ): ItemMoveResult<T> {
   const { disable, enable } = request;
-  const overlap = disable.filter((id) => enable.includes(id));
-  if (overlap.length > 0) {
-    throw new ItemVisibilityError(`Listed in both disable and enable: ${overlap.join(", ")}`);
-  }
-
   const live = new Map(items.map((item) => [item.id, item]));
   const parked = new Map(disabled.map((item) => [item.id, item]));
 
@@ -196,9 +191,9 @@ export function moveItems<T extends { id: string }>(
   const nextDisabled = disabled.filter((item) => !enableSet.has(item.id));
   for (const id of disable) {
     const source = live.get(id) as T & DisabledRecord;
-    const { menu_positions: _existing, ...rest } = source;
+    const rest = withoutPositions(source);
     const positions = positionsById.get(id) ?? [];
-    nextDisabled.push(positions.length > 0 ? { ...rest, menu_positions: positions } : { ...rest });
+    nextDisabled.push(positions.length > 0 ? { ...rest, menu_positions: positions } : rest);
   }
   for (const id of enable) {
     const source = parked.get(id);

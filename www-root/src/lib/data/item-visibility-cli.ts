@@ -1,7 +1,6 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { PortfolioCompileError, writeCompiledPortfolio } from "./compile.ts";
 import { ItemVisibilityError, moveItems, parseItemMoveArgs } from "./item-visibility.ts";
 import type { MainFile } from "./schema.ts";
 
@@ -38,24 +37,13 @@ try {
   const disabled = readItems("items-disabled.json");
   const main = JSON.parse(readFileSync(join(contentDir, "main.json"), "utf8")) as MainFile;
   const moved = moveItems(items, disabled, main, request);
-  const previousItems = readFileSync(join(contentDir, "items.json"), "utf8");
-  const previousDisabled = readFileSync(join(contentDir, "items-disabled.json"), "utf8");
-  const previousMain = readFileSync(join(contentDir, "main.json"), "utf8");
   writeJson("items.json", moved.items);
   writeJson("items-disabled.json", moved.disabled);
   writeJson("main.json", moved.main);
-  try {
-    writeCompiledPortfolio(contentDir);
-  } catch (error) {
-    writeFileSync(join(contentDir, "items.json"), previousItems);
-    writeFileSync(join(contentDir, "items-disabled.json"), previousDisabled);
-    writeFileSync(join(contentDir, "main.json"), previousMain);
-    throw error;
-  }
   if (moved.disabledIds.length > 0) console.log(`disabled: ${moved.disabledIds.join(", ")}`);
   if (moved.enabledIds.length > 0) console.log(`enabled: ${moved.enabledIds.join(", ")}`);
 } catch (error) {
-  if (error instanceof ItemVisibilityError || error instanceof PortfolioCompileError) {
+  if (error instanceof ItemVisibilityError) {
     console.error(error.message);
     process.exit(1);
   }

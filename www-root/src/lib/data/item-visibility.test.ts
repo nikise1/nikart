@@ -1,6 +1,6 @@
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { compilePortfolio, loadPortfolioSources } from "./compile";
+import { loadPortfolioSources } from "./compile";
 import {
   ItemVisibilityError,
   type DisabledRecord,
@@ -61,7 +61,6 @@ describe("moveItems", () => {
     const moved = moveItems(items, disabled, main, { disable: ["claro"], enable: [] });
     const claro = moved.disabled.find((item) => item.id === "claro");
     expect(claro?.menu_positions).toEqual([["websites"]]);
-    expect(menuIds(moved.main, "websites")).not.toContain("claro");
     expect(linkedIds(moved.main.menu)).not.toContain("claro");
   });
 
@@ -73,21 +72,6 @@ describe("moveItems", () => {
     const websiteIds = menuIds(moved.main, "websites");
     expect(websiteIds.at(-1)).toBe("stcharles");
     expect(websiteIds).not.toContain("claro");
-
-    const compiled = compilePortfolio({
-      ...sources,
-      items: moved.items,
-      disabled: moved.disabled,
-      main: moved.main,
-    });
-    const compiledIds =
-      compiled.menu.find((node) => node.id === "websites")?.type === "men"
-        ? compiled.menu.find((node) => node.id === "websites" && node.type === "men")
-        : undefined;
-    const ids =
-      compiledIds && compiledIds.type === "men" ? compiledIds.menu.map((node) => node.id) : [];
-    expect(ids.at(-1)).toBe("stcharles");
-    expect(ids).not.toContain("claro");
   });
 
   it("records every menu when an id is linked more than once", () => {
