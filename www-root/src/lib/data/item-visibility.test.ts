@@ -60,9 +60,7 @@ describe("moveItems", () => {
   it("removes a disabled id from main and stores its menu position", () => {
     const moved = moveItems(items, disabled, main, { disable: ["claro"], enable: [] });
     const claro = moved.disabled.find((item) => item.id === "claro");
-    expect(claro?.menu_positions).toEqual([
-      { menu: ["websites"], index: 4, before: "118aua", after: "dataminh" },
-    ]);
+    expect(claro?.menu_positions).toEqual([["websites"]]);
     expect(menuIds(moved.main, "websites")).not.toContain("claro");
     expect(linkedIds(moved.main.menu)).not.toContain("claro");
   });
@@ -73,9 +71,7 @@ describe("moveItems", () => {
     expect(stcharles).toBeDefined();
     expect(stcharles).not.toHaveProperty("menu_positions");
     const websiteIds = menuIds(moved.main, "websites");
-    const ask = websiteIds.indexOf("118aua");
-    expect(websiteIds[ask + 1]).toBe("stcharles");
-    expect(websiteIds[ask + 2]).toBe("terranova");
+    expect(websiteIds.at(-1)).toBe("stcharles");
     expect(websiteIds).not.toContain("claro");
 
     const compiled = compilePortfolio({
@@ -90,29 +86,25 @@ describe("moveItems", () => {
         : undefined;
     const ids =
       compiledIds && compiledIds.type === "men" ? compiledIds.menu.map((node) => node.id) : [];
-    expect(ids[ask]).toBe("118aua");
-    expect(ids[ask + 1]).toBe("stcharles");
+    expect(ids.at(-1)).toBe("stcharles");
     expect(ids).not.toContain("claro");
   });
 
   it("records every menu when an id is linked more than once", () => {
     const moved = moveItems(items, disabled, main, { disable: ["html5"], enable: [] });
     const html5 = moved.disabled.find((item) => item.id === "html5");
-    expect(html5?.menu_positions).toEqual([
-      { menu: ["featured"], index: 0, before: "onedayinmay" },
-      { menu: ["config"], index: 1, before: "fl", after: "language" },
-    ]);
+    expect(html5?.menu_positions).toEqual([["featured"], ["config"]]);
     expect(linkedIds(moved.main.menu)).not.toContain("html5");
     const restored = moveItems(moved.items, moved.disabled, moved.main, {
       disable: [],
       enable: ["html5"],
     });
-    expect(menuIds(restored.main, "featured")[0]).toBe("html5");
-    expect(menuIds(restored.main, "config")).toEqual(["language", "html5", "fl"]);
+    expect(menuIds(restored.main, "featured").at(-1)).toBe("html5");
+    expect(menuIds(restored.main, "config").at(-1)).toBe("html5");
     expect(restored.items.find((item) => item.id === "html5")).not.toHaveProperty("menu_positions");
   });
 
-  it("rejects an unknown id, an id already in that state, and enable without positions", () => {
+  it("rejects an unknown id and an id already in that state", () => {
     expect(() => moveItems(items, disabled, main, { disable: ["missing"], enable: [] })).toThrow(
       /Unknown id "missing"/,
     );
@@ -122,12 +114,12 @@ describe("moveItems", () => {
     expect(() => moveItems(items, disabled, main, { disable: [], enable: ["claro"] })).toThrow(
       /already enabled/,
     );
+  });
+
+  it("appends to the first menu when menu_positions is missing", () => {
     const parked = [{ id: "plain", type: "tex", title: "Plain" }];
-    expect(() =>
-      moveItems([], parked, main, {
-        disable: [],
-        enable: ["plain"],
-      }),
-    ).toThrow(/no menu_positions/);
+    const moved = moveItems([], parked, main, { disable: [], enable: ["plain"] });
+    expect(menuIds(moved.main, "featured").at(-1)).toBe("plain");
+    expect(moved.items.find((item) => item.id === "plain")).not.toHaveProperty("menu_positions");
   });
 });

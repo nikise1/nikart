@@ -68,34 +68,26 @@ export function parseItemMoveArgs(argv: string[]): ItemMoveRequest {
   return { disable, enable };
 }
 
-function nodeId(node: MenuSourceNode): string {
-  return typeof node === "string" ? node : node.id;
+function samePath(left: readonly string[], right: readonly string[]): boolean {
+  return left.length === right.length && left.every((part, index) => part === right[index]);
 }
 
-/** Record each link before it is removed. Neighbors make enable stable if other ids move. */
+/** Menu paths where this id is linked. One path per menu, with no neighboring item ids. */
 function collectPositions(
   nodes: readonly MenuSourceNode[],
   path: string[],
   id: string,
 ): MenuPosition[] {
   const positions: MenuPosition[] = [];
-  nodes.forEach((node, index) => {
+  for (const node of nodes) {
     if (typeof node === "string") {
-      if (node !== id) return;
-      const next = nodes[index + 1];
-      const previous = nodes[index - 1];
-      const before = next === undefined ? undefined : nodeId(next);
-      const after = previous === undefined ? undefined : nodeId(previous);
-      positions.push({
-        menu: path,
-        index,
-        ...(before !== undefined ? { before } : {}),
-        ...(after !== undefined ? { after } : {}),
-      });
-      return;
+      if (node === id && !positions.some((existing) => samePath(existing, path))) {
+        positions.push([...path]);
+      }
+      continue;
     }
     positions.push(...collectPositions(node.menu, [...path, node.id], id));
-  });
+  }
   return positions;
 }
 
@@ -119,23 +111,37 @@ function findMenu(nodes: MenuSourceNode[], path: readonly string[]): MenuSourceN
   return findMenu(branch.menu, rest);
 }
 
-function place(menu: MenuSourceNode[], id: string, position: MenuPosition): void {
+function firstMenu(nodes: MenuSourceNode[]): MenuSourceNode[] {
+  for (const node of nodes) {
+    if (typeof node !== "string") return node.menu;
+  }
+  return nodes;
+}
+
+function appendLink(menu: MenuSourceNode[], id: string): void {
   if (menu.some((node) => node === id)) return;
-  const beforeId = position.before;
-  const beforeIndex =
-    beforeId === undefined ? -1 : menu.findIndex((node) => nodeId(node) === beforeId);
-  if (beforeIndex >= 0) {
-    menu.splice(beforeIndex, 0, id);
+  menu.push(id);
+}
+
+/** Append to each recorded menu. With no paths, or none of them left, use the first menu. */
+function placeEnabled(
+  main: MainFile,
+  id: string,
+  positions: readonly MenuPosition[] | undefined,
+): void {
+  const paths = positions ?? [];
+  if (paths.length === 0) {
+    appendLink(firstMenu(main.menu), id);
     return;
   }
-  const afterId = position.after;
-  const afterIndex =
-    afterId === undefined ? -1 : menu.findIndex((node) => nodeId(node) === afterId);
-  if (afterIndex >= 0) {
-    menu.splice(afterIndex + 1, 0, id);
-    return;
+  let placed = false;
+  for (const path of paths) {
+    const menu = findMenu(main.menu, path);
+    if (menu === undefined) continue;
+    appendLink(menu, id);
+    placed = true;
   }
-  menu.splice(Math.min(position.index, menu.length), 0, id);
+  if (!placed) appendLink(firstMenu(main.menu), id);
 }
 
 function withoutPositions<T extends DisabledRecord>(item: T): Omit<T, "menu_positions"> {
@@ -145,8 +151,8 @@ function withoutPositions<T extends DisabledRecord>(item: T): Omit<T, "menu_posi
 
 /**
  * Move item objects between the live list and the disabled list.
- * Disable drops every main.json link and stores `menu_positions` on the parked object.
- * Enable restores those links and strips the property.
+ * Disable drops every main.json link and may store menu paths on the parked object.
+ * Enable appends the id to those menus, or to the first menu when `menu_positions` is missing.
  */
 export function moveItems<T extends { id: string }>(
   items: readonly T[],
@@ -181,20 +187,7 @@ export function moveItems<T extends { id: string }>(
   nextMain.menu = removeLinks(nextMain.menu, new Set(disable));
 
   for (const id of enable) {
-    const positions = parked.get(id)?.menu_positions;
-    if (positions === undefined || positions.length === 0) {
-      throw new ItemVisibilityError(
-        `"${id}" has no menu_positions, so it cannot be placed in main.json`,
-      );
-    }
-    for (const position of positions) {
-      const menu = findMenu(nextMain.menu, position.menu);
-      const where = position.menu.length > 0 ? position.menu.join("/") : "(root)";
-      if (menu === undefined) {
-        throw new ItemVisibilityError(`Menu ${where} for "${id}" is no longer in main.json`);
-      }
-      place(menu, id, position);
-    }
+    placeEnabled(nextMain, id, parked.get(id)?.menu_positions);
   }
 
   const disableSet = new Set(disable);

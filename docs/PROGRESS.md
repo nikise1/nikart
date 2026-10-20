@@ -31,6 +31,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-20 — Disable removes the id from `main.json` and stores optional `menu_positions` on the parked item so enable can put the links back.
 
+2026-10-20 — `menu_positions` stores menu paths only. Enable without it appends the id to the first menu.
+
 ---
 
 ## Migration record

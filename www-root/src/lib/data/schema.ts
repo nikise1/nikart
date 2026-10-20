@@ -40,17 +40,9 @@ const BaseItemSchema = z
 export type ContentItem = z.infer<typeof BaseItemSchema>;
 
 /**
- * Where a disabled id used to sit in `main.json`.
- * `menu` is the path of menu ids (`[]` is the root). `before` / `after` are neighbor ids.
+ * Menu path only, never an item id. `["websites"]`, `["art", "install"]`, or `[]` for the root.
  */
-export const MenuPositionSchema = z
-  .object({
-    menu: z.array(z.string()),
-    index: z.number().int().nonnegative(),
-    before: z.string().optional(),
-    after: z.string().optional(),
-  })
-  .strict();
+export const MenuPositionSchema = z.array(z.string());
 
 export type MenuPosition = z.infer<typeof MenuPositionSchema>;
 

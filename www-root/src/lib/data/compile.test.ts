@@ -69,10 +69,10 @@ describe("compilePortfolio", () => {
 
   it("keeps disabled items out of main and the compiled tree", () => {
     const items = sources.items as { id: string }[];
-    const disabled = sources.disabled as { id: string; menu_positions?: { menu: string[] }[] }[];
+    const disabled = sources.disabled as { id: string; menu_positions?: string[][] }[];
     const main = sources.main as { menu: MenuSourceNode[] };
     expect(disabled.map((item) => item.id)).toEqual(["stcharles"]);
-    expect(disabled[0]?.menu_positions?.[0]?.menu).toEqual(["websites"]);
+    expect(disabled[0]?.menu_positions).toEqual([["websites"]]);
     expect(items.some((item) => item.id === "stcharles")).toBe(false);
     expect(linkedIds(main.menu)).not.toContain("stcharles");
     const compiled = JSON.stringify(compilePortfolio(sources));

@@ -27,6 +27,6 @@ Omit `--disable` or `--enable` when that list is empty.
 
 The command moves each object between `content/json/items.json` and `content/json/items-disabled.json`, then rebuilds `content/json/data.json`.
 
-Disable removes every link to that id from `content/json/main.json`. On that straight move, the parked object gains an optional `menu_positions` list: each entry is the menu path, the index, and the neighbor ids. Enable uses that list to put the links back, then strips `menu_positions`. An item with no `menu_positions` cannot be enabled.
+Disable removes every link to that id from `content/json/main.json`. On that straight move, the parked object may gain optional `menu_positions`: a list of menu paths only, such as `[["websites"]]`, with no item ids. Enable appends the id to those menus and strips `menu_positions`. When `menu_positions` is missing, enable appends the id to the first menu. Edit `main.json` by hand if that slot should change.
 
 Reply with the ids that moved. If the command fails, report its message and leave the files as they were.

@@ -15,14 +15,9 @@
         },
         "pop": "'920','768','yes','yes','yes'",
         "menu_positions": [
-            {
-                "menu": [
-                    "websites"
-                ],
-                "index": 6,
-                "before": "terranova",
-                "after": "118aua"
-            }
+            [
+                "websites"
+            ]
         ]
     }
 ]
