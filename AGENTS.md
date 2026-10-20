@@ -31,7 +31,7 @@ When the user says `disable: id1, id2` and/or `enable: id3, id4`, follow `.curso
 npm run json:items -- --disable id1,id2 --enable id3,id4
 ```
 
-Omit a flag when that list is empty. Do not edit the JSON by hand.
+Omit a flag when that list is empty. Do not edit the JSON by hand. Disable removes the id from `main.json` and stores `menu_positions` on the parked item.
 
 ## Documentation Updates
 

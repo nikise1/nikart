@@ -39,8 +39,29 @@ const BaseItemSchema = z
 
 export type ContentItem = z.infer<typeof BaseItemSchema>;
 
-/** Flat source list. The same id is defined once even when several menus link to it. */
-export const ItemsFileSchema = z.array(BaseItemSchema).superRefine((items, ctx) => {
+/**
+ * Where a disabled id used to sit in `main.json`.
+ * `menu` is the path of menu ids (`[]` is the root). `before` / `after` are neighbor ids.
+ */
+export const MenuPositionSchema = z
+  .object({
+    menu: z.array(z.string()),
+    index: z.number().int().nonnegative(),
+    before: z.string().optional(),
+    after: z.string().optional(),
+  })
+  .strict();
+
+export type MenuPosition = z.infer<typeof MenuPositionSchema>;
+
+/** A parked item. `menu_positions` is optional and is not copied into the compiled tree. */
+export const DisabledItemSchema = BaseItemSchema.extend({
+  menu_positions: z.array(MenuPositionSchema).optional(),
+}).strict();
+
+export type DisabledItem = z.infer<typeof DisabledItemSchema>;
+
+function rejectDuplicateIds(items: { id: string }[], ctx: z.RefinementCtx): void {
   const seen = new Set<string>();
   items.forEach((item, index) => {
     if (seen.has(item.id)) {
@@ -52,7 +73,13 @@ export const ItemsFileSchema = z.array(BaseItemSchema).superRefine((items, ctx) 
     }
     seen.add(item.id);
   });
-});
+}
+
+/** Flat source list. The same id is defined once even when several menus link to it. */
+export const ItemsFileSchema = z.array(BaseItemSchema).superRefine(rejectDuplicateIds);
+
+/** Parked items. Same content fields, plus optional menu positions for enable. */
+export const DisabledItemsSchema = z.array(DisabledItemSchema).superRefine(rejectDuplicateIds);
 
 // --- Menu item (branch node in the compiled tree) ---
 

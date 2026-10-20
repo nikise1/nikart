@@ -25,6 +25,8 @@ npm run json:items -- --disable site1,site2 --enable site3,site4
 
 Omit `--disable` or `--enable` when that list is empty.
 
-The command moves each object between `content/json/items.json` and `content/json/items-disabled.json`, then rebuilds `content/json/data.json`. Menu links stay in `content/json/main.json`. A disabled id stays in that slot and is left out of the compiled site until it is enabled again.
+The command moves each object between `content/json/items.json` and `content/json/items-disabled.json`, then rebuilds `content/json/data.json`.
+
+Disable removes every link to that id from `content/json/main.json`. On that straight move, the parked object gains an optional `menu_positions` list: each entry is the menu path, the index, and the neighbor ids. Enable uses that list to put the links back, then strips `menu_positions`. An item with no `menu_positions` cannot be enabled.
 
 Reply with the ids that moved. If the command fails, report its message and leave the files as they were.

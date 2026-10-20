@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { PortfolioCompileError, writeCompiledPortfolio } from "./compile.ts";
 import { ItemVisibilityError, moveItems, parseItemMoveArgs } from "./item-visibility.ts";
+import type { MainFile } from "./schema.ts";
 
 const contentDir = join(dirname(fileURLToPath(import.meta.url)), "../../../../content/json");
 
@@ -27,24 +28,28 @@ function readItems(name: string): ItemRecord[] {
   });
 }
 
-function writeItems(name: string, items: readonly ItemRecord[]): void {
-  writeFileSync(join(contentDir, name), `${JSON.stringify(items, null, 4)}\n`);
+function writeJson(name: string, value: unknown): void {
+  writeFileSync(join(contentDir, name), `${JSON.stringify(value, null, 4)}\n`);
 }
 
 try {
   const request = parseItemMoveArgs(process.argv.slice(2));
   const items = readItems("items.json");
   const disabled = readItems("items-disabled.json");
-  const moved = moveItems(items, disabled, request);
+  const main = JSON.parse(readFileSync(join(contentDir, "main.json"), "utf8")) as MainFile;
+  const moved = moveItems(items, disabled, main, request);
   const previousItems = readFileSync(join(contentDir, "items.json"), "utf8");
   const previousDisabled = readFileSync(join(contentDir, "items-disabled.json"), "utf8");
-  writeItems("items.json", moved.items);
-  writeItems("items-disabled.json", moved.disabled);
+  const previousMain = readFileSync(join(contentDir, "main.json"), "utf8");
+  writeJson("items.json", moved.items);
+  writeJson("items-disabled.json", moved.disabled);
+  writeJson("main.json", moved.main);
   try {
     writeCompiledPortfolio(contentDir);
   } catch (error) {
     writeFileSync(join(contentDir, "items.json"), previousItems);
     writeFileSync(join(contentDir, "items-disabled.json"), previousDisabled);
+    writeFileSync(join(contentDir, "main.json"), previousMain);
     throw error;
   }
   if (moved.disabledIds.length > 0) console.log(`disabled: ${moved.disabledIds.join(", ")}`);

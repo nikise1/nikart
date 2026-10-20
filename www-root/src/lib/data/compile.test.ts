@@ -67,36 +67,41 @@ describe("compilePortfolio", () => {
     expect(() => compilePortfolio({ ...sources, items })).toThrow(/extra/);
   });
 
-  it("keeps disabled items out of the compiled tree", () => {
+  it("keeps disabled items out of main and the compiled tree", () => {
     const items = sources.items as { id: string }[];
-    const disabled = sources.disabled as { id: string }[];
+    const disabled = sources.disabled as { id: string; menu_positions?: { menu: string[] }[] }[];
     const main = sources.main as { menu: MenuSourceNode[] };
     expect(disabled.map((item) => item.id)).toEqual(["stcharles"]);
+    expect(disabled[0]?.menu_positions?.[0]?.menu).toEqual(["websites"]);
     expect(items.some((item) => item.id === "stcharles")).toBe(false);
-    const websites = main.menu.find((node) => typeof node !== "string" && node.id === "websites");
-    const websiteIds = websites && typeof websites !== "string" ? websites.menu : [];
-    const ask = websiteIds.indexOf("118aua");
-    expect(websiteIds[ask + 1]).toBe("stcharles");
-    expect(websiteIds[ask + 2]).toBe("terranova");
+    expect(linkedIds(main.menu)).not.toContain("stcharles");
     const compiled = JSON.stringify(compilePortfolio(sources));
     expect(compiled).not.toContain("stcharles");
+    expect(compiled).not.toContain("menu_positions");
   });
 
   it("rejects an id listed in both item files", () => {
     const items = structuredClone(sources.items) as { id: string }[];
-    const disabled = sources.disabled as { id: string }[];
-    items.push(structuredClone(disabled[0]!));
+    const disabled = sources.disabled as { id: string; menu_positions?: unknown }[];
+    const { menu_positions: _positions, ...duplicate } = structuredClone(disabled[0]!);
+    items.push(duplicate);
     expect(() => compilePortfolio({ ...sources, items })).toThrow(
       /both items.json and items-disabled.json/,
     );
   });
 
-  it("omits a menu link to a disabled id", () => {
+  it("rejects a menu link to a disabled id", () => {
     const main = structuredClone(sources.main) as { menu: MenuSourceNode[] };
-    const before = main.menu.length;
     main.menu.push("stcharles");
-    const compiled = compilePortfolio({ ...sources, main });
-    expect(compiled.menu).toHaveLength(before);
-    expect(compiled.menu.some((node) => node.id === "stcharles")).toBe(false);
+    expect(() => compilePortfolio({ ...sources, main })).toThrow(/disabled id "stcharles"/);
+  });
+
+  it("rejects menu_positions on a live item and unknown keys on a disabled item", () => {
+    const items = structuredClone(sources.items) as Record<string, unknown>[];
+    items[0] = { ...items[0]!, menu_positions: [] };
+    expect(() => compilePortfolio({ ...sources, items })).toThrow(/menu_positions/);
+    const disabled = structuredClone(sources.disabled) as Record<string, unknown>[];
+    disabled[0] = { ...disabled[0]!, extra: true };
+    expect(() => compilePortfolio({ ...sources, disabled })).toThrow(/extra/);
   });
 });

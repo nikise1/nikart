@@ -29,6 +29,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-19 — `disable:` / `enable:` moves portfolio ids between `items.json` and `items-disabled.json` and rebuilds. Menu links stay in `main.json`.
 
+2026-10-20 — Disable removes the id from `main.json` and stores optional `menu_positions` on the parked item so enable can put the links back.
+
 ---
 
 ## Migration record

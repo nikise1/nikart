@@ -4,6 +4,7 @@ import { z } from "zod";
 import {
   type ContentItem,
   DataSchema,
+  DisabledItemsSchema,
   ItemsFileSchema,
   type LocalizedString,
   MainFileSchema,
@@ -88,8 +89,12 @@ function compileMenu(
   const compiled: SiteData["menu"] = [];
   for (const node of nodes) {
     if (typeof node === "string") {
-      // The menu link stays put so enable can put the item back in this slot.
-      if (disabled.has(node)) continue;
+      if (disabled.has(node)) {
+        const where = trail.length > 0 ? trail.join("/") : "(root)";
+        throw new PortfolioCompileError(
+          `Menu ${where} still links to disabled id "${node}". Disable removes that link from main.json`,
+        );
+      }
       const item = items.get(node);
       if (!item) {
         const where = trail.length > 0 ? trail.join("/") : "(root)";
@@ -114,7 +119,7 @@ function compileMenu(
 export function compilePortfolio(sources: PortfolioSources): SiteData {
   const main = parseWith(MainFileSchema, sources.main, "main.json");
   const items = parseWith(ItemsFileSchema, sources.items, "items.json");
-  const disabledItems = parseWith(ItemsFileSchema, sources.disabled, "items-disabled.json");
+  const disabledItems = parseWith(DisabledItemsSchema, sources.disabled, "items-disabled.json");
   const other = parseWith(OtherSchema, sources.other, "other.json");
   const byId = new Map(items.map((item) => [item.id, item]));
   const disabled = new Set<string>();
