@@ -16,4 +16,4 @@ npm run www-root
 
 Install, build, deploy, and content sync are in [`www-root/README.md`](www-root/README.md).
 
-`legacy-2014/` has been migrated using an [AI-assisted plan](docs/MIGRATION_PLAN.md).
+`legacy` has been migrated using an [AI-assisted plan](docs/MIGRATION_PLAN.md).
