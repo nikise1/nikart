@@ -11,7 +11,7 @@
 
 ## Workflow
 
-- Update `docs/PROGRESS.md` after completing a task/step. Keep it brief: no more than one line per significant task.
+- Update `docs/PROGRESS.md` after completing a task or step that changes the app. Keep it brief: no more than one line per significant task. Docs, comments, and similar changes do not get a progress entry.
 - In one chat, stay on the branch that chat already has. Do not create a second branch or pull request for later work in the same conversation. Commit follow-ups on that branch.
 - After pushing a branch that has a pull request, include the stable Vercel branch preview URL from that pull request’s Vercel comment in the summary. That URL stays the same for the life of the branch. `https://nikart-beta.vercel.app` is the shared beta site, not the branch preview.
 
@@ -26,5 +26,6 @@ When the user says **edit json data**:
 ## Documentation Updates
 
 - The migration finished on 2026-10-16. `docs/legacy-migration/` is that record (`MIGRATION_*`, `LEGACY_*`, `STACK_DECISION.md`). Do not append to it.
-- Post-migration progress notes go in the post-migration section of `docs/PROGRESS.md`.
+- Post-migration progress notes go in the post-migration section of `docs/PROGRESS.md`. Docs, comments, and similar changes do not get a progress entry.
 - Keep current how-to notes in `www-root/README.md` and `www-root/AGENTS.md`.
+- The root `README.md` lists the main libraries in one line, with no version numbers. Update that line when a main library is added, removed, or replaced. Leave `content/` paths out of that file.
