@@ -2,9 +2,9 @@
 
 Portfolio site ([nikart.co.uk](https://www.nikart.co.uk)), in English and Spanish.
 
-`www-root/` is the Next.js app that serves the site. `legacy-2014/` is the 2014 Express app. Thumbnails are `content/img`, served at `/content/img`. The portfolio tree is `content/json/data.json`.
+`www-root/` is the Next.js app that serves the site. `legacy-2014/` is the 2014 Express app.
 
-Other media files are at [static.nikart.co.uk](https://static.nikart.co.uk).
+Media files are at [static.nikart.co.uk](https://static.nikart.co.uk).
 
 Next.js, React, TypeScript, Tailwind CSS, GSAP, Zustand, next-intl.
 
