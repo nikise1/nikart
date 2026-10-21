@@ -4,6 +4,7 @@ import { z } from "zod";
 import {
   type ContentItem,
   DataSchema,
+  DisabledItemsSchema,
   ItemsFileSchema,
   type LocalizedString,
   MainFileSchema,
@@ -24,6 +25,8 @@ export interface PortfolioSources {
   main: unknown;
   items: unknown;
   other: unknown;
+  /** Same shape as items.json. These ids stay out of the compiled tree. */
+  disabled: unknown;
 }
 
 function zodMessage(error: z.ZodError): string {
@@ -79,37 +82,57 @@ function normalizeOther(other: OtherText): OtherText {
 function compileMenu(
   nodes: MenuSourceNode[],
   items: Map<string, ContentItem>,
+  disabled: Set<string>,
   used: Set<string>,
   trail: string[],
 ): SiteData["menu"] {
-  return nodes.map((node) => {
+  const compiled: SiteData["menu"] = [];
+  for (const node of nodes) {
     if (typeof node === "string") {
+      if (disabled.has(node)) {
+        const where = trail.length > 0 ? trail.join("/") : "(root)";
+        throw new PortfolioCompileError(
+          `Menu ${where} still links to disabled id "${node}". Disable removes that link from main.json`,
+        );
+      }
       const item = items.get(node);
       if (!item) {
         const where = trail.length > 0 ? trail.join("/") : "(root)";
         throw new PortfolioCompileError(`Menu ${where} links to unknown id "${node}"`);
       }
       used.add(node);
-      return normalizeItem(item);
+      compiled.push(normalizeItem(item));
+      continue;
     }
 
-    return {
+    compiled.push({
       id: node.id,
       type: "men" as const,
-      menu: compileMenu(node.menu, items, used, [...trail, node.id]),
+      menu: compileMenu(node.menu, items, disabled, used, [...trail, node.id]),
       title: normalizeLocalized(node.title),
-    };
-  });
+    });
+  }
+  return compiled;
 }
 
-/** Join the three source documents into the nested portfolio tree. */
+/** Join the source documents into the nested portfolio tree. Disabled items are checked and left out. */
 export function compilePortfolio(sources: PortfolioSources): SiteData {
   const main = parseWith(MainFileSchema, sources.main, "main.json");
   const items = parseWith(ItemsFileSchema, sources.items, "items.json");
+  const disabledItems = parseWith(DisabledItemsSchema, sources.disabled, "items-disabled.json");
   const other = parseWith(OtherSchema, sources.other, "other.json");
   const byId = new Map(items.map((item) => [item.id, item]));
+  const disabled = new Set<string>();
+  for (const item of disabledItems) {
+    if (byId.has(item.id)) {
+      throw new PortfolioCompileError(
+        `Item "${item.id}" is in both items.json and items-disabled.json`,
+      );
+    }
+    disabled.add(item.id);
+  }
   const used = new Set<string>();
-  const menu = compileMenu(main.menu, byId, used, []);
+  const menu = compileMenu(main.menu, byId, disabled, used, []);
   const unused = items.filter((item) => !used.has(item.id)).map((item) => item.id);
   if (unused.length > 0) {
     throw new PortfolioCompileError(`Items not linked from the menu: ${unused.join(", ")}`);
@@ -201,6 +224,7 @@ export function loadPortfolioSources(dir: string): PortfolioSources {
     main: JSON.parse(readFileSync(join(dir, "main.json"), "utf8")) as unknown,
     items: JSON.parse(readFileSync(join(dir, "items.json"), "utf8")) as unknown,
     other: JSON.parse(readFileSync(join(dir, "other.json"), "utf8")) as unknown,
+    disabled: JSON.parse(readFileSync(join(dir, "items-disabled.json"), "utf8")) as unknown,
   };
 }
 

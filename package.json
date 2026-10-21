@@ -5,6 +5,7 @@
   "scripts": {
     "www-root": "npm run dev --prefix www-root",
     "legacy-2014": "npm start --prefix legacy-2014",
-    "json:edit": "node www-root/scripts/open-json-editor.mjs"
+    "json:edit": "node www-root/scripts/open-json-editor.mjs",
+    "json:items": "node www-root/scripts/set-items.mjs"
   }
 }

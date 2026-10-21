@@ -25,6 +25,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-19 — Progress entries are one line per significant task.
 
+2026-10-20 — `disable:` / `enable:` moves portfolio ids between the item files and rebuilds. Disable drops the `main.json` link and may store menu paths. Enable without those paths appends the id to the first menu.
+
 ---
 
 ## Migration record

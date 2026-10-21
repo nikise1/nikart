@@ -20,8 +20,12 @@
 When the user says **edit json data**:
 
 1. From the repo root, run `npm run json:edit`.
-2. Reply with the printed URLs. They open [JSON Editor Online](https://jsoneditoronline.org) with `content/json/main.json` (menu links and order), `content/json/items.json` (flat content objects), and `content/json/other.json` (shared en/es UI text) already loaded in tree mode. Do not paste the file bodies into the chat.
+2. Reply with the printed URLs. They open [JSON Editor Online](https://jsoneditoronline.org) with `content/json/main.json` (menu links and order), `content/json/items.json` (flat content objects), `content/json/items-disabled.json` (items kept out of the site), and `content/json/other.json` (shared en/es UI text) already loaded in tree mode. Do not paste the file bodies into the chat.
 3. When they bring edited JSON back, write it to the matching source file with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix www-root`. That compiles `content/json/data.json` and minifies the Flash copy.
+
+## Enable or disable portfolio items
+
+When the user says `disable:` or `enable:` with portfolio ids, follow `.cursor/skills/portfolio-items/SKILL.md`.
 
 ## Documentation Updates
 
