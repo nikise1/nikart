@@ -25,13 +25,7 @@ When the user says **edit json data**:
 
 ## Enable or disable portfolio items
 
-When the user says `disable: id1, id2` and/or `enable: id3, id4`, follow `.cursor/skills/portfolio-items/SKILL.md`. From the repo root that is:
-
-```bash
-npm run json:items -- --disable id1,id2 --enable id3,id4
-```
-
-Omit a flag when that list is empty. Do not edit the JSON by hand. Disable removes the id from `main.json`. Optional `menu_positions` stores menu paths only. Enable without that list appends the id to the first menu.
+When the user says `disable:` or `enable:` with portfolio ids, follow `.cursor/skills/portfolio-items/SKILL.md`.
 
 ## Documentation Updates
 
