@@ -29,6 +29,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-21 — `disable:` / `enable:` parks portfolio jpgs whose id is absent from `main.json` in `content/img-disabled`, and restores them when the id returns.
 
+2026-10-23 — Disabled dataminh, claro, 118aua, escalera, cats, star, and banners.
+
 2026-10-26 — `disable:` / `enable:` rebuilds the SWF compare index from `pages.json` `itemId`, dropping or restoring those cards.
 
 ---
