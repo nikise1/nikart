@@ -58,20 +58,23 @@ describe("moveItems", () => {
   const main = sources.main as MainFile;
 
   it("removes a disabled id from main and stores its menu position", () => {
-    const moved = moveItems(items, disabled, main, { disable: ["claro"], enable: [] });
-    const claro = moved.disabled.find((item) => item.id === "claro");
-    expect(claro?.menu_positions).toEqual([["websites"]]);
-    expect(linkedIds(moved.main.menu)).not.toContain("claro");
+    const moved = moveItems(items, disabled, main, { disable: ["terranova"], enable: [] });
+    const terranova = moved.disabled.find((item) => item.id === "terranova");
+    expect(terranova?.menu_positions).toEqual([["websites"]]);
+    expect(linkedIds(moved.main.menu)).not.toContain("terranova");
   });
 
   it("enables from menu_positions and strips that property", () => {
-    const moved = moveItems(items, disabled, main, { disable: ["claro"], enable: ["stcharles"] });
+    const moved = moveItems(items, disabled, main, {
+      disable: ["terranova"],
+      enable: ["stcharles"],
+    });
     const stcharles = moved.items.find((item) => item.id === "stcharles");
     expect(stcharles).toBeDefined();
     expect(stcharles).not.toHaveProperty("menu_positions");
     const websiteIds = menuIds(moved.main, "websites");
     expect(websiteIds.at(-1)).toBe("stcharles");
-    expect(websiteIds).not.toContain("claro");
+    expect(websiteIds).not.toContain("terranova");
   });
 
   it("records every menu when an id is linked more than once", () => {
@@ -95,7 +98,7 @@ describe("moveItems", () => {
     expect(() => moveItems(items, disabled, main, { disable: ["stcharles"], enable: [] })).toThrow(
       /already disabled/,
     );
-    expect(() => moveItems(items, disabled, main, { disable: [], enable: ["claro"] })).toThrow(
+    expect(() => moveItems(items, disabled, main, { disable: [], enable: ["terranova"] })).toThrow(
       /already enabled/,
     );
   });
