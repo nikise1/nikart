@@ -27,6 +27,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-20 — `disable:` / `enable:` moves portfolio ids between the item files and rebuilds. Disable drops the `main.json` link and may store menu paths. Enable without those paths appends the id to the first menu.
 
+2026-10-21 — `disable:` / `enable:` parks portfolio jpgs whose id is absent from `main.json` in `content/img-disabled`, and restores them when the id returns.
+
 ---
 
 ## Migration record
