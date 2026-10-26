@@ -49,7 +49,7 @@ npx vercel --prod   # production deploy (after cutover)
 
 One copy of live images in git: repo-root `content/img`. Install/build copies it to `www-root/public/_generated/img/` (gitignored as `www-root/public/_generated/`). A rewrite maps `/content/img/…` → `/_generated/img/…` so app URLs stay the same. `legacy-2014` serves the same tree at `/content`.
 
-Portfolio jpgs are `{id}.jpg` and `{id}_{n}.jpg`. `npm run json:items` moves a jpg to `content/img-disabled` when its id is not in `main.json`, and moves it back when the id returns. `stump.png` and `curl-sprite.png` stay in `content/img`.
+Portfolio jpgs are `{id}.jpg` and `{id}_{n}.jpg`. `npm run json:items` moves a jpg to `content/img-disabled` when its id is not in `main.json`, and moves it back when the id returns. `stump.png` and `curl-sprite.png` stay in `content/img`. The same command rebuilds `public/swf-compare/index.html`: a card drops or returns when its `pages.json` `itemId` is that portfolio id. Piece pages stay.
 
 Do not symlink `www-root/public/content/img` to `content/img` — Vercel copies `public/` and errors with “Cannot copy … to a subdirectory of itself”.
 
