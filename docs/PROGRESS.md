@@ -33,6 +33,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-26 — `disable:` / `enable:` rebuilds the SWF compare index from `pages.json` `itemId`, dropping or restoring those cards.
 
+2026-10-29 — Removed claro, 118aua, escalera, and banners from the SWF compare pages and catalog.
+
 ---
 
 ## Migration record

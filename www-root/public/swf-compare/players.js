@@ -86,28 +86,17 @@
   }
 
   const LAUNCH_PAGES = {
-    "websites/claro/index.html": "claro",
-    "websites/118aua/energyball.html": "118aua-energyball",
-    "websites/118aua/livefeed.html": "118aua-livefeed",
     "games/rockstars_divas/index.html": "rockstars-divas",
     "games/ciudad_helm/index.html": "ciudad",
     "games/avis_donde/index.html": "avis-donde",
     "games/whiplash/index.html": "whiplash",
     "games/desafio_pacifico/index.html": "desafio-pacifico",
     "games/reading_leeds/index.html": "reading-leeds",
-    "games/escalera/index.html": "escalera",
     "games/slate20/index.html": "slate20",
     "games/weeds/index.html": "weeds",
     "3d/away3d/ar_heart/index.html": "ar-heart",
     "3d/away3d/flar_lizard/pub/index.html": "ar-lizard",
     "3d/papervision3d/spaceship/index.html": "spaceship",
-    "banners/standardlife/index.html": "banner-standardlife",
-    "banners/standardlife/index_lite.html": "banner-standardlife-lite",
-    "banners/johnfrieda/index.html": "banner-johnfrieda",
-    "banners/hellboy/index.html": "banner-hellboy",
-    "banners/nintendo/index.html": "banner-nintendo",
-    "banners/shell/index.html": "banner-shell",
-    "banners/trunk/index.html": "banner-trunk__mpu_2",
   };
 
   function installFlashBridge() {

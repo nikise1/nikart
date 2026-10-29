@@ -20,16 +20,16 @@ describe("flash-bridge", () => {
     installFlashBridge();
 
     window.nikart?.popWin(
-      "../static/websites/claro/index.html",
-      "claro",
-      960,
-      700,
+      "../static/games/whiplash/index.html",
+      "whiplash",
+      550,
+      400,
       "yes",
       "yes",
       "yes",
     );
 
-    expect(open).toHaveBeenCalledWith("/swf-compare/claro/fill.html", "claro");
+    expect(open).toHaveBeenCalledWith("/swf-compare/whiplash/fill.html", "whiplash");
   });
 
   it("opens static Flash wrappers on the fill page", () => {
@@ -37,16 +37,16 @@ describe("flash-bridge", () => {
     installFlashBridge();
 
     window.nikart?.popWin(
-      "http://static.nikart.co.uk/websites/claro/index.html",
-      "claro",
-      960,
-      700,
+      "http://static.nikart.co.uk/games/whiplash/index.html",
+      "whiplash",
+      550,
+      400,
       "yes",
       "yes",
       "yes",
     );
 
-    expect(open).toHaveBeenCalledWith("/swf-compare/claro/fill.html", "claro");
+    expect(open).toHaveBeenCalledWith("/swf-compare/whiplash/fill.html", "whiplash");
   });
 
   it("opens _self flash and html5 links at the site root", () => {

@@ -15,24 +15,11 @@ import { indexPages, loadDisabledItemIds } from "./swf-compare-index";
 
 /** SWF header stage size, not the data.json popup window. */
 const stageSizes: Record<string, { width: number; height: number }> = {
-  "118aua-energyball": { width: 982, height: 494 },
-  "118aua-livefeed": { width: 982, height: 494 },
   "ar-heart": { width: 494, height: 370 },
   "ar-lizard": { width: 500, height: 375 },
   "avis-donde": { width: 500, height: 500 },
-  "banner-hellboy": { width: 728, height: 300 },
-  "banner-johnfrieda": { width: 776, height: 334 },
-  "banner-nintendo": { width: 300, height: 250 },
-  "banner-shell": { width: 728, height: 90 },
-  "banner-shell__glasses": { width: 300, height: 250 },
-  "banner-shell__matchstick": { width: 300, height: 250 },
-  "banner-standardlife": { width: 720, height: 360 },
-  "banner-standardlife-lite": { width: 728, height: 90 },
-  "banner-trunk__mpu_2": { width: 300, height: 250 },
   ciudad: { width: 1024, height: 768 },
-  claro: { width: 1024, height: 640 },
   "desafio-pacifico": { width: 1024, height: 768 },
-  escalera: { width: 800, height: 600 },
   "lizard-site": { width: 750, height: 500 },
   "reading-leeds": { width: 520, height: 893 },
   "rockstars-divas": { width: 520, height: 620 },
@@ -48,22 +35,28 @@ const playersJs = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8
 
 describe("swf-compare", () => {
   it("sends a single-SWF menu item to its fill page", () => {
-    expect(compareHrefForItem("claro")).toBe(pieceFillHref("claro"));
+    expect(compareHrefForItem("rockstars_divas")).toBe(pieceFillHref("rockstars-divas"));
     expect(compareHrefForItem("whiplash")).toBe(pieceFillHref("whiplash"));
-    expect(pieceFillHref("claro")).toBe("/swf-compare/claro/fill.html");
+    expect(pieceFillHref("rockstars-divas")).toBe("/swf-compare/rockstars-divas/fill.html");
   });
 
-  it("sends banner launches to the compare index", () => {
-    expect(compareHrefForItem("banners")).toBe("/swf-compare/index.html#banners");
+  it("has no compare page for a disabled portfolio id", () => {
+    for (const itemId of ["claro", "118aua", "escalera", "banners", "dataminh", "cats", "star"]) {
+      expect(compareHrefForItem(itemId)).toBeNull();
+      expect(swfCompareSources.some((piece) => piece.itemId === itemId)).toBe(false);
+    }
   });
 
   it("maps an S3 wrapper URL to the fill page", () => {
-    expect(compareHrefForSource("https://static.nikart.co.uk/websites/claro/index.html")).toBe(
-      pieceFillHref("claro"),
+    expect(compareHrefForSource("https://static.nikart.co.uk/games/whiplash/index.html")).toBe(
+      pieceFillHref("whiplash"),
     );
-    expect(compareHrefForSource("https://static.nikart.co.uk/banners/hellboy/index.html")).toBe(
-      pieceFillHref("banner-hellboy"),
-    );
+    expect(
+      compareHrefForSource("https://static.nikart.co.uk/websites/claro/index.html"),
+    ).toBeNull();
+    expect(
+      compareHrefForSource("https://static.nikart.co.uk/banners/hellboy/index.html"),
+    ).toBeNull();
   });
 
   it("ignores off-site URLs", () => {
@@ -129,20 +122,11 @@ describe("swf-compare", () => {
   });
 
   it("keeps catalog JSON order, with extra wrapper movies after that source", () => {
-    expect(
-      orderComparePieceIds([
-        "banner-shell__matchstick",
-        "claro",
-        "lizard-site",
-        "banner-shell",
-        "118aua-energyball",
-      ]),
-    ).toEqual([
+    expect(orderComparePieceIds(["whiplash", "ciudad", "lizard-site", "rockstars-divas"])).toEqual([
       "lizard-site",
-      "claro",
-      "118aua-energyball",
-      "banner-shell",
-      "banner-shell__matchstick",
+      "rockstars-divas",
+      "ciudad",
+      "whiplash",
     ]);
   });
 
@@ -178,19 +162,19 @@ describe("swf-compare", () => {
         expect(indexHtml).not.toContain(`data-piece="${page.id}"`);
       }
     }
-    expect(cardIds.slice(0, 4)).toEqual([
-      "lizard-site",
-      "claro",
-      "118aua-energyball",
-      "118aua-livefeed",
-    ]);
+    expect(cardIds.slice(0, 4)).toEqual(["lizard-site", "rockstars-divas", "ciudad", "avis-donde"]);
 
-    const claroHtml = readFileSync(join(publicRoot, "swf-compare/claro/index.html"), "utf8");
-    expect(claroHtml).toContain(
-      'data-swf="https://static.nikart.co.uk/websites/claro/swf/claro.swf"',
+    const rockstarsHtml = readFileSync(
+      join(publicRoot, "swf-compare/rockstars-divas/index.html"),
+      "utf8",
     );
-    expect(claroHtml).toContain('data-base="https://static.nikart.co.uk/websites/claro/swf/"');
-    expect(claroHtml).not.toContain("/swf-compare/pieces/");
+    expect(rockstarsHtml).toContain(
+      'data-swf="https://static.nikart.co.uk/games/rockstars_divas/Main.swf"',
+    );
+    expect(rockstarsHtml).toContain(
+      'data-base="https://static.nikart.co.uk/games/rockstars_divas/"',
+    );
+    expect(rockstarsHtml).not.toContain("/swf-compare/pieces/");
     expect(playersJs).not.toContain("/swf-compare/pieces/");
     const nextConfig = readFileSync(join(__dirname, "../../next.config.ts"), "utf8");
     expect(nextConfig).toContain('source: "/swf-compare/content/:path*"');
@@ -198,8 +182,10 @@ describe("swf-compare", () => {
     expect(nextConfig).toContain('source: "/swf-compare"');
     expect(nextConfig).toContain('destination: "/swf-compare/index.html"');
 
-    expect(lizardHtml).toContain('href="/swf-compare/claro/index.html">Claro →');
-    expect(lizardHtml).not.toContain("118aua-energyball");
+    expect(lizardHtml).toContain(
+      'href="/swf-compare/rockstars-divas/index.html">Rockstars vs Divas →',
+    );
+    expect(lizardHtml).not.toContain("claro");
 
     const playersCss = readFileSync(join(publicRoot, "swf-compare/players.css"), "utf8");
     expect(playersCss).toContain("var(--swf-w");
@@ -218,9 +204,11 @@ describe("swf-compare", () => {
     expect(playersJs).not.toContain("function fillViewport()");
 
     expect(indexHtml).toContain('href="/swf-compare/lizard-site/index.html"');
-    expect(indexHtml).toContain('href="/swf-compare/claro/index.html"');
+    expect(indexHtml).toContain('href="/swf-compare/rockstars-divas/index.html"');
+    expect(indexHtml).not.toContain('href="/swf-compare/claro/index.html"');
+    expect(indexHtml).not.toContain('data-piece="banner-hellboy"');
     expect(indexHtml).not.toContain('href="lizard-site/index.html"');
-    expect(indexHtml).not.toContain('href="claro/index.html"');
+    expect(indexHtml).not.toContain('href="rockstars-divas/index.html"');
 
     for (const id of expected) {
       const stage = stageSizes[id];
