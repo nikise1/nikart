@@ -35,6 +35,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-29 — Removed claro, 118aua, escalera, and banners from the SWF compare pages and catalog.
 
+2026-10-29 — Parked those compare records in `public/swf-compare-disabled`. `enable:` moves them back.
+
 ---
 
 ## Migration record
