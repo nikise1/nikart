@@ -71,12 +71,25 @@ describe("compilePortfolio", () => {
     const items = sources.items as { id: string }[];
     const disabled = sources.disabled as { id: string; menu_positions?: string[][] }[];
     const main = sources.main as { menu: MenuSourceNode[] };
-    expect(disabled.map((item) => item.id)).toEqual(["stcharles"]);
+    const disabledIds = [
+      "stcharles",
+      "dataminh",
+      "claro",
+      "118aua",
+      "escalera",
+      "cats",
+      "star",
+      "banners",
+    ];
+    expect(disabled.map((item) => item.id)).toEqual(disabledIds);
     expect(disabled[0]?.menu_positions).toEqual([["websites"]]);
-    expect(items.some((item) => item.id === "stcharles")).toBe(false);
-    expect(linkedIds(main.menu)).not.toContain("stcharles");
+    const links = linkedIds(main.menu);
     const compiled = JSON.stringify(compilePortfolio(sources));
-    expect(compiled).not.toContain("stcharles");
+    for (const id of disabledIds) {
+      expect(items.some((item) => item.id === id)).toBe(false);
+      expect(links).not.toContain(id);
+      expect(compiled).not.toContain(`"id":"${id}"`);
+    }
     expect(compiled).not.toContain("menu_positions");
   });
 

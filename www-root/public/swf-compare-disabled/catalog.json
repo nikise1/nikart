@@ -1,0 +1,137 @@
+[
+  {
+    "before": "lizard-site",
+    "item": {
+      "id": "claro",
+      "title": "Claro",
+      "group": "websites",
+      "itemId": "claro",
+      "wrapper": "websites/claro/index.html",
+      "primary": true,
+      "width": 1024,
+      "height": 640
+    }
+  },
+  {
+    "before": "claro",
+    "item": {
+      "id": "118aua-energyball",
+      "title": "118 118 — Energy ball",
+      "group": "websites",
+      "itemId": "118aua",
+      "wrapper": "websites/118aua/energyball.html",
+      "primary": true,
+      "width": 982,
+      "height": 494
+    }
+  },
+  {
+    "before": "118aua-energyball",
+    "item": {
+      "id": "118aua-livefeed",
+      "title": "118 118 — Live feed",
+      "group": "websites",
+      "itemId": "118aua",
+      "wrapper": "websites/118aua/livefeed.html",
+      "width": 982,
+      "height": 494
+    }
+  },
+  {
+    "before": "reading-leeds",
+    "item": {
+      "id": "escalera",
+      "title": "Snakes & Ladders",
+      "group": "games",
+      "itemId": "escalera",
+      "wrapper": "games/escalera/index.html",
+      "primary": true,
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "before": "spaceship",
+    "item": {
+      "id": "banner-standardlife",
+      "title": "Banner — Standard Life",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/standardlife/index.html",
+      "width": 720,
+      "height": 360
+    }
+  },
+  {
+    "before": "banner-standardlife",
+    "item": {
+      "id": "banner-standardlife-lite",
+      "title": "Banner — Standard Life Lite",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/standardlife/index_lite.html",
+      "width": 728,
+      "height": 90
+    }
+  },
+  {
+    "before": "banner-standardlife-lite",
+    "item": {
+      "id": "banner-johnfrieda",
+      "title": "Banner — John Frieda",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/johnfrieda/index.html",
+      "width": 776,
+      "height": 334
+    }
+  },
+  {
+    "before": "banner-johnfrieda",
+    "item": {
+      "id": "banner-hellboy",
+      "title": "Banner — Hellboy",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/hellboy/index.html",
+      "width": 728,
+      "height": 300
+    }
+  },
+  {
+    "before": "banner-hellboy",
+    "item": {
+      "id": "banner-nintendo",
+      "title": "Banner — Nintendo",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/nintendo/index.html",
+      "width": 300,
+      "height": 250
+    }
+  },
+  {
+    "before": "banner-nintendo",
+    "item": {
+      "id": "banner-shell",
+      "title": "Banner — Shell",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/shell/index.html",
+      "width": 728,
+      "height": 90
+    }
+  },
+  {
+    "before": "banner-shell",
+    "item": {
+      "id": "banner-trunk",
+      "title": "Banner — Trunk",
+      "group": "banners",
+      "itemId": "banners",
+      "wrapper": "banners/trunk/index.html",
+      "width": 800,
+      "height": 600
+    }
+  }
+]

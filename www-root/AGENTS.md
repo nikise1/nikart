@@ -48,7 +48,7 @@ npm run test:run     # Vitest single run
 npm run test:e2e     # Playwright E2E
 npm run sync:images  # Copy repo-root content/img → public/_generated/img (gitignored)
 npm run compile:json # Compile content/json/main.json + items.json + other.json → content/json/data.json (items-disabled.json stays out)
-npm run json:items -- --disable id1,id2 --enable id3 # Enable or disable portfolio ids, park jpgs absent from main.json, and rebuild the SWF compare index from pages.json itemId
+npm run json:items -- --disable id1,id2 --enable id3 # Enable or disable portfolio ids, park jpgs absent from main.json, and park or restore SWF compare pages in public/swf-compare-disabled
 npm run sync:json    # Compile that file, then minify it to public/content/json/data.json (gitignored)
 npm run deploy       # Vercel preview (requires vercel login + link)
 ```

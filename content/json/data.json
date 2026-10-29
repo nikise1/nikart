@@ -139,54 +139,6 @@
                     "pop": "'1016','710','yes','yes','yes'"
                 },
                 {
-                    "id": "dataminh",
-                    "type": "tex",
-                    "title": "Dataminh",
-                    "desc": {
-                        "en": "Responsive landing page for Dataminh.",
-                        "es": "P\u00e1gina de aterrizaje adaptivo para Dataminh."
-                    },
-                    "imgs": 2,
-                    "url": "http:\/\/dataminh.co",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'1200','850','yes','yes','yes'"
-                },
-                {
-                    "id": "claro",
-                    "type": "web",
-                    "title": "Claro",
-                    "desc": {
-                        "en": "Development for Claro Research.",
-                        "es": "Desarrollo para la empresa Claro."
-                    },
-                    "imgs": 4,
-                    "url": "websites\/claro\/index.html",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'960','700','yes','yes','yes'"
-                },
-                {
-                    "id": "118aua",
-                    "type": "web",
-                    "title": "118 118 Ask Us Anything",
-                    "desc": {
-                        "en": "Microsite 118 118 Ask Us Anything. Particle system populated with questions plus a live data feed. ActionScript, HTML, CSS.",
-                        "es": "Micrositio 118 118 \"Ask Us Anything\" (preg\u00fantenos cualquier cosa). \"Particle system\" (sistema de part\u00edculas) con preguntas para el servicio de informaci\u00f3n y el sistema de datos en vivo. ActionScript, HTML, CSS."
-                    },
-                    "imgs": 6,
-                    "url": "websites\/118aua\/index.html",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'1010','640','yes','yes','yes'"
-                },
-                {
                     "id": "terranova",
                     "type": "tex",
                     "title": "Sky Terra Nova",
@@ -394,25 +346,6 @@
                         "es": "Comience el juego"
                     },
                     "pop": "'800','893','yes','yes','yes'"
-                },
-                {
-                    "id": "escalera",
-                    "type": "web",
-                    "title": {
-                        "en": "Snakes & Ladders quizes",
-                        "es": "Juegos de Escaleras"
-                    },
-                    "desc": {
-                        "en": "Snakes and ladders quizes with multi level & multi players. E-learning application that saves data to multiple SCORM platforms with XML content.",
-                        "es": "Juegos de Escaleras con multi nivel y multi jugador. Aplicaci\u00f3n e-learning que guarda datos de SCORM en plataformas m\u00faltiples con contenido XML."
-                    },
-                    "imgs": 4,
-                    "url": "games\/escalera\/index.html",
-                    "launch": {
-                        "en": "Launch Demo",
-                        "es": "Comience el Demo"
-                    },
-                    "pop": "'1000','700','yes','yes','yes'"
                 },
                 {
                     "id": "slate20",
@@ -706,16 +639,6 @@
                     "pop": "'740','640','yes','no','no'"
                 },
                 {
-                    "id": "cats",
-                    "type": "tex",
-                    "title": "Emerging Risk Factors in Hypertension",
-                    "desc": {
-                        "en": "Programming and design on the Emerging Risk Factors in Hypertension programme.",
-                        "es": "Programaci\u00f3n y dise\u00f1o en el programa \"Emerging Risk Factors in Hypertension\" (factores de riesgo emergentes en hipertensi\u00f3n)."
-                    },
-                    "imgs": 4
-                },
-                {
                     "id": "six_cds",
                     "type": "tex",
                     "title": "Six Showreels",
@@ -737,19 +660,6 @@
                         "es": "Programaci\u00f3n, dise\u00f1o y animaci\u00f3n del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (s\u00edndrome irritable de intestino)."
                     },
                     "imgs": 8
-                },
-                {
-                    "id": "star",
-                    "type": "tex",
-                    "title": {
-                        "en": "STAR Study",
-                        "es": "Estudio STAR"
-                    },
-                    "desc": {
-                        "en": "Programming and design on the STAR study learning tool. It runs in 6 languages and was a clinical study for the pharmaceutical Vesicare.",
-                        "es": "Programaci\u00f3n y dise\u00f1o de la herramienta de aprendizaje \"STAR Study\" (estudio STAR). Disponible en 6 idiomas y era un estudio cl\u00ednico para el medicamento Vesicare."
-                    },
-                    "imgs": 5
                 },
                 {
                     "id": "robots",
@@ -777,25 +687,6 @@
                         "es": "Abra"
                     },
                     "pop": "'880','640','yes','yes','yes'"
-                },
-                {
-                    "id": "banners",
-                    "type": "web",
-                    "title": {
-                        "en": "Banners",
-                        "es": "Banderas"
-                    },
-                    "desc": {
-                        "en": "Advertising",
-                        "es": "Publicidad"
-                    },
-                    "imgs": 4,
-                    "url": "banners\/index.html",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abre"
-                    },
-                    "pop": "'800','600','yes','yes','yes'"
                 }
             ],
             "title": {
