@@ -11,6 +11,7 @@ import {
   piecePageHref,
   swfCompareSources,
 } from "./swf-compare";
+import { indexPages, loadDisabledItemIds } from "./swf-compare-index";
 
 /** SWF header stage size, not the data.json popup window. */
 const stageSizes: Record<string, { width: number; height: number }> = {
@@ -152,6 +153,12 @@ describe("swf-compare", () => {
     const existingIds = readdirSync(pieceRoot).filter(
       (id) => existsSync(join(pieceRoot, id, "index.html")) && id !== "pieces",
     );
+    const pages = JSON.parse(readFileSync(join(pieceRoot, "pages.json"), "utf8")) as {
+      id: string;
+      itemId: string;
+      group: string;
+    }[];
+    const listed = new Set(indexPages(pages, loadDisabledItemIds()).map((page) => page.id));
     const expected = orderComparePieceIds(existingIds);
     const groupOrder = ["site", "websites", "games", "3d", "banners"];
     const grouped: string[] = [];
@@ -161,11 +168,16 @@ describe("swf-compare", () => {
           const source =
             swfCompareSources.find((item) => item.id === id) ??
             swfCompareSources.find((item) => id.startsWith(`${item.id}__`));
-          return source?.group === group;
+          return listed.has(id) && source?.group === group;
         }),
       );
     }
     expect(cardIds).toEqual(grouped);
+    for (const page of pages) {
+      if (!listed.has(page.id)) {
+        expect(indexHtml).not.toContain(`data-piece="${page.id}"`);
+      }
+    }
     expect(cardIds.slice(0, 4)).toEqual([
       "lizard-site",
       "claro",
