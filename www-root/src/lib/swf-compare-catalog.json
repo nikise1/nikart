@@ -21,35 +21,6 @@
     "height": 500
   },
   {
-    "id": "claro",
-    "title": "Claro",
-    "group": "websites",
-    "itemId": "claro",
-    "wrapper": "websites/claro/index.html",
-    "primary": true,
-    "width": 1024,
-    "height": 640
-  },
-  {
-    "id": "118aua-energyball",
-    "title": "118 118 — Energy ball",
-    "group": "websites",
-    "itemId": "118aua",
-    "wrapper": "websites/118aua/energyball.html",
-    "primary": true,
-    "width": 982,
-    "height": 494
-  },
-  {
-    "id": "118aua-livefeed",
-    "title": "118 118 — Live feed",
-    "group": "websites",
-    "itemId": "118aua",
-    "wrapper": "websites/118aua/livefeed.html",
-    "width": 982,
-    "height": 494
-  },
-  {
     "id": "rockstars-divas",
     "title": "Rockstars vs Divas",
     "group": "games",
@@ -110,16 +81,6 @@
     "height": 893
   },
   {
-    "id": "escalera",
-    "title": "Snakes & Ladders",
-    "group": "games",
-    "itemId": "escalera",
-    "wrapper": "games/escalera/index.html",
-    "primary": true,
-    "width": 800,
-    "height": 600
-  },
-  {
     "id": "slate20",
     "title": "Slate 20",
     "group": "games",
@@ -168,68 +129,5 @@
     "primary": true,
     "width": 500,
     "height": 375
-  },
-  {
-    "id": "banner-standardlife",
-    "title": "Banner — Standard Life",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/standardlife/index.html",
-    "width": 720,
-    "height": 360
-  },
-  {
-    "id": "banner-standardlife-lite",
-    "title": "Banner — Standard Life Lite",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/standardlife/index_lite.html",
-    "width": 728,
-    "height": 90
-  },
-  {
-    "id": "banner-johnfrieda",
-    "title": "Banner — John Frieda",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/johnfrieda/index.html",
-    "width": 776,
-    "height": 334
-  },
-  {
-    "id": "banner-hellboy",
-    "title": "Banner — Hellboy",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/hellboy/index.html",
-    "width": 728,
-    "height": 300
-  },
-  {
-    "id": "banner-nintendo",
-    "title": "Banner — Nintendo",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/nintendo/index.html",
-    "width": 300,
-    "height": 250
-  },
-  {
-    "id": "banner-shell",
-    "title": "Banner — Shell",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/shell/index.html",
-    "width": 728,
-    "height": 90
-  },
-  {
-    "id": "banner-trunk",
-    "title": "Banner — Trunk",
-    "group": "banners",
-    "itemId": "banners",
-    "wrapper": "banners/trunk/index.html",
-    "width": 800,
-    "height": 600
   }
 ]

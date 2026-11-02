@@ -4,10 +4,14 @@ import { fileURLToPath } from "node:url";
 
 export default function setup() {
   const appRoot = join(dirname(fileURLToPath(import.meta.url)), "../..");
-  const result = spawnSync(process.execPath, ["scripts/compile-swf-compare.mjs"], {
-    cwd: appRoot,
-    stdio: "inherit",
-  });
+  const result = spawnSync(
+    process.execPath,
+    ["--disable-warning=MODULE_TYPELESS_PACKAGE_JSON", "scripts/compile-swf-compare.mjs"],
+    {
+      cwd: appRoot,
+      stdio: "inherit",
+    },
+  );
   if (result.status !== 0) {
     throw new Error("compile-swf-compare.mjs failed");
   }

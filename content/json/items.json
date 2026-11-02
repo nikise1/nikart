@@ -104,54 +104,6 @@
         "pop": "'1016','710','yes','yes','yes'"
     },
     {
-        "id": "dataminh",
-        "type": "tex",
-        "title": "Dataminh",
-        "desc": {
-            "en": "Responsive landing page for Dataminh.",
-            "es": "Página de aterrizaje adaptivo para Dataminh."
-        },
-        "imgs": 2,
-        "url": "http://dataminh.co",
-        "launch": {
-            "en": "Launch Website",
-            "es": "Abra el Sitio"
-        },
-        "pop": "'1200','850','yes','yes','yes'"
-    },
-    {
-        "id": "claro",
-        "type": "web",
-        "title": "Claro",
-        "desc": {
-            "en": "Development for Claro Research.",
-            "es": "Desarrollo para la empresa Claro."
-        },
-        "imgs": 4,
-        "url": "websites/claro/index.html",
-        "launch": {
-            "en": "Launch Website",
-            "es": "Abra el Sitio"
-        },
-        "pop": "'960','700','yes','yes','yes'"
-    },
-    {
-        "id": "118aua",
-        "type": "web",
-        "title": "118 118 Ask Us Anything",
-        "desc": {
-            "en": "Microsite 118 118 Ask Us Anything. Particle system populated with questions plus a live data feed. ActionScript, HTML, CSS.",
-            "es": "Micrositio 118 118 \"Ask Us Anything\" (pregúntenos cualquier cosa). \"Particle system\" (sistema de partículas) con preguntas para el servicio de información y el sistema de datos en vivo. ActionScript, HTML, CSS."
-        },
-        "imgs": 6,
-        "url": "websites/118aua/index.html",
-        "launch": {
-            "en": "Launch Website",
-            "es": "Abra el Sitio"
-        },
-        "pop": "'1010','640','yes','yes','yes'"
-    },
-    {
         "id": "terranova",
         "type": "tex",
         "title": "Sky Terra Nova",
@@ -314,25 +266,6 @@
             "es": "Comience el juego"
         },
         "pop": "'800','893','yes','yes','yes'"
-    },
-    {
-        "id": "escalera",
-        "type": "web",
-        "title": {
-            "en": "Snakes & Ladders quizes",
-            "es": "Juegos de Escaleras"
-        },
-        "desc": {
-            "en": "Snakes and ladders quizes with multi level & multi players. E-learning application that saves data to multiple SCORM platforms with XML content.",
-            "es": "Juegos de Escaleras con multi nivel y multi jugador. Aplicación e-learning que guarda datos de SCORM en plataformas múltiples con contenido XML."
-        },
-        "imgs": 4,
-        "url": "games/escalera/index.html",
-        "launch": {
-            "en": "Launch Demo",
-            "es": "Comience el Demo"
-        },
-        "pop": "'1000','700','yes','yes','yes'"
     },
     {
         "id": "slate20",
@@ -586,16 +519,6 @@
         "pop": "'740','640','yes','no','no'"
     },
     {
-        "id": "cats",
-        "type": "tex",
-        "title": "Emerging Risk Factors in Hypertension",
-        "desc": {
-            "en": "Programming and design on the Emerging Risk Factors in Hypertension programme.",
-            "es": "Programación y diseño en el programa \"Emerging Risk Factors in Hypertension\" (factores de riesgo emergentes en hipertensión)."
-        },
-        "imgs": 4
-    },
-    {
         "id": "six_cds",
         "type": "tex",
         "title": "Six Showreels",
@@ -617,19 +540,6 @@
             "es": "Programación, diseño y animación del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (síndrome irritable de intestino)."
         },
         "imgs": 8
-    },
-    {
-        "id": "star",
-        "type": "tex",
-        "title": {
-            "en": "STAR Study",
-            "es": "Estudio STAR"
-        },
-        "desc": {
-            "en": "Programming and design on the STAR study learning tool. It runs in 6 languages and was a clinical study for the pharmaceutical Vesicare.",
-            "es": "Programación y diseño de la herramienta de aprendizaje \"STAR Study\" (estudio STAR). Disponible en 6 idiomas y era un estudio clínico para el medicamento Vesicare."
-        },
-        "imgs": 5
     },
     {
         "id": "robots",
@@ -657,25 +567,6 @@
             "es": "Abra"
         },
         "pop": "'880','640','yes','yes','yes'"
-    },
-    {
-        "id": "banners",
-        "type": "web",
-        "title": {
-            "en": "Banners",
-            "es": "Banderas"
-        },
-        "desc": {
-            "en": "Advertising",
-            "es": "Publicidad"
-        },
-        "imgs": 4,
-        "url": "banners/index.html",
-        "launch": {
-            "en": "Open",
-            "es": "Abre"
-        },
-        "pop": "'800','600','yes','yes','yes'"
     },
     {
         "id": "contact",

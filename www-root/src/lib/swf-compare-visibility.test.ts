@@ -5,7 +5,10 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 const publicRoot = join(__dirname, "../../public");
 const playersSrc = readFileSync(join(publicRoot, "swf-compare/players.js"), "utf8");
 const indexHtml = readFileSync(join(publicRoot, "swf-compare/index.html"), "utf8");
-const claroHtml = readFileSync(join(publicRoot, "swf-compare/claro/index.html"), "utf8");
+const rockstarsHtml = readFileSync(
+  join(publicRoot, "swf-compare/rockstars-divas/index.html"),
+  "utf8",
+);
 const visibilityDefaults = JSON.parse(
   readFileSync(join(publicRoot, "swf-compare/visibility-defaults.json"), "utf8"),
 );
@@ -49,15 +52,11 @@ describe("swf-compare player visibility", () => {
     await loadPlayers();
     const api = window.SwfCompare;
     expect(api.STORAGE_KEY).toBe("swf-compare-pages");
-    expect(api.pieceIdFromPath("/swf-compare/claro/index.html")).toBe("claro");
-    expect(api.pieceIdFromPath("/swf-compare/pieces/claro/index.html")).toBeNull();
-    expect(api.pageState("claro")).toEqual({ ruffle: true, awayfl: false });
+    expect(api.pieceIdFromPath("/swf-compare/rockstars-divas/index.html")).toBe("rockstars-divas");
+    expect(api.pieceIdFromPath("/swf-compare/pieces/rockstars-divas/index.html")).toBeNull();
+    expect(api.pageState("rockstars-divas")).toEqual({ ruffle: true, awayfl: false });
     expect(api.pageState("whiplash")).toEqual({ ruffle: false, awayfl: true });
     expect(api.pageState("ar-heart")).toEqual({ ruffle: false, awayfl: false });
-    expect(api.pageState("banner-shell__matchstick")).toEqual({
-      ruffle: true,
-      awayfl: true,
-    });
     api.setPageVisible("lizard-site", "ruffle", false);
     expect(JSON.parse(localStorage.getItem("swf-compare-pages") ?? "{}")).toEqual({
       "lizard-site": { ruffle: false, awayfl: false },
@@ -66,8 +65,8 @@ describe("swf-compare player visibility", () => {
 
   it("paints index card visibilities from defaults", async () => {
     document.body.innerHTML = `
-      <div class="card" data-piece="claro">
-        <a href="claro/index.html">Claro</a>
+      <div class="card" data-piece="rockstars-divas">
+        <a href="rockstars-divas/index.html">Rockstars vs Divas</a>
         <span class="card-vis">
           <button type="button" class="vis is-on" data-vis="ruffle">Ruffle</button>
           <button type="button" class="vis is-on" data-vis="awayfl">AwayFL</button>
@@ -80,8 +79,8 @@ describe("swf-compare player visibility", () => {
 
   it("toggles index card flags without following the title link", async () => {
     document.body.innerHTML = `
-      <div class="card" data-piece="claro">
-        <a href="claro/index.html">Claro</a>
+      <div class="card" data-piece="rockstars-divas">
+        <a href="rockstars-divas/index.html">Rockstars vs Divas</a>
         <span class="card-vis">
           <button type="button" class="vis is-on" data-vis="ruffle">Ruffle</button>
           <button type="button" class="vis is-off" data-vis="awayfl">AwayFL</button>
@@ -95,7 +94,7 @@ describe("swf-compare player visibility", () => {
     const ruffle = document.querySelector('[data-vis="ruffle"]');
     ruffle?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     expect(followed).toBe(false);
-    expect(window.SwfCompare.pageState("claro")).toEqual({
+    expect(window.SwfCompare.pageState("rockstars-divas")).toEqual({
       ruffle: false,
       awayfl: false,
     });
@@ -104,7 +103,7 @@ describe("swf-compare player visibility", () => {
   });
 
   it("toggles a pane with the Hide/Show button and skips loading hidden players", async () => {
-    window.history.pushState({}, "", "/swf-compare/claro/index.html");
+    window.history.pushState({}, "", "/swf-compare/rockstars-divas/index.html");
     document.body.innerHTML = `
       <section class="pane">
         <div class="pane-head">
@@ -130,7 +129,7 @@ describe("swf-compare player visibility", () => {
     ).toBe(true);
     expect(awayBtn?.textContent).toBe("Show");
     awayBtn?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    expect(window.SwfCompare.pageState("claro")).toEqual({
+    expect(window.SwfCompare.pageState("rockstars-divas")).toEqual({
       ruffle: true,
       awayfl: true,
     });
@@ -145,12 +144,13 @@ describe("swf-compare player visibility", () => {
 
   it("ships Hide buttons on piece pages and visibility marks on index cards", () => {
     expect(indexHtml).toContain('src="/swf-compare/players.js"');
-    expect(indexHtml).toContain('data-piece="claro"');
+    expect(indexHtml).toContain('data-piece="rockstars-divas"');
+    expect(indexHtml).not.toContain('data-piece="claro"');
     expect(indexHtml).toContain('class="vis is-on" data-vis="ruffle"');
     expect(indexHtml).toContain('class="vis is-off" data-vis="awayfl"');
     expect(indexHtml).toContain('data-piece="whiplash"');
-    expect(claroHtml).toContain('class="vis-toggle" data-vis="ruffle"');
-    expect(claroHtml).toContain(">Show</button>");
+    expect(rockstarsHtml).toContain('class="vis-toggle" data-vis="ruffle"');
+    expect(rockstarsHtml).toContain(">Show</button>");
     expect(playersSrc).toContain("/swf-compare/visibility-defaults.json");
   });
 });

@@ -2,6 +2,7 @@ import { inflateSync } from "node:zlib";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { indexPages, loadDisabledItemIds } from "../src/lib/swf-compare-index.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "src/lib/swf-compare-catalog.json");
@@ -524,7 +525,10 @@ function writeCompareHtml(produced) {
     mkdirSync(join(outRoot, piece.id), { recursive: true });
     writeFileSync(join(outRoot, piece.id, "index.html"), html);
   }
-  writeFileSync(join(outRoot, "index.html"), renderIndex(ordered));
+  writeFileSync(
+    join(outRoot, "index.html"),
+    renderIndex(indexPages(ordered, loadDisabledItemIds())),
+  );
   writeFileSync(join(outRoot, "generated-catalog.json"), `${JSON.stringify(ordered, null, 2)}\n`);
   return ordered;
 }

@@ -9,6 +9,7 @@ import {
 } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { indexPages, loadDisabledItemIds } from "../src/lib/swf-compare-index.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outRoot = join(root, "public/swf-compare");
@@ -279,12 +280,18 @@ function compile() {
     );
     writeFileSync(join(dir, "fill.html"), renderFillHtml(page));
   }
-  writeFileSync(join(outRoot, "index.html"), renderIndex(pages));
+  const listed = indexPages(pages, loadDisabledItemIds());
+  writeFileSync(join(outRoot, "index.html"), renderIndex(listed));
   writeFileSync(
     join(outRoot, "visibility-defaults.json"),
     `${JSON.stringify(visibilityDefaults(pages), null, 2)}\n`,
   );
-  console.log(`Compiled ${pages.length} compare pages and fill pages from pages.json.`);
+  const hidden = pages.length - listed.length;
+  const suffix =
+    hidden === 0
+      ? ""
+      : ` Index omits ${hidden} ${hidden === 1 ? "card" : "cards"} for disabled items.`;
+  console.log(`Compiled ${pages.length} compare pages and fill pages from pages.json.${suffix}`);
 }
 
 compile();

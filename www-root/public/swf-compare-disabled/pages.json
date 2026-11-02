@@ -1,0 +1,210 @@
+[
+  {
+    "before": "lizard-site",
+    "item": {
+      "id": "claro",
+      "title": "Claro",
+      "group": "websites",
+      "itemId": "claro",
+      "swf": "https://static.nikart.co.uk/websites/claro/swf/claro.swf",
+      "width": 1024,
+      "height": 640,
+      "base": "https://static.nikart.co.uk/websites/claro/swf/",
+      "background": "#FFFFFF",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "claro",
+    "item": {
+      "id": "118aua-energyball",
+      "title": "118 118 — Energy ball",
+      "group": "websites",
+      "itemId": "118aua",
+      "swf": "https://static.nikart.co.uk/websites/118aua/energyball.swf",
+      "width": 982,
+      "height": 494,
+      "base": "https://static.nikart.co.uk/websites/118aua/",
+      "background": "#FFFFFF",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "118aua-energyball",
+    "item": {
+      "id": "118aua-livefeed",
+      "title": "118 118 — Live feed",
+      "group": "websites",
+      "itemId": "118aua",
+      "swf": "https://static.nikart.co.uk/websites/118aua/livefeed.swf",
+      "width": 982,
+      "height": 494,
+      "base": "https://static.nikart.co.uk/websites/118aua/",
+      "background": "#FFFFFF",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "reading-leeds",
+    "item": {
+      "id": "escalera",
+      "title": "Snakes & Ladders",
+      "group": "games",
+      "itemId": "escalera",
+      "swf": "https://static.nikart.co.uk/games/escalera/Main.swf",
+      "width": 800,
+      "height": 600,
+      "base": "https://static.nikart.co.uk/games/escalera/",
+      "background": "#000000",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "spaceship",
+    "item": {
+      "id": "banner-standardlife",
+      "title": "Banner — Standard Life",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/standardlife/standardlife.swf",
+      "width": 720,
+      "height": 360,
+      "base": "https://static.nikart.co.uk/banners/standardlife/",
+      "background": "#000000",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "banner-standardlife",
+    "item": {
+      "id": "banner-standardlife-lite",
+      "title": "Banner — Standard Life Lite",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/standardlife/millionaire_lite.swf",
+      "width": 728,
+      "height": 90,
+      "base": "https://static.nikart.co.uk/banners/standardlife/",
+      "background": "#000000",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "banner-standardlife-lite",
+    "item": {
+      "id": "banner-johnfrieda",
+      "title": "Banner — John Frieda",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/johnfrieda/volume_homepage.swf",
+      "width": 776,
+      "height": 334,
+      "base": "https://static.nikart.co.uk/banners/johnfrieda/",
+      "background": "#000000",
+      "ruffle": false,
+      "awayfl": true
+    }
+  },
+  {
+    "before": "banner-johnfrieda",
+    "item": {
+      "id": "banner-hellboy",
+      "title": "Banner — Hellboy",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/hellboy/hb_expanded_lb.swf",
+      "width": 728,
+      "height": 300,
+      "base": "https://static.nikart.co.uk/banners/hellboy/",
+      "background": "#000000",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "banner-hellboy",
+    "item": {
+      "id": "banner-nintendo",
+      "title": "Banner — Nintendo",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/nintendo/disney.swf",
+      "width": 300,
+      "height": 250,
+      "base": "https://static.nikart.co.uk/banners/nintendo/",
+      "background": "#CCCCCC",
+      "ruffle": false,
+      "awayfl": true
+    }
+  },
+  {
+    "before": "banner-nintendo",
+    "item": {
+      "id": "banner-shell",
+      "title": "Banner — Shell (particles.swf)",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/shell/particles.swf",
+      "width": 728,
+      "height": 90,
+      "base": "https://static.nikart.co.uk/banners/shell/",
+      "background": "#40c3d7",
+      "ruffle": false,
+      "awayfl": true
+    }
+  },
+  {
+    "before": "banner-shell",
+    "item": {
+      "id": "banner-shell__glasses",
+      "title": "Banner — Shell (Glasses.swf)",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/shell/Glasses.swf",
+      "width": 300,
+      "height": 250,
+      "base": "https://static.nikart.co.uk/banners/shell/",
+      "background": "#FFFFFF",
+      "ruffle": true,
+      "awayfl": false
+    }
+  },
+  {
+    "before": "banner-shell__glasses",
+    "item": {
+      "id": "banner-shell__matchstick",
+      "title": "Banner — Shell (Matchstick.swf)",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/shell/Matchstick.swf",
+      "width": 300,
+      "height": 250,
+      "base": "https://static.nikart.co.uk/banners/shell/",
+      "background": "#FFFFFF",
+      "ruffle": true,
+      "awayfl": true
+    }
+  },
+  {
+    "before": "banner-shell__matchstick",
+    "item": {
+      "id": "banner-trunk__mpu_2",
+      "title": "Banner — Trunk (mpu_2.swf)",
+      "group": "banners",
+      "itemId": "banners",
+      "swf": "https://static.nikart.co.uk/banners/trunk/mpu_2.swf",
+      "width": 300,
+      "height": 250,
+      "base": "https://static.nikart.co.uk/banners/trunk/",
+      "background": "#CCCCCC",
+      "ruffle": false,
+      "awayfl": false
+    }
+  }
+]
