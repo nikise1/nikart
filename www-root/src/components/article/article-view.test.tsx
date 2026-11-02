@@ -34,14 +34,12 @@ describe("ArticleView", () => {
   it("staggers title, slideshow, description, and launch as separate slots", () => {
     render(<ArticleView item={slideshowItem} locale="en" />);
 
-    expect(screen.getByRole("heading", { name: "One Day in May" }).parentElement).toHaveAttribute(
-      "data-content-slot",
-      "0",
-    );
-    expect(screen.getByText("A microsite.").parentElement).toHaveAttribute(
-      "data-content-slot",
-      "2",
-    );
+    const title = screen.getByRole("heading", { name: "One Day in May" });
+    expect(title).toHaveAttribute("data-component", "ContentTitle");
+    expect(title.parentElement).toHaveAttribute("data-content-slot", "0");
+    const description = screen.getByText("A microsite.");
+    expect(description).toHaveAttribute("data-component", "ContentDescription");
+    expect(description.parentElement).toHaveAttribute("data-content-slot", "2");
     expect(
       screen.getByRole("link", { name: "Launch Website" }).parentElement?.parentElement,
     ).toHaveAttribute("data-content-slot", "3");

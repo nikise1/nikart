@@ -22,6 +22,10 @@ describe("VideoView", () => {
   it("staggers the title ahead of the player", () => {
     render(<VideoView item={videoItem} locale="en" />);
 
+    expect(screen.getByRole("heading", { name: "Spark" })).toHaveAttribute(
+      "data-component",
+      "ContentTitle",
+    );
     expect(screen.getByRole("heading", { name: "Spark" }).parentElement).toHaveAttribute(
       "data-content-slot",
       "0",
@@ -30,5 +34,28 @@ describe("VideoView", () => {
       "data-content-slot",
       "1",
     );
+    expect(document.querySelector("[data-component='ContentDescription']")).toBeNull();
+    expect(document.querySelector("[data-content-slot='2']")).toBeNull();
+  });
+
+  it("places a description after the player when the item has one", () => {
+    const described: ContentItem = {
+      ...videoItem,
+      desc: { en: "A short film.", es: "Un cortometraje." },
+    };
+
+    render(<VideoView item={described} locale="es" />);
+
+    expect(screen.getByRole("heading", { name: "Chispa" }).parentElement).toHaveAttribute(
+      "data-content-slot",
+      "0",
+    );
+    expect(document.querySelector("video")?.parentElement?.parentElement).toHaveAttribute(
+      "data-content-slot",
+      "1",
+    );
+    const description = screen.getByText("Un cortometraje.");
+    expect(description).toHaveAttribute("data-component", "ContentDescription");
+    expect(description.parentElement).toHaveAttribute("data-content-slot", "2");
   });
 });
