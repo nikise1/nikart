@@ -37,6 +37,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-10-29 — Parked those compare records in `public/swf-compare-disabled`. `enable:` moves them back.
 
+2026-11-01 — November library radar (`docs/radar/2026-11.md`): vitest-plugin-rsc, Motion vs GSAP note, vercel CLI audit monitor.
+
 ---
 
 ## Migration record
