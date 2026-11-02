@@ -71,6 +71,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
+2026-11-02 — `/fl` pauses NetStream when leaving a video. Ruffle ignores `NetStream.close()`, so that audio kept playing.
+
 ---
 
 ## Migration record
