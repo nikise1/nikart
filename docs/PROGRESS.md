@@ -39,6 +39,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-01 — November library radar (`docs/radar/2026-11.md`): vitest-plugin-rsc, Motion vs GSAP note, vercel CLI audit monitor.
 
+2026-11-02 — Article and video views share title and description components. Videos show a description when the item has one.
+
 ---
 
 ## Migration record

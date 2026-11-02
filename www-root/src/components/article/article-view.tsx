@@ -6,6 +6,8 @@ import { processUrl } from "@/lib/assets";
 import { localize, localizeUrl } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
 import { Slideshow } from "@/components/slideshow/slideshow";
+import { ContentDescription } from "@/components/content-description/content-description";
+import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
 
 interface ArticleViewProps {
@@ -40,9 +42,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
       <article data-component="ArticleView" className="flex flex-1 flex-col items-center p-4">
         <ContentTransition index={titleSlot}>
-          <h1 className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#4F3E2D] md:w-auto md:self-center">
-            {title}
-          </h1>
+          <ContentTitle text={title} />
         </ContentTransition>
 
         {slideshowSlot !== null && (
@@ -58,7 +58,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
         {descSlot !== null && desc && (
           <ContentTransition index={descSlot}>
-            <p className="mt-4 max-w-prose text-center text-[#4F3E2D]">{desc}</p>
+            <ContentDescription text={desc} />
           </ContentTransition>
         )}
 

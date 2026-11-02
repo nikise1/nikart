@@ -4,6 +4,8 @@ import { ViewTransition } from "react";
 import { videoH264Url, videoWebmUrl, imgUrl } from "@/lib/assets";
 import { localize } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
+import { ContentDescription } from "@/components/content-description/content-description";
+import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
 
 interface VideoViewProps {
@@ -13,17 +15,21 @@ interface VideoViewProps {
 
 export function VideoView({ item, locale }: VideoViewProps) {
   const title = localize(item.title, locale);
+  const desc = localize(item.desc, locale);
+
+  let slot = 0;
+  const titleSlot = slot++;
+  const playerSlot = slot++;
+  const descSlot = desc ? slot++ : null;
 
   return (
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
       <article data-component="VideoView" className="flex flex-1 flex-col items-center p-4">
-        <ContentTransition index={0}>
-          <h1 className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#4F3E2D] md:w-auto md:self-center">
-            {title}
-          </h1>
+        <ContentTransition index={titleSlot}>
+          <ContentTitle text={title} />
         </ContentTransition>
 
-        <ContentTransition index={1}>
+        <ContentTransition index={playerSlot}>
           <div className="mt-4 w-full max-w-[480px]">
             <video controls poster={imgUrl(item.id)} className="w-full rounded" preload="metadata">
               <source src={videoH264Url(item.id)} type="video/mp4" />
@@ -31,6 +37,12 @@ export function VideoView({ item, locale }: VideoViewProps) {
             </video>
           </div>
         </ContentTransition>
+
+        {descSlot !== null && desc && (
+          <ContentTransition index={descSlot}>
+            <ContentDescription text={desc} />
+          </ContentTransition>
+        )}
       </article>
     </ViewTransition>
   );
