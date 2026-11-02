@@ -1,7 +1,6 @@
 {
   "name": "nikart",
   "private": true,
-  "packageManager": "npm@10",
   "scripts": {
     "www-root": "npm run dev --prefix www-root",
     "legacy-2014": "npm start --prefix legacy-2014",

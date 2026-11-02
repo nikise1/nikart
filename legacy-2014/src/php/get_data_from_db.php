@@ -9,13 +9,12 @@ class GetDataFromDb {
     private $db;
     private $hostName = 'localhost';
     private $userName = 'nikisehmi';
-    private $password = 'wh4p4456';
     private $dbName = 'nikart';
     private $tableDataObj;
     private $counter = 0;
 
     public function __construct() {
-        $this->db = new Database($this->hostName, $this->userName, $this->password, $this->dbName, 0);
+        $this->db = new Database($this->hostName, $this->userName, '***', $this->dbName, 0);
     }
 
     public function close() {

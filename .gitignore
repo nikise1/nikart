@@ -8,7 +8,4 @@
 node_modules
 npm-debug.log
 
-legacy-2014/public/static
-legacy-2014/public/html5/node_modules
 www-root/public/_generated/
-#legacy-2014/src/php
