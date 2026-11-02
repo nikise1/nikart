@@ -10,6 +10,7 @@ import {
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { indexPages, loadDisabledItemIds } from "../src/lib/swf-compare-index.ts";
+import { cardVersionLabel } from "./swf-card-version.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outRoot = join(root, "public/swf-compare");
@@ -194,6 +195,11 @@ function swfFileName(page) {
   return path.split("/").pop() || path;
 }
 
+function cardVersionHtml(page) {
+  const label = cardVersionLabel(page);
+  return label ? `<small class="card-version">${escapeHtml(label)}</small>` : "";
+}
+
 function renderIndex(pages) {
   const groups = new Map();
   for (const page of pages) {
@@ -209,7 +215,7 @@ function renderIndex(pages) {
       const cards = list
         .map(
           (page) =>
-            `<div class="card" data-piece="${escapeHtml(page.id)}"><a href="${pieceHref(page.id)}">${escapeHtml(page.title)}<small>${escapeHtml(swfFileName(page))}</small></a><span class="card-vis">${visFlagButton(page, "ruffle", "Ruffle")}${visFlagButton(page, "awayfl", "AwayFL")}</span></div>`,
+            `<div class="card" data-piece="${escapeHtml(page.id)}"><a href="${pieceHref(page.id)}">${escapeHtml(page.title)}<small>${escapeHtml(swfFileName(page))}</small>${cardVersionHtml(page)}</a><span class="card-vis">${visFlagButton(page, "ruffle", "Ruffle")}${visFlagButton(page, "awayfl", "AwayFL")}</span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;
