@@ -1,6 +1,7 @@
 import { resolveFlashLaunchHref } from "@/lib/assets";
-import { compareHrefForSource } from "@/lib/swf-compare";
 import { buildAwayFlPopupUrl, isAwayFlLaunch } from "@/lib/awayfl-static";
+import { compareHrefForSource } from "@/lib/swf-compare";
+import { openWebTab } from "@/lib/web-tab";
 
 declare global {
   interface Window {
@@ -23,39 +24,21 @@ export interface FlashBridge {
 
 export function installFlashBridge(): void {
   const nikart: FlashBridge = window.nikart ?? {
-    popWin(filename, winname, width, height, resize, scrollbars, location) {
+    // Flash still passes resize, scrollbars, and location. A features string
+    // would open a popup, which browsers block, so those args are ignored.
+    popWin(filename, winname, width, height) {
       const launchHref = resolveFlashLaunchHref(filename);
       const compareHref = compareHrefForSource(launchHref);
-      if (compareHref) {
-        const tab = window.open(compareHref, winname);
-        tab?.focus();
-        nikart.doTracker(`${winname}_launch`);
-        return;
-      }
-      const href = isAwayFlLaunch(launchHref)
-        ? buildAwayFlPopupUrl(launchHref, {
-            width,
-            height,
-            title: winname,
-          })
-        : launchHref;
-      const left = screen.availWidth / 2 - width / 2;
-      const top = screen.availHeight / 2 - height / 2;
-      const specs = [
-        "toolbar=no",
-        "directories=no",
-        "status=no",
-        "menubar=no",
-        `width=${width}`,
-        `height=${height}`,
-        `left=${left}`,
-        `top=${top}`,
-        `resizable=${resize}`,
-        `scrollbars=${scrollbars}`,
-        `location=${location}`,
-      ].join(",");
-      const popup = window.open(href, winname, specs);
-      popup?.focus();
+      const href =
+        compareHref ??
+        (isAwayFlLaunch(launchHref)
+          ? buildAwayFlPopupUrl(launchHref, {
+              width,
+              height,
+              title: winname,
+            })
+          : launchHref);
+      openWebTab(href);
       nikart.doTracker(`${winname}_launch`);
     },
     doTracker(event) {
