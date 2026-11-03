@@ -1,9 +1,42 @@
 #!/usr/bin/env bash
-# Installs the Node release named by NODE_VERSION (set in .cursor/environment.json)
-# onto ~/.local/bin, which login shells and ~/.bashrc both put ahead of /exec-daemon/node.
+# The default image's node binary stays ahead of nvm on PATH, so this downloads
+# the Node release required by www-root/package.json and links it first.
 set -euo pipefail
 
-NODE_VERSION="${NODE_VERSION:?Set NODE_VERSION in .cursor/environment.json, for example 24.22.2}"
+resolve_node_version() {
+  local engine="$1"
+  if [[ "$engine" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+    printf '%s\n' "$engine"
+    return
+  fi
+
+  local major=""
+  if [[ "$engine" =~ ^([0-9]+)\.x$ || "$engine" =~ ^([0-9]+)$ ]]; then
+    major="${BASH_REMATCH[1]}"
+  else
+    echo "www-root/package.json engines.node is '${engine}'. Use a major, a major.x range, or an exact x.y.z." >&2
+    return 1
+  fi
+
+  local version
+  version="$(
+    curl -fsSL "https://nodejs.org/dist/latest-v${major}.x/SHASUMS256.txt" \
+      | awk -v major="$major" '$2 ~ "^node-v" major "\\.[0-9]+\\.[0-9]+-linux-x64\\.tar\\.xz$" {
+          sub(/^node-v/, "", $2)
+          sub(/-linux-x64\.tar\.xz$/, "", $2)
+          print $2
+          exit
+        }'
+  )"
+  if [[ -z "$version" ]]; then
+    echo "Could not resolve a Node ${major} release." >&2
+    return 1
+  fi
+  printf '%s\n' "$version"
+}
+
+engine="$(node -p "require('./www-root/package.json').engines.node")"
+NODE_VERSION="$(resolve_node_version "$engine")"
 NODE_ROOT="${HOME}/.local/node"
 PATH_LINE='export PATH="$HOME/.local/bin:$PATH"'
 
@@ -29,11 +62,12 @@ fi
 
 export PATH="${HOME}/.local/bin:${PATH}"
 hash -r
-echo "Using $(command -v node) $(node -v)"
+echo "Using $(command -v node) $(node -v) from engines ${engine}"
 
 # npm 11 skips dependency install scripts unless they are approved.
 # esbuild, swc, and sharp need those scripts.
 npm config set dangerously-allow-all-scripts true
 
-npm install --prefix legacy-2014
+# legacy-2014 declares an older Node. Install it without that engine warning.
+npm install --prefix legacy-2014 --loglevel=error
 npm install --prefix www-root

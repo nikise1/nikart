@@ -1,6 +1,6 @@
 {
   "name": "nikart",
-  "install": "NODE_VERSION=24.22.2 bash .cursor/cloud-install.sh",
+  "install": "bash .cursor/cloud-install.sh",
   "terminals": [
     {
       "name": "www-root",
