@@ -11,4 +11,13 @@ describe("ContentDescription", () => {
     expect(description.tagName).toBe("P");
     expect(description).toHaveClass("mt-4", "max-w-prose", "text-left", "text-[#4F3E2D]");
   });
+
+  it("keeps a hyphenated word together", () => {
+    render(<ContentDescription text="An E-learning application." />);
+
+    const word = screen.getByText("E-learning");
+    expect(word.tagName).toBe("SPAN");
+    expect(word).toHaveClass("whitespace-nowrap");
+    expect(word.parentElement).toHaveTextContent("An E-learning application.");
+  });
 });
