@@ -57,8 +57,8 @@
             "es": "Ciudades Isométricas"
         },
         "desc": {
-            "en": "Isometric city construction courses with multi level & multi user profiles. E\u2011learning application that loads & saves data to multiple SCORM platforms with XML content.",
-            "es": "Cursos con ciudades isométricas. Varios niveles y perfiles. Aplicación e\u2011learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
+            "en": "Isometric city construction courses with multi level & multi user profiles. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
+            "es": "Cursos con ciudades isométricas. Varios niveles y perfiles. Aplicación e-learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
         },
         "imgs": 19,
         "url": "games/ciudad_helm/index.html",
@@ -227,8 +227,8 @@
         "type": "web",
         "title": "Desafío Pacífico",
         "desc": {
-            "en": "Course with top down car driving & various maps. E\u2011learning application that loads & saves data to multiple SCORM platforms with XML content.",
-            "es": "Curso con carros y varias pistas. Aplicación e\u2011learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
+            "en": "Course with top down car driving & various maps. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
+            "es": "Curso con carros y varias pistas. Aplicación e-learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
         },
         "imgs": 18,
         "url": "games/desafio_pacifico/index.html",

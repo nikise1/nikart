@@ -91,8 +91,8 @@
             "es": "Juegos de Escaleras"
         },
         "desc": {
-            "en": "Snakes and ladders quizes with multi level & multi players. E\u2011learning application that saves data to multiple SCORM platforms with XML content.",
-            "es": "Juegos de Escaleras con multi nivel y multi jugador. Aplicación e\u2011learning que guarda datos de SCORM en plataformas múltiples con contenido XML."
+            "en": "Snakes and ladders quizes with multi level & multi players. E-learning application that saves data to multiple SCORM platforms with XML content.",
+            "es": "Juegos de Escaleras con multi nivel y multi jugador. Aplicación e-learning que guarda datos de SCORM en plataformas múltiples con contenido XML."
         },
         "imgs": 4,
         "url": "games/escalera/index.html",
