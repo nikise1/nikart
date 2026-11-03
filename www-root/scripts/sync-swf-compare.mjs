@@ -3,6 +3,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { indexPages, loadDisabledItemIds } from "../src/lib/swf-compare-index.ts";
+import { cardVersionLabel } from "./swf-card-version.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalogPath = join(root, "src/lib/swf-compare-catalog.json");
@@ -12,6 +13,9 @@ const ORIGIN = process.env.SWF_COMPARE_ORIGIN ?? "https://static.nikart.co.uk";
 const MAX_BYTES = 80 * 1024 * 1024;
 
 const sources = JSON.parse(readFileSync(catalogPath, "utf8"));
+const pagesById = new Map(
+  JSON.parse(readFileSync(join(outRoot, "pages.json"), "utf8")).map((page) => [page.id, page]),
+);
 const visibilityDefaultsPath = join(outRoot, "visibility-defaults.json");
 const visibilityDefaults = existsSync(visibilityDefaultsPath)
   ? JSON.parse(readFileSync(visibilityDefaultsPath, "utf8"))
@@ -20,6 +24,15 @@ const visibilityDefaults = existsSync(visibilityDefaultsPath)
 function defaultVisible(id, player) {
   const page = visibilityDefaults[id];
   return page?.[player] ?? true;
+}
+
+function cardVersionHtml(piece) {
+  const stored = pagesById.get(piece.id);
+  const label = cardVersionLabel({
+    swfVersion: piece.swfVersion ?? stored?.swfVersion,
+    actionScript: piece.actionScript ?? stored?.actionScript,
+  });
+  return label ? `<small class="card-version">${escapeHtml(label)}</small>` : "";
 }
 
 function visFlagButton(id, player, label) {
@@ -627,7 +640,7 @@ function renderIndex(pieces) {
       const cards = list
         .map(
           (piece) =>
-            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="${pieceHref(piece.id)}">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small></a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
+            `<div class="card" data-piece="${escapeHtml(piece.id)}"><a href="${pieceHref(piece.id)}">${escapeHtml(piece.title)}<small>${escapeHtml(piece.swfPath.split("/").pop() ?? piece.swfPath)}</small>${cardVersionHtml(piece)}</a><span class="card-vis">${visFlagButton(piece.id, "ruffle", "Ruffle")}${visFlagButton(piece.id, "awayfl", "AwayFL")}</span></div>`,
         )
         .join("\n");
       return `<h2 class="group" id="${escapeHtml(group)}">${escapeHtml(group)}</h2>\n<div class="grid">${cards}</div>`;

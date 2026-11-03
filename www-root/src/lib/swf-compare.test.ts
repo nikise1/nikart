@@ -141,6 +141,7 @@ describe("swf-compare", () => {
       id: string;
       itemId: string;
       group: string;
+      swfVersion: number;
     }[];
     const listed = new Set(indexPages(pages, loadDisabledItemIds()).map((page) => page.id));
     const expected = orderComparePieceIds(existingIds);
@@ -157,6 +158,13 @@ describe("swf-compare", () => {
       );
     }
     expect(cardIds).toEqual(grouped);
+    for (const page of pages.filter((item) => listed.has(item.id))) {
+      expect(indexHtml).toContain(`data-piece="${page.id}"`);
+      expect(indexHtml).toContain(`>SWF ${page.swfVersion} · Player `);
+    }
+    expect(indexHtml).toContain(">SWF 8 · Player 8 · AS2</small>");
+    expect(indexHtml).toContain(">SWF 10 · Player 10 · AS3</small>");
+    expect(indexHtml).toContain(">SWF 6 · Player 6 · AS1/2</small>");
     for (const page of pages) {
       if (!listed.has(page.id)) {
         expect(indexHtml).not.toContain(`data-piece="${page.id}"`);

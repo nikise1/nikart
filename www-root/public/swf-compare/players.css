@@ -168,6 +168,11 @@ h1 {
   font-size: 12px;
 }
 
+.card .card-version {
+  margin-top: 0.15rem;
+  color: #95cf89;
+}
+
 .card-vis {
   display: flex;
   flex-wrap: wrap;
