@@ -81,16 +81,6 @@
     "height": 893
   },
   {
-    "id": "slate20",
-    "title": "Slate 20",
-    "group": "games",
-    "itemId": "slate20",
-    "wrapper": "games/slate20/index.html",
-    "primary": true,
-    "width": 768,
-    "height": 586
-  },
-  {
     "id": "weeds",
     "title": "Mow the Lawn",
     "group": "games",

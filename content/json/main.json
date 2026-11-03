@@ -25,7 +25,6 @@
             },
             "menu": [
                 "onedayinmay",
-                "cityread",
                 "ar_heart",
                 "terranova",
                 "zubi",
@@ -49,7 +48,6 @@
                 "desafio_pacifico",
                 "avis_mundial",
                 "reading_leeds",
-                "slate20",
                 "weeds"
             ]
         },
@@ -115,7 +113,6 @@
                 "es": "Off-line y Otros"
             },
             "menu": [
-                "steppingstones",
                 "ar_lizard",
                 "sketchbook",
                 "spaceship",

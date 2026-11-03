@@ -23,7 +23,6 @@ const stageSizes: Record<string, { width: number; height: number }> = {
   "lizard-site": { width: 750, height: 500 },
   "reading-leeds": { width: 520, height: 893 },
   "rockstars-divas": { width: 520, height: 620 },
-  slate20: { width: 768, height: 586 },
   spaceship: { width: 500, height: 375 },
   weeds: { width: 640, height: 480 },
   whiplash: { width: 550, height: 400 },
@@ -41,7 +40,18 @@ describe("swf-compare", () => {
   });
 
   it("has no compare page for a disabled portfolio id", () => {
-    for (const itemId of ["claro", "118aua", "escalera", "banners", "dataminh", "cats", "star"]) {
+    for (const itemId of [
+      "claro",
+      "118aua",
+      "escalera",
+      "banners",
+      "dataminh",
+      "cats",
+      "star",
+      "cityread",
+      "slate20",
+      "steppingstones",
+    ]) {
       expect(compareHrefForItem(itemId)).toBeNull();
       expect(swfCompareSources.some((piece) => piece.itemId === itemId)).toBe(false);
     }
