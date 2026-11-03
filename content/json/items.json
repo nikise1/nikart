@@ -70,7 +70,7 @@
     },
     {
         "id": "ar_heart",
-        "type": "web",
+        "type": "tex",
         "title": {
             "en": "Away3D heart",
             "es": "Corazón en Away3D"
@@ -412,7 +412,7 @@
     },
     {
         "id": "ar_lizard",
-        "type": "web",
+        "type": "tex",
         "title": {
             "en": "Augmented Reality lizard",
             "es": "Lagartija en Realidad Aumentada"
@@ -459,7 +459,7 @@
     },
     {
         "id": "japanese",
-        "type": "web",
+        "type": "tex",
         "title": {
             "en": "Japanese Interior in Shockwave 3D",
             "es": "Interior Japonés en Shockwave 3D"
