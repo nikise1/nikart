@@ -47,6 +47,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Bandstand’s site no longer responds, so that item is text, and article launch buttons follow the web type.
 
+2026-11-03 — Favicon is the lower frame of `content/img/curl-sprite.png`.
+
 ---
 
 ## Migration record
