@@ -645,6 +645,16 @@
                         "es": "Abra"
                     },
                     "pop": "'880','640','yes','yes','yes'"
+                },
+                {
+                    "id": "steppingstones",
+                    "type": "tex",
+                    "title": "Stepping Stones",
+                    "desc": {
+                        "en": "A fun CD to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
+                        "es": "Un CD para ayudar de manera divertida a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
+                    },
+                    "imgs": 14
                 }
             ],
             "title": {

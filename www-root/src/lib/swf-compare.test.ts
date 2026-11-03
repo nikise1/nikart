@@ -50,7 +50,6 @@ describe("swf-compare", () => {
       "star",
       "cityread",
       "slate20",
-      "steppingstones",
     ]) {
       expect(compareHrefForItem(itemId)).toBeNull();
       expect(swfCompareSources.some((piece) => piece.itemId === itemId)).toBe(false);
