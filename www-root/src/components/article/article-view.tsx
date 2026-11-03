@@ -1,10 +1,11 @@
 "use client";
 
 import { ViewTransition } from "react";
-import { compareHrefForItem, compareHrefForSource } from "@/lib/swf-compare";
 import { processUrl } from "@/lib/assets";
 import { localize, localizeUrl } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
+import { compareHrefForItem, compareHrefForSource } from "@/lib/swf-compare";
+import { WEB_TAB_NAME } from "@/lib/web-tab";
 import { Slideshow } from "@/components/slideshow/slideshow";
 import { ContentDescription } from "@/components/content-description/content-description";
 import { ContentTitle } from "@/components/content-title/content-title";
@@ -68,8 +69,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
             <p className="mt-4">
               <a
                 href={link.href}
-                target={link.isSelf ? "_self" : "_blank"}
-                rel={link.isSelf ? undefined : "noopener noreferrer"}
+                target={link.isSelf ? "_self" : WEB_TAB_NAME}
                 className="rounded bg-[#94B864] px-4 py-2 text-white transition-colors hover:bg-[#7DA04E]"
               >
                 {launchText}

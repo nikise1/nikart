@@ -105,7 +105,9 @@
     window.nikart = {
       popWin(filename, winname) {
         const href = compareHrefForLaunch(filename) ?? flashSelfHref(filename) ?? filename;
-        const tab = window.open(href, winname || "_blank");
+        // Same name as www-root `WEB_TAB_NAME`. No window features, and do not
+        // clear opener: either one makes Chrome open a new tab instead of replacing this one.
+        const tab = window.open(href, "nikart-web");
         tab?.focus();
         window.nikart.doTracker(`${winname || "launch"}_launch`);
       },

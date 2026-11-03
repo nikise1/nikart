@@ -49,6 +49,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Favicon is the lower frame of `content/img/curl-sprite.png`.
 
+2026-11-03 — Web launches reuse one browser tab instead of a popup window.
+
 ---
 
 ## Migration record
