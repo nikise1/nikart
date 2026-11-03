@@ -135,7 +135,7 @@
     },
     {
         "id": "bandstand",
-        "type": "web",
+        "type": "tex",
         "title": "Bandstand",
         "desc": {
             "en": "Development for the website of Bandstand music event sponsored by Vauxhall Corsa.",
