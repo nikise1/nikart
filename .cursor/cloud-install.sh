@@ -68,6 +68,4 @@ echo "Using $(command -v node) $(node -v) from engines ${engine}"
 # esbuild, swc, and sharp need those scripts.
 npm config set dangerously-allow-all-scripts true
 
-# legacy-2014 declares an older Node. Install it without that engine warning.
-npm install --prefix legacy-2014 --loglevel=error
 npm install --prefix www-root
