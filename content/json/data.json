@@ -330,6 +330,22 @@
                         "es": "Comience el juego"
                     },
                     "pop": "'800','893','yes','yes','yes'"
+                },
+                {
+                    "id": "steppingstones",
+                    "type": "web",
+                    "title": "Stepping Stones",
+                    "desc": {
+                        "en": "A European Leonardo project to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
+                        "es": "Un proyecto Europeo Leonardo para ayudar a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
+                    },
+                    "imgs": 15,
+                    "url": "games\/weeds\/index.html",
+                    "launch": {
+                        "en": "Mow the Lawn game",
+                        "es": "Juego Corta el C\u00e9sped"
+                    },
+                    "pop": "'840','640','yes','yes','no'"
                 }
             ],
             "title": {
@@ -626,22 +642,6 @@
                         "es": "Abra"
                     },
                     "pop": "'880','640','yes','yes','yes'"
-                },
-                {
-                    "id": "steppingstones",
-                    "type": "web",
-                    "title": "Stepping Stones",
-                    "desc": {
-                        "en": "A European Leonardo project to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
-                        "es": "Un proyecto Europeo Leonardo para ayudar a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
-                    },
-                    "imgs": 15,
-                    "url": "games\/weeds\/index.html",
-                    "launch": {
-                        "en": "Mow the Lawn game",
-                        "es": "Juego Corta el C\u00e9sped"
-                    },
-                    "pop": "'840','640','yes','yes','no'"
                 }
             ],
             "title": {
