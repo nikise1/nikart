@@ -1,5 +1,6 @@
 import { describe, it, expect, afterEach, vi } from "vitest";
 import { installFlashBridge } from "./flash-bridge";
+import { WEB_TAB_NAME } from "./web-tab";
 
 describe("flash-bridge", () => {
   afterEach(() => {
@@ -29,7 +30,8 @@ describe("flash-bridge", () => {
       "yes",
     );
 
-    expect(open).toHaveBeenCalledWith("/swf-compare/whiplash/fill.html", "whiplash");
+    expect(open).toHaveBeenCalledWith("/swf-compare/whiplash/fill.html", WEB_TAB_NAME);
+    expect(open.mock.calls[0]).toHaveLength(2);
   });
 
   it("opens static Flash wrappers on the fill page", () => {
@@ -46,7 +48,7 @@ describe("flash-bridge", () => {
       "yes",
     );
 
-    expect(open).toHaveBeenCalledWith("/swf-compare/whiplash/fill.html", "whiplash");
+    expect(open).toHaveBeenCalledWith("/swf-compare/whiplash/fill.html", WEB_TAB_NAME);
   });
 
   it("opens _self flash and html5 links at the site root", () => {
@@ -57,7 +59,11 @@ describe("flash-bridge", () => {
     window.nikart?.popWin("../html5", "html5", 1200, 850, "yes", "yes", "yes");
     window.nikart?.popWin("es", "language", 1200, 850, "yes", "yes", "yes");
 
-    expect(open.mock.calls.map((call) => call[0])).toEqual(["/fl", "/html5", "/fl/es"]);
+    expect(open.mock.calls.map((call) => [call[0], call[1], call.length])).toEqual([
+      ["/fl", WEB_TAB_NAME, 2],
+      ["/html5", WEB_TAB_NAME, 2],
+      ["/fl/es", WEB_TAB_NAME, 2],
+    ]);
   });
 
   it("leaves non-static URLs unchanged", () => {
@@ -66,6 +72,7 @@ describe("flash-bridge", () => {
 
     window.nikart?.popWin("http://onedayinmay.co.uk", "oneday", 1200, 850, "yes", "yes", "yes");
 
-    expect(open.mock.calls[0]?.[0]).toBe("http://onedayinmay.co.uk");
+    expect(open).toHaveBeenCalledWith("http://onedayinmay.co.uk", WEB_TAB_NAME);
+    expect(open.mock.calls[0]).toHaveLength(2);
   });
 });
