@@ -32,6 +32,7 @@ The repo-root `README.md` lists these libraries in one line and leaves version n
 From repo root (preferred one-word shortcut):
 
 ```bash
+npm install          # Install this folder's dependencies (root postinstall)
 npm run www-root     # Dev server — alias for `npm run dev` in this folder
 ```
 

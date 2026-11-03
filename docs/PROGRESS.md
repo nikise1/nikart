@@ -41,6 +41,12 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Disabled cityread, slate20, and steppingstones.
 
+2026-11-03 — Root `npm install` installs `www-root` dependencies through `postinstall`.
+
+2026-11-03 — Cloud Agent install reads Node from `www-root/package.json` engines.
+
+2026-11-03 — Cloud Agent install installs `www-root` only.
+
 2026-11-02 — SWF compare index cards show each movie's SWF version, Flash Player target, and ActionScript generation.
 
 2026-11-02 — Article and video views share title and description components. Videos show a description when the item has one.

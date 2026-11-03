@@ -11,6 +11,7 @@ Next.js, React, TypeScript, Tailwind CSS, GSAP, Zustand, next-intl.
 From the repo root:
 
 ```bash
+npm install          # installs www-root dependencies
 npm run www-root
 ```
 
