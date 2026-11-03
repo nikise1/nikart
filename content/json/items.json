@@ -69,22 +69,6 @@
         "pop": "'1200','768','yes','yes','yes'"
     },
     {
-        "id": "cityread",
-        "type": "tex",
-        "title": "Cityread London 2014",
-        "desc": {
-            "en": "Ruby on Rails site for an annual celebration of literature.",
-            "es": "Sitio en Ruby on Rails para una celebración anual de literatura."
-        },
-        "imgs": 3,
-        "url": "http://www.cityreadlondon.org.uk",
-        "launch": {
-            "en": "Open",
-            "es": "Abra"
-        },
-        "pop": "'1016','710','yes','yes','yes'"
-    },
-    {
         "id": "ar_heart",
         "type": "web",
         "title": {
@@ -268,22 +252,6 @@
         "pop": "'800','893','yes','yes','yes'"
     },
     {
-        "id": "slate20",
-        "type": "web",
-        "title": "Slate 20",
-        "desc": {
-            "en": "Video combination game for Slate 20 alcoholic beverage. Find the correct mix of girls.",
-            "es": "Video juego de combinación para la bebida alcohólica Slate 20. Haga la mezcla correcta de chicas."
-        },
-        "imgs": 5,
-        "url": "games/slate20/index.html",
-        "launch": {
-            "en": "Launch Game",
-            "es": "Comience el juego"
-        },
-        "pop": "'808','606','yes','no','no'"
-    },
-    {
         "id": "weeds",
         "type": "web",
         "title": {
@@ -441,16 +409,6 @@
         "id": "rover",
         "type": "vid",
         "title": "Rover"
-    },
-    {
-        "id": "steppingstones",
-        "type": "tex",
-        "title": "Stepping Stones",
-        "desc": {
-            "en": "A fun CD to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
-            "es": "Un CD para ayudar de manera divertida a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
-        },
-        "imgs": 14
     },
     {
         "id": "ar_lizard",

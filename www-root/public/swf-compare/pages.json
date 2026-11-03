@@ -114,21 +114,6 @@
     "awayfl": false
   },
   {
-    "id": "slate20",
-    "title": "Slate 20",
-    "group": "games",
-    "itemId": "slate20",
-    "swf": "https://static.nikart.co.uk/games/slate20/music_1.swf",
-    "swfVersion": 7,
-    "actionScript": "1/2",
-    "width": 768,
-    "height": 586,
-    "base": "https://static.nikart.co.uk/games/slate20/",
-    "background": "#000000",
-    "ruffle": true,
-    "awayfl": false
-  },
-  {
     "id": "weeds",
     "title": "Mow the Lawn",
     "group": "games",

@@ -92,7 +92,6 @@
     "games/whiplash/index.html": "whiplash",
     "games/desafio_pacifico/index.html": "desafio-pacifico",
     "games/reading_leeds/index.html": "reading-leeds",
-    "games/slate20/index.html": "slate20",
     "games/weeds/index.html": "weeds",
     "3d/away3d/ar_heart/index.html": "ar-heart",
     "3d/away3d/flar_lizard/pub/index.html": "ar-lizard",
