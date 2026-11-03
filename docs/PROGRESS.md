@@ -43,6 +43,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-02 — Article and video views share title and description components. Videos show a description when the item has one.
 
+2026-11-03 — Description text keeps the prose measure and aligns left.
+
 ---
 
 ## Migration record
