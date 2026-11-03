@@ -252,25 +252,6 @@
         "pop": "'800','893','yes','yes','yes'"
     },
     {
-        "id": "weeds",
-        "type": "web",
-        "title": {
-            "en": "Mow the Lawn",
-            "es": "Corta el Césped"
-        },
-        "desc": {
-            "en": "Mow the Lawn game from Stepping Stones, a European Leonardo project. Mow the lawn but watch out for the borders. Don't mow the same patch.",
-            "es": "Juego Corta el Césped de \"Stepping Stones\" (saltando sobre las piedras), un proyecto Europeo Leonardo. Corte el césped, pero cuidado con los bordes. No corte el mismo lugar."
-        },
-        "imgs": 1,
-        "url": "games/weeds/index.html",
-        "launch": {
-            "en": "Launch Game",
-            "es": "Comience el juego"
-        },
-        "pop": "'840','640','yes','yes','no'"
-    },
-    {
         "id": "spark",
         "type": "vid",
         "title": "Spark"
@@ -584,12 +565,18 @@
     },
     {
         "id": "steppingstones",
-        "type": "tex",
+        "type": "web",
         "title": "Stepping Stones",
         "desc": {
-            "en": "A fun CD to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
-            "es": "Un CD para ayudar de manera divertida a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
+            "en": "A European Leonardo project to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
+            "es": "Un proyecto Europeo Leonardo para ayudar a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
         },
-        "imgs": 14
+        "imgs": 15,
+        "url": "games/weeds/index.html",
+        "launch": {
+            "en": "Mow the Lawn game",
+            "es": "Juego Corta el Césped"
+        },
+        "pop": "'840','640','yes','yes','no'"
     }
 ]

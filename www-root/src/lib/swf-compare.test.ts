@@ -39,6 +39,11 @@ describe("swf-compare", () => {
     expect(pieceFillHref("rockstars-divas")).toBe("/swf-compare/rockstars-divas/fill.html");
   });
 
+  it("opens Stepping Stones on the Mow the Lawn player", () => {
+    expect(compareHrefForItem("steppingstones")).toBe(pieceFillHref("weeds"));
+    expect(compareHrefForItem("weeds")).toBeNull();
+  });
+
   it("has no compare page for a disabled portfolio id", () => {
     for (const itemId of [
       "claro",
@@ -50,6 +55,7 @@ describe("swf-compare", () => {
       "star",
       "cityread",
       "slate20",
+      "weeds",
     ]) {
       expect(compareHrefForItem(itemId)).toBeNull();
       expect(swfCompareSources.some((piece) => piece.itemId === itemId)).toBe(false);

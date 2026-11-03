@@ -84,7 +84,7 @@
     "id": "weeds",
     "title": "Mow the Lawn",
     "group": "games",
-    "itemId": "weeds",
+    "itemId": "steppingstones",
     "wrapper": "games/weeds/index.html",
     "primary": true,
     "width": 640,
