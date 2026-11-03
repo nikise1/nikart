@@ -117,7 +117,7 @@
     "id": "weeds",
     "title": "Mow the Lawn",
     "group": "games",
-    "itemId": "weeds",
+    "itemId": "steppingstones",
     "swf": "https://static.nikart.co.uk/games/weeds/weeds.swf",
     "swfVersion": 6,
     "actionScript": "1/2",

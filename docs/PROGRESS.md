@@ -61,6 +61,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Enabled steppingstones at the end of Offline & Other.
 
+2026-11-03 — Merged Mow the Lawn into Stepping Stones and took weeds off the menu.
+
 ---
 
 ## Migration record
