@@ -107,4 +107,20 @@ describe("ArticleView", () => {
     expect(screen.getByText("Just words.").parentElement).toHaveAttribute("data-content-slot", "1");
     expect(document.querySelector("[data-content-slot='2']")).toBeNull();
   });
+
+  it("does not show a launch link when a text item still has a url", () => {
+    const retired: ContentItem = {
+      id: "bandstand",
+      type: "tex",
+      title: "Bandstand",
+      desc: "A retired site.",
+      url: "http://bandstand.thewebwell.com",
+      launch: { en: "Launch Website", es: "Abra el Sitio" },
+    };
+
+    render(<ArticleView item={retired} locale="en" />);
+
+    expect(screen.getByRole("heading", { name: "Bandstand" })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Launch Website" })).toBeNull();
+  });
 });

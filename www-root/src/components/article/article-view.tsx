@@ -23,7 +23,8 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
   const imgCount = item.imgs ?? 0;
 
-  const processed = rawUrl ? processUrl(rawUrl) : undefined;
+  // HTML5 only builds the launch link when type is web. A retired site stays in the data as tex.
+  const processed = item.type === "web" && rawUrl ? processUrl(rawUrl) : undefined;
   const compareHref =
     compareHrefForItem(item.id) ?? (processed ? compareHrefForSource(processed.href) : null);
   const link = processed
