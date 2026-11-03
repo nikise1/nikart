@@ -45,6 +45,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Description text keeps the prose measure, aligns left, and keeps hyphenated words such as E-learning on one line.
 
+2026-11-03 — E-learning uses a non-breaking hyphen, so the description stays together without a script.
+
 ---
 
 ## Migration record
