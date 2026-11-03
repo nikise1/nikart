@@ -70,7 +70,7 @@
     },
     {
         "id": "ar_heart",
-        "type": "web",
+        "type": "tex",
         "title": {
             "en": "Away3D heart",
             "es": "Corazón en Away3D"
@@ -412,7 +412,7 @@
     },
     {
         "id": "ar_lizard",
-        "type": "web",
+        "type": "tex",
         "title": {
             "en": "Augmented Reality lizard",
             "es": "Lagartija en Realidad Aumentada"
@@ -459,7 +459,7 @@
     },
     {
         "id": "japanese",
-        "type": "web",
+        "type": "tex",
         "title": {
             "en": "Japanese Interior in Shockwave 3D",
             "es": "Interior Japonés en Shockwave 3D"
@@ -581,5 +581,15 @@
             "en": "Change to the Flash view",
             "es": "Cambia a la versión en Flash"
         }
+    },
+    {
+        "id": "steppingstones",
+        "type": "tex",
+        "title": "Stepping Stones",
+        "desc": {
+            "en": "A fun CD to help people with learning disabilities towards employment. Stepping Stones runs in a choice of 5 languages with games and cartoons.",
+            "es": "Un CD para ayudar de manera divertida a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
+        },
+        "imgs": 14
     }
 ]

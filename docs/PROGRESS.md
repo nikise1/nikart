@@ -57,6 +57,10 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Web launches reuse one browser tab instead of a popup window.
 
+2026-11-03 — Away3D heart, the augmented-reality lizard, and the Japanese interior are text items.
+
+2026-11-03 — Enabled steppingstones at the end of Offline & Other.
+
 ---
 
 ## Migration record
