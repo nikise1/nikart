@@ -69,6 +69,8 @@ Portfolio JSON is edited as source files in repo-root `content/json/`:
 
 To edit the sources in a tree, run `npm run json:edit` from the repo root. That prints a link for each source file which opens [JSON Editor Online](https://jsoneditoronline.org) with the file already loaded. Add `-- --open` to open the browser on your machine. After you copy the edited JSON back, run `npm run sync:json` from `www-root/`.
 
+`npm run json:menu` from the repo root prints the current menu as Markdown. Each line is the id, the English title, and the type (`men` for a section).
+
 ### Post-deploy smoke test
 
 - `/en/` and `/es/` — locale routes
