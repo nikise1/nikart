@@ -30,8 +30,13 @@ export function VideoView({ item, locale }: VideoViewProps) {
         </ContentTransition>
 
         <ContentTransition index={playerSlot}>
-          <div className="mt-4 w-full max-w-[480px]">
-            <video controls poster={imgUrl(item.id)} className="w-full rounded" preload="metadata">
+          <div className="mt-4 w-full max-w-[480px] md:max-w-[640px]">
+            <video
+              controls
+              poster={imgUrl(item.id)}
+              className="h-auto w-full rounded object-contain"
+              preload="metadata"
+            >
               <source src={videoH264Url(item.id)} type="video/mp4" />
               <source src={videoWebmUrl(item.id)} type="video/webm" />
             </video>

@@ -69,6 +69,16 @@
         "pop": "'1200','768','yes','yes','yes'"
     },
     {
+        "id": "web_poker",
+        "type": "vid",
+        "title": "PokerStars Web"
+    },
+    {
+        "id": "tournament_details",
+        "type": "vid",
+        "title": "PokerStars Tournament Details"
+    },
+    {
         "id": "ar_heart",
         "type": "tex",
         "title": {

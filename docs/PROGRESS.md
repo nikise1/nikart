@@ -67,6 +67,10 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Description text keeps the prose measure and aligns left.
 
+2026-11-04 — Added PokerStars Web and PokerStars Tournament Details to Featured as videos.
+
+2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
+
 ---
 
 ## Migration record

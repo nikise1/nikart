@@ -30,6 +30,11 @@ describe("VideoView", () => {
       "data-content-slot",
       "0",
     );
+    expect(document.querySelector("video")?.parentElement).toHaveClass(
+      "max-w-[480px]",
+      "md:max-w-[640px]",
+    );
+    expect(document.querySelector("video")).toHaveClass("object-contain");
     expect(document.querySelector("video")?.parentElement?.parentElement).toHaveAttribute(
       "data-content-slot",
       "1",
