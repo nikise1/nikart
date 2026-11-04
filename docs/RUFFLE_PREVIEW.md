@@ -108,13 +108,15 @@ flowchart LR
 
 Inside `main.swf` (decompressed strings): `pathContent = ../content`, `pathStatic = _root.staticfilesstr \|\| ../static`, `pathJSON = /json/data.json`, `pathImg`, `pathVideo = /video_flv`, plus `javascript:nikart.popWin(` and `javascript:nikart.doTracker(`.
 
+`main.ruffle.swf` is that export plus the tongue drawing on Scene 1, layer `actions`, frame 22. The published movie still stops for a high/low video choice. Both edits are in [Edit the lizard FLA](#edit-the-lizard-fla).
+
 HTML5 already proxies some of that host through Next (`/video_h264`, `/video_webm`, `/games` in `www-root/next.config.ts`). The Flash player does **not** use those rewrites: it is given the raw `staticfilesstr` URL.
 
 ### What actually previews today
 
 - **Works (same-origin):** lizard UI, menus, thumbs, article/image slideshows, language toggle, HTML5/Flash view links that stay on this origin (`_self/`).
 - **Pop-ups to S3:** games, banners, 3D, some websites. Those HTML wrappers still call `swfobject.embedSWF(...)`. Without Ruffle on that page (and without HTTPS), they show “You need Flash Player”.
-- **Flash video:** SWF asks for `{staticfilesstr}/video_flv/{id}`. Those keys 404. H.264/WebM files **do** exist on the same bucket (`/video_h264/spark.mp4`, `/video_webm/spark.webm`) and are what the HTML5 `VideoView` uses. The movie still offers a high/low step (`quality_500_but` / `quality_150_but`) and plays `{id}_500.flv` or `{id}_150.flv`. Follow-up: delete the `_150` FLV files, and remove that quality step from the Ruffle movie (`www-root/public/fl/main.ruffle.swf`) so it always plays `{id}_500.flv`.
+- **Flash video:** SWF asks for `{staticfilesstr}/video_flv/{id}`. Those keys 404. H.264/WebM files **do** exist on the same bucket (`/video_h264/spark.mp4`, `/video_webm/spark.webm`) and are what the HTML5 `VideoView` uses. The movie still offers a high/low step (`quality_500_but` / `quality_150_but`) and plays `{id}_500.flv` or `{id}_150.flv`. The FLA workflow below removes that step and those buttons so a republish always plays `{id}_500.flv`. The `_150` FLV files can be deleted from the bucket after that.
 - **HTTPS mixed content:** a Vercel preview is HTTPS. `staticfilesstr` is now `https://static.nikart.co.uk` (CloudFront). Compare-kit pages fetch SWFs cross-origin from that host.
 
 **Option D is live for the compare kit (2026-10-05):** piece pages use `data-swf` / `data-base` on `https://static.nikart.co.uk/…`. Lizard stays on `/fl/main.ruffle.swf`.
@@ -320,6 +322,61 @@ sequenceDiagram
 
 ---
 
+## Edit the lizard FLA
+
+`legacy-2014/src/fl/main.fla` is a Flash Professional CS6 file (ActionScript 2, player 8, 750×500). `main.ruffle.swf` already has the tongue drawing. The FLA still has the original drawing, and both movies still stop on a high/low video step. This section puts both changes in the FLA.
+
+Ruffle strokes the return from the tongue tip back to the mouth, so the second `curveTo(..., 0, 0)` draws a straight chord. The patched movie starts each stroke at the mouth with `moveTo(0, 0)` and draws both curves out to the tip.
+
+That script is plain text in `DOMDocument.xml`, on Scene 1, layer `actions`, the keyframe at index 21 (frame 22 in the timeline; it lasts 10 frames).
+
+### By hand in Flash CS6
+
+Animate CC does not author ActionScript 2. Open the FLA in Flash Professional CS6.
+
+1. Open `legacy-2014/src/fl/main.fla`.
+2. Select Scene 1, layer `actions`, frame 22.
+3. In the Actions panel, replace the fishing/caught/mouth drawing with:
+
+```
+lizard.tongue.clear();
+midx = tongueTarget._x + Math.cos(tongueTarget.curAngle) * 75;
+midy = tongueTarget._y + Math.sin(tongueTarget.curAngle) * 75;
+lizard.tongue.lineStyle(10,"0x340101",100);
+lizard.tongue.moveTo(0,0);
+lizard.tongue.curveTo(midx,midy,tongueTarget._x,tongueTarget._y);
+lizard.tongue.lineStyle(6,"0xBA0101",100);
+lizard.tongue.moveTo(0,0);
+lizard.tongue.curveTo(midx,midy,tongueTarget._x,tongueTarget._y);
+_root.moveBody();
+```
+
+4. On Scene 1, layer `actions`, frame 52 (the keyframe under the `vidIn` label), replace the connection check and `selectConnection` with:
+
+```
+_root.connection = "500";
+videoContainer.gotoAndStop("playing");
+gotoAndStop("vidPlaying");
+```
+
+5. On the same layer, frame 61 (label `vidPlaying`), delete `vid_controls["quality_" + connection + "_but"]._visible = false;`. The play line above it still loads `{id}_500.flv`.
+6. Open the `videoContainer` symbol. On layer `select connection`, frame 1 (label `select`), delete `quality_txt`, `low_but`, and `high_but`.
+7. Open the `vid_controls` symbol. Delete the layers `quality_high_but` and `quality_low_but` (`quality_500_but` and `quality_150_but`). Leave play, replay, and enlarge.
+8. Publish with the saved profile (Flash Player 8, ActionScript 2). It writes `legacy-2014/public/fl/main.swf`.
+9. Copy that SWF to `www-root/public/fl/main.swf` and `www-root/public/fl/main.ruffle.swf`. After these edits, those three files are the same export.
+
+The stock FLA is not a zip Finder or `unzip` can rewrite. Its `DOMDocument.xml` is raw deflate, and the central directory is 54 bytes longer than the file. Leave `main.fla` packed and use the script below, or edit it only inside CS6.
+
+### Script
+
+From the repo root:
+
+```
+npm run fla:ruffle
+```
+
+That reads `legacy-2014/src/fl/main.fla` and writes `legacy-2014/src/fl/main.ruffle.fla` with the frame-22 tongue drawing, the frame-52 jump straight to `{id}_500.flv`, and the high/low buttons removed from `videoContainer` and `vid_controls`. `main.fla` stays as the CS6 export source. Open `main.ruffle.fla` in CS6 and publish, then copy the SWF as in step 9. If `main.fla` already contains both edits, the script does not write a file. Further Ruffle-only edits to this FLA belong in this command and in the steps above.
+
 ## Recommendation
 
 The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S3 Flash wrappers open that page through the `/static` rewrite. Compare-kit pages already load SWFs from `https://static.nikart.co.uk` (Option D). Remaining work to preview S3 Flash from `/fl` without mixed content:
@@ -327,13 +384,15 @@ The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S
 1. Point `/fl/away` and `staticfilesstr` at the HTTPS origin (or keep Option A `/static` as a same-origin fallback).
 2. **Split players:** Ruffle for `main.swf` + AVM1; **Option F (AwayFL)** for Away3D / Papervision / stubborn AS3; Ruffle Option B/C for the rest.
 3. Treat FLAR webcam as a stretch goal (Camera API). Aim first at the 3D models, using `FLARProxy` on the lizard if present.
-4. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today. When that player is updated, drop the `_150` files and the high/low quality step so the Ruffle movie only requests `{id}_500.flv`.
+4. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today. Republish from the FLA workflow above so the movie only requests `{id}_500.flv`, then drop the `_150` files.
 5. Leave Shockwave 3D as an HTML/screenshot fallback.
 
 ---
 
 ## Related files
 
+- `legacy-2014/src/fl/main.fla` — CS6 source; tongue drawing and the high/low video step are still original
+- `legacy-2014/scripts/patch-lizard-ruffle.mjs` — `npm run fla:ruffle` writes `main.ruffle.fla` with the tongue drawing and high quality only
 - `www-root/src/app/fl/page.tsx` — archival route
 - `www-root/src/components/flash-player/flash-player.tsx` — Ruffle embed
 - `www-root/src/lib/flash-config.ts` — flashVars / static base

@@ -74,6 +74,6 @@ To edit the sources in a tree, run `npm run json:edit` from the repo root. That 
 - `/en/` and `/es/` — locale routes
 - `/content/img/…` — thumbnail images
 - `/video_h264/…` — rewrite to `static.nikart.co.uk`
-- `/fl` — Flash archival (Ruffle)
+- `/fl` — Flash archival (Ruffle). `npm run fla:ruffle` writes a CS6 FLA with the tongue fix and high quality only (`docs/RUFFLE_PREVIEW.md`).
 
 See `docs/PROGRESS.md` for the post-migration log. The migration checklist is in `docs/legacy-migration/`.
