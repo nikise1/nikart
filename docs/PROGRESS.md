@@ -71,6 +71,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-04 — PokerStars Web uses the PokerStars wordmark, and Tournament Details uses the Spin & Go logo.
 
+2026-11-04 — PokerStars Web icon is the red spade on its own.
+
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
 ---
