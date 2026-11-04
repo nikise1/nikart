@@ -17,7 +17,6 @@
     "sync:images": "node scripts/sync-content-images.mjs",
     "compile:json": "node scripts/compile-content-json.mjs",
     "json:items": "node scripts/set-items.mjs",
-    "json:menu": "node scripts/menu-markdown.mjs",
     "sync:json": "node scripts/sync-content-json.mjs",
     "swf-compare:sync": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-swf-compare.mjs",
     "swf-compare:html": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/compile-swf-compare.mjs",

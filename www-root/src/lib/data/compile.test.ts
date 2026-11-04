@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { compilePortfolio, encodePortfolioJson, loadPortfolioSources } from "./compile";
+import { menuMarkdown } from "./menu-markdown";
 import { type MenuSourceNode, DataSchema } from "./schema";
 
 const contentDir = join(__dirname, "../../../../content/json");
@@ -31,6 +32,7 @@ describe("compilePortfolio", () => {
     const compiled = compilePortfolio(sources);
     expect(DataSchema.safeParse(compiled).success).toBe(true);
     expect(encodePortfolioJson(compiled)).toBe(committed);
+    expect(menuMarkdown(compiled.menu)).toBe(readFileSync(join(contentDir, "menu.md"), "utf8"));
   });
 
   it("links the same content id from more than one menu", () => {

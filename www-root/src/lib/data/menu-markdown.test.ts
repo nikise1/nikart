@@ -1,48 +1,48 @@
 import { describe, expect, it } from "vitest";
-import { menuMarkdown } from "../../../scripts/menu-markdown.mjs";
+import { menuMarkdown } from "./menu-markdown";
+import type { DataNode } from "./schema";
 
 describe("menuMarkdown", () => {
-  it("prints ids, English titles, and types", () => {
-    const main = {
-      menu: [
-        {
-          id: "featured",
-          title: { en: "Featured Projects", es: "Proyectos" },
-          menu: [
-            "onedayinmay",
-            { id: "install", title: { en: "Installations", es: "Instalaciones" }, menu: ["spark"] },
-          ],
-        },
-        "contact",
-        {
-          id: "config",
-          title: { en: "{{otherversions}} & Español", es: "{{otherversions}} y English" },
-          menu: ["language"],
-        },
-      ],
-    };
-    const items = [
-      { id: "onedayinmay", type: "web", title: "One Day in May" },
-      { id: "spark", type: "vid", title: { en: "Spark", es: "Chispa" } },
+  it("prints ids and types", () => {
+    const menu: DataNode[] = [
+      {
+        id: "featured",
+        type: "men",
+        title: { en: "Featured Projects", es: "Proyectos" },
+        menu: [
+          { id: "onedayinmay", type: "web", title: "One Day in May" },
+          {
+            id: "install",
+            type: "men",
+            title: { en: "Installations", es: "Instalaciones" },
+            menu: [{ id: "spark", type: "vid", title: { en: "Spark", es: "Chispa" } }],
+          },
+        ],
+      },
       { id: "contact", type: "web", title: { en: "Contact", es: "Contacto" } },
-      { id: "language", type: "web", title: { en: "Español", es: "English" } },
+      {
+        id: "config",
+        type: "men",
+        title: { en: "{{otherversions}} & Español", es: "{{otherversions}} y English" },
+        menu: [{ id: "language", type: "web", title: { en: "Español", es: "English" } }],
+      },
     ];
 
-    expect(menuMarkdown(main, items)).toBe(
+    expect(menuMarkdown(menu)).toBe(
       [
-        "### `featured` Featured Projects men",
+        "### `featured` men",
         "",
-        "- `onedayinmay` One Day in May web",
+        "- `onedayinmay` web",
         "",
-        "#### `install` Installations men",
+        "#### `install` men",
         "",
-        "- `spark` Spark vid",
+        "- `spark` vid",
         "",
-        "### `contact` Contact web",
+        "### `contact` web",
         "",
-        "### `config` Config & Español men",
+        "### `config` men",
         "",
-        "- `language` Español web",
+        "- `language` web",
         "",
       ].join("\n"),
     );

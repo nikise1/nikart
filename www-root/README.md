@@ -65,11 +65,9 @@ Portfolio JSON is edited as source files in repo-root `content/json/`:
 - `items-disabled.json` — content objects kept out of `data.json`.
 - `other.json` — shared en/es UI text (`back`, video quality, and the speed labels).
 
-`npm run compile:json` (also `dev`, `prebuild`, and `sync:json`) joins those files into `content/json/data.json`. That compiled file is the nested tree Flash, legacy Backbone, and Next import. It has to match `DataSchema` in `src/lib/data/schema.ts`. Install and the Vercel build minify it into `www-root/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
+`npm run compile:json` (also `dev`, `prebuild`, and `sync:json`) joins those files into `content/json/data.json` and writes `content/json/menu.md`. The Markdown lists each menu id and its type, with no titles. `data.json` is the nested tree Flash, legacy Backbone, and Next import. It has to match `DataSchema` in `src/lib/data/schema.ts`. Install and the Vercel build minify it into `www-root/public/content/json/data.json` (gitignored) so Flash can load `/content/json/data.json`.
 
 To edit the sources in a tree, run `npm run json:edit` from the repo root. That prints a link for each source file which opens [JSON Editor Online](https://jsoneditoronline.org) with the file already loaded. Add `-- --open` to open the browser on your machine. After you copy the edited JSON back, run `npm run sync:json` from `www-root/`.
-
-`npm run json:menu` from the repo root prints the current menu as Markdown. Each line is the id, the English title, and the type (`men` for a section).
 
 ### Post-deploy smoke test
 

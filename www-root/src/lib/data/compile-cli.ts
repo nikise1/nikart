@@ -6,7 +6,7 @@ const contentDir = join(dirname(fileURLToPath(import.meta.url)), "../../../../co
 
 try {
   writeCompiledPortfolio(contentDir);
-  console.log("Compiled content/json/data.json");
+  console.log("Compiled content/json/data.json and menu.md");
 } catch (error) {
   if (error instanceof PortfolioCompileError) {
     console.error(error.message);
