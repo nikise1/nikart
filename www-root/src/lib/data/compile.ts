@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
+import { menuMarkdown } from "./menu-markdown.ts";
 import {
   type ContentItem,
   DataSchema,
@@ -228,11 +229,16 @@ export function loadPortfolioSources(dir: string): PortfolioSources {
   };
 }
 
-/** Compile the sources in `dir` and write `data.json` when the bytes changed. */
-export function writeCompiledPortfolio(dir: string): string {
-  const encoded = encodePortfolioJson(compilePortfolio(loadPortfolioSources(dir)));
-  const dest = join(dir, "data.json");
+function writeIfChanged(dest: string, next: string): void {
   const current = existsSync(dest) ? readFileSync(dest, "utf8") : null;
-  if (current !== encoded) writeFileSync(dest, encoded);
+  if (current !== next) writeFileSync(dest, next);
+}
+
+/** Compile the sources in `dir` and write `data.json` and `menu.md` when the bytes changed. */
+export function writeCompiledPortfolio(dir: string): string {
+  const site = compilePortfolio(loadPortfolioSources(dir));
+  const encoded = encodePortfolioJson(site);
+  writeIfChanged(join(dir, "data.json"), encoded);
+  writeIfChanged(join(dir, "menu.md"), menuMarkdown(site.menu));
   return encoded;
 }
