@@ -4,6 +4,7 @@
 
 - **`www-root/` is the main app** (Next.js). The 2014 Express app is in `legacy-2014/` and is secondary.
 - **One-word run command** from repo root: `www-root` → `npm run www-root` (starts the Next.js dev server). `npm run legacy-2014` starts the Express site.
+- **Install:** `npm install` at the repo root installs `www-root` dependencies (`postinstall` runs `npm install --prefix www-root`). Install the Express app with `npm install --prefix legacy-2014`. Cloud Agent install reads Node from `www-root/package.json` `engines`, puts that Node on `PATH`, and installs `www-root`.
 
 ## Storage
 

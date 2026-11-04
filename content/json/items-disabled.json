@@ -163,5 +163,71 @@
                 "offline"
             ]
         ]
+    },
+    {
+        "id": "cityread",
+        "type": "tex",
+        "title": "Cityread London 2014",
+        "desc": {
+            "en": "Ruby on Rails site for an annual celebration of literature.",
+            "es": "Sitio en Ruby on Rails para una celebración anual de literatura."
+        },
+        "imgs": 3,
+        "url": "http://www.cityreadlondon.org.uk",
+        "launch": {
+            "en": "Open",
+            "es": "Abra"
+        },
+        "pop": "'1016','710','yes','yes','yes'",
+        "menu_positions": [
+            [
+                "websites"
+            ]
+        ]
+    },
+    {
+        "id": "slate20",
+        "type": "web",
+        "title": "Slate 20",
+        "desc": {
+            "en": "Video combination game for Slate 20 alcoholic beverage. Find the correct mix of girls.",
+            "es": "Video juego de combinación para la bebida alcohólica Slate 20. Haga la mezcla correcta de chicas."
+        },
+        "imgs": 5,
+        "url": "games/slate20/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'808','606','yes','no','no'",
+        "menu_positions": [
+            [
+                "games"
+            ]
+        ]
+    },
+    {
+        "id": "weeds",
+        "type": "web",
+        "title": {
+            "en": "Mow the Lawn",
+            "es": "Corta el Césped"
+        },
+        "desc": {
+            "en": "Mow the Lawn game from Stepping Stones, a European Leonardo project. Mow the lawn but watch out for the borders. Don't mow the same patch.",
+            "es": "Juego Corta el Césped de \"Stepping Stones\" (saltando sobre las piedras), un proyecto Europeo Leonardo. Corte el césped, pero cuidado con los bordes. No corte el mismo lugar."
+        },
+        "imgs": 1,
+        "url": "games/weeds/index.html",
+        "launch": {
+            "en": "Launch Game",
+            "es": "Comience el juego"
+        },
+        "pop": "'840','640','yes','yes','no'",
+        "menu_positions": [
+            [
+                "games"
+            ]
+        ]
     }
 ]

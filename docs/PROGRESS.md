@@ -39,9 +39,31 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-01 — November library radar (`docs/radar/2026-11.md`): vitest-plugin-rsc, Motion vs GSAP note, vercel CLI audit monitor.
 
+2026-11-03 — Disabled cityread, slate20, and steppingstones.
+
+2026-11-03 — Root `npm install` installs `www-root` dependencies through `postinstall`.
+
+2026-11-03 — Cloud Agent install reads Node from `www-root/package.json` engines.
+
+2026-11-03 — Cloud Agent install installs `www-root` only.
+
 2026-11-02 — SWF compare index cards show each movie's SWF version, Flash Player target, and ActionScript generation.
 
 2026-11-02 — Article and video views share title and description components. Videos show a description when the item has one.
+
+2026-11-03 — Bandstand’s site no longer responds, so that item is text, and article launch buttons follow the web type.
+
+2026-11-03 — Favicon is the lower frame of `content/img/curl-sprite.png`.
+
+2026-11-03 — Web launches reuse one browser tab instead of a popup window.
+
+2026-11-03 — Away3D heart, the augmented-reality lizard, and the Japanese interior are text items.
+
+2026-11-03 — Enabled steppingstones at the end of Offline & Other.
+
+2026-11-03 — Merged Mow the Lawn into Stepping Stones and took weeds off the menu.
+
+2026-11-03 — Moved steppingstones to the end of Games.
 
 2026-11-03 — Description text keeps the prose measure and aligns left.
 

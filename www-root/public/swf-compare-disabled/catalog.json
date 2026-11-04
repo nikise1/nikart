@@ -133,5 +133,18 @@
       "width": 800,
       "height": 600
     }
+  },
+  {
+    "before": "reading-leeds",
+    "item": {
+      "id": "slate20",
+      "title": "Slate 20",
+      "group": "games",
+      "itemId": "slate20",
+      "wrapper": "games/slate20/index.html",
+      "primary": true,
+      "width": 768,
+      "height": 586
+    }
   }
 ]

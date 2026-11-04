@@ -7,6 +7,7 @@ Next.js 16 portfolio app in `www-root/` (migration from legacy Express/Backbone)
 From repo root:
 
 ```bash
+npm install          # install this app's dependencies
 npm run www-root     # dev server (alias for www-root/npm run dev)
 ```
 

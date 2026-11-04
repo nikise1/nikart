@@ -92,7 +92,6 @@
     "games/whiplash/index.html": "whiplash",
     "games/desafio_pacifico/index.html": "desafio-pacifico",
     "games/reading_leeds/index.html": "reading-leeds",
-    "games/slate20/index.html": "slate20",
     "games/weeds/index.html": "weeds",
     "3d/away3d/ar_heart/index.html": "ar-heart",
     "3d/away3d/flar_lizard/pub/index.html": "ar-lizard",
@@ -106,7 +105,9 @@
     window.nikart = {
       popWin(filename, winname) {
         const href = compareHrefForLaunch(filename) ?? flashSelfHref(filename) ?? filename;
-        const tab = window.open(href, winname || "_blank");
+        // Same name as www-root `WEB_TAB_NAME`. No window features, and do not
+        // clear opener: either one makes Chrome open a new tab instead of replacing this one.
+        const tab = window.open(href, "nikart-web");
         tab?.focus();
         window.nikart.doTracker(`${winname || "launch"}_launch`);
       },

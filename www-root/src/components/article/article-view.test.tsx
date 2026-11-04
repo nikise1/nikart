@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import type { ContentItem } from "@/lib/data/schema";
+import { WEB_TAB_NAME } from "@/lib/web-tab";
 import { ArticleView } from "./article-view";
 
 vi.mock("react", async () => {
@@ -40,9 +41,11 @@ describe("ArticleView", () => {
     const description = screen.getByText("A microsite.");
     expect(description).toHaveAttribute("data-component", "ContentDescription");
     expect(description.parentElement).toHaveAttribute("data-content-slot", "2");
-    expect(
-      screen.getByRole("link", { name: "Launch Website" }).parentElement?.parentElement,
-    ).toHaveAttribute("data-content-slot", "3");
+    const launch = screen.getByRole("link", { name: "Launch Website" });
+    expect(launch.parentElement?.parentElement).toHaveAttribute("data-content-slot", "3");
+    expect(launch).toHaveAttribute("href", "http://onedayinmay.co.uk");
+    expect(launch).toHaveAttribute("target", WEB_TAB_NAME);
+    expect(launch).not.toHaveAttribute("rel");
     expect(document.querySelector("[data-component='Slideshow']")?.parentElement).toHaveAttribute(
       "data-content-slot",
       "1",
@@ -106,5 +109,21 @@ describe("ArticleView", () => {
     );
     expect(screen.getByText("Just words.").parentElement).toHaveAttribute("data-content-slot", "1");
     expect(document.querySelector("[data-content-slot='2']")).toBeNull();
+  });
+
+  it("does not show a launch link when a text item still has a url", () => {
+    const retired: ContentItem = {
+      id: "bandstand",
+      type: "tex",
+      title: "Bandstand",
+      desc: "A retired site.",
+      url: "http://bandstand.thewebwell.com",
+      launch: { en: "Launch Website", es: "Abra el Sitio" },
+    };
+
+    render(<ArticleView item={retired} locale="en" />);
+
+    expect(screen.getByRole("heading", { name: "Bandstand" })).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Launch Website" })).toBeNull();
   });
 });

@@ -2,6 +2,7 @@
   "name": "nikart",
   "private": true,
   "scripts": {
+    "postinstall": "npm install --prefix www-root",
     "www-root": "npm run dev --prefix www-root",
     "legacy-2014": "npm start --prefix legacy-2014",
     "json:edit": "node www-root/scripts/open-json-editor.mjs",

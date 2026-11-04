@@ -1,6 +1,6 @@
 {
   "name": "nikart",
-  "install": "npm install --prefix legacy-2014 && npm install --prefix www-root",
+  "install": "bash .cursor/cloud-install.sh",
   "terminals": [
     {
       "name": "www-root",
