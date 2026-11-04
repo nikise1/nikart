@@ -27,6 +27,16 @@
                     }
                 },
                 {
+                    "id": "web_poker",
+                    "type": "vid",
+                    "title": "PokerStars Web"
+                },
+                {
+                    "id": "tournament_details",
+                    "type": "vid",
+                    "title": "PokerStars Tournament Details"
+                },
+                {
                     "id": "onedayinmay",
                     "type": "web",
                     "title": "One Day in May",
