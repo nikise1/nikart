@@ -108,7 +108,7 @@ flowchart LR
 
 Inside `main.swf` (decompressed strings): `pathContent = ../content`, `pathStatic = _root.staticfilesstr \|\| ../static`, `pathJSON = /json/data.json`, `pathImg`, `pathVideo = /video_flv`, plus `javascript:nikart.popWin(` and `javascript:nikart.doTracker(`.
 
-`main.ruffle.swf` is that export plus the tongue drawing on Scene 1, layer `actions`, frame 22. The published movie still stops for a high/low video choice. Both edits are in [Edit the lizard FLA](#edit-the-lizard-fla).
+`main.ruffle.swf` is that export plus the tongue drawing on Scene 1, layer `actions`, frame 22, and `endVideo` calls `netStream.pause(true)` instead of `netStream.close()`. The published movie still stops for a high/low video choice. Those edits are in [Edit the lizard FLA](#edit-the-lizard-fla).
 
 HTML5 already proxies some of that host through Next (`/video_h264`, `/video_webm`, `/games` in `www-root/next.config.ts`). The Flash player does **not** use those rewrites: it is given the raw `staticfilesstr` URL.
 
@@ -324,7 +324,7 @@ sequenceDiagram
 
 ## Edit the lizard FLA
 
-`legacy-2014/src/fl/main.fla` is a Flash Professional CS6 file (ActionScript 2, player 8, 750×500). `main.ruffle.swf` already has the tongue drawing. The FLA still has the original drawing, and both movies still stop on a high/low video step. This section puts both changes in the FLA.
+`legacy-2014/src/fl/main.fla` is a Flash Professional CS6 file (ActionScript 2, player 8, 750×500). `main.ruffle.swf` already has the tongue drawing, and its `endVideo` pauses the NetStream. The FLA still has the original drawing and `netStream.close()`, and both movies still stop on a high/low video step. This section puts those changes in the FLA.
 
 Ruffle strokes the return from the tongue tip back to the mouth, so the second `curveTo(..., 0, 0)` draws a straight chord. The patched movie starts each stroke at the mouth with `moveTo(0, 0)` and draws both curves out to the tip.
 
@@ -351,7 +351,8 @@ lizard.tongue.curveTo(midx,midy,tongueTarget._x,tongueTarget._y);
 _root.moveBody();
 ```
 
-4. On Scene 1, layer `actions`, frame 52 (the keyframe under the `vidIn` label), replace the connection check and `selectConnection` with:
+4. In that same frame 22 script, change `endVideo` so it calls `netStream.pause(true)` instead of `netStream.close()`. Ruffle leaves `NetStream.close()` unimplemented, so the old call kept the FLV audio playing after Back.
+5. On Scene 1, layer `actions`, frame 52 (the keyframe under the `vidIn` label), replace the connection check and `selectConnection` with:
 
 ```
 _root.connection = "500";
@@ -359,11 +360,11 @@ videoContainer.gotoAndStop("playing");
 gotoAndStop("vidPlaying");
 ```
 
-5. On the same layer, frame 61 (label `vidPlaying`), delete `vid_controls["quality_" + connection + "_but"]._visible = false;`. The play line above it still loads `{id}_500.flv`.
-6. Open the `videoContainer` symbol. On layer `select connection`, frame 1 (label `select`), delete `quality_txt`, `low_but`, and `high_but`.
-7. Open the `vid_controls` symbol. Delete the layers `quality_high_but` and `quality_low_but` (`quality_500_but` and `quality_150_but`). Leave play, replay, and enlarge.
-8. Publish with the saved profile (Flash Player 8, ActionScript 2). It writes `legacy-2014/public/fl/main.swf`.
-9. Copy that SWF to `www-root/public/fl/main.swf` and `www-root/public/fl/main.ruffle.swf`. After these edits, those three files are the same export.
+6. On the same layer, frame 61 (label `vidPlaying`), delete `vid_controls["quality_" + connection + "_but"]._visible = false;`. The play line above it still loads `{id}_500.flv`.
+7. Open the `videoContainer` symbol. On layer `select connection`, frame 1 (label `select`), delete `quality_txt`, `low_but`, and `high_but`.
+8. Open the `vid_controls` symbol. Delete the layers `quality_high_but` and `quality_low_but` (`quality_500_but` and `quality_150_but`). Leave play, replay, and enlarge.
+9. Publish with the saved profile (Flash Player 8, ActionScript 2). It writes `legacy-2014/public/fl/main.swf`.
+10. Copy that SWF to `www-root/public/fl/main.swf` and `www-root/public/fl/main.ruffle.swf`. After these edits, those three files are the same export.
 
 The stock FLA is not a zip Finder or `unzip` can rewrite. Its `DOMDocument.xml` is raw deflate, and the central directory is 54 bytes longer than the file. Leave `main.fla` packed and use the script below, or edit it only inside CS6.
 
@@ -375,7 +376,7 @@ From the repo root:
 npm run fla:ruffle
 ```
 
-That reads `legacy-2014/src/fl/main.fla` and writes `legacy-2014/src/fl/main.ruffle.fla` with the frame-22 tongue drawing, the frame-52 jump straight to `{id}_500.flv`, and the high/low buttons removed from `videoContainer` and `vid_controls`. `main.fla` stays as the CS6 export source. Open `main.ruffle.fla` in CS6 and publish, then copy the SWF as in step 9. If `main.fla` already contains both edits, the script does not write a file. Further Ruffle-only edits to this FLA belong in this command and in the steps above.
+That reads `legacy-2014/src/fl/main.fla` and writes `legacy-2014/src/fl/main.ruffle.fla` with the frame-22 tongue drawing, `endVideo` calling `netStream.pause(true)`, the frame-52 jump straight to `{id}_500.flv`, and the high/low buttons removed from `videoContainer` and `vid_controls`. `main.fla` stays as the CS6 export source. Open `main.ruffle.fla` in CS6 and publish, then copy the SWF as in step 10. If `main.fla` already contains these edits, the script does not write a file. Further Ruffle-only edits to this FLA belong in this command and in the steps above.
 
 ## Recommendation
 
@@ -391,8 +392,8 @@ The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S
 
 ## Related files
 
-- `legacy-2014/src/fl/main.fla` — CS6 source; tongue drawing and the high/low video step are still original
-- `legacy-2014/scripts/patch-lizard-ruffle.mjs` — `npm run fla:ruffle` writes `main.ruffle.fla` with the tongue drawing and high quality only
+- `legacy-2014/src/fl/main.fla` — CS6 source; tongue drawing, `endVideo` close, and the high/low video step are still original
+- `legacy-2014/scripts/patch-lizard-ruffle.mjs` — `npm run fla:ruffle` writes `main.ruffle.fla` with the tongue drawing, the endVideo pause, and high quality only
 - `www-root/src/app/fl/page.tsx` — archival route
 - `www-root/src/components/flash-player/flash-player.tsx` — Ruffle embed
 - `www-root/src/lib/flash-config.ts` — flashVars / static base

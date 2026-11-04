@@ -6,7 +6,9 @@ import { describe, expect, it } from "vitest";
 /**
  * Ruffle's AVM1 `NetStream.close()` is a stub, so the lizard movie's
  * `endVideo` left FLV audio running after Back. The Ruffle copy pauses
- * instead. The Animate export still calls `close()`.
+ * instead. `npm run fla:ruffle` writes that `pause(true)` into
+ * `main.ruffle.fla`; this file locks the published SWF. The Animate
+ * export still calls `close()`.
  */
 
 const publicFl = join(__dirname, "../../public/fl");

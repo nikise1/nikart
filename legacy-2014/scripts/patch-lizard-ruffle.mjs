@@ -110,6 +110,22 @@ const qualityAfter = [
   'gotoAndStop("vidPlaying");',
 ].join("\n");
 
+const endVideoBefore = [
+  "function endVideo() {",
+  '\tif (_root.getCurType() == "vid") {',
+  "\t\tnetStream.close();",
+  "\t}",
+  "}",
+].join("\n");
+
+const endVideoAfter = [
+  "function endVideo() {",
+  '\tif (_root.getCurType() == "vid") {',
+  "\t\tnetStream.pause(true);",
+  "\t}",
+  "}",
+].join("\n");
+
 const hideQualityButton = '\nvid_controls["quality_" + connection + "_but"]._visible = false;';
 
 const playbackButtons = `        <DOMLayer name="quality_high_but" color="#4F80FF" autoNamed="false">
@@ -206,6 +222,7 @@ const patches = {
     [(xml) => replaceOnce(xml, drawingBefore, drawingAfter, (next) => next.includes(drawingAfter), "tongue drawing")],
     [(xml) => replaceOnce(xml, qualityBefore, qualityAfter, (next) => next.includes(qualityAfter) && !next.includes("selectConnection"), "quality step")],
     [(xml) => replaceOnce(xml, hideQualityButton, "", (next) => !next.includes('quality_" + connection'), "playback quality button")],
+    [(xml) => replaceOnce(xml, endVideoBefore, endVideoAfter, (next) => next.includes(endVideoAfter) && !next.includes("netStream.close()"), "endVideo pause")],
   ],
   "LIBRARY/video_folder/vid_controls.xml": [
     [(xml) => replaceOnce(xml, playbackButtons, "", (next) => !next.includes("quality_500_but"), "vid_controls quality buttons")],
@@ -300,7 +317,7 @@ for (const [name, steps] of Object.entries(patches)) {
 }
 
 if (!changed) {
-  console.log(`${sourceFla} already has the tongue drawing and the high-quality video path`);
+  console.log(`${sourceFla} already has the tongue drawing, the high-quality video path, and the endVideo pause`);
   process.exit(0);
 }
 
