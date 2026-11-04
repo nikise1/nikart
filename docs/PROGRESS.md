@@ -65,6 +65,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-03 — Moved steppingstones to the end of Games.
 
+2026-11-03 — Description text keeps the prose measure and aligns left.
+
 ---
 
 ## Migration record

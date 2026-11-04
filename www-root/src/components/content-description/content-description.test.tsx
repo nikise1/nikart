@@ -9,6 +9,6 @@ describe("ContentDescription", () => {
     const description = screen.getByText("A short film.");
     expect(description).toHaveAttribute("data-component", "ContentDescription");
     expect(description.tagName).toBe("P");
-    expect(description).toHaveClass("mt-4", "max-w-prose", "text-center", "text-[#4F3E2D]");
+    expect(description).toHaveClass("mt-4", "max-w-prose", "text-left", "text-[#4F3E2D]");
   });
 });
