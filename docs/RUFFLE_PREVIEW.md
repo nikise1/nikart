@@ -114,7 +114,7 @@ HTML5 already proxies some of that host through Next (`/video_h264`, `/video_web
 
 - **Works (same-origin):** lizard UI, menus, thumbs, article/image slideshows, language toggle, HTML5/Flash view links that stay on this origin (`_self/`).
 - **Pop-ups to S3:** games, banners, 3D, some websites. Those HTML wrappers still call `swfobject.embedSWF(...)`. Without Ruffle on that page (and without HTTPS), they show “You need Flash Player”.
-- **Flash video:** SWF asks for `{staticfilesstr}/video_flv/{id}`. Those keys 404. H.264/WebM files **do** exist on the same bucket (`/video_h264/spark.mp4`, `/video_webm/spark.webm`) and are what the HTML5 `VideoView` uses.
+- **Flash video:** SWF asks for `{staticfilesstr}/video_flv/{id}`. Those keys 404. H.264/WebM files **do** exist on the same bucket (`/video_h264/spark.mp4`, `/video_webm/spark.webm`) and are what the HTML5 `VideoView` uses. The movie still offers a high/low step (`quality_500_but` / `quality_150_but`) and plays `{id}_500.flv` or `{id}_150.flv`. Follow-up: delete the `_150` FLV files, and remove that quality step from the Ruffle movie (`www-root/public/fl/main.ruffle.swf`) so it always plays `{id}_500.flv`.
 - **HTTPS mixed content:** a Vercel preview is HTTPS. `staticfilesstr` is now `https://static.nikart.co.uk` (CloudFront). Compare-kit pages fetch SWFs cross-origin from that host.
 
 **Option D is live for the compare kit (2026-10-05):** piece pages use `data-swf` / `data-base` on `https://static.nikart.co.uk/…`. Lizard stays on `/fl/main.ruffle.swf`.
@@ -327,7 +327,7 @@ The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S
 1. Point `/fl/away` and `staticfilesstr` at the HTTPS origin (or keep Option A `/static` as a same-origin fallback).
 2. **Split players:** Ruffle for `main.swf` + AVM1; **Option F (AwayFL)** for Away3D / Papervision / stubborn AS3; Ruffle Option B/C for the rest.
 3. Treat FLAR webcam as a stretch goal (Camera API). Aim first at the 3D models, using `FLARProxy` on the lizard if present.
-4. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today.
+4. Map Flash video to `/video_h264` (or restore `video_flv`) — the FLV prefix the SWF uses is empty on the bucket today. When that player is updated, drop the `_150` files and the high/low quality step so the Ruffle movie only requests `{id}_500.flv`.
 5. Leave Shockwave 3D as an HTML/screenshot fallback.
 
 ---
