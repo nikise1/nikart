@@ -108,6 +108,8 @@ flowchart LR
 
 Inside `main.swf` (decompressed strings): `pathContent = ../content`, `pathStatic = _root.staticfilesstr \|\| ../static`, `pathJSON = /json/data.json`, `pathImg`, `pathVideo = /video_flv`, plus `javascript:nikart.popWin(` and `javascript:nikart.doTracker(`.
 
+`main.ruffle.swf` is that export plus one script change: the tongue on Scene 1, layer `actions`, frame 22. The FLA still has the original drawing. See [Edit the lizard FLA](#edit-the-lizard-fla).
+
 HTML5 already proxies some of that host through Next (`/video_h264`, `/video_webm`, `/games` in `www-root/next.config.ts`). The Flash player does **not** use those rewrites: it is given the raw `staticfilesstr` URL.
 
 ### What actually previews today
@@ -320,6 +322,50 @@ sequenceDiagram
 
 ---
 
+## Edit the lizard FLA
+
+`legacy-2014/src/fl/main.fla` is a Flash Professional CS6 file (ActionScript 2, player 8, 750×500). The only difference between the Animate export `main.swf` and `main.ruffle.swf` is the tongue drawing. The high/low video buttons are still in both movies.
+
+Ruffle strokes the return from the tongue tip back to the mouth, so the second `curveTo(..., 0, 0)` draws a straight chord. The patched movie starts each stroke at the mouth with `moveTo(0, 0)` and draws both curves out to the tip.
+
+That script is plain text in `DOMDocument.xml`, on Scene 1, layer `actions`, the keyframe at index 21 (frame 22 in the timeline; it lasts 10 frames).
+
+### By hand in Flash CS6
+
+Animate CC does not author ActionScript 2. Open the FLA in Flash Professional CS6.
+
+1. Open `legacy-2014/src/fl/main.fla`.
+2. Select Scene 1, layer `actions`, frame 22.
+3. In the Actions panel, replace the fishing/caught/mouth drawing with:
+
+```
+lizard.tongue.clear();
+midx = tongueTarget._x + Math.cos(tongueTarget.curAngle) * 75;
+midy = tongueTarget._y + Math.sin(tongueTarget.curAngle) * 75;
+lizard.tongue.lineStyle(10,"0x340101",100);
+lizard.tongue.moveTo(0,0);
+lizard.tongue.curveTo(midx,midy,tongueTarget._x,tongueTarget._y);
+lizard.tongue.lineStyle(6,"0xBA0101",100);
+lizard.tongue.moveTo(0,0);
+lizard.tongue.curveTo(midx,midy,tongueTarget._x,tongueTarget._y);
+_root.moveBody();
+```
+
+4. Publish with the saved profile (Flash Player 8, ActionScript 2). It writes `legacy-2014/public/fl/main.swf`.
+5. Copy that SWF to `www-root/public/fl/main.swf` and `www-root/public/fl/main.ruffle.swf`. Once the FLA contains this drawing, those three files are the same export.
+
+The stock FLA is not a zip Finder or `unzip` can rewrite. Its `DOMDocument.xml` is raw deflate, and the central directory is 54 bytes longer than the file. Leave `main.fla` packed and use the script below, or edit it only inside CS6.
+
+### Script
+
+From the repo root:
+
+```
+npm run fla:tongue
+```
+
+That reads `legacy-2014/src/fl/main.fla` and writes `legacy-2014/src/fl/main.ruffle.fla` with the frame-22 drawing above. `main.fla` stays as the CS6 export source. Open `main.ruffle.fla` in CS6 and publish, then copy the SWF as in step 5. If `main.fla` already contains the new drawing, the script does not write a file.
+
 ## Recommendation
 
 The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S3 Flash wrappers open that page through the `/static` rewrite. Compare-kit pages already load SWFs from `https://static.nikart.co.uk` (Option D). Remaining work to preview S3 Flash from `/fl` without mixed content:
@@ -334,6 +380,8 @@ The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S
 
 ## Related files
 
+- `legacy-2014/src/fl/main.fla` — CS6 source; tongue drawing is still the original
+- `legacy-2014/scripts/patch-lizard-tongue.mjs` — writes `main.ruffle.fla` with the Ruffle tongue drawing
 - `www-root/src/app/fl/page.tsx` — archival route
 - `www-root/src/components/flash-player/flash-player.tsx` — Ruffle embed
 - `www-root/src/lib/flash-config.ts` — flashVars / static base
