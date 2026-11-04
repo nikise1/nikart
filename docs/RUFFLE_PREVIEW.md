@@ -372,10 +372,10 @@ The stock FLA is not a zip Finder or `unzip` can rewrite. Its `DOMDocument.xml` 
 From the repo root:
 
 ```
-npm run fla:tongue
+npm run fla:ruffle
 ```
 
-That reads `legacy-2014/src/fl/main.fla` and writes `legacy-2014/src/fl/main.ruffle.fla` with the frame-22 tongue drawing, the frame-52 jump straight to `{id}_500.flv`, and the high/low buttons removed from `videoContainer` and `vid_controls`. `main.fla` stays as the CS6 export source. Open `main.ruffle.fla` in CS6 and publish, then copy the SWF as in step 9. If `main.fla` already contains both edits, the script does not write a file.
+That reads `legacy-2014/src/fl/main.fla` and writes `legacy-2014/src/fl/main.ruffle.fla` with the frame-22 tongue drawing, the frame-52 jump straight to `{id}_500.flv`, and the high/low buttons removed from `videoContainer` and `vid_controls`. `main.fla` stays as the CS6 export source. Open `main.ruffle.fla` in CS6 and publish, then copy the SWF as in step 9. If `main.fla` already contains both edits, the script does not write a file. Further Ruffle-only edits to this FLA belong in this command and in the steps above.
 
 ## Recommendation
 
@@ -392,7 +392,7 @@ The AwayFL popup (`/fl/away`) is mocked: `popWin` and HTML5 launch buttons for S
 ## Related files
 
 - `legacy-2014/src/fl/main.fla` — CS6 source; tongue drawing and the high/low video step are still original
-- `legacy-2014/scripts/patch-lizard-tongue.mjs` — writes `main.ruffle.fla` with the tongue drawing and high quality only
+- `legacy-2014/scripts/patch-lizard-ruffle.mjs` — `npm run fla:ruffle` writes `main.ruffle.fla` with the tongue drawing and high quality only
 - `www-root/src/app/fl/page.tsx` — archival route
 - `www-root/src/components/flash-player/flash-player.tsx` — Ruffle embed
 - `www-root/src/lib/flash-config.ts` — flashVars / static base
