@@ -9,6 +9,7 @@ import { ContentDescription } from "@/components/content-description/content-des
 import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
 import { fitVideoFrame, type VideoFrame } from "./fit-video-frame";
+import { leaveVideoFullscreen } from "./leave-video-fullscreen";
 
 interface VideoViewProps {
   item: ContentItem;
@@ -76,6 +77,10 @@ export function VideoView({ item, locale }: VideoViewProps) {
     if (known) setSource(known);
   }
 
+  function onEnded(event: SyntheticEvent<HTMLVideoElement>): void {
+    leaveVideoFullscreen(event.currentTarget, document);
+  }
+
   return (
     <ViewTransition enter="none" exit="none" update="none" share="none" default="none">
       <article
@@ -103,9 +108,10 @@ export function VideoView({ item, locale }: VideoViewProps) {
                 height={frame?.height}
                 preload="metadata"
                 onLoadedMetadata={onLoadedMetadata}
+                onEnded={onEnded}
                 className={
                   ready
-                    ? "rounded object-contain"
+                    ? "rounded bg-black object-contain"
                     : "pointer-events-none absolute h-px w-px opacity-0"
                 }
                 style={

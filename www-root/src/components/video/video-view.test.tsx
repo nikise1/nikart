@@ -122,7 +122,7 @@ describe("VideoView", () => {
 
     expect(video).toHaveAttribute("width", "640");
     expect(video).toHaveAttribute("height", "480");
-    expect(video).toHaveClass("object-contain");
+    expect(video).toHaveClass("bg-black", "object-contain");
     expect(video.style.width).toBe("640px");
     expect(video.style.height).toBe("480px");
   });
@@ -169,5 +169,36 @@ describe("VideoView", () => {
 
     expect(video.style.width).toBe("400px");
     expect(video.style.height).toBe("300px");
+  });
+
+  it("leaves fullscreen when playback ends", () => {
+    mockStageBox(rect(1400, 900));
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    loadFrame(video, 640, 480);
+
+    const exitFullscreen = vi.fn().mockResolvedValue(undefined);
+    const previousElement = Object.getOwnPropertyDescriptor(document, "fullscreenElement");
+    const previousExit = Object.getOwnPropertyDescriptor(document, "exitFullscreen");
+    Object.defineProperty(document, "fullscreenElement", { configurable: true, get: () => video });
+    Object.defineProperty(document, "exitFullscreen", {
+      configurable: true,
+      value: exitFullscreen,
+    });
+
+    try {
+      act(() => {
+        video.dispatchEvent(new Event("ended"));
+      });
+    } finally {
+      if (previousElement) Object.defineProperty(document, "fullscreenElement", previousElement);
+      else Reflect.deleteProperty(document, "fullscreenElement");
+      if (previousExit) Object.defineProperty(document, "exitFullscreen", previousExit);
+      else Reflect.deleteProperty(document, "exitFullscreen");
+    }
+
+    expect(exitFullscreen).toHaveBeenCalledOnce();
   });
 });

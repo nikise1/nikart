@@ -73,6 +73,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-04 — Unplayed video uses the source frame and stays centered in the page, with its description when there is one.
 
+2026-11-04 — Playback leaves fullscreen when the video ends, and a mismatched poster sits on black.
+
 ---
 
 ## Migration record
