@@ -73,18 +73,147 @@ function inflateEntry(entry) {
   throw new Error(`${entry.name} uses zip method ${entry.method}`);
 }
 
-function patchDocument(xml) {
-  const hasBefore = xml.includes(drawingBefore);
-  const hasAfter = xml.includes(drawingAfter);
-  if (hasAfter && !hasBefore) return { xml, changed: false };
-  if (!hasBefore) {
-    throw new Error("DOMDocument.xml does not contain the original tongue drawing");
-  }
-  if (xml.split(drawingBefore).length !== 2) {
-    throw new Error("Expected the tongue drawing once");
-  }
-  return { xml: xml.replace(drawingBefore, drawingAfter), changed: true };
+const qualityBefore = [
+  "if (_root.connection == undefined) {",
+  '\t//trace("con 2: "+connection);',
+  "\tstop();",
+  '\tvideoContainer.gotoAndStop("select");',
+  '\tvideoContainer.quality_txt.htmlText = _root.getLangStr(_root.otherObj, "quality");',
+  '\t_root.lowStr = _root.getLangStr(_root.otherObj, "low_txt");',
+  '\t_root.highStr = _root.getLangStr(_root.otherObj, "high_txt");',
+  '\t_root.lowCombi = _root.lowStr + "<br />" + _root.getLangStr(_root.otherObj, "low_spd");',
+  '\t_root.highCombi = _root.highStr + "<br />" + _root.getLangStr(_root.otherObj, "high_spd");',
+  "\tvideoContainer.low_but.onRollOver = videoContainer.high_but.onRollOver = function () {",
+  "\t\tMouse.show();",
+  "\t};",
+  "\tvideoContainer.low_but.onRelease = function() {",
+  '\t\tselectConnection("150");',
+  "\t};",
+  "\tvideoContainer.high_but.onRelease = function() {",
+  '\t\tselectConnection("500");',
+  "\t};",
+  "} else {",
+  '\tvideoContainer.gotoAndStop("playing");',
+  '\tgotoAndStop("vidPlaying");',
+  "}",
+  "",
+  "function selectConnection(spd_str:String):Void {",
+  "\t_root.connection = spd_str;",
+  '\tvideoContainer.gotoAndStop("playing");',
+  '\t_root.gotoAndStop("vidPlaying");',
+  "}",
+].join("\n");
+
+const qualityAfter = [
+  '_root.connection = "500";',
+  'videoContainer.gotoAndStop("playing");',
+  'gotoAndStop("vidPlaying");',
+].join("\n");
+
+const hideQualityButton = '\nvid_controls["quality_" + connection + "_but"]._visible = false;';
+
+const playbackButtons = `        <DOMLayer name="quality_high_but" color="#4F80FF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="video_folder/quality_high_but" name="quality_500_but" symbolType="button">
+                  <matrix>
+                    <Matrix tx="109" ty="-0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[on (release) {
+	_root.endVideo();
+	_root.connection = "500";
+	_root.gotoAndPlay("vidIn");
 }
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="quality_low_but" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="video_folder/quality_low_but" name="quality_150_but" symbolType="button">
+                  <matrix>
+                    <Matrix tx="109" ty="-0.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <Actionscript>
+                    <script><![CDATA[on (release) {
+	_root.endVideo();
+	_root.connection = "150";
+	_root.gotoAndPlay("vidIn");
+}
+]]></script>
+                  </Actionscript>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+`;
+
+const selectButtons = `<elements>
+                <DOMDynamicText name="quality_txt" fontRenderingMode="standard" left="-33.85" width="218.6" height="34" includeOutlines="true" isSelectable="false" renderAsHTML="true" lineType="multiline">
+                  <matrix>
+                    <Matrix tx="-75.45" ty="-35.95"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>quality_txt&#xD;2</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" autoKern="false" size="16" face="KickAssinger" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="video_folder/modem" name="low_but" symbolType="button">
+                  <matrix>
+                    <Matrix tx="-87.75" ty="17"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="video_folder/broadband" name="high_but" selected="true" symbolType="button">
+                  <matrix>
+                    <Matrix tx="85.85" ty="17"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>`;
+
+function replaceOnce(xml, before, after, done, label) {
+  const count = xml.split(before).length - 1;
+  if (count === 1) return { xml: xml.replace(before, after), changed: true };
+  if (count === 0 && done(xml)) return { xml, changed: false };
+  throw new Error(`${label} (${count} matches)`);
+}
+
+const patches = {
+  "DOMDocument.xml": [
+    [(xml) => replaceOnce(xml, drawingBefore, drawingAfter, (next) => next.includes(drawingAfter), "tongue drawing")],
+    [(xml) => replaceOnce(xml, qualityBefore, qualityAfter, (next) => next.includes(qualityAfter) && !next.includes("selectConnection"), "quality step")],
+    [(xml) => replaceOnce(xml, hideQualityButton, "", (next) => !next.includes('quality_" + connection'), "playback quality button")],
+  ],
+  "LIBRARY/video_folder/vid_controls.xml": [
+    [(xml) => replaceOnce(xml, playbackButtons, "", (next) => !next.includes("quality_500_but"), "vid_controls quality buttons")],
+  ],
+  "LIBRARY/video_folder/videoContainer.xml": [
+    [(xml) => replaceOnce(xml, selectButtons, "<elements/>", (next) => !next.includes('name="low_but"'), "select-connection buttons")],
+  ],
+};
 
 function localHeader(entry, name) {
   const nameBuf = Buffer.from(name, "utf8");
@@ -149,19 +278,31 @@ function pack(entries) {
 const outFlag = process.argv.indexOf("--out");
 const outPath = outFlag === -1 ? resolve(here, "../src/fl/main.ruffle.fla") : resolve(process.argv[outFlag + 1]);
 const entries = parseLocalEntries(readFileSync(sourceFla));
-const document = entries.find((entry) => entry.name === "DOMDocument.xml");
-if (!document) throw new Error("DOMDocument.xml is missing from the FLA");
+let changed = false;
 
-const patched = patchDocument(inflateEntry(document).toString("utf8"));
-if (!patched.changed) {
-  console.log(`${sourceFla} already has the Ruffle tongue drawing`);
+for (const [name, steps] of Object.entries(patches)) {
+  const entry = entries.find((item) => item.name === name);
+  if (!entry) throw new Error(`${name} is missing from the FLA`);
+  let xml = inflateEntry(entry).toString("utf8");
+  let fileChanged = false;
+  for (const [step] of steps) {
+    const result = step(xml);
+    xml = result.xml;
+    fileChanged = fileChanged || result.changed;
+  }
+  if (!fileChanged) continue;
+  const buf = Buffer.from(xml, "utf8");
+  entry.method = 8;
+  entry.data = deflateRawSync(buf);
+  entry.crc = crc32(buf);
+  entry.uncompressedSize = buf.length;
+  changed = true;
+}
+
+if (!changed) {
+  console.log(`${sourceFla} already has the tongue drawing and the high-quality video path`);
   process.exit(0);
 }
-const xml = Buffer.from(patched.xml, "utf8");
-document.method = 8;
-document.data = deflateRawSync(xml);
-document.crc = crc32(xml);
-document.uncompressedSize = xml.length;
 
 writeFileSync(outPath, pack(entries));
 console.log(`Wrote ${outPath}`);
