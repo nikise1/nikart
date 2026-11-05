@@ -73,8 +73,8 @@
         "type": "vid",
         "title": "PokerStars Web",
         "desc": {
-            "en": "Architect and main developer of the PokerStars web client and lobby, in production for over 12 years. Expanded the game offering across many jurisdictions, including huge tournaments with very large fields, and moved the codebase from Angular to React and TypeScript.",
-            "es": "Arquitecto y desarrollador principal del cliente web y el lobby de PokerStars, en producción durante más de 12 años. Amplió la oferta de juegos en muchas jurisdicciones, incluidos torneos enormes con muchísimos jugadores, y pasó el código de Angular a React y TypeScript."
+            "en": "Architect and main developer of the PokerStars web client and lobby, in production for over 12 years. Expanded the game offering across many jurisdictions, including tournaments of more than 10,000 players. Migrated the codebase from Angular to React and TypeScript.",
+            "es": "Arquitecto y desarrollador principal del cliente web y el lobby de PokerStars, en producción durante más de 12 años. Amplió la oferta de juegos en muchas jurisdicciones, incluidos torneos de más de 10.000 jugadores. Migró el código de Angular a React y TypeScript."
         }
     },
     {

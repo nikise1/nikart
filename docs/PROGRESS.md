@@ -77,6 +77,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — PokerStars Web description covers the client, jurisdictions, large tournaments, and the move to React, in English and Spanish.
 
+2026-11-05 — PokerStars Web description cites weekly fields of more than 10,000 players.
+
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
 2026-11-04 — Unplayed video uses the source frame and stays centered in the page, with its description when there is one.
