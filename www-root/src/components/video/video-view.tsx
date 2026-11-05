@@ -12,6 +12,7 @@ import { enterVideoFullscreen } from "./enter-video-fullscreen";
 import { fitVideoFrame, type VideoFrame } from "./fit-video-frame";
 import { isIos } from "./is-ios";
 import { leaveVideoFullscreen } from "./leave-video-fullscreen";
+import { VIDEO_LOAD_RETRY_MS, videoNeedsLoad } from "./prime-video-load";
 
 interface VideoViewProps {
   item: ContentItem;
@@ -72,6 +73,30 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
     if (captionRef.current) observer.observe(captionRef.current);
     return () => observer.disconnect();
   }, [item.id, desc]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let retried = false;
+    const kick = (): void => {
+      if (!video.isConnected || !videoNeedsLoad(video)) return;
+      video.load();
+    };
+    const onError = (): void => {
+      if (retried) return;
+      retried = true;
+      kick();
+    };
+
+    video.addEventListener("error", onError);
+    kick();
+    const later = window.setTimeout(kick, VIDEO_LOAD_RETRY_MS);
+    return () => {
+      window.clearTimeout(later);
+      video.removeEventListener("error", onError);
+    };
+  }, [item.id]);
 
   useEffect(() => {
     declinedFullscreenRef.current = false;
