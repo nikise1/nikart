@@ -32,6 +32,8 @@ export function VideoView({ item, locale }: VideoViewProps) {
   const stageRef = useRef<HTMLDivElement>(null);
   const captionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  // A deliberate fullscreen exit stays inline until this video is left.
+  const declinedFullscreenRef = useRef(false);
   const [source, setSource] = useState<SourceFrame | null>(null);
   const [space, setSpace] = useState<VideoFrame | null>(null);
 
@@ -65,6 +67,31 @@ export function VideoView({ item, locale }: VideoViewProps) {
     return () => observer.disconnect();
   }, [item.id, desc]);
 
+  useEffect(() => {
+    declinedFullscreenRef.current = false;
+    const video = videoRef.current;
+    if (!video) return;
+
+    let showing = false;
+    const sync = (): void => {
+      const webkit = video as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean };
+      const active =
+        document.fullscreenElement === video || Boolean(webkit.webkitDisplayingFullscreen);
+      if (showing && !active && !video.ended) declinedFullscreenRef.current = true;
+      showing = active;
+    };
+
+    document.addEventListener("fullscreenchange", sync);
+    video.addEventListener("webkitbeginfullscreen", sync);
+    video.addEventListener("webkitendfullscreen", sync);
+    return () => {
+      declinedFullscreenRef.current = false;
+      document.removeEventListener("fullscreenchange", sync);
+      video.removeEventListener("webkitbeginfullscreen", sync);
+      video.removeEventListener("webkitendfullscreen", sync);
+    };
+  }, [item.id]);
+
   let slot = 0;
   const titleSlot = slot++;
   const playerSlot = slot++;
@@ -79,6 +106,7 @@ export function VideoView({ item, locale }: VideoViewProps) {
   }
 
   function onPlay(event: SyntheticEvent<HTMLVideoElement>): void {
+    if (declinedFullscreenRef.current) return;
     enterVideoFullscreen(event.currentTarget, document);
   }
 

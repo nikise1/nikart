@@ -52,6 +52,45 @@ function loadFrame(video: HTMLVideoElement, width: number, height: number): void
   });
 }
 
+function trackFullscreen(video: HTMLVideoElement, requestFullscreen = vi.fn()) {
+  let element: Element | null = null;
+  let ended = false;
+  const previousEnabled = Object.getOwnPropertyDescriptor(document, "fullscreenEnabled");
+  const previousElement = Object.getOwnPropertyDescriptor(document, "fullscreenElement");
+  const previousEnded = Object.getOwnPropertyDescriptor(video, "ended");
+  Object.defineProperty(video, "requestFullscreen", {
+    configurable: true,
+    value: requestFullscreen,
+  });
+  Object.defineProperty(video, "ended", { configurable: true, get: () => ended });
+  Object.defineProperty(document, "fullscreenEnabled", { configurable: true, get: () => true });
+  Object.defineProperty(document, "fullscreenElement", { configurable: true, get: () => element });
+
+  return {
+    enter(): void {
+      element = video;
+      act(() => {
+        document.dispatchEvent(new Event("fullscreenchange"));
+      });
+    },
+    exit(options?: { ended?: boolean }): void {
+      ended = options?.ended ?? false;
+      element = null;
+      act(() => {
+        document.dispatchEvent(new Event("fullscreenchange"));
+      });
+    },
+    restore(): void {
+      if (previousEnabled) Object.defineProperty(document, "fullscreenEnabled", previousEnabled);
+      else Reflect.deleteProperty(document, "fullscreenEnabled");
+      if (previousElement) Object.defineProperty(document, "fullscreenElement", previousElement);
+      else Reflect.deleteProperty(document, "fullscreenElement");
+      if (previousEnded) Object.defineProperty(video, "ended", previousEnded);
+      else Reflect.deleteProperty(video, "ended");
+    },
+  };
+}
+
 describe("VideoView", () => {
   afterEach(() => {
     vi.restoreAllMocks();
@@ -201,6 +240,125 @@ describe("VideoView", () => {
     }
 
     expect(requestFullscreen).toHaveBeenCalledOnce();
+  });
+
+  it("stays inline when play follows a deliberate fullscreen exit", () => {
+    mockStageBox(rect(1400, 900));
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    loadFrame(video, 640, 480);
+
+    const requestFullscreen = vi.fn().mockResolvedValue(undefined);
+    const session = trackFullscreen(video, requestFullscreen);
+
+    try {
+      session.enter();
+      session.exit();
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      session.restore();
+    }
+
+    expect(requestFullscreen).not.toHaveBeenCalled();
+  });
+
+  it("enters fullscreen on play after the clip itself ends", () => {
+    mockStageBox(rect(1400, 900));
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    loadFrame(video, 640, 480);
+
+    const requestFullscreen = vi.fn().mockResolvedValue(undefined);
+    const session = trackFullscreen(video, requestFullscreen);
+
+    try {
+      session.enter();
+      session.exit({ ended: true });
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      session.restore();
+    }
+
+    expect(requestFullscreen).toHaveBeenCalledOnce();
+  });
+
+  it("fullscreens again after the viewer leaves that video", () => {
+    mockStageBox(rect(1400, 900));
+    const { rerender } = render(<VideoView item={videoItem} locale="en" />);
+
+    const first = document.querySelector("video");
+    if (!first) throw new Error("missing video");
+    loadFrame(first, 640, 480);
+
+    const requestFullscreen = vi.fn().mockResolvedValue(undefined);
+    const session = trackFullscreen(first, requestFullscreen);
+
+    try {
+      session.enter();
+      session.exit();
+
+      const other: ContentItem = {
+        id: "collapse",
+        type: "vid",
+        title: { en: "Collapse", es: "Colapso" },
+      };
+      rerender(<VideoView item={other} locale="en" />);
+      rerender(<VideoView item={videoItem} locale="en" />);
+
+      const video = document.querySelector("video");
+      if (!video) throw new Error("missing video");
+      Object.defineProperty(video, "requestFullscreen", {
+        configurable: true,
+        value: requestFullscreen,
+      });
+      loadFrame(video, 640, 480);
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      session.restore();
+    }
+
+    expect(requestFullscreen).toHaveBeenCalledOnce();
+  });
+
+  it("stays inline after the iPhone player is closed early", () => {
+    mockStageBox(rect(1400, 900));
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    const webkitEnterFullscreen = vi.fn();
+    const previousEnabled = Object.getOwnPropertyDescriptor(document, "fullscreenEnabled");
+    Object.assign(video, { webkitDisplayingFullscreen: false, webkitEnterFullscreen });
+    Object.defineProperty(document, "fullscreenEnabled", { configurable: true, get: () => false });
+
+    try {
+      act(() => {
+        Object.assign(video, { webkitDisplayingFullscreen: true });
+        video.dispatchEvent(new Event("webkitbeginfullscreen"));
+      });
+      act(() => {
+        Object.assign(video, { webkitDisplayingFullscreen: false });
+        video.dispatchEvent(new Event("webkitendfullscreen"));
+      });
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      if (previousEnabled) Object.defineProperty(document, "fullscreenEnabled", previousEnabled);
+      else Reflect.deleteProperty(document, "fullscreenEnabled");
+    }
+
+    expect(webkitEnterFullscreen).not.toHaveBeenCalled();
   });
 
   it("leaves fullscreen when playback ends", () => {
