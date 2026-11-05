@@ -8,6 +8,7 @@ import type { ContentItem, Locale } from "@/lib/data/schema";
 import { ContentDescription } from "@/components/content-description/content-description";
 import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
+import { enterVideoFullscreen } from "./enter-video-fullscreen";
 import { fitVideoFrame, type VideoFrame } from "./fit-video-frame";
 import { leaveVideoFullscreen } from "./leave-video-fullscreen";
 
@@ -77,6 +78,10 @@ export function VideoView({ item, locale }: VideoViewProps) {
     if (known) setSource(known);
   }
 
+  function onPlay(event: SyntheticEvent<HTMLVideoElement>): void {
+    enterVideoFullscreen(event.currentTarget, document);
+  }
+
   function onEnded(event: SyntheticEvent<HTMLVideoElement>): void {
     leaveVideoFullscreen(event.currentTarget, document);
   }
@@ -108,6 +113,7 @@ export function VideoView({ item, locale }: VideoViewProps) {
                 height={frame?.height}
                 preload="metadata"
                 onLoadedMetadata={onLoadedMetadata}
+                onPlay={onPlay}
                 onEnded={onEnded}
                 className={
                   ready

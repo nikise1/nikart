@@ -171,6 +171,38 @@ describe("VideoView", () => {
     expect(video.style.height).toBe("300px");
   });
 
+  it("enters fullscreen when playback starts", () => {
+    mockStageBox(rect(1400, 900));
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    loadFrame(video, 640, 480);
+
+    const requestFullscreen = vi.fn().mockResolvedValue(undefined);
+    const previousEnabled = Object.getOwnPropertyDescriptor(document, "fullscreenEnabled");
+    const previousElement = Object.getOwnPropertyDescriptor(document, "fullscreenElement");
+    Object.defineProperty(video, "requestFullscreen", {
+      configurable: true,
+      value: requestFullscreen,
+    });
+    Object.defineProperty(document, "fullscreenEnabled", { configurable: true, get: () => true });
+    Object.defineProperty(document, "fullscreenElement", { configurable: true, get: () => null });
+
+    try {
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      if (previousEnabled) Object.defineProperty(document, "fullscreenEnabled", previousEnabled);
+      else Reflect.deleteProperty(document, "fullscreenEnabled");
+      if (previousElement) Object.defineProperty(document, "fullscreenElement", previousElement);
+      else Reflect.deleteProperty(document, "fullscreenElement");
+    }
+
+    expect(requestFullscreen).toHaveBeenCalledOnce();
+  });
+
   it("leaves fullscreen when playback ends", () => {
     mockStageBox(rect(1400, 900));
     render(<VideoView item={videoItem} locale="en" />);
