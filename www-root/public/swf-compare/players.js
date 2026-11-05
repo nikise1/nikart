@@ -94,7 +94,6 @@
     "games/reading_leeds/index.html": "reading-leeds",
     "games/weeds/index.html": "weeds",
     "3d/away3d/ar_heart/index.html": "ar-heart",
-    "3d/away3d/flar_lizard/pub/index.html": "ar-lizard",
     "3d/papervision3d/spaceship/index.html": "spaceship",
   };
 

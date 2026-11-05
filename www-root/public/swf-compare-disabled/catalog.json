@@ -146,5 +146,18 @@
       "width": 768,
       "height": 586
     }
+  },
+  {
+    "before": "ar-heart",
+    "item": {
+      "id": "ar-lizard",
+      "title": "FLAR lizard",
+      "group": "3d",
+      "itemId": "ar_lizard",
+      "wrapper": "3d/away3d/flar_lizard/pub/index.html",
+      "primary": true,
+      "width": 500,
+      "height": 375
+    }
   }
 ]

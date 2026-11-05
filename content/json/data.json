@@ -37,22 +37,6 @@
                     "title": "PokerStars Tournament Details"
                 },
                 {
-                    "id": "onedayinmay",
-                    "type": "web",
-                    "title": "One Day in May",
-                    "desc": {
-                        "en": "Responsive microsite for animator Vera Neubauer. HTML5, CSS, JavaScript & PHP.",
-                        "es": "Sitio adaptivo para la animadora Vera Neubauer. HTML5, CSS, JavaScript y PHP."
-                    },
-                    "imgs": 4,
-                    "url": "http:\/\/onedayinmay.co.uk",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'1200','850','yes','yes','yes'"
-                },
-                {
                     "id": "rockstars_divas",
                     "type": "web",
                     "title": "Rockstars vs Divas - Bestival",
@@ -97,22 +81,6 @@
             "id": "websites",
             "type": "men",
             "menu": [
-                {
-                    "id": "onedayinmay",
-                    "type": "web",
-                    "title": "One Day in May",
-                    "desc": {
-                        "en": "Responsive microsite for animator Vera Neubauer. HTML5, CSS, JavaScript & PHP.",
-                        "es": "Sitio adaptivo para la animadora Vera Neubauer. HTML5, CSS, JavaScript y PHP."
-                    },
-                    "imgs": 4,
-                    "url": "http:\/\/onedayinmay.co.uk",
-                    "launch": {
-                        "en": "Launch Website",
-                        "es": "Abra el Sitio"
-                    },
-                    "pop": "'1200','850','yes','yes','yes'"
-                },
                 {
                     "id": "ar_heart",
                     "type": "tex",
@@ -537,25 +505,6 @@
             "id": "offline",
             "type": "men",
             "menu": [
-                {
-                    "id": "ar_lizard",
-                    "type": "tex",
-                    "title": {
-                        "en": "Augmented Reality lizard",
-                        "es": "Lagartija en Realidad Aumentada"
-                    },
-                    "desc": {
-                        "en": "Away3D model of my lizard using Augmented Realty (webcam & printer required).",
-                        "es": "Modelo Away3D de mi lagartija usando \"Augmented Reality\" (Realidad Aumentada) (webcam e impresora necesarias)."
-                    },
-                    "imgs": 4,
-                    "url": "3d\/away3d\/flar_lizard\/pub\/index.html",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'960','700','yes','no','no'"
-                },
                 {
                     "id": "sketchbook",
                     "type": "ima",
