@@ -75,6 +75,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-04 — Playback leaves fullscreen when the video ends, and a mismatched poster sits on black.
 
+2026-11-02 — `/fl` pauses NetStream when leaving a video. Ruffle ignores `NetStream.close()`, so that audio kept playing.
+
 ---
 
 ## Migration record
