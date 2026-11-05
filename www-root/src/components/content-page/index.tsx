@@ -45,7 +45,7 @@ export function ContentPage({ node, path, locale }: ContentPageProps) {
 
   if (node.type === "vid") {
     return (
-      <main data-component="ContentPage" className="flex-1">
+      <main data-component="ContentPage" className="flex min-h-0 flex-1 flex-col">
         <VideoView item={node} locale={locale} />
       </main>
     );
