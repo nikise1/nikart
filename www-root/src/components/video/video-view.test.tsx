@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { act, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ContentItem } from "@/lib/data/schema";
+import * as ios from "./is-ios";
 import { VideoView } from "./video-view";
 
 vi.mock("react", async () => {
@@ -276,7 +277,36 @@ describe("VideoView", () => {
       else Reflect.deleteProperty(document, "fullscreenElement");
     }
 
+    expect(video).toHaveAttribute("playsinline");
     expect(requestFullscreen).toHaveBeenCalledOnce();
+  });
+
+  it("does not enter fullscreen on iOS", () => {
+    mockStageBox(rect(1400, 900));
+    vi.spyOn(ios, "isIos").mockReturnValue(true);
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    loadFrame(video, 640, 480);
+
+    const requestFullscreen = vi.fn().mockResolvedValue(undefined);
+    const webkitEnterFullscreen = vi.fn();
+    Object.assign(video, { requestFullscreen, webkitEnterFullscreen });
+    const previousEnabled = Object.getOwnPropertyDescriptor(document, "fullscreenEnabled");
+    Object.defineProperty(document, "fullscreenEnabled", { configurable: true, get: () => true });
+
+    try {
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      if (previousEnabled) Object.defineProperty(document, "fullscreenEnabled", previousEnabled);
+      else Reflect.deleteProperty(document, "fullscreenEnabled");
+    }
+
+    expect(requestFullscreen).not.toHaveBeenCalled();
+    expect(webkitEnterFullscreen).not.toHaveBeenCalled();
   });
 
   it("stays inline when play follows a deliberate fullscreen exit", () => {

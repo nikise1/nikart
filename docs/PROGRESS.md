@@ -93,6 +93,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Play stays inline after a deliberate fullscreen exit, until that video is left.
 
+2026-11-05 — iOS plays portfolio video inline instead of entering fullscreen on play.
+
 2026-11-02 — `/fl` pauses NetStream when leaving a video. Ruffle ignores `NetStream.close()`, so that audio kept playing.
 
 ---
