@@ -77,6 +77,12 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Featured menu label is 20px, still inside the same 32px reveal row.
 
+2026-11-05 — Tournament Details icon is cropped to the same 4:3 ratio as the other icons.
+
+2026-11-05 — A video poster is an optional `{id}_poster.jpg` in the video’s ratio. The menu icon stays `{id}.jpg`.
+
+2026-11-05 — PokerStars icons are 120×90, and their posters match the video frames.
+
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
 2026-11-04 — Unplayed video uses the source frame and stays centered in the page, with its description when there is one.

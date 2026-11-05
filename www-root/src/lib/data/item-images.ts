@@ -6,6 +6,9 @@ import type { MainFile, MenuSourceNode } from "./schema.ts";
 /** Slide files are `{id}_1.jpg`. The suffix is only an underscore and digits. */
 const SLIDE_SUFFIX = /^_\d+$/;
 
+/** Optional video poster: `{id}_poster.jpg`. */
+const POSTER_SUFFIX = "_poster";
+
 export interface ImageMoveResult {
   parked: string[];
   restored: string[];
@@ -29,7 +32,7 @@ export function collectMainIds(main: MainFile): string[] {
 }
 
 /**
- * Portfolio images are `{id}.jpg` and `{id}_{n}.jpg`.
+ * Portfolio images are `{id}.jpg`, `{id}_{n}.jpg`, and `{id}_poster.jpg`.
  * The longest id wins, so `six_cds_1.jpg` belongs to `six_cds` and `flickr_1.jpg` belongs to `flickr`.
  * Png files are site chrome (`stump.png`, `curl-sprite.png`) and are not portfolio images.
  */
@@ -40,7 +43,8 @@ export function portfolioImageId(filename: string, ids: readonly string[]): stri
   for (const id of ids) {
     if (id.length === 0) continue;
     const rest = stem.slice(id.length);
-    const owns = stem === id || (stem.startsWith(id) && SLIDE_SUFFIX.test(rest));
+    const owns =
+      stem === id || (stem.startsWith(id) && (SLIDE_SUFFIX.test(rest) || rest === POSTER_SUFFIX));
     if (!owns) continue;
     if (best === null || id.length > best.length) best = id;
   }

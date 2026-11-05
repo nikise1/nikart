@@ -41,6 +41,11 @@ export function imgUrl(id: string): string {
   return `${CONTENT_BASE}/img/${id}.jpg`;
 }
 
+/** Optional video poster. Same ratio as the video, separate from the menu icon. */
+export function posterUrl(id: string): string {
+  return `${CONTENT_BASE}/img/${id}_poster.jpg`;
+}
+
 export function imgSlideUrl(id: string, index: number): string {
   return `${CONTENT_BASE}/img/${id}_${index}.jpg`;
 }
