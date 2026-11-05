@@ -8,6 +8,7 @@ import type { ContentItem, Locale } from "@/lib/data/schema";
 import { ContentDescription } from "@/components/content-description/content-description";
 import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
+import { enterVideoFullscreen } from "./enter-video-fullscreen";
 import { fitVideoFrame, type VideoFrame } from "./fit-video-frame";
 import { leaveVideoFullscreen } from "./leave-video-fullscreen";
 
@@ -31,6 +32,8 @@ export function VideoView({ item, locale }: VideoViewProps) {
   const stageRef = useRef<HTMLDivElement>(null);
   const captionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  // A deliberate fullscreen exit stays inline until this video is left.
+  const declinedFullscreenRef = useRef(false);
   const [source, setSource] = useState<SourceFrame | null>(null);
   const [space, setSpace] = useState<VideoFrame | null>(null);
 
@@ -64,6 +67,31 @@ export function VideoView({ item, locale }: VideoViewProps) {
     return () => observer.disconnect();
   }, [item.id, desc]);
 
+  useEffect(() => {
+    declinedFullscreenRef.current = false;
+    const video = videoRef.current;
+    if (!video) return;
+
+    let showing = false;
+    const sync = (): void => {
+      const webkit = video as HTMLVideoElement & { webkitDisplayingFullscreen?: boolean };
+      const active =
+        document.fullscreenElement === video || Boolean(webkit.webkitDisplayingFullscreen);
+      if (showing && !active && !video.ended) declinedFullscreenRef.current = true;
+      showing = active;
+    };
+
+    document.addEventListener("fullscreenchange", sync);
+    video.addEventListener("webkitbeginfullscreen", sync);
+    video.addEventListener("webkitendfullscreen", sync);
+    return () => {
+      declinedFullscreenRef.current = false;
+      document.removeEventListener("fullscreenchange", sync);
+      video.removeEventListener("webkitbeginfullscreen", sync);
+      video.removeEventListener("webkitendfullscreen", sync);
+    };
+  }, [item.id]);
+
   let slot = 0;
   const titleSlot = slot++;
   const playerSlot = slot++;
@@ -75,6 +103,11 @@ export function VideoView({ item, locale }: VideoViewProps) {
   function onLoadedMetadata(event: SyntheticEvent<HTMLVideoElement>): void {
     const known = readFrame(event.currentTarget, item.id);
     if (known) setSource(known);
+  }
+
+  function onPlay(event: SyntheticEvent<HTMLVideoElement>): void {
+    if (declinedFullscreenRef.current) return;
+    enterVideoFullscreen(event.currentTarget, document);
   }
 
   function onEnded(event: SyntheticEvent<HTMLVideoElement>): void {
@@ -108,6 +141,7 @@ export function VideoView({ item, locale }: VideoViewProps) {
                 height={frame?.height}
                 preload="metadata"
                 onLoadedMetadata={onLoadedMetadata}
+                onPlay={onPlay}
                 onEnded={onEnded}
                 className={
                   ready

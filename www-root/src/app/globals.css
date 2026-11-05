@@ -25,6 +25,18 @@ body {
   background-attachment: fixed;
 }
 
+/* The player sets an inline frame size. Fullscreen has to beat that or the picture stays small. */
+[data-component="VideoView"] video:fullscreen,
+[data-component="VideoView"] video:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  border-radius: 0;
+  background-color: #000;
+  object-fit: contain;
+}
+
 /* --- View Transitions --- */
 
 ::view-transition-old(.nav-forward) {
