@@ -73,6 +73,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-04 — PokerStars Web icon is the red spade on its own.
 
+2026-11-05 — Tournament Details uses the Satellite artwork.
+
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
 ---
