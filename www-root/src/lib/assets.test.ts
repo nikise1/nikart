@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   imgUrl,
   imgSlideUrl,
+  posterUrl,
   videoH264Url,
   videoWebmUrl,
   processUrl,
@@ -12,6 +13,12 @@ describe("assets", () => {
   describe("imgUrl", () => {
     it("returns correct thumbnail URL", () => {
       expect(imgUrl("onedayinmay")).toBe("/content/img/onedayinmay.jpg");
+    });
+  });
+
+  describe("posterUrl", () => {
+    it("returns the optional video poster", () => {
+      expect(posterUrl("web_poker")).toBe("/content/img/web_poker_poster.jpg");
     });
   });
 

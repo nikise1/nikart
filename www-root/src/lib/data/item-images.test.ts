@@ -21,6 +21,7 @@ describe("portfolioImageId", () => {
     expect(portfolioImageId("six_1.jpg", ids)).toBe("six");
     expect(portfolioImageId("flickr_1.jpg", ids)).toBe("flickr");
     expect(portfolioImageId("fl.jpg", ids)).toBe("fl");
+    expect(portfolioImageId("web_poker_poster.jpg", ["web_poker", "web"])).toBe("web_poker");
   });
 
   it("leaves site chrome and unknown jpgs unmatched", () => {

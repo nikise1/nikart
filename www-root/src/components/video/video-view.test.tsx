@@ -156,6 +156,7 @@ describe("VideoView", () => {
     expect(video).not.toBeNull();
     if (!video) return;
     expect(video).not.toHaveAttribute("width");
+    expect(video).not.toHaveAttribute("poster");
 
     loadFrame(video, 640, 480);
 
@@ -164,6 +165,42 @@ describe("VideoView", () => {
     expect(video).toHaveClass("bg-black", "object-contain");
     expect(video.style.width).toBe("640px");
     expect(video.style.height).toBe("480px");
+  });
+
+  it("places the player from the poster size before the video file is known", () => {
+    mockStageBox(rect(1400, 900));
+    const OriginalImage = globalThis.Image;
+    vi.stubGlobal(
+      "Image",
+      class {
+        naturalWidth = 0;
+        naturalHeight = 0;
+        onload: ((event: Event) => void) | null = null;
+        set src(_value: string) {
+          this.naturalWidth = 1280;
+          this.naturalHeight = 720;
+          this.onload?.(new Event("load"));
+        }
+      },
+    );
+
+    try {
+      render(<VideoView item={videoItem} locale="en" poster="/content/img/spark_poster.jpg" />);
+
+      const video = document.querySelector("video");
+      if (!video) throw new Error("missing video");
+      expect(video).toHaveAttribute("poster", "/content/img/spark_poster.jpg");
+      expect(video).toHaveAttribute("width", "1280");
+      expect(video).toHaveAttribute("height", "720");
+      expect(video.style.width).toBe("1280px");
+      expect(video.style.height).toBe("720px");
+
+      loadFrame(video, 1920, 1080);
+      expect(video.style.width).toBe("1400px");
+      expect(video.style.height).toBe("788px");
+    } finally {
+      vi.stubGlobal("Image", OriginalImage);
+    }
   });
 
   it("shrinks a wider source so the player stays inside the stage", () => {

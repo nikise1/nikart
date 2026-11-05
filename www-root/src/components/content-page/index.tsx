@@ -24,9 +24,10 @@ interface ContentPageProps {
   node: DataNode;
   path: string[];
   locale: Locale;
+  poster?: string | null;
 }
 
-export function ContentPage({ node, path, locale }: ContentPageProps) {
+export function ContentPage({ node, path, locale, poster = null }: ContentPageProps) {
   const basePath = path.join("/");
 
   if (isMenuItem(node)) {
@@ -46,7 +47,7 @@ export function ContentPage({ node, path, locale }: ContentPageProps) {
   if (node.type === "vid") {
     return (
       <main data-component="ContentPage" className="flex min-h-0 flex-1 flex-col">
-        <VideoView item={node} locale={locale} />
+        <VideoView item={node} locale={locale} poster={poster} />
       </main>
     );
   }
