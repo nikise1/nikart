@@ -75,7 +75,7 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Tournament Details uses the Satellite artwork.
 
-2026-11-05 — The Flash lizard path stays off touch-primary devices: the Config thumbnail and the `/fl` launch.
+2026-11-05 — A touch-primary device omits the Flash lizard from the thumbnail menu, the same way the menu omits html5. The `/fl` launch stays hidden there too.
 
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
