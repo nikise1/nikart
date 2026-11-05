@@ -48,13 +48,11 @@ describe("ThumbnailGrid", () => {
     render(<ThumbnailGrid menu={menu} locale="en" basePath="config" />);
 
     expect(screen.queryByRole("link", { name: /HTML5 View/ })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Flash View/ })).toHaveAttribute(
-      "href",
-      "/en/config/fl",
-    );
-    expect(screen.getByRole("link", { name: /Español/ })).toHaveAttribute(
-      "href",
-      "/en/config/language",
-    );
+    const flash = screen.getByRole("link", { name: /Flash View/ });
+    expect(flash).toHaveAttribute("href", "/en/config/fl");
+    expect(flash.closest("li")).toHaveClass("touch-device:hidden");
+    const language = screen.getByRole("link", { name: /Español/ });
+    expect(language).toHaveAttribute("href", "/en/config/language");
+    expect(language.closest("li")).not.toHaveClass("touch-device:hidden");
   });
 });

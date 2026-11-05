@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Phones and tablets whose primary pointer is a finger. A mouse stays a
+   mouse even when the window is narrow. */
+@custom-variant touch-device (@media (hover: none) and (pointer: coarse));
+
 :root {
   --background: #bcc986;
   --foreground: #4f3e2d;
