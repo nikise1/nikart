@@ -69,6 +69,12 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-04 — Added PokerStars Web and PokerStars Tournament Details to Featured as videos.
 
+2026-11-04 — PokerStars Web uses the PokerStars wordmark, and Tournament Details uses the Spin & Go logo.
+
+2026-11-04 — PokerStars Web icon is the red spade on its own.
+
+2026-11-05 — Tournament Details uses the Satellite artwork.
+
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
 2026-11-04 — Unplayed video uses the source frame and stays centered in the page, with its description when there is one.
