@@ -6,8 +6,8 @@ export function NavCanvas() {
       data-component="NavCanvas"
       width={NAV_POS.canvasWidth}
       height={NAV_POS.canvasHeight}
-      className="pointer-events-none absolute"
-      style={{ left: NAV_POS.canvasOutX, top: NAV_POS.canvasOutY }}
+      className="pointer-events-none absolute top-0 left-0"
+      aria-hidden="true"
     />
   );
 }
