@@ -10,7 +10,6 @@ import { NavButton } from "./nav-button";
 import { NavRouteSync } from "./nav-route-sync";
 import { useNavAnimator } from "./use-nav-animator";
 import { isHomePath } from "@/lib/nav-route";
-import { isNavButtonBusy, tweenNavButtonExit } from "@/lib/nav-animations";
 import type { Locale } from "@/lib/data/schema";
 
 interface NavProps {
@@ -57,14 +56,12 @@ export function Nav({ locale }: NavProps) {
     const button = containerRef.current?.querySelector<HTMLButtonElement>(
       '[data-component="NavButton"]',
     );
-    if (!button) {
-      router.push("/", { transitionTypes: ["nav-back"] });
-      return;
+    if (button?.dataset.busy === "1") return;
+    if (button) {
+      button.dataset.busy = "1";
+      button.style.pointerEvents = "none";
     }
-    if (isNavButtonBusy(button)) return;
-    tweenNavButtonExit(button, () => {
-      router.push("/", { transitionTypes: ["nav-back"] });
-    });
+    router.push("/", { transitionTypes: ["nav-back"] });
   }
 
   return (
