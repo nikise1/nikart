@@ -11,11 +11,10 @@
                 "es": "Proyectos Destacados"
             },
             "menu": [
-                "html5",
                 "web_poker",
                 "tournament_details",
-                "rockstars_divas",
-                "ciudad"
+                "whiplash",
+                "html5"
             ]
         },
         {
@@ -25,7 +24,6 @@
                 "es": "Sitios Web"
             },
             "menu": [
-                "ar_heart",
                 "terranova",
                 "zubi",
                 "bandstand",
@@ -41,14 +39,40 @@
                 "es": "Juegos"
             },
             "menu": [
+                "whiplash",
                 "rockstars_divas",
                 "ciudad",
                 "avis_donde",
-                "whiplash",
                 "desafio_pacifico",
                 "avis_mundial",
                 "reading_leeds",
                 "steppingstones"
+            ]
+        },
+        {
+            "id": "3d",
+            "title": {
+                "en": "Offline & Other",
+                "es": "Off-line y Otros"
+            },
+            "menu": [
+                "ar_heart",
+                "spaceship",
+                "japanese"
+            ]
+        },
+        {
+            "id": "design_motion",
+            "title": {
+                "en": "Design & Motion",
+                "es": "Diseño y Movimiento"
+            },
+            "menu": [
+                "sketchbook",
+                "six_cds",
+                "ibs",
+                "flickr",
+                "robots"
             ]
         },
         {
@@ -107,29 +131,13 @@
             ]
         },
         {
-            "id": "offline",
-            "title": {
-                "en": "Offline & Other",
-                "es": "Off-line y Otros"
-            },
-            "menu": [
-                "sketchbook",
-                "spaceship",
-                "japanese",
-                "six_cds",
-                "ibs",
-                "robots",
-                "flickr"
-            ]
-        },
-        "contact",
-        {
             "id": "config",
             "title": {
-                "en": "{{otherversions}} & Español",
-                "es": "{{otherversions}} y English"
+                "en": "Contact & Español",
+                "es": "Contacto y English"
             },
             "menu": [
+                "contact",
                 "language",
                 "html5",
                 "fl"
