@@ -159,5 +159,18 @@
       "width": 500,
       "height": 375
     }
+  },
+  {
+    "before": "desafio-pacifico",
+    "item": {
+      "id": "reading-leeds",
+      "title": "Reading vs Leeds",
+      "group": "games",
+      "itemId": "reading_leeds",
+      "wrapper": "games/reading_leeds/index.html",
+      "primary": true,
+      "width": 520,
+      "height": 893
+    }
   }
 ]

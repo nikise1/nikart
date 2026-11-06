@@ -16,14 +16,14 @@
 
 ### `games` men
 
+- `web_poker` vid
+- `tournament_details` vid
 - `whiplash` web
 - `rockstars_divas` web
 - `ciudad` web
 - `avis_donde` web
-- `desafio_pacifico` web
-- `avis_mundial` tex
-- `reading_leeds` web
 - `steppingstones` web
+- `desafio_pacifico` web
 
 ### `3d` men
 

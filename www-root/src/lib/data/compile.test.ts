@@ -87,6 +87,8 @@ describe("compilePortfolio", () => {
       "weeds",
       "onedayinmay",
       "ar_lizard",
+      "avis_mundial",
+      "reading_leeds",
     ];
     expect(disabled.map((item) => item.id)).toEqual(disabledIds);
     expect(disabled[0]?.menu_positions).toEqual([["websites"]]);

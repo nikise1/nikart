@@ -158,6 +158,20 @@
             "type": "men",
             "menu": [
                 {
+                    "id": "web_poker",
+                    "type": "vid",
+                    "title": "PokerStars Web",
+                    "desc": {
+                        "en": "Architect and lead developer of the PokerStars web client and lobby, in production for 12+ years. Expanded the game offering across many jurisdictions, including tournaments of more than 10,000 players. Moved the codebase from Angular to React and TypeScript.",
+                        "es": "Arquitecto y desarrollador l\u00edder del cliente web y el lobby de PokerStars, en producci\u00f3n durante 12+ a\u00f1os. Ampli\u00f3 la oferta de juegos en muchas jurisdicciones, incluidos torneos de m\u00e1s de 10.000 jugadores. Pas\u00f3 el c\u00f3digo de Angular a React y TypeScript."
+                    }
+                },
+                {
+                    "id": "tournament_details",
+                    "type": "vid",
+                    "title": "PokerStars Tournament Details"
+                },
+                {
                     "id": "whiplash",
                     "type": "web",
                     "title": "Whiplash",
@@ -231,51 +245,6 @@
                     "pop": "'600','600','yes','yes','no'"
                 },
                 {
-                    "id": "desafio_pacifico",
-                    "type": "web",
-                    "title": "Desaf\u00edo Pac\u00edfico",
-                    "desc": {
-                        "en": "Course with top down car driving & various maps. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
-                        "es": "Curso con carros y varias pistas. Aplicaci\u00f3n e-learning que carga y guarda datos de SCORM en plataformas m\u00faltiples con contenido XML."
-                    },
-                    "imgs": 18,
-                    "url": "games\/desafio_pacifico\/index.html",
-                    "launch": {
-                        "en": "Launch Demo",
-                        "es": "Comience el Demo"
-                    },
-                    "pop": "'1000','700','yes','yes','yes'"
-                },
-                {
-                    "id": "avis_mundial",
-                    "type": "tex",
-                    "title": {
-                        "en": "Avis - World Cup 2010",
-                        "es": "Avis - Mundial 2010"
-                    },
-                    "desc": {
-                        "en": "World Cup quiz for Avis in 6 languages with prizes for the winners. Localisation in XML.",
-                        "es": "Concurso de la copa del mundo para Avis, disponible en 6 idiomas con premios para los ganadores. Localizaci\u00f3n en XML."
-                    },
-                    "imgs": 6
-                },
-                {
-                    "id": "reading_leeds",
-                    "type": "web",
-                    "title": "Reading vs Leeds",
-                    "desc": {
-                        "en": "Facebook festival game for Gaymers. Reading vs Leeds with prizes. Security to prevent cheating.",
-                        "es": "Juego de Gaymers en Facebook para festival Reading vs Leeds con premios y seguridad para evitar enga\u00f1os."
-                    },
-                    "imgs": 12,
-                    "url": "games\/reading_leeds\/index.html",
-                    "launch": {
-                        "en": "Launch Game",
-                        "es": "Comience el juego"
-                    },
-                    "pop": "'800','893','yes','yes','yes'"
-                },
-                {
                     "id": "steppingstones",
                     "type": "web",
                     "title": "Stepping Stones",
@@ -290,6 +259,22 @@
                         "es": "Juego Corta el C\u00e9sped"
                     },
                     "pop": "'840','640','yes','yes','no'"
+                },
+                {
+                    "id": "desafio_pacifico",
+                    "type": "web",
+                    "title": "Desaf\u00edo Pac\u00edfico",
+                    "desc": {
+                        "en": "Course with top down car driving & various maps. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
+                        "es": "Curso con carros y varias pistas. Aplicaci\u00f3n e-learning que carga y guarda datos de SCORM en plataformas m\u00faltiples con contenido XML."
+                    },
+                    "imgs": 18,
+                    "url": "games\/desafio_pacifico\/index.html",
+                    "launch": {
+                        "en": "Launch Demo",
+                        "es": "Comience el Demo"
+                    },
+                    "pop": "'1000','700','yes','yes','yes'"
                 }
             ],
             "title": {

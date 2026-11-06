@@ -85,6 +85,10 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Disabled onedayinmay and ar_lizard.
 
+2026-11-06 — Disabled avis_mundial and reading_leeds, and moved desafio_pacifico to the end of Games.
+
+2026-11-06 — PokerStars Web and Tournament Details are also at the top of Games.
+
 2026-11-05 — A video poster is an optional `{id}_poster.jpg` in the video’s ratio. The menu icon stays `{id}.jpg`.
 
 2026-11-05 — PokerStars icons are 120×90, and their posters match the video frames.
