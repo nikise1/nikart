@@ -1,7 +1,7 @@
 "use client";
 
 import { ViewTransition } from "react";
-import { processUrl } from "@/lib/assets";
+import { isFlashLizardHref, processUrl } from "@/lib/assets";
 import { localize, localizeUrl } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
 import { compareHrefForItem, compareHrefForSource } from "@/lib/swf-compare";
@@ -66,7 +66,7 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
         {linkSlot !== null && link && launchText && (
           <ContentTransition index={linkSlot}>
-            <p className="mt-4">
+            <p className={isFlashLizardHref(link.href) ? "mt-4 touch-device:hidden" : "mt-4"}>
               <a
                 href={link.href}
                 target={link.isSelf ? "_self" : WEB_TAB_NAME}

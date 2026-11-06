@@ -7,6 +7,7 @@ import {
   videoWebmUrl,
   processUrl,
   resolveFlashLaunchHref,
+  isFlashLizardHref,
 } from "./assets";
 
 describe("assets", () => {
@@ -79,6 +80,18 @@ describe("assets", () => {
         href: "https://example.com",
         isSelf: false,
       });
+    });
+  });
+
+  describe("isFlashLizardHref", () => {
+    it("recognises the lizard movie path", () => {
+      expect(isFlashLizardHref("/fl")).toBe(true);
+      expect(isFlashLizardHref("/fl/")).toBe(true);
+      expect(isFlashLizardHref("/fl/en")).toBe(true);
+      expect(isFlashLizardHref("/fl/es")).toBe(true);
+      expect(isFlashLizardHref("/fl/away")).toBe(false);
+      expect(isFlashLizardHref("/en/config/fl")).toBe(false);
+      expect(isFlashLizardHref("http://onedayinmay.co.uk")).toBe(false);
     });
   });
 

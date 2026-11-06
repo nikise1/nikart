@@ -121,6 +121,12 @@ describe("thumbMenuItems", () => {
     const configIds = thumbMenuItems(config.menu).map((item) => item.id);
     expect(configIds).toEqual(["language", "fl"]);
   });
+
+  it("drops the flash lizard on a touch device the same way as html5", () => {
+    const config = findById("config") as MenuItem;
+    expect(thumbMenuItems(config.menu, true).map((item) => item.id)).toEqual(["language"]);
+    expect(config.menu.some((item) => item.id === "fl")).toBe(true);
+  });
 });
 
 describe("getContentItems", () => {
