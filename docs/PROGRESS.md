@@ -121,6 +121,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — Fern background blur is about twice as soft.
 
+2026-11-06 — Fern background contrast is a little flatter, with the same color and softness.
+
 ---
 
 ## Migration record
