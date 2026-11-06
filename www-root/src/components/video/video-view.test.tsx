@@ -173,6 +173,29 @@ describe("VideoView", () => {
     }
   });
 
+  it("tries the files once more when every source fails", () => {
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+    render(<VideoView item={videoItem} locale="en" />);
+    expect(load).toHaveBeenCalledOnce();
+
+    const sources = document.querySelectorAll("video source");
+    expect(sources).toHaveLength(2);
+    act(() => {
+      sources[0]?.dispatchEvent(new Event("error"));
+    });
+    expect(load).toHaveBeenCalledOnce();
+
+    act(() => {
+      sources[1]?.dispatchEvent(new Event("error"));
+    });
+    expect(load).toHaveBeenCalledTimes(2);
+
+    act(() => {
+      sources[1]?.dispatchEvent(new Event("error"));
+    });
+    expect(load).toHaveBeenCalledTimes(2);
+  });
+
   it("tries again after the entrance if the file still has not started", () => {
     vi.useFakeTimers();
     const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
