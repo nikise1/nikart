@@ -242,5 +242,23 @@
       "ruffle": true,
       "awayfl": false
     }
+  },
+  {
+    "before": "desafio-pacifico",
+    "item": {
+      "id": "reading-leeds",
+      "title": "Reading vs Leeds",
+      "group": "games",
+      "itemId": "reading_leeds",
+      "swf": "https://static.nikart.co.uk/games/reading_leeds/Main.swf",
+      "swfVersion": 10,
+      "actionScript": "3",
+      "width": 520,
+      "height": 893,
+      "base": "https://static.nikart.co.uk/games/reading_leeds/",
+      "background": "#000000",
+      "ruffle": true,
+      "awayfl": false
+    }
   }
 ]

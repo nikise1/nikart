@@ -91,7 +91,6 @@
     "games/avis_donde/index.html": "avis-donde",
     "games/whiplash/index.html": "whiplash",
     "games/desafio_pacifico/index.html": "desafio-pacifico",
-    "games/reading_leeds/index.html": "reading-leeds",
     "games/weeds/index.html": "weeds",
     "3d/away3d/ar_heart/index.html": "ar-heart",
     "3d/papervision3d/spaceship/index.html": "spaceship",

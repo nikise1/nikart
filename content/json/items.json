@@ -221,35 +221,6 @@
         "pop": "'1000','700','yes','yes','yes'"
     },
     {
-        "id": "avis_mundial",
-        "type": "tex",
-        "title": {
-            "en": "Avis - World Cup 2010",
-            "es": "Avis - Mundial 2010"
-        },
-        "desc": {
-            "en": "World Cup quiz for Avis in 6 languages with prizes for the winners. Localisation in XML.",
-            "es": "Concurso de la copa del mundo para Avis, disponible en 6 idiomas con premios para los ganadores. Localización en XML."
-        },
-        "imgs": 6
-    },
-    {
-        "id": "reading_leeds",
-        "type": "web",
-        "title": "Reading vs Leeds",
-        "desc": {
-            "en": "Facebook festival game for Gaymers. Reading vs Leeds with prizes. Security to prevent cheating.",
-            "es": "Juego de Gaymers en Facebook para festival Reading vs Leeds con premios y seguridad para evitar engaños."
-        },
-        "imgs": 12,
-        "url": "games/reading_leeds/index.html",
-        "launch": {
-            "en": "Launch Game",
-            "es": "Comience el juego"
-        },
-        "pop": "'800','893','yes','yes','yes'"
-    },
-    {
         "id": "spark",
         "type": "vid",
         "title": "Spark"
