@@ -83,18 +83,21 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
       if (!video.isConnected || !videoNeedsLoad(video)) return;
       video.load();
     };
-    const onError = (): void => {
+    // With `<source>` children, a failed file fires `error` on the source, not the video.
+    // The last source failing means every candidate failed.
+    const onError = (event: Event): void => {
       if (retried) return;
+      if (event.target !== video && event.target !== video.lastElementChild) return;
       retried = true;
       kick();
     };
 
-    video.addEventListener("error", onError);
+    video.addEventListener("error", onError, true);
     kick();
     const later = window.setTimeout(kick, VIDEO_LOAD_RETRY_MS);
     return () => {
       window.clearTimeout(later);
-      video.removeEventListener("error", onError);
+      video.removeEventListener("error", onError, true);
     };
   }, [item.id]);
 
