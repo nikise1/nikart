@@ -2,16 +2,24 @@ import { describe, it, expect } from "vitest";
 import {
   imgUrl,
   imgSlideUrl,
+  posterUrl,
   videoH264Url,
   videoWebmUrl,
   processUrl,
   resolveFlashLaunchHref,
+  isFlashLizardHref,
 } from "./assets";
 
 describe("assets", () => {
   describe("imgUrl", () => {
     it("returns correct thumbnail URL", () => {
       expect(imgUrl("onedayinmay")).toBe("/content/img/onedayinmay.jpg");
+    });
+  });
+
+  describe("posterUrl", () => {
+    it("returns the optional video poster", () => {
+      expect(posterUrl("web_poker")).toBe("/content/img/web_poker_poster.jpg");
     });
   });
 
@@ -72,6 +80,18 @@ describe("assets", () => {
         href: "https://example.com",
         isSelf: false,
       });
+    });
+  });
+
+  describe("isFlashLizardHref", () => {
+    it("recognises the lizard movie path", () => {
+      expect(isFlashLizardHref("/fl")).toBe(true);
+      expect(isFlashLizardHref("/fl/")).toBe(true);
+      expect(isFlashLizardHref("/fl/en")).toBe(true);
+      expect(isFlashLizardHref("/fl/es")).toBe(true);
+      expect(isFlashLizardHref("/fl/away")).toBe(false);
+      expect(isFlashLizardHref("/en/config/fl")).toBe(false);
+      expect(isFlashLizardHref("http://onedayinmay.co.uk")).toBe(false);
     });
   });
 

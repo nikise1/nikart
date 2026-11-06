@@ -15,6 +15,18 @@ const HTML5_DOCUMENT_URL = "https://self.invalid/html5/";
  */
 export const FLASH_MOVIE_URL = "https://self.invalid/fl/main.ruffle.swf";
 
+/** True for the lizard movie path (`/fl`, and the language redirects into it). */
+export function isFlashLizardHref(href: string): boolean {
+  let pathname = href;
+  try {
+    pathname = new URL(href, "https://self.invalid").pathname;
+  } catch {
+    return false;
+  }
+  const path = pathname.replace(/\/$/, "") || "/";
+  return path === "/fl" || path === "/fl/en" || path === "/fl/es";
+}
+
 export function resolveRootHref(relative: string, base: string): string {
   if (
     relative.startsWith("http://") ||
@@ -39,6 +51,11 @@ export function resolveFlashLaunchHref(filename: string): string {
 
 export function imgUrl(id: string): string {
   return `${CONTENT_BASE}/img/${id}.jpg`;
+}
+
+/** Optional video poster. Same ratio as the video, separate from the menu icon. */
+export function posterUrl(id: string): string {
+  return `${CONTENT_BASE}/img/${id}_poster.jpg`;
 }
 
 export function imgSlideUrl(id: string, index: number): string {

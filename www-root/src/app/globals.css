@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Phones and tablets whose primary pointer is a finger. A mouse stays a
+   mouse even when the window is narrow. */
+@custom-variant touch-device (@media (hover: none) and (pointer: coarse));
+
 :root {
   --background: #bcc986;
   --foreground: #4f3e2d;
@@ -23,6 +27,18 @@ body {
     linear-gradient(to bottom, #d6d59d, #94b864);
   background-size: cover;
   background-attachment: fixed;
+}
+
+/* The player sets an inline frame size. Fullscreen has to beat that or the picture stays small. */
+[data-component="VideoView"] video:fullscreen,
+[data-component="VideoView"] video:-webkit-full-screen {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  border-radius: 0;
+  background-color: #000;
+  object-fit: contain;
 }
 
 /* --- View Transitions --- */

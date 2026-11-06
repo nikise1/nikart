@@ -3,13 +3,11 @@
 - `html5` web
 - `web_poker` vid
 - `tournament_details` vid
-- `onedayinmay` web
 - `rockstars_divas` web
 - `ciudad` web
 
 ### `websites` men
 
-- `onedayinmay` web
 - `ar_heart` tex
 - `terranova` tex
 - `zubi` tex
@@ -67,7 +65,6 @@
 
 ### `offline` men
 
-- `ar_lizard` tex
 - `sketchbook` ima
 - `spaceship` web
 - `japanese` tex

@@ -114,12 +114,18 @@ describe("thumbMenuItems", () => {
     const featured = findById("featured") as MenuItem;
     const featuredIds = thumbMenuItems(featured.menu).map((item) => item.id);
     expect(featuredIds).not.toContain("html5");
-    expect(featuredIds).toContain("onedayinmay");
+    expect(featuredIds).toContain("rockstars_divas");
     expect(featured.menu.some((item) => item.id === "html5")).toBe(true);
 
     const config = findById("config") as MenuItem;
     const configIds = thumbMenuItems(config.menu).map((item) => item.id);
     expect(configIds).toEqual(["language", "fl"]);
+  });
+
+  it("drops the flash lizard on a touch device the same way as html5", () => {
+    const config = findById("config") as MenuItem;
+    expect(thumbMenuItems(config.menu, true).map((item) => item.id)).toEqual(["language"]);
+    expect(config.menu.some((item) => item.id === "fl")).toBe(true);
   });
 });
 

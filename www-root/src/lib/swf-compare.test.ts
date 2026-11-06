@@ -16,7 +16,6 @@ import { indexPages, loadDisabledItemIds } from "./swf-compare-index";
 /** SWF header stage size, not the data.json popup window. */
 const stageSizes: Record<string, { width: number; height: number }> = {
   "ar-heart": { width: 494, height: 370 },
-  "ar-lizard": { width: 500, height: 375 },
   "avis-donde": { width: 500, height: 500 },
   ciudad: { width: 1024, height: 768 },
   "desafio-pacifico": { width: 1024, height: 768 },
@@ -56,6 +55,7 @@ describe("swf-compare", () => {
       "cityread",
       "slate20",
       "weeds",
+      "ar_lizard",
     ]) {
       expect(compareHrefForItem(itemId)).toBeNull();
       expect(swfCompareSources.some((piece) => piece.itemId === itemId)).toBe(false);

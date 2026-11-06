@@ -204,7 +204,7 @@ describe("committed compare archive", () => {
   const playersJs = readFileSync(join(root, "public/swf-compare/players.js"), "utf8");
 
   it("keeps the removed movies out of the live compare set", () => {
-    for (const itemId of ["claro", "118aua", "escalera", "banners", "slate20"]) {
+    for (const itemId of ["claro", "118aua", "escalera", "banners", "slate20", "ar_lizard"]) {
       expect(livePages.some((page) => page.itemId === itemId)).toBe(false);
       expect(liveCatalog.some((source) => source.itemId === itemId)).toBe(false);
     }
@@ -223,6 +223,7 @@ describe("committed compare archive", () => {
       "banner-shell__matchstick",
       "banner-trunk__mpu_2",
       "slate20",
+      "ar-lizard",
     ]);
   });
 
@@ -245,7 +246,6 @@ describe("committed compare archive", () => {
       "escalera",
       "weeds",
       "ar-heart",
-      "ar-lizard",
       "spaceship",
       "banner-standardlife",
       "banner-standardlife-lite",
@@ -257,8 +257,8 @@ describe("committed compare archive", () => {
       "banner-shell__matchstick",
       "banner-trunk__mpu_2",
     ]);
-    expect(restored.parkedPages.map((row) => row.item.id)).toEqual(["slate20"]);
-    expect(restored.parkedCatalog.map((row) => row.item.id)).toEqual(["slate20"]);
+    expect(restored.parkedPages.map((row) => row.item.id)).toEqual(["slate20", "ar-lizard"]);
+    expect(restored.parkedCatalog.map((row) => row.item.id)).toEqual(["slate20", "ar-lizard"]);
     expect(replaceLaunchPages(playersJs, restored.liveCatalog, restored.livePages)).toContain(
       '"websites/claro/index.html": "claro"',
     );

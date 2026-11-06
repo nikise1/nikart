@@ -20,6 +20,12 @@ vi.mock("next/link", () => ({
   ),
 }));
 
+const touch = vi.hoisted(() => ({ current: false }));
+
+vi.mock("@/lib/touch-device", () => ({
+  useTouchDevice: () => touch.current,
+}));
+
 const menu: MenuItem = {
   id: "config",
   type: "men",
@@ -56,5 +62,15 @@ describe("ThumbnailGrid", () => {
       "href",
       "/en/config/language",
     );
+  });
+
+  it("drops the flash lizard from the menu on a touch device", () => {
+    touch.current = true;
+    render(<ThumbnailGrid menu={menu} locale="en" basePath="config" />);
+
+    expect(screen.queryByRole("link", { name: /Flash View/ })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /HTML5 View/ })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Español/ })).toBeInTheDocument();
+    touch.current = false;
   });
 });
