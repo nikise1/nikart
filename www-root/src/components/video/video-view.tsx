@@ -10,7 +10,9 @@ import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
 import { enterVideoFullscreen } from "./enter-video-fullscreen";
 import { fitVideoFrame, type VideoFrame } from "./fit-video-frame";
+import { isIos } from "./is-ios";
 import { leaveVideoFullscreen } from "./leave-video-fullscreen";
+import { VIDEO_LOAD_RETRY_MS, videoNeedsLoad } from "./prime-video-load";
 
 interface VideoViewProps {
   item: ContentItem;
@@ -73,6 +75,30 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
   }, [item.id, desc]);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    let retried = false;
+    const kick = (): void => {
+      if (!video.isConnected || !videoNeedsLoad(video)) return;
+      video.load();
+    };
+    const onError = (): void => {
+      if (retried) return;
+      retried = true;
+      kick();
+    };
+
+    video.addEventListener("error", onError);
+    kick();
+    const later = window.setTimeout(kick, VIDEO_LOAD_RETRY_MS);
+    return () => {
+      window.clearTimeout(later);
+      video.removeEventListener("error", onError);
+    };
+  }, [item.id]);
+
+  useEffect(() => {
     declinedFullscreenRef.current = false;
     const video = videoRef.current;
     if (!video) return;
@@ -126,7 +152,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
   }
 
   function onPlay(event: SyntheticEvent<HTMLVideoElement>): void {
-    if (declinedFullscreenRef.current) return;
+    // iOS fullscreen-on-play uses the system player and does not settle cleanly.
+    if (isIos(navigator) || declinedFullscreenRef.current) return;
     enterVideoFullscreen(event.currentTarget, document);
   }
 
@@ -156,6 +183,7 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
                 key={item.id}
                 ref={videoRef}
                 controls
+                playsInline
                 poster={poster ?? undefined}
                 width={frame?.width}
                 height={frame?.height}

@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import { act, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ContentItem } from "@/lib/data/schema";
+import * as ios from "./is-ios";
+import { VIDEO_LOAD_RETRY_MS } from "./prime-video-load";
 import { VideoView } from "./video-view";
 
 vi.mock("react", async () => {
@@ -92,6 +94,10 @@ function trackFullscreen(video: HTMLVideoElement, requestFullscreen = vi.fn()) {
 }
 
 describe("VideoView", () => {
+  beforeEach(() => {
+    vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+  });
+
   afterEach(() => {
     vi.restoreAllMocks();
   });
@@ -117,6 +123,70 @@ describe("VideoView", () => {
     );
     expect(document.querySelector("[data-component='ContentDescription']")).toBeNull();
     expect(document.querySelector("[data-content-slot='2']")).toBeNull();
+  });
+
+  it("starts the file when the browser has not selected a source", () => {
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+    render(<VideoView item={videoItem} locale="en" />);
+    expect(load).toHaveBeenCalledOnce();
+  });
+
+  it("tries the file once more when the first load errors", () => {
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+    let mediaError: MediaError | null = null;
+    const previousState = Object.getOwnPropertyDescriptor(
+      HTMLMediaElement.prototype,
+      "networkState",
+    );
+    const previousError = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, "error");
+    Object.defineProperty(HTMLMediaElement.prototype, "networkState", {
+      configurable: true,
+      get: () => HTMLMediaElement.NETWORK_LOADING,
+    });
+    Object.defineProperty(HTMLMediaElement.prototype, "error", {
+      configurable: true,
+      get: () => mediaError,
+    });
+
+    try {
+      render(<VideoView item={videoItem} locale="en" />);
+      expect(load).not.toHaveBeenCalled();
+
+      const video = document.querySelector("video");
+      if (!video) throw new Error("missing video");
+      mediaError = { code: 2 } as MediaError;
+      act(() => {
+        video.dispatchEvent(new Event("error"));
+      });
+      expect(load).toHaveBeenCalledOnce();
+
+      act(() => {
+        video.dispatchEvent(new Event("error"));
+      });
+      expect(load).toHaveBeenCalledOnce();
+    } finally {
+      if (previousState)
+        Object.defineProperty(HTMLMediaElement.prototype, "networkState", previousState);
+      else Reflect.deleteProperty(HTMLMediaElement.prototype, "networkState");
+      if (previousError) Object.defineProperty(HTMLMediaElement.prototype, "error", previousError);
+      else Reflect.deleteProperty(HTMLMediaElement.prototype, "error");
+    }
+  });
+
+  it("tries again after the entrance if the file still has not started", () => {
+    vi.useFakeTimers();
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+
+    try {
+      render(<VideoView item={videoItem} locale="en" />);
+      expect(load).toHaveBeenCalledOnce();
+      act(() => {
+        vi.advanceTimersByTime(VIDEO_LOAD_RETRY_MS);
+      });
+      expect(load).toHaveBeenCalledTimes(2);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it("reads a frame that is already available when the player mounts", () => {
@@ -276,7 +346,36 @@ describe("VideoView", () => {
       else Reflect.deleteProperty(document, "fullscreenElement");
     }
 
+    expect(video).toHaveAttribute("playsinline");
     expect(requestFullscreen).toHaveBeenCalledOnce();
+  });
+
+  it("does not enter fullscreen on iOS", () => {
+    mockStageBox(rect(1400, 900));
+    vi.spyOn(ios, "isIos").mockReturnValue(true);
+    render(<VideoView item={videoItem} locale="en" />);
+
+    const video = document.querySelector("video");
+    if (!video) throw new Error("missing video");
+    loadFrame(video, 640, 480);
+
+    const requestFullscreen = vi.fn().mockResolvedValue(undefined);
+    const webkitEnterFullscreen = vi.fn();
+    Object.assign(video, { requestFullscreen, webkitEnterFullscreen });
+    const previousEnabled = Object.getOwnPropertyDescriptor(document, "fullscreenEnabled");
+    Object.defineProperty(document, "fullscreenEnabled", { configurable: true, get: () => true });
+
+    try {
+      act(() => {
+        video.dispatchEvent(new Event("play"));
+      });
+    } finally {
+      if (previousEnabled) Object.defineProperty(document, "fullscreenEnabled", previousEnabled);
+      else Reflect.deleteProperty(document, "fullscreenEnabled");
+    }
+
+    expect(requestFullscreen).not.toHaveBeenCalled();
+    expect(webkitEnterFullscreen).not.toHaveBeenCalled();
   });
 
   it("stays inline when play follows a deliberate fullscreen exit", () => {
