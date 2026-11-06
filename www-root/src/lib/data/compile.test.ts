@@ -39,7 +39,7 @@ describe("compilePortfolio", () => {
     const main = sources.main as { menu: MenuSourceNode[] };
     const items = sources.items as { id: string }[];
     const links = linkedIds(main.menu);
-    for (const id of ["html5", "rockstars_divas", "ciudad"]) {
+    for (const id of ["html5", "whiplash"]) {
       expect(links.filter((link) => link === id).length).toBeGreaterThan(1);
       expect(items.filter((item) => item.id === id)).toHaveLength(1);
     }

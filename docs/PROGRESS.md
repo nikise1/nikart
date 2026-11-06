@@ -109,6 +109,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-02 — `/fl` pauses NetStream when leaving a video. Ruffle ignores `NetStream.close()`, so that audio kept playing.
 
+2026-11-06 — Rebuilt the menu: 3D and Design & Motion replace Offline & Other, and Contact sits under Contact & Español.
+
 ---
 
 ## Migration record
