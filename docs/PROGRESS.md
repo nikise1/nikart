@@ -119,6 +119,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — Fern background is slightly softer, and type is one step larger except the 20px Featured Projects label.
 
+2026-11-06 — Fern background blur is about twice as soft.
+
 ---
 
 ## Migration record
