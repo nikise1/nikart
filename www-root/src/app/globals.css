@@ -16,6 +16,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* One step above the browser default. Featured Projects is 20px, so it stays put. */
+html {
+  font-size: 106.25%;
+}
+
 body {
   color: var(--foreground);
   font-family: Helvetica, "Helvetica Neue", sans-serif, Arial;
