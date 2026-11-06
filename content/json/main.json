@@ -39,6 +39,8 @@
                 "es": "Juegos"
             },
             "menu": [
+                "web_poker",
+                "tournament_details",
                 "whiplash",
                 "rockstars_divas",
                 "ciudad",

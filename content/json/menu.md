@@ -16,6 +16,8 @@
 
 ### `games` men
 
+- `web_poker` vid
+- `tournament_details` vid
 - `whiplash` web
 - `rockstars_divas` web
 - `ciudad` web
