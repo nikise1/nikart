@@ -1,14 +1,12 @@
 ### `featured` men
 
-- `html5` web
 - `web_poker` vid
 - `tournament_details` vid
-- `rockstars_divas` web
-- `ciudad` web
+- `whiplash` web
+- `html5` web
 
 ### `websites` men
 
-- `ar_heart` tex
 - `terranova` tex
 - `zubi` tex
 - `bandstand` tex
@@ -18,14 +16,28 @@
 
 ### `games` men
 
+- `whiplash` web
 - `rockstars_divas` web
 - `ciudad` web
 - `avis_donde` web
-- `whiplash` web
 - `desafio_pacifico` web
 - `avis_mundial` tex
 - `reading_leeds` web
 - `steppingstones` web
+
+### `3d` men
+
+- `ar_heart` tex
+- `spaceship` web
+- `japanese` tex
+
+### `design_motion` men
+
+- `sketchbook` ima
+- `six_cds` tex
+- `ibs` tex
+- `flickr` web
+- `robots` vid
 
 ### `art` men
 
@@ -63,20 +75,9 @@
 - `wheel` vid
 - `rover` vid
 
-### `offline` men
-
-- `sketchbook` ima
-- `spaceship` web
-- `japanese` tex
-- `six_cds` tex
-- `ibs` tex
-- `robots` vid
-- `flickr` web
-
-### `contact` web
-
 ### `config` men
 
+- `contact` web
 - `language` web
 - `html5` web
 - `fl` web

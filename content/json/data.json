@@ -9,6 +9,32 @@
             "type": "men",
             "menu": [
                 {
+                    "id": "web_poker",
+                    "type": "vid",
+                    "title": "PokerStars Web"
+                },
+                {
+                    "id": "tournament_details",
+                    "type": "vid",
+                    "title": "PokerStars Tournament Details"
+                },
+                {
+                    "id": "whiplash",
+                    "type": "web",
+                    "title": "Whiplash",
+                    "desc": {
+                        "en": "Whiplash Whip Game for Wacom graphics tablets.",
+                        "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
+                    },
+                    "imgs": 4,
+                    "url": "games\/whiplash\/index.html",
+                    "launch": {
+                        "en": "Launch Game",
+                        "es": "Comience el juego"
+                    },
+                    "pop": "'800','600','yes','no','no'"
+                },
+                {
                     "id": "html5",
                     "type": "web",
                     "title": {
@@ -25,51 +51,6 @@
                         "en": "Change to the HTML5 view",
                         "es": "Cambia a la versi\u00f3n en HTML5"
                     }
-                },
-                {
-                    "id": "web_poker",
-                    "type": "vid",
-                    "title": "PokerStars Web"
-                },
-                {
-                    "id": "tournament_details",
-                    "type": "vid",
-                    "title": "PokerStars Tournament Details"
-                },
-                {
-                    "id": "rockstars_divas",
-                    "type": "web",
-                    "title": "Rockstars vs Divas - Bestival",
-                    "desc": {
-                        "en": "Facebook festival game for Gaymers. Bestival match 3 with prizes. Security to prevent cheating.",
-                        "es": "Juego de Gaymers en Facebook para festival Bestival match 3 con premios y seguridad para evitar enga\u00f1os."
-                    },
-                    "imgs": 9,
-                    "url": "games\/rockstars_divas\/index.html",
-                    "launch": {
-                        "en": "Launch Game",
-                        "es": "Comience el juego"
-                    },
-                    "pop": "'600','700','yes','yes','yes'"
-                },
-                {
-                    "id": "ciudad",
-                    "type": "web",
-                    "title": {
-                        "en": "Isometric Cities",
-                        "es": "Ciudades Isom\u00e9tricas"
-                    },
-                    "desc": {
-                        "en": "Isometric city construction courses with multi level & multi user profiles. E-learning application that loads & saves data to multiple SCORM platforms with XML content.",
-                        "es": "Cursos con ciudades isom\u00e9tricas. Varios niveles y perfiles. Aplicaci\u00f3n e-learning que carga y guarda datos de SCORM en plataformas m\u00faltiples con contenido XML."
-                    },
-                    "imgs": 19,
-                    "url": "games\/ciudad_helm\/index.html",
-                    "launch": {
-                        "en": "Launch Demo",
-                        "es": "Comience el Demo"
-                    },
-                    "pop": "'1200','768','yes','yes','yes'"
                 }
             ],
             "title": {
@@ -81,25 +62,6 @@
             "id": "websites",
             "type": "men",
             "menu": [
-                {
-                    "id": "ar_heart",
-                    "type": "tex",
-                    "title": {
-                        "en": "Away3D heart",
-                        "es": "Coraz\u00f3n en Away3D"
-                    },
-                    "desc": {
-                        "en": "Away3D Lite animated heart using Augmented Reality. (webcam & printer required).",
-                        "es": "Coraz\u00f3n animado en Away3D Lite usando \"Augmented Reality\" (Realidad Aumentada). (webcam e impresora necesarias)."
-                    },
-                    "imgs": 8,
-                    "url": "3d\/away3d\/ar_heart\/index.html",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'1016','710','yes','yes','yes'"
-                },
                 {
                     "id": "terranova",
                     "type": "tex",
@@ -192,6 +154,22 @@
             "type": "men",
             "menu": [
                 {
+                    "id": "whiplash",
+                    "type": "web",
+                    "title": "Whiplash",
+                    "desc": {
+                        "en": "Whiplash Whip Game for Wacom graphics tablets.",
+                        "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
+                    },
+                    "imgs": 4,
+                    "url": "games\/whiplash\/index.html",
+                    "launch": {
+                        "en": "Launch Game",
+                        "es": "Comience el juego"
+                    },
+                    "pop": "'800','600','yes','no','no'"
+                },
+                {
                     "id": "rockstars_divas",
                     "type": "web",
                     "title": "Rockstars vs Divas - Bestival",
@@ -247,22 +225,6 @@
                         "es": "Comience el juego"
                     },
                     "pop": "'600','600','yes','yes','no'"
-                },
-                {
-                    "id": "whiplash",
-                    "type": "web",
-                    "title": "Whiplash",
-                    "desc": {
-                        "en": "Whiplash Whip Game for Wacom graphics tablets.",
-                        "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
-                    },
-                    "imgs": 4,
-                    "url": "games\/whiplash\/index.html",
-                    "launch": {
-                        "en": "Launch Game",
-                        "es": "Comience el juego"
-                    },
-                    "pop": "'800','600','yes','no','no'"
                 },
                 {
                     "id": "desafio_pacifico",
@@ -329,6 +291,142 @@
             "title": {
                 "en": "Games",
                 "es": "Juegos"
+            }
+        },
+        {
+            "id": "3d",
+            "type": "men",
+            "menu": [
+                {
+                    "id": "ar_heart",
+                    "type": "tex",
+                    "title": {
+                        "en": "Away3D heart",
+                        "es": "Coraz\u00f3n en Away3D"
+                    },
+                    "desc": {
+                        "en": "Away3D Lite animated heart using Augmented Reality. (webcam & printer required).",
+                        "es": "Coraz\u00f3n animado en Away3D Lite usando \"Augmented Reality\" (Realidad Aumentada). (webcam e impresora necesarias)."
+                    },
+                    "imgs": 8,
+                    "url": "3d\/away3d\/ar_heart\/index.html",
+                    "launch": {
+                        "en": "Open",
+                        "es": "Abra"
+                    },
+                    "pop": "'1016','710','yes','yes','yes'"
+                },
+                {
+                    "id": "spaceship",
+                    "type": "web",
+                    "title": {
+                        "en": "Papervison3D Spaceship",
+                        "es": "Nave Espacial en Papervison3D"
+                    },
+                    "desc": {
+                        "en": "Spaceship modelled in 3DS MAX, textured in Blender and viewed in Papervision3D.",
+                        "es": "Nave espacial modelada en 3DS MAX, textura en Blender, vista con Papervision3D."
+                    },
+                    "imgs": 1,
+                    "url": "3d\/papervision3d\/spaceship\/index.html",
+                    "launch": {
+                        "en": "Open",
+                        "es": "Abra"
+                    },
+                    "pop": "'960','700','yes','no','no'"
+                },
+                {
+                    "id": "japanese",
+                    "type": "tex",
+                    "title": {
+                        "en": "Japanese Interior in Shockwave 3D",
+                        "es": "Interior Japon\u00e9s en Shockwave 3D"
+                    },
+                    "desc": {
+                        "en": "Japanese walk through modelled in 3DS MAX and programmed in Lingo. (Shockwave player required)",
+                        "es": "Visita virtual de un interior Japon\u00e9s. Modelado en 3DS MAX y programado en Lingo. (Shockwave player necesario)"
+                    },
+                    "imgs": 2,
+                    "url": "3d\/shockwave3d\/index.html",
+                    "launch": {
+                        "en": "Open",
+                        "es": "Abra"
+                    },
+                    "pop": "'740','640','yes','no','no'"
+                }
+            ],
+            "title": {
+                "en": "3D",
+                "es": "3D"
+            }
+        },
+        {
+            "id": "design_motion",
+            "type": "men",
+            "menu": [
+                {
+                    "id": "sketchbook",
+                    "type": "ima",
+                    "title": {
+                        "en": "Sketchbook",
+                        "es": "Cuaderno de dibujo"
+                    },
+                    "imgs": 12
+                },
+                {
+                    "id": "six_cds",
+                    "type": "tex",
+                    "title": "Six Showreels",
+                    "desc": {
+                        "en": "Programming and design for video showreels of 10 directors for the production company Six.",
+                        "es": "Programaci\u00f3n y dise\u00f1o para los showreels de video de 10 directores para la compa\u00f1\u00eda Six."
+                    },
+                    "imgs": 7
+                },
+                {
+                    "id": "ibs",
+                    "type": "tex",
+                    "title": {
+                        "en": "IBS Learning Programme",
+                        "es": "Programa de aprendizaje de SII"
+                    },
+                    "desc": {
+                        "en": "Programming, design and animation on an Irritable Bowel Syndrome learning programme.",
+                        "es": "Programaci\u00f3n, dise\u00f1o y animaci\u00f3n del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (s\u00edndrome irritable de intestino)."
+                    },
+                    "imgs": 8
+                },
+                {
+                    "id": "flickr",
+                    "type": "web",
+                    "title": {
+                        "en": "Photography",
+                        "es": "Fotograf\u00eda"
+                    },
+                    "desc": {
+                        "en": "Photography from my travels.",
+                        "es": "Fotograf\u00edas de mis viajes."
+                    },
+                    "imgs": 6,
+                    "url": "http:\/\/www.flickr.com\/photos\/53781256@N00\/sets",
+                    "launch": {
+                        "en": "Open",
+                        "es": "Abra"
+                    },
+                    "pop": "'880','640','yes','yes','yes'"
+                },
+                {
+                    "id": "robots",
+                    "type": "vid",
+                    "title": {
+                        "en": "4 Screen Projection Work - Robots",
+                        "es": "Video de 4 pantallas con robots"
+                    }
+                }
+            ],
+            "title": {
+                "en": "Design & Motion",
+                "es": "Dise\u00f1o y Movimiento"
             }
         },
         {
@@ -502,132 +600,25 @@
             }
         },
         {
-            "id": "offline",
-            "type": "men",
-            "menu": [
-                {
-                    "id": "sketchbook",
-                    "type": "ima",
-                    "title": {
-                        "en": "Sketchbook",
-                        "es": "Cuaderno de dibujo"
-                    },
-                    "imgs": 12
-                },
-                {
-                    "id": "spaceship",
-                    "type": "web",
-                    "title": {
-                        "en": "Papervison3D Spaceship",
-                        "es": "Nave Espacial en Papervison3D"
-                    },
-                    "desc": {
-                        "en": "Spaceship modelled in 3DS MAX, textured in Blender and viewed in Papervision3D.",
-                        "es": "Nave espacial modelada en 3DS MAX, textura en Blender, vista con Papervision3D."
-                    },
-                    "imgs": 1,
-                    "url": "3d\/papervision3d\/spaceship\/index.html",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'960','700','yes','no','no'"
-                },
-                {
-                    "id": "japanese",
-                    "type": "tex",
-                    "title": {
-                        "en": "Japanese Interior in Shockwave 3D",
-                        "es": "Interior Japon\u00e9s en Shockwave 3D"
-                    },
-                    "desc": {
-                        "en": "Japanese walk through modelled in 3DS MAX and programmed in Lingo. (Shockwave player required)",
-                        "es": "Visita virtual de un interior Japon\u00e9s. Modelado en 3DS MAX y programado en Lingo. (Shockwave player necesario)"
-                    },
-                    "imgs": 2,
-                    "url": "3d\/shockwave3d\/index.html",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'740','640','yes','no','no'"
-                },
-                {
-                    "id": "six_cds",
-                    "type": "tex",
-                    "title": "Six Showreels",
-                    "desc": {
-                        "en": "Programming and design for video showreels of 10 directors for the production company Six.",
-                        "es": "Programaci\u00f3n y dise\u00f1o para los showreels de video de 10 directores para la compa\u00f1\u00eda Six."
-                    },
-                    "imgs": 7
-                },
-                {
-                    "id": "ibs",
-                    "type": "tex",
-                    "title": {
-                        "en": "IBS Learning Programme",
-                        "es": "Programa de aprendizaje de SII"
-                    },
-                    "desc": {
-                        "en": "Programming, design and animation on an Irritable Bowel Syndrome learning programme.",
-                        "es": "Programaci\u00f3n, dise\u00f1o y animaci\u00f3n del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (s\u00edndrome irritable de intestino)."
-                    },
-                    "imgs": 8
-                },
-                {
-                    "id": "robots",
-                    "type": "vid",
-                    "title": {
-                        "en": "4 Screen Projection Work - Robots",
-                        "es": "Video de 4 pantallas con robots"
-                    }
-                },
-                {
-                    "id": "flickr",
-                    "type": "web",
-                    "title": {
-                        "en": "Photography",
-                        "es": "Fotograf\u00eda"
-                    },
-                    "desc": {
-                        "en": "Photography from my travels.",
-                        "es": "Fotograf\u00edas de mis viajes."
-                    },
-                    "imgs": 6,
-                    "url": "http:\/\/www.flickr.com\/photos\/53781256@N00\/sets",
-                    "launch": {
-                        "en": "Open",
-                        "es": "Abra"
-                    },
-                    "pop": "'880','640','yes','yes','yes'"
-                }
-            ],
-            "title": {
-                "en": "Offline & Other",
-                "es": "Off-line y Otros"
-            }
-        },
-        {
-            "id": "contact",
-            "type": "web",
-            "title": {
-                "en": "Contact",
-                "es": "Contacto"
-            },
-            "desc": {
-                "en": "I'm an interactive developer and artist based in the UK & Colombia. My CV is available upon request.",
-                "es": "Soy desarrollador interactivo y un artista. Radicado en Reino Unido y Colombia. Mi hoja de vida est\u00e1 disponible a petici\u00f3n."
-            },
-            "imgs": 3,
-            "url": "http:\/\/www.linkedin.com\/in\/nikart",
-            "launch": "linkedin.com\/in\/nikart",
-            "pop": "'1000','700','yes','yes','yes'"
-        },
-        {
             "id": "config",
             "type": "men",
             "menu": [
+                {
+                    "id": "contact",
+                    "type": "web",
+                    "title": {
+                        "en": "Contact",
+                        "es": "Contacto"
+                    },
+                    "desc": {
+                        "en": "I'm an interactive developer and artist based in the UK & Colombia. My CV is available upon request.",
+                        "es": "Soy desarrollador interactivo y un artista. Radicado en Reino Unido y Colombia. Mi hoja de vida est\u00e1 disponible a petici\u00f3n."
+                    },
+                    "imgs": 3,
+                    "url": "http:\/\/www.linkedin.com\/in\/nikart",
+                    "launch": "linkedin.com\/in\/nikart",
+                    "pop": "'1000','700','yes','yes','yes'"
+                },
                 {
                     "id": "language",
                     "type": "web",
@@ -688,8 +679,8 @@
                 }
             ],
             "title": {
-                "en": "{{otherversions}} & Espa\u00f1ol",
-                "es": "{{otherversions}} y English"
+                "en": "Contact & Espa\u00f1ol",
+                "es": "Contacto y English"
             }
         }
     ],
