@@ -117,6 +117,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — A video whose sources all fail to load tries them once more (#97).
 
+2026-11-06 — A video that still fails after its retry loads again when the network comes back, a few times at most (#100).
+
 ---
 
 ## Migration record

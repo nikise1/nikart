@@ -12,7 +12,7 @@ import { enterVideoFullscreen } from "./enter-video-fullscreen";
 import { fitVideoFrame, type VideoFrame } from "./fit-video-frame";
 import { isIos } from "./is-ios";
 import { leaveVideoFullscreen } from "./leave-video-fullscreen";
-import { VIDEO_LOAD_RETRY_MS, videoNeedsLoad } from "./prime-video-load";
+import { VIDEO_LOAD_RETRY_MS, VIDEO_RECOVERY_DELAYS_MS, videoNeedsLoad } from "./prime-video-load";
 
 interface VideoViewProps {
   item: ContentItem;
@@ -79,25 +79,46 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
     if (!video) return;
 
     let retried = false;
+    let failed = false;
+    let recoveries = 0;
+    let backoff: number | undefined;
     const kick = (): void => {
       if (!video.isConnected || !videoNeedsLoad(video)) return;
       video.load();
     };
+    const recover = (): void => {
+      window.clearTimeout(backoff);
+      backoff = undefined;
+      if (!failed || recoveries >= VIDEO_RECOVERY_DELAYS_MS.length) return;
+      failed = false;
+      recoveries++;
+      kick();
+    };
     // With `<source>` children, a failed file fires `error` on the source, not the video.
     // The last source failing means every candidate failed.
     const onError = (event: Event): void => {
-      if (retried) return;
       if (event.target !== video && event.target !== video.lastElementChild) return;
-      retried = true;
-      kick();
+      if (!retried) {
+        retried = true;
+        kick();
+        return;
+      }
+      // The retry failed too: wait for the network, then try again a few more times.
+      failed = true;
+      const delay = VIDEO_RECOVERY_DELAYS_MS[recoveries];
+      if (delay === undefined || !navigator.onLine || backoff !== undefined) return;
+      backoff = window.setTimeout(recover, delay);
     };
 
     video.addEventListener("error", onError, true);
+    window.addEventListener("online", recover);
     kick();
     const later = window.setTimeout(kick, VIDEO_LOAD_RETRY_MS);
     return () => {
       window.clearTimeout(later);
+      window.clearTimeout(backoff);
       video.removeEventListener("error", onError, true);
+      window.removeEventListener("online", recover);
     };
   }, [item.id]);
 

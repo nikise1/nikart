@@ -3,7 +3,7 @@ import { act, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ContentItem } from "@/lib/data/schema";
 import * as ios from "./is-ios";
-import { VIDEO_LOAD_RETRY_MS } from "./prime-video-load";
+import { VIDEO_LOAD_RETRY_MS, VIDEO_RECOVERY_DELAYS_MS } from "./prime-video-load";
 import { VideoView } from "./video-view";
 
 vi.mock("react", async () => {
@@ -194,6 +194,92 @@ describe("VideoView", () => {
       sources[1]?.dispatchEvent(new Event("error"));
     });
     expect(load).toHaveBeenCalledTimes(2);
+  });
+
+  it("loads again when the network comes back after the retry fails", () => {
+    vi.useFakeTimers();
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+    const onLine = vi.spyOn(navigator, "onLine", "get").mockReturnValue(false);
+
+    try {
+      render(<VideoView item={videoItem} locale="en" />);
+      const last = document.querySelector("video source:last-of-type");
+      if (!last) throw new Error("missing source");
+      const failAll = (): void => {
+        act(() => {
+          last.dispatchEvent(new Event("error"));
+        });
+      };
+      act(() => {
+        vi.advanceTimersByTime(VIDEO_LOAD_RETRY_MS);
+      });
+      expect(load).toHaveBeenCalledTimes(2);
+
+      failAll();
+      expect(load).toHaveBeenCalledTimes(3);
+      failAll();
+      act(() => {
+        vi.advanceTimersByTime(60_000);
+      });
+      expect(load).toHaveBeenCalledTimes(3);
+
+      onLine.mockReturnValue(true);
+      act(() => {
+        window.dispatchEvent(new Event("online"));
+      });
+      expect(load).toHaveBeenCalledTimes(4);
+
+      act(() => {
+        window.dispatchEvent(new Event("online"));
+      });
+      expect(load).toHaveBeenCalledTimes(4);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("stops loading again after a few failures while online", () => {
+    vi.useFakeTimers();
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+    vi.spyOn(navigator, "onLine", "get").mockReturnValue(true);
+
+    try {
+      render(<VideoView item={videoItem} locale="en" />);
+      const last = document.querySelector("video source:last-of-type");
+      if (!last) throw new Error("missing source");
+      const failAll = (): void => {
+        act(() => {
+          last.dispatchEvent(new Event("error"));
+        });
+      };
+      act(() => {
+        vi.advanceTimersByTime(VIDEO_LOAD_RETRY_MS);
+      });
+      failAll();
+      expect(load).toHaveBeenCalledTimes(3);
+
+      for (const [index, delay] of VIDEO_RECOVERY_DELAYS_MS.entries()) {
+        failAll();
+        act(() => {
+          vi.advanceTimersByTime(delay - 1);
+        });
+        expect(load).toHaveBeenCalledTimes(3 + index);
+        act(() => {
+          vi.advanceTimersByTime(1);
+        });
+        expect(load).toHaveBeenCalledTimes(4 + index);
+      }
+
+      const total = 3 + VIDEO_RECOVERY_DELAYS_MS.length;
+      failAll();
+      act(() => {
+        vi.advanceTimersByTime(60_000);
+        window.dispatchEvent(new Event("online"));
+      });
+      expect(load).toHaveBeenCalledTimes(total);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it("tries again after the entrance if the file still has not started", () => {
