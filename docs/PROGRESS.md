@@ -75,6 +75,10 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Tournament Details uses the Satellite artwork.
 
+2026-11-05 — PokerStars Web description covers the client, jurisdictions, large tournaments, and the move to React, in English and Spanish.
+
+2026-11-05 — PokerStars Web description cites weekly fields of more than 10,000 players.
+
 2026-11-05 — Featured menu label is 20px, still inside the same 32px reveal row.
 
 2026-11-05 — Tournament Details icon is cropped to the same 4:3 ratio as the other icons.
@@ -86,6 +90,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 2026-11-05 — PokerStars icons are 120×90, and their posters match the video frames.
 
 2026-11-05 — A touch-primary device omits the Flash lizard from the thumbnail menu, the same way the menu omits html5. The `/fl` launch stays hidden there too.
+
+2026-11-06 — PokerStars Web description uses lead developer, 12+ years, and moved the codebase.
 
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
