@@ -141,6 +141,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — Slideshow photos have a small corner radius, including the arrow overlay.
 
+2026-11-06 — Background is a softened fern-path photo, graded into the cream-to-leaf palette and centered.
+
 ---
 
 ## Migration record

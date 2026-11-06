@@ -22,8 +22,9 @@ body {
   line-height: 1.4;
   font-size: 0.9em;
   background-color: #bcc986;
+  /* The fern photo is portrait. Center keeps the path in frame when cover crops it. */
   background:
-    url("/content/bg/bg.jpg") top left no-repeat,
+    url("/content/bg/bg.jpg") center center no-repeat,
     linear-gradient(to bottom, #d6d59d, #94b864);
   background-size: cover;
   background-attachment: fixed;
