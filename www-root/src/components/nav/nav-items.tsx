@@ -23,6 +23,7 @@ export function NavItems({ items, locale }: NavItemsProps) {
     >
       {items.map((item) => {
         const title = localize(item.title, locale);
+        const featured = item.id === "featured";
         return (
           <li key={item.id} className="nav-item flex h-8 items-center overflow-hidden">
             {/* oxlint-disable-next-line nextjs/no-img-element */}
@@ -35,7 +36,9 @@ export function NavItems({ items, locale }: NavItemsProps) {
             />
             <button
               onClick={() => handleClick(item.id)}
-              className="block w-full cursor-pointer whitespace-nowrap border-none bg-transparent px-2 py-1 text-left text-sm text-[#1C6B00] transition-all duration-300 hover:text-[#4F3E2D] hover:[text-shadow:0_0_2px_#cc813a]"
+              className={`block w-full cursor-pointer whitespace-nowrap border-none bg-transparent px-2 py-1 text-left text-[#1C6B00] transition-all duration-300 hover:text-[#4F3E2D] hover:[text-shadow:0_0_2px_#cc813a] ${
+                featured ? "text-[20px] leading-[1.15]" : "text-sm"
+              }`}
             >
               {title}
             </button>

@@ -1,4 +1,5 @@
 import { findByPath } from "@/lib/data/content";
+import { videoPosterUrl } from "@/lib/video-poster";
 import { notFound } from "next/navigation";
 import { ContentPage } from "@/components/content-page";
 
@@ -14,5 +15,7 @@ export default async function PathPage({ params }: PathPageProps) {
     notFound();
   }
 
-  return <ContentPage node={node} path={path} locale={locale as "en" | "es"} />;
+  const poster = node.type === "vid" ? videoPosterUrl(node.id) : null;
+
+  return <ContentPage node={node} path={path} locale={locale as "en" | "es"} poster={poster} />;
 }

@@ -75,6 +75,14 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Tournament Details uses the Satellite artwork.
 
+2026-11-05 — Featured menu label is 20px, still inside the same 32px reveal row.
+
+2026-11-05 — Tournament Details icon is cropped to the same 4:3 ratio as the other icons.
+
+2026-11-05 — A video poster is an optional `{id}_poster.jpg` in the video’s ratio. The menu icon stays `{id}.jpg`.
+
+2026-11-05 — PokerStars icons are 120×90, and their posters match the video frames.
+
 2026-11-05 — A touch-primary device omits the Flash lizard from the thumbnail menu, the same way the menu omits html5. The `/fl` launch stays hidden there too.
 
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
@@ -82,6 +90,14 @@ Add new work in this section. The decisions log at the bottom of this file cover
 2026-11-04 — Unplayed video uses the source frame and stays centered in the page, with its description when there is one.
 
 2026-11-04 — Playback leaves fullscreen when the video ends, and a mismatched poster sits on black.
+
+2026-11-05 — Playback enters fullscreen when the play control starts the video.
+
+2026-11-05 — Play stays inline after a deliberate fullscreen exit, until that video is left.
+
+2026-11-05 — iOS plays portfolio video inline instead of entering fullscreen on play.
+
+2026-11-05 — A video that misses its first load starts again without a refresh.
 
 2026-11-02 — `/fl` pauses NetStream when leaving a video. Ruffle ignores `NetStream.close()`, so that audio kept playing.
 
