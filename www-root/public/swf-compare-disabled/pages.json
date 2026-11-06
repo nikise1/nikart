@@ -224,5 +224,23 @@
       "ruffle": true,
       "awayfl": false
     }
+  },
+  {
+    "before": "ar-heart",
+    "item": {
+      "id": "ar-lizard",
+      "title": "FLAR lizard",
+      "group": "3d",
+      "itemId": "ar_lizard",
+      "swf": "https://static.nikart.co.uk/3d/away3d/flar_lizard/pub/FLARLizard_ex.swf",
+      "swfVersion": 10,
+      "actionScript": "3",
+      "width": 500,
+      "height": 375,
+      "base": "https://static.nikart.co.uk/3d/away3d/flar_lizard/pub/",
+      "background": "#000000",
+      "ruffle": true,
+      "awayfl": false
+    }
   }
 ]

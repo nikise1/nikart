@@ -14,7 +14,6 @@
                 "html5",
                 "web_poker",
                 "tournament_details",
-                "onedayinmay",
                 "rockstars_divas",
                 "ciudad"
             ]
@@ -26,7 +25,6 @@
                 "es": "Sitios Web"
             },
             "menu": [
-                "onedayinmay",
                 "ar_heart",
                 "terranova",
                 "zubi",
@@ -115,7 +113,6 @@
                 "es": "Off-line y Otros"
             },
             "menu": [
-                "ar_lizard",
                 "sketchbook",
                 "spaceship",
                 "japanese",

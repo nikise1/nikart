@@ -79,6 +79,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Tournament Details icon is cropped to the same 4:3 ratio as the other icons.
 
+2026-11-05 — Disabled onedayinmay and ar_lizard.
+
 2026-11-05 — A video poster is an optional `{id}_poster.jpg` in the video’s ratio. The menu icon stays `{id}.jpg`.
 
 2026-11-05 — PokerStars icons are 120×90, and their posters match the video frames.
