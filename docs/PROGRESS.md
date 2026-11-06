@@ -115,6 +115,10 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — Rebuilt the menu: 3D and Design & Motion replace Offline & Other, and Contact sits under Contact & Español.
 
+2026-11-06 — Background is a softened fern-path photo, graded into the cream-to-leaf palette and centered.
+
+2026-11-06 — Fern background is slightly softer, and type is one step larger except the 20px Featured Projects label.
+
 ---
 
 ## Migration record
