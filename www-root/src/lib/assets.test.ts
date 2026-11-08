@@ -5,6 +5,7 @@ import {
   posterUrl,
   videoH264Url,
   videoWebmUrl,
+  videoFallbackUrls,
   processUrl,
   resolveFlashLaunchHref,
   isFlashLizardHref,
@@ -38,6 +39,15 @@ describe("assets", () => {
   describe("videoWebmUrl", () => {
     it("returns correct WebM video URL", () => {
       expect(videoWebmUrl("spark")).toBe("https://static.nikart.co.uk/video_webm/spark.webm");
+    });
+  });
+
+  describe("videoFallbackUrls", () => {
+    it("returns same-origin copies through the site rewrites", () => {
+      expect(videoFallbackUrls("spark")).toEqual({
+        h264: "/video_h264/spark.mp4",
+        webm: "/video_webm/spark.webm",
+      });
     });
   });
 

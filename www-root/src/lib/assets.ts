@@ -70,6 +70,14 @@ export function videoWebmUrl(id: string): string {
   return `${STATIC_BASE}/video_webm/${id}.webm`;
 }
 
+/**
+ * The same files through this site's `/video_*` rewrites. A viewer whose DNS
+ * cannot resolve the static host can still reach the site itself.
+ */
+export function videoFallbackUrls(id: string): { h264: string; webm: string } {
+  return { h264: `/video_h264/${id}.mp4`, webm: `/video_webm/${id}.webm` };
+}
+
 export function processUrl(url: string): { href: string; isSelf: boolean } {
   if (url.startsWith("_self/")) {
     // A relative remainder such as `../fl` follows the current route.

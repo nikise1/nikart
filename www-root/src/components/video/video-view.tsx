@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type SyntheticEvent } from "react";
 import { ViewTransition } from "react";
-import { videoH264Url, videoWebmUrl } from "@/lib/assets";
+import { videoFallbackUrls, videoH264Url, videoWebmUrl } from "@/lib/assets";
 import { localize } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
 import { ContentDescription } from "@/components/content-description/content-description";
@@ -45,6 +45,7 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
   const videoFrame = source?.id === item.id ? source : null;
   const knownPoster = poster && posterFrame?.id === item.id ? posterFrame : null;
   const frame = videoFrame ?? knownPoster;
+  const fallback = videoFallbackUrls(item.id);
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -240,6 +241,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
               >
                 <source src={videoH264Url(item.id)} type="video/mp4" />
                 <source src={videoWebmUrl(item.id)} type="video/webm" />
+                <source src={fallback.h264} type="video/mp4" />
+                <source src={fallback.webm} type="video/webm" />
               </video>
             </ContentTransition>
 

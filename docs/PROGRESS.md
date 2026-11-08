@@ -121,6 +121,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-08 — A video that gave up keeps retrying for about two minutes, and loads again when the viewer returns to the tab or clicks the player (#102).
 
+2026-11-08 — A video falls back to this site's `/video_h264` and `/video_webm` copies when the static host does not resolve (#102).
+
 ---
 
 ## Migration record

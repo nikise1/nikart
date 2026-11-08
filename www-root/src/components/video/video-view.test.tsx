@@ -173,25 +173,40 @@ describe("VideoView", () => {
     }
   });
 
+  it("falls back to this site's copies after the static host", () => {
+    render(<VideoView item={videoItem} locale="en" />);
+    const urls = Array.from(document.querySelectorAll("video source"), (s) =>
+      s.getAttribute("src"),
+    );
+    expect(urls).toEqual([
+      `https://static.nikart.co.uk/video_h264/${videoItem.id}.mp4`,
+      `https://static.nikart.co.uk/video_webm/${videoItem.id}.webm`,
+      `/video_h264/${videoItem.id}.mp4`,
+      `/video_webm/${videoItem.id}.webm`,
+    ]);
+  });
+
   it("tries the files once more when every source fails", () => {
     const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
     render(<VideoView item={videoItem} locale="en" />);
     expect(load).toHaveBeenCalledOnce();
 
     const sources = document.querySelectorAll("video source");
-    expect(sources).toHaveLength(2);
+    expect(sources).toHaveLength(4);
     act(() => {
       sources[0]?.dispatchEvent(new Event("error"));
+      sources[1]?.dispatchEvent(new Event("error"));
+      sources[2]?.dispatchEvent(new Event("error"));
     });
     expect(load).toHaveBeenCalledOnce();
 
     act(() => {
-      sources[1]?.dispatchEvent(new Event("error"));
+      sources[3]?.dispatchEvent(new Event("error"));
     });
     expect(load).toHaveBeenCalledTimes(2);
 
     act(() => {
-      sources[1]?.dispatchEvent(new Event("error"));
+      sources[3]?.dispatchEvent(new Event("error"));
     });
     expect(load).toHaveBeenCalledTimes(2);
   });
