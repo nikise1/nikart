@@ -282,6 +282,54 @@ describe("VideoView", () => {
     }
   });
 
+  it("loads again when the viewer returns to the tab or clicks the player after it gave up", () => {
+    vi.useFakeTimers();
+    const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
+    vi.spyOn(navigator, "onLine", "get").mockReturnValue(true);
+
+    try {
+      render(<VideoView item={videoItem} locale="en" />);
+      const video = document.querySelector("video");
+      const last = document.querySelector("video source:last-of-type");
+      if (!video || !last) throw new Error("missing video");
+      const failAll = (): void => {
+        act(() => {
+          last.dispatchEvent(new Event("error"));
+        });
+      };
+      act(() => {
+        vi.advanceTimersByTime(VIDEO_LOAD_RETRY_MS);
+      });
+      failAll();
+      for (const delay of VIDEO_RECOVERY_DELAYS_MS) {
+        failAll();
+        act(() => {
+          vi.advanceTimersByTime(delay);
+        });
+      }
+      failAll();
+      const total = 3 + VIDEO_RECOVERY_DELAYS_MS.length;
+      expect(load).toHaveBeenCalledTimes(total);
+
+      act(() => {
+        video.dispatchEvent(new Event("pointerdown"));
+      });
+      expect(load).toHaveBeenCalledTimes(total + 1);
+      act(() => {
+        video.dispatchEvent(new Event("pointerdown"));
+      });
+      expect(load).toHaveBeenCalledTimes(total + 1);
+
+      failAll();
+      act(() => {
+        document.dispatchEvent(new Event("visibilitychange"));
+      });
+      expect(load).toHaveBeenCalledTimes(total + 2);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   it("tries again after the entrance if the file still has not started", () => {
     vi.useFakeTimers();
     const load = vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);

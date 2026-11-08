@@ -119,6 +119,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — A video that still fails after its retry loads again when the network comes back, a few times at most (#100).
 
+2026-11-08 — A video that gave up keeps retrying for about two minutes, and loads again when the viewer returns to the tab or clicks the player (#102).
+
 ---
 
 ## Migration record

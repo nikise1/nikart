@@ -94,6 +94,14 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
       recoveries++;
       kick();
     };
+    // Returning to the tab or clicking the player is the viewer asking again, so it is not bounded.
+    const retryNow = (): void => {
+      if (!failed || document.visibilityState === "hidden") return;
+      window.clearTimeout(backoff);
+      backoff = undefined;
+      failed = false;
+      kick();
+    };
     // With `<source>` children, a failed file fires `error` on the source, not the video.
     // The last source failing means every candidate failed.
     const onError = (event: Event): void => {
@@ -112,6 +120,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
 
     video.addEventListener("error", onError, true);
     window.addEventListener("online", recover);
+    document.addEventListener("visibilitychange", retryNow);
+    video.addEventListener("pointerdown", retryNow);
     kick();
     const later = window.setTimeout(kick, VIDEO_LOAD_RETRY_MS);
     return () => {
@@ -119,6 +129,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
       window.clearTimeout(backoff);
       video.removeEventListener("error", onError, true);
       window.removeEventListener("online", recover);
+      document.removeEventListener("visibilitychange", retryNow);
+      video.removeEventListener("pointerdown", retryNow);
     };
   }, [item.id]);
 
