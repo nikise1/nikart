@@ -290,12 +290,12 @@
                     "id": "ar_heart",
                     "type": "tex",
                     "title": {
-                        "en": "Away3D heart",
-                        "es": "Coraz\u00f3n en Away3D"
+                        "en": "Augmented Reality heart",
+                        "es": "Coraz\u00f3n en Realidad Aumentada"
                     },
                     "desc": {
-                        "en": "Away3D Lite animated heart using Augmented Reality. (webcam & printer required).",
-                        "es": "Coraz\u00f3n animado en Away3D Lite usando \"Augmented Reality\" (Realidad Aumentada). (webcam e impresora necesarias)."
+                        "en": "Away3D animated heart using Augmented Reality.",
+                        "es": "Coraz\u00f3n animado en Away3D usando \"Augmented Reality\" (Realidad Aumentada)."
                     },
                     "imgs": 8,
                     "url": "3d\/away3d\/ar_heart\/index.html",
@@ -309,12 +309,12 @@
                     "id": "spaceship",
                     "type": "web",
                     "title": {
-                        "en": "Papervison3D Spaceship",
-                        "es": "Nave Espacial en Papervison3D"
+                        "en": "Spaceship",
+                        "es": "Nave Espacial"
                     },
                     "desc": {
-                        "en": "Spaceship modelled in 3DS MAX, textured in Blender and viewed in Papervision3D.",
-                        "es": "Nave espacial modelada en 3DS MAX, textura en Blender, vista con Papervision3D."
+                        "en": "Spaceship modelled in 3DS MAX, textured in Blender.",
+                        "es": "Nave espacial modelada en 3DS MAX, textura en Blender."
                     },
                     "imgs": 1,
                     "url": "3d\/papervision3d\/spaceship\/index.html",
@@ -328,12 +328,12 @@
                     "id": "japanese",
                     "type": "tex",
                     "title": {
-                        "en": "Japanese Interior in Shockwave 3D",
-                        "es": "Interior Japon\u00e9s en Shockwave 3D"
+                        "en": "Japanese Interior",
+                        "es": "Interior Japon\u00e9s"
                     },
                     "desc": {
-                        "en": "Japanese walk through modelled in 3DS MAX and programmed in Lingo. (Shockwave player required)",
-                        "es": "Visita virtual de un interior Japon\u00e9s. Modelado en 3DS MAX y programado en Lingo. (Shockwave player necesario)"
+                        "en": "Japanese walk through modelled in 3DS MAX.",
+                        "es": "Visita virtual de un interior Japon\u00e9s. Modelado en 3DS MAX."
                     },
                     "imgs": 2,
                     "url": "3d\/shockwave3d\/index.html",
@@ -386,6 +386,14 @@
                     "imgs": 8
                 },
                 {
+                    "id": "robots",
+                    "type": "vid",
+                    "title": {
+                        "en": "4 Screen Projection Work - Robots",
+                        "es": "Video de 4 pantallas con robots"
+                    }
+                },
+                {
                     "id": "flickr",
                     "type": "web",
                     "title": {
@@ -403,14 +411,6 @@
                         "es": "Abra"
                     },
                     "pop": "'880','640','yes','yes','yes'"
-                },
-                {
-                    "id": "robots",
-                    "type": "vid",
-                    "title": {
-                        "en": "4 Screen Projection Work - Robots",
-                        "es": "Video de 4 pantallas con robots"
-                    }
                 }
             ],
             "title": {

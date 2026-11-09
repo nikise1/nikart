@@ -36,8 +36,8 @@
 - `sketchbook` ima
 - `six_cds` tex
 - `ibs` tex
-- `flickr` web
 - `robots` vid
+- `flickr` web
 
 ### `art` men
 
