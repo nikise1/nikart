@@ -27,5 +27,6 @@ export function videoNeedsLoad(video: HTMLMediaElement): boolean {
 /**
  * Waits between extra loads once the single retry has failed too, for example after a DNS drop.
  * The `online` event also starts the next one. Bounded so a missing file does not retry forever.
+ * Spans about two minutes, since a dropped connection can take that long to come back.
  */
-export const VIDEO_RECOVERY_DELAYS_MS: readonly number[] = [2000, 5000, 15000];
+export const VIDEO_RECOVERY_DELAYS_MS: readonly number[] = [2000, 5000, 15000, 30000, 60000];

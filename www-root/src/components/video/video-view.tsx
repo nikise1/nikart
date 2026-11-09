@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type SyntheticEvent } from "react";
 import { ViewTransition } from "react";
-import { videoH264Url, videoWebmUrl } from "@/lib/assets";
+import { videoFallbackUrls, videoH264Url, videoWebmUrl } from "@/lib/assets";
 import { localize } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
 import { ContentDescription } from "@/components/content-description/content-description";
@@ -45,6 +45,7 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
   const videoFrame = source?.id === item.id ? source : null;
   const knownPoster = poster && posterFrame?.id === item.id ? posterFrame : null;
   const frame = videoFrame ?? knownPoster;
+  const fallback = videoFallbackUrls(item.id);
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -94,6 +95,14 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
       recoveries++;
       kick();
     };
+    // Returning to the tab or clicking the player is the viewer asking again, so it is not bounded.
+    const retryNow = (): void => {
+      if (!failed || document.visibilityState === "hidden") return;
+      window.clearTimeout(backoff);
+      backoff = undefined;
+      failed = false;
+      kick();
+    };
     // With `<source>` children, a failed file fires `error` on the source, not the video.
     // The last source failing means every candidate failed.
     const onError = (event: Event): void => {
@@ -112,6 +121,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
 
     video.addEventListener("error", onError, true);
     window.addEventListener("online", recover);
+    document.addEventListener("visibilitychange", retryNow);
+    video.addEventListener("pointerdown", retryNow);
     kick();
     const later = window.setTimeout(kick, VIDEO_LOAD_RETRY_MS);
     return () => {
@@ -119,6 +130,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
       window.clearTimeout(backoff);
       video.removeEventListener("error", onError, true);
       window.removeEventListener("online", recover);
+      document.removeEventListener("visibilitychange", retryNow);
+      video.removeEventListener("pointerdown", retryNow);
     };
   }, [item.id]);
 
@@ -228,6 +241,8 @@ export function VideoView({ item, locale, poster = null }: VideoViewProps) {
               >
                 <source src={videoH264Url(item.id)} type="video/mp4" />
                 <source src={videoWebmUrl(item.id)} type="video/webm" />
+                <source src={fallback.h264} type="video/mp4" />
+                <source src={fallback.webm} type="video/webm" />
               </video>
             </ContentTransition>
 
