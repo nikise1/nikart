@@ -123,6 +123,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-08 — A video falls back to this site's `/video_h264` and `/video_webm` copies when the static host does not resolve (#102).
 
+2026-11-09 — Thumbnail menu labels use the nav's link colour and hover shadow, and sit vertically centered beside each image (#108).
+
 ---
 
 ## Migration record
