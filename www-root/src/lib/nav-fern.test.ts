@@ -30,7 +30,7 @@ describe("navFernLoop", () => {
     const open = bounds(1);
 
     expect(closed.maxX).toBeGreaterThan(45);
-    expect(closed.maxX).toBeLessThan(80);
+    expect(closed.maxX).toBeLessThan(110);
     expect(closed.maxY).toBeGreaterThan(40);
     expect(closed.maxY).toBeLessThan(72);
     expect(closed.minX).toBeGreaterThan(-12);
@@ -39,6 +39,23 @@ describe("navFernLoop", () => {
     expect(open.maxY).toBeGreaterThan(250);
     expect(open.maxX).toBeGreaterThan(100);
     expect(open.maxX).toBeLessThan(130);
+  });
+
+  it("meets the coil on a continuous tangent", () => {
+    for (const progress of [0.2, 0.4, 0.65]) {
+      const spine = navFernSpine(progress);
+      const join = Math.round((spine.length - 1) * progress);
+      const before = spine[Math.max(0, join - 2)];
+      const at = spine[join];
+      const after = spine[Math.min(spine.length - 1, join + 2)];
+      if (!before || !at || !after) throw new Error("missing join sample");
+      const incoming = Math.atan2(at.y - before.y, at.x - before.x);
+      const outgoing = Math.atan2(after.y - at.y, after.x - at.x);
+      let kink = ((outgoing - incoming) * 180) / Math.PI;
+      while (kink > 180) kink -= 360;
+      while (kink < -180) kink += 360;
+      expect(Math.abs(kink)).toBeLessThan(14);
+    }
   });
 
   it("unwraps downward and stays inside the canvas", () => {
@@ -67,8 +84,8 @@ describe("navFernLoop", () => {
     expect(mid[laid]?.x).toBeCloseTo(open[laid]?.x ?? 0, 0);
     expect(mid[laid]?.y).toBeCloseTo(open[laid]?.y ?? 0, 0);
 
-    const closedChord = chord(0, 0.45, 1);
-    const midChord = chord(0.4, 0.45, 1);
+    const closedChord = chord(0, 0.65, 1);
+    const midChord = chord(0.4, 0.65, 1);
     expect(midChord).toBeCloseTo(closedChord, 0);
     expect(closedChord).toBeGreaterThan(8);
   });

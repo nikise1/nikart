@@ -2,8 +2,9 @@
  * The closed curl and the open stem are the same ribbon.
  * Closed, the ribbon is a fern crozier: a hook that tightens toward the tip.
  * Opening pays arc length out along the real stem and leaves the
- * remainder as a rigid piece of that spiral, rotated so it stays
- * attached. That is an unwrap: tail distances do not change with progress.
+ * remainder as that spiral, joined on the same tangent. The resting
+ * twist eases in along the coil, so the join is a curve. Tail distances
+ * past that ease stay fixed: it is still an unwrap.
  * At rest the open stem is the legacy bezier, including its tip hook.
  */
 
@@ -50,6 +51,8 @@ const CURL_TIGHTEN = 5;
 const WIND = -1;
 /** Extra rotation while fully coiled, so the head hangs in the corner under its tail. */
 const SEAT = (64 * Math.PI) / 180;
+/** Length over which that rotation eases in, so the stem runs into the coil. */
+const SEAT_BLEND = 42;
 
 const STEM_STEPS = 480;
 const SPIRAL_STEPS = 700;
@@ -281,6 +284,84 @@ function seatAngle(progress: number): number {
   return SEAT * remain * remain;
 }
 
+interface CurvePoint {
+  s: number;
+  x: number;
+  y: number;
+  heading: number;
+}
+
+/** Spiral curvature at arc length, from the stored headings. */
+function spiralCurvature(distance: number): number {
+  const before = spiralAt(Math.max(0, distance - 1));
+  const after = spiralAt(Math.min(STEM.length, distance + 1));
+  let turn = after.heading - before.heading;
+  while (turn > Math.PI) turn -= Math.PI * 2;
+  while (turn < -Math.PI) turn += Math.PI * 2;
+  return turn / Math.max(0.001, after.s - before.s);
+}
+
+/**
+ * One centerline for this progress. Up to the peel point it is the stem.
+ * Past that, it follows the spiral, and the resting twist is added as
+ * curvature over SEAT_BLEND so the tangent never jumps.
+ */
+function centerline(progress: number): CurvePoint[] {
+  const length = STEM.length;
+  const u = clamp01(progress) * length;
+  const seat = seatAngle(progress);
+  const blend = Math.min(SEAT_BLEND, Math.max(1, length - u));
+  const ds = 2;
+  const points: CurvePoint[] = [];
+  const root = stemAt(0);
+  let x = root.x;
+  let y = root.y;
+  let heading = root.heading;
+  let s = 0;
+  points.push({ s, x, y, heading });
+  while (s < length - 1e-6) {
+    const next = Math.min(length, s + ds);
+    if (next <= u + 1e-6) {
+      const stem = stemAt(next);
+      x = stem.x;
+      y = stem.y;
+      heading = stem.heading;
+    } else {
+      let from = s;
+      if (s < u) {
+        const stemU = stemAt(u);
+        x = stemU.x;
+        y = stemU.y;
+        heading = stemU.heading;
+        from = u;
+      }
+      const advance = next - from;
+      const sample = Math.min(length, from + advance / 2);
+      const t = clamp01((sample - u) / blend);
+      const seatCurvature = (seat * 6 * t * (1 - t)) / blend;
+      const curvature = spiralCurvature(sample) + seatCurvature;
+      const midHeading = heading + (curvature * advance) / 2;
+      x += Math.cos(midHeading) * advance;
+      y += Math.sin(midHeading) * advance;
+      heading += curvature * advance;
+    }
+    s = next;
+    points.push({ s, x, y, heading });
+  }
+  return points;
+}
+
+let cachedProgress = Number.NaN;
+let cachedLine: CurvePoint[] = [];
+
+function lineFor(progress: number): CurvePoint[] {
+  if (progress !== cachedProgress) {
+    cachedProgress = progress;
+    cachedLine = centerline(progress);
+  }
+  return cachedLine;
+}
+
 interface Placed {
   x: number;
   y: number;
@@ -289,25 +370,17 @@ interface Placed {
 }
 
 function place(progress: number, distance: number): Placed {
-  const p = clamp01(progress);
-  const u = p * STEM.length;
-  const along = Math.min(distance, STEM.length);
+  const along = Math.min(Math.max(0, distance), STEM.length);
   const stem = stemAt(along);
-  if (distance <= u) {
-    return { x: stem.x, y: stem.y, heading: stem.heading, stem };
-  }
-  const stemU = stemAt(u);
-  const spiralU = spiralAt(u);
-  const spiral = spiralAt(along);
-  const turn = stemU.heading - spiralU.heading + seatAngle(p);
-  const cos = Math.cos(turn);
-  const sin = Math.sin(turn);
-  const dx = spiral.x - spiralU.x;
-  const dy = spiral.y - spiralU.y;
+  const line = lineFor(progress);
+  const { a, b, t } = lerpPair(line, along);
+  let turn = b.heading - a.heading;
+  while (turn > Math.PI) turn -= Math.PI * 2;
+  while (turn < -Math.PI) turn += Math.PI * 2;
   return {
-    x: stemU.x + dx * cos - dy * sin,
-    y: stemU.y + dx * sin + dy * cos,
-    heading: spiral.heading + turn,
+    x: a.x + (b.x - a.x) * t,
+    y: a.y + (b.y - a.y) * t,
+    heading: a.heading + turn * t,
     stem,
   };
 }
