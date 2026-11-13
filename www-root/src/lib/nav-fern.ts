@@ -1,6 +1,6 @@
 /**
  * The closed curl and the open stem are the same ribbon.
- * Closed, the ribbon is a logarithmic spiral in the corner.
+ * Closed, the ribbon is a tight spiral in the corner, wound from the center out.
  * Opening pays arc length out along the real stem and leaves the
  * remainder as a rigid piece of that spiral, rotated so it stays
  * attached. That is an unwrap: tail distances do not change with progress.
@@ -40,11 +40,14 @@ const STEM_Y = 258;
 const STEM_TOP = 20;
 const HOOK = 3.5;
 
-/** Turns of the closed spiral. Tuned so the coils stay separated and inside the corner. */
-const SPIRAL_TURNS = 2.05;
-const SPIRAL_K = 0.16;
-/** Extra rotation while fully coiled, so the spiral sits in the page instead of across the corner. */
-const SEAT = (54 * Math.PI) / 180;
+/**
+ * Closed spiral. Even pitch draws the tip into the middle and keeps each
+ * turn against the next, so the resting curl is a fiddlehead like the
+ * original corner icon: a round head, a short tail at the corner, bars in the head.
+ */
+const SPIRAL_TURNS = 2.9;
+/** Extra rotation while fully coiled, so the head hangs in the corner under its tail. */
+const SEAT = (82 * Math.PI) / 180;
 
 const STEM_STEPS = 480;
 const SPIRAL_STEPS = 700;
@@ -187,36 +190,36 @@ function buildStem(): { samples: StemSample[]; length: number } {
   return { samples, length };
 }
 
-function spiralLength(inner: number, thetaMax: number): number {
+function spiralLength(pitch: number, thetaMax: number): number {
   let length = 0;
   const steps = 2400;
   const dTheta = thetaMax / steps;
   for (let index = 0; index < steps; index += 1) {
     const theta = (index + 0.5) * dTheta;
-    const radius = inner * Math.exp(SPIRAL_K * theta);
-    length += radius * Math.hypot(1, SPIRAL_K) * dTheta;
+    const radius = pitch * theta;
+    length += Math.hypot(pitch, radius) * dTheta;
   }
   return length;
 }
 
 function buildSpiral(stem: StemSample[], length: number): SpiralSample[] {
   const thetaMax = SPIRAL_TURNS * Math.PI * 2;
-  let low = 0.2;
-  let high = 30;
+  let low = 0.05;
+  let high = 20;
   for (let index = 0; index < 28; index += 1) {
     const mid = (low + high) / 2;
     if (spiralLength(mid, thetaMax) < length) low = mid;
     else high = mid;
   }
-  const inner = (low + high) / 2;
+  const pitch = (low + high) / 2;
   const raw: SpiralSample[] = [];
   for (let index = 0; index <= SPIRAL_STEPS; index += 1) {
     const theta = thetaMax * (1 - index / SPIRAL_STEPS);
-    const radius = inner * Math.exp(SPIRAL_K * theta);
+    const radius = pitch * theta;
     const x = radius * Math.cos(theta);
     const y = radius * Math.sin(theta);
-    const tx = -(SPIRAL_K * Math.cos(theta) - Math.sin(theta));
-    const ty = -(SPIRAL_K * Math.sin(theta) + Math.cos(theta));
+    const tx = -(Math.cos(theta) - theta * Math.sin(theta));
+    const ty = -(Math.sin(theta) + theta * Math.cos(theta));
     raw.push({ x, y, heading: Math.atan2(ty, tx), s: 0 });
   }
   const first = raw[0];

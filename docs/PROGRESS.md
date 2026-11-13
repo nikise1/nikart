@@ -75,6 +75,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-05 — Tournament Details uses the Satellite artwork.
 
+2026-11-13 — Nav spiral is wound tighter, closer to the original closed curl.
+
 2026-11-13 — Nav curl is the stem coiled into a spiral; it unwraps on one canvas.
 
 2026-11-05 — Nav curl unfurls into the stem on one canvas; the burger lines fade.
