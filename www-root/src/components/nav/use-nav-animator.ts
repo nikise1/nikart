@@ -42,7 +42,7 @@ function setCurlButton(button: HTMLButtonElement, visible: boolean): void {
 
 /**
  * Central nav animation orchestrator — mirrors legacy nav-view.js doAni().
- * The fern is one canvas path the whole time: curl at rest, stem when open.
+ * The fern is one canvas ribbon the whole time: a spiral at rest, the stem when open.
  */
 export function useNavAnimator({
   containerRef,
@@ -134,7 +134,7 @@ export function useNavAnimator({
           }
         });
       } else if (phase === "closing-items") {
-        // Stem stays fully drawn while the labels collapse. The furl is the next phase.
+        // Stem stays fully drawn while the labels collapse. It coils on the next phase.
         const totalOut = itemsCloseDuration(numItems);
         gsap.delayedCall(totalOut, () => {
           if (useNavStore.getState().navPhase === "closing-items") {

@@ -1,49 +1,59 @@
 /**
- * Closed fiddlehead, traced from the lower frame of `content/img/curl-sprite.png`.
- * Starts at the top-left base and walks the outer edge before the inner hook,
- * so arc-length lines up with the open stem (left edge, tip, right edge).
+ * The closed curl and the open stem are the same ribbon.
+ * Closed, the ribbon is a logarithmic spiral in the corner.
+ * Opening pays arc length out along the real stem and leaves the
+ * remainder as a rigid piece of that spiral, rotated so it stays
+ * attached. That is an unwrap: tail distances do not change with progress.
+ * At rest the open stem is the legacy bezier, including its tip hook.
  */
-const CLOSED_CURL: readonly number[] = [
-  0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 7, 9, 8, 10, 9, 11, 9, 12, 10, 13, 11, 14,
-  11, 15, 12, 16, 12, 17, 13, 18, 13, 19, 14, 20, 14, 21, 15, 22, 16, 23, 16, 24, 17, 25, 17, 26,
-  18, 27, 18, 28, 19, 29, 19, 30, 20, 31, 20, 32, 21, 33, 22, 34, 22, 35, 23, 36, 24, 37, 24, 38,
-  25, 39, 26, 40, 27, 41, 28, 42, 29, 43, 30, 44, 31, 44, 32, 45, 33, 46, 34, 46, 35, 46, 36, 47,
-  37, 47, 38, 47, 39, 48, 40, 48, 41, 48, 42, 48, 43, 48, 44, 48, 45, 49, 46, 49, 47, 48, 48, 48,
-  49, 48, 50, 48, 51, 48, 52, 48, 53, 48, 54, 48, 55, 47, 56, 47, 57, 47, 58, 46, 59, 46, 60, 46,
-  61, 45, 62, 45, 63, 44, 64, 44, 65, 43, 66, 42, 67, 42, 68, 41, 69, 40, 70, 39, 71, 38, 72, 37,
-  72, 36, 73, 35, 74, 34, 74, 33, 75, 32, 75, 31, 75, 30, 76, 29, 76, 28, 76, 27, 76, 26, 77, 25,
-  77, 24, 77, 23, 77, 22, 76, 21, 76, 20, 76, 19, 76, 18, 75, 17, 75, 16, 75, 15, 74, 14, 74, 13,
-  73, 12, 72, 11, 71, 10, 71, 9, 70, 8, 69, 8, 68, 7, 67, 6, 66, 5, 65, 5, 64, 4, 63, 4, 62, 4, 61,
-  3, 60, 3, 59, 2, 58, 2, 57, 2, 56, 2, 55, 2, 54, 1, 53, 1, 52, 1, 51, 1, 50, 1, 49, 1, 48, 1, 47,
-  2, 46, 2, 45, 2, 44, 2, 43, 3, 42, 3, 41, 3, 40, 4, 39, 4, 38, 5, 37, 5, 36, 6, 35, 7, 34, 8, 33,
-  9, 32, 10, 31, 11, 31, 12, 30, 13, 30, 14, 29, 15, 29, 16, 29, 17, 28, 18, 28, 19, 28, 20, 28, 21,
-  28, 22, 28, 23, 29, 24, 29, 25, 29, 26, 30, 27, 30, 28, 31, 29, 31, 30, 30, 31, 29, 30, 28, 29,
-  28, 28, 27, 27, 27, 26, 26, 25, 26, 24, 25, 23, 24, 22, 24, 21, 23, 20, 23, 19, 22, 18, 22, 17,
-  21, 16, 21, 15, 20, 14, 20, 13, 19, 12, 18, 11, 18, 10, 17, 9, 17, 8, 16, 7, 15, 6, 15, 5, 14, 4,
-  13, 3, 13, 2, 12, 1, 11, 0, 10, 0, 9, 0, 8, 0, 7, 0, 6, 0, 5, 0, 4, 0, 3, 0, 2, 0, 1, 0,
-];
 
 interface Pt {
   x: number;
   y: number;
 }
 
-/** Legacy open stem. Right edge, hook, then left edge back to the origin. */
+interface Edge {
+  total: number;
+  at: (distance: number) => Pt;
+}
+
+interface StemSample {
+  s: number;
+  x: number;
+  y: number;
+  heading: number;
+  lt: number;
+  ln: number;
+  rt: number;
+  rn: number;
+}
+
+interface SpiralSample {
+  s: number;
+  x: number;
+  y: number;
+  heading: number;
+}
+
 const STEM_X = 110;
 const STEM_Y = 258;
 const STEM_TOP = 20;
 const HOOK = 3.5;
 
-const SAMPLES = 180;
-/** Far end of the loop waits, so the coil stays rolled while the base pays out. */
-const TIP_DELAY = 0.45;
-const BURGER_FADE = 0.3;
+/** Turns of the closed spiral. Tuned so the coils stay separated and inside the corner. */
+const SPIRAL_TURNS = 2.05;
+const SPIRAL_K = 0.16;
+/** Extra rotation while fully coiled, so the spiral sits in the page instead of across the corner. */
+const SEAT = (54 * Math.PI) / 180;
 
-const BURGER_BARS = [
-  { x: 35, y: 12, w: 24, h: 4 },
-  { x: 35, y: 19, w: 24, h: 4 },
-  { x: 35, y: 26, w: 24, h: 4 },
-] as const;
+const STEM_STEPS = 480;
+const SPIRAL_STEPS = 700;
+const RIBBON_SAMPLES = 220;
+
+const BURGER_FADE = 0.3;
+const BAR_W = 24;
+const BAR_H = 4;
+const BAR_GAP = 3;
 
 const STEM_COLOR = "#4F3E2D";
 const BURGER_REST = "#94B864";
@@ -62,10 +72,6 @@ function smoothstep(value: number): number {
   return t * t * (3 - 2 * t);
 }
 
-function dist(a: Pt, b: Pt): number {
-  return Math.hypot(a.x - b.x, a.y - b.y);
-}
-
 function cubic(p0: Pt, p1: Pt, p2: Pt, p3: Pt, t: number): Pt {
   const mt = 1 - t;
   const a = mt * mt * mt;
@@ -78,63 +84,36 @@ function cubic(p0: Pt, p1: Pt, p2: Pt, p3: Pt, t: number): Pt {
   };
 }
 
-function quad(p0: Pt, p1: Pt, p2: Pt, t: number): Pt {
-  const mt = 1 - t;
+function sampleEdge(pointAt: (t: number) => Pt): Edge {
+  const raw: Pt[] = [];
+  for (let index = 0; index <= STEM_STEPS; index += 1) raw.push(pointAt(index / STEM_STEPS));
+  const lengths = [0];
+  for (let index = 1; index < raw.length; index += 1) {
+    const prev = raw[index - 1];
+    const current = raw[index];
+    if (!prev || !current) break;
+    lengths.push((lengths[index - 1] ?? 0) + Math.hypot(current.x - prev.x, current.y - prev.y));
+  }
+  const total = lengths[lengths.length - 1] ?? 0;
   return {
-    x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x,
-    y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y,
+    total,
+    at(distance: number): Pt {
+      const d = Math.max(0, Math.min(total, distance));
+      let index = 1;
+      while (index < lengths.length - 1 && (lengths[index] ?? 0) < d) index += 1;
+      const start = lengths[index - 1] ?? 0;
+      const end = lengths[index] ?? start;
+      const span = end - start || 1;
+      const t = Math.min(1, Math.max(0, (d - start) / span));
+      const a = raw[index - 1];
+      const b = raw[index];
+      if (!a || !b) return { x: 0, y: 0 };
+      return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+    },
   };
 }
 
-function soften(pts: readonly Pt[]): Pt[] {
-  return pts.map((pt, index) => {
-    const prev = pts[index - 1];
-    const next = pts[index + 1];
-    if (!prev || !next) return pt;
-    return { x: (prev.x + pt.x * 2 + next.x) / 4, y: (prev.y + pt.y * 2 + next.y) / 4 };
-  });
-}
-
-function resample(pts: readonly Pt[], count: number): Pt[] {
-  const lengths = [0];
-  for (let index = 1; index < pts.length; index++) {
-    const prev = pts[index - 1];
-    const current = pts[index];
-    if (!prev || !current) break;
-    lengths.push((lengths[index - 1] ?? 0) + dist(prev, current));
-  }
-  const total = lengths[lengths.length - 1] ?? 0;
-  const out: Pt[] = [];
-  for (let index = 0; index < count; index++) {
-    const distance = total * (index / (count - 1));
-    let cursor = 1;
-    while (cursor < lengths.length - 1 && (lengths[cursor] ?? 0) < distance) cursor += 1;
-    const start = lengths[cursor - 1] ?? 0;
-    const end = lengths[cursor] ?? start;
-    const span = end - start || 1;
-    const t = Math.min(1, Math.max(0, (distance - start) / span));
-    const a = pts[cursor - 1];
-    const b = pts[cursor];
-    if (!a || !b) continue;
-    out.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
-  }
-  return out;
-}
-
-function closedCurl(): Pt[] {
-  const pts: Pt[] = [];
-  for (let index = 0; index < CLOSED_CURL.length; index += 2) {
-    const x = CLOSED_CURL[index];
-    const y = CLOSED_CURL[index + 1];
-    if (x === undefined || y === undefined) continue;
-    pts.push({ x, y });
-  }
-  let softened = pts;
-  for (let pass = 0; pass < 2; pass += 1) softened = soften(softened);
-  return resample(softened, SAMPLES);
-}
-
-function openStem(): Pt[] {
+function buildStem(): { samples: StemSample[]; length: number } {
   const left0 = { x: 0, y: 0 };
   const left1 = { x: 60, y: 83 };
   const left2 = { x: 82, y: 167 };
@@ -143,47 +122,299 @@ function openStem(): Pt[] {
   const right1 = { x: 70, y: 83 };
   const right2 = { x: 92, y: 167 };
   const right3 = { x: STEM_X + HOOK, y: STEM_Y - HOOK };
-  const tip = { x: STEM_X, y: STEM_Y + HOOK };
-  const pts: Pt[] = [];
-  const steps = 80;
-  for (let index = 0; index <= steps; index += 1) {
-    pts.push(cubic(left0, left1, left2, left3, index / steps));
-  }
-  for (let index = 1; index <= 16; index += 1) {
-    pts.push(quad(left3, tip, right3, index / 16));
-  }
-  for (let index = 1; index <= steps; index += 1) {
-    pts.push(cubic(right3, right2, right1, right0, index / steps));
-  }
-  pts.push(left0);
-  return resample(pts, SAMPLES);
-}
+  const leftEdge = sampleEdge((t) => cubic(left0, left1, left2, left3, t));
+  const rightEdge = sampleEdge((t) => cubic(right0, right1, right2, right3, t));
 
-const CLOSED_LOOP = closedCurl();
-const OPEN_LOOP = openStem();
-
-/** One outline, closed curl at 0 and open stem at 1. The base leads; the tip unrolls last. */
-export function navFernLoop(progress: number): Pt[] {
-  const p = clamp01(progress);
-  const count = CLOSED_LOOP.length;
-  const mid = (count - 1) / 2;
-  const span = 1 - TIP_DELAY;
-  const loop: Pt[] = [];
-  for (let index = 0; index < count; index += 1) {
-    const along = Math.min(index, count - 1 - index) / mid;
-    const t = smoothstep((p - TIP_DELAY * along) / span);
-    const closed = CLOSED_LOOP[index];
-    const open = OPEN_LOOP[index];
-    if (!closed || !open) continue;
-    loop.push({
-      x: closed.x + (open.x - closed.x) * t,
-      y: closed.y + (open.y - closed.y) * t,
+  const count = 360;
+  const mids: { x: number; y: number; left: Pt; right: Pt }[] = [];
+  for (let index = 0; index <= count; index += 1) {
+    const fraction = index / count;
+    const left = leftEdge.at(leftEdge.total * fraction);
+    const right = rightEdge.at(rightEdge.total * fraction);
+    mids.push({
+      x: (left.x + right.x) / 2,
+      y: (left.y + right.y) / 2,
+      left,
+      right,
     });
   }
-  return loop;
+
+  const centerLengths = [0];
+  for (let index = 1; index < mids.length; index += 1) {
+    const prev = mids[index - 1];
+    const current = mids[index];
+    if (!prev || !current) break;
+    centerLengths.push(
+      (centerLengths[index - 1] ?? 0) + Math.hypot(current.x - prev.x, current.y - prev.y),
+    );
+  }
+  const length = centerLengths[centerLengths.length - 1] ?? 0;
+
+  const samples: StemSample[] = [];
+  let heading = 0;
+  for (let index = 0; index <= count; index += 1) {
+    const current = mids[index];
+    const prev = mids[Math.max(0, index - 1)];
+    const next = mids[Math.min(count, index + 1)];
+    if (!current || !prev || !next) continue;
+    let angle = Math.atan2(next.y - prev.y, next.x - prev.x);
+    if (index > 0) {
+      while (angle - heading > Math.PI) angle -= Math.PI * 2;
+      while (angle - heading < -Math.PI) angle += Math.PI * 2;
+    }
+    heading = angle;
+    const tx = Math.cos(heading);
+    const ty = Math.sin(heading);
+    const nx = -ty;
+    const ny = tx;
+    const offset = (point: Pt): { t: number; n: number } => ({
+      t: (point.x - current.x) * tx + (point.y - current.y) * ty,
+      n: (point.x - current.x) * nx + (point.y - current.y) * ny,
+    });
+    const left = offset(current.left);
+    const right = offset(current.right);
+    samples.push({
+      s: centerLengths[index] ?? 0,
+      x: current.x,
+      y: current.y,
+      heading,
+      lt: left.t,
+      ln: left.n,
+      rt: right.t,
+      rn: right.n,
+    });
+  }
+  return { samples, length };
 }
 
-/** Burger bars fade in place. They are gone before the coil leaves the corner. */
+function spiralLength(inner: number, thetaMax: number): number {
+  let length = 0;
+  const steps = 2400;
+  const dTheta = thetaMax / steps;
+  for (let index = 0; index < steps; index += 1) {
+    const theta = (index + 0.5) * dTheta;
+    const radius = inner * Math.exp(SPIRAL_K * theta);
+    length += radius * Math.hypot(1, SPIRAL_K) * dTheta;
+  }
+  return length;
+}
+
+function buildSpiral(stem: StemSample[], length: number): SpiralSample[] {
+  const thetaMax = SPIRAL_TURNS * Math.PI * 2;
+  let low = 0.2;
+  let high = 30;
+  for (let index = 0; index < 28; index += 1) {
+    const mid = (low + high) / 2;
+    if (spiralLength(mid, thetaMax) < length) low = mid;
+    else high = mid;
+  }
+  const inner = (low + high) / 2;
+  const raw: SpiralSample[] = [];
+  for (let index = 0; index <= SPIRAL_STEPS; index += 1) {
+    const theta = thetaMax * (1 - index / SPIRAL_STEPS);
+    const radius = inner * Math.exp(SPIRAL_K * theta);
+    const x = radius * Math.cos(theta);
+    const y = radius * Math.sin(theta);
+    const tx = -(SPIRAL_K * Math.cos(theta) - Math.sin(theta));
+    const ty = -(SPIRAL_K * Math.sin(theta) + Math.cos(theta));
+    raw.push({ x, y, heading: Math.atan2(ty, tx), s: 0 });
+  }
+  const first = raw[0];
+  if (!first) return raw;
+  let prevHeading = first.heading;
+  first.s = 0;
+  for (let index = 1; index < raw.length; index += 1) {
+    const prev = raw[index - 1];
+    const current = raw[index];
+    if (!prev || !current) break;
+    let heading = current.heading;
+    while (heading - prevHeading > Math.PI) heading -= Math.PI * 2;
+    while (heading - prevHeading < -Math.PI) heading += Math.PI * 2;
+    current.heading = heading;
+    prevHeading = heading;
+    current.s = prev.s + Math.hypot(current.x - prev.x, current.y - prev.y);
+  }
+  const last = raw[raw.length - 1];
+  const scale = last && last.s > 0 ? length / last.s : 1;
+  for (const sample of raw) {
+    sample.x *= scale;
+    sample.y *= scale;
+    sample.s *= scale;
+  }
+
+  const origin = raw[0];
+  const stemOrigin = stem[0];
+  if (!origin || !stemOrigin) return raw;
+  const originX = origin.x;
+  const originY = origin.y;
+  const rot = stemOrigin.heading - origin.heading;
+  const cos = Math.cos(rot);
+  const sin = Math.sin(rot);
+  for (const sample of raw) {
+    const dx = sample.x - originX;
+    const dy = sample.y - originY;
+    sample.x = stemOrigin.x + dx * cos - dy * sin;
+    sample.y = stemOrigin.y + dx * sin + dy * cos;
+    sample.heading += rot;
+  }
+  return raw;
+}
+
+function lerpPair<T extends { s: number; x: number; y: number; heading: number }>(
+  samples: readonly T[],
+  distance: number,
+): { a: T; b: T; t: number } {
+  const first = samples[0];
+  if (!first) {
+    const empty = { s: 0, x: 0, y: 0, heading: 0 } as T;
+    return { a: empty, b: empty, t: 0 };
+  }
+  let low = 0;
+  let high = samples.length - 1;
+  while (low < high - 1) {
+    const mid = (low + high) >> 1;
+    const sample = samples[mid];
+    if (sample && sample.s < distance) low = mid;
+    else high = mid;
+  }
+  const a = samples[low] ?? first;
+  const b = samples[high] ?? a;
+  const span = b.s - a.s || 1;
+  return { a, b, t: clamp01((distance - a.s) / span) };
+}
+
+function stemAt(distance: number): StemSample {
+  const { a, b, t } = lerpPair(STEM.samples, distance);
+  return {
+    s: distance,
+    x: a.x + (b.x - a.x) * t,
+    y: a.y + (b.y - a.y) * t,
+    heading: a.heading + (b.heading - a.heading) * t,
+    lt: a.lt + (b.lt - a.lt) * t,
+    ln: a.ln + (b.ln - a.ln) * t,
+    rt: a.rt + (b.rt - a.rt) * t,
+    rn: a.rn + (b.rn - a.rn) * t,
+  };
+}
+
+function spiralAt(distance: number): SpiralSample {
+  const { a, b, t } = lerpPair(SPIRAL, distance);
+  return {
+    s: distance,
+    x: a.x + (b.x - a.x) * t,
+    y: a.y + (b.y - a.y) * t,
+    heading: a.heading + (b.heading - a.heading) * t,
+  };
+}
+
+const STEM = buildStem();
+const SPIRAL = buildSpiral(STEM.samples, STEM.length);
+
+function seatAngle(progress: number): number {
+  const remain = 1 - clamp01(progress);
+  return SEAT * remain * remain;
+}
+
+interface Placed {
+  x: number;
+  y: number;
+  heading: number;
+  stem: StemSample;
+}
+
+function place(progress: number, distance: number): Placed {
+  const p = clamp01(progress);
+  const u = p * STEM.length;
+  const along = Math.min(distance, STEM.length);
+  const stem = stemAt(along);
+  if (distance <= u) {
+    return { x: stem.x, y: stem.y, heading: stem.heading, stem };
+  }
+  const stemU = stemAt(u);
+  const spiralU = spiralAt(u);
+  const spiral = spiralAt(along);
+  const turn = stemU.heading - spiralU.heading + seatAngle(p);
+  const cos = Math.cos(turn);
+  const sin = Math.sin(turn);
+  const dx = spiral.x - spiralU.x;
+  const dy = spiral.y - spiralU.y;
+  return {
+    x: stemU.x + dx * cos - dy * sin,
+    y: stemU.y + dx * sin + dy * cos,
+    heading: spiral.heading + turn,
+    stem,
+  };
+}
+
+function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
+  const left: Pt[] = [];
+  const right: Pt[] = [];
+  for (let index = 0; index <= RIBBON_SAMPLES; index += 1) {
+    const placed = place(progress, (STEM.length * index) / RIBBON_SAMPLES);
+    const tx = Math.cos(placed.heading);
+    const ty = Math.sin(placed.heading);
+    const nx = -ty;
+    const ny = tx;
+    const { stem } = placed;
+    left.push({
+      x: placed.x + tx * stem.lt + nx * stem.ln,
+      y: placed.y + ty * stem.lt + ny * stem.ln,
+    });
+    right.push({
+      x: placed.x + tx * stem.rt + nx * stem.rn,
+      y: placed.y + ty * stem.rt + ny * stem.rn,
+    });
+  }
+  return { left, right };
+}
+
+/** Centerline of the unwrapping stem. Index 0 stays on the stem root. */
+export function navFernSpine(progress: number): Pt[] {
+  const spine: Pt[] = [];
+  for (let index = 0; index <= RIBBON_SAMPLES; index += 1) {
+    const placed = place(progress, (STEM.length * index) / RIBBON_SAMPLES);
+    spine.push({ x: placed.x, y: placed.y });
+  }
+  return spine;
+}
+
+/** Ribbon outline. Progress 0 is the coiled stem; 1 is the open stem without the tip hook. */
+export function navFernLoop(progress: number): Pt[] {
+  const { left, right } = ribbon(progress);
+  right.reverse();
+  return [...left, ...right];
+}
+
+function boundsOf(progress: number): { maxX: number; maxY: number } {
+  let maxX = 0;
+  let maxY = 0;
+  for (const point of navFernLoop(progress)) {
+    if (point.x > maxX) maxX = point.x;
+    if (point.y > maxY) maxY = point.y;
+  }
+  return { maxX, maxY };
+}
+
+const CLOSED_BOUNDS = boundsOf(0);
+const EYE = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
+
+/** Clickable area of the closed spiral, from the top-left of the nav. */
+export const NAV_FERN_HIT = {
+  width: Math.ceil(CLOSED_BOUNDS.maxX + 4),
+  height: Math.ceil(CLOSED_BOUNDS.maxY + 6),
+} as const;
+
+const BURGER_BARS = [0, 1, 2].map((index) => {
+  const total = BAR_H * 3 + BAR_GAP * 2;
+  return {
+    x: EYE.x - BAR_W / 2,
+    y: EYE.y - total / 2 + index * (BAR_H + BAR_GAP),
+    w: BAR_W,
+    h: BAR_H,
+  };
+});
+
+/** Burger bars fade in place while the outer turn leaves the corner. */
 export function burgerLineAlpha(progress: number): number {
   return 1 - smoothstep(progress / BURGER_FADE);
 }
@@ -210,8 +441,8 @@ function drawLoop(ctx: CanvasRenderingContext2D, loop: readonly Pt[]): void {
   ctx.beginPath();
   ctx.moveTo(first.x, first.y);
   for (let index = 1; index < loop.length; index += 1) {
-    const pt = loop[index];
-    if (pt) ctx.lineTo(pt.x, pt.y);
+    const point = loop[index];
+    if (point) ctx.lineTo(point.x, point.y);
   }
   ctx.closePath();
   ctx.fillStyle = STEM_COLOR;
@@ -231,7 +462,7 @@ function drawBurger(ctx: CanvasRenderingContext2D, alpha: number, hovered: boole
   ctx.restore();
 }
 
-/** Redraw the single fern path. Progress 0 is the curl; 1 is the legacy stem. */
+/** Redraw the ribbon. Progress 0 is the spiral; 1 is the legacy stem. */
 export function drawNavFern(
   canvas: HTMLCanvasElement,
   progress: number,
@@ -253,7 +484,7 @@ export function drawNavFern(
   if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false);
 }
 
-/** Resting curl only. Ignores hover once the frond has started to move. */
+/** Resting spiral only. Ignores hover once the ribbon has started to unwrap. */
 export function paintNavFernHover(canvas: HTMLCanvasElement, hovered: boolean): void {
   const progress = Number(canvas.dataset.fernProgress ?? "0");
   if (!Number.isFinite(progress) || progress > 0.02) return;
