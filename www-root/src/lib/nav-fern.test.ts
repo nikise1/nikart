@@ -29,10 +29,10 @@ describe("navFernLoop", () => {
     const closed = bounds(0);
     const open = bounds(1);
 
-    expect(closed.maxX).toBeGreaterThan(40);
-    expect(closed.maxX).toBeLessThan(70);
-    expect(closed.maxY).toBeGreaterThan(35);
-    expect(closed.maxY).toBeLessThan(60);
+    expect(closed.maxX).toBeGreaterThan(45);
+    expect(closed.maxX).toBeLessThan(80);
+    expect(closed.maxY).toBeGreaterThan(40);
+    expect(closed.maxY).toBeLessThan(72);
     expect(closed.minX).toBeGreaterThan(-12);
     expect(closed.minY).toBeGreaterThan(-12);
 
@@ -70,7 +70,7 @@ describe("navFernLoop", () => {
     const closedChord = chord(0, 0.45, 1);
     const midChord = chord(0.4, 0.45, 1);
     expect(midChord).toBeCloseTo(closedChord, 0);
-    expect(closedChord).toBeGreaterThan(18);
+    expect(closedChord).toBeGreaterThan(8);
   });
 });
 

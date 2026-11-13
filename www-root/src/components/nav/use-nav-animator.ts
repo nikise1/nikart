@@ -42,7 +42,7 @@ function setCurlButton(button: HTMLButtonElement, visible: boolean): void {
 
 /**
  * Central nav animation orchestrator — mirrors legacy nav-view.js doAni().
- * The fern is one canvas ribbon the whole time: a spiral at rest, the stem when open.
+ * The fern is one canvas ribbon the whole time: a crozier at rest, the stem when open.
  */
 export function useNavAnimator({
   containerRef,
@@ -86,7 +86,7 @@ export function useNavAnimator({
           {
             progress: 1,
             duration,
-            ease: "none",
+            ease: "power1.out",
             onUpdate: () => {
               fernProgress.current = stem.progress;
               drawNavFern(canvas, stem.progress, { hovered: hovered() });
@@ -169,7 +169,7 @@ export function useNavAnimator({
         gsap.to(stem, {
           progress: 0,
           duration: fernDuration(from),
-          ease: "none",
+          ease: "power1.out",
           onUpdate: () => {
             fernProgress.current = stem.progress;
             drawNavFern(canvas, stem.progress, { hovered: hovered() });
