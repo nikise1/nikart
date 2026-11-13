@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { burgerLineAlpha, navFernLoop } from "./nav-fern";
+import { burgerLineAlpha, navFernLoop, navFernSpine } from "./nav-fern";
 
 function bounds(progress: number): { maxX: number; maxY: number; minX: number; minY: number } {
   const loop = navFernLoop(progress);
@@ -16,37 +16,61 @@ function bounds(progress: number): { maxX: number; maxY: number; minX: number; m
   return { minX, minY, maxX, maxY };
 }
 
+function chord(progress: number, from: number, to: number): number {
+  const spine = navFernSpine(progress);
+  const a = spine[Math.round((spine.length - 1) * from)];
+  const b = spine[Math.round((spine.length - 1) * to)];
+  if (!a || !b) return 0;
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
 describe("navFernLoop", () => {
-  it("starts as the corner curl and ends as the long stem", () => {
+  it("starts as a corner spiral and ends as the long stem", () => {
     const closed = bounds(0);
     const open = bounds(1);
 
-    expect(closed.minX).toBeGreaterThanOrEqual(-1);
-    expect(closed.minY).toBeGreaterThanOrEqual(-1);
-    expect(closed.maxX).toBeLessThan(90);
-    expect(closed.maxY).toBeLessThan(60);
+    expect(closed.maxX).toBeGreaterThan(50);
+    expect(closed.maxX).toBeLessThan(100);
+    expect(closed.maxY).toBeGreaterThan(40);
+    expect(closed.maxY).toBeLessThan(95);
+    expect(closed.minX).toBeGreaterThan(-12);
+    expect(closed.minY).toBeGreaterThan(-12);
 
     expect(open.maxY).toBeGreaterThan(250);
     expect(open.maxX).toBeGreaterThan(100);
     expect(open.maxX).toBeLessThan(130);
   });
 
-  it("grows downward while the tip stays coiled", () => {
-    const early = bounds(0.2).maxY;
-    const mid = bounds(0.55).maxY;
-    const open = bounds(1).maxY;
-
-    expect(early).toBeLessThan(90);
-    expect(mid).toBeGreaterThan(early + 40);
-    expect(open).toBeGreaterThan(mid);
+  it("unwraps downward and stays inside the canvas", () => {
+    const ys = [0, 0.25, 0.5, 0.75, 1].map((progress) => bounds(progress).maxY);
+    for (let index = 1; index < ys.length; index += 1) {
+      expect(ys[index]).toBeGreaterThan((ys[index - 1] ?? 0) + 20);
+    }
+    for (const progress of [0.2, 0.45, 0.7, 1]) {
+      const box = bounds(progress);
+      expect(box.minX).toBeGreaterThanOrEqual(-1);
+      expect(box.minY).toBeGreaterThanOrEqual(-1);
+      expect(box.maxX).toBeLessThan(130);
+      expect(box.maxY).toBeLessThan(262);
+    }
   });
 
-  it("keeps the base attached to the top-left corner", () => {
-    for (const progress of [0, 0.35, 0.7, 1]) {
-      const root = navFernLoop(progress)[0];
-      expect(root?.x).toBeCloseTo(0, 0);
-      expect(root?.y).toBeCloseTo(0, 0);
-    }
+  it("lays unwrapped length on the open stem and keeps the coil rigid", () => {
+    const open = navFernSpine(1);
+    const mid = navFernSpine(0.55);
+    const coiled = navFernSpine(0);
+    const laid = Math.round((open.length - 1) * 0.4);
+
+    expect(mid[0]?.x).toBeCloseTo(10, 0);
+    expect(mid[0]?.y).toBeCloseTo(0, 0);
+    expect(coiled[0]?.x).toBeCloseTo(10, 0);
+    expect(mid[laid]?.x).toBeCloseTo(open[laid]?.x ?? 0, 0);
+    expect(mid[laid]?.y).toBeCloseTo(open[laid]?.y ?? 0, 0);
+
+    const closedChord = chord(0, 0.45, 1);
+    const midChord = chord(0.4, 0.45, 1);
+    expect(midChord).toBeCloseTo(closedChord, 0);
+    expect(closedChord).toBeGreaterThan(25);
   });
 });
 

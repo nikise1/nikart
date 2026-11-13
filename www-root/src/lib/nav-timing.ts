@@ -6,8 +6,8 @@ export const NAV_TIMING = {
   growOut: 0.5,
   itemIn: 1.2,
   itemOut: 0.5,
-  /** Closed curl unfurling into the open stem, one canvas path. */
-  fern: 0.9,
+  /** Coiled stem unwrapping into the open stem, one canvas path. */
+  fern: 1.15,
 } as const;
 
 export function itemsCloseDuration(numItems: number): number {
