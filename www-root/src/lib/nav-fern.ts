@@ -417,11 +417,39 @@ export function navFernSpine(progress: number): Pt[] {
   return spine;
 }
 
-/** Ribbon outline. Progress 0 is the coiled stem; 1 is the open stem without the tip hook. */
+/**
+ * The open stem ends in a quadratic hook past the flat tip.
+ * Same curve, in the tip's own frame, so the free end stays rounded while it moves.
+ */
+function tipHook(left: Pt, right: Pt, heading: number): Pt[] {
+  const width = Math.hypot(right.x - left.x, right.y - left.y);
+  if (width < 0.5) return [];
+  const tx = Math.cos(heading);
+  const ty = Math.sin(heading);
+  const cx = (left.x + right.x) / 2 + tx * width;
+  const cy = (left.y + right.y) / 2 + ty * width;
+  const steps = 8;
+  const points: Pt[] = [];
+  for (let index = 1; index < steps; index += 1) {
+    const t = index / steps;
+    const u = 1 - t;
+    points.push({
+      x: u * u * left.x + 2 * u * t * cx + t * t * right.x,
+      y: u * u * left.y + 2 * u * t * cy + t * t * right.y,
+    });
+  }
+  return points;
+}
+
+/** Ribbon outline. Progress 0 is the coiled stem; 1 is the open stem, including its tip hook. */
 export function navFernLoop(progress: number): Pt[] {
   const { left, right } = ribbon(progress);
+  const leftEnd = left[left.length - 1];
+  const rightEnd = right[right.length - 1];
+  const tip = place(progress, STEM.length);
   right.reverse();
-  return [...left, ...right];
+  if (!leftEnd || !rightEnd) return [...left, ...right];
+  return [...left, ...tipHook(leftEnd, rightEnd, tip.heading), ...right];
 }
 
 function boundsOf(progress: number): { maxX: number; maxY: number } {

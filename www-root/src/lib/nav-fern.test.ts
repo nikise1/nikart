@@ -41,6 +41,27 @@ describe("navFernLoop", () => {
     expect(open.maxX).toBeLessThan(130);
   });
 
+  it("rounds the free end past the flat tip", () => {
+    const open = bounds(1);
+    expect(open.maxY).toBeGreaterThan(256);
+
+    for (const progress of [0.2, 0.55, 0.85]) {
+      const spine = navFernSpine(progress);
+      const tip = spine[spine.length - 1];
+      const before = spine[spine.length - 4];
+      if (!tip || !before) throw new Error("missing tip");
+      const heading = Math.atan2(tip.y - before.y, tip.x - before.x);
+      const tx = Math.cos(heading);
+      const ty = Math.sin(heading);
+      const tipReach = tip.x * tx + tip.y * ty;
+      const near = navFernLoop(progress).filter(
+        (point) => Math.hypot(point.x - tip.x, point.y - tip.y) < 8,
+      );
+      const reach = Math.max(...near.map((point) => point.x * tx + point.y * ty));
+      expect(reach).toBeGreaterThan(tipReach + 1);
+    }
+  });
+
   it("meets the coil on a continuous tangent", () => {
     for (const progress of [0.2, 0.4, 0.65]) {
       const spine = navFernSpine(progress);
