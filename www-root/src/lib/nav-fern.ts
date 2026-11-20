@@ -2,8 +2,10 @@
  * The closed curl and the open stem are the same ribbon.
  * Closed, it matches the original corner button: a short tail from the
  * corner into one round head, with the rest of the ribbon wound inside
- * that head. Opening pays arc length out along the real stem and leaves
- * the remainder as that coil, joined on the same tangent.
+ * that head, with a gap between the outer wall and the inner turn. The
+ * gap is a hair at the top of the head and wider along the bottom.
+ * Opening pays arc length out along the real stem and leaves the
+ * remainder as that coil, joined on the same tangent.
  * At rest the open stem is the legacy bezier, including its tip hook.
  */
 
@@ -409,6 +411,68 @@ function place(progress: number, distance: number): Placed {
   };
 }
 
+/** Closed tail, as a fraction of the stem width. The head stays full width. */
+const CLOSED_TAIL = 0.48;
+
+/** Piecewise smooth value. Keys are [along, amount], along increasing. */
+function ramp(along: number, keys: readonly (readonly [number, number])[]): number {
+  const first = keys[0];
+  const last = keys[keys.length - 1];
+  if (!first || !last || along <= first[0]) return first ? first[1] : 0;
+  for (let index = 1; index < keys.length; index += 1) {
+    const prev = keys[index - 1];
+    const next = keys[index];
+    if (!prev || !next || along > next[0]) continue;
+    const t = smoothstep((along - prev[0]) / (next[0] - prev[0]));
+    return prev[1] + (next[1] - prev[1]) * t;
+  }
+  return last[1];
+}
+
+/**
+ * While a section is still coiled, the tail is thinner and bows out to
+ * the original curve. The outer wall's inner edge eases back, and the
+ * inner turn eases inward, so a gap opens between them. The gap is smallest
+ * at the top of the head. A section returns to the stem once it unrolls.
+ */
+function closedShape(
+  along: number,
+  progress: number,
+): { scale: number; bow: number; trim: number; pull: number; anchor: number } {
+  const peeled = progress <= 0 ? 1 : (along - progress) / 0.06;
+  const coil = peeled <= 0 ? 0 : peeled >= 1 ? 1 : smoothstep(peeled);
+  const tail = 1 - smoothstep((along - 0.04) / 0.18);
+  const width = CLOSED_TAIL + (1 - CLOSED_TAIL) * (1 - tail);
+  return {
+    scale: 1 - coil * (1 - width),
+    bow:
+      coil *
+      ramp(along, [
+        [0.02, 0],
+        [0.14, 7],
+        [0.3, 0],
+      ]),
+    trim:
+      coil *
+      ramp(along, [
+        [0.18, 0],
+        [0.26, 9],
+        [0.36, 5],
+        [0.44, 3],
+        [0.54, 0],
+      ]),
+    pull:
+      coil *
+      ramp(along, [
+        [0.5, 0],
+        [0.6, 6],
+        [0.7, 3.5],
+        [0.8, 0],
+      ]),
+    anchor: tail * coil,
+  };
+}
+
 function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
   const left: Pt[] = [];
   const right: Pt[] = [];
@@ -419,13 +483,22 @@ function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
     const nx = -ty;
     const ny = tx;
     const { stem } = placed;
+    const fit = closedShape(index / RIBBON_SAMPLES, progress);
+    const cx = placed.x + nx * (fit.bow - fit.pull);
+    const cy = placed.y + ny * (fit.bow - fit.pull);
+    const ox = cx + tx * stem.lt + nx * stem.ln;
+    const oy = cy + ty * stem.lt + ny * stem.ln;
+    const ix = cx + tx * stem.rt + nx * stem.rn;
+    const iy = cy + ty * stem.rt + ny * stem.rn;
+    const mx = ox + (ix - ox) * (1 - fit.anchor) * 0.5;
+    const my = oy + (iy - oy) * (1 - fit.anchor) * 0.5;
     left.push({
-      x: placed.x + tx * stem.lt + nx * stem.ln,
-      y: placed.y + ty * stem.lt + ny * stem.ln,
+      x: mx + (ox - mx) * fit.scale,
+      y: my + (oy - my) * fit.scale,
     });
     right.push({
-      x: placed.x + tx * stem.rt + nx * stem.rn,
-      y: placed.y + ty * stem.rt + ny * stem.rn,
+      x: mx + (ix - mx) * fit.scale + nx * fit.trim,
+      y: my + (iy - my) * fit.scale + ny * fit.trim,
     });
   }
   return { left, right };
