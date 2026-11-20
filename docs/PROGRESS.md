@@ -125,6 +125,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-09 — Thumbnail menu labels use the nav's link colour and hover shadow, and sit vertically centered beside each image (#108).
 
+2026-11-20 — IBS icon and slides use the higher-resolution originals.
+
 2026-11-19 — Contact menu icon is a 120×90 LinkedIn mark. The three contact photos stay the slideshow.
 
 2026-11-20 — Contact menu icon is the pencil sketch, still 120×90. The three contact photos stay the slideshow.
