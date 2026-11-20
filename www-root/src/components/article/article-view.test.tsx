@@ -54,7 +54,7 @@ describe("ArticleView", () => {
   });
 
   it("caps the slideshow at the smallest slide and shrinks with the column", () => {
-    render(<ArticleView item={slideshowItem} locale="en" maxW={482} maxH={362} />);
+    render(<ArticleView item={{ ...slideshowItem, maxW: 482, maxH: 362 }} locale="en" />);
 
     const stage = document.querySelector("[role='region']");
     expect(stage).toHaveClass("w-full");

@@ -59,6 +59,9 @@ function normalizeItem(item: ContentItem): ContentItem {
     title: normalizeLocalized(item.title),
     ...(item.desc !== undefined ? { desc: normalizeLocalized(item.desc) } : {}),
     ...(item.imgs !== undefined ? { imgs: item.imgs } : {}),
+    ...(item.maxW !== undefined && item.maxH !== undefined
+      ? { maxW: item.maxW, maxH: item.maxH }
+      : {}),
     ...(item.url !== undefined
       ? {
           url: typeof item.url === "string" ? item.url : { en: item.url.en, es: item.url.es },

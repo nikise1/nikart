@@ -14,11 +14,9 @@ import { ContentTransition } from "@/components/content-transition/content-trans
 interface ArticleViewProps {
   item: ContentItem;
   locale: Locale;
-  maxW?: number;
-  maxH?: number;
 }
 
-export function ArticleView({ item, locale, maxW, maxH }: ArticleViewProps) {
+export function ArticleView({ item, locale }: ArticleViewProps) {
   const title = localize(item.title, locale);
   const desc = localize(item.desc, locale);
   const launchText = localize(item.launch, locale);
@@ -55,7 +53,9 @@ export function ArticleView({ item, locale, maxW, maxH }: ArticleViewProps) {
               itemId={item.id}
               imgCount={imgCount}
               alt={title}
-              {...(maxW !== undefined && maxH !== undefined ? { maxW, maxH } : {})}
+              {...(item.maxW !== undefined && item.maxH !== undefined
+                ? { maxW: item.maxW, maxH: item.maxH }
+                : {})}
             />
           </ContentTransition>
         )}

@@ -105,7 +105,15 @@ describe("compilePortfolio", () => {
   it("rejects an id listed in both item files", () => {
     const items = structuredClone(sources.items) as { id: string }[];
     const disabled = sources.disabled as { id: string; menu_positions?: unknown }[];
-    const { menu_positions: _positions, ...duplicate } = structuredClone(disabled[0]!);
+    const { menu_positions: _positions, ...duplicate } = structuredClone(disabled[0]!) as {
+      imgs?: number;
+      maxW?: number;
+      maxH?: number;
+    };
+    if ((duplicate.imgs ?? 0) > 0) {
+      duplicate.maxW = 1;
+      duplicate.maxH = 1;
+    }
     items.push(duplicate);
     expect(() => compilePortfolio({ ...sources, items })).toThrow(
       /both items.json and items-disabled.json/,

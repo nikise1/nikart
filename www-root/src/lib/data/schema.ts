@@ -31,13 +31,40 @@ const BaseItemSchema = z
     title: LocalizedStringSchema,
     desc: LocalizedStringSchema.optional(),
     imgs: z.number().optional(),
+    /**
+     * Slideshow cap: width and height of the slide with the fewest pixels.
+     * Written in items.json. The menu icon is not part of the measurement.
+     * Flash and the legacy HTML5 view never read these.
+     */
+    maxW: z.number().int().positive().optional(),
+    maxH: z.number().int().positive().optional(),
     url: z.union([z.string(), LocaleTextSchema]).optional(),
     launch: LocalizedStringSchema.optional(),
     pop: z.string().optional(),
   })
-  .strict();
+  .strict()
+  .superRefine((item, ctx) => {
+    if ((item.maxW === undefined) !== (item.maxH === undefined)) {
+      ctx.addIssue({
+        code: "custom",
+        message: "maxW and maxH are set together",
+        path: ["maxW"],
+      });
+    }
+  });
 
-export type ContentItem = z.infer<typeof BaseItemSchema>;
+/** Live item. A slideshow records its cap in the source file. */
+export const ItemSchema = BaseItemSchema.superRefine((item, ctx) => {
+  if ((item.imgs ?? 0) > 0 && item.maxW === undefined) {
+    ctx.addIssue({
+      code: "custom",
+      message: "A slideshow includes maxW and maxH",
+      path: ["maxW"],
+    });
+  }
+});
+
+export type ContentItem = z.infer<typeof ItemSchema>;
 
 /**
  * Menu path only, never an item id. `["websites"]`, `["art", "install"]`, or `[]` for the root.
@@ -68,7 +95,7 @@ function rejectDuplicateIds(items: { id: string }[], ctx: z.RefinementCtx): void
 }
 
 /** Flat source list. The same id is defined once even when several menus link to it. */
-export const ItemsFileSchema = z.array(BaseItemSchema).superRefine(rejectDuplicateIds);
+export const ItemsFileSchema = z.array(ItemSchema).superRefine(rejectDuplicateIds);
 
 /** Parked items. Same content fields, plus optional menu positions for enable. */
 export const DisabledItemsSchema = z.array(DisabledItemSchema).superRefine(rejectDuplicateIds);
@@ -88,7 +115,7 @@ const MenuItemSchema: z.ZodType<MenuItem> = z.lazy(() =>
       id: z.string(),
       type: z.literal("men"),
       title: LocalizedStringSchema,
-      menu: z.array(z.union([MenuItemSchema, BaseItemSchema])),
+      menu: z.array(z.union([MenuItemSchema, ItemSchema])),
     })
     .strict(),
 );
@@ -151,7 +178,7 @@ export const DataSchema = z
     id: z.string(),
     title: z.string(),
     type: z.literal("main"),
-    menu: z.array(z.union([MenuItemSchema, BaseItemSchema])),
+    menu: z.array(z.union([MenuItemSchema, ItemSchema])),
     other: OtherSchema,
   })
   .strict();

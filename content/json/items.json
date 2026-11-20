@@ -11,6 +11,8 @@
             "es": "Vista de este sitio en HTML5 que prioriza dispositivos móviles."
         },
         "imgs": 1,
+        "maxW": 320,
+        "maxH": 240,
         "url": "_self/../html5",
         "launch": {
             "en": "Change to the HTML5 view",
@@ -26,6 +28,8 @@
             "es": "Juego de Gaymers en Facebook para festival Bestival match 3 con premios y seguridad para evitar engaños."
         },
         "imgs": 9,
+        "maxW": 320,
+        "maxH": 240,
         "url": "games/rockstars_divas/index.html",
         "launch": {
             "en": "Launch Game",
@@ -45,6 +49,8 @@
             "es": "Cursos con ciudades isométricas. Varios niveles y perfiles. Aplicación e-learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
         },
         "imgs": 19,
+        "maxW": 1012,
+        "maxH": 759,
         "url": "games/ciudad_helm/index.html",
         "launch": {
             "en": "Launch Demo",
@@ -78,6 +84,8 @@
             "es": "Corazón animado en Away3D usando \"Augmented Reality\" (Realidad Aumentada)."
         },
         "imgs": 8,
+        "maxW": 320,
+        "maxH": 240,
         "url": "3d/away3d/ar_heart/index.html",
         "launch": {
             "en": "Open",
@@ -94,6 +102,8 @@
             "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
         },
         "imgs": 11,
+        "maxW": 929,
+        "maxH": 578,
         "launch": {
             "en": "Launch Website",
             "es": "Abra el Sitio"
@@ -109,6 +119,8 @@
             "es": "Desarrollo de la sección de galería de arte de Zubi. Este sitio web ganó la medalla de plata en el \"2009 Hispanic Creative Advertising Awards\" (premios de publicidad Hispánicos 2009)."
         },
         "imgs": 6,
+        "maxW": 1024,
+        "maxH": 576,
         "launch": {
             "en": "Launch Website",
             "es": "Abra el Sitio"
@@ -124,6 +136,8 @@
             "es": "Desarrollo para el sitio del evento musical \"Bandstand\" (quiosco de música) patrocinado por Vauxhall Corsa."
         },
         "imgs": 7,
+        "maxW": 320,
+        "maxH": 201,
         "url": "http://bandstand.thewebwell.com",
         "launch": {
             "en": "Launch Website",
@@ -140,6 +154,8 @@
             "es": "Desarrollo para la película de James Bond Quantum of Solace sitio de la cerveza Heineken. Tenía un reloj de cuenta regresiva hasta el lanzamiento en cines con detrás de cámaras y tráilers."
         },
         "imgs": 4,
+        "maxW": 1025,
+        "maxH": 767,
         "launch": {
             "en": "Launch Website",
             "es": "Abra el Sitio"
@@ -154,7 +170,9 @@
             "en": "Development for the websites of Bestival festival on the Isle of Wight & Camp Bestival in Dorset.",
             "es": "Desarrollo para los sitios de los festivales de música Bestival y Camp Bestival en Reino Unido."
         },
-        "imgs": 8
+        "imgs": 8,
+        "maxW": 320,
+        "maxH": 185
     },
     {
         "id": "vidzone",
@@ -164,7 +182,9 @@
             "en": "Development for the Vidzone music video streaming site. Searchable with the facility to make playlists.",
             "es": "Desarrollo para el siteo Vidzone de streaming de música y video. Buscador con opción de hacer listas de reproducción."
         },
-        "imgs": 4
+        "imgs": 4,
+        "maxW": 962,
+        "maxH": 638
     },
     {
         "id": "avis_donde",
@@ -178,6 +198,8 @@
             "es": "Juego de arrastrar ciudades para Avis, disponible en varios idiomas con premios para los ganadores. Enviaba los puntuaciones a muros de Facebook."
         },
         "imgs": 5,
+        "maxW": 320,
+        "maxH": 240,
         "url": {
             "en": "games/avis_donde/index.html",
             "es": "games/avis_donde/index_es.html"
@@ -197,6 +219,8 @@
             "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
         },
         "imgs": 4,
+        "maxW": 320,
+        "maxH": 240,
         "url": "games/whiplash/index.html",
         "launch": {
             "en": "Launch Game",
@@ -213,6 +237,8 @@
             "es": "Curso con carros y varias pistas. Aplicación e-learning que carga y guarda datos de SCORM en plataformas múltiples con contenido XML."
         },
         "imgs": 18,
+        "maxW": 1037,
+        "maxH": 779,
         "url": "games/desafio_pacifico/index.html",
         "launch": {
             "en": "Launch Demo",
@@ -367,7 +393,9 @@
             "en": "Sketchbook",
             "es": "Cuaderno de dibujo"
         },
-        "imgs": 12
+        "imgs": 12,
+        "maxW": 320,
+        "maxH": 320
     },
     {
         "id": "spaceship",
@@ -381,6 +409,8 @@
             "es": "Nave espacial modelada en 3DS MAX, textura en Blender."
         },
         "imgs": 1,
+        "maxW": 320,
+        "maxH": 240,
         "url": "3d/papervision3d/spaceship/index.html",
         "launch": {
             "en": "Open",
@@ -400,6 +430,8 @@
             "es": "Visita virtual de un interior Japonés. Modelado en 3DS MAX."
         },
         "imgs": 2,
+        "maxW": 320,
+        "maxH": 240,
         "url": "3d/shockwave3d/index.html",
         "launch": {
             "en": "Open",
@@ -415,7 +447,9 @@
             "en": "Programming and design for video showreels of 10 directors for the production company Six.",
             "es": "Programación y diseño para los showreels de video de 10 directores para la compañía Six."
         },
-        "imgs": 7
+        "imgs": 7,
+        "maxW": 320,
+        "maxH": 197
     },
     {
         "id": "ibs",
@@ -428,7 +462,9 @@
             "en": "Programming, design and animation on an Irritable Bowel Syndrome learning programme.",
             "es": "Programación, diseño y animación del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (síndrome irritable de intestino)."
         },
-        "imgs": 8
+        "imgs": 8,
+        "maxW": 482,
+        "maxH": 362
     },
     {
         "id": "robots",
@@ -450,6 +486,8 @@
             "es": "Fotografías de mis viajes."
         },
         "imgs": 6,
+        "maxW": 180,
+        "maxH": 240,
         "url": "http://www.flickr.com/photos/53781256@N00/sets",
         "launch": {
             "en": "Open",
@@ -469,6 +507,8 @@
             "es": "Soy desarrollador interactivo y un artista. Radicado en Reino Unido y Colombia. Mi hoja de vida está disponible a petición."
         },
         "imgs": 3,
+        "maxW": 320,
+        "maxH": 240,
         "url": "http://www.linkedin.com/in/nikart",
         "launch": "linkedin.com/in/nikart",
         "pop": "'1000','700','yes','yes','yes'"
@@ -485,6 +525,8 @@
             "es": "English version. This site will use a cookie to save your preference."
         },
         "imgs": 1,
+        "maxW": 320,
+        "maxH": 240,
         "url": {
             "en": "_self/es",
             "es": "_self/en"
@@ -507,6 +549,8 @@
             "es": "Vista de este sitio en Flash."
         },
         "imgs": 1,
+        "maxW": 320,
+        "maxH": 240,
         "url": "_self/../fl",
         "launch": {
             "en": "Change to the Flash view",
@@ -522,6 +566,8 @@
             "es": "Un proyecto Europeo Leonardo para ayudar a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
         },
         "imgs": 15,
+        "maxW": 320,
+        "maxH": 240,
         "url": "games/weeds/index.html",
         "launch": {
             "en": "Mow the Lawn game",

@@ -18,11 +18,22 @@
 
 ## Edit portfolio JSON
 
+Edit the source files first, then compile. `content/json/data.json` and `content/json/menu.md` are compiled. Do not edit them by hand.
+
+Source files:
+
+- `content/json/main.json` — menu links and order
+- `content/json/items.json` — flat content objects, one definition per id. Slideshow `maxW` and `maxH` go here, after `imgs`. They are the width and height of the slide with the fewest pixels (`{id}_1.jpg` through `{id}_{n}.jpg`). The menu icon (`{id}.jpg`) is not part of that measurement.
+- `content/json/items-disabled.json` — items kept out of the site
+- `content/json/other.json` — shared en/es UI text
+
+After changing a source file, run `npm run sync:json --prefix www-root`. That compiles `content/json/data.json` and minifies the Flash copy.
+
 When the user says **edit json data**:
 
 1. From the repo root, run `npm run json:edit`.
-2. Reply with the printed URLs. They open [JSON Editor Online](https://jsoneditoronline.org) with `content/json/main.json` (menu links and order), `content/json/items.json` (flat content objects), `content/json/items-disabled.json` (items kept out of the site), and `content/json/other.json` (shared en/es UI text) already loaded in tree mode. Do not paste the file bodies into the chat.
-3. When they bring edited JSON back, write it to the matching source file with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix www-root`. That compiles `content/json/data.json` and minifies the Flash copy.
+2. Reply with the printed URLs. They open [JSON Editor Online](https://jsoneditoronline.org) with the four source files already loaded in tree mode. Do not paste the file bodies into the chat.
+3. When they bring edited JSON back, write it to the matching source file with 4-space indentation and a trailing newline, then run `npm run sync:json --prefix www-root`.
 
 ## Enable or disable portfolio items
 

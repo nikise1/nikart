@@ -129,11 +129,15 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-20 — Replaced the other portfolio images that have a higher-resolution original in the same framing.
 
-2026-11-20 — Next measures the smallest slide for the slideshow frame and shrinks it when the column is narrower. `data.json` stays the compiled content tree.
+2026-11-20 — Slideshow maxW and maxH are stored on each item in items.json, from the smallest slide, and the frame shrinks when the column is narrower.
+
+2026-11-20 — Vidzone slide 3 and seven Sketchbook slides use the higher-resolution originals that had different filenames.
 
 2026-11-19 — Contact menu icon is a 120×90 LinkedIn mark. The three contact photos stay the slideshow.
 
 2026-11-20 — Contact menu icon is the pencil sketch, still 120×90. The three contact photos stay the slideshow.
+
+2026-11-20 — Article launch links show a willow leaf and a seed side by side so the two shapes can be compared.
 
 ---
 
