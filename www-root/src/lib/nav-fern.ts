@@ -2,10 +2,8 @@
  * The closed curl and the open stem are the same ribbon.
  * Closed, it matches the original corner button: a short tail from the
  * corner into one round head, with the rest of the ribbon wound inside
- * that head. A small gap opens only at the top of the head, between the
- * outer wall and the turn inside it.
- * Opening pays arc length out along the real stem and leaves the
- * remainder as that coil, joined on the same tangent.
+ * that head. Opening pays arc length out along the real stem and leaves
+ * the remainder as that coil, joined on the same tangent.
  * At rest the open stem is the legacy bezier, including its tip hook.
  */
 
@@ -411,25 +409,6 @@ function place(progress: number, distance: number): Placed {
   };
 }
 
-function bell(along: number, start: number, end: number): number {
-  const t = (along - start) / (end - start);
-  return t > 0 && t < 1 ? Math.sin(Math.PI * t) : 0;
-}
-
-/**
- * A short gap at the top of the closed head. The outer wall eases back
- * and the turn inside it eases in, only while that part is still coiled.
- * The rest of the head stays solid.
- */
-function topGap(along: number, progress: number): { trim: number; pull: number } {
-  const peeled = progress <= 0 ? 1 : (along - progress) / 0.06;
-  const coil = peeled <= 0 ? 0 : peeled >= 1 ? 1 : smoothstep(peeled);
-  return {
-    trim: coil * bell(along, 0.39, 0.49) * 3.5,
-    pull: coil * bell(along, 0.75, 0.83) * 2,
-  };
-}
-
 function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
   const left: Pt[] = [];
   const right: Pt[] = [];
@@ -440,16 +419,13 @@ function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
     const nx = -ty;
     const ny = tx;
     const { stem } = placed;
-    const gap = topGap(index / RIBBON_SAMPLES, progress);
-    const x = placed.x - nx * gap.pull;
-    const y = placed.y - ny * gap.pull;
     left.push({
-      x: x + tx * stem.lt + nx * stem.ln,
-      y: y + ty * stem.lt + ny * stem.ln,
+      x: placed.x + tx * stem.lt + nx * stem.ln,
+      y: placed.y + ty * stem.lt + ny * stem.ln,
     });
     right.push({
-      x: x + tx * stem.rt + nx * stem.rn + nx * gap.trim,
-      y: y + ty * stem.rt + ny * stem.rn + ny * gap.trim,
+      x: placed.x + tx * stem.rt + nx * stem.rn,
+      y: placed.y + ty * stem.rt + ny * stem.rn,
     });
   }
   return { left, right };
