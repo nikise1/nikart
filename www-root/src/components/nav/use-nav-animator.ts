@@ -13,8 +13,8 @@ const CURVE_MOD_X = 148;
 const EXTRA_WIDTH = 20;
 /** First unfurl begins smaller, and fully off the top-left of the page. */
 const INTRO_SCALE = 0.64;
-const INTRO_X = -68;
-const INTRO_Y = -46;
+const INTRO_X = -90;
+const INTRO_Y = -60;
 
 interface UseNavAnimatorOptions {
   containerRef: React.RefObject<HTMLDivElement | null>;

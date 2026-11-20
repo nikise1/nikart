@@ -68,6 +68,13 @@ const BURGER_FADE = 0.3;
 const BAR_W = 24;
 const BAR_H = 4;
 const BAR_GAP = 3;
+/**
+ * The closed curl is drawn larger than the stem it unwinds into, so the
+ * head is a solid background for the burger bars. It eases back to the
+ * real stem as the ribbon opens.
+ */
+const CLOSED_GROW = 1.42;
+const CLOSED_GROW_SPAN = 0.28;
 
 const STEM_COLOR = "#4F3E2D";
 const BURGER_REST = "#94B864";
@@ -479,9 +486,15 @@ const EYE = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
 
 /** Clickable area of the closed spiral, from the top-left of the nav. */
 export const NAV_FERN_HIT = {
-  width: Math.ceil(CLOSED_BOUNDS.maxX + 4),
-  height: Math.ceil(CLOSED_BOUNDS.maxY + 6),
+  width: Math.ceil(CLOSED_BOUNDS.maxX * CLOSED_GROW + 4),
+  height: Math.ceil(CLOSED_BOUNDS.maxY * CLOSED_GROW + 6),
 } as const;
+
+/** 1 when closed, easing to the true stem size as the ribbon opens. */
+function ribbonScale(progress: number): number {
+  const t = smoothstep(clamp01(progress / CLOSED_GROW_SPAN));
+  return CLOSED_GROW + (1 - CLOSED_GROW) * t;
+}
 
 const BURGER_BARS = [0, 1, 2].map((index) => {
   const total = BAR_H * 3 + BAR_GAP * 2;
@@ -533,11 +546,16 @@ function drawLoop(ctx: CanvasRenderingContext2D, loop: readonly Pt[]): void {
   ctx.stroke();
 }
 
-function drawBurger(ctx: CanvasRenderingContext2D, alpha: number, hovered: boolean): void {
+function drawBurger(
+  ctx: CanvasRenderingContext2D,
+  alpha: number,
+  hovered: boolean,
+  scale: number,
+): void {
   ctx.save();
   ctx.globalAlpha = alpha;
   ctx.fillStyle = hovered ? BURGER_HOVER : BURGER_REST;
-  for (const bar of BURGER_BARS) ctx.fillRect(bar.x, bar.y, bar.w, bar.h);
+  for (const bar of BURGER_BARS) ctx.fillRect(bar.x * scale, bar.y * scale, bar.w, bar.h);
   ctx.restore();
 }
 
@@ -558,9 +576,13 @@ export function drawNavFern(
     return;
   }
 
-  drawLoop(ctx, navFernLoop(p));
+  const scale = ribbonScale(p);
+  drawLoop(
+    ctx,
+    navFernLoop(p).map((point) => ({ x: point.x * scale, y: point.y * scale })),
+  );
   const alpha = burgerLineAlpha(p);
-  if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false);
+  if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false, scale);
 }
 
 /** Resting spiral only. Ignores hover once the ribbon has started to unwrap. */
