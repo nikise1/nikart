@@ -403,7 +403,7 @@ function place(progress: number, distance: number): Placed {
   while (turn < -Math.PI) turn += Math.PI * 2;
   return {
     x: a.x + (b.x - a.x) * t,
-    y: a.y + (b.y - a.y) * t,
+    y: a.y + (b.y - a.y) * t + headDrop(along / STEM.length, progress),
     heading: a.heading + turn * t,
     stem,
   };
@@ -486,15 +486,28 @@ function boundsOf(progress: number): { maxX: number; maxY: number } {
   return { maxX, maxY };
 }
 
+/** How far the closed head sits below the tail. The tail stays on the page top. */
+const CLOSED_DROP = 4;
+
+/**
+ * Vertical shift of the closed head. Zero along the tail, so that stroke
+ * stays on the top of the page, and full once the ribbon has curled into
+ * the round head. It eases away as soon as the ribbon starts to open.
+ */
+function headDrop(along: number, progress: number): number {
+  if (progress >= 0.28) return 0;
+  const rest = 1 - smoothstep(progress / 0.28);
+  const settled = smoothstep((along - 0.05) / 0.16);
+  return CLOSED_DROP * rest * settled;
+}
+
 const CLOSED_BOUNDS = boundsOf(0);
 const EYE = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
-/** Resting curl sits this far below the stem root. It fades out as the ribbon opens. */
-const CLOSED_DROP = 4;
 
 /** Clickable area of the closed spiral, from the top-left of the nav. */
 export const NAV_FERN_HIT = {
   width: Math.ceil(CLOSED_BOUNDS.maxX + 4),
-  height: Math.ceil(CLOSED_BOUNDS.maxY + 6 + CLOSED_DROP),
+  height: Math.ceil(CLOSED_BOUNDS.maxY + 6),
 } as const;
 
 const BURGER_BARS = [0, 1, 2].map((index) => {
@@ -572,13 +585,9 @@ export function drawNavFern(
     return;
   }
 
-  const drop = (1 - p) * CLOSED_DROP;
-  ctx.save();
-  ctx.translate(0, drop);
   drawLoop(ctx, navFernLoop(p));
   const alpha = burgerLineAlpha(p);
   if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false);
-  ctx.restore();
 }
 
 /** Resting spiral only. Ignores hover once the ribbon has started to unwrap. */
