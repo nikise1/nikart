@@ -123,6 +123,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — Fern background contrast is a little flatter, with the same color and softness.
 
+2026-11-20 — Fern background is 1.5× flatter than that pass.
+
 ---
 
 ## Migration record
