@@ -97,6 +97,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — PokerStars Web description uses lead developer, 12+ years, and moved the codebase.
 
+2026-11-20 — The nav curl is the open stem wound on one canvas into a smooth round head, with the tail on the top of the page and the head 4px lower, and it unwraps into the legacy stem.
+
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
 
 2026-11-04 — Unplayed video uses the source frame and stays centered in the page, with its description when there is one.
@@ -125,9 +127,7 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-09 — Thumbnail menu labels use the nav's link colour and hover shadow, and sit vertically centered beside each image (#108).
 
-2026-11-19 — Contact menu icon is a 120×90 LinkedIn mark. The three contact photos stay the slideshow.
-
-2026-11-20 — Contact menu icon is the pencil sketch, still 120×90. The three contact photos stay the slideshow.
+2026-11-20 — The contact menu icon is the pencil sketch at 120×90, and the three contact photos stay the slideshow.
 
 2026-11-20 — Pull requests run `npm run lint` and `npm run test:run` in `www-root` through the `Test` GitHub Actions workflow (#115).
 

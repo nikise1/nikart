@@ -3,26 +3,61 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { NAV_TIMING, itemsCloseDuration } from "@/lib/nav-timing";
-import { drawNavBezier, killNavTweens, NAV_POS } from "@/lib/nav-animations";
+import { killNavTweens, navFernTween } from "@/lib/nav-animations";
+import { drawNavFern } from "@/lib/nav-fern";
 import { useNavStore } from "@/store/nav-store";
 import type { NavPhase } from "@/store/nav-types";
 import type { DataNode } from "@/lib/data/schema";
 
 const CURVE_MOD_X = 148;
 const EXTRA_WIDTH = 20;
+/** First unfurl begins smaller, and fully off the top-left of the page. */
+const INTRO_SCALE = 0.64;
+const INTRO_X = -68;
+const INTRO_Y = -46;
 
 interface UseNavAnimatorOptions {
   containerRef: React.RefObject<HTMLDivElement | null>;
   phase: NavPhase;
   numItems: number;
   items: DataNode[];
-  /** Whether the back button should animate in during closing-canvas. */
+  /** Whether the back button should be clickable once the curl has furled. */
   revealButton: boolean;
+}
+
+function fernDuration(portion: number): number {
+  const reduce =
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return 0;
+  return NAV_TIMING.fern * Math.max(0, Math.min(1, portion));
+}
+
+function placeFern(canvas: HTMLCanvasElement, intro: boolean): void {
+  gsap.set(canvas, {
+    left: 0,
+    top: 0,
+    x: intro ? INTRO_X : 0,
+    y: intro ? INTRO_Y : 0,
+    scale: intro ? INTRO_SCALE : 1,
+    transformOrigin: "0 0",
+  });
+}
+
+function setCurlButton(button: HTMLButtonElement, visible: boolean): void {
+  gsap.set(button, { left: 0, top: 0 });
+  if (visible) {
+    button.dataset.busy = "0";
+    button.style.display = "block";
+    button.style.pointerEvents = "auto";
+    return;
+  }
+  button.style.display = "none";
+  button.style.pointerEvents = "none";
 }
 
 /**
  * Central nav animation orchestrator — mirrors legacy nav-view.js doAni().
- * All GSAP for canvas, button, and items runs here so phases stay in sync.
+ * The fern is one canvas ribbon the whole time: a crozier at rest, the stem when open.
  */
 export function useNavAnimator({
   containerRef,
@@ -32,6 +67,7 @@ export function useNavAnimator({
   revealButton,
 }: UseNavAnimatorOptions): void {
   const widthCache = useRef<Map<string, number>>(new Map());
+  const fernProgress = useRef(0);
 
   useGSAP(
     () => {
@@ -48,27 +84,49 @@ export function useNavAnimator({
       if (!canvas || !button || !itemsContainer) return;
 
       const { onItemsOutComplete, onCanvasCloseComplete, onOpenComplete } = useNavStore.getState();
+      const hovered = (): boolean => button.matches(":hover");
+
+      const intro = useNavStore.getState().introOpen;
+      placeFern(canvas, intro && phase !== "opening");
 
       if (phase === "opening") {
-        // Legacy doAni open: show items, setUpCanvas, aniIn per item.
         gsap.set(itemsContainer, { display: "block" });
+        setCurlButton(button, false);
 
-        drawNavBezier(canvas);
+        const from = fernProgress.current;
+        const introStart = intro && from < 0.05;
+        const duration = fernDuration(1 - from);
+        const stem = navFernTween(canvas, from);
         gsap.fromTo(
-          canvas,
-          { left: NAV_POS.canvasOutX, top: NAV_POS.canvasOutY },
-          { left: 0, top: 0, duration: NAV_TIMING.growIn },
+          stem,
+          { progress: from },
+          {
+            progress: 1,
+            duration,
+            ease: "power1.out",
+            onUpdate: () => {
+              fernProgress.current = stem.progress;
+              drawNavFern(canvas, stem.progress, { hovered: hovered() });
+            },
+            onComplete: () => {
+              fernProgress.current = 1;
+              drawNavFern(canvas, 1);
+              placeFern(canvas, false);
+              useNavStore.setState({ introOpen: false });
+            },
+          },
         );
-        gsap.to(button, {
-          left: NAV_POS.btnOutX,
-          top: -NAV_POS.btnHeight,
-          duration: NAV_TIMING.growIn,
-        });
-        button.style.pointerEvents = "none";
+        if (introStart && duration > 0) {
+          gsap.fromTo(
+            canvas,
+            { scale: INTRO_SCALE, x: INTRO_X, y: INTRO_Y },
+            { scale: 1, x: 0, y: 0, duration: duration * 0.55, ease: "power2.out" },
+          );
+        }
 
         itemEls.forEach((el, i) => {
           const itemId = items[i]?.id ?? String(i);
-          const delay = NAV_TIMING.growIn + i * NAV_TIMING.staggerIn;
+          const delay = duration + i * NAV_TIMING.staggerIn;
 
           gsap.set(el, { autoAlpha: 0, width: 0 });
 
@@ -95,14 +153,14 @@ export function useNavAnimator({
           });
         });
 
-        const lastDelay = NAV_TIMING.growIn + (numItems - 1) * NAV_TIMING.staggerIn;
+        const lastDelay = duration + (numItems - 1) * NAV_TIMING.staggerIn;
         gsap.delayedCall(lastDelay + NAV_TIMING.itemIn, () => {
           if (useNavStore.getState().navPhase === "opening") {
             onOpenComplete();
           }
         });
       } else if (phase === "closing-items") {
-        // Legacy doAni close: aniOut stagger, then doneAniOut.
+        // Stem stays fully drawn while the labels collapse. It coils on the next phase.
         const totalOut = itemsCloseDuration(numItems);
         gsap.delayedCall(totalOut, () => {
           if (useNavStore.getState().navPhase === "closing-items") {
@@ -119,58 +177,41 @@ export function useNavAnimator({
           });
         });
       } else if (phase === "closing-canvas") {
-        // Legacy doneAniOut → closeCanvas.
-        gsap.to(canvas, {
-          left: NAV_POS.canvasOutX,
-          top: NAV_POS.canvasOutY,
-          duration: NAV_TIMING.growOut,
-          onComplete: () => {
-            const ctx = canvas.getContext("2d");
-            ctx?.clearRect(0, 0, NAV_POS.canvasWidth, NAV_POS.canvasHeight);
+        const from = fernProgress.current;
+        const finish = (): void => {
+          fernProgress.current = 0;
+          drawNavFern(canvas, 0, { hovered: hovered() });
+          setCurlButton(button, revealButton);
+          onCanvasCloseComplete();
+        };
+
+        if (from < 0.001) {
+          finish();
+          return;
+        }
+
+        setCurlButton(button, false);
+        const stem = navFernTween(canvas, from);
+        gsap.to(stem, {
+          progress: 0,
+          duration: fernDuration(from),
+          ease: "power1.out",
+          onUpdate: () => {
+            fernProgress.current = stem.progress;
+            drawNavFern(canvas, stem.progress, { hovered: hovered() });
           },
+          onComplete: finish,
         });
-
-        if (revealButton) {
-          button.style.display = "block";
-          button.style.pointerEvents = "auto";
-          gsap.fromTo(
-            button,
-            { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight },
-            {
-              left: 0,
-              top: 0,
-              duration: NAV_TIMING.growIn,
-              ease: "power1.out",
-              onComplete: () => {
-                useNavStore.getState().onCanvasCloseComplete();
-              },
-            },
-          );
-        } else {
-          gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
-          button.style.display = "none";
-          button.style.pointerEvents = "none";
-          gsap.delayedCall(NAV_TIMING.growOut, () => {
-            if (useNavStore.getState().navPhase === "closing-canvas") {
-              onCanvasCloseComplete();
-            }
-          });
-        }
       } else if (phase === "closed") {
+        fernProgress.current = 0;
         gsap.set(itemsContainer, { display: "none" });
-        gsap.set(canvas, { left: NAV_POS.canvasOutX, top: NAV_POS.canvasOutY });
-        const ctx = canvas.getContext("2d");
-        ctx?.clearRect(0, 0, NAV_POS.canvasWidth, NAV_POS.canvasHeight);
-
-        if (revealButton) {
-          button.style.display = "block";
-          button.style.pointerEvents = "auto";
-          gsap.set(button, { left: 0, top: 0 });
-        } else {
-          button.style.display = "none";
-          button.style.pointerEvents = "none";
-          gsap.set(button, { left: NAV_POS.btnOutX, top: -NAV_POS.btnHeight });
-        }
+        drawNavFern(canvas, 0, { hovered: hovered() });
+        setCurlButton(button, revealButton);
+      } else if (phase === "open") {
+        fernProgress.current = 1;
+        drawNavFern(canvas, 1);
+        gsap.set(itemsContainer, { display: "block" });
+        setCurlButton(button, false);
       }
     },
     { scope: containerRef, dependencies: [phase, numItems, items, revealButton] },
