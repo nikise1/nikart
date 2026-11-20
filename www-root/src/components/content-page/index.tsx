@@ -25,9 +25,11 @@ interface ContentPageProps {
   path: string[];
   locale: Locale;
   poster?: string | null;
+  maxW?: number;
+  maxH?: number;
 }
 
-export function ContentPage({ node, path, locale, poster = null }: ContentPageProps) {
+export function ContentPage({ node, path, locale, poster = null, maxW, maxH }: ContentPageProps) {
   const basePath = path.join("/");
 
   if (isMenuItem(node)) {
@@ -54,7 +56,11 @@ export function ContentPage({ node, path, locale, poster = null }: ContentPagePr
 
   return (
     <main data-component="ContentPage" className="flex-1">
-      <ArticleView item={node} locale={locale} />
+      <ArticleView
+        item={node}
+        locale={locale}
+        {...(maxW !== undefined && maxH !== undefined ? { maxW, maxH } : {})}
+      />
     </main>
   );
 }

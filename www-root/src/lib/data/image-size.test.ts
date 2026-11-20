@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { imageSize, slideshowMax, smallestSlide } from "./image-size";
+import { imageSize, slideshowMax, slideshowMaxFrom, smallestSlide } from "./image-size";
 
 const imgDir = join(__dirname, "../../../../content/img");
 
@@ -12,6 +12,10 @@ describe("imageSize", () => {
     expect(slide).toEqual({ width: 482, height: 362 });
     expect(icon).toEqual({ width: 180, height: 135 });
     expect(slideshowMax(imgDir, "ibs", 8)).toEqual({ width: 482, height: 362 });
+    expect(slideshowMaxFrom(["/missing", imgDir], "ibs", 8)).toEqual({
+      width: 482,
+      height: 362,
+    });
   });
 
   it("keeps the earlier slide when two slides have the same number of pixels", () => {

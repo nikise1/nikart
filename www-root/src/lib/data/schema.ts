@@ -37,34 +37,7 @@ const BaseItemSchema = z
   })
   .strict();
 
-/**
- * Slideshow cap, measured from the slide with the fewest pixels.
- * Flash and the legacy HTML5 view never read these. They scale each bitmap into their own stage.
- * The menu icon (`{id}.jpg`) is not part of the measurement.
- */
-export const CompiledItemSchema = BaseItemSchema.extend({
-  maxW: z.number().int().positive().optional(),
-  maxH: z.number().int().positive().optional(),
-})
-  .strict()
-  .superRefine((item, ctx) => {
-    if ((item.maxW === undefined) !== (item.maxH === undefined)) {
-      ctx.addIssue({
-        code: "custom",
-        message: "maxW and maxH are set together",
-        path: ["maxW"],
-      });
-    }
-    if ((item.imgs ?? 0) > 0 && item.maxW === undefined) {
-      ctx.addIssue({
-        code: "custom",
-        message: "A slideshow includes maxW and maxH",
-        path: ["maxW"],
-      });
-    }
-  });
-
-export type ContentItem = z.infer<typeof CompiledItemSchema>;
+export type ContentItem = z.infer<typeof BaseItemSchema>;
 
 /**
  * Menu path only, never an item id. `["websites"]`, `["art", "install"]`, or `[]` for the root.
@@ -115,7 +88,7 @@ const MenuItemSchema: z.ZodType<MenuItem> = z.lazy(() =>
       id: z.string(),
       type: z.literal("men"),
       title: LocalizedStringSchema,
-      menu: z.array(z.union([MenuItemSchema, CompiledItemSchema])),
+      menu: z.array(z.union([MenuItemSchema, BaseItemSchema])),
     })
     .strict(),
 );
@@ -178,7 +151,7 @@ export const DataSchema = z
     id: z.string(),
     title: z.string(),
     type: z.literal("main"),
-    menu: z.array(z.union([MenuItemSchema, CompiledItemSchema])),
+    menu: z.array(z.union([MenuItemSchema, BaseItemSchema])),
     other: OtherSchema,
   })
   .strict();

@@ -86,3 +86,20 @@ export function slideshowMax(imgDir: string, id: string, count: number): ImageSi
   }
   return smallestSlide(sizes);
 }
+
+/** First directory that has every slide. A missing directory is skipped. */
+export function slideshowMaxFrom(
+  dirs: readonly string[],
+  id: string,
+  count: number,
+): ImageSize | null {
+  for (const dir of dirs) {
+    try {
+      return slideshowMax(dir, id, count);
+    } catch (error) {
+      if (error instanceof Error && error.message.startsWith("Missing content/img/")) continue;
+      throw error;
+    }
+  }
+  return null;
+}

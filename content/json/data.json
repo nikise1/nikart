@@ -31,8 +31,6 @@
                         "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
                     },
                     "imgs": 4,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "games\/whiplash\/index.html",
                     "launch": {
                         "en": "Launch Game",
@@ -52,8 +50,6 @@
                         "es": "Vista de este sitio en HTML5 que prioriza dispositivos m\u00f3viles."
                     },
                     "imgs": 1,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "_self\/..\/html5",
                     "launch": {
                         "en": "Change to the HTML5 view",
@@ -79,8 +75,6 @@
                         "es": "Sitio para la serie de TV Terra Nova. 3D, video, paisaje interactivo, tweets."
                     },
                     "imgs": 11,
-                    "maxW": 929,
-                    "maxH": 578,
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -96,8 +90,6 @@
                         "es": "Desarrollo de la secci\u00f3n de galer\u00eda de arte de Zubi. Este sitio web gan\u00f3 la medalla de plata en el \"2009 Hispanic Creative Advertising Awards\" (premios de publicidad Hisp\u00e1nicos 2009)."
                     },
                     "imgs": 6,
-                    "maxW": 1024,
-                    "maxH": 576,
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -113,8 +105,6 @@
                         "es": "Desarrollo para el sitio del evento musical \"Bandstand\" (quiosco de m\u00fasica) patrocinado por Vauxhall Corsa."
                     },
                     "imgs": 7,
-                    "maxW": 320,
-                    "maxH": 201,
                     "url": "http:\/\/bandstand.thewebwell.com",
                     "launch": {
                         "en": "Launch Website",
@@ -131,8 +121,6 @@
                         "es": "Desarrollo para la pel\u00edcula de James Bond Quantum of Solace sitio de la cerveza Heineken. Ten\u00eda un reloj de cuenta regresiva hasta el lanzamiento en cines con detr\u00e1s de c\u00e1maras y tr\u00e1ilers."
                     },
                     "imgs": 4,
-                    "maxW": 1025,
-                    "maxH": 767,
                     "launch": {
                         "en": "Launch Website",
                         "es": "Abra el Sitio"
@@ -147,9 +135,7 @@
                         "en": "Development for the websites of Bestival festival on the Isle of Wight & Camp Bestival in Dorset.",
                         "es": "Desarrollo para los sitios de los festivales de m\u00fasica Bestival y Camp Bestival en Reino Unido."
                     },
-                    "imgs": 8,
-                    "maxW": 320,
-                    "maxH": 185
+                    "imgs": 8
                 },
                 {
                     "id": "vidzone",
@@ -159,9 +145,7 @@
                         "en": "Development for the Vidzone music video streaming site. Searchable with the facility to make playlists.",
                         "es": "Desarrollo para el siteo Vidzone de streaming de m\u00fasica y video. Buscador con opci\u00f3n de hacer listas de reproducci\u00f3n."
                     },
-                    "imgs": 4,
-                    "maxW": 320,
-                    "maxH": 212
+                    "imgs": 4
                 }
             ],
             "title": {
@@ -196,8 +180,6 @@
                         "es": "Juego Whiplash para las tabletas digitalizadoras Wacom."
                     },
                     "imgs": 4,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "games\/whiplash\/index.html",
                     "launch": {
                         "en": "Launch Game",
@@ -214,8 +196,6 @@
                         "es": "Juego de Gaymers en Facebook para festival Bestival match 3 con premios y seguridad para evitar enga\u00f1os."
                     },
                     "imgs": 9,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "games\/rockstars_divas\/index.html",
                     "launch": {
                         "en": "Launch Game",
@@ -235,8 +215,6 @@
                         "es": "Cursos con ciudades isom\u00e9tricas. Varios niveles y perfiles. Aplicaci\u00f3n e-learning que carga y guarda datos de SCORM en plataformas m\u00faltiples con contenido XML."
                     },
                     "imgs": 19,
-                    "maxW": 1012,
-                    "maxH": 759,
                     "url": "games\/ciudad_helm\/index.html",
                     "launch": {
                         "en": "Launch Demo",
@@ -256,8 +234,6 @@
                         "es": "Juego de arrastrar ciudades para Avis, disponible en varios idiomas con premios para los ganadores. Enviaba los puntuaciones a muros de Facebook."
                     },
                     "imgs": 5,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": {
                         "en": "games\/avis_donde\/index.html",
                         "es": "games\/avis_donde\/index_es.html"
@@ -277,8 +253,6 @@
                         "es": "Un proyecto Europeo Leonardo para ayudar a las personas con discapacidades de aprendizaje a conseguir empleo. \"Stepping Stones\" (saltando sobre las piedras) se puede usar en 5 idiomas, con juegos y dibujos animados."
                     },
                     "imgs": 15,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "games\/weeds\/index.html",
                     "launch": {
                         "en": "Mow the Lawn game",
@@ -295,8 +269,6 @@
                         "es": "Curso con carros y varias pistas. Aplicaci\u00f3n e-learning que carga y guarda datos de SCORM en plataformas m\u00faltiples con contenido XML."
                     },
                     "imgs": 18,
-                    "maxW": 1037,
-                    "maxH": 779,
                     "url": "games\/desafio_pacifico\/index.html",
                     "launch": {
                         "en": "Launch Demo",
@@ -326,8 +298,6 @@
                         "es": "Coraz\u00f3n animado en Away3D usando \"Augmented Reality\" (Realidad Aumentada)."
                     },
                     "imgs": 8,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "3d\/away3d\/ar_heart\/index.html",
                     "launch": {
                         "en": "Open",
@@ -347,8 +317,6 @@
                         "es": "Nave espacial modelada en 3DS MAX, textura en Blender."
                     },
                     "imgs": 1,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "3d\/papervision3d\/spaceship\/index.html",
                     "launch": {
                         "en": "Open",
@@ -368,8 +336,6 @@
                         "es": "Visita virtual de un interior Japon\u00e9s. Modelado en 3DS MAX."
                     },
                     "imgs": 2,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "3d\/shockwave3d\/index.html",
                     "launch": {
                         "en": "Open",
@@ -394,9 +360,7 @@
                         "en": "Sketchbook",
                         "es": "Cuaderno de dibujo"
                     },
-                    "imgs": 12,
-                    "maxW": 320,
-                    "maxH": 320
+                    "imgs": 12
                 },
                 {
                     "id": "six_cds",
@@ -406,9 +370,7 @@
                         "en": "Programming and design for video showreels of 10 directors for the production company Six.",
                         "es": "Programaci\u00f3n y dise\u00f1o para los showreels de video de 10 directores para la compa\u00f1\u00eda Six."
                     },
-                    "imgs": 7,
-                    "maxW": 320,
-                    "maxH": 197
+                    "imgs": 7
                 },
                 {
                     "id": "ibs",
@@ -421,9 +383,7 @@
                         "en": "Programming, design and animation on an Irritable Bowel Syndrome learning programme.",
                         "es": "Programaci\u00f3n, dise\u00f1o y animaci\u00f3n del programa de aprendizaje sobre \"Irritable Bowel Syndrome\" (s\u00edndrome irritable de intestino)."
                     },
-                    "imgs": 8,
-                    "maxW": 482,
-                    "maxH": 362
+                    "imgs": 8
                 },
                 {
                     "id": "robots",
@@ -445,8 +405,6 @@
                         "es": "Fotograf\u00edas de mis viajes."
                     },
                     "imgs": 6,
-                    "maxW": 180,
-                    "maxH": 240,
                     "url": "http:\/\/www.flickr.com\/photos\/53781256@N00\/sets",
                     "launch": {
                         "en": "Open",
@@ -646,8 +604,6 @@
                         "es": "Soy desarrollador interactivo y un artista. Radicado en Reino Unido y Colombia. Mi hoja de vida est\u00e1 disponible a petici\u00f3n."
                     },
                     "imgs": 3,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "http:\/\/www.linkedin.com\/in\/nikart",
                     "launch": "linkedin.com\/in\/nikart",
                     "pop": "'1000','700','yes','yes','yes'"
@@ -664,8 +620,6 @@
                         "es": "English version. This site will use a cookie to save your preference."
                     },
                     "imgs": 1,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": {
                         "en": "_self\/es",
                         "es": "_self\/en"
@@ -688,8 +642,6 @@
                         "es": "Vista de este sitio en HTML5 que prioriza dispositivos m\u00f3viles."
                     },
                     "imgs": 1,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "_self\/..\/html5",
                     "launch": {
                         "en": "Change to the HTML5 view",
@@ -708,8 +660,6 @@
                         "es": "Vista de este sitio en Flash."
                     },
                     "imgs": 1,
-                    "maxW": 320,
-                    "maxH": 240,
                     "url": "_self\/..\/fl",
                     "launch": {
                         "en": "Change to the Flash view",
