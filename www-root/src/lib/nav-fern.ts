@@ -44,11 +44,16 @@ const HOOK = 3.5;
 
 /**
  * Closed crozier. Curvature is gentle at the tail and several times
- * tighter at the tip, the way a fern frond coils. Negative winds it
- * down into the corner.
+ * tighter at the tip, the way a fern frond coils. The inner turns pack
+ * closer so the head is solid, without shrinking the outer hook.
+ * Negative winds it down into the corner.
  */
 const CURL_BASE = 0.024;
 const CURL_TIGHTEN = 5;
+/** Where the extra packing starts, as a fraction of the ribbon. */
+const PACK_FROM = 0.4;
+/** How much tighter the inner turns wind, on top of the crozier curve. */
+const PACK = 6;
 const WIND = -1;
 /** Extra rotation while fully coiled, so the head hangs in the corner under its tail. */
 const SEAT = (64 * Math.PI) / 180;
@@ -207,7 +212,12 @@ function buildSpiral(stem: StemSample[], length: number): SpiralSample[] {
     raw.push({ x, y, heading, s: index * ds });
     if (index === SPIRAL_STEPS) break;
     const along = index / SPIRAL_STEPS;
-    heading += WIND * CURL_BASE * Math.exp(growth * along) * ds;
+    let curvature = CURL_BASE * Math.exp(growth * along);
+    if (along > PACK_FROM) {
+      const packed = (along - PACK_FROM) / (1 - PACK_FROM);
+      curvature *= 1 + packed * PACK;
+    }
+    heading += WIND * curvature * ds;
     x += Math.cos(heading) * ds;
     y += Math.sin(heading) * ds;
   }

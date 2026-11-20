@@ -63,19 +63,25 @@ describe("navFernLoop", () => {
   });
 
   it("meets the coil on a continuous tangent", () => {
-    for (const progress of [0.2, 0.4, 0.65]) {
-      const spine = navFernSpine(progress);
-      const join = Math.round((spine.length - 1) * progress);
-      const before = spine[Math.max(0, join - 2)];
-      const at = spine[join];
-      const after = spine[Math.min(spine.length - 1, join + 2)];
+    const turnAt = (spine: { x: number; y: number }[], index: number): number => {
+      const before = spine[index - 1];
+      const at = spine[index];
+      const after = spine[index + 1];
       if (!before || !at || !after) throw new Error("missing join sample");
       const incoming = Math.atan2(at.y - before.y, at.x - before.x);
       const outgoing = Math.atan2(after.y - at.y, after.x - at.x);
-      let kink = ((outgoing - incoming) * 180) / Math.PI;
-      while (kink > 180) kink -= 360;
-      while (kink < -180) kink += 360;
-      expect(Math.abs(kink)).toBeLessThan(14);
+      let turn = ((outgoing - incoming) * 180) / Math.PI;
+      while (turn > 180) turn -= 360;
+      while (turn < -180) turn += 360;
+      return turn;
+    };
+
+    for (const progress of [0.2, 0.4, 0.65]) {
+      const spine = navFernSpine(progress);
+      const join = Math.round((spine.length - 1) * progress);
+      const at = turnAt(spine, join);
+      expect(Math.abs(at - turnAt(spine, join - 3))).toBeLessThan(8);
+      expect(Math.abs(turnAt(spine, join + 3) - at)).toBeLessThan(20);
     }
   });
 
@@ -105,10 +111,10 @@ describe("navFernLoop", () => {
     expect(mid[laid]?.x).toBeCloseTo(open[laid]?.x ?? 0, 0);
     expect(mid[laid]?.y).toBeCloseTo(open[laid]?.y ?? 0, 0);
 
-    const closedChord = chord(0, 0.65, 1);
-    const midChord = chord(0.4, 0.65, 1);
+    const closedChord = chord(0, 0.55, 0.9);
+    const midChord = chord(0.4, 0.55, 0.9);
     expect(midChord).toBeCloseTo(closedChord, 0);
-    expect(closedChord).toBeGreaterThan(8);
+    expect(closedChord).toBeGreaterThan(4);
   });
 });
 

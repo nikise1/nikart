@@ -11,10 +11,10 @@ import type { DataNode } from "@/lib/data/schema";
 
 const CURVE_MOD_X = 148;
 const EXTRA_WIDTH = 20;
-/** First unfurl begins as a smaller curl, nudged off the top-left corner. */
+/** First unfurl begins smaller, and fully off the top-left of the page. */
 const INTRO_SCALE = 0.64;
-const INTRO_X = -22;
-const INTRO_Y = -18;
+const INTRO_X = -68;
+const INTRO_Y = -46;
 
 interface UseNavAnimatorOptions {
   containerRef: React.RefObject<HTMLDivElement | null>;
