@@ -97,6 +97,26 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — PokerStars Web description uses lead developer, 12+ years, and moved the codebase.
 
+2026-11-20 — Closed curl matches the original round head, with the bars inside it.
+
+2026-11-20 — Closed curl is drawn larger so the burger bars have a solid head behind them.
+
+2026-11-20 — First nav open starts fully off the page, and the closed curl winds tighter at the same size.
+
+2026-11-19 — First nav open starts smaller and slightly off the corner.
+
+2026-11-19 — Closing curl no longer ripples the thick top of the stem.
+
+2026-11-18 — Nav ribbon tip stays the curved hook while it unfurls.
+
+2026-11-13 — Nav stem runs into the coil on a smooth curve.
+
+2026-11-13 — Nav curl is a fern crozier: the coil tightens toward the tip.
+
+2026-11-13 — Nav spiral is wound tighter, closer to the original closed curl.
+
+2026-11-13 — Nav curl is the stem coiled into a spiral; it unwraps on one canvas.
+
 2026-11-05 — Nav curl unfurls into the stem on one canvas; the burger lines fade.
 
 2026-11-04 — Flash video keeps its picture ratio, and the desktop player is larger before fullscreen.
