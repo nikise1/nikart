@@ -2,9 +2,10 @@
  * The closed curl and the open stem are the same ribbon.
  * Closed, it matches the original corner button: a short tail from the
  * corner into one round head, with the rest of the ribbon wound inside
- * that head. Opening pays arc length out along the real stem and leaves
- * the remainder as that coil, joined on the same tangent.
- * At rest the open stem is the legacy bezier, including its tip hook.
+ * that head. The closed stroke is a little thinner than the stem, and the
+ * tail bows out to the original curve. Opening pays arc length out along
+ * the real stem and leaves the remainder as that coil, joined on the same
+ * tangent. At rest the open stem is the legacy bezier, including its tip hook.
  */
 
 interface Pt {
@@ -409,6 +410,34 @@ function place(progress: number, distance: number): Placed {
   };
 }
 
+/** Closed stroke, as a fraction of the stem width. The tail is the thin part. */
+const CLOSED_TAIL = 0.7;
+const CLOSED_HEAD = 0.9;
+/** How far (px) the closed tail bows out toward the original button's curve. */
+const TAIL_BOW = 5.5;
+
+/**
+ * Thinner while coiled, full stem width once that section has unrolled.
+ * The tail keeps its outer edge and bows outward; the head scales about
+ * its center, so the eye stays shut.
+ */
+function closedFit(
+  along: number,
+  progress: number,
+): { scale: number; bow: number; anchor: number } {
+  const peeled = progress <= 0 ? 1 : (along - progress) / 0.06;
+  const coil = peeled <= 0 ? 0 : peeled >= 1 ? 1 : smoothstep(peeled);
+  const tail = 1 - smoothstep((along - 0.06) / 0.22);
+  const width = CLOSED_TAIL + (CLOSED_HEAD - CLOSED_TAIL) * (1 - tail);
+  const bellU = (along - 0.05) / 0.24;
+  const bell = bellU > 0 && bellU < 1 ? Math.sin(Math.PI * bellU) : 0;
+  return {
+    scale: 1 - coil * (1 - width),
+    bow: TAIL_BOW * bell * coil,
+    anchor: tail * coil,
+  };
+}
+
 function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
   const left: Pt[] = [];
   const right: Pt[] = [];
@@ -419,13 +448,20 @@ function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
     const nx = -ty;
     const ny = tx;
     const { stem } = placed;
+    const fit = closedFit(index / RIBBON_SAMPLES, progress);
+    const ox = placed.x + tx * stem.lt + nx * stem.ln;
+    const oy = placed.y + ty * stem.lt + ny * stem.ln;
+    const ix = placed.x + tx * stem.rt + nx * stem.rn;
+    const iy = placed.y + ty * stem.rt + ny * stem.rn;
+    const mx = ox + (ix - ox) * (1 - fit.anchor) * 0.5;
+    const my = oy + (iy - oy) * (1 - fit.anchor) * 0.5;
     left.push({
-      x: placed.x + tx * stem.lt + nx * stem.ln,
-      y: placed.y + ty * stem.lt + ny * stem.ln,
+      x: mx + nx * fit.bow + (ox - mx) * fit.scale,
+      y: my + ny * fit.bow + (oy - my) * fit.scale,
     });
     right.push({
-      x: placed.x + tx * stem.rt + nx * stem.rn,
-      y: placed.y + ty * stem.rt + ny * stem.rn,
+      x: mx + nx * fit.bow + (ix - mx) * fit.scale,
+      y: my + ny * fit.bow + (iy - my) * fit.scale,
     });
   }
   return { left, right };
