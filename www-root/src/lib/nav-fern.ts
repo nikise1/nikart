@@ -2,8 +2,8 @@
  * The closed curl and the open stem are the same ribbon.
  * Closed, it matches the original corner button: a short tail from the
  * corner into one round head, with the rest of the ribbon wound inside
- * that head, with a gap between the outer wall and the inner turn. The
- * gap is a hair at the top of the head and wider along the bottom.
+ * that head. A small gap opens only at the top of the head, between the
+ * outer wall and the turn inside it.
  * Opening pays arc length out along the real stem and leaves the
  * remainder as that coil, joined on the same tangent.
  * At rest the open stem is the legacy bezier, including its tip hook.
@@ -411,65 +411,22 @@ function place(progress: number, distance: number): Placed {
   };
 }
 
-/** Closed tail, as a fraction of the stem width. The head stays full width. */
-const CLOSED_TAIL = 0.48;
-
-/** Piecewise smooth value. Keys are [along, amount], along increasing. */
-function ramp(along: number, keys: readonly (readonly [number, number])[]): number {
-  const first = keys[0];
-  const last = keys[keys.length - 1];
-  if (!first || !last || along <= first[0]) return first ? first[1] : 0;
-  for (let index = 1; index < keys.length; index += 1) {
-    const prev = keys[index - 1];
-    const next = keys[index];
-    if (!prev || !next || along > next[0]) continue;
-    const t = smoothstep((along - prev[0]) / (next[0] - prev[0]));
-    return prev[1] + (next[1] - prev[1]) * t;
-  }
-  return last[1];
+function bell(along: number, start: number, end: number): number {
+  const t = (along - start) / (end - start);
+  return t > 0 && t < 1 ? Math.sin(Math.PI * t) : 0;
 }
 
 /**
- * While a section is still coiled, the tail is thinner and bows out to
- * the original curve. The outer wall's inner edge eases back, and the
- * inner turn eases inward, so a gap opens between them. The gap is smallest
- * at the top of the head. A section returns to the stem once it unrolls.
+ * A short gap at the top of the closed head. The outer wall eases back
+ * and the turn inside it eases in, only while that part is still coiled.
+ * The rest of the head stays solid.
  */
-function closedShape(
-  along: number,
-  progress: number,
-): { scale: number; bow: number; trim: number; pull: number; anchor: number } {
+function topGap(along: number, progress: number): { trim: number; pull: number } {
   const peeled = progress <= 0 ? 1 : (along - progress) / 0.06;
   const coil = peeled <= 0 ? 0 : peeled >= 1 ? 1 : smoothstep(peeled);
-  const tail = 1 - smoothstep((along - 0.04) / 0.18);
-  const width = CLOSED_TAIL + (1 - CLOSED_TAIL) * (1 - tail);
   return {
-    scale: 1 - coil * (1 - width),
-    bow:
-      coil *
-      ramp(along, [
-        [0.02, 0],
-        [0.14, 7],
-        [0.3, 0],
-      ]),
-    trim:
-      coil *
-      ramp(along, [
-        [0.18, 0],
-        [0.26, 9],
-        [0.36, 5],
-        [0.44, 3],
-        [0.54, 0],
-      ]),
-    pull:
-      coil *
-      ramp(along, [
-        [0.5, 0],
-        [0.6, 6],
-        [0.7, 3.5],
-        [0.8, 0],
-      ]),
-    anchor: tail * coil,
+    trim: coil * bell(along, 0.39, 0.49) * 3.5,
+    pull: coil * bell(along, 0.75, 0.83) * 2,
   };
 }
 
@@ -483,22 +440,16 @@ function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
     const nx = -ty;
     const ny = tx;
     const { stem } = placed;
-    const fit = closedShape(index / RIBBON_SAMPLES, progress);
-    const cx = placed.x + nx * (fit.bow - fit.pull);
-    const cy = placed.y + ny * (fit.bow - fit.pull);
-    const ox = cx + tx * stem.lt + nx * stem.ln;
-    const oy = cy + ty * stem.lt + ny * stem.ln;
-    const ix = cx + tx * stem.rt + nx * stem.rn;
-    const iy = cy + ty * stem.rt + ny * stem.rn;
-    const mx = ox + (ix - ox) * (1 - fit.anchor) * 0.5;
-    const my = oy + (iy - oy) * (1 - fit.anchor) * 0.5;
+    const gap = topGap(index / RIBBON_SAMPLES, progress);
+    const x = placed.x - nx * gap.pull;
+    const y = placed.y - ny * gap.pull;
     left.push({
-      x: mx + (ox - mx) * fit.scale,
-      y: my + (oy - my) * fit.scale,
+      x: x + tx * stem.lt + nx * stem.ln,
+      y: y + ty * stem.lt + ny * stem.ln,
     });
     right.push({
-      x: mx + (ix - mx) * fit.scale + nx * fit.trim,
-      y: my + (iy - my) * fit.scale + ny * fit.trim,
+      x: x + tx * stem.rt + nx * stem.rn + nx * gap.trim,
+      y: y + ty * stem.rt + ny * stem.rn + ny * gap.trim,
     });
   }
   return { left, right };
