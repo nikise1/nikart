@@ -3,8 +3,9 @@
  * Closed, the ribbon is a fern crozier: a hook that tightens toward the tip.
  * Opening pays arc length out along the real stem and leaves the
  * remainder as that spiral, joined on the same tangent. The resting
- * twist eases in along the coil, so the join is a curve. Tail distances
- * past that ease stay fixed: it is still an unwrap.
+ * twist is spread evenly along the join, so the thick stem does not
+ * bow and spring back as the coil climbs it. Tail distances past that
+ * ease stay fixed: it is still an unwrap.
  * At rest the open stem is the legacy bezier, including its tip hook.
  */
 
@@ -303,8 +304,9 @@ function spiralCurvature(distance: number): number {
 
 /**
  * One centerline for this progress. Up to the peel point it is the stem.
- * Past that, it follows the spiral, and the resting twist is added as
- * curvature over SEAT_BLEND so the tangent never jumps.
+ * Past that, it follows the spiral. The resting twist is added at a
+ * steady rate over SEAT_BLEND, so the tangent never jumps and the
+ * thick edge does not bow past the curl and spring back.
  */
 function centerline(progress: number): CurvePoint[] {
   const length = STEM.length;
@@ -337,8 +339,8 @@ function centerline(progress: number): CurvePoint[] {
       }
       const advance = next - from;
       const sample = Math.min(length, from + advance / 2);
-      const t = clamp01((sample - u) / blend);
-      const seatCurvature = (seat * 6 * t * (1 - t)) / blend;
+      const alongBlend = (sample - u) / blend;
+      const seatCurvature = alongBlend > 0 && alongBlend < 1 ? seat / blend : 0;
       const curvature = spiralCurvature(sample) + seatCurvature;
       const midHeading = heading + (curvature * advance) / 2;
       x += Math.cos(midHeading) * advance;

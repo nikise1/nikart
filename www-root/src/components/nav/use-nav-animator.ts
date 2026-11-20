@@ -11,6 +11,10 @@ import type { DataNode } from "@/lib/data/schema";
 
 const CURVE_MOD_X = 148;
 const EXTRA_WIDTH = 20;
+/** First unfurl begins as a smaller curl, nudged off the top-left corner. */
+const INTRO_SCALE = 0.64;
+const INTRO_X = -22;
+const INTRO_Y = -18;
 
 interface UseNavAnimatorOptions {
   containerRef: React.RefObject<HTMLDivElement | null>;
@@ -26,6 +30,17 @@ function fernDuration(portion: number): number {
     typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce) return 0;
   return NAV_TIMING.fern * Math.max(0, Math.min(1, portion));
+}
+
+function placeFern(canvas: HTMLCanvasElement, intro: boolean): void {
+  gsap.set(canvas, {
+    left: 0,
+    top: 0,
+    x: intro ? INTRO_X : 0,
+    y: intro ? INTRO_Y : 0,
+    scale: intro ? INTRO_SCALE : 1,
+    transformOrigin: "0 0",
+  });
 }
 
 function setCurlButton(button: HTMLButtonElement, visible: boolean): void {
@@ -71,13 +86,15 @@ export function useNavAnimator({
       const { onItemsOutComplete, onCanvasCloseComplete, onOpenComplete } = useNavStore.getState();
       const hovered = (): boolean => button.matches(":hover");
 
-      gsap.set(canvas, { left: 0, top: 0 });
+      const intro = useNavStore.getState().introOpen;
+      placeFern(canvas, intro && phase !== "opening");
 
       if (phase === "opening") {
         gsap.set(itemsContainer, { display: "block" });
         setCurlButton(button, false);
 
         const from = fernProgress.current;
+        const introStart = intro && from < 0.05;
         const duration = fernDuration(1 - from);
         const stem = navFernTween(canvas, from);
         gsap.fromTo(
@@ -94,9 +111,18 @@ export function useNavAnimator({
             onComplete: () => {
               fernProgress.current = 1;
               drawNavFern(canvas, 1);
+              placeFern(canvas, false);
+              useNavStore.setState({ introOpen: false });
             },
           },
         );
+        if (introStart && duration > 0) {
+          gsap.fromTo(
+            canvas,
+            { scale: INTRO_SCALE, x: INTRO_X, y: INTRO_Y },
+            { scale: 1, x: 0, y: 0, duration: duration * 0.55, ease: "power2.out" },
+          );
+        }
 
         itemEls.forEach((el, i) => {
           const itemId = items[i]?.id ?? String(i);

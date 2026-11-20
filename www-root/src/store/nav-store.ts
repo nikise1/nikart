@@ -10,6 +10,8 @@ interface NavState {
   pendingRoute: string | null;
   /** Startup on main: close (button reveal) then open. */
   startupPendingOpen: boolean;
+  /** The next opening is the first one: start smaller and just off the corner. */
+  introOpen: boolean;
   /** Route to main while nav is open/closing: open after close completes. */
   pendingOpenAfterClose: boolean;
 
@@ -33,6 +35,7 @@ export const useNavStore = create<NavState>((set, get) => ({
   navReady: false,
   pendingRoute: null,
   startupPendingOpen: false,
+  introOpen: false,
   pendingOpenAfterClose: false,
 
   setNavReady: () => set({ navReady: true }),
@@ -43,6 +46,7 @@ export const useNavStore = create<NavState>((set, get) => ({
       navOpen: false,
       navPhase: "closing-canvas",
       startupPendingOpen: true,
+      introOpen: true,
       pendingRoute: null,
       pendingOpenAfterClose: false,
     });
@@ -53,6 +57,7 @@ export const useNavStore = create<NavState>((set, get) => ({
       navOpen: false,
       navPhase: "closing-canvas",
       startupPendingOpen: false,
+      introOpen: false,
       pendingRoute: null,
       pendingOpenAfterClose: false,
     });
@@ -136,7 +141,7 @@ export const useNavStore = create<NavState>((set, get) => ({
       get().openHomeMenu();
     } else {
       // Cancel a pending home open when navigating away (e.g. browser back during startup).
-      set({ pendingOpenAfterClose: false, startupPendingOpen: false });
+      set({ pendingOpenAfterClose: false, startupPendingOpen: false, introOpen: false });
       get().requestNavClose();
     }
   },
