@@ -5,11 +5,11 @@ import { isFlashLizardHref, processUrl } from "@/lib/assets";
 import { localize, localizeUrl } from "@/lib/data/content";
 import type { ContentItem, Locale } from "@/lib/data/schema";
 import { compareHrefForItem, compareHrefForSource } from "@/lib/swf-compare";
-import { WEB_TAB_NAME } from "@/lib/web-tab";
-import { Slideshow } from "@/components/slideshow/slideshow";
 import { ContentDescription } from "@/components/content-description/content-description";
 import { ContentTitle } from "@/components/content-title/content-title";
 import { ContentTransition } from "@/components/content-transition/content-transition";
+import { LaunchShape } from "@/components/launch-shape/launch-shape";
+import { Slideshow } from "@/components/slideshow/slideshow";
 
 interface ArticleViewProps {
   item: ContentItem;
@@ -66,15 +66,16 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
 
         {linkSlot !== null && link && launchText && (
           <ContentTransition index={linkSlot}>
-            <p className={isFlashLizardHref(link.href) ? "mt-4 touch-device:hidden" : "mt-4"}>
-              <a
-                href={link.href}
-                target={link.isSelf ? "_self" : WEB_TAB_NAME}
-                className="rounded bg-[#94B864] px-4 py-2 text-white transition-colors hover:bg-[#7DA04E]"
-              >
-                {launchText}
-              </a>
-            </p>
+            <div
+              className={
+                isFlashLizardHref(link.href)
+                  ? "mt-4 flex w-full flex-wrap items-start justify-center gap-x-10 gap-y-5 touch-device:hidden"
+                  : "mt-4 flex w-full flex-wrap items-start justify-center gap-x-10 gap-y-5"
+              }
+            >
+              <LaunchShape variant="leaf" href={link.href} text={launchText} self={link.isSelf} />
+              <LaunchShape variant="seed" href={link.href} text={launchText} self={link.isSelf} />
+            </div>
           </ContentTransition>
         )}
       </article>
