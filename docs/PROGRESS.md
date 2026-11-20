@@ -125,6 +125,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-20 — Fern background is 1.5× flatter than that pass.
 
+2026-11-20 — Fern background saturation is 12% higher.
+
 ---
 
 ## Migration record
