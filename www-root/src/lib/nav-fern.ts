@@ -43,15 +43,17 @@ const HOOK = 3.5;
 /**
  * Closed crozier, matched to the original 90×60 button.
  * Curvature stays near the stem's through the tail, rises into one
- * round head, holds that turn, then tightens so the spare ribbon fills
- * the head. Negative winds it down into the corner.
+ * round head, holds that turn, then tightens. The radius falls slower
+ * than the ribbon is wide, so each turn overlaps the last and the tip
+ * winds inside itself, closing the eye. Negative winds it into the corner.
  */
 const CROZIER_K0 = 0.003;
 const CROZIER_BEND = 0.1;
 const CROZIER_LOOP = 0.24;
 const CROZIER_K = 0.055;
 const CROZIER_HOLD = 0.7;
-const CROZIER_TIGHTEN = 4;
+/** How much radius (px) each inner turn gives up. Kept under the ribbon width. */
+const CROZIER_DROP = 7;
 const WIND = -1;
 /** No extra twist: the crozier already sits in the corner. */
 const SEAT = 0;
@@ -279,8 +281,12 @@ function crozierCurvature(along: number, length: number): number {
   const t = (along - CROZIER_LOOP) / (1 - CROZIER_LOOP);
   const turn = (2 * Math.PI) / CROZIER_K / length;
   if (t < turn * CROZIER_HOLD) return CROZIER_K;
-  const u = (t - turn * CROZIER_HOLD) / Math.max(0.05, 1 - turn * CROZIER_HOLD);
-  return CROZIER_K * Math.exp(Math.log(CROZIER_TIGHTEN) * Math.min(1, u));
+  const holdEnd = CROZIER_LOOP + (1 - CROZIER_LOOP) * turn * CROZIER_HOLD;
+  const traveled = Math.max(0, along - holdEnd) * length;
+  const perRadian = CROZIER_DROP / (2 * Math.PI);
+  const denom = 1 - 2 * perRadian * CROZIER_K * CROZIER_K * traveled;
+  // Floor keeps the tip radius inside the ribbon, so the eye stays shut.
+  return CROZIER_K / Math.sqrt(Math.max(denom, 0.02));
 }
 
 function spiralAt(distance: number): SpiralSample {
