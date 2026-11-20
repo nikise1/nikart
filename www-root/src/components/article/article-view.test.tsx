@@ -41,12 +41,17 @@ describe("ArticleView", () => {
     const description = screen.getByText("A microsite.");
     expect(description).toHaveAttribute("data-component", "ContentDescription");
     expect(description.parentElement).toHaveAttribute("data-content-slot", "2");
-    const launch = screen.getByRole("link", { name: "Launch Website" });
-    expect(launch.parentElement?.parentElement).toHaveAttribute("data-content-slot", "3");
-    expect(launch).toHaveAttribute("href", "http://onedayinmay.co.uk");
-    expect(launch).toHaveAttribute("target", WEB_TAB_NAME);
-    expect(launch.parentElement).not.toHaveClass("touch-device:hidden");
-    expect(launch).not.toHaveAttribute("rel");
+    const leaf = screen.getByRole("link", { name: "Launch Website, Willow leaf" });
+    const seed = screen.getByRole("link", { name: "Launch Website, Seed" });
+    expect(leaf.closest("[data-content-slot]")).toHaveAttribute("data-content-slot", "3");
+    expect(seed.closest("[data-content-slot]")).toBe(leaf.closest("[data-content-slot]"));
+    expect(leaf).toHaveAttribute("href", "http://onedayinmay.co.uk");
+    expect(seed).toHaveAttribute("href", "http://onedayinmay.co.uk");
+    expect(leaf).toHaveAttribute("target", WEB_TAB_NAME);
+    expect(seed).toHaveAttribute("target", WEB_TAB_NAME);
+    expect(leaf.parentElement?.parentElement).not.toHaveClass("touch-device:hidden");
+    expect(leaf).not.toHaveAttribute("rel");
+    expect(seed).not.toHaveAttribute("rel");
     expect(document.querySelector("[data-component='Slideshow']")?.parentElement).toHaveAttribute(
       "data-content-slot",
       "1",
@@ -69,10 +74,13 @@ describe("ArticleView", () => {
 
     render(<ArticleView item={flashItem} locale="en" />);
 
-    const link = screen.getByRole("link", { name: "Change to the Flash view" });
-    expect(link).toHaveAttribute("href", "/fl");
-    expect(link).toHaveAttribute("target", "_self");
-    expect(link.parentElement).toHaveClass("touch-device:hidden");
+    const leaf = screen.getByRole("link", { name: "Change to the Flash view, Willow leaf" });
+    const seed = screen.getByRole("link", { name: "Change to the Flash view, Seed" });
+    expect(leaf).toHaveAttribute("href", "/fl");
+    expect(seed).toHaveAttribute("href", "/fl");
+    expect(leaf).toHaveAttribute("target", "_self");
+    expect(seed).toHaveAttribute("target", "_self");
+    expect(leaf.parentElement?.parentElement).toHaveClass("touch-device:hidden");
   });
 
   it("opens the other language at /html5/{locale}", () => {
@@ -89,7 +97,10 @@ describe("ArticleView", () => {
 
     render(<ArticleView item={languageItem} locale="en" />);
 
-    expect(screen.getByRole("link", { name: "Cambia idioma a Español" })).toHaveAttribute(
+    expect(
+      screen.getByRole("link", { name: "Cambia idioma a Español, Willow leaf" }),
+    ).toHaveAttribute("href", "/html5/es");
+    expect(screen.getByRole("link", { name: "Cambia idioma a Español, Seed" })).toHaveAttribute(
       "href",
       "/html5/es",
     );

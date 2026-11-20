@@ -131,6 +131,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-20 — Pull requests run `npm run lint` and `npm run test:run` in `www-root` through the `Test` GitHub Actions workflow (#115).
 
+2026-11-20 — Article launch links show a willow leaf and a seed side by side so the two shapes can be compared.
+
 2026-11-23 — Playwright covers the home nav, opening Websites, and opening Sky Terra Nova.
 
 2026-11-23 — Playwright screenshots cover the home nav, `/en/config`, and `/en/config/language`. `npm run test:e2e:update` rewrites them.
