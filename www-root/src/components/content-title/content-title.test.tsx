@@ -14,7 +14,7 @@ describe("ContentTitle", () => {
       "text-center",
       "text-2xl",
       "font-semibold",
-      "text-[#4F3E2D]",
+      "text-[#473829]",
       "md:w-auto",
       "md:self-center",
     );

@@ -153,6 +153,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-20 — Fern background saturation is 12% higher.
 
+2026-11-20 — Brown text is #473829 and green menu text is #196000, a small step darker.
+
 ---
 
 ## Migration record

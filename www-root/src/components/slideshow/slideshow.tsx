@@ -379,7 +379,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         <button
           type="button"
           onClick={() => goToSlide(currentSlideRef.current + 1)}
-          className="mt-2 cursor-pointer text-sm text-[#4F3E2D] hover:underline"
+          className="mt-2 cursor-pointer text-sm text-[#473829] hover:underline"
           aria-label="Advance slideshow"
         >
           {currentSlide + 1} / {imgCount}
