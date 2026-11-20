@@ -488,11 +488,13 @@ function boundsOf(progress: number): { maxX: number; maxY: number } {
 
 const CLOSED_BOUNDS = boundsOf(0);
 const EYE = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
+/** Resting curl sits this far below the stem root. It fades out as the ribbon opens. */
+const CLOSED_DROP = 4;
 
 /** Clickable area of the closed spiral, from the top-left of the nav. */
 export const NAV_FERN_HIT = {
   width: Math.ceil(CLOSED_BOUNDS.maxX + 4),
-  height: Math.ceil(CLOSED_BOUNDS.maxY + 6),
+  height: Math.ceil(CLOSED_BOUNDS.maxY + 6 + CLOSED_DROP),
 } as const;
 
 const BURGER_BARS = [0, 1, 2].map((index) => {
@@ -570,9 +572,13 @@ export function drawNavFern(
     return;
   }
 
+  const drop = (1 - p) * CLOSED_DROP;
+  ctx.save();
+  ctx.translate(0, drop);
   drawLoop(ctx, navFernLoop(p));
   const alpha = burgerLineAlpha(p);
   if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false);
+  ctx.restore();
 }
 
 /** Resting spiral only. Ignores hover once the ribbon has started to unwrap. */
