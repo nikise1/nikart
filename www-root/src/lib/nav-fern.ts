@@ -1,9 +1,8 @@
 /**
  * The closed curl and the open stem are the same ribbon.
  * Closed, it matches the original corner button: a short tail from the
- * corner into one round head, a thin crescent inside that head, and the
- * rest of the ribbon wound inside. Opening pays arc length out along the
- * real stem and leaves
+ * corner into one round head, with the rest of the ribbon wound inside
+ * that head. Opening pays arc length out along the real stem and leaves
  * the remainder as that coil, joined on the same tangent.
  * At rest the open stem is the legacy bezier, including its tip hook.
  */
@@ -46,10 +45,7 @@ const HOOK = 3.5;
  * Curvature stays near the stem's through the tail, rises into one
  * round head, holds that turn, then tightens. The radius falls slower
  * than the ribbon is wide, so each turn overlaps the last and the tip
- * winds inside itself, closing the eye. The closed head keeps the
- * sprite's crescent: an open curve, thin on the inner right and wider
- * under the disk.
- * Negative winds it into the corner.
+ * winds inside itself, closing the eye. Negative winds it into the corner.
  */
 const CROZIER_K0 = 0.003;
 const CROZIER_BEND = 0.1;
@@ -413,77 +409,23 @@ function place(progress: number, distance: number): Placed {
   };
 }
 
-/** Piecewise smooth value. Keys are [along, amount], along increasing. */
-function ramp(along: number, keys: readonly (readonly [number, number])[]): number {
-  const first = keys[0];
-  const last = keys[keys.length - 1];
-  if (!first || !last || along <= first[0]) return first ? first[1] : 0;
-  for (let index = 1; index < keys.length; index += 1) {
-    const prev = keys[index - 1];
-    const next = keys[index];
-    if (!prev || !next || along > next[0]) continue;
-    const t = smoothstep((along - prev[0]) / (next[0] - prev[0]));
-    return prev[1] + (next[1] - prev[1]) * t;
-  }
-  return last[1];
-}
-
-/**
- * The sprite's crescent is an open curve between the outer wall and the
- * inner turn: thin along the inner right, wider under the disk, pointed
- * at both ends. A short sealed slot reads as a cutout. Pull that turn off
- * the wall and ease the wall's inner edge back along the whole arc, only
- * while it is still coiled.
- */
-function crescentShift(along: number, progress: number): { pull: number; trim: number } {
-  if (along <= progress) return { pull: 0, trim: 0 };
-  const ease = smoothstep((along - progress) / 0.05);
-  return {
-    trim:
-      ramp(along, [
-        [0.19, 0],
-        [0.24, 4.5],
-        [0.29, 6.5],
-        [0.35, 3],
-        [0.42, 0],
-      ]) * ease,
-    pull:
-      ramp(along, [
-        [0.54, 0],
-        [0.6, 5.5],
-        [0.66, 7.5],
-        [0.72, 5],
-        [0.78, 1.2],
-        [0.84, 0],
-      ]) * ease,
-  };
-}
-
 function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
   const left: Pt[] = [];
   const right: Pt[] = [];
   for (let index = 0; index <= RIBBON_SAMPLES; index += 1) {
-    const along = index / RIBBON_SAMPLES;
-    const placed = place(progress, STEM.length * along);
+    const placed = place(progress, (STEM.length * index) / RIBBON_SAMPLES);
     const tx = Math.cos(placed.heading);
     const ty = Math.sin(placed.heading);
     const nx = -ty;
     const ny = tx;
-    const { pull, trim } = crescentShift(along, progress);
-    const inwardX = -nx;
-    const inwardY = -ny;
-    const x = placed.x + inwardX * pull;
-    const y = placed.y + inwardY * pull;
     const { stem } = placed;
-    const width = Math.abs(stem.ln - stem.rn);
-    const trimPx = Math.min(trim, width * 0.48);
     left.push({
-      x: x + tx * stem.lt + nx * stem.ln,
-      y: y + ty * stem.lt + ny * stem.ln,
+      x: placed.x + tx * stem.lt + nx * stem.ln,
+      y: placed.y + ty * stem.lt + ny * stem.ln,
     });
     right.push({
-      x: x + tx * stem.rt + nx * stem.rn + nx * trimPx,
-      y: y + ty * stem.rt + ny * stem.rn + ny * trimPx,
+      x: placed.x + tx * stem.rt + nx * stem.rn,
+      y: placed.y + ty * stem.rt + ny * stem.rn,
     });
   }
   return { left, right };
@@ -545,9 +487,7 @@ function boundsOf(progress: number): { maxX: number; maxY: number } {
 }
 
 const CLOSED_BOUNDS = boundsOf(0);
-const CLOSED_TIP = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
-/** Sprite bars sit in the inner disk, above and left of the ribbon tip. */
-const EYE = { x: CLOSED_TIP.x - 5, y: CLOSED_TIP.y - 5 };
+const EYE = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
 
 /** Clickable area of the closed spiral, from the top-left of the nav. */
 export const NAV_FERN_HIT = {
