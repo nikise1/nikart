@@ -22,6 +22,8 @@ npm run test:run     # unit tests
 npm run test:e2e     # Playwright E2E
 ```
 
+Every pull request runs `npm run lint` and `npm run test:run` in GitHub Actions (`.github/workflows/test.yml`).
+
 ## Deploy to Vercel (preview)
 
 **Critical:** set the Vercel project **Root Directory** to `www-root/`. The legacy Express app lives in `legacy-2014/` and must not be deployed. Leave **Include source files outside of the Root Directory in the Build Step** enabled (Vercel default) so the build can read repo-root `content/img`.
