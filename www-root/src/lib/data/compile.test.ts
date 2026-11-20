@@ -3,9 +3,10 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { compilePortfolio, encodePortfolioJson, loadPortfolioSources } from "./compile";
 import { menuMarkdown } from "./menu-markdown";
-import { type MenuSourceNode, DataSchema } from "./schema";
+import { type ContentItem, type MenuSourceNode, DataSchema, isContentItem } from "./schema";
 
 const contentDir = join(__dirname, "../../../../content/json");
+const imgDir = join(__dirname, "../../../../content/img");
 const committedPath = join(contentDir, "data.json");
 
 function linkedIds(nodes: MenuSourceNode[]): string[] {
@@ -29,10 +30,21 @@ describe("compilePortfolio", () => {
 
   it("compiles main, items, and other into the committed data.json", () => {
     const committed = readFileSync(committedPath, "utf8");
-    const compiled = compilePortfolio(sources);
+    const compiled = compilePortfolio(sources, imgDir);
     expect(DataSchema.safeParse(compiled).success).toBe(true);
     expect(encodePortfolioJson(compiled)).toBe(committed);
     expect(menuMarkdown(compiled.menu)).toBe(readFileSync(join(contentDir, "menu.md"), "utf8"));
+    const slides = compiled.menu.flatMap(function walk(node): ContentItem[] {
+      if (isContentItem(node)) return [node];
+      return node.menu.flatMap(walk);
+    });
+    expect(slides.find((item) => item.id === "ibs")).toMatchObject({ maxW: 482, maxH: 362 });
+    expect(slides.find((item) => item.id === "steppingstones")).toMatchObject({
+      maxW: 320,
+      maxH: 240,
+    });
+    expect(slides.find((item) => item.id === "zubi")).toMatchObject({ maxW: 1024, maxH: 576 });
+    expect(slides.find((item) => item.id === "robots")).not.toHaveProperty("maxW");
   });
 
   it("links the same content id from more than one menu", () => {
@@ -48,25 +60,25 @@ describe("compilePortfolio", () => {
   it("rejects a menu link with no item", () => {
     const main = structuredClone(sources.main) as { menu: MenuSourceNode[] };
     main.menu.push("missing");
-    expect(() => compilePortfolio({ ...sources, main })).toThrow(/unknown id "missing"/);
+    expect(() => compilePortfolio({ ...sources, main }, imgDir)).toThrow(/unknown id "missing"/);
   });
 
   it("rejects a duplicate item id", () => {
     const items = structuredClone(sources.items) as { id: string }[];
     items.push(structuredClone(items[0]!));
-    expect(() => compilePortfolio({ ...sources, items })).toThrow(/Duplicate item id/);
+    expect(() => compilePortfolio({ ...sources, items }, imgDir)).toThrow(/Duplicate item id/);
   });
 
   it("rejects an item that the menu does not link", () => {
     const items = structuredClone(sources.items) as unknown[];
     items.push({ id: "unused_item", type: "tex", title: "Unused" });
-    expect(() => compilePortfolio({ ...sources, items })).toThrow(/unused_item/);
+    expect(() => compilePortfolio({ ...sources, items }, imgDir)).toThrow(/unused_item/);
   });
 
   it("rejects an item field outside the compiled shape", () => {
     const items = structuredClone(sources.items) as Record<string, unknown>[];
     items[0] = { ...items[0]!, extra: true };
-    expect(() => compilePortfolio({ ...sources, items })).toThrow(/extra/);
+    expect(() => compilePortfolio({ ...sources, items }, imgDir)).toThrow(/extra/);
   });
 
   it("keeps disabled items out of main and the compiled tree", () => {
@@ -93,7 +105,7 @@ describe("compilePortfolio", () => {
     expect(disabled.map((item) => item.id)).toEqual(disabledIds);
     expect(disabled[0]?.menu_positions).toEqual([["websites"]]);
     const links = linkedIds(main.menu);
-    const compiled = JSON.stringify(compilePortfolio(sources));
+    const compiled = JSON.stringify(compilePortfolio(sources, imgDir));
     for (const id of disabledIds) {
       expect(items.some((item) => item.id === id)).toBe(false);
       expect(links).not.toContain(id);
@@ -107,7 +119,7 @@ describe("compilePortfolio", () => {
     const disabled = sources.disabled as { id: string; menu_positions?: unknown }[];
     const { menu_positions: _positions, ...duplicate } = structuredClone(disabled[0]!);
     items.push(duplicate);
-    expect(() => compilePortfolio({ ...sources, items })).toThrow(
+    expect(() => compilePortfolio({ ...sources, items }, imgDir)).toThrow(
       /both items.json and items-disabled.json/,
     );
   });
@@ -115,15 +127,15 @@ describe("compilePortfolio", () => {
   it("rejects a menu link to a disabled id", () => {
     const main = structuredClone(sources.main) as { menu: MenuSourceNode[] };
     main.menu.push("stcharles");
-    expect(() => compilePortfolio({ ...sources, main })).toThrow(/disabled id "stcharles"/);
+    expect(() => compilePortfolio({ ...sources, main }, imgDir)).toThrow(/disabled id "stcharles"/);
   });
 
   it("rejects menu_positions on a live item and unknown keys on a disabled item", () => {
     const items = structuredClone(sources.items) as Record<string, unknown>[];
     items[0] = { ...items[0]!, menu_positions: [] };
-    expect(() => compilePortfolio({ ...sources, items })).toThrow(/menu_positions/);
+    expect(() => compilePortfolio({ ...sources, items }, imgDir)).toThrow(/menu_positions/);
     const disabled = structuredClone(sources.disabled) as Record<string, unknown>[];
     disabled[0] = { ...disabled[0]!, extra: true };
-    expect(() => compilePortfolio({ ...sources, disabled })).toThrow(/extra/);
+    expect(() => compilePortfolio({ ...sources, disabled }, imgDir)).toThrow(/extra/);
   });
 });

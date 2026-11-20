@@ -16,6 +16,9 @@ interface SlideshowProps {
   imgCount: number;
   alt: string;
   className?: string;
+  /** Pixel size of the smallest slide. The frame never grows past this, and shrinks with the column. */
+  maxW?: number;
+  maxH?: number;
 }
 
 type HoverZone = "left" | "middle" | "right";
@@ -50,7 +53,7 @@ function zoneFromRatio(t: number): HoverZone | null {
   return "right";
 }
 
-export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) {
+export function Slideshow({ itemId, imgCount, alt, className, maxW, maxH }: SlideshowProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentSlideRef = useRef(0);
   const pointerStartRef = useRef<{ x: number; y: number; id: number } | null>(null);
@@ -273,6 +276,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
 
   if (imgCount <= 0) return null;
 
+  const capped = maxW !== undefined && maxH !== undefined;
   const showPrevArrow = flashSide === "left" || (hoverZone === "left" && !hoverArrowSuppressed);
   const showNextArrow = flashSide === "right" || (hoverZone === "right" && !hoverArrowSuppressed);
   const overlayStyle = hitBox
@@ -297,7 +301,10 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         }}
         onClickCapture={onClickCapture}
         onMouseLeave={leaveSlideshow}
-        className={`relative overflow-hidden rounded select-none touch-pan-y ${className ?? ""}`}
+        className={`relative overflow-hidden rounded select-none touch-pan-y ${capped ? "mt-4 w-full" : (className ?? "")}`}
+        style={
+          capped ? { maxWidth: maxW, maxHeight: maxH, aspectRatio: `${maxW} / ${maxH}` } : undefined
+        }
       >
         {Array.from({ length: imgCount }, (_, i) => (
           // oxlint-disable-next-line nextjs/no-img-element

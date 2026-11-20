@@ -53,7 +53,9 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
               itemId={item.id}
               imgCount={imgCount}
               alt={title}
-              className="mt-4 h-[240px] w-full max-w-[320px] sm:h-[300px] sm:max-w-[480px]"
+              {...(item.maxW !== undefined && item.maxH !== undefined
+                ? { maxW: item.maxW, maxH: item.maxH }
+                : {})}
             />
           </ContentTransition>
         )}

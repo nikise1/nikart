@@ -2,6 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
 import { menuMarkdown } from "./menu-markdown.ts";
+import { slideshowMax } from "./image-size.ts";
 import {
   type ContentItem,
   DataSchema,
@@ -52,13 +53,28 @@ function normalizeLocalized(value: LocalizedString): LocalizedString {
   return { en: value.en, es: value.es };
 }
 
-function normalizeItem(item: ContentItem): ContentItem {
+function normalizeItem(item: ContentItem, imgDir: string): ContentItem {
+  const imgs = item.imgs;
+  let maxW: number | undefined;
+  let maxH: number | undefined;
+  if (imgs !== undefined && imgs > 0) {
+    try {
+      const max = slideshowMax(imgDir, item.id, imgs);
+      maxW = max.width;
+      maxH = max.height;
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : `Cannot measure slides for ${item.id}`;
+      throw new PortfolioCompileError(message);
+    }
+  }
   return {
     id: item.id,
     type: item.type,
     title: normalizeLocalized(item.title),
     ...(item.desc !== undefined ? { desc: normalizeLocalized(item.desc) } : {}),
-    ...(item.imgs !== undefined ? { imgs: item.imgs } : {}),
+    ...(imgs !== undefined ? { imgs } : {}),
+    ...(maxW !== undefined && maxH !== undefined ? { maxW, maxH } : {}),
     ...(item.url !== undefined
       ? {
           url: typeof item.url === "string" ? item.url : { en: item.url.en, es: item.url.es },
@@ -86,6 +102,7 @@ function compileMenu(
   disabled: Set<string>,
   used: Set<string>,
   trail: string[],
+  imgDir: string,
 ): SiteData["menu"] {
   const compiled: SiteData["menu"] = [];
   for (const node of nodes) {
@@ -102,14 +119,14 @@ function compileMenu(
         throw new PortfolioCompileError(`Menu ${where} links to unknown id "${node}"`);
       }
       used.add(node);
-      compiled.push(normalizeItem(item));
+      compiled.push(normalizeItem(item, imgDir));
       continue;
     }
 
     compiled.push({
       id: node.id,
       type: "men" as const,
-      menu: compileMenu(node.menu, items, disabled, used, [...trail, node.id]),
+      menu: compileMenu(node.menu, items, disabled, used, [...trail, node.id], imgDir),
       title: normalizeLocalized(node.title),
     });
   }
@@ -117,7 +134,7 @@ function compileMenu(
 }
 
 /** Join the source documents into the nested portfolio tree. Disabled items are checked and left out. */
-export function compilePortfolio(sources: PortfolioSources): SiteData {
+export function compilePortfolio(sources: PortfolioSources, imgDir: string): SiteData {
   const main = parseWith(MainFileSchema, sources.main, "main.json");
   const items = parseWith(ItemsFileSchema, sources.items, "items.json");
   const disabledItems = parseWith(DisabledItemsSchema, sources.disabled, "items-disabled.json");
@@ -133,7 +150,7 @@ export function compilePortfolio(sources: PortfolioSources): SiteData {
     disabled.add(item.id);
   }
   const used = new Set<string>();
-  const menu = compileMenu(main.menu, byId, disabled, used, []);
+  const menu = compileMenu(main.menu, byId, disabled, used, [], imgDir);
   const unused = items.filter((item) => !used.has(item.id)).map((item) => item.id);
   if (unused.length > 0) {
     throw new PortfolioCompileError(`Items not linked from the menu: ${unused.join(", ")}`);
@@ -236,7 +253,7 @@ function writeIfChanged(dest: string, next: string): void {
 
 /** Compile the sources in `dir` and write `data.json` and `menu.md` when the bytes changed. */
 export function writeCompiledPortfolio(dir: string): string {
-  const site = compilePortfolio(loadPortfolioSources(dir));
+  const site = compilePortfolio(loadPortfolioSources(dir), join(dir, "..", "img"));
   const encoded = encodePortfolioJson(site);
   writeIfChanged(join(dir, "data.json"), encoded);
   writeIfChanged(join(dir, "menu.md"), menuMarkdown(site.menu));

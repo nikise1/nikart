@@ -53,6 +53,18 @@ describe("ArticleView", () => {
     );
   });
 
+  it("caps the slideshow at the smallest slide and shrinks with the column", () => {
+    render(<ArticleView item={{ ...slideshowItem, maxW: 482, maxH: 362 }} locale="en" />);
+
+    const stage = document.querySelector("[role='region']");
+    expect(stage).toHaveClass("w-full");
+    expect(stage).toHaveStyle({
+      maxWidth: "482px",
+      maxHeight: "362px",
+      aspectRatio: "482 / 362",
+    });
+  });
+
   it("opens the flash view at /fl from a nested article", () => {
     const flashItem: ContentItem = {
       id: "fl",
