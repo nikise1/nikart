@@ -1,11 +1,9 @@
 /**
  * The closed curl and the open stem are the same ribbon.
- * Closed, the ribbon is a fern crozier: a hook that tightens toward the tip.
- * Opening pays arc length out along the real stem and leaves the
- * remainder as that spiral, joined on the same tangent. The resting
- * twist is spread evenly along the join, so the thick stem does not
- * bow and spring back as the coil climbs it. Tail distances past that
- * ease stay fixed: it is still an unwrap.
+ * Closed, it matches the original corner button: a short tail from the
+ * corner into one round head, with the rest of the ribbon wound inside
+ * that head. Opening pays arc length out along the real stem and leaves
+ * the remainder as that coil, joined on the same tangent.
  * At rest the open stem is the legacy bezier, including its tip hook.
  */
 
@@ -43,21 +41,21 @@ const STEM_TOP = 20;
 const HOOK = 3.5;
 
 /**
- * Closed crozier. Curvature is gentle at the tail and several times
- * tighter at the tip, the way a fern frond coils. The inner turns pack
- * closer so the head is solid, without shrinking the outer hook.
- * Negative winds it down into the corner.
+ * Closed crozier, matched to the original 90×60 button.
+ * Curvature stays near the stem's through the tail, rises into one
+ * round head, holds that turn, then tightens so the spare ribbon fills
+ * the head. Negative winds it down into the corner.
  */
-const CURL_BASE = 0.024;
-const CURL_TIGHTEN = 5;
-/** Where the extra packing starts, as a fraction of the ribbon. */
-const PACK_FROM = 0.4;
-/** How much tighter the inner turns wind, on top of the crozier curve. */
-const PACK = 6;
+const CROZIER_K0 = 0.003;
+const CROZIER_BEND = 0.1;
+const CROZIER_LOOP = 0.24;
+const CROZIER_K = 0.055;
+const CROZIER_HOLD = 0.7;
+const CROZIER_TIGHTEN = 4;
 const WIND = -1;
-/** Extra rotation while fully coiled, so the head hangs in the corner under its tail. */
-const SEAT = (64 * Math.PI) / 180;
-/** Length over which that rotation eases in, so the stem runs into the coil. */
+/** No extra twist: the crozier already sits in the corner. */
+const SEAT = 0;
+/** Length over which a resting twist would ease in. */
 const SEAT_BLEND = 42;
 
 const STEM_STEPS = 480;
@@ -68,13 +66,6 @@ const BURGER_FADE = 0.3;
 const BAR_W = 24;
 const BAR_H = 4;
 const BAR_GAP = 3;
-/**
- * The closed curl is drawn larger than the stem it unwinds into, so the
- * head is a solid background for the burger bars. It eases back to the
- * real stem as the ribbon opens.
- */
-const CLOSED_GROW = 1.42;
-const CLOSED_GROW_SPAN = 0.28;
 
 const STEM_COLOR = "#4F3E2D";
 const BURGER_REST = "#94B864";
@@ -214,17 +205,11 @@ function buildSpiral(stem: StemSample[], length: number): SpiralSample[] {
   let x = 0;
   let y = 0;
   let heading = 0;
-  const growth = Math.log(CURL_TIGHTEN);
   for (let index = 0; index <= SPIRAL_STEPS; index += 1) {
     raw.push({ x, y, heading, s: index * ds });
     if (index === SPIRAL_STEPS) break;
     const along = index / SPIRAL_STEPS;
-    let curvature = CURL_BASE * Math.exp(growth * along);
-    if (along > PACK_FROM) {
-      const packed = (along - PACK_FROM) / (1 - PACK_FROM);
-      curvature *= 1 + packed * PACK;
-    }
-    heading += WIND * curvature * ds;
+    heading += WIND * crozierCurvature(along, length) * ds;
     x += Math.cos(heading) * ds;
     y += Math.sin(heading) * ds;
   }
@@ -282,6 +267,20 @@ function stemAt(distance: number): StemSample {
     rt: a.rt + (b.rt - a.rt) * t,
     rn: a.rn + (b.rn - a.rn) * t,
   };
+}
+
+/** Curvature of the closed crozier at this fraction of the ribbon. */
+function crozierCurvature(along: number, length: number): number {
+  if (along < CROZIER_BEND) return CROZIER_K0;
+  if (along < CROZIER_LOOP) {
+    const t = (along - CROZIER_BEND) / (CROZIER_LOOP - CROZIER_BEND);
+    return CROZIER_K0 + (CROZIER_K - CROZIER_K0) * smoothstep(t);
+  }
+  const t = (along - CROZIER_LOOP) / (1 - CROZIER_LOOP);
+  const turn = (2 * Math.PI) / CROZIER_K / length;
+  if (t < turn * CROZIER_HOLD) return CROZIER_K;
+  const u = (t - turn * CROZIER_HOLD) / Math.max(0.05, 1 - turn * CROZIER_HOLD);
+  return CROZIER_K * Math.exp(Math.log(CROZIER_TIGHTEN) * Math.min(1, u));
 }
 
 function spiralAt(distance: number): SpiralSample {
@@ -486,15 +485,9 @@ const EYE = navFernSpine(0).at(-1) ?? { x: 40, y: 32 };
 
 /** Clickable area of the closed spiral, from the top-left of the nav. */
 export const NAV_FERN_HIT = {
-  width: Math.ceil(CLOSED_BOUNDS.maxX * CLOSED_GROW + 4),
-  height: Math.ceil(CLOSED_BOUNDS.maxY * CLOSED_GROW + 6),
+  width: Math.ceil(CLOSED_BOUNDS.maxX + 4),
+  height: Math.ceil(CLOSED_BOUNDS.maxY + 6),
 } as const;
-
-/** 1 when closed, easing to the true stem size as the ribbon opens. */
-function ribbonScale(progress: number): number {
-  const t = smoothstep(clamp01(progress / CLOSED_GROW_SPAN));
-  return CLOSED_GROW + (1 - CLOSED_GROW) * t;
-}
 
 const BURGER_BARS = [0, 1, 2].map((index) => {
   const total = BAR_H * 3 + BAR_GAP * 2;
@@ -546,16 +539,11 @@ function drawLoop(ctx: CanvasRenderingContext2D, loop: readonly Pt[]): void {
   ctx.stroke();
 }
 
-function drawBurger(
-  ctx: CanvasRenderingContext2D,
-  alpha: number,
-  hovered: boolean,
-  scale: number,
-): void {
+function drawBurger(ctx: CanvasRenderingContext2D, alpha: number, hovered: boolean): void {
   ctx.save();
   ctx.globalAlpha = alpha;
   ctx.fillStyle = hovered ? BURGER_HOVER : BURGER_REST;
-  for (const bar of BURGER_BARS) ctx.fillRect(bar.x * scale, bar.y * scale, bar.w, bar.h);
+  for (const bar of BURGER_BARS) ctx.fillRect(bar.x, bar.y, bar.w, bar.h);
   ctx.restore();
 }
 
@@ -576,13 +564,9 @@ export function drawNavFern(
     return;
   }
 
-  const scale = ribbonScale(p);
-  drawLoop(
-    ctx,
-    navFernLoop(p).map((point) => ({ x: point.x * scale, y: point.y * scale })),
-  );
+  drawLoop(ctx, navFernLoop(p));
   const alpha = burgerLineAlpha(p);
-  if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false, scale);
+  if (alpha > 0) drawBurger(ctx, alpha, options?.hovered ?? false);
 }
 
 /** Resting spiral only. Ignores hover once the ribbon has started to unwrap. */
