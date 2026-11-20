@@ -47,7 +47,7 @@ const HOOK = 3.5;
  * round head, holds that turn, then tightens. The radius falls slower
  * than the ribbon is wide, so each turn overlaps the last and the tip
  * winds inside itself, closing the eye. The closed head keeps the
- * sprite's thin crescent between the outer wall and the inner turn.
+ * sprite's thin crescent under the inner disk.
  * Negative winds it into the corner.
  */
 const CROZIER_K0 = 0.003;
@@ -419,16 +419,17 @@ function bell(along: number, start: number, end: number): number {
 }
 
 /**
- * Closed, the sprite shows a thin crescent between the outer wall and the
- * inner turn, along the bottom and the right of the head. Pull that turn
- * off the wall, and ease the wall's inner edge back, only while it is
- * still coiled.
+ * Closed, the sprite shows a thin crescent under the inner disk, between
+ * the outer wall and the turn inside it. Pull that turn up off the wall,
+ * and ease the wall's inner edge back, only while it is still coiled.
+ * The ease keeps the offset from stepping where the ribbon peels onto the stem.
  */
 function crescentShift(along: number, progress: number): { pull: number; trim: number } {
   if (along <= progress) return { pull: 0, trim: 0 };
+  const ease = smoothstep((along - progress) / 0.08);
   return {
-    trim: 2.8 * bell(along, 0.16, 0.48),
-    pull: 5.2 * bell(along, 0.48, 0.84),
+    trim: 6 * bell(along, 0.15, 0.28) * ease,
+    pull: 8 * bell(along, 0.56, 0.7) * ease,
   };
 }
 
