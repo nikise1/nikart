@@ -47,7 +47,8 @@ const HOOK = 3.5;
  * round head, holds that turn, then tightens. The radius falls slower
  * than the ribbon is wide, so each turn overlaps the last and the tip
  * winds inside itself, closing the eye. The closed head keeps the
- * sprite's thin crescent under the inner disk.
+ * sprite's crescent: an open curve, thin on the inner right and wider
+ * under the disk.
  * Negative winds it into the corner.
  */
 const CROZIER_K0 = 0.003;
@@ -412,24 +413,49 @@ function place(progress: number, distance: number): Placed {
   };
 }
 
-/** Sine bump on [start, end], zero outside. */
-function bell(along: number, start: number, end: number): number {
-  const u = (along - start) / (end - start);
-  return u > 0 && u < 1 ? Math.sin(Math.PI * u) : 0;
+/** Piecewise smooth value. Keys are [along, amount], along increasing. */
+function ramp(along: number, keys: readonly (readonly [number, number])[]): number {
+  const first = keys[0];
+  const last = keys[keys.length - 1];
+  if (!first || !last || along <= first[0]) return first ? first[1] : 0;
+  for (let index = 1; index < keys.length; index += 1) {
+    const prev = keys[index - 1];
+    const next = keys[index];
+    if (!prev || !next || along > next[0]) continue;
+    const t = smoothstep((along - prev[0]) / (next[0] - prev[0]));
+    return prev[1] + (next[1] - prev[1]) * t;
+  }
+  return last[1];
 }
 
 /**
- * Closed, the sprite shows a thin crescent under the inner disk, between
- * the outer wall and the turn inside it. Pull that turn up off the wall,
- * and ease the wall's inner edge back, only while it is still coiled.
- * The ease keeps the offset from stepping where the ribbon peels onto the stem.
+ * The sprite's crescent is an open curve between the outer wall and the
+ * inner turn: thin along the inner right, wider under the disk, pointed
+ * at both ends. A short sealed slot reads as a cutout. Pull that turn off
+ * the wall and ease the wall's inner edge back along the whole arc, only
+ * while it is still coiled.
  */
 function crescentShift(along: number, progress: number): { pull: number; trim: number } {
   if (along <= progress) return { pull: 0, trim: 0 };
-  const ease = smoothstep((along - progress) / 0.08);
+  const ease = smoothstep((along - progress) / 0.05);
   return {
-    trim: 6 * bell(along, 0.15, 0.28) * ease,
-    pull: 8 * bell(along, 0.56, 0.7) * ease,
+    trim:
+      ramp(along, [
+        [0.19, 0],
+        [0.24, 4.5],
+        [0.29, 6.5],
+        [0.35, 3],
+        [0.42, 0],
+      ]) * ease,
+    pull:
+      ramp(along, [
+        [0.54, 0],
+        [0.6, 5.5],
+        [0.66, 7.5],
+        [0.72, 5],
+        [0.78, 1.2],
+        [0.84, 0],
+      ]) * ease,
   };
 }
 
@@ -450,7 +476,7 @@ function ribbon(progress: number): { left: Pt[]; right: Pt[] } {
     const y = placed.y + inwardY * pull;
     const { stem } = placed;
     const width = Math.abs(stem.ln - stem.rn);
-    const trimPx = Math.min(trim, width * 0.35);
+    const trimPx = Math.min(trim, width * 0.48);
     left.push({
       x: x + tx * stem.lt + nx * stem.ln,
       y: y + ty * stem.lt + ny * stem.ln,
