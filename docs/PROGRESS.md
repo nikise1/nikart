@@ -97,6 +97,7 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-06 — PokerStars Web description uses lead developer, 12+ years, and moved the codebase.
 
+2026-11-20 — Closed curl keeps the sprite's thin crescent inside the round head.
 2026-11-20 — Closed curl winds the tip inside the head, so the middle no longer shows a white dot.
 2026-11-20 — Closed curl matches the original round head, with the bars inside it.
 
