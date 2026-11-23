@@ -99,18 +99,20 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
     if (!container) return;
     const cr = container.getBoundingClientRect();
     const slides = container.querySelectorAll<HTMLImageElement>(".slide-img");
-    const img = slides[currentSlideRef.current] ?? slides[0];
-    if (
-      !img ||
-      img.naturalWidth === 0 ||
-      img.naturalHeight === 0 ||
-      cr.width === 0 ||
-      cr.height === 0
-    ) {
-      setHitBox(null);
-      return;
-    }
-    setHitBox(objectContainBox(cr.width, cr.height, img.naturalWidth, img.naturalHeight));
+    let currentBox: { left: number; top: number; width: number; height: number } | null = null;
+    slides.forEach((img, index) => {
+      if (img.naturalWidth === 0 || img.naturalHeight === 0 || cr.width === 0 || cr.height === 0) {
+        return;
+      }
+      // The stage is a letterbox. Size the element to the bitmap so the radius clips the picture.
+      const box = objectContainBox(cr.width, cr.height, img.naturalWidth, img.naturalHeight);
+      img.style.left = `${box.left}px`;
+      img.style.top = `${box.top}px`;
+      img.style.width = `${box.width}px`;
+      img.style.height = `${box.height}px`;
+      if (index === currentSlideRef.current) currentBox = box;
+    });
+    setHitBox(currentBox);
   }, []);
 
   useEffect(() => {
@@ -297,7 +299,7 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
         }}
         onClickCapture={onClickCapture}
         onMouseLeave={leaveSlideshow}
-        className={`relative overflow-hidden rounded select-none touch-pan-y ${className ?? ""}`}
+        className={`relative overflow-hidden rounded-md select-none touch-pan-y ${className ?? ""}`}
       >
         {Array.from({ length: imgCount }, (_, i) => (
           // oxlint-disable-next-line nextjs/no-img-element
@@ -307,13 +309,13 @@ export function Slideshow({ itemId, imgCount, alt, className }: SlideshowProps) 
             alt={`${alt} ${i + 1}`}
             draggable={false}
             onLoad={syncHitBox}
-            className="slide-img absolute inset-0 h-full w-full object-contain"
+            className="slide-img absolute h-full w-full rounded-md object-contain"
             style={{ opacity: i === 0 ? 1 : 0, visibility: i === 0 ? "visible" : "hidden" }}
           />
         ))}
 
         {imgCount > 1 && (
-          <div className="absolute z-20" style={overlayStyle}>
+          <div className="absolute z-20 overflow-hidden rounded-md" style={overlayStyle}>
             <button
               type="button"
               onMouseEnter={() => enterZone("left")}

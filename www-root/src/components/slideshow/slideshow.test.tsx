@@ -46,6 +46,7 @@ describe("Slideshow", () => {
     renderSlideshow(3);
     const images = screen.getAllByRole("img", { hidden: true });
     expect(images).toHaveLength(3);
+    expect(images[0]).toHaveClass("rounded-md");
     expect(images[0]).toHaveAttribute("src", "/content/img/onedayinmay_1.jpg");
     expect(images[2]).toHaveAttribute("src", "/content/img/onedayinmay_3.jpg");
   });
