@@ -155,6 +155,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-20 — Brown text is #473829 and green menu text is #196000, a small step darker.
 
+2026-11-23 — Root type size is back to the browser default. The darker text colors stay.
+
 ---
 
 ## Migration record
