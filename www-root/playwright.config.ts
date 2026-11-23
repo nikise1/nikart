@@ -25,7 +25,11 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: {
+        ...devices["Desktop Chrome"],
+        // Page size for every screenshot. `toHaveScreenshot` captures this viewport.
+        viewport: { width: 1280, height: 720 },
+      },
     },
   ],
   webServer: {

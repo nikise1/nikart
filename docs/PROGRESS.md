@@ -135,6 +135,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — Playwright screenshots cover the home nav, `/en/config`, and `/en/config/language`. `npm run test:e2e:update` rewrites them.
 
+2026-11-23 — Pull requests run those Playwright tests from `.github/workflows/test.yml`. Screenshots are 1280×720.
+
 ---
 
 ## Migration record
