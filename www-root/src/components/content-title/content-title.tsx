@@ -6,7 +6,7 @@ export function ContentTitle({ text }: ContentTitleProps) {
   return (
     <h1
       data-component="ContentTitle"
-      className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#473829] md:w-auto md:self-center"
+      className="w-[calc(100%-5.5rem)] self-end text-center text-2xl font-semibold text-[#3F3224] md:w-auto md:self-center"
     >
       {text}
     </h1>
