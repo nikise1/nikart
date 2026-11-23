@@ -37,7 +37,7 @@ async function waitForPaint(page: Page): Promise<void> {
   });
 }
 
-test("initial state shows the nav menu", async ({ page }) => {
+test("opens the language page from the home nav", async ({ page }) => {
   await page.goto("/en");
 
   await expect(page).toHaveURL(/\/en\/?$/);
@@ -48,15 +48,8 @@ test("initial state shows the nav menu", async ({ page }) => {
   await expect(page.locator("[data-component='ContentPage']")).toHaveCount(0);
   await waitForPaint(page);
   await expect(page).toHaveScreenshot("nav-menu.png");
-});
 
-test("opens the config menu", async ({ page }) => {
-  await page.goto("/en");
-
-  await page
-    .locator("[data-component='NavItems']")
-    .getByRole("button", { name: "Contact & Español", exact: true })
-    .click();
+  await nav.getByRole("button", { name: "Contact & Español", exact: true }).click();
 
   await expect(page).toHaveURL(/\/en\/config\/?$/);
   const grid = page.locator("[data-component='ThumbnailGrid']");
@@ -64,15 +57,8 @@ test("opens the config menu", async ({ page }) => {
   await expect(grid.getByRole("link", { name: "Español" })).toBeVisible();
   await waitForPaint(page);
   await expect(page).toHaveScreenshot("config-menu.png");
-});
 
-test("opens the language page", async ({ page }) => {
-  await page.goto("/en/config");
-
-  await page
-    .locator("[data-component='ThumbnailGrid']")
-    .getByRole("link", { name: "Español" })
-    .click();
+  await grid.getByRole("link", { name: "Español" }).click();
 
   await expect(page).toHaveURL(/\/en\/config\/language\/?$/);
   await expect(page.locator("[data-component='ArticleView']")).toBeVisible();

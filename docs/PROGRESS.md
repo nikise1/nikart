@@ -137,6 +137,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — Pull requests run those Playwright tests from `.github/workflows/test.yml`. Screenshots are 1280×720.
 
+2026-11-23 — The Playwright nav check is one journey: home, `/en/config`, then `/en/config/language`, with a screenshot at each step.
+
 ---
 
 ## Migration record
