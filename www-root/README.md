@@ -19,10 +19,11 @@ npm run build        # production build
 npm run start        # serve production build
 npm run lint
 npm run test:run     # unit tests
-npm run test:e2e     # Playwright E2E
+npm run test:e2e        # Playwright E2E
+npm run test:e2e:update # Rewrite Playwright screenshots after a visual change
 ```
 
-Every pull request runs `npm run lint` and `npm run test:run` in GitHub Actions (`.github/workflows/test.yml`).
+Every pull request runs `npm run lint`, `npm run test:run`, and `npm run test:e2e` in GitHub Actions (`.github/workflows/test.yml`).
 
 ## Deploy to Vercel (preview)
 

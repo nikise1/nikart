@@ -6,6 +6,17 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 4,
+  timeout: 45_000,
+  expect: {
+    // Nav labels finish unfurling about three seconds after hydration.
+    timeout: 15_000,
+    toHaveScreenshot: {
+      animations: "disabled",
+      caret: "hide",
+      // The fern canvas antialiases a few pixels differently between runs.
+      maxDiffPixels: 100,
+    },
+  },
   reporter: "html",
   use: {
     baseURL: "http://localhost:3000",
@@ -14,7 +25,11 @@ export default defineConfig({
   projects: [
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: {
+        ...devices["Desktop Chrome"],
+        // Page size for every screenshot. `toHaveScreenshot` captures this viewport.
+        viewport: { width: 1280, height: 720 },
+      },
     },
   ],
   webServer: {

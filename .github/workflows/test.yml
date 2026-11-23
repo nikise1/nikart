@@ -27,3 +27,31 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run test:run
+
+  e2e:
+    name: Playwright
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    defaults:
+      run:
+        working-directory: www-root
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: www-root/package.json
+          cache: npm
+          cache-dependency-path: www-root/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            www-root/playwright-report/
+            www-root/test-results/
+          retention-days: 7

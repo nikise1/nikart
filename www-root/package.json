@@ -13,6 +13,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "playwright test",
+    "test:e2e:update": "playwright test --update-snapshots",
     "postinstall": "node scripts/copy-ruffle.mjs && node scripts/copy-awayfl.mjs && node scripts/sync-content-images.mjs && node scripts/sync-content-json.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/compile-swf-compare.mjs",
     "sync:images": "node scripts/sync-content-images.mjs",
     "compile:json": "node scripts/compile-content-json.mjs",
