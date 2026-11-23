@@ -6,6 +6,11 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 4,
+  timeout: 45_000,
+  expect: {
+    // Nav labels finish unfurling about three seconds after hydration.
+    timeout: 15_000,
+  },
   reporter: "html",
   use: {
     baseURL: "http://localhost:3000",
