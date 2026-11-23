@@ -10,6 +10,12 @@ export default defineConfig({
   expect: {
     // Nav labels finish unfurling about three seconds after hydration.
     timeout: 15_000,
+    toHaveScreenshot: {
+      animations: "disabled",
+      caret: "hide",
+      // The fern canvas antialiases a few pixels differently between runs.
+      maxDiffPixels: 100,
+    },
   },
   reporter: "html",
   use: {

@@ -133,6 +133,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — Playwright covers the home nav, opening Websites, and opening Sky Terra Nova.
 
+2026-11-23 — Playwright screenshots cover the home nav, `/en/config`, and `/en/config/language`. `npm run test:e2e:update` rewrites them.
+
 ---
 
 ## Migration record

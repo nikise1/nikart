@@ -46,7 +46,8 @@ npm run format       # Oxfmt write
 npm run format:check # Oxfmt check
 npm run test         # Vitest watch mode
 npm run test:run     # Vitest single run
-npm run test:e2e     # Playwright E2E
+npm run test:e2e        # Playwright E2E
+npm run test:e2e:update # Rewrite Playwright screenshots after a visual change
 npm run sync:images  # Copy repo-root content/img → public/_generated/img (gitignored)
 npm run compile:json # Compile content/json/main.json + items.json + other.json → content/json/data.json and menu.md (items-disabled.json stays out)
 npm run json:items -- --disable id1,id2 --enable id3 # Enable or disable portfolio ids, park jpgs absent from main.json, and park or restore SWF compare pages in public/swf-compare-disabled
