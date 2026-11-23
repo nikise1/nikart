@@ -139,6 +139,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — The Playwright nav check is one journey: home, `/en/config`, then `/en/config/language`, with a screenshot at each step.
 
+2026-11-23 — Slideshow photos have a small corner radius, including the arrow overlay.
+
 ---
 
 ## Migration record
