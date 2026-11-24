@@ -36,7 +36,7 @@ export function NavItems({ items, locale }: NavItemsProps) {
             />
             <button
               onClick={() => handleClick(item.id)}
-              className={`block w-full cursor-pointer whitespace-nowrap border-none bg-transparent px-2 py-1 text-left text-[#1C6B00] transition-all duration-300 hover:text-[#4F3E2D] hover:[text-shadow:0_0_2px_#cc813a] ${
+              className={`block w-full cursor-pointer whitespace-nowrap border-none bg-transparent px-2 py-1 text-left text-[#165600] transition-all duration-300 hover:text-[#3F3224] hover:[text-shadow:0_0_2px_#cc813a] ${
                 featured ? "text-[20px] leading-[1.15]" : "text-sm"
               }`}
             >

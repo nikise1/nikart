@@ -57,7 +57,7 @@ function labelClass(isCurrent: boolean): string {
   return (
     [
       "breadcrumb-text-mask breadcrumb-link inline-block overflow-hidden whitespace-nowrap",
-      "pt-[0.3em] text-[#1C6B00] max-sm:min-w-0 max-sm:truncate",
+      "pt-[0.3em] text-[#165600] max-sm:min-w-0 max-sm:truncate",
       cap,
     ].join(" ") + hover
   );

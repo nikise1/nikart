@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/routing";
 import { Nav } from "@/components/nav/nav";
+import { BackgroundFern } from "@/components/background-fern/background-fern";
 import { Breadcrumbs } from "@/components/breadcrumbs/breadcrumbs";
 import { ContentWrapper } from "@/components/content-wrapper/content-wrapper";
 
@@ -22,6 +23,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <div className="relative flex min-h-screen w-full">
+        <BackgroundFern />
         <Nav locale={locale as "en" | "es"} />
         <ContentWrapper>
           <Breadcrumbs locale={locale as "en" | "es"} />

@@ -141,6 +141,26 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — Slideshow photos have a small corner radius, including the arrow overlay.
 
+2026-11-06 — Background is a softened fern-path photo, graded into the cream-to-leaf palette and centered.
+
+2026-11-06 — Fern background is slightly softer, and type is one step larger except the 20px Featured Projects label.
+
+2026-11-06 — Fern background blur is about twice as soft.
+
+2026-11-06 — Fern background contrast is a little flatter, with the same color and softness.
+
+2026-11-20 — Fern background is 1.5× flatter than that pass.
+
+2026-11-20 — Fern background saturation is 12% higher.
+
+2026-11-20 — Brown text is #473829 and green menu text is #196000, a small step darker.
+
+2026-11-23 — Brown text is #3F3224 and green menu text is #165600, another 20% darker.
+
+2026-11-23 — Root type size is back to the browser default. The darker text colors stay.
+
+2026-11-24 — A fiddlehead in the nav's brown sits on the photo at the bottom left.
+
 ---
 
 ## Migration record
