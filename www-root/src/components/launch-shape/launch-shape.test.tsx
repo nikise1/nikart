@@ -4,31 +4,27 @@ import { WEB_TAB_NAME } from "@/lib/web-tab";
 import { LaunchShape } from "./launch-shape";
 
 describe("LaunchShape", () => {
-  it("draws a willow leaf around the launch label", () => {
-    render(
-      <LaunchShape
-        variant="leaf"
-        href="http://onedayinmay.co.uk"
-        text="Launch Website"
-        self={false}
-      />,
-    );
+  it("draws the white willow around the launch label", () => {
+    render(<LaunchShape href="http://onedayinmay.co.uk" text="Launch Website" self={false} />);
 
-    const link = screen.getByRole("link", { name: "Launch Website, Willow leaf" });
-    expect(link).toHaveAttribute("data-variant", "leaf");
+    const link = screen.getByRole("link", { name: "Launch Website" });
+    expect(link).toHaveAttribute("data-component", "LaunchShape");
     expect(link).toHaveAttribute("href", "http://onedayinmay.co.uk");
     expect(link).toHaveAttribute("target", WEB_TAB_NAME);
     expect(link).not.toHaveAttribute("rel");
-    expect(screen.getByText("Willow leaf")).toBeInTheDocument();
+    const style = link.getAttribute("style") ?? "";
+    expect(style).toContain('url("/launch/white-willow.png")');
+    expect(style).toContain("rgba(14, 32, 8, 0.95) 0px 0px 4px");
+    expect(style).toContain("border-width: 0px 98px 0px 80px");
+    expect(screen.queryByText("Willow leaf")).toBeNull();
+    expect(screen.queryByText("Seed")).toBeNull();
   });
 
-  it("draws a seed around the launch label and stays on this tab when asked", () => {
-    render(<LaunchShape variant="seed" href="/fl" text="Change to the Flash view" self />);
+  it("stays on this tab when asked", () => {
+    render(<LaunchShape href="/fl" text="Change to the Flash view" self />);
 
-    const link = screen.getByRole("link", { name: "Change to the Flash view, Seed" });
-    expect(link).toHaveAttribute("data-variant", "seed");
+    const link = screen.getByRole("link", { name: "Change to the Flash view" });
     expect(link).toHaveAttribute("href", "/fl");
     expect(link).toHaveAttribute("target", "_self");
-    expect(screen.getByText("Seed")).toBeInTheDocument();
   });
 });

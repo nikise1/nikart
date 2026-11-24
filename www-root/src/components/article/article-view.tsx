@@ -69,12 +69,11 @@ export function ArticleView({ item, locale }: ArticleViewProps) {
             <div
               className={
                 isFlashLizardHref(link.href)
-                  ? "mt-4 flex w-full flex-wrap items-start justify-center gap-x-10 gap-y-5 touch-device:hidden"
-                  : "mt-4 flex w-full flex-wrap items-start justify-center gap-x-10 gap-y-5"
+                  ? "mt-4 flex w-full justify-center touch-device:hidden"
+                  : "mt-4 flex w-full justify-center"
               }
             >
-              <LaunchShape variant="leaf" href={link.href} text={launchText} self={link.isSelf} />
-              <LaunchShape variant="seed" href={link.href} text={launchText} self={link.isSelf} />
+              <LaunchShape href={link.href} text={launchText} self={link.isSelf} />
             </div>
           </ContentTransition>
         )}
