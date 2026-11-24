@@ -14,8 +14,11 @@ describe("LaunchShape", () => {
     expect(link).not.toHaveAttribute("rel");
     const style = link.getAttribute("style") ?? "";
     expect(style).toContain('url("/launch/white-willow.png")');
-    expect(style).toContain("rgba(14, 32, 8, 0.95) 0px 0px 4px");
-    expect(style).toContain("border-width: 0px 98px 0px 80px");
+    expect(style).toContain("border-image-slice: 0 121 0 100 fill");
+    expect(style).toContain("border-width: 0px 86px 0px 68px");
+    expect(style).toContain("border-image-width: 0 86px 0 68px");
+    const shadow = "rgba(14, 32, 8, 0.95) 0px 0px 4px";
+    expect(style.split(shadow)).toHaveLength(3);
     expect(screen.queryByText("Willow leaf")).toBeNull();
     expect(screen.queryByText("Seed")).toBeNull();
   });

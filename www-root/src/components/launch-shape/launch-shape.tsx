@@ -11,15 +11,15 @@ interface LaunchShapeProps {
 }
 
 const leafStyle = {
-  borderWidth: "0 98px 0 80px",
+  borderWidth: "0 86px 0 68px",
   borderStyle: "solid",
   borderColor: "transparent",
   borderImageSource: "url(/launch/white-willow.png)",
-  borderImageSlice: "0 109 0 88 fill",
-  borderImageWidth: "0 98px 0 80px",
+  borderImageSlice: "0 121 0 100 fill",
+  borderImageWidth: "0 86px 0 68px",
   borderImageRepeat: "stretch",
   color: "#e7e4c2",
-  textShadow: "0 0 4px rgba(14, 32, 8, 0.95)",
+  textShadow: "0 0 4px rgba(14, 32, 8, 0.95), 0 0 4px rgba(14, 32, 8, 0.95)",
 } as const;
 
 export function LaunchShape({ href, text, self }: LaunchShapeProps) {

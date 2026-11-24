@@ -143,6 +143,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-24 — Article launch links use the white willow photograph, with a dark green glow on the label.
 
+2026-11-24 — The willow launch leaf takes a wider slice of the ends and draws those ends narrower, and the glow is stacked twice.
+
 ---
 
 ## Migration record
