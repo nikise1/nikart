@@ -159,6 +159,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-23 — Root type size is back to the browser default. The darker text colors stay.
 
+2026-11-24 — A fiddlehead in the nav's brown sits on the photo at the bottom left.
+
 ---
 
 ## Migration record
