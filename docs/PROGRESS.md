@@ -131,6 +131,8 @@ Add new work in this section. The decisions log at the bottom of this file cover
 
 2026-11-20 — Pull requests run `npm run lint` and `npm run test:run` in `www-root` through the `Test` GitHub Actions workflow (#115).
 
+2026-11-20 — Article launch links show a willow leaf and a seed side by side so the two shapes can be compared.
+
 2026-11-23 — Playwright covers the home nav, opening Websites, and opening Sky Terra Nova.
 
 2026-11-23 — Playwright screenshots cover the home nav, `/en/config`, and `/en/config/language`. `npm run test:e2e:update` rewrites them.
@@ -140,6 +142,10 @@ Add new work in this section. The decisions log at the bottom of this file cover
 2026-11-23 — The Playwright nav check is one journey: home, `/en/config`, then `/en/config/language`, with a screenshot at each step.
 
 2026-11-23 — Slideshow photos have a small corner radius, including the arrow overlay.
+
+2026-11-24 — Article launch links use the white willow photograph, with a dark green glow on the label.
+
+2026-11-24 — The willow launch leaf takes a wider slice of the ends and draws those ends narrower, and the glow is stacked twice.
 
 ---
 

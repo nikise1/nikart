@@ -42,11 +42,12 @@ describe("ArticleView", () => {
     expect(description).toHaveAttribute("data-component", "ContentDescription");
     expect(description.parentElement).toHaveAttribute("data-content-slot", "2");
     const launch = screen.getByRole("link", { name: "Launch Website" });
-    expect(launch.parentElement?.parentElement).toHaveAttribute("data-content-slot", "3");
+    expect(launch.closest("[data-content-slot]")).toHaveAttribute("data-content-slot", "3");
     expect(launch).toHaveAttribute("href", "http://onedayinmay.co.uk");
     expect(launch).toHaveAttribute("target", WEB_TAB_NAME);
     expect(launch.parentElement).not.toHaveClass("touch-device:hidden");
     expect(launch).not.toHaveAttribute("rel");
+    expect(screen.queryByRole("link", { name: "Seed" })).toBeNull();
     expect(document.querySelector("[data-component='Slideshow']")?.parentElement).toHaveAttribute(
       "data-content-slot",
       "1",
@@ -69,10 +70,10 @@ describe("ArticleView", () => {
 
     render(<ArticleView item={flashItem} locale="en" />);
 
-    const link = screen.getByRole("link", { name: "Change to the Flash view" });
-    expect(link).toHaveAttribute("href", "/fl");
-    expect(link).toHaveAttribute("target", "_self");
-    expect(link.parentElement).toHaveClass("touch-device:hidden");
+    const launch = screen.getByRole("link", { name: "Change to the Flash view" });
+    expect(launch).toHaveAttribute("href", "/fl");
+    expect(launch).toHaveAttribute("target", "_self");
+    expect(launch.parentElement).toHaveClass("touch-device:hidden");
   });
 
   it("opens the other language at /html5/{locale}", () => {
